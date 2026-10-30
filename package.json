@@ -1,0 +1,19 @@
+{
+  "name": "sonic-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "deploy": "pnpm run build && npx wrangler pages deploy dist --project-name sonic-docs --branch main",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "python scripts/check-structure.py",
+    "validate": "pnpm run build && node scripts/validate-anchors.cjs && python scripts/check-structure.py"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.32.0",
+    "astro": "^5.0.0"
+  }
+}

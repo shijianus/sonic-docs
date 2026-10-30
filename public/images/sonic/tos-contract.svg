@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Contract lifecycle of the Terms of Service: electronic acceptance, use of the service, amendments, termination, resting on governing law and dispute resolution">
+  <style>
+    .bg { fill: #f8fafc; }
+    .stage { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .stage-one { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+    .base { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
+    .st { font: 600 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .sb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .flow { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#ar); }
+    .arrowhead { fill: #94a3b8; }
+    .bt { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .stage { fill: #111827; stroke: #1e293b; }
+      .stage-one { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .base { fill: #111827; stroke: #1e293b; }
+      .st { fill: #f1f5f9; }
+      .sb { fill: #94a3b8; }
+      .law { fill: #60a5fa; }
+      .flow { stroke: #475569; }
+      .arrowhead { fill: #475569; }
+      .bt { fill: #f1f5f9; }
+    }
+  </style>
+  <defs>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" class="arrowhead"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <rect class="stage-one" x="40" y="110" width="212" height="150" rx="10"/>
+  <text class="st" x="58" y="140">1. Acceptance</text>
+  <text class="sb" x="58" y="164">Sign in via Epomail</text>
+  <text class="sb" x="58" y="180">OAuth = consent;</text>
+  <text class="sb" x="58" y="196">terms published and</text>
+  <text class="sb" x="58" y="212">versioned before use</text>
+  <text class="law" x="58" y="244">Electronic consent</text>
+
+  <rect class="stage" x="290" y="110" width="212" height="150" rx="10"/>
+  <text class="st" x="308" y="140">2. Use</text>
+  <text class="sb" x="308" y="164">Streaming, search,</text>
+  <text class="sb" x="308" y="180">lyrics, Auto DJ;</text>
+  <text class="sb" x="308" y="196">your account and your</text>
+  <text class="sb" x="308" y="212">playlists stay yours</text>
+  <text class="law" x="308" y="244">Contract performed</text>
+
+  <rect class="stage" x="540" y="110" width="212" height="150" rx="10"/>
+  <text class="st" x="558" y="140">3. Amendments</text>
+  <text class="sb" x="558" y="164">Material changes</text>
+  <text class="sb" x="558" y="180">announced in advance;</text>
+  <text class="sb" x="558" y="196">version + effective</text>
+  <text class="sb" x="558" y="212">date on every page</text>
+  <text class="law" x="558" y="244">Notice before effect</text>
+
+  <rect class="stage" x="790" y="110" width="170" height="150" rx="10"/>
+  <text class="st" x="808" y="140">4. Termination</text>
+  <text class="sb" x="808" y="164">Leave at any time;</text>
+  <text class="sb" x="808" y="180">erase profile with</text>
+  <text class="sb" x="808" y="196">one click; sessions</text>
+  <text class="sb" x="808" y="212">revoked on logout</text>
+  <text class="law" x="808" y="244">Exit and erasure</text>
+
+  <line class="flow" x1="252" y1="185" x2="286" y2="185"/>
+  <line class="flow" x1="502" y1="185" x2="536" y2="185"/>
+  <line class="flow" x1="752" y1="185" x2="786" y2="185"/>
+
+  <rect class="base" x="40" y="300" width="920" height="60" rx="12"/>
+  <text class="bt" x="64" y="326">Foundation: governing law and dispute resolution</text>
+  <text class="law" x="64" y="346">GDPR-level baseline for all users · hosted instance operated from Taiwan · EU users keep GDPR rights</text>
+</svg>

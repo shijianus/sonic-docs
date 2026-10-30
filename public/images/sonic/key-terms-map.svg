@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Key terms map: legal terms family and technical terms family, used consistently across all documents, interpreted under the formal Chinese version">
+  <style>
+    .bg { fill: #f8fafc; }
+    .fam { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .fam-a { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+    .ft { font: 600 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .fb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .base { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
+    .bt { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .fam { fill: #111827; stroke: #1e293b; }
+      .fam-a { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .ft { fill: #f1f5f9; }
+      .fb { fill: #94a3b8; }
+      .law { fill: #60a5fa; }
+      .base { fill: #111827; stroke: #1e293b; }
+      .bt { fill: #f1f5f9; }
+    }
+  </style>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <rect class="fam-a" x="60" y="50" width="430" height="250" rx="12"/>
+  <text class="ft" x="84" y="80">Legal terms (GDPR vocabulary)</text>
+  <text class="fb" x="84" y="106">personal data · processing · controller</text>
+  <text class="fb" x="84" y="124">processor · data subject · consent</text>
+  <text class="fb" x="84" y="150">personal data breach · supervisory</text>
+  <text class="fb" x="84" y="168">authority · international transfer</text>
+  <text class="fb" x="84" y="194">profiling · pseudonymisation ·</text>
+  <text class="fb" x="84" y="212">special categories of data</text>
+  <text class="law" x="84" y="244">Art. 4 definitions · Art. 5 principles</text>
+  <text class="law" x="84" y="262">Art. 6 legal bases · Art. 28 processors</text>
+  <text class="law" x="84" y="280">Chapter V transfers · Art. 77 remedies</text>
+
+  <rect class="fam" x="510" y="50" width="430" height="250" rx="12"/>
+  <text class="ft" x="534" y="80">Technical terms</text>
+  <text class="fb" x="534" y="106">OAuth 2.0 + PKCE · HMAC-SHA256 ·</text>
+  <text class="fb" x="534" y="124">jti / kid (key claims) · SSRF · Rate limit</text>
+  <text class="fb" x="534" y="150">SQLite WAL · Circuit breaker (CLOSED /</text>
+  <text class="fb" x="534" y="168">OPEN / HALF_OPEN) · Range 206 ·</text>
+  <text class="fb" x="534" y="194">YRC / QRC / KRC word-level lyrics ·</text>
+  <text class="fb" x="534" y="212">TTML · trial detection · free-match</text>
+  <text class="law" x="534" y="244">Defined as used in the source code;</text>
+  <text class="law" x="534" y="262">figures checked against the repository</text>
+  <text class="law" x="534" y="280">on every release</text>
+
+  <rect class="base" x="60" y="322" width="880" height="46" rx="12"/>
+  <text class="bt" x="84" y="344">Rule of interpretation: one term, one meaning, everywhere</text>
+  <text class="law" x="700" y="344">Formal version: Simplified Chinese</text>
+</svg>

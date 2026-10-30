@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Four security layers: transport encryption, authentication and signing, SSRF defence at the edge, and isolated storage, plus user-controlled erasure">
+  <style>
+    .bg { fill: #f8fafc; }
+    .layer { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .layer-accent { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+    .lt { font: 600 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .lb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .side { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
+    .st { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .sb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .layer { fill: #111827; stroke: #1e293b; }
+      .layer-accent { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .lt { fill: #f1f5f9; }
+      .lb { fill: #94a3b8; }
+      .law { fill: #60a5fa; }
+      .side { fill: #111827; stroke: #1e293b; }
+      .st { fill: #f1f5f9; }
+      .sb { fill: #94a3b8; }
+    }
+  </style>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <rect class="layer" x="60" y="46" width="640" height="64" rx="10"/>
+  <text class="lt" x="84" y="72">L1 · Transport — TLS everywhere</text>
+  <text class="lb" x="84" y="92">HTTPS enforced end to end; cookies issued only as HttpOnly · Secure · SameSite=Lax</text>
+
+  <rect class="layer-accent" x="60" y="122" width="640" height="64" rx="10"/>
+  <text class="lt" x="84" y="148">L2 · Authentication and signing</text>
+  <text class="lb" x="84" y="168">HMAC-SHA256 versioned API keys; PKCE + state OAuth flow; keys never placed in URLs or localStorage</text>
+
+  <rect class="layer" x="60" y="198" width="640" height="64" rx="10"/>
+  <text class="lt" x="84" y="224">L3 · Edge defence — SSRF blocking</text>
+  <text class="lb" x="84" y="244">Loopback, RFC 1918, Docker bridges and cloud metadata addresses denied; re-validated on every redirect</text>
+
+  <rect class="layer" x="60" y="274" width="640" height="64" rx="10"/>
+  <text class="lt" x="84" y="300">L4 · Storage isolation</text>
+  <text class="lb" x="84" y="320">SQLite (WAL) on the data plane only; engine reachable through an encrypted tunnel with a service key; secrets in env vars</text>
+
+  <rect class="side" x="730" y="46" width="240" height="292" rx="12"/>
+  <text class="st" x="752" y="76">You are in control</text>
+  <text class="sb" x="752" y="100">One-click profile erasure</text>
+  <text class="sb" x="752" y="118">(DELETE /api/sonic/events)</text>
+  <text class="sb" x="752" y="144">Local mode / incognito</text>
+  <text class="sb" x="752" y="162">playback without events</text>
+  <text class="sb" x="752" y="188">Logout revokes the session</text>
+  <text class="sb" x="752" y="206">and jti immediately</text>
+  <text class="law" x="752" y="240">Art. 25 — by design,</text>
+  <text class="law" x="752" y="256">by default</text>
+  <text class="law" x="752" y="280">Art. 32 — security</text>
+  <text class="law" x="752" y="296">of processing</text>
+  <text class="law" x="752" y="320">Art. 17 — erasure</text>
+</svg>

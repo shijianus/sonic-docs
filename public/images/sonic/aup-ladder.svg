@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Enforcement ladder of the Acceptable Use Policy: notice, throttling, suspension, termination, legal referral, with an appeal loop back to the operator">
+  <style>
+    .bg { fill: #f8fafc; }
+    .rung { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .rung-top { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+    .rt { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .rb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .flow { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#ar); }
+    .arrowhead { fill: #94a3b8; }
+    .zero { fill: #fef2f2; stroke: #fca5a5; stroke-width: 1.5; }
+    .zt { font: 600 11px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #b91c1c; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .rung { fill: #111827; stroke: #1e293b; }
+      .rung-top { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .rt { fill: #f1f5f9; }
+      .rb { fill: #94a3b8; }
+      .law { fill: #60a5fa; }
+      .flow { stroke: #475569; }
+      .arrowhead { fill: #475569; }
+      .zero { fill: rgba(248,113,113,0.12); stroke: #7f1d1d; }
+      .zt { fill: #fca5a5; }
+    }
+  </style>
+  <defs>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" class="arrowhead"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <text class="rt" x="60" y="48" font-size="15">Enforcement ladder — proportionate, appealable, documented</text>
+
+  <rect class="rung" x="60" y="70" width="180" height="96" rx="10"/>
+  <text class="rt" x="78" y="98">1. Notice</text>
+  <text class="rb" x="78" y="120">Warning message in</text>
+  <text class="rb" x="78" y="136">the player; reason</text>
+  <text class="rb" x="78" y="152">stated</text>
+
+  <rect class="rung" x="270" y="70" width="180" height="96" rx="10"/>
+  <text class="rt" x="288" y="98">2. Throttling</text>
+  <text class="rb" x="288" y="120">Rate limit lowered</text>
+  <text class="rb" x="288" y="136">(below the standard</text>
+  <text class="rb" x="288" y="152">anonymous/auth caps)</text>
+
+  <rect class="rung" x="480" y="70" width="180" height="96" rx="10"/>
+  <text class="rt" x="498" y="98">3. Suspension</text>
+  <text class="rb" x="498" y="120">Sessions and API keys</text>
+  <text class="rb" x="498" y="136">temporarily blocked;</text>
+  <text class="rb" x="498" y="152">data retained</text>
+
+  <rect class="rung-top" x="690" y="70" width="180" height="96" rx="10"/>
+  <text class="rt" x="708" y="98">4. Termination</text>
+  <text class="rb" x="708" y="120">Access ended; profile</text>
+  <text class="rb" x="708" y="136">erased after the</text>
+  <text class="rb" x="708" y="152">retention window</text>
+
+  <rect class="rung" x="60" y="196" width="810" height="58" rx="10"/>
+  <text class="rt" x="78" y="222">5. Evidence preservation and legal referral</text>
+  <text class="rb" x="78" y="242">Where the law requires, records are preserved and transmitted to competent authorities through legal process</text>
+
+  <rect class="zero" x="60" y="284" width="560" height="76" rx="10"/>
+  <text class="zt" x="78" y="310">Zero-tolerance channel: child sexual abuse material, terrorism promotion, circumvention attacks</text>
+  <text class="rb" x="78" y="330" fill="#64748b">Immediate suspension and referral; no notice period</text>
+  <rect class="rung" x="640" y="284" width="230" height="76" rx="10"/>
+  <text class="rt" x="658" y="310">Appeal path</text>
+  <text class="rb" x="658" y="330">Reply within a reasonable time</text>
+
+  <path class="flow" d="M 240 118 L 266 118"/>
+  <path class="flow" d="M 450 118 L 476 118"/>
+  <path class="flow" d="M 660 118 L 686 118"/>
+  <path class="flow" d="M 640 322 C 480 322, 420 240, 150 172"/>
+</svg>

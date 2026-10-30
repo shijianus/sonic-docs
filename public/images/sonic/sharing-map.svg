@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Map of third-party sharing: processors under contract, identity provider, user-triggered upstream services, optional providers, and lawful requests">
+  <style>
+    .bg { fill: #f8fafc; }
+    .hub { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.8; }
+    .ch { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .ct { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .cb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .opt { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #b45309; }
+    .flow { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#ar); }
+    .arrowhead { fill: #94a3b8; }
+    .ht { font: 600 14px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .hb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .hub { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .ch { fill: #111827; stroke: #1e293b; }
+      .ct { fill: #f1f5f9; }
+      .cb { fill: #94a3b8; }
+      .law { fill: #60a5fa; }
+      .opt { fill: #fbbf24; }
+      .flow { stroke: #475569; }
+      .arrowhead { fill: #475569; }
+      .ht { fill: #f1f5f9; }
+      .hb { fill: #94a3b8; }
+    }
+  </style>
+  <defs>
+    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" class="arrowhead"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <rect class="hub" x="380" y="150" width="240" height="120" rx="14"/>
+  <text class="ht" x="404" y="186">Sonic operator</text>
+  <text class="hb" x="404" y="210">Controller for the hosted</text>
+  <text class="hb" x="404" y="226">instances; self-hosters are</text>
+  <text class="hb" x="404" y="242">their own controllers</text>
+
+  <rect class="ch" x="40" y="40" width="270" height="86" rx="10"/>
+  <text class="ct" x="60" y="66">A · Processors under contract</text>
+  <text class="cb" x="60" y="88">Cloudflare — edge, hosting, tunnel,</text>
+  <text class="cb" x="60" y="104">rate limiting; Art. 28 processor terms</text>
+  <text class="law" x="60" y="120">Necessary · always on</text>
+
+  <rect class="ch" x="40" y="152" width="270" height="86" rx="10"/>
+  <text class="ct" x="60" y="178">B · Identity provider</text>
+  <text class="cb" x="60" y="200">Epomail (mail.epocanvas.com) —</text>
+  <text class="cb" x="60" y="216">OAuth 2.0 + PKCE, returns an ID only</text>
+  <text class="law" x="60" y="232">Necessary · your login choice</text>
+
+  <rect class="ch" x="40" y="264" width="270" height="86" rx="10"/>
+  <text class="ct" x="60" y="290">C · Music and lyrics sources</text>
+  <text class="cb" x="60" y="312">Official music CDNs; NetEase, QQ,</text>
+  <text class="cb" x="60" y="328">Kugou, Kuwo APIs; AMLL / LRCLIB</text>
+  <text class="law" x="60" y="344">Query-driven · no account data sent</text>
+
+  <rect class="ch" x="690" y="40" width="270" height="86" rx="10"/>
+  <text class="ct" x="710" y="66">D · Optional providers</text>
+  <text class="cb" x="710" y="88">GDStudio / Lyriva aggregation and</text>
+  <text class="cb" x="710" y="104">free-match fallback</text>
+  <text class="opt" x="710" y="120">Default OFF · env-gated</text>
+
+  <rect class="ch" x="690" y="152" width="270" height="86" rx="10"/>
+  <text class="ct" x="710" y="178">E · Lawful requests</text>
+  <text class="cb" x="710" y="200">Data released only upon concrete</text>
+  <text class="cb" x="710" y="216">legal basis; notice to you where allowed</text>
+  <text class="law" x="710" y="232">Exception · documented</text>
+
+  <rect class="ch" x="690" y="264" width="270" height="86" rx="10"/>
+  <text class="ct" x="710" y="290">F · International transfers</text>
+  <text class="cb" x="710" y="312">Cloudflare global network; SCCs,</text>
+  <text class="cb" x="710" y="328">SOC 2 Type II, ISO/IEC 27001</text>
+  <text class="law" x="710" y="344">Art. 44–46 safeguards</text>
+
+  <line class="flow" x1="310" y1="83" x2="376" y2="160"/>
+  <line class="flow" x1="310" y1="195" x2="376" y2="205"/>
+  <line class="flow" x1="310" y1="307" x2="376" y2="255"/>
+  <line class="flow" x1="690" y1="83" x2="624" y2="160"/>
+  <line class="flow" x1="690" y1="195" x2="624" y2="205"/>
+  <line class="flow" x1="690" y1="307" x2="624" y2="255"/>
+</svg>

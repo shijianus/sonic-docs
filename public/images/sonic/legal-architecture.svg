@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Legal document architecture: Terms of Service as the contract layer, Privacy Policy and Acceptable Use Policy as the policy layer, supporting documents below, all resting on the GDPR-level protection baseline">
+  <style>
+    .bg { fill: #f8fafc; }
+    .layer { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
+    .layer-contract { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+    .base { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
+    .title { font: 600 13.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
+    .item { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
+    .tag { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    .link { font: 600 11px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0b0f19; }
+      .layer { fill: #111827; stroke: #1e293b; }
+      .layer-contract { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
+      .base { fill: #111827; stroke: #1e293b; }
+      .title { fill: #f1f5f9; }
+      .item { fill: #94a3b8; }
+      .tag { fill: #60a5fa; }
+      .link { fill: #60a5fa; }
+    }
+  </style>
+  <rect class="bg" width="1000" height="400" rx="16"/>
+
+  <text class="title" x="60" y="52">Order of precedence — the document map</text>
+
+  <rect class="layer-contract" x="60" y="72" width="880" height="70" rx="12"/>
+  <text class="title" x="84" y="100">Contract layer — Terms of Service</text>
+  <text class="item" x="84" y="122">Acceptance · accounts (Epomail OAuth) · liability · amendments · termination</text>
+  <text class="link" x="760" y="100">/terms-of-service</text>
+
+  <rect class="layer" x="60" y="156" width="430" height="88" rx="12"/>
+  <text class="title" x="84" y="184">Policy layer — Privacy Policy</text>
+  <text class="item" x="84" y="206">What we collect · legal bases · your rights</text>
+  <text class="item" x="84" y="224">Retention · transfers · security</text>
+  <text class="link" x="84" y="238">/privacy-policy</text>
+
+  <rect class="layer" x="510" y="156" width="430" height="88" rx="12"/>
+  <text class="title" x="534" y="184">Policy layer — Acceptable Use Policy</text>
+  <text class="item" x="534" y="206">Prohibited conduct · enforcement ladder</text>
+  <text class="item" x="534" y="224">Appeals · content responsibility</text>
+  <text class="link" x="534" y="238">/acceptable-use</text>
+
+  <rect class="layer" x="60" y="258" width="286" height="64" rx="12"/>
+  <text class="title" x="84" y="284">Data Processing &amp; Security</text>
+  <text class="link" x="84" y="306">/data-security</text>
+  <rect class="layer" x="357" y="258" width="286" height="64" rx="12"/>
+  <text class="title" x="381" y="284">Third Parties &amp; Transfers</text>
+  <text class="link" x="381" y="306">/sub-processors</text>
+  <rect class="layer" x="654" y="258" width="286" height="64" rx="12"/>
+  <text class="title" x="678" y="284">Key Terms</text>
+  <text class="link" x="678" y="306">/key-terms</text>
+
+  <rect class="base" x="60" y="336" width="880" height="44" rx="12"/>
+  <text class="title" x="84" y="358">Baseline: GDPR-level protection applied to every user, everywhere (voluntary commitment)</text>
+  <text class="tag" x="770" y="358">Project Overview</text>
+</svg>
