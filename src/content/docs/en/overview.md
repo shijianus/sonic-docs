@@ -1,9 +1,9 @@
 ---
 title: Privacy & Terms Overview
-description: The Sonic legal documents overview — platform identity, data processing roles, document map, order of precedence, and contact points.
+description: The Sonic legal documents overview — platform identity, data processing roles, the GDPR-level baseline, document map, order of precedence, and contact points.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.0**
+**Effective date: 30 October 2026｜Version: 1.1**
 
 This page is the guide to all legal documents of the Sonic service (hereinafter "the service"). It explains the roles of the parties, the document architecture and the order of precedence. Before signing in to or using the service, you should read this page together with the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
 
@@ -17,6 +17,8 @@ Sonic is an open-source music streaming platform built on a two-plane architectu
 
 1. **Hosted instances**: public sites operated by the operations team (`sonic.epocanvas.tech` primary and `sonic.epocanvas.com` backup mirror);
 2. **Self-hosted instances**: private sites deployed by any individual, team or organization on their own servers and domains from the open-source code.
+
+Both forms run the same open-source code; they differ in the operator and the responsible party: the operations team bears responsibility for hosted instances, and the deployer for self-hosted ones.
 
 ## 2. Data processing roles
 
@@ -35,10 +37,11 @@ The legal documents on this site are organized by topic and refer to one another
 
 | Document | Content |
 | --- | --- |
+| [Project Overview](/en/project/) | Product identity, core capabilities, architecture, security and privacy design, deployment |
 | [Privacy Policy](/en/privacy-policy/) | Collection and use of personal data, legal bases, retention periods, your rights and international transfers |
 | [Terms of Service](/en/terms-of-service/) | Contractual conditions of use, account rules, limitation of liability, governing law and dispute resolution |
 | [Acceptable Use Policy](/en/acceptable-use/) | Behavioral boundaries, prohibited conduct, the enforcement ladder and appeals |
-| [Data Processing & Security](/en/data-security/) | Data lifecycle, processing matrix, security measures, incident response |
+| [Data Processing & Security](/en/data-security/) | Data lifecycle, processing matrix, security measures, known limitations, incident response |
 | [Third Parties & Transfers](/en/sub-processors/) | Recipients, data involved, transfer safeguard mechanisms |
 | [Key Terms](/en/key-terms/) | Definitions of the legal terms (GDPR vocabulary) and technical terms used on this site |
 
@@ -49,6 +52,8 @@ The service applies the EU General Data Protection Regulation (GDPR) as the **mi
 1. For users in the European Union and the European Economic Area, the GDPR applies directly;
 2. For users elsewhere, the service carries the GDPR standard as a self-imposed commitment and performs it as a contractual obligation;
 3. Where the law of your location grants stronger protection, that law prevails to its extent.
+
+This baseline means: although the hosted instance is operated from Taiwan and the governing law of the Terms of Service is that of the operator's location (see the [Terms of Service](/en/terms-of-service/), section 11), data protection matters are executed with the GDPR level as the floor; rights enforcement, breach notification and security duties all follow this standard.
 
 ## 5. Order of precedence
 

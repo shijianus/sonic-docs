@@ -1,9 +1,9 @@
 ---
 title: 第三方共享与传输清单
-description: Sonic 第三方共享与传输清单——受托处理者、身份提供方、上游内容来源、可选链路与国际传输保障。
+description: Sonic 第三方共享与传输清单——受托处理者、身份提供方、上游内容来源、可选链路、法律要求与国际传输保障。
 ---
 
-**生效日期：2026 年 10 月 30 日｜版本：1.0**
+**生效日期：2026 年 10 月 30 日｜版本：1.1**
 
 本页完整列出 Sonic 服务（下称「本服务」）与第三方共享个人资料之全部情形，包括共享对象、涉及资料与保障机制。本页是[隐私政策](/privacy-policy/)第 7 节之展开；共享原则为最小必要：不出售个人资料、不为广告共享、不超出服务功能所需。
 
@@ -15,47 +15,49 @@ description: Sonic 第三方共享与传输清单——受托处理者、身份�
 
 | 对象 | 服务内容 | 涉及资料 | 保障机制 |
 | --- | --- | --- | --- |
-| Cloudflare（Pages、Functions、Tunnel、KV、限流器） | 边缘托管、路由、缓存、加密隧道、限流基础设施 | 请求元数据、限流暂存记录（IP 键 120 秒过期）、会话 Cookie 之处理 | GDPR 第 28 条受托处理条款；SOC 2 Type II、ISO/IEC 27001；欧盟标准合同条款 |
+| Cloudflare Pages 与 Functions | 前端托管、边缘 API 闸道、限流执行 | 请求元数据、限流暂存记录 | GDPR 第 28 条受托处理条款 |
+| Cloudflare Tunnel | 控制面与数据面之加密通道 | 加密流量元数据 | 同上 |
+| Cloudflare KV 与限流器 | 限流计数（120 秒过期）、金钥即时撤销记录（如启用） | IP 限流键、`jti` 撤销记录 | 同上 |
 
-Cloudflare 以受托处理者身份仅依运营者之指示处理资料。Cloudflare 依其自身政策处理之网络层请求元数据，见其隐私政策之说明。
+Cloudflare 整体持有 SOC 2 Type II 与 ISO/IEC 27001 认证，并以欧盟标准合同条款覆盖跨境传输。Cloudflare 依其自身政策处理之网络层请求元数据，见其隐私政策之说明。
 
 ## 2. 身份提供方（登录所必需）
 
 | 对象 | 服务内容 | 涉及资料 | 说明 |
 | --- | --- | --- | --- |
-| Epomail（`mail.epocanvas.com`） | OAuth 2.0（PKCE）登录与身份验证 | 登录时返回：用户标识符、电子邮件地址（须经验证）、昵称、头像链接、帐户角色 | 电子邮件不写入本服务数据库，仅用于会话内派生哈希；您与 Epomail 间之资料处理适用其隐私政策 |
+| Epomail（`mail.epocanvas.com`） | OAuth 2.0（PKCE）登录与身份验证：授权、令牌交换、userinfo 查询（携带访问令牌） | 登录时返回：用户标识符、电子邮件地址（须经验证）、昵称、头像链接、帐户角色 | 电子邮件不写入本服务数据库，仅用于会话内派生哈希；您与 Epomail 间之资料处理适用其隐私政策 |
 
 ## 3. 上游内容来源（查询驱动，不含用户身份）
 
 下列对象接收之请求仅含歌曲查询参数、固定 User-Agent 与对应官网 Referer，**不包含您的帐户资料、Cookie 或 IP 地址**：
 
-| 对象 | 服务内容 | 默认状态 |
-| --- | --- | --- |
-| 网易云音乐（`music.163.com` 等，及数据面内网 sidecar） | 检索、播放地址、逐字歌词（YRC）、封面 | 开启 |
-| QQ 音乐（`c.y.qq.com`、`u.y.qq.com`、`y.gtimg.cn` 等） | 检索、播放地址、逐字歌词（QRC）、封面 | 开启 |
-| 酷狗音乐（`mobilecdn.kugou.com`、`lyrics.kugou.com` 等） | 检索、播放地址、逐字歌词（KRC） | 开启 |
-| 酷我音乐（`www.kuwo.cn`、`search.kuwo.cn` 等） | 检索、播放地址、封面 | 开启 |
-| AMLL（`api.amll.dev`） | 逐字歌词（TTML）补位 | 开启 |
-| LRCLIB（`lrclib.net`） | 同步歌词补位 | 开启 |
-| 各官方内容 CDN（`music.126.net`、`ws.stream.qqmusic.qq.com` 等） | 音频流与封面（默认经本服务边缘代理拉取） | 开启 |
+| 对象 | 服务内容 | 代表域名 | 默认状态 |
+| --- | --- | --- | --- |
+| 网易云音乐 | 检索、播放地址、逐字歌词（YRC）、封面 | `music.163.com`、`interface3.music.163.com`；另经数据面内网 ncm-api 辅助容器 | 开启 |
+| QQ 音乐 | 检索、播放地址、逐字歌词（QRC）、封面 | `c.y.qq.com`、`u.y.qq.com`、`y.gtimg.cn`、`ws.stream.qqmusic.qq.com` | 开启 |
+| 酷狗音乐 | 检索、播放地址、逐字歌词（KRC） | `m.kugou.com`、`mobilecdn.kugou.com`、`songsearch.kugou.com`、`lyrics.kugou.com` | 开启 |
+| 酷我音乐 | 检索、播放地址、封面 | `www.kuwo.cn`、`m.kuwo.cn`、`search.kuwo.cn` | 开启 |
+| AMLL | 逐字歌词（TTML）补位 | `api.amll.dev` | 开启 |
+| LRCLIB | 同步歌词补位 | `lrclib.net` | 开启 |
+| 各官方内容 CDN | 音频流与封面（默认经本服务边缘代理拉取） | `music.126.net`、`ws.stream.qqmusic.qq.com` 等 | 开启 |
 
 说明：
 
-1. 上游请求之出口 IP 标示为部署者配置之占位地址（默认 RFC 5737 文档地址），非任何用户之 IP；
-2. 音频流默认经边缘代理取得，上游 CDN 仅见代理服务器之地址；您主动调用 `?mode=redirect` 直连模式时，您的浏览器与该 CDN 直接建立连接，您的 IP 对该 CDN 可见（302 重新导向之固有语义）；
-3. 部署者得以自有会员凭证（如 `NETEASE_COOKIE`）挂载其授权目录；该凭证为部署者之帐户资料，与终端用户无关。
+1. 上游请求之出口 IP 标示为部署者配置之占位地址（缺省 RFC 5737 文档地址），非任何用户之 IP；
+2. 音频流默认经边缘代理取得，上游 CDN 仅见代理服务器之地址；您主动调用 `?mode=redirect` 直连模式时，您的浏览器与该 CDN 直接建立连接，您的 IP 对该 CDN 可见（302 重新导向之固有语义）；网页播放器不使用该模式；
+3. 部署者得以自有会员凭证（`NETEASE_COOKIE`／`QQ_COOKIE`／`KUGOU_COOKIE`）挂载其授权目录；该凭证为部署者之帐户资料，与终端用户无关，代码不内置任何真实帐号 Cookie。
 
 ## 4. 默认关闭之可选链路
 
 下列链路默认严格关闭，仅在部署者显式开启后发生：
 
-| 对象 | 服务内容 | 涉及资料 | 开关 |
+| 对象 | 服务内容 | 涉及资料 | 开关与缺省值 |
 | --- | --- | --- | --- |
-| GDStudio（`music-api.gdstudio.xyz`） | 第三方聚合检索 | 仅歌曲标识与类型参数 | `SONIC_ENABLE_GDSTUDIO`，默认 0 |
-| Lyriva（`api.lyriva.xyz`） | 歌词备源 | 仅歌曲标识参数 | `SONIC_ENABLE_LYRIVA`，默认 0 |
-| ListenBrainz / MusicBrainz | 相似艺人增强 | 仅艺人/录音标识 | `SONIC_ENABLE_LISTENBRAINZ`，默认 0 |
-| 跨源补齐 | 试听曲目之全曲匹配 | 仅歌曲元数据 | 跨源匹配开关，默认开启（不涉身份资料） |
-| Gorse（自建推荐引擎） | 外部协同过滤 | 假名化哈希标识符（`subject_key`）与行为反馈 | `SONIC_GORSE_URL`，默认空 |
+| GDStudio（`music-api.gdstudio.xyz`） | 第三方聚合检索与跨源补齐备选 | 仅歌曲标识、类型与来源参数 | `SONIC_ENABLE_GDSTUDIO`，缺省 0 |
+| Lyriva（`api.lyriva.xyz`） | 歌词备源 | 仅歌曲标识参数 | `SONIC_ENABLE_LYRIVA`，缺省 0 |
+| ListenBrainz / MusicBrainz（`labs.api.listenbrainz.org` 等） | 相似艺人增强 | 仅艺人／录音标识 | `SONIC_ENABLE_LISTENBRAINZ`，缺省 0 |
+| 跨源补齐 | 试听曲目之跨平台全曲匹配（QQ／酷狗／酷我免费全曲） | 仅歌曲元数据（时长、标题、歌手） | 缺省开启，不涉身份资料 |
+| Gorse（部署者自建推荐引擎） | 外部协同过滤 | 假名化哈希标识符（`subject_key`）与行为反馈 | `SONIC_GORSE_URL`，缺省空 |
 
 ## 5. 法律要求下之共享
 

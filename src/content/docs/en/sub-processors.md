@@ -1,9 +1,9 @@
 ---
 title: Third Parties & Transfers
-description: The Sonic list of third-party sharing and international transfers — processors, identity provider, upstream content sources, optional chains and transfer safeguards.
+description: The Sonic list of third-party sharing and international transfers — processors, identity provider, upstream content sources, optional chains, lawful requests and transfer safeguards.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.0**
+**Effective date: 30 October 2026｜Version: 1.1**
 
 This page lists every situation in which the Sonic service (hereinafter "the service") shares personal data with third parties, the data involved and the safeguard mechanisms. It expands section 7 of the [Privacy Policy](/en/privacy-policy/). The sharing principle is minimum necessity: personal data is never sold, never shared for advertising, and never shared beyond what the service functions require.
 
@@ -15,47 +15,49 @@ This page lists every situation in which the Sonic service (hereinafter "the ser
 
 | Recipient | Service | Data involved | Safeguards |
 | --- | --- | --- | --- |
-| Cloudflare (Pages, Functions, Tunnel, KV, rate limiter) | Edge hosting, routing, caching, encrypted tunnel, rate-limiting infrastructure | Request metadata, transient rate-limit records (IP keys expiring after 120 seconds), processing of the session cookie | Article 28 processor terms of the GDPR; SOC 2 Type II, ISO/IEC 27001; EU Standard Contractual Clauses |
+| Cloudflare Pages and Functions | Front-end hosting, edge API gateway, rate-limit enforcement | Request metadata, transient rate-limit records | Article 28 processor terms of the GDPR |
+| Cloudflare Tunnel | Encrypted channel between control plane and data plane | Encrypted traffic metadata | Same as above |
+| Cloudflare KV and rate limiter | Rate-limit counters (expiring after 120 seconds), instant key-revocation records (when enabled) | IP rate-limit keys, `jti` revocation records | Same as above |
 
-Cloudflare processes data as a processor only on the operator's instructions. Network-layer request metadata that Cloudflare handles under its own policies is described in its privacy policy.
+Cloudflare as a whole holds SOC 2 Type II and ISO/IEC 27001 certifications and covers cross-border transfers with the EU Standard Contractual Clauses. Network-layer request metadata that Cloudflare handles under its own policies is described in its privacy policy.
 
 ## 2. Identity provider (required for sign-in)
 
 | Recipient | Service | Data involved | Notes |
 | --- | --- | --- | --- |
-| Epomail (`mail.epocanvas.com`) | OAuth 2.0 (PKCE) sign-in and identity verification | Returned at sign-in: user identifier, e-mail address (verified), nickname, avatar link, account role | The e-mail address is never written into the service's database and is used only to derive hashes within sessions; the processing between you and Epomail is governed by its privacy policy |
+| Epomail (`mail.epocanvas.com`) | OAuth 2.0 (PKCE) sign-in and identity verification: authorization, token exchange, userinfo query (carrying the access token) | Returned at sign-in: user identifier, e-mail address (verified), nickname, avatar link, account role | The e-mail address is never written into the service's database and is used only to derive hashes within sessions; the processing between you and Epomail is governed by its privacy policy |
 
 ## 3. Upstream content sources (query-driven, no user identity)
 
 The following recipients receive requests containing only song query parameters with a fixed User-Agent and the corresponding official Referer — **never your account data, cookies or IP address**:
 
-| Recipient | Service | Default state |
-| --- | --- | --- |
-| NetEase Cloud Music (`music.163.com` and others, plus the data-plane internal sidecar) | Search, playback addresses, word-level lyrics (YRC), covers | On |
-| QQ Music (`c.y.qq.com`, `u.y.qq.com`, `y.gtimg.cn` and others) | Search, playback addresses, word-level lyrics (QRC), covers | On |
-| Kugou Music (`mobilecdn.kugou.com`, `lyrics.kugou.com` and others) | Search, playback addresses, word-level lyrics (KRC) | On |
-| Kuwo Music (`www.kuwo.cn`, `search.kuwo.cn` and others) | Search, playback addresses, covers | On |
-| AMLL (`api.amll.dev`) | Word-level lyrics (TTML) fallback | On |
-| LRCLIB (`lrclib.net`) | Synced-lyrics fallback | On |
-| Official content CDNs (`music.126.net`, `ws.stream.qqmusic.qq.com` and others) | Audio streams and covers (proxied by the service's edge by default) | On |
+| Recipient | Service | Representative domains | Default state |
+| --- | --- | --- | --- |
+| NetEase Cloud Music | Search, playback addresses, word-level lyrics (YRC), covers | `music.163.com`, `interface3.music.163.com`; plus the data-plane internal ncm-api helper | On |
+| QQ Music | Search, playback addresses, word-level lyrics (QRC), covers | `c.y.qq.com`, `u.y.qq.com`, `y.gtimg.cn`, `ws.stream.qqmusic.qq.com` | On |
+| Kugou Music | Search, playback addresses, word-level lyrics (KRC) | `m.kugou.com`, `mobilecdn.kugou.com`, `songsearch.kugou.com`, `lyrics.kugou.com` | On |
+| Kuwo Music | Search, playback addresses, covers | `www.kuwo.cn`, `m.kuwo.cn`, `search.kuwo.cn` | On |
+| AMLL | Word-level lyrics (TTML) fallback | `api.amll.dev` | On |
+| LRCLIB | Synced-lyrics fallback | `lrclib.net` | On |
+| Official content CDNs | Audio streams and covers (proxied by the service's edge by default) | `music.126.net`, `ws.stream.qqmusic.qq.com` and others | On |
 
 Notes:
 
 1. The egress IP marked on upstream requests is the deployer-configured placeholder address (a documentation address under RFC 5737 by default), never the IP of any user;
-2. Audio streams are fetched through the edge proxy by default, so upstream CDNs see only the proxy's address; when you actively invoke the `?mode=redirect` direct mode, your browser connects straight to that CDN and your IP becomes visible to it (an inherent property of 302 redirects);
-3. Deployers may mount their own licensed catalogue with their own membership credentials (such as `NETEASE_COOKIE`); those credentials are the deployer's account data, unrelated to end users.
+2. Audio streams are fetched through the edge proxy by default, so upstream CDNs see only the proxy's address; when you actively invoke the `?mode=redirect` direct mode, your browser connects straight to that CDN and your IP becomes visible to it (an inherent property of 302 redirects); the web player never uses this mode;
+3. Deployers may mount their own licensed catalogue with their own membership credentials (`NETEASE_COOKIE`／`QQ_COOKIE`／`KUGOU_COOKIE`); those credentials are the deployer's account data, unrelated to end users, and the code embeds no real account cookies.
 
 ## 4. Optional chains (off by default)
 
 The following chains are strictly disabled by default and occur only when the deployer explicitly enables them:
 
-| Recipient | Service | Data involved | Switch |
+| Recipient | Service | Data involved | Switch and default |
 | --- | --- | --- | --- |
-| GDStudio (`music-api.gdstudio.xyz`) | Third-party aggregated search | Song identifiers and type parameters only | `SONIC_ENABLE_GDSTUDIO`, default 0 |
+| GDStudio (`music-api.gdstudio.xyz`) | Third-party aggregated search and a cross-source completion alternative | Song identifiers, type and source parameters only | `SONIC_ENABLE_GDSTUDIO`, default 0 |
 | Lyriva (`api.lyriva.xyz`) | Lyrics backup source | Song identifier parameters only | `SONIC_ENABLE_LYRIVA`, default 0 |
-| ListenBrainz / MusicBrainz | Similar-artist enrichment | Artist／recording identifiers only | `SONIC_ENABLE_LISTENBRAINZ`, default 0 |
-| Cross-source completion | Full-track matching for trial clips | Track metadata only | Cross-source matching switch, default on (no identity data involved) |
-| Gorse (self-built recommendation engine) | External collaborative filtering | Pseudonymous hash identifier (`subject_key`) and behavioral feedback | `SONIC_GORSE_URL`, default empty |
+| ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org` and others) | Similar-artist enrichment | Artist／recording identifiers only | `SONIC_ENABLE_LISTENBRAINZ`, default 0 |
+| Cross-source completion | Cross-platform full-track matching for trial clips (free full tracks on QQ／Kugou／Kuwo) | Track metadata only (duration, title, artist) | On by default; no identity data involved |
+| Gorse (deployer-built recommendation engine) | External collaborative filtering | Pseudonymous hash identifier (`subject_key`) and behavioral feedback | `SONIC_GORSE_URL`, default empty |
 
 ## 5. Sharing under legal requirement
 

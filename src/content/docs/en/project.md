@@ -1,11 +1,11 @@
 ---
 title: Project Overview
-description: The epocanvas sonic project — product identity, two-plane architecture, core capabilities, compliance boundary, and reading guide.
+description: The epocanvas sonic project — product identity, core capabilities, architecture, recommendation engine, security and privacy design, fit, deployment, and reading guide.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.0**
+**Effective date: 30 October 2026｜Version: 1.1**
 
-This page introduces the epocanvas sonic project (hereinafter "Sonic" or "the project"): its product identity, system architecture, core capabilities and compliance boundary, together with a reading guide for this site. Whether you intend to use a hosted instance, deploy your own, or review our privacy and terms commitments, start here. The legal commitments are set out in the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
+This page introduces the epocanvas sonic project (hereinafter "Sonic" or "the project"): its product identity, core capabilities, system architecture, security and privacy design, fit and deployment, together with a reading guide for this site. Whether you intend to use a hosted instance, deploy your own, or review our privacy and terms commitments, start here. The legal commitments are set out in the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
 
 ![Sonic two-plane architecture: users connect to the Cloudflare edge control plane (routing, rate limiting, caching, circuit breaking); the Linux data plane performs protocol parsing, recommendation computation and SQLite storage; audio streams are proxied by the edge from official CDNs by default](/images/sonic/project-architecture.svg)
 
@@ -13,43 +13,123 @@ This page introduces the epocanvas sonic project (hereinafter "Sonic" or "the pr
 
 ## 1. Product identity
 
-Sonic is an independently developed multi-source music streaming platform and aggregation gateway, built on a two-plane architecture of a "Cloudflare edge control plane + Linux local protocol engine data plane". The project is open-source software; the source code is publicly available and anyone may deploy it.
+Sonic is an independently developed multi-source music streaming platform and aggregation gateway, built on a two-plane architecture of a "Cloudflare edge control plane + Linux local protocol engine data plane", designed for high-quality streaming, millisecond word-level lyrics and user-controllable recommendations. The project is open-source software; the source code is publicly available and anyone may deploy it.
 
 | Item | Description |
 | --- | --- |
 | Hosted instances | `sonic.epocanvas.tech` (primary) and `sonic.epocanvas.com` (backup mirror), operated by the operations team |
 | Self-hosted instances | Private instances deployed by any individual or organization from the open-source code; the deployer is the operator and data controller of that instance |
-| Source license | Governed by the `LICENSE` file at the repository root (MIT License); the project is positioned as a non-commercial open-source project; trademarks and brand marks are not licensed with the source code |
+| Source license | Governed by the `LICENSE` file at the repository root (MIT License); the project is positioned as a non-commercial open-source project, with a historical CC BY-NC-SA 4.0 intent stated in earlier READMEs — the `LICENSE` file governs pending the maintainer's decision; trademarks and brand marks are not licensed with the source code |
 | Sign-in | Epomail OAuth 2.0 (PKCE); the project maintains no separate registration system |
+| Software composition | Cloudflare Pages front end and edge functions (control plane), Node.js 22 local engine and ncm-api helper container (data plane), Vue 3 web player |
 
-## 2. System architecture
-
-The control plane (Cloudflare Pages Functions) handles routing, tiered rate limiting (240 rpm anonymous, 600 rpm authenticated), multi-tier caching and three-state circuit breaking (CLOSED／OPEN／HALF_OPEN). The data plane (a Docker Compose stack on a Linux node) runs the sonic-engine main container, a loopback-only ncm-api sidecar and SQLite 3 (WAL mode) persistence. The data plane connects through a Cloudflare Tunnel encrypted channel, and every request must pass service-key verification (X-Sonic-Engine-Key).
-
-Source resolution relies primarily on local native TypeScript protocol modules (the official open interfaces of NetEase, QQ, Kugou and Kuwo); the lyrics chain parses YRC／QRC／KRC word-level formats natively and falls back to AMLL TTML and LRCLIB. Third-party free aggregation upstreams (GDStudio, Lyriva) are strictly disabled by default. Audio streams are proxied from official CDNs by default with HTTP Range support; the operator may enable the 302 redirect mode for direct client pickup.
-
-## 3. Core capabilities
+## 2. Core capabilities
 
 | Capability | Description |
 | --- | --- |
-| Multi-source aggregated search | Simplified/traditional normalization, pinyin and initials lookup, alias-symmetric matching, spelling tolerance; parallel multi-source retrieval with normalized deduplication |
-| Word-level dynamic lyrics | Native parsing of NetEase YRC, QQ QRC and Kugou KRC; AMLL TTML and LRCLIB as fallbacks; translations and romanization supported |
-| Quality tiers and trial transparency | Strict distinction between complete tracks and 30-second trial clips, never presenting a trial as a full track; cross-source completion of trials can be triggered automatically (configurable) |
-| Smart recommendations and Auto DJ | A local recommendation engine based on playback, completion, skip, favorite and dislike signals; signal weights and noise-filtering rules are public in the source code |
-| One-click profile erasure | `DELETE /api/sonic/events` immediately destroys all behavioral features and records held about you in the recommendation engine |
+| Multi-source aggregated search | Fault-tolerant retrieval across all sources: simplified/traditional normalization, pinyin and initials lookup, artist alias-symmetric matching, edit-distance spelling tolerance, version recognition; parallel multi-source retrieval with normalized deduplication |
+| Word-level dynamic lyrics | Native reverse parsing of NetEase YRC, QQ QRC and Kugou KRC (XOR decryption + Deflate), continued by AMLL TTML and the LRCLIB global lyrics library; translations and romanization synchronized at millisecond level |
+| Quality tiers and trial transparency | Strict entity probing distinguishes complete tracks from official 30-second trial truncation, never presenting a trial as a full track; cross-source full-track completion for trials is triggered automatically (configurable) with the substitute source labelled |
+| Smart recommendations and Auto DJ | A lightweight local recommendation engine: multi-factor trending model, session search intent, behavioral feedback weighting, content similarity with MMR diversity re-ranking; no external big-data cluster required |
+| Behavioral event control | Playback, completion, skip, favorite and dislike signals can be switched off at any time; "one-click profile erasure" immediately destroys all behavioral records server-side |
 | Zero-trust security | HMAC-SHA256 versioned signed API keys, PKCE OAuth, full-chain SSRF interception, keys passed only in request headers |
+| Failover | When the data plane goes offline, the edge switches to degraded mode in 0ms with an explicit "degraded mode" notice, keeping already-loaded tracks playing |
 
-## 4. Content and copyright boundary
+## 3. Architecture overview
 
-Sonic is a search, aggregation and playback tool; it stores and hosts no music files. The rights in recordings, lyrics, covers and artist images belong to their respective owners; the project grants no sublicense to any music content. The project integrates no paywall-circumvention components; legitimately licensed member catalogues are mounted by deployers with their own authorization credentials, and public catalogues follow the official open protocols.
+### 3.1 Control plane (Cloudflare edge)
+
+The control plane runs on Cloudflare Pages and Pages Functions, performing:
+
+1. **Routing and authentication**: the single entry for API requests, auth checks and signed-key verification;
+2. **Tiered rate limiting**: 240 requests per minute anonymous, 600 per minute authenticated (defaults, configurable), plus a dedicated 30-per-minute-per-IP limit on authentication endpoints;
+3. **Multi-tier caching**: edge cache keyed `sonic:*` with an 8-minute fresh window and a stale fallback state after expiry;
+4. **Three-state circuit breaker**: 3 consecutive failures or a call exceeding the 4.5-second budget trips OPEN; further requests switch to the edge fallback (public QQ／Kugou search interfaces and AMLL／LRCLIB) in 0ms; after a 30-second cooldown it enters HALF_OPEN probing and closes on success. Degraded responses carry `X-Sonic-Degraded: 1` and the player shows a degradation capsule.
+
+### 3.2 Data plane (Linux protocol engine)
+
+The data plane is a Docker Compose stack on the operator's own Linux node:
+
+| Component | Description |
+| --- | --- |
+| sonic-engine main container | Node.js 22 HTTP service listening on port 8080, mapped only to `127.0.0.1` on the host; all `/api`, `/proxy` and `/palette` routes enforce the service key (X-Sonic-Engine-Key) |
+| ncm-api helper container | NetEase protocol helper reachable only inside the compose network (`ncm-api:3000`), never exposed publicly |
+| SQLite 3 (WAL mode) | Persistence for behavioral events and entity weights on the named volume `sonic-data` (`/app/data/sonic-recommend.sqlite` in the container); backups run as consistent snapshots (VACUUM INTO) with integrity checks |
+| Native protocol modules | Pure TypeScript parsing of NetEase linuxapi/eapi, QQ, Kugou KRC and Kuwo protocols |
+
+The control plane and data plane communicate through a Cloudflare Tunnel encrypted channel; the data plane has no direct public port exposure.
+
+### 3.3 Audio stream path
+
+Audio streams are fetched from official CDNs through the same-origin byte-range edge proxy by default, supporting HTTP `Range` and `206 Partial Content`: upstream CDNs see only the proxy's address and never the client IP. The `?mode=redirect` 302 direct mode is provided only for API users who explicitly request it (the web player never uses it); in direct mode your browser connects straight to the official CDN.
+
+## 4. Sources and lyrics chain
+
+| Source | Share | State |
+| --- | --- | --- |
+| Local native parsing (NetEase／QQ／Kugou／Kuwo official interfaces + ncm-api) | Main chain (over 90%) | On by default |
+| AMLL TTML word-level lyrics + LRCLIB synced lyrics | Lyrics fallback (about 10%) | On by default |
+| GDStudio／Lyriva third-party aggregation | Emergency backup | Strictly off by default |
+| ListenBrainz／MusicBrainz similar-artist enrichment | Optional enhancement | Off by default |
+
+Trial detection probes the audio entity's length and metadata to identify official 30-second truncation; the result is labelled transparently in the front end and may trigger cross-platform full-track matching (against free full tracks on QQ／Kugou／Kuwo), switching smoothly and labelling the substitute source on success. The project integrates no paywall-circumvention components.
+
+## 5. Recommendation engine
+
+The recommendation engine runs entirely on the data plane; signal weights are public in the source code:
+
+| Signal | Weight | Meaning |
+| --- | --- | --- |
+| favorite (add to favorites) | +4.0 | Very strong positive |
+| replay (replay) | +3.5 | Strong positive |
+| play_complete (valid completion) | +2.5 | Standard positive |
+| play_progress (listening progress) | +0.2 ～ +1.8 | Scored by listening ratio |
+| skip (fast skip) | -0.8 | Skipping past the halfway point counts +0.25 |
+| dislike (explicit reject) | -5.0 | Hard-filtered and blocklisted |
+
+Noise and false-signal purification: skips caused by network stalls (network_stall), decode failures (playback_error), trial truncation (trial_end), unavailable streams (stream_unavailable), buffer timeouts (buffer_timeout) or auto-switch failures (auto_switch_error) carry zero weight and are never stored.
+
+The trending model combines valid plays (35%), distinct listeners (25%), completion (20%), favorite conversion (15%) and growth slope (5%), with exponential time decay (a 24-hour surging chart and a 7-day cumulative chart) and Bayesian／Wilson Score smoothing; similarity blends the artist-relation graph with audio-feature cosine and applies MMR re-ranking to balance precision and diversity. Session-level search intent is decoupled from the long-term profile: only high-value actions such as completions and favorites settle into the long-term profile.
+
+## 6. Security design
+
+1. **Authentication**: Epomail OAuth 2.0 authorization-code flow with `state` and PKCE (S256) against code interception and replay; OAuth transactional cookies are valid for 600 seconds;
+2. **API keys**: the `sonic_live_v2.<header>.<payload>.<signature>` versioned format signed with HMAC-SHA256, payload carrying `sub`／`iat`／`exp`／`jti`／`kid`／`role`／`uid`; 30-day issue validity, 90-day validation cap; server-side constant-time comparison via Web Crypto; unsigned and legacy keys are always rejected (fail-closed); keys travel only in the `X-Sonic-Key` or `Authorization` header — the URL query channel has been removed entirely;
+3. **Revocation**: signing out immediately revokes the current session and key identifier (jti); the jti revocation list, subject revocation list and global minimum issuance time are supported, with instant revocation when a KV binding is configured;
+4. **Sessions**: the `HttpOnly; Secure; SameSite=Lax` `sonic_session` cookie, valid at most 30 days; keys are never written to URLs, localStorage or any script-readable store;
+5. **SSRF defence**: outbound requests to loopback addresses, RFC 1918 private ranges, Docker internal bridges and cloud metadata addresses (such as `169.254.169.254`) are always denied, with IPv4 and IPv6 checks and re-validation of the target and DNS resolution on every redirect.
+
+## 7. Privacy design
+
+1. **Pseudonymisation by default**: behavioral events are keyed by one-way hash identifiers from the moment of collection; e-mail addresses are never persisted;
+2. **Personalisation toggle**: you can switch personalisation off in the player settings at any time; when off, events are not stored, and public mode drops them server-side;
+3. **One-click erasure**: "clear recommendation profile" in settings immediately destroys all behavioral events server-side; "clear all local data" immediately clears browser local storage and IndexedDB;
+4. **Minimised logging**: data-plane access logs contain only path, method, status code and duration.
+
+The full privacy commitments are in the [Privacy Policy](/en/privacy-policy/); technical measures in [Data Processing & Security](/en/data-security/).
+
+## 8. Fit
+
+A good fit: personal listeners who sign in with their own Epomail account and care about recommendation-profile transparency and erasability; heavy listeners who need multi-source search and word-level lyrics; self-hosters with basic Linux and Docker skills who accept operator responsibilities.
+
+A poor fit: scenarios seeking commercial music licensing guarantees — the project stores and hosts no music and grants no content sublicenses; teams expecting an SLA or commercial support; users who cannot accept "trials labelled transparently, cross-source completion on a best-effort basis".
+
+## 9. Content and copyright boundary
+
+Sonic is a search, aggregation and playback tool; it stores and hosts no music files. The rights in recordings, lyrics, covers and artist images belong to their respective owners; the project grants no sublicense to any music content. Licensed member catalogues are mounted by deployers with their own credentials (such as `NETEASE_COOKIE`, which belongs to the deployer's account, not end users), and public catalogues follow the official open protocols.
 
 When using the service you must observe the [Acceptable Use Policy](/en/acceptable-use/); deployers are responsible for confirming that their use complies with local law, upstream terms of service and content licensing requirements.
 
-## 5. Privacy and data protection stance
+## 10. Deployment
 
-The project applies the EU General Data Protection Regulation (GDPR) as the minimum data protection standard for every user, wherever they live. The hosted instance collects no e-mail addresses, phone numbers or payment data; the scope of behavioral event collection, retention periods and rights enforcement are set out in the [Privacy Policy](/en/privacy-policy/), the technical measures in [Data Processing & Security](/en/data-security/), and the third-party sharing list in [Third Parties & Transfers](/en/sub-processors/).
+| Form | Composition | Notes |
+| --- | --- | --- |
+| Cloudflare Pages edge gateway | Front-end SPA + Pages Functions | Published with `wrangler pages deploy` after build; requires `SONIC_SECRET`, `SONIC_ENGINE_SECRET`, `SONIC_LOCAL_ENGINE_URL` |
+| Linux local protocol engine | sonic-engine + ncm-api + SQLite | Deployed with `docker compose up -d --build`; `.env` permissions 600; connected via Cloudflare Tunnel |
 
-## 6. Reading guide
+The two forms together make the complete service; an edge gateway without a data plane automatically runs in degraded mode. The full environment-variable list is in the upstream repository's `.env.example` and `docs/OPERATIONS.md`.
+
+## 11. Reading guide
 
 | Document | Content |
 | --- | --- |

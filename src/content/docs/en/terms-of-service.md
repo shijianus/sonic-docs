@@ -1,9 +1,9 @@
 ---
 title: Terms of Service
-description: The Sonic Terms of Service — acceptance, account rules, service description, limitation of liability, governing law and dispute resolution.
+description: The Sonic Terms of Service — acceptance, account rules, service description and degraded mode, behavioral data authorisation, limitation of liability, governing law and dispute resolution.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.0**
+**Effective date: 30 October 2026｜Version: 1.1**
 
 These terms are the agreement between you and the operator of the instance you use, concerning the use of the Sonic service (hereinafter "the service"). By completing sign-in or otherwise using the service, you confirm that you have read and accepted the entire content of these terms; if you do not agree, do not use the service.
 
@@ -19,39 +19,43 @@ These are standard terms, published in full for your review, with historical ver
 2. **Operator**: the individual or team that deploys and runs the instance you use. For the hosted instances (`sonic.epocanvas.tech`, `sonic.epocanvas.com`), the operations team; for self-hosted instances, their deployer.
 3. **You (the user)**: the natural person or organization that signs in to or otherwise uses the service.
 4. **Formation of the contract**: you form a contract with the operator of the instance at which you sign in. These terms are a common template: hosted instances apply them directly; self-hosted operators may adapt them for their own sites and must perform the notice duties required by the law applicable at their location.
+5. **Data plane**: the Linux node providing protocol parsing and recommendation computation for your instance; its being offline does not affect the degraded service described in section 4, item 2.
 
 ## 2. Description of the service
 
-The service provides multi-source aggregated search, word-level lyrics, quality-tiered playback, smart recommendations with Auto DJ sequencing, behavioral event management, edge-proxied audio streaming and other functions; the functions actually available depend on what the instance enables. The service is a search, aggregation and playback tool; it stores and hosts no music files; audio content is obtained from official CDNs and upstream open interfaces.
+The service provides multi-source aggregated search, word-level lyrics, quality-tiered playback, smart recommendations with Auto DJ sequencing, favorites and playlists, local music import, downloads, behavioral event management, edge-proxied audio streaming and other functions; the functions actually available depend on what the instance enables. The service is a search, aggregation and playback tool; it stores and hosts no music files; audio content is obtained from official CDNs and upstream open interfaces, and lyrics from native parsing and public lyrics libraries.
 
 The service is built on an open-source project and remains open-source: the source code is public and auditable, and you may deploy it yourself to obtain the same capabilities. The software is provided "as is", and its license is consistent with the liability terms of this agreement (section 10).
 
 ## 3. Accounts and security
 
-1. **Sign-in method**: the service signs you in with an Epomail account over OAuth 2.0 (PKCE) and maintains no separate registration system; the agreement between you and Epomail is governed by that service's terms.
+1. **Sign-in method**: the service signs you in with an Epomail account over OAuth 2.0 (PKCE) and maintains no separate registration system; the agreement between you and Epomail is governed by that service's terms. A frozen or closed Epomail account ends your sign-in to the service.
 2. **Eligibility**: you must be at least 16 years old; where the law of your location sets a lower age of consent for information society services (no lower than 13), that age applies, and children always require the consent of their guardian. Age is taken from your Epomail account data; the service maintains no separate age-verification mechanism.
-3. **Credential care**: you are responsible for safeguarding your Epomail credentials, API keys and session security. Operations performed with your credentials are presumed to be your own acts.
-4. **Session mechanism**: a successful sign-in issues an `HttpOnly; Secure; SameSite=Lax` session cookie; API keys are never written into URLs, query parameters or localStorage. You may sign out at any time; signing out immediately revokes the current session and its key identifier (jti).
-5. **Key issuance**: API keys use the HMAC-SHA256 versioned signed format; unsigned or revoked keys are always rejected. Re-issuing a key requires presenting the current valid key.
+3. **Credential care**: you are responsible for safeguarding your Epomail credentials, API keys and session security. Operations performed with your credentials are presumed to be your own acts. The session cookie contains the signed key — do not stay signed in on shared devices without signing out.
+4. **Session mechanism**: a successful sign-in issues an `HttpOnly; Secure; SameSite=Lax` session cookie (valid at most 30 days); API keys are never written into URLs, query parameters or localStorage. You may sign out at any time; signing out immediately revokes the current session and its key identifier (jti).
+5. **Key issuance**: API keys use the HMAC-SHA256 versioned signed format, with 30-day issue validity and a 90-day validation cap; unsigned or revoked keys are always rejected. Re-issuing a key requires presenting the current valid key; if a key leaks, sign out immediately and request revocation.
+6. **Sign-in protection**: the OAuth callback passes four checks — state, PKCE, the authorization code and replay; authentication endpoints are rate-limited at 30 requests per minute per IP.
 
 ## 4. Provision and change of the service
 
 1. **Availability**: the operator makes reasonable efforts to keep the service available, but promises no specific availability rate, buffering latency or recovery time, and provides no service level agreement (SLA).
-2. **Degraded mode**: when the data-plane node is offline or timing out, the edge layer automatically switches to degraded mode (connecting directly to public lyrics and search interfaces) and the interface shows a degradation notice; some functions may be unavailable during degradation. This is designed failover behavior, not a breach.
+2. **Degraded mode**: when the data-plane node fails 3 consecutive times or a single call exceeds the 4.5-second budget, the edge trips its circuit breaker and switches automatically to degraded mode (connecting directly to public lyrics and search interfaces), probing and recovering after a 30-second cooldown; during degradation the interface shows a "degraded mode" notice and some functions (such as full source resolution and recommendation updates) may be unavailable. This is designed failover behavior, not a breach.
 3. **Feature changes**: the open-source project keeps evolving; functions may be added, adjusted or removed; material changes affecting data deletion capabilities will be announced in advance.
 4. **Maintenance and interruption**: the operator may suspend part or all of the service for upgrades, repairs or abuse handling; unavailability caused by failures of Cloudflare, upstream music interfaces or CDNs is not a breach by the operator.
+5. **Experimental features**: features marked experimental or in testing are provided as-is, may be unstable, and may be adjusted or withdrawn at any time.
 
 ## 5. Your content and behavioral data
 
-1. **Favorites and preferences**: the favorites, playlists and player preferences you build are stored in your browser's local storage; they are deleted when you clear browser data, and the operator is not responsible for their loss.
-2. **Behavioral events**: to provide recommendations, the service records behavioral events when you play, complete, skip, favorite or reject tracks (signal categories and weights are public in the source code). You may destroy all behavioral records at any time with the "one-click profile erasure" function (or `DELETE /api/sonic/events`); if you turn off event reporting or use local／incognito playback, no new event records are produced.
-3. **Content responsibility**: you are responsible for content you actively submit (such as custom playlist names or API call behavior); disputes and legal liability arising from that content are yours.
-4. **Music content**: the rights in recordings, lyrics and covers belong to their respective owners. The service grants no sublicense to any music content; your responsibility to listen lawfully in your jurisdiction is your own.
+1. **Favorites and preferences**: the favorites, playlists and player preferences you build are stored in your browser's local storage; they are deleted when you clear browser data or use "clear all local data", and the operator is not responsible for their loss — record important playlists yourself.
+2. **Local music and downloads**: locally imported music files and downloaded tracks are stored in your browser's IndexedDB; that content belongs to you, and the operator's servers hold no copy.
+3. **Behavioral events**: to provide recommendations, the service records behavioral events when you play, complete, skip, favorite or reject tracks (signal categories and weights are public in the source code). You may destroy all behavioral records at any time with the "one-click profile erasure" function (or `DELETE /api/sonic/events`); if you turn off personalisation or use local／incognito playback, no new event records are produced.
+4. **Content responsibility**: you are responsible for content you actively submit (such as custom playlist names or API call behavior); disputes and legal liability arising from that content are yours.
+5. **Music content**: the rights in recordings, lyrics and covers belong to their respective owners. The service grants no sublicense to any music content; your responsibility to listen lawfully in your jurisdiction is your own.
 
 ## 6. Third-party services
 
 1. **Upstream music sources**: search, playback addresses and lyrics are obtained from the official open interfaces of NetEase, QQ, Kugou and Kuwo and from public lyrics libraries such as AMLL and LRCLIB; third-party interfaces may change, throttle or cease service, and the operator gives no assurance of upstream availability.
-2. **Edge proxy**: audio streams are obtained through the edge proxy by default, so upstream CDNs do not see your IP address; if you actively use the `?mode=redirect` direct mode, your browser connects directly to the official CDN.
+2. **Edge proxy**: audio streams are obtained through the edge proxy by default, so upstream CDNs do not see your IP address; if you actively use the `?mode=redirect` direct mode, your browser connects directly to the official CDN and your IP becomes visible to it.
 3. **Authentication**: Epomail is the identity provider of the service; its data processing is described in [Third Parties & Transfers](/en/sub-processors/).
 4. **Third-party terms**: when you use the services above, their own terms also bind you.
 
@@ -62,13 +66,15 @@ You must observe the entire [Acceptable Use Policy](/en/acceptable-use/), includ
 ## 8. Retention, removal and termination of use
 
 1. **Your termination**: you may stop using the service at any time; erase behavioral records with "one-click profile erasure" and revoke sessions by signing out. The closing of the Epomail account itself follows Epomail's rules.
-2. **Behavioral records**: behavioral events are kept in the data-plane SQLite store and destroyed immediately upon your deletion or erasure request; no long-term commercial profile is built automatically.
+2. **Behavioral records**: behavioral events are kept in the data-plane SQLite store and destroyed automatically 90 days after recording (deployer-configurable, minimum 7 days); they are destroyed immediately upon your deletion or erasure request. No long-term commercial profile is built automatically.
 3. **Operator termination**: if you violate the [Acceptable Use Policy](/en/acceptable-use/), the operator may suspend or terminate your right of use under that policy.
 4. **Statutory retention**: where retention is required by law or judicial process, the operator may defer deletion to the necessary extent and handle it under legal procedure.
 
 ## 9. Notice of and remedy for enforcement actions
 
 Before suspending or terminating your right of use under "Acceptable use" or the preceding section, the operator shall notify you and give you an opportunity to explain or remedy, except in urgent circumstances (such as an ongoing attack). If you believe an enforcement action is mistaken, you may appeal under the "Appeals" section of the [Acceptable Use Policy](/en/acceptable-use/), and the operator shall review and reply within a reasonable time.
+
+Notices under these terms are given electronically; the Epomail account you sign in with is the place of receipt for electronic notices, and you should keep it able to receive mail.
 
 ## 10. Disclaimer and limitation of liability
 
@@ -82,11 +88,11 @@ Before suspending or terminating your right of use under "Acceptable use" or the
 
 1. These terms are construed, and their validity and performance determined, under the law of the operator's location: for the hosted instances, the law of Taiwan; for self-hosted instances, the law of their deployer's location.
 2. Disputes arising from these terms are first settled by negotiation; failing that, disputes concerning the hosted instances are brought before the Taipei District Court as the court of first instance. Where you are a consumer and the law of your location provides mandatory rules on jurisdiction or consumer protection, those rules prevail.
-3. Data protection matters are not lowered by the preceding two items: the service applies the GDPR as the minimum data protection standard for every user (see [Overview](/en/overview/), section 4); users in the European Union and the European Economic Area enjoy all the rights and remedies listed in the [Privacy Policy](/en/privacy-policy/).
+3. Data protection matters are not lowered by the preceding two items: the service applies the GDPR as the minimum data protection standard for every user (see the [Overview](/en/overview/), section 4); users in the European Union and the European Economic Area enjoy all the rights and remedies listed in the [Privacy Policy](/en/privacy-policy/).
 
 ## 12. Amendments
 
-These terms may be amended as the service evolves. Material changes will be notified in advance by on-site announcement, and the effective date and version at the top of this page will be updated. Continuing to use the service after a change takes effect constitutes acceptance of the amended terms; if you do not agree, stop using the service and erase or export your data. Material amendments are archived with the version history of the open-source repository.
+These terms may be amended as the service evolves. Material changes will be notified in advance by on-site announcement, and the effective date and version at the top of this page will be updated. Continuing to use the service after a change takes effect constitutes acceptance of the amended terms; if you do not agree, stop using the service and erase or export your data. Material amendments are archived with the version history of the open-source repository; amended terms are published for review before taking effect as described above.
 
 ## 13. Contact
 
@@ -96,4 +102,4 @@ These terms may be amended as the service evolves. Material changes will be noti
 
 ---
 
-*These terms, the [Privacy Policy](/en/privacy-policy/) and the [Acceptable Use Policy](/en/acceptable-use/) together form the complete agreement between you and the operator; their order of precedence is in the [Privacy & Terms Overview](/en/overview/). This document is a common template prepared by the open-source community and is not legal advice; operators should consult a lawyer and adapt it to their actual business before formal operation.*
+*These terms, the [Privacy Policy](/en/privacy-policy/) and the [Acceptable Use Policy](/en/acceptable-use/) together form the complete agreement between you and the operator; their order of precedence is in the [Overview](/en/overview/). This document is a common template prepared by the open-source community and is not legal advice; operators should consult a lawyer and adapt it to their actual business before formal operation.*
