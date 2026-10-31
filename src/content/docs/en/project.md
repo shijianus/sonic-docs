@@ -25,6 +25,10 @@ Sonic is an independently developed multi-source music streaming platform and ag
 
 ## 2. Core capabilities
 
+![The Sonic player's live interface: left navigation (Explore, My Music, System), home page with banner carousel, smart recommendation and music radar, recommended playlists, and the bottom mini player bar](/images/sonic/ui/ui-home.png)
+
+*Figure: the hosted instance's web player running live. A per-function tour of the interface is in the [Interface & Features Guide](/en/interface/).*
+
 | Capability | Description |
 | --- | --- |
 | Multi-source aggregated search | Fault-tolerant retrieval across all sources: simplified/traditional normalization, pinyin and initials lookup, artist alias-symmetric matching, edit-distance spelling tolerance, version recognition; parallel multi-source retrieval with normalized deduplication |

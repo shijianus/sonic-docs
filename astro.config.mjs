@@ -36,6 +36,9 @@ const SIDEBAR_I18N = {
 	'专案介绍': {
 		en: 'Project Overview', ja: 'プロジェクト紹介',
 	},
+	'界面与功能导览': {
+		en: 'Interface & Features Guide', ja: '画面と機能ガイド',
+	},
 	'总览': {
 		en: 'Overview', ja: '総覧',
 	},
@@ -100,6 +103,7 @@ export default defineConfig({
 			sidebar: [
 				g('产品与总览', [
 					t('专案介绍', 'project'),
+					t('界面与功能导览', 'interface'),
 					t('总览', 'overview'),
 				]),
 				g('隐私与数据保护', [

@@ -1,9 +1,9 @@
 ---
 title: Terms of Service
-description: The Sonic Terms of Service — acceptance, account rules, service description and degraded mode, behavioral data authorisation, limitation of liability, governing law and dispute resolution.
+description: The Sonic Terms of Service — acceptance, detailed service scope, account rules, behavioral-data authorisation, quality and trial labelling, limitation of liability, governing law and dispute resolution.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.1**
+**Effective date: 30 October 2026｜Version: 1.2**
 
 These terms are the agreement between you and the operator of the instance you use, concerning the use of the Sonic service (hereinafter "the service"). By completing sign-in or otherwise using the service, you confirm that you have read and accepted the entire content of these terms; if you do not agree, do not use the service.
 
@@ -11,19 +11,26 @@ These are standard terms, published in full for your review, with historical ver
 
 ![The contract lifecycle of the Sonic Terms of Service: electronic acceptance (signing in equals consent) → performance (account security, your content, limitation of liability) → amendments (material changes announced in advance) → termination (leaving, one-click profile erasure), resting on governing law and the data protection baseline](/images/sonic/tos-contract.svg)
 
-*Figure: the lifecycle of the contract from formation to termination. Electronic consent has the same effect as writing; account, content and liability clauses are in sections 3, 5 and 10; amendments in section 12; termination in section 8; governing law and dispute resolution in section 11.*
+*Figure: the lifecycle of the contract from formation to termination. Electronic consent has the same effect as writing; service scope is in section 2, accounts in section 3, your content and behavioral data in section 5, limitation of liability in section 10, amendments in section 12, governing law and dispute resolution in section 11.*
 
 ## 1. Definitions
 
-1. **The service**: all functions running on a Sonic instance, including the web player, the edge gateway, the local protocol engine, the open API and related components.
+1. **The service**: all functions running on a Sonic instance, including the web player, the edge gateway, the local protocol engine, the open API and related components; the interface layout and the location of each function are in the [Interface & Features Guide](/en/interface/).
 2. **Operator**: the individual or team that deploys and runs the instance you use. For the hosted instances (`sonic.epocanvas.tech`, `sonic.epocanvas.com`), the operations team; for self-hosted instances, their deployer.
 3. **You (the user)**: the natural person or organization that signs in to or otherwise uses the service.
 4. **Formation of the contract**: you form a contract with the operator of the instance at which you sign in. These terms are a common template: hosted instances apply them directly; self-hosted operators may adapt them for their own sites and must perform the notice duties required by the law applicable at their location.
 5. **Data plane**: the Linux node providing protocol parsing and recommendation computation for your instance; its being offline does not affect the degraded service described in section 4, item 2.
 
-## 2. Description of the service
+## 2. Description and scope of the service
 
-The service provides multi-source aggregated search, word-level lyrics, quality-tiered playback, smart recommendations with Auto DJ sequencing, favorites and playlists, local music import, downloads, behavioral event management, edge-proxied audio streaming and other functions; the functions actually available depend on what the instance enables. The service is a search, aggregation and playback tool; it stores and hosts no music files; audio content is obtained from official CDNs and upstream open interfaces, and lyrics from native parsing and public lyrics libraries.
+The service is a search, aggregation and playback tool; it stores and hosts no music files; audio content is obtained from official CDNs and upstream open interfaces, and lyrics from native parsing and public lyrics libraries. The scope of each function group and where its data lives:
+
+| Function group | Included functions | Data location | Sign-in needed |
+| --- | --- | --- | --- |
+| Core (anonymous) | Multi-source aggregated search, word-level lyrics, quality-tiered playback, trial labelling, charts, MVs | Browser local (playback state) | No |
+| Account | Favorites and playlist sync, personalised recommendation and Auto DJ, behavioral event management | Server holds only pseudonymised events; favorites live in the browser | Yes |
+| Personal library | Downloads, local music import and management | Browser IndexedDB | No |
+| Open API | Third-party clients connecting with signed API keys | Server sessions and revocation lists | Yes |
 
 The service is built on an open-source project and remains open-source: the source code is public and auditable, and you may deploy it yourself to obtain the same capabilities. The software is provided "as is", and its license is consistent with the liability terms of this agreement (section 10).
 
@@ -31,24 +38,26 @@ The service is built on an open-source project and remains open-source: the sour
 
 1. **Sign-in method**: the service signs you in with an Epomail account over OAuth 2.0 (PKCE) and maintains no separate registration system; the agreement between you and Epomail is governed by that service's terms. A frozen or closed Epomail account ends your sign-in to the service.
 2. **Eligibility**: you must be at least 16 years old; where the law of your location sets a lower age of consent for information society services (no lower than 13), that age applies, and children always require the consent of their guardian. Age is taken from your Epomail account data; the service maintains no separate age-verification mechanism.
-3. **Credential care**: you are responsible for safeguarding your Epomail credentials, API keys and session security. Operations performed with your credentials are presumed to be your own acts. The session cookie contains the signed key — do not stay signed in on shared devices without signing out.
-4. **Session mechanism**: a successful sign-in issues an `HttpOnly; Secure; SameSite=Lax` session cookie (valid at most 30 days); API keys are never written into URLs, query parameters or localStorage. You may sign out at any time; signing out immediately revokes the current session and its key identifier (jti).
-5. **Key issuance**: API keys use the HMAC-SHA256 versioned signed format, with 30-day issue validity and a 90-day validation cap; unsigned or revoked keys are always rejected. Re-issuing a key requires presenting the current valid key; if a key leaks, sign out immediately and request revocation.
-6. **Sign-in protection**: the OAuth callback passes four checks — state, PKCE, the authorization code and replay; authentication endpoints are rate-limited at 30 requests per minute per IP.
+3. **One account per person**: you must not lend, rent out, sell or share your account; disputes and mixed data arising from account sharing are not sorted out or recovered by the operator.
+4. **Credential care**: you are responsible for safeguarding your Epomail credentials, API keys and session security. Operations performed with your credentials are presumed to be your own acts. The session cookie contains the signed key — do not stay signed in on shared devices without signing out; when a credential leaks, sign out immediately and request revocation.
+5. **Session mechanism**: a successful sign-in issues an `HttpOnly; Secure; SameSite=Lax` session cookie (valid at most 30 days); API keys are never written into URLs, query parameters or localStorage. You may sign out at any time; signing out immediately revokes the current session and its key identifier (jti).
+6. **Key issuance**: API keys use the HMAC-SHA256 versioned signed format, with 30-day issue validity and a 90-day validation cap; unsigned or revoked keys are always rejected. Re-issuing a key requires presenting the current valid key. An API key is your personal credential and must not be handed to third parties or embedded in publicly released clients.
+7. **Sign-in protection**: the OAuth callback passes four checks — state, PKCE, the authorization code and replay; authentication endpoints are rate-limited at 30 requests per minute per IP.
 
 ## 4. Provision and change of the service
 
 1. **Availability**: the operator makes reasonable efforts to keep the service available, but promises no specific availability rate, buffering latency or recovery time, and provides no service level agreement (SLA).
 2. **Degraded mode**: when the data-plane node fails 3 consecutive times or a single call exceeds the 4.5-second budget, the edge trips its circuit breaker and switches automatically to degraded mode (connecting directly to public lyrics and search interfaces), probing and recovering after a 30-second cooldown; during degradation the interface shows a "degraded mode" notice and some functions (such as full source resolution and recommendation updates) may be unavailable. This is designed failover behavior, not a breach.
-3. **Feature changes**: the open-source project keeps evolving; functions may be added, adjusted or removed; material changes affecting data deletion capabilities will be announced in advance.
-4. **Maintenance and interruption**: the operator may suspend part or all of the service for upgrades, repairs or abuse handling; unavailability caused by failures of Cloudflare, upstream music interfaces or CDNs is not a breach by the operator.
-5. **Experimental features**: features marked experimental or in testing are provided as-is, may be unstable, and may be adjusted or withdrawn at any time.
+3. **Quality and trial labelling**: the quality badge in the player (such as SQ lossless, HQ high quality) honestly reflects the actual tier of the current audio stream; official 30-second trial clips are labelled as trials and never presented as full tracks. When upstream tiers change, the attainable quality changes with them — this is not a breach.
+4. **Feature changes**: the open-source project keeps evolving; functions may be added, adjusted or removed; material changes affecting data deletion capabilities will be announced in advance.
+5. **Maintenance and interruption**: the operator may suspend part or all of the service for upgrades, repairs or abuse handling; unavailability caused by failures of Cloudflare, upstream music interfaces or CDNs is not a breach by the operator.
+6. **Experimental features**: features marked experimental or in testing are provided as-is, may be unstable, and may be adjusted or withdrawn at any time.
 
 ## 5. Your content and behavioral data
 
 1. **Favorites and preferences**: the favorites, playlists and player preferences you build are stored in your browser's local storage; they are deleted when you clear browser data or use "clear all local data", and the operator is not responsible for their loss — record important playlists yourself.
-2. **Local music and downloads**: locally imported music files and downloaded tracks are stored in your browser's IndexedDB; that content belongs to you, and the operator's servers hold no copy.
-3. **Behavioral events**: to provide recommendations, the service records behavioral events when you play, complete, skip, favorite or reject tracks (signal categories and weights are public in the source code). You may destroy all behavioral records at any time with the "one-click profile erasure" function (or `DELETE /api/sonic/events`); if you turn off personalisation or use local／incognito playback, no new event records are produced.
+2. **Local music and downloads**: locally imported music files and downloaded tracks are stored in your browser's IndexedDB; that content belongs to you, and the operator's servers hold no copy. Downloaded and imported files are for your personal listening only; you must not redistribute, publicly disseminate or commercially exploit them.
+3. **Behavioral-event authorisation**: to provide recommendations, the service records behavioral events when you play, complete, skip, favorite or reject tracks (signal categories and weights are public in the source code). If you switch personalisation off or use local／incognito playback, no new event records are produced; while on, the authorisation above is limited to what recommendation requires, and it terminates when you destroy all records with "one-click profile erasure".
 4. **Content responsibility**: you are responsible for content you actively submit (such as custom playlist names or API call behavior); disputes and legal liability arising from that content are yours.
 5. **Music content**: the rights in recordings, lyrics and covers belong to their respective owners. The service grants no sublicense to any music content; your responsibility to listen lawfully in your jurisdiction is your own.
 

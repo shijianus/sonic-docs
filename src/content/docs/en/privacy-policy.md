@@ -169,6 +169,10 @@ You have the following rights regarding your personal data:
 
 How to exercise them:
 
+![The "Privacy & local data" section of the Sonic settings page: the smart search and personalisation toggle, the Auto DJ toggle, the reset-profile-and-dislikes button, with the section stating "the following data lives only in your browser and is never uploaded to the server"](/images/sonic/ui/ui-privacy.png)
+
+*Figure: the "Privacy & local data" section of the settings page — the live interface of the self-service functions below. The interface tour is in the [Interface & Features Guide](/en/interface/), section 7.*
+
 1. **Self-service functions (immediate effect)**:
    - "Clear recommendation profile": immediately destroys all behavioral events server-side linked to you (`DELETE /api/sonic/events`);
    - "Clear all local data": immediately clears browser localStorage, sessionStorage and the entire IndexedDB database, and destroys the server-side profile as well;

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent / "src" / "content" / "docs"
 # base locale (Simplified Chinese, authoritative) sits at the collection root;
 # reference translations live under en/ and ja/
 SYMMETRIC_LANGS = [".", "en", "ja"]
-DOCS = ["project", "overview", "privacy-policy", "terms-of-service",
+DOCS = ["project", "interface", "overview", "privacy-policy", "terms-of-service",
         "acceptable-use", "data-security", "sub-processors", "key-terms"]
 
 H = re.compile(r"^(#{2,3})\s+(.*)$", re.M)
