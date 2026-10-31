@@ -37,7 +37,7 @@
 cd sonicdocs
 pnpm install        # astro ^5 / @astrojs/starlight ^0.32
 pnpm build          # 24 内容页 + 站点骨架，Pagefind 全文搜索索引
-pnpm preview        # http://localhost:4321/
+pnpm preview        # http://localhost:4321/ —— 根路径按 Accept-Language 协商跳转（与生产 functions/ 一致）
 node scripts/validate-anchors.cjs   # 校验 dist 全部页内锚点与图片引用
 ```
 

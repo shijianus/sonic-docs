@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "deploy": "pnpm run build && npx wrangler pages deploy dist --project-name sonic-docs --branch main",
-    "preview": "astro preview",
+    "preview": "node scripts/preview-server.mjs",
+    "preview:astro": "astro preview",
     "astro": "astro",
     "check": "python scripts/check-structure.py",
     "validate": "pnpm run build && node scripts/validate-anchors.cjs && python scripts/check-structure.py"
