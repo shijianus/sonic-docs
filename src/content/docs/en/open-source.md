@@ -3,7 +3,7 @@ title: Open-Source & Self-Hosting Legal
 description: Sonic open-source and self-hosting legal matters — license status, trademark boundaries, third-party acknowledgements and dependencies, deployer obligations and compliance boundaries.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This page describes the current status and boundaries of Sonic's open-source licensing, third-party acknowledgements, and the legal obligations of self-hosting. The relationship between the software license and the user terms is in the [Terms of Service](/en/terms-of-service/), sections 2 and 10.
 

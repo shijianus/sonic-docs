@@ -1,11 +1,11 @@
 ---
 title: Quick Start
-description: The Sonic quick start — the shortest path from opening the site to search and playback, sign-in and sync, downloads and local music, and mobile use.
+description: The Sonic quick start — the shortest path from opening the site to search and playback, sign-in and local library use, downloads and local music, and mobile use.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
-This page gives the shortest path to using the hosted Sonic instance (`sonic.epocanvas.tech`): from opening the site to search and playback, sign-in and sync, downloads and local music, and mobile use. A full tour of the interface is in the [Interface & Features Guide](/en/interface/); this page does not cover self-hosting (see the [Deployment Guide](/en/deployment/)).
+This page gives the shortest path to using the hosted Sonic instance (`sonic.epocanvas.tech`): from opening the site to search and playback, sign-in and local library use, downloads and local music, and mobile use. A full tour of the interface is in the [Interface & Features Guide](/en/interface/); this page does not cover self-hosting (see the [Deployment Guide](/en/deployment/)).
 
 ## 1. Open the site
 
@@ -19,12 +19,12 @@ Visit `sonic.epocanvas.tech` in your browser (backup mirror `sonic.epocanvas.com
 
 When a 30-second trial clip comes up, the player labels it honestly as a trial and never presents it as a full track; with cross-source completion enabled, it automatically attempts to match a free full track.
 
-## 3. Sign-in and favorites sync
+## 3. Sign-in and local library
 
 Sign in with an Epomail account over OAuth 2.0 (PKCE); the service maintains no separate registration system:
 
 1. Click the sign-in entry at the bottom of the sidebar, which takes you to the Epomail authorization page to confirm;
-2. After signing in you can use favorite tracks, saved playlists, followed artists and self-built playlists (stored in your browser's local storage);
+2. Favorite tracks, saved playlists, followed artists and self-built playlists are stored only in the current browser's local storage; they are not synced to the cloud or across devices;
 3. Signing in also unlocks personalised recommendations and Auto DJ continuous playback — both can be switched off under "Settings → Privacy & local data"; when off, recommendations run in pure public mode and no behavioral events are recorded.
 
 A session is valid for at most 30 days and is revoked immediately on sign-out. The account rules are in the [Terms of Service](/en/terms-of-service/), section 3.
@@ -37,7 +37,7 @@ A session is valid for at most 30 days and is revoked immediately on sign-out. T
 
 ## 5. Mobile use
 
-Opening the same address in a phone browser gives the mobile layout: bottom tab navigation (Home, Search, Recent, Settings) and a mini player bar; the player drawer offers the same word-level lyrics and quality menu. Favorites, preferences and downloads are stored independently on mobile and on desktop (each within its own browser).
+Opening the same address in a phone browser gives the mobile layout: bottom tab navigation (Home, Search, Recent, Settings) and a mini player bar; the player drawer offers the same word-level lyrics and quality menu. Favorites, playlists, preferences and downloads are stored independently in each device's browser and are not synced across devices.
 
 ## 6. First steps in privacy settings
 

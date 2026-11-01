@@ -3,7 +3,7 @@ title: Terms of Service
 description: The Sonic Terms of Service — acceptance, detailed service scope, account rules, behavioral-data authorisation, quality and trial labelling, limitation of liability, governing law and dispute resolution.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 These terms are the agreement between you and the operator of the instance you use, concerning the use of the Sonic service (hereinafter "the service"). By completing sign-in or otherwise using the service, you confirm that you have read and accepted the entire content of these terms; if you do not agree, do not use the service.
 
@@ -28,7 +28,7 @@ The service is a search, aggregation and playback tool; it stores and hosts no m
 | Function group | Included functions | Data location | Sign-in needed |
 | --- | --- | --- | --- |
 | Core (anonymous) | Multi-source aggregated search, word-level lyrics, quality-tiered playback, trial labelling, charts, MVs | Browser local (playback state) | No |
-| Account | Favorites and playlist sync, personalised recommendation and Auto DJ, behavioral event management | Server holds only pseudonymised events; favorites live in the browser | Yes |
+| Account and personalisation | Personalised recommendation and Auto DJ, behavioral event management; favorites, playlists and preferences remain local to each browser and are not synced across devices | Server holds only pseudonymised events; the local library remains in each browser | Yes |
 | Personal library | Downloads, local music import and management | Browser IndexedDB | No |
 | Open API | Third-party clients connecting with signed API keys | Server sessions and revocation lists | Yes |
 
@@ -55,7 +55,7 @@ The service is built on an open-source project and remains open-source: the sour
 
 ## 5. Your content and behavioral data
 
-1. **Favorites and preferences**: the favorites, playlists and player preferences you build are stored in your browser's local storage; they are deleted when you clear browser data or use "clear all local data", and the operator is not responsible for their loss — record important playlists yourself.
+1. **Favorites and preferences**: the favorites, playlists and player preferences you build are stored only in the local storage of the current browser; they are not synchronized across devices and there is no cloud copy. They are deleted when you clear browser data or use "clear all local data", and the operator is not responsible for their loss — record important playlists yourself.
 2. **Local music and downloads**: locally imported music files and downloaded tracks are stored in your browser's IndexedDB; that content belongs to you, and the operator's servers hold no copy. Downloaded and imported files are for your personal listening only; you must not redistribute, publicly disseminate or commercially exploit them.
 3. **Behavioral-event authorisation**: to provide recommendations, the service records behavioral events when you play, complete, skip, favorite or reject tracks (signal categories and weights are public in the source code). If you switch personalisation off or use local／incognito playback, no new event records are produced; while on, the authorisation above is limited to what recommendation requires, and it terminates when you destroy all records with "one-click profile erasure".
 4. **Content responsibility**: you are responsible for content you actively submit (such as custom playlist names or API call behavior); disputes and legal liability arising from that content are yours.
@@ -101,7 +101,7 @@ Notices under these terms are given electronically; the Epomail account you sign
 
 ## 12. Amendments
 
-These terms may be amended as the service evolves. Material changes will be notified in advance by on-site announcement, and the effective date and version at the top of this page will be updated. Continuing to use the service after a change takes effect constitutes acceptance of the amended terms; if you do not agree, stop using the service and erase or export your data. Material amendments are archived with the version history of the open-source repository; amended terms are published for review before taking effect as described above.
+These terms may be amended as the service evolves. Material changes will be notified in advance by on-site announcement, and the effective date and version at the top of this page will be updated. Continuing to use the service after a change takes effect constitutes acceptance of the amended terms; if you do not agree, stop using the service, erase your local data or submit a request through the privacy contact channel. Material amendments are archived with the version history of the open-source repository; amended terms are published for review before taking effect as described above.
 
 ## 13. Contact
 

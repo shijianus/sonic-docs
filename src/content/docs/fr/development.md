@@ -3,7 +3,7 @@ title: Guide de développement
 description: "Guide de développement de Sonic : structure du dépôt, commandes de construction, suite de tests, vérification de la cohérence documentaire et contribution."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page s'adresse aux lecteurs participant au développement et aux développements dérivés ; elle expose la structure du dépôt, les commandes de construction, la suite de tests et la vérification de la cohérence documentaire. La licence et les limites juridiques figurent dans [Droit de l'open source et de l'auto-hébergement](/fr/open-source/).
 

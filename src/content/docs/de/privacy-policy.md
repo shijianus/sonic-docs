@@ -3,7 +3,7 @@ title: Datenschutzerklärung
 description: Datenschutzerklärung von Sonic – Information über Erhebung und Nutzung von Daten, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte und internationale Übermittlungen, mit der DSGVO als Mindeststandard für alle Nutzer.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Erklärung beschreibt, wie der Sonic-Dienst (nachfolgend „der Dienst“) Ihre personenbezogenen Daten erhebt, verarbeitet und übermittelt, und welche Standards und Zusagen der Betreiber beim Datenschutz befolgt. Vor der Anmeldung oder Nutzung des Dienstes sollten Sie diese Erklärung lesen; wenn Sie mit irgendeinem Inhalt dieser Erklärung nicht einverstanden sind, nutzen Sie den Dienst bitte nicht.
 
@@ -43,7 +43,7 @@ Wenn der Dienst personenbezogene Daten von Ihnen erhebt, informiert er Sie klar 
 | III. Kategorien personenbezogener Daten | Konto-Identifikation (Epomail-Nutzerkennung, E-Mail-Adresse, Nickname, Avatar-Link, Kontorolle); Verhalten und Präferenzen (Ereignisse wie Wiedergabe, vollständig abgespielt, übersprungen, favorisiert, abgelehnt, Suchbegriffe, verknüpft über pseudonymisierte Bezeichner); Technik (zeitweise IP-Verwendung für die Ratenbegrenzung, Sitzungs-Cookie, OAuth-Transaktions-Cookies) – Details in Abschnitt 4 |
 | IV. Dauer, Region, Empfänger und Art der Nutzung | Dauer: Verhaltensereignisse werden 90 Tage nach Aufzeichnung automatisch vernichtet (durch den Bereitsteller konfigurierbar, Untergrenze 7 Tage); Konto-Identifikationsdaten werden nicht persistiert und bestehen nur für die Dauer der Sitzung. Region: Die Kontrollebene läuft auf dem globalen Edge-Netzwerk von Cloudflare, die Datenebene auf dem eigenen Linux-Knoten des Betreibers (siehe Abschnitt 7). Empfänger: der Betreiber und seine Auftragsverarbeiter sowie befugte Stellen auf Grundlage gesetzlicher Anforderungen (siehe Abschnitt 7). Art: automatisierte pseudonyme Speicherung und statistische Berechnung; keine manuelle Prüfung, keine Inhaltsprüfung |
 | V. Die Ihnen zustehenden Rechte und ihre Ausübung | Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch und Beschwerde; zur Ausübung siehe Abschnitt 9 |
-| VI. Folgen der Nichtbereitstellung | Die Grundfunktionen des Dienstes (Suche, Wiedergabe, Lyrics) sind ohne Anmeldung und ohne Übermittlung von Verhaltensereignissen nutzbar; die Anmeldung ist für Kontofunktionen wie die Favoritensynchronisation erforderlich, personalisierte Empfehlungen sind optional |
+| VI. Folgen der Nichtbereitstellung | Die Grundfunktionen des Dienstes (Suche, Wiedergabe, Lyrics) sind ohne Anmeldung und ohne Übermittlung von Verhaltensereignissen nutzbar; personalisierte Empfehlungen und Auto DJ erfordern die Anmeldung, während Favoriten, Playlists und Präferenzen ausschließlich im aktuell verwendeten Browser gespeichert und nicht geräteübergreifend synchronisiert werden |
 
 ## 4. Erhobene personenbezogene Daten
 
@@ -176,7 +176,7 @@ Ausübungswege:
 1. Selbstbedienungsfunktionen (sofortige Wirkung):
    - „Empfehlungsprofil löschen“: vernichtet sofort sämtliche serverseitig mit Ihnen verknüpften Verhaltensereignisse (`DELETE /api/sonic/events`);
    - „Alle lokalen Daten löschen“: entfernt sofort localStorage, sessionStorage und die gesamte IndexedDB-Datenbank des Browsers und vernichtet zugleich das serverseitige Profil;
-   - Abfrage der Profilübersicht: über `GET /api/sonic/events` erhalten Sie eine Zusammenfassung Ihres aktuellen Profils (Gesamtzahl der Ereignisse, Zähler für Favoriten und Ablehnungen, häufig gehörte Künstler, Genreneigung, letzte Suchbegriffe, Speicherform);
+   - Abfrage der Profilübersicht: über `GET /api/sonic/events` erhalten Sie nur eine Zusammenfassung des aktuellen Profils (Gesamtzahl der Ereignisse, Zähler für Favoriten und Ablehnungen, häufig gehörte Künstler, Genreneigung, letzte Suchbegriffe, Speicherform), keine vollständige Kopie sämtlicher personenbezogener Daten oder Ereignisse;
    - Personalisierung abschalten: der Schalter auf der Einstellungsseite wirkt sofort; die Warteschlange wird geleert, und es werden keine weiteren Ereignisse erhoben;
    - Abmeldung: sperrt sofort die aktuelle Sitzung und die Schlüsselkennung.
 2. Manuelle Anträge: Richten Sie andere Anfragen an `privacy@epocanvas.com`; der Betreiber antwortet innerhalb eines Monats nach Eingang (Artikel 12 Absatz 3 der DSGVO); bei komplexen Sachverhalten kann die Frist um zwei weitere Monate verlängert werden, wobei der Grund der Verlängerung innerhalb des ersten Monats mitzuteilen ist.
@@ -189,7 +189,7 @@ Der Betreiber richtet nach Artikel 32 der DSGVO geeignete technische und organis
 
 ## 11. Änderungen dieser Erklärung
 
-Diese Erklärung kann bei Änderungen des Dienstes oder der Rechtslage überarbeitet werden. Wesentliche Änderungen (etwa neue Weitergabeempfänger, geänderte Speicherstrategien oder Erhebungsumfänge) werden vorab durch eine Ankündigung auf der Website mitgeteilt; das Inkrafttretensdatum und die Versionsnummer am Anfang dieser Seite werden aktualisiert. Wer nach Inkrafttreten einer Änderung den Dienst weiter nutzt, gilt als mit der überarbeiteten Erklärung einverstanden; wer nicht einverstanden ist, kann die Nutzung einstellen und seine Daten löschen lassen. Die früheren wesentlichen Fassungen werden mit den Versionsaufzeichnungen des Open-Source-Repositorys archiviert.
+Diese Erklärung kann bei Änderungen des Dienstes oder der Rechtslage überarbeitet werden. Wesentliche Änderungen (etwa neue Weitergabeempfänger, geänderte Speicherstrategien oder Erhebungsumfänge) werden vorab durch eine Ankündigung auf der Website mitgeteilt; das Inkrafttreten und die Versionsnummer am Anfang dieser Seite werden aktualisiert. Wer nach Inkrafttreten einer Änderung den Dienst weiter nutzt, gilt als mit der überarbeiteten Erklärung einverstanden; wer nicht einverstanden ist, kann die Nutzung einstellen und seine Daten löschen lassen. Die früheren wesentlichen Fassungen werden mit den Versionsaufzeichnungen des Open-Source-Repositorys archiviert.
 
 ## 12. Kontaktstellen
 

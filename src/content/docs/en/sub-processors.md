@@ -3,13 +3,13 @@ title: Third Parties & Transfers
 description: The Sonic list of third-party sharing and international transfers — processors, identity provider, upstream content sources, optional chains, lawful requests and transfer safeguards.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This page lists every situation in which the Sonic service (hereinafter "the service") shares personal data with third parties, the data involved and the safeguard mechanisms. It expands section 7 of the [Privacy Policy](/en/privacy-policy/). The sharing principle is minimum necessity: personal data is never sold, never shared for advertising, and never shared beyond what the service functions require.
 
 ![The Sonic third-party sharing map: six channels — processors under contract, the identity provider, upstream content sources, optional providers, lawful requests and international transfers — centred on the operator, each labelled with its default switch state](/images/sonic/sharing-map.svg)
 
-*Figure: the six sharing channels. A is always-on entrusted processing; B is the identity verification required for sign-in; C is query-driven content retrieval carrying no user identity; D is off by default; E is the lawful-requests exception; F is the international transfer safeguard regime.*
+*Figure: the six sharing channels. A is always-on entrusted processing; B is the identity verification required for sign-in; C is query-driven content retrieval carrying no user identity; D covers optional chains that are off by default; E is the lawful-requests exception; F is the international transfer safeguard regime.*
 
 ## 1. Processors (always on)
 
@@ -47,17 +47,17 @@ Notes:
 2. Audio streams are fetched through the edge proxy by default, so upstream CDNs see only the proxy's address; when you actively invoke the `?mode=redirect` direct mode, your browser connects straight to that CDN and your IP becomes visible to it (an inherent property of 302 redirects); the web player never uses this mode;
 3. Deployers may mount their own licensed catalogue with their own membership credentials (`NETEASE_COOKIE`／`QQ_COOKIE`／`KUGOU_COOKIE`); those credentials are the deployer's account data, unrelated to end users, and the code embeds no real account cookies.
 
-## 4. Optional chains (off by default)
+## 4. Optional chains and default states
 
-The following chains are strictly disabled by default and occur only when the deployer explicitly enables them:
+The first four provider rows below form the switch table for optional chains that are disabled by default and occur only when the deployer explicitly enables them. Cross-source completion is listed separately in the final row as a default-on path; it is not part of the default-off chain or its switch table.
 
 | Recipient | Service | Data involved | Switch and default |
 | --- | --- | --- | --- |
-| GDStudio (`music-api.gdstudio.xyz`) | Third-party aggregated search and a cross-source completion alternative | Song identifiers, type and source parameters only | `SONIC_ENABLE_GDSTUDIO`, default 0 |
+| GDStudio (`music-api.gdstudio.xyz`) | Third-party aggregated search | Song identifiers, type and source parameters only | `SONIC_ENABLE_GDSTUDIO`, default 0 |
 | Lyriva (`api.lyriva.xyz`) | Lyrics backup source | Song identifier parameters only | `SONIC_ENABLE_LYRIVA`, default 0 |
 | ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org` and others) | Similar-artist enrichment | Artist／recording identifiers only | `SONIC_ENABLE_LISTENBRAINZ`, default 0 |
-| Cross-source completion | Cross-platform full-track matching for trial clips (free full tracks on QQ／Kugou／Kuwo) | Track metadata only (duration, title, artist) | On by default; no identity data involved |
 | Gorse (deployer-built recommendation engine) | External collaborative filtering | Pseudonymous hash identifier (`subject_key`) and behavioral feedback | `SONIC_GORSE_URL`, default empty |
+| Cross-source completion | Cross-platform full-track matching for trial clips (free full tracks on QQ／Kugou／Kuwo) | Track metadata only (duration, title, artist) | On by default; no identity data involved |
 
 ## 5. Sharing under legal requirement
 

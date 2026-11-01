@@ -3,7 +3,7 @@ title: Guía de la interfaz y funciones
 description: "Guía de la interfaz y funciones del reproductor de Sonic: página de inicio y recomendaciones, búsqueda, controles de reproducción, panel del reproductor, mi música, ajustes y controles de privacidad, disposición en móvil."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página orienta por la disposición de la interfaz y la ubicación de las funciones del reproductor web de Sonic, y explica dónde está cada función y cómo se comporta. Las capturas proceden de la instancia gestionada en funcionamiento (con la interfaz en chino simplificado; el producto permite cambiar la lengua de la interfaz). La interfaz puede ajustarse con la evolución de las versiones; el alcance real de disponibilidad de cada función es el que tenga activado la instancia. Los compromisos legales figuran en los [Términos del servicio](/es/terms-of-service/) y en la [Política de privacidad](/es/privacy-policy/).
 
@@ -16,10 +16,18 @@ Esta página orienta por la disposición de la interfaz y la ubicación de las f
 La página de inicio agrega tres zonas de contenido:
 
 1. Carrusel de recomendaciones: presenta canciones y álbumes nuevos; las tarjetas llevan etiquetas de fuente como «novedad de Sonic»; al pulsar se accede directamente a la reproducción o al detalle;
-2. Recomendación inteligente y radar musical: ofrece tres vistas, «puede que te guste», «lista de tendencias del sitio» y «radar de exploración de estilos», con las acciones «cambiar lote» y «reproducir la lista recomendada». Las tarjetas de recomendación indican el motivo de la recomendación (como la insignia de «recomendación personalizada» y las aclaraciones del tipo «escuchas a menudo a este artista» o «se parece a los estilos que prefieres»); la página de inicio en móvil muestra además las etiquetas de señales de preferencia de la sesión actual (como artistas y géneros). Las categorías de señales que sustentan la recomendación figuran en la sección 4.2 de la [Política de privacidad](/es/privacy-policy/);
+2. Recomendación inteligente y radar musical: ofrece tres vistas, «puede que te guste», «lista de tendencias del sitio» y «radar de exploración de estilos», con las acciones «cambiar lote» y «reproducir la lista recomendada». Tras completar una búsqueda, el radar muestra de forma dinámica los resultados coincidentes según su intención de búsqueda y sus señales de preferencia. Las tarjetas de recomendación indican el motivo de la recomendación (como la insignia de «recomendación personalizada» y las aclaraciones del tipo «escuchas a menudo a este artista» o «se parece a los estilos que prefieres»); la página de inicio en móvil muestra además las etiquetas de señales de preferencia de la sesión actual (como artistas y géneros). Las categorías de señales que sustentan la recomendación figuran en la sección 4.2 de la [Política de privacidad](/es/privacy-policy/);
 3. Listas recomendadas y sencillos populares: se generan según las tendencias reales de escucha de todo el sitio; el número de reproducciones se indica en la tarjeta.
 
-El orden de las recomendaciones solo afecta a la secuencia de reproducción que usted ve; puede desactivar la personalización en los ajustes (véase la sección 7); desactivada, las recomendaciones pasan a modo puramente público.
+![Radar musical y de estilos de la página de inicio de Sonic: tras completar una búsqueda, el radar muestra los resultados coincidentes según las señales de preferencia, alineados con el estilo de los sencillos populares](/images/sonic/ui/ui-radar.png)
+
+*Figura: radar musical y de estilos tras una búsqueda. Los resultados del radar se alinean con el estilo de las tarjetas de «sencillos populares»; el motivo de la recomendación y las etiquetas de señales de preferencia se presentan de forma transparente.*
+
+El orden de las recomendaciones solo afecta a la secuencia de reproducción que usted ve; puede desactivar la personalización en los ajustes (véase la sección 9); desactivada, las recomendaciones pasan a modo puramente público.
+
+### 1.1 La barra lateral: modo plegado y acceso a la cuenta
+
+El logotipo de la marca situado en la parte superior de la barra lateral actúa como interruptor de plegado: al pulsarlo, la barra lateral se contrae en una franja estrecha (modo de iconos); al pulsarlo de nuevo, se despliega. En la parte inferior de la barra lateral está integrado el acceso a la cuenta de Epomail: cuando no ha iniciado sesión, ofrece la orientación para hacerlo; cuando ya lo ha hecho, muestra el apodo de la cuenta y el acceso, y el estado de inicio de sesión se sincroniza entre pestañas.
 
 ## 2. Búsqueda
 

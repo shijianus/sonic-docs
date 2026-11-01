@@ -3,7 +3,7 @@ title: Begriffsdefinitionen
 description: Begriffsdefinitionen der rechtlichen Dokumente von Sonic – Definitionen der Rechtsbegriffe (DSGVO-Vokabular) und der technischen Begriffe, einheitlich auf der gesamten Website verwendet.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite definiert die Rechts- und Fachbegriffe der rechtlichen Dokumente dieser Website. Derselbe Begriff hat in allen Dokumenten dieselbe Bedeutung; definierte Begriffe sind nach ihrer Definition auszulegen, undefinierte nach ihrer üblichen Bedeutung. Die Rechtsbegriffe stützen sich auf die Definitionen der EU-Datenschutz-Grundverordnung (DSGVO).
 

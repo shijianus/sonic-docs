@@ -3,7 +3,7 @@ title: Development Guide
 description: The Sonic development guide — repository structure, build commands, the test suite, documentation consistency checks and contributing.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This page is for readers joining development or building on the project, and covers the repository structure, build commands, the test suite and the documentation consistency checks. Licensing and legal boundaries are in [Open-Source & Self-Hosting Legal](/en/open-source/).
 

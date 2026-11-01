@@ -3,7 +3,7 @@ title: Guía de funciones
 description: "Guía de funciones de Sonic: niveles de calidad y transparencia de las vistas previas, letras palabra por palabra, recomendación y Auto DJ, descargas y música local, listas de éxitos, MV y tolerancia de la búsqueda."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página explica en profundidad cómo se comportan las funciones de Sonic y las decisiones de diseño que conllevan. La ubicación en la interfaz consta en la [Guía de la interfaz y funciones](/es/interface/); la explicación técnica de las señales de comportamiento y del modelo de recomendación, en la sección 5 de la [Presentación del proyecto](/es/project/); las condiciones contractuales del uso de las funciones, en los [Términos del servicio](/es/terms-of-service/).
 

@@ -3,13 +3,13 @@ title: Lista de partilha com terceiros e transferências
 description: "Lista de partilha com terceiros e transferências do Sonic: subcontratantes, fornecedor de identidade, fontes de conteúdos a montante, cadeias opcionais, exigências legais e garantias das transferências internacionais."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Esta página enumera na íntegra todas as situações de partilha de dados pessoais com terceiros pelo serviço Sonic (a seguir designado «o serviço»), incluindo os destinatários, os dados envolvidos e as garantias. Esta página desenvolve a secção 7 da [Política de Privacidade](/pt/privacy-policy/); o princípio da partilha é o mínimo necessário: não se vendem dados pessoais, não se partilha para fins publicitários e não se ultrapassa o necessário às funções do serviço.
 
 ![Mapa de partilha com terceiros do Sonic: seis canais (subcontratantes, fornecedor de identidade, fontes de conteúdos a montante, prestadores opcionais, exigências legais e transferências internacionais), todos centrados no operador e com os valores predefinidos dos interruptores assinalados](/images/sonic/sharing-map.svg)
 
-*Figura: seis tipos de canais de partilha. O tipo A é o tratamento por subcontratante em uso contínuo; o tipo B é a autenticação necessária ao início de sessão; o tipo C é a obtenção de conteúdos acionada por consulta, sem identidade do utilizador; o tipo D está desativado por predefinição; o tipo E é a exceção legal; o tipo F são as garantias das transferências transfronteiriças.*
+*Figura: seis tipos de canais de partilha. O tipo A é o tratamento por subcontratante em uso contínuo; o tipo B é a autenticação necessária ao início de sessão; o tipo C é a obtenção de conteúdos acionada por consulta, sem identidade do utilizador; o tipo D divide-se entre o complemento entre fontes ativo por predefinição e os restantes serviços opcionais desativados por predefinição; o tipo E é a exceção legal; o tipo F são as garantias das transferências transfronteiriças.*
 
 ## 1. Subcontratantes (em uso contínuo)
 
@@ -47,16 +47,18 @@ Notas:
 2. Por predefinição, as streams de áudio obtêm-se através do proxy de edge e o CDN a montante vê apenas o endereço do servidor proxy; invocando expressamente o modo de ligação direta `?mode=redirect`, o seu navegador estabelece a ligação diretamente a esse CDN e o seu IP fica visível para esse CDN (semântica inerente ao redirecionamento 302); o leitor web não utiliza este modo;
 3. Quem implanta pode montar o seu catálogo licenciado com as próprias credenciais de membro (`NETEASE_COOKIE`/`QQ_COOKIE`/`KUGOU_COOKIE`); essas credenciais são dados da conta de quem implanta, sem relação com os utilizadores finais, e o código não incorpora quaisquer cookies de contas reais.
 
-## 4. Cadeias opcionais desativadas por predefinição
+## 4. Cadeias opcionais e estado predefinido
 
-As cadeias seguintes desativam-se rigorosamente por predefinição e ocorrem apenas após a ativação expressa de quem implanta:
+**Complemento entre fontes ativo por predefinição**: correspondência entre plataformas da faixa completa para as faixas em amostra (faixas gratuitas da QQ, KuGou e KuWo), utilizando apenas metadados das faixas (duração, título e artista), sem dados de identidade. É uma cadeia acionada por consulta e não pertence aos serviços desativados por predefinição abaixo.
+
+**Serviços desativados por predefinição**: GDStudio, Lyriva, ListenBrainz/MusicBrainz e Gorse só ocorrem depois de ativação expressa de quem implanta. A tabela seguinte é a tabela autónoma dos respetivos interruptores; a primeira linha é uma indicação da tabela, não um serviço efetivo.
 
 | Destinatário | Conteúdo do serviço | Dados envolvidos | Interruptor e valor predefinido |
 | --- | --- | --- | --- |
+| **Tabela de serviços desativados e interruptores** | **Só os serviços seguintes exigem ativação expressa** | **Os dados envolvidos constam de cada linha** | **Todos desativados por predefinição** |
 | GDStudio (`music-api.gdstudio.xyz`) | Pesquisa agregada de terceiros e reserva para o complemento entre fontes | Apenas identificadores de faixas, tipo e parâmetros de origem | `SONIC_ENABLE_GDSTUDIO`, predefinição 0 |
 | Lyriva (`api.lyriva.xyz`) | Fonte alternativa de letras | Apenas parâmetros de identificadores de faixas | `SONIC_ENABLE_LYRIVA`, predefinição 0 |
 | ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org`, entre outros) | Reforço de artistas semelhantes | Apenas identificadores de artistas/gravações | `SONIC_ENABLE_LISTENBRAINZ`, predefinição 0 |
-| Complemento entre fontes | Correspondência entre plataformas da faixa completa para as faixas em amostra (faixas gratuitas da QQ, KuGou e KuWo) | Apenas metadados das faixas (duração, título, artista) | Ativa por predefinição, sem dados de identidade |
 | Gorse (motor de recomendação instalado por quem implanta) | Filtragem colaborativa externa | Identificadores hash pseudonimizados (`subject_key`) e feedback comportamental | `SONIC_GORSE_URL`, predefinição vazia |
 
 ## 5. Partilha por exigência legal

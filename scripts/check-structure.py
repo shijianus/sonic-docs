@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent / "src" / "content" / "docs"
 # reference translations live under en/ and ja/
 SYMMETRIC_LANGS = [".", "zh-tw", "en", "fr", "es", "de", "ja", "ko", "pt", "ru"]
 DOCS = ["project", "interface", "overview", "quickstart", "features", "api", "privacy-policy", "terms-of-service",
-        "acceptable-use", "data-security", "sub-processors", "open-source", "deployment", "development", "key-terms"]
+        "acceptable-use", "data-security", "sub-processors", "open-source", "deployment", "development",
+        "search-syntax", "library", "mobile", "recommendation", "account-security", "data-management", "troubleshooting", "key-terms"]
 
 H = re.compile(r"^(#{2,3})\s+(.*)$", re.M)
 FIG = re.compile(r"!\[[^\]]*\]\((/images/[^)]+)\)")

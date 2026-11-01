@@ -3,7 +3,7 @@ title: Nutzungsbedingungen
 description: Nutzungsbedingungen von Sonic – Annahme der Bedingungen, detaillierter Dienstumfang, Kontoregeln, Freigabe von Verhaltensdaten, Qualitäts- und Hörproben-Kennzeichnung, Haftungsbeschränkung, anwendbares Recht und Streitbeilegung.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Bedingungen regeln das Verhältnis zwischen Ihnen und dem Betreiber der von Ihnen genutzten Instanz hinsichtlich der Nutzung des Sonic-Dienstes (nachfolgend „der Dienst“). Mit dem Abschluss der Anmeldung oder der Nutzung des Dienstes auf andere Weise erklären Sie, diese Bedingungen vollständig gelesen zu haben und ihnen zuzustimmen; wer nicht zustimmt, nutze den Dienst nicht.
 
@@ -28,7 +28,7 @@ Der Dienst ist ein Werkzeug zum Suchen, Aggregieren und Abspielen; er speichert 
 | Funktionskategorie | Enthaltene Funktionen | Speicherort der Daten | Anmeldung erforderlich |
 | --- | --- | --- | --- |
 | Kernfunktionen (anonym nutzbar) | Multi-Source-Aggregationssuche, wortweise Lyrics, Wiedergabe in Qualitätsstufen, Hörproben-Kennzeichnung, Charts, MVs | Browser lokal (Wiedergabezustand) | Nein |
-| Kontofunktionen | Cloud-Synchronisation von Favoriten und Playlists, personalisierte Empfehlungen und Auto DJ, Verwaltung von Verhaltensereignissen | Server nur pseudonymisierte Verhaltensereignisse; Favoritenpräferenzen im Browser | Ja |
+| Kontofunktionen | Lokale Favoriten und Playlists, personalisierte Empfehlungen und Auto DJ, Verwaltung von Verhaltensereignissen | Server nur pseudonymisierte Verhaltensereignisse; Favoriten und Präferenzen ausschließlich im Browser, ohne Cloud- oder geräteübergreifende Synchronisation | Ja |
 | Funktionen für persönliche Daten | Downloadliste, Import und Verwaltung lokaler Musik | Browser IndexedDB | Nein |
 | Offene API | Zugriff von Drittanbieter-Clients über signierte API-Schlüssel | Server: Sitzungen und Sperrlisten | Ja |
 
@@ -55,7 +55,7 @@ Der Dienst baut auf dem Open-Source-Projekt auf und führt es fort: Der Quellcod
 
 ## 5. Ihre Inhalte und Verhaltensdaten
 
-1. Favoriten und Präferenzen: Ihre angelegten Favoriten, Playlists und Player-Einstellungen liegen im lokalen Speicher Ihres Browsers; das Löschen der Browserdaten oder die Funktion „Alle lokalen Daten löschen“ entfernt sie. Der Betreiber haftet nicht für deren Verlust; wichtige Playlists sollten Sie selbst notieren.
+1. Favoriten und Präferenzen: Ihre angelegten Favoriten, Playlists und Player-Einstellungen liegen ausschließlich im lokalen Speicher des aktuell verwendeten Browsers; sie werden weder in eine Cloud noch auf andere Geräte synchronisiert. Das Löschen der Browserdaten oder die Funktion „Alle lokalen Daten löschen“ entfernt sie. Der Betreiber haftet nicht für deren Verlust; wichtige Playlists sollten Sie selbst notieren.
 2. Lokale Musik und Downloads: Ihre importierten lokalen Musikdateien und heruntergeladenen Titel liegen in IndexedDB Ihres Browsers; diese Inhalte gehören Ihnen, und der Server des Betreibers speichert keine Kopien. Heruntergeladene und lokal importierte Dateien dienen ausschließlich Ihrem persönlichen Hören; Sie dürfen sie nicht weiterverbreiten, öffentlich zugänglich machen oder kommerziell nutzen.
 3. Freigabe von Verhaltensereignissen: Um die Empfehlungsfunktion bereitzustellen, zeichnet der Dienst Verhaltensereignisse auf, wenn Sie Titel abspielen, vollständig abspielen, überspringen, favorisieren oder ablehnen (Signalkategorien und Gewichte sind im Quellcode offengelegt). Bei ausgeschalteter Personalisierung oder im rein lokalen bzw. privaten Modus entstehen keine neuen Ereignisaufzeichnungen; während der Freigabe gilt sie nur im für die Empfehlungsfunktion notwendigen Umfang, und mit der Ein-Klick-Löschung des Profils, die alle Aufzeichnungen vernichtet, endet sie.
 4. Inhaltshaftung: Sie sind verantwortlich für Inhalte, die Sie selbst übermitteln (etwa eigene Playlistenamen oder API-Aufrufverhalten); Streitigkeiten und rechtliche Folgen aus solchen Inhalten tragen Sie.
@@ -101,7 +101,7 @@ Benachrichtigungen nach diesen Bedingungen erfolgen elektronisch; das Epomail-Ko
 
 ## 12. Änderung der Bedingungen
 
-Diese Bedingungen können mit der Weiterentwicklung des Dienstes überarbeitet werden. Wesentliche Änderungen werden vorab durch eine Ankündigung auf der Website mitgeteilt; das Inkrafttretensdatum und die Versionsnummer am Anfang dieser Seite werden aktualisiert. Wer nach Inkrafttreten einer Änderung den Dienst weiter nutzt, gilt als mit den überarbeiteten Bedingungen einverstanden; wer nicht einverstanden ist, soll die Nutzung einstellen und seine Daten löschen oder exportieren. Frühere Fassungen wesentlicher Überarbeitungen werden mit den Versionsaufzeichnungen des Open-Source-Repositorys archiviert; überarbeitete Bedingungen werden vor ihrem Inkrafttreten in der beschriebenen Weise öffentlich zur Durchsicht bereitgestellt.
+Diese Bedingungen können mit der Weiterentwicklung des Dienstes überarbeitet werden. Wesentliche Änderungen werden vorab durch eine Ankündigung auf der Website mitgeteilt; das Inkrafttretensdatum und die Versionsnummer am Anfang dieser Seite werden aktualisiert. Wer nach Inkrafttreten einer Änderung den Dienst weiter nutzt, gilt als mit den überarbeiteten Bedingungen einverstanden; wer nicht einverstanden ist, soll die Nutzung einstellen und seine lokalen Daten nach eigener Möglichkeit sichern oder löschen. Frühere Fassungen wesentlicher Überarbeitungen werden mit den Versionsaufzeichnungen des Open-Source-Repositorys archiviert; überarbeitete Bedingungen werden vor ihrem Inkrafttreten in der beschriebenen Weise öffentlich zur Durchsicht bereitgestellt.
 
 ## 13. Kontaktwege
 

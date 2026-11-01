@@ -3,7 +3,7 @@ title: Politique d'utilisation acceptable
 description: "Politique d'utilisation acceptable de Sonic : périmètre d'application, liste des comportements interdits, plafonds d'utilisation des ressources, gradation des mesures, circuit de tolérance zéro et procédure de recours."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente politique fixe les limites comportementales de l'utilisation du service Sonic (ci-après « le service ») et expose les comportements interdits ainsi que les mesures que peut prendre l'opérateur. Elle constitue les règles de conduite visées à la section 7 des [Conditions d'utilisation](/fr/terms-of-service/) ; son respect s'impose à tout utilisateur du service ; si vous n'acceptez pas la présente politique, cessez d'utiliser le service.
 

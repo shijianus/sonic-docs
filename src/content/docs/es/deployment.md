@@ -3,7 +3,7 @@ title: Guía de despliegue
 description: "Guía de despliegue de Sonic: las dos opciones, pasarela de borde en Cloudflare Pages y motor local en Linux, variables de entorno, copias de seguridad y recuperación, comprobaciones de salud y retroceso."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página describe las dos opciones para desplegar Sonic por sí mismo, las variables de entorno principales, la copia de seguridad y la recuperación, y los puntos operativos esenciales. Desde el momento del despliegue, quien despliega es el responsable del tratamiento de sus usuarios; las obligaciones pertinentes constan en la sección 6 de [Tratamiento de datos y seguridad](/es/data-security/) y en [Código abierto y autoalojamiento](/es/open-source/); el detalle operativo autoritativo consta en `docs/OPERATIONS.md` del repositorio de origen.
 

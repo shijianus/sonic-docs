@@ -3,7 +3,7 @@ title: Funktionsleitfaden
 description: Sonic-Funktionsleitfaden – vertiefte Erläuterungen zu Qualitätsstufen und Hörproben-Transparenz, wortweisen Lyrics, Empfehlungen und Auto DJ, Downloads und lokaler Musik, Charts, MVs und Suchtoleranz.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite erläutert vertieft, wie sich die einzelnen Funktionen von Sonic verhalten und welche Abwägungen ihrem Entwurf zugrunde liegen. Die Position in der Oberfläche zeigt die [Oberflächen- und Funktionsübersicht](/de/interface/); die technische Beschreibung der Verhaltenssignale und des Empfehlungsmodells steht in der [Projektvorstellung](/de/project/), Abschnitt 5; die vertraglichen Bedingungen der Funktionsnutzung regeln die [Nutzungsbedingungen](/de/terms-of-service/).
 

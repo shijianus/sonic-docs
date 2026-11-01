@@ -124,6 +124,27 @@ const SIDEBAR_I18N = {
 		'zh-tw': '開源與自行部署法律', 'en': 'Open-Source & Self-Hosting Legal', 'fr': "Open source et auto-hébergement", 'es': 'Código abierto y autoalojamiento', 'de': 'Open Source & Self-Hosting', 'ja': 'オープンソースと自己ホスティング', 'ko': '오픈소스 및 자체 호스팅', 'pt': 'Open source e autoalojamento', 'ru': 'Открытый код и самостоятельное размещение',
 	},
 
+	'搜索与规则参考': {
+		'zh-tw': '搜尋與規則參考', 'en': 'Search & Rules Reference', 'fr': 'Référence de recherche et des règles', 'es': 'Referencia de búsqueda y reglas', 'de': 'Such- & Regelreferenz', 'ja': '検索とルール参照', 'ko': '검색 및 규칙 참조', 'pt': 'Referência de pesquisa e regras', 'ru': 'Поиск и правила',
+	},
+	'音乐库管理': {
+		'zh-tw': '音樂庫管理', 'en': 'Music Library Management', 'fr': 'Gestion de la bibliothèque', 'es': 'Gestión de la biblioteca', 'de': 'Musikbibliothek verwalten', 'ja': 'ミュージックライブラリ管理', 'ko': '음악 라이브러리 관리', 'pt': 'Gestão da biblioteca de música', 'ru': 'Управление медиатекой',
+	},
+	'移动端指南': {
+		'zh-tw': '行動裝置指南', 'en': 'Mobile Guide', 'fr': 'Guide mobile', 'es': 'Guía móvil', 'de': 'Mobile Leitfaden', 'ja': 'モバイルガイド', 'ko': '모바일 가이드', 'pt': 'Guia móvel', 'ru': 'Мобильное руководство',
+	},
+	'推荐算法说明': {
+		'zh-tw': '推薦演算法說明', 'en': 'Recommendation Algorithm', 'fr': 'Algorithme de recommandation', 'es': 'Algoritmo de recomendación', 'de': 'Empfehlungsalgorithmus', 'ja': 'レコメンドアルゴリズム', 'ko': '추천 알고리즘 설명', 'pt': 'Algoritmo de recomendação', 'ru': 'Алгоритм рекомендаций',
+	},
+	'帐户与安全指南': {
+		'zh-tw': '帳戶與安全指南', 'en': 'Account & Security Guide', 'fr': 'Compte et sécurité', 'es': 'Cuenta y seguridad', 'de': 'Konto & Sicherheit', 'ja': 'アカウントとセキュリティ', 'ko': '계정 및 보안 가이드', 'pt': 'Conta e segurança', 'ru': 'Аккаунт и безопасность',
+	},
+	'数据导出与存储': {
+		'zh-tw': '資料匯出與儲存', 'en': 'Data Export & Storage', 'fr': 'Export et stockage des données', 'es': 'Exportación y almacenamiento de datos', 'de': 'Datenexport & Speicherung', 'ja': 'データ書き出しと保存', 'ko': '데이터 내보내기 및 저장', 'pt': 'Exportação e armazenamento de dados', 'ru': 'Экспорт и хранение данных',
+	},
+	'故障排查': {
+		'zh-tw': '疑難排解', 'en': 'Troubleshooting', 'fr': 'Dépannage', 'es': 'Solución de problemas', 'de': 'Fehlerbehebung', 'ja': 'トラブルシューティング', 'ko': '문제 해결', 'pt': 'Resolução de problemas', 'ru': 'Устранение неполадок',
+	},
 	'用语定义': {
 		'zh-tw': '用語定義',
 		fr: 'Définitions',
@@ -199,7 +220,7 @@ export default defineConfig({
 				pt: { label: 'Português', lang: 'pt' },
 				ru: { label: 'Русский', lang: 'ru' },
 			},
-			logo: { src: './public/favicon.svg' },
+			logo: { src: './public/logo.svg' },
 			favicon: '/favicon.svg',
 			social: { github: 'https://github.com/shijianus/sonic' },
 			// 覆写 SkipLink：移除「跳转到内容」快捷跳转
@@ -216,7 +237,15 @@ export default defineConfig({
 				g('使用指南', [
 					t('快速上手', 'quickstart'),
 					t('功能指南', 'features'),
-					t('开放平台与 API 接入', 'api'),
+					t('搜索与规则参考', 'search-syntax'),
+					t('音乐库管理', 'library'),
+					t('移动端指南', 'mobile'),
+					t('故障排查', 'troubleshooting'),
+				]),
+				g('帐户与个性化', [
+					t('帐户与安全指南', 'account-security'),
+					t('推荐算法说明', 'recommendation'),
+					t('数据导出与存储', 'data-management'),
 				]),
 				g('隐私与数据保护', [
 					t('隐私政策', 'privacy-policy'),
@@ -232,6 +261,7 @@ export default defineConfig({
 				g('自部署与开发', [
 					t('部署指南', 'deployment'),
 					t('开发指南', 'development'),
+					t('开放平台与 API 接入', 'api'),
 				]),
 			],
 		}),

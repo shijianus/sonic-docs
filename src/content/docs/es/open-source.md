@@ -3,7 +3,7 @@ title: Código abierto y autoalojamiento
 description: "Código abierto y autoalojamiento de Sonic: estado de la licencia, límites de marca, agradecimientos y dependencias de terceros, deberes del desplegador y límites de conformidad."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página describe el estado y los límites de la licencia de código abierto de Sonic, los agradecimientos a terceros y las obligaciones jurídicas del autoalojamiento. La relación entre la licencia del software y las condiciones de uso consta en las secciones 2 y 10 de los [Términos del servicio](/es/terms-of-service/).
 

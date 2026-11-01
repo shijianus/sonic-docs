@@ -3,7 +3,7 @@ title: Guide de déploiement
 description: "Guide de déploiement de Sonic : double option passerelle edge Cloudflare Pages et moteur local Linux, variables d'environnement, sauvegarde et restauration, contrôles de santé et retour arrière."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page expose les deux options d'auto-hébergement de Sonic, les variables d'environnement principales, la sauvegarde et la restauration, et les points d'exploitation essentiels. Dès le moment du déploiement, le déployeur devient le responsable du traitement des données de ses utilisateurs ; les obligations correspondantes figurent à la section 6 de [Traitement des données et mesures de sécurité](/fr/data-security/) et dans [Droit de l'open source et de l'auto-hébergement](/fr/open-source/) ; la référence des détails d'exploitation est `docs/OPERATIONS.md` du dépôt amont.
 

@@ -3,7 +3,7 @@ title: Guide de l'interface et des fonctions
 description: "Guide de l'interface et des fonctions du lecteur Sonic : accueil et recommandations, recherche, commandes de lecture, tiroir du lecteur, ma musique, paramètres et contrôles de confidentialité, mise en page mobile."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page fait le tour de la disposition de l'interface du lecteur web Sonic et de l'emplacement de chaque fonction, en expliquant où se trouve chaque fonction et comment elle se comporte. Les captures d'écran proviennent de l'écran réel de l'instance hébergée (langue de l'interface en chinois simplifié ; le produit permet de changer la langue de l'interface). L'interface pouvant évoluer avec les versions, le périmètre réel de disponibilité des fonctions dépend de ce que l'instance a activé ; les stipulations juridiques figurent dans les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/).
 
@@ -16,10 +16,18 @@ La présente page fait le tour de la disposition de l'interface du lecteur web S
 L'accueil agrège trois zones de contenu :
 
 1. Emplacement carrousel de recommandations : présente les nouveaux titres et les nouveaux albums ; les cartes portent des marqueurs de source tels que « sonic 新歌 » (nouveautés Sonic) ; un clic lance directement la lecture ou ouvre la fiche détaillée ;
-2. Recommandation intelligente et radar musical : propose trois vues « Suggestions pour vous », « Palmarès des tendances du site » et « Radar d'exploration de styles », avec les actions « Afficher d'autres suggestions » et « Lire la liste de recommandations ». Les cartes de recommandation indiquent le motif de la recommandation (comme le badge « Recommandation personnalisée » et les mentions « Artiste fréquemment écouté », « Proche des styles que vous préférez ») ; l'accueil mobile affiche en outre les étiquettes des signaux de préférence de la session en cours (artistes, genres, par exemple) ; les catégories de signaux sur lesquels repose la recommandation figurent à la section 4.2 de la [Politique de confidentialité](/fr/privacy-policy/) ;
+2. Recommandation intelligente et radar musical : propose trois vues « Suggestions pour vous », « Palmarès des tendances du site » et « Radar d'exploration de styles », avec les actions « Afficher d'autres suggestions » et « Lire la liste de recommandations » ; après une recherche, le radar présente dynamiquement les résultats correspondant à votre intention de recherche et à vos signaux de préférence. Les cartes de recommandation indiquent le motif de la recommandation (comme le badge « Recommandation personnalisée » et les mentions « Artiste fréquemment écouté », « Proche des styles que vous préférez ») ; l'accueil mobile affiche en outre les étiquettes des signaux de préférence de la session en cours (artistes, genres, par exemple) ; les catégories de signaux sur lesquels repose la recommandation figurent à la section 4.2 de la [Politique de confidentialité](/fr/privacy-policy/) ;
 3. Playlists recommandées et titres populaires : générées d'après les tendances d'écoute réelles de tout le site ; le nombre d'écoutes est indiqué sur les cartes.
 
-L'ordonnancement des recommandations n'affecte que la séquence de lecture que vous voyez ; vous pouvez désactiver la personnalisation dans les paramètres (voir la section 7), et la recommandation passe alors en mode purement public.
+![Radar musical et de styles de l'accueil Sonic : après une recherche, le radar présente les résultats correspondant aux signaux de préférence, dans un style aligné sur celui des titres populaires](/images/sonic/ui/ui-radar.png)
+
+*Figure : le radar musical et de styles après une recherche. Les résultats du radar adoptent le style des cartes « Titres populaires » ; les motifs de recommandation et les étiquettes de signaux de préférence sont présentés de manière transparente.*
+
+L'ordonnancement des recommandations n'affecte que la séquence de lecture que vous voyez ; vous pouvez désactiver la personnalisation dans les paramètres (voir la section 9), et la recommandation passe alors en mode purement public.
+
+### 1.1 Barre latérale : mode replié et entrée de compte
+
+Le Logo de marque au sommet de la barre latérale fait office de commutateur de repli : un clic replie la barre latérale en une bande étroite (mode icônes), un nouveau clic la déploie. Le bas de la barre latérale intègre l'entrée de compte Epomail : avant connexion, elle affiche un guide de connexion ; après connexion, elle affiche le pseudonyme du compte et l'entrée, l'état de connexion étant synchronisé entre les onglets.
 
 ## 2. Recherche
 

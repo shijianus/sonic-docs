@@ -3,7 +3,7 @@ title: Guide des fonctions
 description: "Guide des fonctions de Sonic : graduation de la qualité audio et transparence des extraits, paroles mot à mot, recommandation et Auto DJ, téléchargement et musique locale, classements, MV et tolérance aux erreurs de recherche, en profondeur."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page explique en profondeur le comportement de chaque fonction de Sonic et les arbitrages de conception qui les sous-tendent. L'emplacement des fonctions dans l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la description technique des signaux comportementaux et du modèle de recommandation se trouve à la section 5 de la [Présentation du projet](/fr/project/) ; les conditions contractuelles d'utilisation des fonctions figurent dans les [Conditions d'utilisation](/fr/terms-of-service/).
 

@@ -3,7 +3,7 @@ title: Términos del servicio
 description: "Términos del servicio de Sonic: aceptación de las condiciones, detalle del alcance del servicio, reglas de cuenta, autorización de los datos de comportamiento, calidad e indicadores de vista previa, limitación de responsabilidad, ley aplicable y resolución de controversias."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Estas condiciones constituyen el acuerdo entre usted y el operador de la instancia que utilice sobre el uso del servicio Sonic (en lo sucesivo, «el servicio»). Al completar el inicio de sesión o utilizar el servicio por cualquier otra vía, declara que ha leído y acepta la totalidad de estas condiciones; si no está de acuerdo, no utilice el servicio.
 
@@ -28,7 +28,7 @@ El servicio es una herramienta de búsqueda, agregación y reproducción que no 
 | Categoría de función | Funciones incluidas | Lugar de almacenamiento de los datos | ¿Requiere inicio de sesión? |
 | --- | --- | --- | --- |
 | Funciones principales (uso anónimo) | Búsqueda agregada multifuente, letras palabra por palabra, reproducción por niveles de calidad, indicadores de vista previa, listas de éxitos, MV | Navegador local (estado de reproducción) | No |
-| Funciones de cuenta | Sincronización en la nube de favoritos y listas, recomendación personalizada y Auto DJ, gestión de eventos de comportamiento | El servidor solo conserva eventos de comportamiento seudonimizados; las preferencias de favoritos, en el navegador | Sí |
+| Cuenta y personalización | Recomendación personalizada y Auto DJ, gestión de eventos de comportamiento; los favoritos, las listas y las preferencias permanecen en cada navegador y no se sincronizan entre dispositivos | El servidor solo conserva eventos de comportamiento seudonimizados; la biblioteca local, en cada navegador | Sí |
 | Funciones de datos personales | Lista de descargas, importación y gestión de música local | IndexedDB del navegador | No |
 | API abierta | Acceso de clientes de terceros mediante claves de API firmadas | Sesiones y lista de revocación en el servidor | Sí |
 
@@ -55,7 +55,7 @@ El servicio se construye sobre un proyecto de código abierto y continúa siénd
 
 ## 5. Sus contenidos y datos de comportamiento
 
-1. Favoritos y preferencias: los favoritos, las listas de reproducción y las preferencias del reproductor que usted cree se guardan en el almacenamiento local de su navegador; se eliminan al borrar los datos del navegador o al usar «Borrar todos los datos locales»; el operador no responde de su pérdida, y le conviene registrar por su cuenta las listas importantes.
+1. Favoritos y preferencias: los favoritos, las listas de reproducción y las preferencias del reproductor que usted cree se guardan únicamente en el almacenamiento local del navegador utilizado; no se sincronizan entre dispositivos ni se conserva una copia en la nube. Se eliminan al borrar los datos del navegador o al usar «Borrar todos los datos locales»; el operador no responde de su pérdida, y le conviene registrar por su cuenta las listas importantes.
 2. Música local y descargas: los archivos de música local que usted importe y las canciones descargadas se guardan en el IndexedDB de su navegador; esos contenidos son suyos y los servidores del operador no conservan copia. Los archivos descargados o importados localmente son solo para su escucha personal; usted no puede redistribuirlos, difundirlos públicamente ni usarlos con fines comerciales.
 3. Autorización de los eventos de comportamiento: para prestar la función de recomendación, el servicio registra eventos de comportamiento cuando usted reproduce, completa, salta, añade a favoritos o rechaza pistas (las categorías de señales y sus ponderaciones son públicas en el código fuente). Si desactiva la personalización o usa el modo puramente local o de incógnito, no se generan nuevos registros de eventos; mientras esté activada, la autorización anterior se limita al alcance necesario para la función de recomendación y termina cuando usted destruye todos los registros con el «borrado del perfil con un solo clic».
 4. Responsabilidad por los contenidos: usted responde de los contenidos que envíe por sí mismo (como los nombres personalizados de las listas o el comportamiento de sus llamadas a la API); las controversias y las responsabilidades legales derivadas de esos contenidos son de su cargo.
@@ -101,7 +101,7 @@ Las notificaciones previstas en estas condiciones se hacen por vía electrónica
 
 ## 12. Modificación de las condiciones
 
-Estas condiciones pueden modificarse con la evolución del servicio. Los cambios sustanciales se anunciarán previamente en el sitio, actualizándose la fecha de entrada en vigor y el número de versión de la parte superior de esta página. Si tras la entrada en vigor de un cambio usted sigue utilizando el servicio, se entenderá que acepta las condiciones revisadas; si no está de acuerdo, debe dejar de usarlo y borrar o exportar sus datos. Las versiones anteriores de las modificaciones sustanciales se archivan con el historial de versiones del repositorio de código abierto; las condiciones modificadas se publican, conforme a lo indicado, para su examen antes de su entrada en vigor.
+Estas condiciones pueden modificarse con la evolución del servicio. Los cambios sustanciales se anunciarán previamente en el sitio, actualizándose la fecha de entrada en vigor y el número de versión de la parte superior de esta página. Si tras la entrada en vigor de un cambio usted sigue utilizando el servicio, se entenderá que acepta las condiciones revisadas; si no está de acuerdo, debe dejar de usarlo, borrar sus datos locales o enviar una solicitud a través del canal de contacto de privacidad. Las versiones anteriores de las modificaciones sustanciales se archivan con el historial de versiones del repositorio de código abierto; las condiciones modificadas se publican, conforme a lo indicado, para su examen antes de su entrada en vigor.
 
 ## 13. Contacto
 

@@ -3,7 +3,7 @@ title: Plataforma aberta e acesso à API
 description: "Acesso à API aberta do Sonic: estrutura de resposta uniforme, navegação pelos endpoints, autenticação e transmissão da chave de API, limitação de taxa e revogação."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Esta página explica como aceder à API aberta do Sonic: estrutura de resposta uniforme, endpoints principais, autenticação e transmissão da chave de API, limitação de taxa e revogação. O comportamento do acesso vincula-se aos [Termos de Utilização](/pt/terms-of-service/) e à [Política de Utilização Aceitável](/pt/acceptable-use/); a formulação autoritativa das especificações dos endpoints consta de `API.md` no repositório a montante.
 

@@ -1,11 +1,11 @@
 ---
 title: Schnellstart
-description: Sonic-Schnellstart – der kürzeste Weg vom Öffnen der Website über Suche und Wiedergabe, Anmeldung und Synchronisation bis zu Downloads, lokaler Musik und der Nutzung auf Mobilgeräten.
+description: Sonic-Schnellstart – der kürzeste Weg vom Öffnen der Website über Suche und Wiedergabe, Anmeldung, lokale Favoriten, Downloads, lokale Musik und die Nutzung auf Mobilgeräten.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
-Diese Seite zeigt den kürzesten Weg zur Nutzung der gehosteten Sonic-Instanz (`sonic.epocanvas.tech`): vom Öffnen der Website über Suche und Wiedergabe, Anmeldung und Synchronisation bis zu Downloads, lokaler Musik und der Nutzung auf Mobilgeräten. Eine vollständige Wegleitung durch die Oberfläche bietet die [Oberflächen- und Funktionsübersicht](/de/interface/); das Selbst-Hosting behandelt diese Seite nicht (zum Deployment siehe den [Deployment-Leitfaden](/de/deployment/)).
+Diese Seite zeigt den kürzesten Weg zur Nutzung der gehosteten Sonic-Instanz (`sonic.epocanvas.tech`): vom Öffnen der Website über Suche und Wiedergabe, Anmeldung, lokale Favoriten, Downloads, lokale Musik und die Nutzung auf Mobilgeräten. Eine vollständige Wegleitung durch die Oberfläche bietet die [Oberflächen- und Funktionsübersicht](/de/interface/); das Selbst-Hosting behandelt diese Seite nicht (zum Deployment siehe den [Deployment-Leitfaden](/de/deployment/)).
 
 ## 1. Öffnen der Website
 
@@ -17,17 +17,17 @@ Rufen Sie `sonic.epocanvas.tech` im Browser auf (Ersatz-Spiegel `sonic.epocanvas
 2. Die Ergebnisse gliedern sich in die drei Registerkarten „Titel/Playlists/MVs“; ein Klick auf einen Titel startet die Wiedergabe, oder Sie spielen die gesamte Liste mit „Alle abspielen“ fortlaufend ab;
 3. Die untere Wiedergabeleiste zeigt den aktuellen Titel, die Lyrics-Vorschauzeile und das Audioqualitäts-Abzeichen (z. B. SQ Lossless); ein Klick auf das Cover öffnet den Vollbild-Player-Drawer mit den wortweisen Lyrics (Originaltext, Übersetzung und Umschrift einzeln zuschaltbar).
 
-Bei 30-Sekunden-Hörproben kennzeichnet der Player sie wahrheitsgemäß mit dem Hörproben-Abzeichen und gibt sie nicht als vollständigen Titel aus; mit aktivierter Ergänzung über Quellen hinweg wird automatisch versucht, einen kostenlosen Volltitel zuzuordnen.
+Bei 30-Sekunden-Hörproben kennzeichnet der Player sie als Hörprobe und gibt sie nicht als vollständigen Titel aus; die standardmäßig aktivierte Ergänzung über Quellen hinweg versucht automatisch, einen kostenlosen Volltitel zuzuordnen.
 
-## 3. Anmeldung und Favoritensynchronisation
+## 3. Anmeldung und lokale Favoriten
 
 Die Anmeldung erfolgt mit dem Epomail-Konto über OAuth 2.0 (PKCE); der Dienst hat kein eigenes Registrierungssystem:
 
 1. Klicken Sie auf den Anmeldungseingang am unteren Rand der Seitenleiste; Sie gelangen zur Autorisierungsseite von Epomail und bestätigen dort;
-2. Nach der Anmeldung können Sie favorisierte Titel, favorisierte Playlists, gefolgte Künstler und selbst erstellte Playlists nutzen (gespeichert im lokalen Browserspeicher);
-3. Die Anmeldung schaltet zugleich personalisierte Empfehlungen und die Auto-DJ-Fortsetzung frei; beide lassen sich unter „Einstellungen → Datenschutz und lokale Daten“ abschalten; danach wechseln die Empfehlungen in den rein öffentlichen Modus, und es werden keine Verhaltensereignisse mehr aufgezeichnet.
+2. Nach der Anmeldung können Sie favorisierte Titel, favorisierte Playlists, gefolgte Künstler und selbst erstellte Playlists nutzen (gespeichert im lokalen Browserspeicher dieses Geräts; keine Synchronisation zwischen Geräten);
+3. Die Anmeldung schaltet zugleich personalisierte Empfehlungen und die Auto-DJ-Fortsetzung frei; beide lassen sich unter „Einstellungen → Datenschutz und lokale Daten“ abschalten; danach wechseln die Empfehlungen in den rein öffentlichen Modus, und es werden keine Verhaltensereignisse mehr aufgezeichnet. Favoriten, Playlists und Präferenzen bleiben lokale Browserdaten und werden nicht in der Cloud oder auf andere Geräte synchronisiert.
 
-Die Sitzung ist höchstens 30 Tage gültig; die Abmeldung sperrt sie sofort. Die Kontoregeln finden sich in den [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 3.
+Die Sitzung ist höchstens 30 Tage gültig; die Abmeldung sperrt sie sofort. Die Kontoregeln finden sich in den [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 3. Favoriten, Playlists und Präferenzen werden nicht geräteübergreifend synchronisiert.
 
 ## 4. Downloads und lokale Musik
 

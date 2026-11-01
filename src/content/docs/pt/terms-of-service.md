@@ -3,7 +3,7 @@ title: Termos de Utilização
 description: "Termos de Utilização do Sonic: aceitação dos termos, detalhe do âmbito do serviço, regras de conta, autorização dos dados comportamentais, qualidade de áudio e selos de amostra, limitação de responsabilidade, lei aplicável e resolução de litígios."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Estes termos constituem o acordo entre si e o operador da instância que utiliza, sobre a utilização do serviço Sonic (a seguir designado «o serviço»). Ao concluir o início de sessão ou utilizar o serviço de qualquer outra forma, declara que leu e aceita a integralidade do conteúdo destes termos; quem não concordar, não utilize o serviço.
 
@@ -28,7 +28,7 @@ O serviço é uma ferramenta de pesquisa, agregação e reprodução que não ar
 | Categoria de funções | Funções incluídas | Local de armazenamento dos dados | Requer início de sessão |
 | --- | --- | --- | --- |
 | Funções principais (disponíveis anonimamente) | Pesquisa agregada multifuente, letras palavra a palavra, reprodução com níveis de qualidade, selos de amostra, tabelas de classificação, MV | Navegador local (estado de reprodução) | Não |
-| Funções de conta | Sincronização na nuvem dos favoritos e das playlists, recomendação personalizada e Auto DJ, gestão dos eventos comportamentais | O servidor guarda apenas eventos comportamentais pseudonimizados; as preferências de favoritos guardam-se no navegador | Sim |
+| Funções de conta | Gestão local de favoritos e playlists, recomendação personalizada e Auto DJ, gestão dos eventos comportamentais | O servidor guarda apenas eventos comportamentais pseudonimizados; os favoritos e as preferências ficam apenas no navegador atual e não são sincronizados entre dispositivos | Sim |
 | Funções de dados pessoais | Lista de descargas, importação e gestão de música local | IndexedDB do navegador | Não |
 | API aberta | Acesso de clientes de terceiros mediante chave de API assinada | Sessão e listas de revogação no servidor | Sim |
 
@@ -101,7 +101,7 @@ As notificações previstas nestes termos fazem-se por documento eletrónico; a 
 
 ## 12. Revisão dos termos
 
-Estes termos podem ser revistos com a evolução do serviço. As alterações substanciais comunicam-se previamente por aviso no site, com atualização da data de entrada em vigor e do número de versão no topo desta página. Continuando a utilizar o serviço após a entrada em vigor da alteração, considera-se que aceita os termos revistos; quem discordar deve cessar a utilização e limpar ou exportar os seus dados. As versões históricas das revisões substanciais arquivam-se com os registos de versões do repositório de código aberto; os termos revistos publicam-se, antes da entrada em vigor, segundo o modo descrito, para sua apreciação.
+Estes termos podem ser revistos com a evolução do serviço. As alterações substanciais comunicam-se previamente por aviso no site, com atualização da data de entrada em vigor e do número de versão no topo desta página. Continuando a utilizar o serviço após a entrada em vigor da alteração, considera-se que aceita os termos revistos; quem discordar deve cessar a utilização e limpar os seus dados, podendo apresentar um pedido de direitos pelo canal da secção 9. As versões históricas das revisões substanciais arquivam-se com os registos de versões do repositório de código aberto; os termos revistos publicam-se, antes da entrada em vigor, segundo o modo descrito, para sua apreciação.
 
 ## 13. Contactos
 

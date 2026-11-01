@@ -3,7 +3,7 @@ title: Entwicklungsleitfaden
 description: Sonic-Entwicklungsleitfaden – Repository-Struktur, Build-Befehle, Testsuite, Verifikation der Dokumentenkonsistenz und Beteiligung am Projekt.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite richtet sich an Leser, die an der Entwicklung oder Weiterentwicklung mitwirken möchten, und beschreibt Repository-Struktur, Build-Befehle, Testsuite und die Verifikation der Dokumentenkonsistenz. Lizenz und rechtliche Grenzen sind unter [Open-Source- und Selbst-Hosting-Recht](/de/open-source/) dargestellt.
 

@@ -3,7 +3,7 @@ title: Privacy Policy
 description: The Sonic Privacy Policy — notice of collection, legal bases, retention periods, your rights and international transfers, with the GDPR as the minimum standard for every user.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This policy explains how the Sonic service (hereinafter "the service") collects, processes and transfers your personal data, and the standards and commitments the operator observes to protect it. Read this policy before signing in to or using the service; if you do not agree with any part of it, do not use the service.
 
@@ -43,7 +43,7 @@ When the service collects personal data from you, it clearly informs you of the 
 | 3. Categories of personal data | Account identification (Epomail user identifier, e-mail address, nickname, avatar link, account role); behavioral and preference data (play, completion, skip, favorite, dislike, search terms and similar events, linked by a pseudonymous identifier); technical data (transient use of IP for rate limiting, session cookie, OAuth transactional cookies) — see section 4 |
 | 4. Period, region, recipients and manner of use | Period: behavioral events are destroyed automatically 90 days after recording (deployer-configurable, minimum 7 days); account identification data is never persisted and exists only within sessions; region: the control plane runs on the Cloudflare global edge network and the data plane on the operator's own Linux node (section 7); recipients: the operator and its processors, and competent authorities under legal requirement (section 7); manner: automated pseudonymised storage and statistical computation, never human content review |
 | 5. Your rights and how to exercise them | Access, rectification, erasure, restriction, portability, objection and complaint, as set out in section 9 |
-| 6. Consequences of not providing | The core functions (search, playback, lyrics) are usable without signing in and without reporting behavioral events; sign-in is required for account features such as cloud favorites, and personalised recommendation is optional |
+| 6. Consequences of not providing | The core functions (search, playback, lyrics) are usable without signing in and without reporting behavioral events; personalised recommendation and behavioral-event management require sign-in where applicable, while local favorites and playlists do not require sign-in and are not synchronized across devices |
 
 ## 4. Personal data collected
 
@@ -176,10 +176,10 @@ How to exercise them:
 1. **Self-service functions (immediate effect)**:
    - "Clear recommendation profile": immediately destroys all behavioral events server-side linked to you (`DELETE /api/sonic/events`);
    - "Clear all local data": immediately clears browser localStorage, sessionStorage and the entire IndexedDB database, and destroys the server-side profile as well;
-   - Recommendation profile summary: query your current profile via `GET /api/sonic/events` (total events, favorite and dislike counts, most-played artists, genre affinities, recent search terms, storage kind);
+   - Recommendation profile summary: query the available summary of your current profile via `GET /api/sonic/events` (total events, favorite and dislike counts, most-played artists, genre affinities, recent search terms, storage kind). This is a summary, not a complete export; browser-local data remains on your device, and Sonic provides no general localStorage/IndexedDB export;
    - Switch personalisation off: takes effect immediately in settings, with the pending queue flushed and no further events collected;
    - Sign out: immediately revokes the current session and key identifier.
-2. **Manual requests**: all other requests go to `privacy@epocanvas.com`; the operator responds within one month of receipt (Article 12, Paragraph 3 of the GDPR); complex cases may extend by a further two months, with the reason communicated within the first month.
+2. **Manual requests**: requests not covered by the self-service summary or deletion controls go to `privacy@epocanvas.com`; the operator responds within one month of receipt (Article 12, Paragraph 3 of the GDPR); complex cases may extend by a further two months, with the reason communicated within the first month.
 
 If you believe the service's processing has infringed your rights, you may seek a remedy from the operator (Article 79) and lodge a complaint with a supervisory authority at the operator's location (Article 77); users in the European Union and the European Economic Area may lodge a complaint with the supervisory authority of their habitual residence, place of work or the place of the alleged infringement. Anyone who has suffered material or non-material damage from a GDPR infringement may seek compensation under Article 82.
 

@@ -3,7 +3,7 @@ title: Oberflächen- und Funktionsübersicht
 description: Übersicht über die Oberfläche und Funktionen des Sonic-Players – Startseite und Empfehlungen, Suche, Wiedergabesteuerung, Player-Drawer, Meine Musik, Einstellungen und Datenschutzsteuerung, mobiles Layout.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite führt durch das Layout der Oberfläche des Sonic-Webplayers und die Position der einzelnen Funktionen und erläutert, wo sich jede Funktion befindet und wie sie sich verhält. Die Screenshots stammen aus dem laufenden Betrieb der gehosteten Instanz (Oberflächensprache vereinfachtes Chinesisch; das Produkt unterstützt das Umschalten der Oberflächensprache). Die Oberfläche kann sich mit künftigen Versionen ändern; der tatsächlich verfügbare Funktionsumfang richtet sich nach dem, was die jeweilige Instanz aktiviert hat. Die rechtlichen Regelungen finden sich in den [Nutzungsbedingungen](/de/terms-of-service/) und in der [Datenschutzerklärung](/de/privacy-policy/).
 
@@ -15,11 +15,19 @@ Diese Seite führt durch das Layout der Oberfläche des Sonic-Webplayers und die
 
 Die Startseite bündelt drei Inhaltsbereiche:
 
-1. Karussellempfehlungsbereich: zeigt neue Lieder und neue Alben; die Karten tragen Quellenkennzeichnungen wie „sonic Neue Lieder“, ein Klick startet direkt die Wiedergabe oder öffnet die Details;
-2. Intelligente Empfehlungen und Musikradar: drei Ansichten „Empfohlen für dich“, „Trend-Chart der Instanz“ und „Stil-Entdeckungsradar“ mit den Aktionen „Weitere anzeigen“ und „Empfehlungsliste abspielen“. Die Empfehlungskarten nennen den Empfehlungsgrund (etwa das Abzeichen „Personalisierte Empfehlung“ und Hinweise wie „Häufig gehörter Künstler“ oder „Ähnlich deinem bevorzugten Stil“); die Startseite auf Mobilgeräten zeigt zudem die Präferenzsignale der aktuellen Sitzung als Tags (z. B. Künstler, Genre); zu den Signalkategorien der Empfehlungsgrundlage siehe die [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 4.2;
+1. Karussellempfehlungsbereich: zeigt Empfehlungen für neue Lieder, neue Alben und beliebte Lieder; die Karten tragen Quellenkennzeichnungen wie „sonic Neue Lieder“ und „sonic Empfehlung beliebter Lieder“, ein Klick startet direkt die Wiedergabe oder öffnet die Details;
+2. Intelligente Empfehlungen und Musikradar: drei Ansichten „Empfohlen für dich“, „Trend-Chart der Instanz“ und „Stil-Entdeckungsradar“ mit den Aktionen „Weitere anzeigen“ und „Empfehlungsliste abspielen“. Nach einer vollzogenen Suche zeigt das Radar dynamisch passende Ergebnisse entsprechend Ihrer Suchabsicht und Ihrer Präferenzsignale. Die Empfehlungskarten nennen den Empfehlungsgrund (etwa das Abzeichen „Personalisierte Empfehlung“ und Hinweise wie „Häufig gehörter Künstler“ oder „Ähnlich deinem bevorzugten Stil“); die Startseite auf Mobilgeräten zeigt zudem die Präferenzsignale der aktuellen Sitzung als Tags (z. B. Künstler, Genre); zu den Signalkategorien der Empfehlungsgrundlage siehe die [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 4.2;
 3. Empfehlungsplaylists und beliebte Titel: erzeugt aus den realen Hörtrends der gesamten Instanz; die Wiedergabezahl steht auf der Karte.
 
-Die Reihenfolge der Empfehlungen beeinflusst nur die Wiedergabefolge, die Sie sehen; in den Einstellungen können Sie die Personalisierung abschalten (siehe Abschnitt 7), danach wechseln die Empfehlungen in den rein öffentlichen Modus.
+![Musik- und Stilradar auf der Sonic-Startseite: Nach Abschluss einer Suche zeigt das Radar passende Ergebnisse auf Grundlage der Präferenzsignale an, ausgerichtet am Stil der beliebten Titel](/images/sonic/ui/ui-radar.png)
+
+*Abbildung: Das Musik- und Stilradar nach einer Suche. Die Radarergebnisse sind an den Karten „Beliebte Titel“ ausgerichtet; Empfehlungsgründe und Tags der Präferenzsignale werden transparent dargestellt.*
+
+Die Reihenfolge der Empfehlungen beeinflusst nur die Wiedergabefolge, die Sie sehen; in den Einstellungen können Sie die Personalisierung abschalten (siehe Abschnitt 9), danach wechseln die Empfehlungen in den rein öffentlichen Modus.
+
+### 1.1 Seitenleiste: Einklappmodus und Kontoeingang
+
+Das Marken-Logo am oberen Rand der Seitenleiste ist zugleich der Einklappschalter: Ein Klick zieht die Seitenleiste zu einem schmalen Streifen (Symbolmodus) zusammen, ein weiterer Klick klappt sie wieder aus. Am unteren Rand der Seitenleiste ist der Epomail-Kontoeingang integriert: Im abgemeldeten Zustand zeigt er eine Anleitung zur Anmeldung; nach der Anmeldung zeigt er den Kontonamen und den Eingang, und der Anmeldestatus wird über die Registerkarten hinweg synchronisiert.
 
 ## 2. Suche
 

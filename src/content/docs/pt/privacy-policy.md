@@ -3,7 +3,7 @@ title: Política de Privacidade
 description: "Política de Privacidade do Sonic: informação sobre a recolha e utilização de dados, fundamentos legais, prazos de conservação, direitos dos titulares e transferências internacionais, com o RGPD como padrão mínimo para todos os utilizadores."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Esta política explica como o serviço Sonic (a seguir designado «o serviço») recolhe, trata e transmite os seus dados pessoais, bem como os padrões e os compromissos de proteção de dados observados pelo operador. Antes de iniciar sessão ou de utilizar o serviço, deve ler esta política; se discordar de qualquer ponto da mesma, não utilize o serviço.
 
@@ -43,7 +43,7 @@ Ao recolher dados pessoais, o serviço informa-o expressamente do seguinte:
 | 3. Categorias de dados pessoais | Dados de identificação da conta (identificador de utilizador Epomail, endereço de correio eletrónico, alcunha, link de avatar e papel da conta); dados comportamentais e de preferência (eventos de reprodução, conclusão, salto, favorito, rejeição, termos de pesquisa, entre outros, associados por identificadores pseudonimizados); dados técnicos (utilização temporária do IP necessária à limitação de taxa, cookies de sessão e cookies de transação OAuth). Detalhe na secção 4 |
 | 4. Prazo, território, destinatários e modo da utilização | Prazo: os eventos comportamentais destroem-se automaticamente 90 dias após o registo (configurável por quem implanta, mínimo de 7 dias); os dados de identificação da conta não se persistem e existem apenas durante a sessão. Território: o plano de controlo corre na rede global de edge da Cloudflare e o plano de dados em nós Linux próprios do operador (ver a secção 7). Destinatários: o operador e os seus subcontratantes, e as autoridades competentes mediante exigência legal (ver a secção 7). Modo: armazenamento pseudonimizado e cálculos estatísticos de forma automatizada, sem revisão humana e sem moderação de conteúdos |
 | 5. Direitos que pode exercer e modo de exercício | Direitos de acesso, retificação, eliminação, limitação, portabilidade, oposição e reclamação; o modo de exercício consta da secção 9 |
-| 6. Consequências da não prestação dos dados | As funções básicas do serviço (pesquisa, reprodução, letras) estão disponíveis sem início de sessão e sem comunicação de eventos comportamentais; o início de sessão é necessário para as funções de conta, como a sincronização na nuvem dos favoritos, e a recomendação personalizada é opcional |
+| 6. Consequências da não prestação dos dados | As funções básicas do serviço (pesquisa, reprodução, letras) estão disponíveis sem início de sessão e sem comunicação de eventos comportamentais; o início de sessão é necessário para as funções de conta, enquanto os favoritos e as preferências permanecem apenas no navegador atual e não são sincronizados na nuvem entre dispositivos; a recomendação personalizada é opcional |
 
 ## 4. Dados pessoais recolhidos
 
@@ -175,8 +175,8 @@ Modo de exercício:
 
 1. Funções de self-service (efeito imediato):
    - «Limpar o perfil de recomendação»: destrói de imediato todos os eventos comportamentais associados a si no servidor (`DELETE /api/sonic/events`);
-   - «Limpar todos os dados locais»: limpa de imediato o localStorage, o sessionStorage e a totalidade da base de dados IndexedDB do navegador, destruindo em sincronia o perfil no servidor;
-   - Consulta do resumo do perfil de recomendação: via `GET /api/sonic/events`, obtém o resumo do seu perfil atual (total de eventos, contagens de favoritos e rejeições, artistas mais ouvidos, tendências de género, termos de pesquisa recentes e forma de armazenamento);
+   - «Limpar todos os dados locais»: limpa de imediato o localStorage, o sessionStorage e a totalidade da base de dados IndexedDB do navegador, destruindo em sincronia o perfil no servidor; esta é uma operação de eliminação, não uma exportação dos dados locais;
+   - Consulta do resumo do perfil de recomendação: via `GET /api/sonic/events`, obtém o resumo do seu perfil atual (total de eventos, contagens de favoritos e rejeições, artistas mais ouvidos, tendências de género, termos de pesquisa recentes e forma de armazenamento); este resumo não é uma exportação integral de dados pessoais e atualmente não existe um canal para descarregar os eventos completos do servidor;
    - Desativação da personalização: o interruptor da página de definições produz efeito imediato; a fila de envio esvazia-se e os eventos seguintes deixam de se recolher;
    - Término de sessão: revoga de imediato a sessão atual e o identificador de chave.
 2. Pedidos manuais: os restantes pedidos dirigem-se a `privacy@epocanvas.com`; o operador responde no prazo de um mês após a receção (o artigo 12.º, n.º 3, do RGPD); sendo o caso complexo, o prazo pode prolongar-se por mais dois meses, comunicando o motivo da extensão no primeiro mês.

@@ -3,7 +3,7 @@ title: Open-Source- und Selbst-Hosting-Recht
 description: Open-Source und Selbst-Hosting bei Sonic – Lizenzlage, Markengrenzen, Danksagungen und Abhängigkeiten von Dritten, Pflichten der Bereitsteller und Compliance-Grenzen.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite beschreibt die Lage und die Grenzen der Open-Source-Lizenzierung von Sonic, die Danksagungen an Dritte sowie die rechtlichen Pflichten beim Selbst-Hosting. Das Verhältnis von Softwarelizenz und Nutzungsbedingungen ist in den [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 2 und Abschnitt 10, dargestellt.
 

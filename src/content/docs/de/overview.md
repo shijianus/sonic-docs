@@ -3,7 +3,7 @@ title: Überblick über Datenschutz und Nutzungsbedingungen
 description: Gesamtüberblick über die rechtlichen Dokumente von Sonic – Identität der Plattform, Abgrenzung der Rollen bei der Datenverarbeitung, DSGVO-Niveau als Schutzuntergrenze, Dokumentenaufbau, Rangfolge der Geltung und Kontaktstellen.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite ist die Wegleitung zu allen rechtlichen Dokumenten des Sonic-Dienstes (nachfolgend „der Dienst“); sie erläutert die Rollen der Beteiligten, den Aufbau der Dokumente und ihre Geltungsreihenfolge. Vor der Anmeldung oder Nutzung des Dienstes sollten Sie diese Seite sowie die [Datenschutzerklärung](/de/privacy-policy/) und die [Nutzungsbedingungen](/de/terms-of-service/) lesen.
 

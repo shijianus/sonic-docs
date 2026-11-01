@@ -3,7 +3,7 @@ title: Interface e funcionalidades
 description: "Guia da interface e das funcionalidades do leitor Sonic: página inicial e recomendações, pesquisa, controlos de reprodução, gaveta do leitor, A minha música, definições e controlos de privacidade, disposição móvel."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Esta página orienta pela disposição da interface e pela localização das funcionalidades do leitor web do Sonic, indicando onde cada funcionalidade se encontra e como se comporta. As capturas de ecrã foram tiradas do funcionamento real da instância gerida (a língua da interface é o Chinês Simplificado; o produto permite trocar a língua da interface). A interface pode ser ajustada com a evolução das versões; o âmbito real de disponibilidade das funcionalidades depende do que a instância tenha ativado; os instrumentos legais constam dos [Termos de Utilização](/pt/terms-of-service/) e da [Política de Privacidade](/pt/privacy-policy/).
 
@@ -16,10 +16,18 @@ Esta página orienta pela disposição da interface e pela localização das fun
 A página inicial agrega três zonas de conteúdos:
 
 1. Carrossel de recomendações: apresenta novas músicas e novos álbuns; os cartões trazem selos de origem como «novidades Sonic» e um clique leva diretamente à reprodução ou aos detalhes;
-2. Recomendação inteligente e radar musical: oferece as vistas «Sugestões para si», «Tabela de tendências do site» e «Radar de exploração de estilos», com as ações «Trocar lote» e «Reproduzir a lista de recomendações». Os cartões de recomendação indicam o motivo da recomendação (como o selo «recomendação personalizada» e as notas «ouve frequentemente este artista» e «próximo dos estilos que prefere»); a página inicial móvel mostra ainda as etiquetas dos sinais de preferência da sessão atual (artista, género, entre outros); as categorias de sinais subjacentes às recomendações constam da secção 4.2 da [Política de Privacidade](/pt/privacy-policy/);
+2. Recomendação inteligente e radar musical: oferece as vistas «Sugestões para si», «Tabela de tendências do site» e «Radar de exploração de estilos», com as ações «Trocar lote» e «Reproduzir a lista de recomendações»; depois de uma pesquisa, o radar apresenta de forma dinâmica correspondências segundo a sua intenção de pesquisa e os seus sinais de preferência. Os cartões de recomendação indicam o motivo da recomendação (como o selo «recomendação personalizada» e as notas «ouve frequentemente este artista» e «próximo dos estilos que prefere»); a página inicial móvel mostra ainda as etiquetas dos sinais de preferência da sessão atual (artista, género, entre outros); as categorias de sinais subjacentes às recomendações constam da secção 4.2 da [Política de Privacidade](/pt/privacy-policy/);
 3. Playlists recomendadas e êxitos: geradas a partir das tendências reais de audição de todo o site, com o número de reproduções indicado nos cartões.
 
-A ordenação das recomendações afeta apenas a sequência de reprodução que vê; pode desativar a personalização nas definições (ver a secção 7) e, desativada, as recomendações passam ao modo puramente público.
+![Radar musical e de estilos da página inicial do Sonic: depois de uma pesquisa, o radar mostra correspondências com base nos sinais de preferência, alinhadas com o estilo dos êxitos](/images/sonic/ui/ui-radar.png)
+
+*Figura: radar musical e de estilos após uma pesquisa. Os resultados do radar seguem o estilo dos cartões de «êxitos», com o motivo da recomendação e as etiquetas dos sinais de preferência apresentados de forma transparente.*
+
+A ordenação das recomendações afeta apenas a sequência de reprodução que vê; pode desativar a personalização nas definições (ver a secção 9) e, desativada, as recomendações passam ao modo puramente público.
+
+### 1.1 Barra lateral: modo recolhido e entrada da conta
+
+O logótipo da marca no topo da barra lateral funciona como interruptor de recolha: clique para reduzir a barra a uma faixa estreita (modo de ícones) e clique novamente para a expandir. A entrada da conta Epomail fica no fundo da barra lateral: sem início de sessão apresenta a orientação para iniciar sessão; depois do início de sessão mostra a alcunha da conta e a entrada de gestão. O estado de início de sessão sincroniza-se entre separadores do mesmo navegador.
 
 ## 2. Pesquisa
 

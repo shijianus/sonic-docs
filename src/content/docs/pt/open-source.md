@@ -3,7 +3,7 @@ title: Código aberto e enquadramento legal da implantação própria
 description: "Código aberto e enquadramento legal do Sonic: estado da licença, limites das marcas, agradecimentos e dependências de terceiros, deveres de quem implanta e limites de conformidade."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
+**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
 
 Esta página explica o estado e os limites do licenciamento de código aberto do Sonic, os agradecimentos a terceiros e os deveres legais da implantação própria. A relação entre a licença do software e os termos de utilização consta das secções 2 e 10 dos [Termos de Utilização](/pt/terms-of-service/).
 

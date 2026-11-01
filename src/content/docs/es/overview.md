@@ -3,7 +3,7 @@ title: Descripción general
 description: "Descripción general de los documentos legales de Sonic: identidad de la plataforma, delimitación de los roles de tratamiento de datos, línea base de protección de nivel RGPD, arquitectura documental, orden de prevalencia y canales de contacto."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página es la guía de la totalidad de los documentos legales del servicio Sonic (en lo sucesivo, «el servicio»); explica los roles de las partes, la arquitectura documental y el orden de aplicación. Antes de iniciar sesión o utilizar el servicio, debe leer esta página, además de la [Política de privacidad](/es/privacy-policy/) y los [Términos del servicio](/es/terms-of-service/).
 

@@ -3,7 +3,7 @@ title: Plateforme ouverte et accès à l'API
 description: "Accès à l'API ouverte de Sonic : structure de réponse unifiée, navigation des endpoints, authentification par clé d'API et règles de transmission, limitation de débit et révocation."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page expose le mode d'accès à l'API ouverte de Sonic : structure de réponse unifiée, endpoints principaux, authentification par clé d'API et règles de transmission, limitation de débit et révocation. Le comportement d'accès est régi par les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique d'utilisation acceptable](/fr/acceptable-use/) ; la spécification de référence des endpoints figure dans `API.md` du dépôt amont.
 

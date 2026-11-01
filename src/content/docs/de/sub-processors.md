@@ -3,7 +3,7 @@ title: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlun
 description: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen von Sonic – Auftragsverarbeiter, Identitätsanbieter, Upstream-Inhaltsquellen, optionale Kanäle, gesetzliche Anforderungen und Garantien bei internationalen Übermittlungen.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
+**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
 
 Diese Seite führt vollständig auf, in welchen Fällen der Sonic-Dienst (nachfolgend „der Dienst“) personenbezogene Daten an Dritte weitergibt, einschließlich der Empfänger, der betroffenen Daten und der Garantiemechanismen. Sie entfaltet Abschnitt 7 der [Datenschutzerklärung](/de/privacy-policy/); das Weitergabeprinzip lautet Mindestnotwendigkeit: kein Verkauf personenbezogener Daten, keine Weitergabe für Werbung, kein Umfang über den für die Dienstfunktionen Erforderlichen hinaus.
 
@@ -47,16 +47,16 @@ Erläuterungen:
 2. Audiostreams werden standardmäßig über den Edge-Proxy bezogen; das vorgelagerte CDN sieht nur die Adresse des Proxyservers. Rufen Sie selbst den Direktverbindungsmodus `?mode=redirect` auf, baut Ihr Browser die Verbindung direkt zum CDN auf, und Ihre IP ist für dieses CDN sichtbar (inhärente Bedeutung der 302-Umleitung); der Webplayer verwendet diesen Modus nicht;
 3. Der Bereitsteller kann mit eigenen Mitgliedschaftsnachweisen (`NETEASE_COOKIE`/`QQ_COOKIE`/`KUGOU_COOKIE`) seinen lizenzierten Katalog einbinden; diese Nachweise sind Kontodaten des Bereitstellerkontos, haben mit Endnutzern nichts zu tun, und der Code enthält von Haus aus keinerlei echte Konto-Cookies.
 
-## 4. Standardmäßig abgeschaltete optionale Kanäle
+## 4. Optionale Kanäle und Standardstatus
 
-Die folgenden Kanäle sind standardmäßig strikt abgeschaltet und kommen erst nach ausdrücklicher Aktivierung durch den Bereitsteller zum Tragen:
+Die vier Dienste GDStudio, Lyriva, ListenBrainz/MusicBrainz und Gorse sind standardmäßig abgeschaltet und werden erst nach ausdrücklicher Aktivierung durch den Bereitsteller genutzt. Ihre Schalter stehen in der folgenden Tabelle. Die Ergänzung über Quellen hinweg ist davon getrennt: Sie ist standardmäßig aktiviert und hat keinen Deaktivierungsschalter.
 
 | Empfänger | Dienstleistung | Betroffene Daten | Schalter und Standardwert |
 | --- | --- | --- | --- |
 | GDStudio (`music-api.gdstudio.xyz`) | aggregierte Suche von Drittanbietern und Ergänzungsquelle über Quellen hinweg | nur Titelkennung, Typ und Quellparameter | `SONIC_ENABLE_GDSTUDIO`, Standard 0 |
 | Lyriva (`api.lyriva.xyz`) | Ersatzquelle für Lyrics | nur Titelkennungsparameter | `SONIC_ENABLE_LYRIVA`, Standard 0 |
 | ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org` usw.) | Erweiterung ähnlicher Künstler | nur Künstler-/Aufnahmenkennung | `SONIC_ENABLE_LISTENBRAINZ`, Standard 0 |
-| Ergänzung über Quellen hinweg | plattformübergreifende Volltitel-Zuordnung für Hörprobentitel (kostenlose Volltitel von QQ/Kugou/Kuwo) | nur Titelmetadaten (Dauer, Titel, Künstler) | standardmäßig aktiviert, ohne Identitätsdaten |
+| Ergänzung über Quellen hinweg (separater Kanal) | plattformübergreifende Volltitel-Zuordnung für Hörprobentitel (kostenlose Volltitel von QQ/Kugou/Kuwo) | nur Titelmetadaten (Dauer, Titel, Künstler) | standardmäßig aktiviert; kein Deaktivierungsschalter, ohne Identitätsdaten |
 | Gorse (vom Bereitsteller selbst betriebene Empfehlungsengine) | externes Collaborative Filtering | pseudonymisierte Hash-Bezeichner (`subject_key`) und Verhaltensfeedback | `SONIC_GORSE_URL`, Standard leer |
 
 ## 5. Weitergabe auf gesetzliche Anforderung

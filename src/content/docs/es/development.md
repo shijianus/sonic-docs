@@ -3,7 +3,7 @@ title: Guía de desarrollo
 description: "Guía de desarrollo de Sonic: estructura del repositorio, comandos de compilación, suite de pruebas, verificación de la coherencia documental y participación en las contribuciones."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página se dirige a quienes participen en el desarrollo y en el desarrollo derivado, y describe la estructura del repositorio, los comandos de compilación, la suite de pruebas y la verificación de la coherencia documental. La licencia y los límites jurídicos constan en [Código abierto y autoalojamiento](/es/open-source/).
 

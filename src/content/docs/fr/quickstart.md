@@ -1,11 +1,11 @@
 ---
 title: Démarrage rapide
-description: "Démarrage rapide de Sonic : le chemin le plus court, de l'ouverture du site à la recherche et à la lecture, à la connexion et à la synchronisation, au téléchargement et à la musique locale, et à l'usage mobile."
+description: "Démarrage rapide de Sonic : le chemin le plus court, de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
-La présente page indique le chemin le plus court pour utiliser l'instance hébergée de Sonic (`sonic.epocanvas.tech`) : de l'ouverture du site à la recherche et à la lecture, à la connexion et à la synchronisation, au téléchargement et à la musique locale, et à l'usage mobile. Le tour d'horizon complet de l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la présente page ne traite pas de l'auto-hébergement (pour le déploiement, voir le [Guide de déploiement](/fr/deployment/)).
+La présente page indique le chemin le plus court pour utiliser l'instance hébergée de Sonic (`sonic.epocanvas.tech`) : de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile. Le tour d'horizon complet de l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la présente page ne traite pas de l'auto-hébergement (pour le déploiement, voir le [Guide de déploiement](/fr/deployment/)).
 
 ## 1. Ouvrir le site
 
@@ -19,12 +19,12 @@ Accédez à `sonic.epocanvas.tech` dans votre navigateur (miroir de secours `son
 
 En présence d'un extrait officiel de 30 secondes, le lecteur l'indique fidèlement au moyen de l'indicateur d'extrait et ne le présente jamais comme un morceau complet ; lorsque la complétion inter-sources est activée, l'appariement automatique d'un morceau complet gratuit est tenté.
 
-## 3. Connexion et synchronisation des favoris
+## 3. Connexion et bibliothèque locale
 
 Connectez-vous avec un compte Epomail selon OAuth 2.0 (PKCE) ; le service ne dispose pas de système d'inscription autonome :
 
 1. cliquez sur l'entrée de connexion en bas de la barre latérale ; vous êtes dirigé vers la page d'autorisation d'Epomail, où vous confirmez ;
-2. une fois connecté, vous disposez des titres favoris, des playlists suivies, des artistes suivis et de vos playlists personnelles (stockés dans le navigateur) ;
+2. les titres favoris, les playlists enregistrées, les artistes suivis et vos playlists personnelles sont stockés uniquement dans le navigateur utilisé ; ils ne sont pas synchronisés dans le cloud ni entre appareils ;
 3. la connexion débloque en outre les recommandations personnalisées et l'enchaînement Auto DJ ; tous deux peuvent être désactivés dans « Paramètres → Confidentialité et données locales » ; une fois désactivés, la recommandation passe en mode purement public et plus aucun événement comportemental n'est enregistré.
 
 La session est valable 30 jours au plus ; la déconnexion révoque immédiatement. Les règles de compte figurent à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/).
@@ -37,7 +37,7 @@ La session est valable 30 jours au plus ; la déconnexion révoque immédiatemen
 
 ## 5. Usage mobile
 
-L'accès à la même adresse depuis le navigateur d'un téléphone affiche la mise en page mobile : navigation par onglets en bas (Accueil, Recherche, Lectures récentes, Paramètres) et mini-barre de lecture ; le tiroir du lecteur offre les mêmes paroles mot à mot et le même menu de qualité audio. Favoris, préférences et téléchargements sont stockés indépendamment sur mobile et sur ordinateur (chacun dans son propre navigateur).
+L'accès à la même adresse depuis le navigateur d'un téléphone affiche la mise en page mobile : navigation par onglets en bas (Accueil, Recherche, Lectures récentes, Paramètres) et mini-barre de lecture ; le tiroir du lecteur offre les mêmes paroles mot à mot et le même menu de qualité audio. Les favoris, playlists, préférences et téléchargements sont stockés séparément dans le navigateur de chaque appareil et ne sont pas synchronisés entre appareils.
 
 ## 6. Premiers réglages de confidentialité
 

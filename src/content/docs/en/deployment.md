@@ -3,7 +3,7 @@ title: Deployment Guide
 description: The Sonic deployment guide — the two tracks of Cloudflare Pages edge gateway and Linux local engine, environment variables, backup and recovery, health checks and rollback.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This page describes the two deployment tracks for Sonic, the core environment variables, backup and recovery, and operational essentials. From the moment of deployment the deployer is the data controller for that deployment's users; the relevant obligations are in [Data Processing & Security](/en/data-security/), section 6, and [Open-Source & Self-Hosting Legal](/en/open-source/); the authoritative operating detail is `docs/OPERATIONS.md` in the upstream repository.
 

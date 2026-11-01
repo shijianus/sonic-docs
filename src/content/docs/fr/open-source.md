@@ -3,7 +3,7 @@ title: Droit de l'open source et de l'auto-hébergement
 description: "Droit de l'open source et de l'auto-hébergement de Sonic : état de la licence, périmètre des marques, remerciements et dépendances tierces, obligations des déployeurs et limites de conformité."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 La présente page expose l'état et les limites de la licence open source de Sonic, les remerciements aux projets tiers, ainsi que les obligations juridiques de l'auto-hébergement. La relation entre la licence du logiciel et les conditions d'utilisation des utilisateurs figure aux sections 2 et 10 des [Conditions d'utilisation](/fr/terms-of-service/).
 

@@ -3,7 +3,7 @@ title: Conditions d'utilisation
 description: "Conditions d'utilisation de Sonic : acceptation des conditions, périmètre détaillé du service, règles de compte, autorisation des données comportementales, qualité audio et indicateurs d'extrait, limitation de responsabilité, droit applicable et règlement des litiges."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
+**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
 
 Les présentes conditions constituent l'accord conclu entre vous et l'opérateur de l'instance que vous utilisez au sujet de l'utilisation du service Sonic (ci-après « le service »). En vous connectant ou en utilisant le service de toute autre manière, vous déclarez avoir lu les présentes conditions et en accepter l'intégralité ; si vous n'y consentez pas, n'utilisez pas le service.
 
@@ -28,7 +28,7 @@ Le service est un outil de recherche, d'agrégation et de lecture : il ne stocke
 | Catégorie de fonctions | Fonctions incluses | Emplacement de stockage des données | Connexion requise |
 | --- | --- | --- | --- |
 | Fonctions principales (disponibles anonymement) | recherche agrégée multi-sources, paroles mot à mot, lecture à qualité graduée, indicateurs d'extrait, classements, MV | navigateur local (état de lecture) | non |
-| Fonctions de compte | synchronisation cloud des favoris et playlists, recommandations personnalisées et Auto DJ, gestion des événements comportementaux | serveur : événements comportementaux pseudonymisés uniquement ; préférences de favoris dans le navigateur | oui |
+| Compte et personnalisation | recommandations personnalisées et Auto DJ, gestion des événements comportementaux ; favoris, playlists et préférences restent dans chaque navigateur et ne sont pas synchronisés entre appareils | serveur : événements comportementaux pseudonymisés uniquement ; bibliothèque locale dans chaque navigateur | oui |
 | Fonctions de données personnelles | liste de téléchargements, importation et gestion de musique locale | IndexedDB du navigateur | non |
 | API ouverte | accès des clients tiers via clé d'API signée | sessions serveur et listes de révocation | oui |
 
@@ -55,7 +55,7 @@ Le service est bâti sur un projet open source et le demeure : le code source es
 
 ## 5. Vos contenus et données comportementales
 
-1. Favoris et préférences : vos favoris, playlists et préférences du lecteur sont stockés dans le stockage local de votre navigateur ; l'effacement des données du navigateur ou l'usage d'« Effacer toutes les données locales » les supprime ; l'opérateur ne répond pas de leur perte, et il vous appartient de consigner vos playlists importantes.
+1. Favoris et préférences : vos favoris, playlists et préférences du lecteur sont stockés uniquement dans le stockage local du navigateur utilisé ; ils ne sont pas synchronisés entre appareils et aucune copie cloud n'est conservée. L'effacement des données du navigateur ou l'usage d'« Effacer toutes les données locales » les supprime ; l'opérateur ne répond pas de leur perte, et il vous appartient de consigner vos playlists importantes.
 2. Musique locale et téléchargements : les fichiers de musique locale importés et les morceaux téléchargés sont stockés dans l'IndexedDB de votre navigateur ; ces contenus vous appartiennent et les serveurs de l'opérateur n'en conservent aucune copie. Les fichiers téléchargés ou importés localement ne servent qu'à votre écoute personnelle ; leur redistribution, leur diffusion publique ou leur usage commercial sont interdits.
 3. Autorisation des événements comportementaux : pour fournir la fonction de recommandation, le service enregistre des événements comportementaux lorsque vous lisez un morceau jusqu'au bout, le sautez, l'ajoutez aux favoris ou le refusez (les catégories de signaux et leurs poids sont publics dans le code source). Si vous désactivez la personnalisation ou utilisez le mode purement local ou privé, aucun nouvel enregistrement d'événement n'est produit ; pendant la période d'activation, l'autorisation précédente se limite au périmètre nécessaire à la fonction de recommandation et prend fin dès que vous détruisez l'ensemble des enregistrements par l'« effacement du profil en un clic ».
 4. Responsabilité des contenus : vous répondez des contenus que vous soumettez de votre propre initiative (nom de playlist personnalisée, comportements d'appel API, par exemple) ; les litiges et les responsabilités juridiques qui en découlent sont à votre charge.
@@ -101,7 +101,7 @@ Les notifications prévues aux présentes conditions s'effectuent par voie élec
 
 ## 12. Révision des conditions
 
-Les présentes conditions peuvent être révisées au fil de l'évolution du service. Les changements majeurs seront annoncés à l'avance sur le site, avec mise à jour de la date d'entrée en vigueur et du numéro de version en tête de page. En continuant à utiliser le service après l'entrée en vigueur d'un changement, vous êtes réputé accepter les conditions révisées ; à défaut d'accord, vous devez cesser de l'utiliser et effacer ou exporter vos données. Les versions historiques des révisions majeures sont archivées avec les enregistrements de versions du dépôt open source ; les conditions révisées sont publiées pour examen selon la voie décrite ci-dessus avant leur entrée en vigueur.
+Les présentes conditions peuvent être révisées au fil de l'évolution du service. Les changements majeurs seront annoncés à l'avance sur le site, avec mise à jour de la date d'entrée en vigueur et du numéro de version en tête de page. En continuant à utiliser le service après l'entrée en vigueur d'un changement, vous êtes réputé accepter les conditions révisées ; à défaut d'accord, vous devez cesser de l'utiliser, effacer vos données locales ou adresser une demande par le canal de contact de la confidentialité. Les versions historiques des révisions majeures sont archivées avec les enregistrements de versions du dépôt open source ; les conditions révisées sont publiées pour examen selon la voie décrite ci-dessus avant leur entrée en vigueur.
 
 ## 13. Coordonnées
 

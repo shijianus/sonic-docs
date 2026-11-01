@@ -3,7 +3,7 @@ title: Features Guide
 description: The Sonic features guide — in-depth notes on quality tiers and trial transparency, word-level lyrics, recommendations and Auto DJ, downloads and local music, charts, MV and search fault tolerance.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.4**
+**Effective date: 2 November 2026｜Version: 1.5**
 
 This page explains in depth how each Sonic function behaves and the design trade-offs behind it. Interface locations are in the [Interface & Features Guide](/en/interface/); the technical account of behavioral signals and the recommendation model is in the [Project Overview](/en/project/), section 5; the contractual conditions of use are in the [Terms of Service](/en/terms-of-service/).
 

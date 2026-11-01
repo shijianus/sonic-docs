@@ -3,7 +3,7 @@ title: Glosario
 description: "Definiciones de los términos de los documentos legales de Sonic: términos jurídicos (vocabulario del RGPD) y términos técnicos, usados de forma uniforme en todo el sitio."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
 Esta página define los términos jurídicos y los términos técnicos empleados en los documentos legales de este sitio. Cada término tiene el mismo significado en todos los documentos; los definidos se interpretan según su definición y los no definidos, según su acepción usual. Los términos jurídicos se basan en las definiciones del Reglamento General de Protección de Datos (RGPD) de la Unión Europea.
 

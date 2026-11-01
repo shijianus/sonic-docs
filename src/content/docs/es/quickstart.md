@@ -1,11 +1,11 @@
 ---
 title: Primeros pasos
-description: "Primeros pasos con Sonic: la ruta más corta desde abrir el sitio hasta buscar y reproducir, iniciar sesión y sincronizar, descargar e importar música local, y el uso en móvil."
+description: "Primeros pasos con Sonic: la ruta más corta desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
+**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
 
-Esta página ofrece la ruta más corta para usar la instancia gestionada de Sonic (`sonic.epocanvas.tech`): desde abrir el sitio hasta buscar y reproducir, iniciar sesión y sincronizar, descargar e importar música local y usar el móvil. Para la visita completa de la interfaz, véase la [Guía de la interfaz y funciones](/es/interface/); esta página no cubre el autoalojamiento (el despliegue consta en la [Guía de despliegue](/es/deployment/)).
+Esta página ofrece la ruta más corta para usar la instancia gestionada de Sonic (`sonic.epocanvas.tech`): desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil. Para la visita completa de la interfaz, véase la [Guía de la interfaz y funciones](/es/interface/); esta página no cubre el autoalojamiento (el despliegue consta en la [Guía de despliegue](/es/deployment/)).
 
 ## 1. Abrir el sitio
 
@@ -19,12 +19,12 @@ Acceda con el navegador a `sonic.epocanvas.tech` (espejo de respaldo `sonic.epoc
 
 Ante un fragmento de vista previa de 30 segundos, el reproductor lo etiqueta fielmente con el indicador de vista previa y no lo presenta como pista completa; con el completado entre fuentes activado, intenta automáticamente emparejar la pista completa gratuita.
 
-## 3. Inicio de sesión y sincronización de favoritos
+## 3. Inicio de sesión y biblioteca local
 
 Inicie sesión con su cuenta de Epomail mediante OAuth 2.0 (PKCE); el servicio no dispone de sistema de registro independiente:
 
 1. Pulse la entrada de inicio de sesión de la parte inferior de la barra lateral; será remitido a la página de autorización de Epomail para confirmar;
-2. Tras iniciar sesión puede usar las canciones favoritas, las listas guardadas, los artistas seguidos y las listas de reproducción propias (almacenados en el navegador local);
+2. Las canciones favoritas, las listas guardadas, los artistas seguidos y las listas propias se almacenan únicamente en el navegador utilizado; no se sincronizan en la nube ni entre dispositivos;
 3. Iniciar sesión desbloquea asimismo la recomendación personalizada y la continuación automática de Auto DJ; ambas pueden desactivarse en «Ajustes → Privacidad y datos locales»; desactivadas, las recomendaciones pasan a modo puramente público y deja de registrar cualquier evento de comportamiento.
 
 La sesión es válida como máximo 30 días y se revoca de inmediato al cerrar sesión. Las reglas de cuenta constan en la sección 3 de los [Términos del servicio](/es/terms-of-service/).
@@ -37,7 +37,7 @@ La sesión es válida como máximo 30 días y se revoca de inmediato al cerrar s
 
 ## 5. Uso en móvil
 
-Al acceder desde el navegador del teléfono a la misma dirección se obtiene la disposición móvil: navegación por pestañas en la parte inferior (inicio, búsqueda, reproducidos recientemente, ajustes) y barra de reproducción mini; el panel del reproductor ofrece la misma letra palabra por palabra y el mismo menú de calidad. Los favoritos, las preferencias y las descargas se almacenan por separado en el móvil y en el escritorio (cada uno en su propio navegador).
+Al acceder desde el navegador del teléfono a la misma dirección se obtiene la disposición móvil: navegación por pestañas en la parte inferior (inicio, búsqueda, reproducidos recientemente, ajustes) y barra de reproducción mini; el panel del reproductor ofrece la misma letra palabra por palabra y el mismo menú de calidad. Los favoritos, las listas, las preferencias y las descargas se almacenan por separado en el navegador de cada dispositivo y no se sincronizan entre dispositivos.
 
 ## 6. Primeros pasos en privacidad
 
