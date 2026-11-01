@@ -3,7 +3,7 @@ title: Política de privacidad
 description: "Política de privacidad de Sonic: información sobre la recogida y utilización de datos, bases jurídicas, plazos de conservación, derechos de la persona interesada y transferencias internacionales, con el RGPD como norma mínima para todos los usuarios."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Esta política explica cómo el servicio Sonic (en lo sucesivo, «el servicio») recoge, trata y transfiere sus datos personales, así como las normas y los compromisos de protección de datos que observa el operador. Antes de iniciar sesión o utilizar el servicio, debe leer esta política; si no está de acuerdo con cualquiera de sus contenidos, no utilice el servicio.
 

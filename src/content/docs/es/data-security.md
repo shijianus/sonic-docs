@@ -3,7 +3,7 @@ title: Tratamiento de datos y seguridad
 description: "Tratamiento de datos y seguridad de Sonic: ciclo de vida de los datos, matriz de tratamiento, medidas de seguridad en cuatro capas, limitaciones conocidas, respuesta a las violaciones de datos y deberes del autoalojamiento."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Esta página describe el ciclo de vida de los datos del servicio Sonic (en lo sucesivo, «el servicio»), la naturaleza de cada actividad de tratamiento, las medidas de mantenimiento de la seguridad, las limitaciones conocidas y los procedimientos de respuesta a las violaciones de datos. Es el desarrollo de la sección 10 de la [Política de privacidad](/es/privacy-policy/); los hechos técnicos se rigen por la implementación real del código de fuente abierta y pueden verificarse auditando el código fuente.
 

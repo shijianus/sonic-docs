@@ -3,7 +3,7 @@ title: Terms of Service
 description: The Sonic Terms of Service — acceptance, detailed service scope, account rules, behavioral-data authorisation, quality and trial labelling, limitation of liability, governing law and dispute resolution.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 These terms are the agreement between you and the operator of the instance you use, concerning the use of the Sonic service (hereinafter "the service"). By completing sign-in or otherwise using the service, you confirm that you have read and accepted the entire content of these terms; if you do not agree, do not use the service.
 

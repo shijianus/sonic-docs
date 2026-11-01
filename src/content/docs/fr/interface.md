@@ -3,7 +3,7 @@ title: Guide de l'interface et des fonctions
 description: "Guide de l'interface et des fonctions du lecteur Sonic : accueil et recommandations, recherche, commandes de lecture, tiroir du lecteur, ma musique, paramètres et contrôles de confidentialité, mise en page mobile."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 La présente page fait le tour de la disposition de l'interface du lecteur web Sonic et de l'emplacement de chaque fonction, en expliquant où se trouve chaque fonction et comment elle se comporte. Les captures d'écran proviennent de l'écran réel de l'instance hébergée (langue de l'interface en chinois simplifié ; le produit permet de changer la langue de l'interface). L'interface pouvant évoluer avec les versions, le périmètre réel de disponibilité des fonctions dépend de ce que l'instance a activé ; les stipulations juridiques figurent dans les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/).
 

@@ -3,7 +3,7 @@ title: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlun
 description: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen von Sonic – Auftragsverarbeiter, Identitätsanbieter, Upstream-Inhaltsquellen, optionale Kanäle, gesetzliche Anforderungen und Garantien bei internationalen Übermittlungen.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Seite führt vollständig auf, in welchen Fällen der Sonic-Dienst (nachfolgend „der Dienst“) personenbezogene Daten an Dritte weitergibt, einschließlich der Empfänger, der betroffenen Daten und der Garantiemechanismen. Sie entfaltet Abschnitt 7 der [Datenschutzerklärung](/de/privacy-policy/); das Weitergabeprinzip lautet Mindestnotwendigkeit: kein Verkauf personenbezogener Daten, keine Weitergabe für Werbung, kein Umfang über den für die Dienstfunktionen Erforderlichen hinaus.
 

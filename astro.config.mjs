@@ -105,6 +105,25 @@ const SIDEBAR_I18N = {
 		pt: 'Terceiros e transferências',
 		ru: 'Третьи лица и передача данных',
 	},
+	'快速上手': {
+		'zh-tw': '快速上手', 'en': 'Quick Start', 'fr': 'Prise en main', 'es': 'Primeros pasos', 'de': 'Schnellstart', 'ja': 'クイックスタート', 'ko': '빠른 시작', 'pt': 'Primeiros passos', 'ru': 'Быстрый старт',
+	},
+	'功能指南': {
+		'zh-tw': '功能指南', 'en': 'Features Guide', 'fr': 'Guide des fonctions', 'es': 'Guía de funciones', 'de': 'Funktionsguide', 'ja': '機能ガイド', 'ko': '기능 가이드', 'pt': 'Guia de funções', 'ru': 'Руководство по функциям',
+	},
+	'开放平台与 API 接入': {
+		'zh-tw': '開放平台與 API 接入', 'en': 'Open Platform & API Access', 'fr': "Plateforme ouverte et accès API", 'es': 'Plataforma abierta y acceso a la API', 'de': 'Offene Plattform & API-Zugang', 'ja': 'オープンプラットフォームと API', 'ko': '오픈 플랫폼 및 API', 'pt': 'Plataforma aberta e acesso à API', 'ru': 'Открытая платформа и API',
+	},
+	'部署指南': {
+		'zh-tw': '部署指南', 'en': 'Deployment Guide', 'fr': 'Guide de déploiement', 'es': 'Guía de despliegue', 'de': 'Bereitstellungsleitfaden', 'ja': 'デプロイガイド', 'ko': '배포 가이드', 'pt': 'Guia de implantação', 'ru': 'Руководство по развёртыванию',
+	},
+	'开发指南': {
+		'zh-tw': '開發指南', 'en': 'Development Guide', 'fr': 'Guide de développement', 'es': 'Guía de desarrollo', 'de': 'Entwicklungsleitfaden', 'ja': '開発ガイド', 'ko': '개발 가이드', 'pt': 'Guia de desenvolvimento', 'ru': 'Руководство по разработке',
+	},
+	'开源与自行部署法律': {
+		'zh-tw': '開源與自行部署法律', 'en': 'Open-Source & Self-Hosting Legal', 'fr': "Open source et auto-hébergement", 'es': 'Código abierto y autoalojamiento', 'de': 'Open Source & Self-Hosting', 'ja': 'オープンソースと自己ホスティング', 'ko': '오픈소스 및 자체 호스팅', 'pt': 'Open source e autoalojamento', 'ru': 'Открытый код и самостоятельное размещение',
+	},
+
 	'用语定义': {
 		'zh-tw': '用語定義',
 		fr: 'Définitions',
@@ -134,6 +153,13 @@ const SIDEBAR_GROUPS_I18N = {
 		pt: 'Privacidade e proteção de dados',
 		ru: 'Конфиденциальность и защита данных',
 	},
+	'使用指南': {
+		'zh-tw': '使用指南', 'en': 'Usage Guide', 'fr': "Guide d'utilisation", 'es': 'Guía de uso', 'de': 'Anwendungsleitfaden', 'ja': '使用ガイド', 'ko': '사용 가이드', 'pt': 'Guia de utilização', 'ru': 'Руководство пользователя',
+	},
+	'自部署与开发': {
+		'zh-tw': '自部署與開發', 'en': 'Self-Hosting & Development', 'fr': 'Auto-hébergement et développement', 'es': 'Autoalojamiento y desarrollo', 'de': 'Self-Hosting & Entwicklung', 'ja': '自己ホスティングと開発', 'ko': '자체 호스팅 및 개발', 'pt': 'Autoalojamento e desenvolvimento', 'ru': 'Самостоятельное размещение и разработка',
+	},
+
 	'条款与合规': {
 		'zh-tw': '條款與合規',
 		fr: 'Conditions et conformité',
@@ -185,6 +211,11 @@ export default defineConfig({
 					t('界面与功能导览', 'interface'),
 					t('总览', 'overview'),
 				]),
+				g('使用指南', [
+					t('快速上手', 'quickstart'),
+					t('功能指南', 'features'),
+					t('开放平台与 API 接入', 'api'),
+				]),
 				g('隐私与数据保护', [
 					t('隐私政策', 'privacy-policy'),
 					t('数据处理与安全维护', 'data-security'),
@@ -193,7 +224,12 @@ export default defineConfig({
 				g('条款与合规', [
 					t('用户条款', 'terms-of-service'),
 					t('可接受使用政策', 'acceptable-use'),
+					t('开源与自行部署法律', 'open-source'),
 					t('用语定义', 'key-terms'),
+				]),
+				g('自部署与开发', [
+					t('部署指南', 'deployment'),
+					t('开发指南', 'development'),
 				]),
 			],
 		}),

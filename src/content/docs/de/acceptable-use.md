@@ -3,7 +3,7 @@ title: Richtlinie zur akzeptablen Nutzung
 description: Richtlinie zur akzeptablen Nutzung von Sonic – Geltungsbereich, Verbotskatalog, Obergrenzen der Ressourcennutzung, Eskalationsstufen, Kanäle für Null-Toleranz-Fälle und Beschwerdeverfahren.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Richtlinie legt die Grenzen des Verhaltens bei der Nutzung des Sonic-Dienstes (nachfolgend „der Dienst“) fest und beschreibt die verbotenen Verhaltensweisen sowie die Maßnahmen des Betreibers. Sie ist die in Abschnitt 7 der [Nutzungsbedingungen](/de/terms-of-service/) genannte Verhaltensnorm und gilt für Ihre gesamte Nutzung des Dienstes; wer nicht einverstanden ist, stelle die Nutzung des Dienstes ein.
 

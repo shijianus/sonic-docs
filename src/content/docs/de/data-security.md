@@ -3,7 +3,7 @@ title: Datenverarbeitung und Sicherheitsmaßnahmen
 description: Datenverarbeitung und Sicherheitsmaßnahmen von Sonic – Datenlebenszyklus, Verarbeitungsmatrix, vier Sicherheitsschichten, bekannte Grenzen, Reaktion auf Datenschutzverletzungen und Pflichten beim Selbst-Hosting.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Seite erläutert den Datenlebenszyklus des Sonic-Dienstes (nachfolgend „der Dienst“), die Art der einzelnen Verarbeitungstätigkeiten, die Sicherheitsmaßnahmen, die bekannten Grenzen und das Verfahren bei Datenschutzverletzungen. Sie entfaltet Abschnitt 10 der [Datenschutzerklärung](/de/privacy-policy/); die technischen Aussagen folgen der tatsächlichen Implementierung des Open-Source-Codes und lassen sich durch Quellcodeaudits nachprüfen.
 

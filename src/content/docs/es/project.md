@@ -3,7 +3,7 @@ title: Presentación del proyecto
 description: "Presentación del proyecto epocanvas sonic: identidad del producto, funciones principales, arquitectura técnica, motor de recomendación, diseño de seguridad y privacidad, ámbito de aplicación, formas de despliegue y guía de lectura de la documentación."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Esta página presenta el proyecto epocanvas sonic (en lo sucesivo, «Sonic» o «el proyecto»): su identidad como producto, sus funciones principales, su arquitectura del sistema, su diseño de seguridad y privacidad, su ámbito de aplicación y sus formas de despliegue, y ofrece una ruta de lectura de la documentación de este sitio. Tanto si pretende utilizar una instancia gestionada, como desplegar la suya propia o conocer los compromisos de privacidad y condiciones, puede empezar por esta página. Los compromisos legales de Sonic figuran en la [Política de privacidad](/es/privacy-policy/) y en los [Términos del servicio](/es/terms-of-service/).
 

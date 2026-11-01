@@ -3,7 +3,7 @@ title: Processamento de dados e segurança
 description: "Processamento de dados e segurança do Sonic: ciclo de vida dos dados, matriz de tratamento, medidas de segurança em quatro camadas, limitações conhecidas, resposta a violações de dados e deveres de quem implanta."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.3**
+**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
 
 Esta página explica o ciclo de vida dos dados do serviço Sonic (a seguir designado «o serviço»), a natureza de cada atividade de tratamento, as medidas de segurança, as limitações conhecidas e o procedimento de resposta a violações de dados. Esta página desenvolve a secção 10 da [Política de Privacidade](/pt/privacy-policy/); os factos técnicos prevalecem conforme a implementação real do código aberto e podem rever-se por auditoria ao código-fonte.
 

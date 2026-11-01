@@ -3,7 +3,7 @@ title: Project Overview
 description: The epocanvas sonic project — product identity, core capabilities, architecture, recommendation engine, security and privacy design, fit, deployment, and reading guide.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This page introduces the epocanvas sonic project (hereinafter "Sonic" or "the project"): its product identity, core capabilities, system architecture, security and privacy design, fit and deployment, together with a reading guide for this site. Whether you intend to use a hosted instance, deploy your own, or review our privacy and terms commitments, start here. The legal commitments are set out in the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
 

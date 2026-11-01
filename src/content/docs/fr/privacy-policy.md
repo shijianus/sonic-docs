@@ -3,7 +3,7 @@ title: Politique de confidentialité
 description: "Politique de confidentialité de Sonic : information sur la collecte et l'utilisation des données, bases juridiques, durées de conservation, droits des personnes concernées et transferts internationaux, le RGPD servant de norme minimale pour l'ensemble des utilisateurs."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 La présente politique expose comment le service Sonic (ci-après « le service ») collecte, traite et transmet vos données à caractère personnel, ainsi que les normes et engagements que l'opérateur respecte en matière de protection des données. Avant de vous connecter ou d'utiliser le service, vous devez lire la présente politique ; si vous n'acceptez pas l'une de ses stipulations, n'utilisez pas le service.
 

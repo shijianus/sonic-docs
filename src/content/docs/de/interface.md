@@ -3,7 +3,7 @@ title: Oberflächen- und Funktionsübersicht
 description: Übersicht über die Oberfläche und Funktionen des Sonic-Players – Startseite und Empfehlungen, Suche, Wiedergabesteuerung, Player-Drawer, Meine Musik, Einstellungen und Datenschutzsteuerung, mobiles Layout.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Seite führt durch das Layout der Oberfläche des Sonic-Webplayers und die Position der einzelnen Funktionen und erläutert, wo sich jede Funktion befindet und wie sie sich verhält. Die Screenshots stammen aus dem laufenden Betrieb der gehosteten Instanz (Oberflächensprache vereinfachtes Chinesisch; das Produkt unterstützt das Umschalten der Oberflächensprache). Die Oberfläche kann sich mit künftigen Versionen ändern; der tatsächlich verfügbare Funktionsumfang richtet sich nach dem, was die jeweilige Instanz aktiviert hat. Die rechtlichen Regelungen finden sich in den [Nutzungsbedingungen](/de/terms-of-service/) und in der [Datenschutzerklärung](/de/privacy-policy/).
 

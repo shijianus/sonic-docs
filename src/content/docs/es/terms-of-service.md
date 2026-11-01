@@ -3,7 +3,7 @@ title: Términos del servicio
 description: "Términos del servicio de Sonic: aceptación de las condiciones, detalle del alcance del servicio, reglas de cuenta, autorización de los datos de comportamiento, calidad e indicadores de vista previa, limitación de responsabilidad, ley aplicable y resolución de controversias."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Estas condiciones constituyen el acuerdo entre usted y el operador de la instancia que utilice sobre el uso del servicio Sonic (en lo sucesivo, «el servicio»). Al completar el inicio de sesión o utilizar el servicio por cualquier otra vía, declara que ha leído y acepta la totalidad de estas condiciones; si no está de acuerdo, no utilice el servicio.
 

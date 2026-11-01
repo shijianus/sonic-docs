@@ -3,7 +3,7 @@ title: Traitement des données et mesures de sécurité
 description: "Traitement des données et mesures de sécurité de Sonic : cycle de vie des données, matrice de traitement, mesures de sécurité à quatre couches, limites connues, gestion des violations de données et obligations des opérateurs auto-hébergés."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 La présente page décrit le cycle de vie des données du service Sonic (ci-après « le service »), la nature des activités de traitement, les mesures de sécurité, les limites connues et la procédure d'intervention en cas de violation de données. Elle développe la section 10 de la [Politique de confidentialité](/fr/privacy-policy/) ; les faits techniques reposent sur l'implémentation réelle du code open source et peuvent être vérifiés par audit du code.
 

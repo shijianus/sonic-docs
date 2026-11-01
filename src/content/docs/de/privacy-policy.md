@@ -3,7 +3,7 @@ title: Datenschutzerklärung
 description: Datenschutzerklärung von Sonic – Information über Erhebung und Nutzung von Daten, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte und internationale Übermittlungen, mit der DSGVO als Mindeststandard für alle Nutzer.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Erklärung beschreibt, wie der Sonic-Dienst (nachfolgend „der Dienst“) Ihre personenbezogenen Daten erhebt, verarbeitet und übermittelt, und welche Standards und Zusagen der Betreiber beim Datenschutz befolgt. Vor der Anmeldung oder Nutzung des Dienstes sollten Sie diese Erklärung lesen; wenn Sie mit irgendeinem Inhalt dieser Erklärung nicht einverstanden sind, nutzen Sie den Dienst bitte nicht.
 

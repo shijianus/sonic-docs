@@ -3,7 +3,7 @@ title: Conditions d'utilisation
 description: "Conditions d'utilisation de Sonic : acceptation des conditions, périmètre détaillé du service, règles de compte, autorisation des données comportementales, qualité audio et indicateurs d'extrait, limitation de responsabilité, droit applicable et règlement des litiges."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 Les présentes conditions constituent l'accord conclu entre vous et l'opérateur de l'instance que vous utilisez au sujet de l'utilisation du service Sonic (ci-après « le service »). En vous connectant ou en utilisant le service de toute autre manière, vous déclarez avoir lu les présentes conditions et en accepter l'intégralité ; si vous n'y consentez pas, n'utilisez pas le service.
 

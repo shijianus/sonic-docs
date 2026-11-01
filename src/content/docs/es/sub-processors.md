@@ -3,7 +3,7 @@ title: Terceros y transferencias
 description: "Lista de compartición con terceros y transferencias de Sonic: encargados del tratamiento, proveedor de identidad, fuentes de contenido de origen, circuitos opcionales, requerimientos legales y garantías de las transferencias internacionales."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Esta página enumera de forma completa todos los supuestos de compartición de datos personales del servicio Sonic (en lo sucesivo, «el servicio») con terceros, incluidos los destinatarios, los datos afectados y las garantías. Es el desarrollo de la sección 7 de la [Política de privacidad](/es/privacy-policy/); el principio de la compartición es el mínimo necesario: no se venden datos personales, no se comparten con fines publicitarios y no se excede lo necesario para las funciones del servicio.
 

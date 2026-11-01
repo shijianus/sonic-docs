@@ -3,7 +3,7 @@ title: Acceptable Use Policy
 description: The Sonic Acceptable Use Policy — scope, prohibited conduct, resource limits, the enforcement ladder, the zero-tolerance channel and appeals.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This policy sets the behavioral boundaries for using the Sonic service (hereinafter "the service") and describes prohibited conduct and the operator's enforcement measures. This policy is the standard of conduct referred to in section 7 of the [Terms of Service](/en/terms-of-service/) and binds you upon use of the service; if you do not agree, stop using the service.
 

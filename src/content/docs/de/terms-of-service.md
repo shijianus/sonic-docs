@@ -3,7 +3,7 @@ title: Nutzungsbedingungen
 description: Nutzungsbedingungen von Sonic – Annahme der Bedingungen, detaillierter Dienstumfang, Kontoregeln, Freigabe von Verhaltensdaten, Qualitäts- und Hörproben-Kennzeichnung, Haftungsbeschränkung, anwendbares Recht und Streitbeilegung.
 ---
 
-**Datum des Inkrafttretens: 1. November 2026｜Version: 1.3**
+**Datum des Inkrafttretens: 1. November 2026｜Version: 1.4**
 
 Diese Bedingungen regeln das Verhältnis zwischen Ihnen und dem Betreiber der von Ihnen genutzten Instanz hinsichtlich der Nutzung des Sonic-Dienstes (nachfolgend „der Dienst“). Mit dem Abschluss der Anmeldung oder der Nutzung des Dienstes auf andere Weise erklären Sie, diese Bedingungen vollständig gelesen zu haben und ihnen zuzustimmen; wer nicht zustimmt, nutze den Dienst nicht.
 

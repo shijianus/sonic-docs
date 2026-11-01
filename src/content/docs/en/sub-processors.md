@@ -3,7 +3,7 @@ title: Third Parties & Transfers
 description: The Sonic list of third-party sharing and international transfers — processors, identity provider, upstream content sources, optional chains, lawful requests and transfer safeguards.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This page lists every situation in which the Sonic service (hereinafter "the service") shares personal data with third parties, the data involved and the safeguard mechanisms. It expands section 7 of the [Privacy Policy](/en/privacy-policy/). The sharing principle is minimum necessity: personal data is never sold, never shared for advertising, and never shared beyond what the service functions require.
 

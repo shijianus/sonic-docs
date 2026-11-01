@@ -3,7 +3,7 @@ title: Panorama de privacidade e termos
 description: "Panorama dos documentos legais do Sonic: identidade da plataforma, delimitação dos papéis no tratamento de dados, linha de base de proteção de nível RGPD, arquitetura documental, ordem de prevalência e pontos de contacto."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.3**
+**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
 
 Esta página orienta por todos os documentos legais do serviço Sonic (a seguir designado «o serviço») e esclarece os papéis das partes, a arquitetura documental e a ordem de aplicação. Antes de iniciar sessão ou de utilizar o serviço, deve ler esta página, bem como a [Política de Privacidade](/pt/privacy-policy/) e os [Termos de Utilização](/pt/terms-of-service/).
 

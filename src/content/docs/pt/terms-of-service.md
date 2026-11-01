@@ -3,7 +3,7 @@ title: Termos de Utilização
 description: "Termos de Utilização do Sonic: aceitação dos termos, detalhe do âmbito do serviço, regras de conta, autorização dos dados comportamentais, qualidade de áudio e selos de amostra, limitação de responsabilidade, lei aplicável e resolução de litígios."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.3**
+**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
 
 Estes termos constituem o acordo entre si e o operador da instância que utiliza, sobre a utilização do serviço Sonic (a seguir designado «o serviço»). Ao concluir o início de sessão ou utilizar o serviço de qualquer outra forma, declara que leu e aceita a integralidade do conteúdo destes termos; quem não concordar, não utilize o serviço.
 

@@ -3,7 +3,7 @@ title: Interface & Features Guide
 description: A guided tour of the Sonic web player — home and recommendations, search, playback controls, the player drawer, my music, settings and privacy controls, and the mobile layout.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This page is a guided tour of the Sonic web player's interface and the location of every function. The screenshots were taken from the hosted instance running live (the interface language shown is Simplified Chinese; the product supports switching the interface language). The interface may evolve with releases, and the functions actually available depend on what the instance enables; the legal commitments are in the [Terms of Service](/en/terms-of-service/) and the [Privacy Policy](/en/privacy-policy/).
 

@@ -3,7 +3,7 @@ title: Vue d'ensemble de la confidentialité et des conditions
 description: "Vue d'ensemble des documents juridiques de Sonic : identité de la plateforme, définition des rôles de traitement des données, socle de protection de niveau RGPD, architecture documentaire, ordre de prévalence et points de contact."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 La présente page sert de guide à l'ensemble des documents juridiques du service Sonic (ci-après « le service ») ; elle décrit les rôles des parties, l'architecture documentaire et l'ordre d'application. Avant de vous connecter ou d'utiliser le service, vous devez lire la présente page ainsi que la [Politique de confidentialité](/fr/privacy-policy/) et les [Conditions d'utilisation](/fr/terms-of-service/).
 

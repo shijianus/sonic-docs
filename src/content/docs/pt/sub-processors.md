@@ -3,7 +3,7 @@ title: Lista de partilha com terceiros e transferências
 description: "Lista de partilha com terceiros e transferências do Sonic: subcontratantes, fornecedor de identidade, fontes de conteúdos a montante, cadeias opcionais, exigências legais e garantias das transferências internacionais."
 ---
 
-**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.3**
+**Data de entrada em vigor: 1 de novembro de 2026｜Versão: 1.4**
 
 Esta página enumera na íntegra todas as situações de partilha de dados pessoais com terceiros pelo serviço Sonic (a seguir designado «o serviço»), incluindo os destinatários, os dados envolvidos e as garantias. Esta página desenvolve a secção 7 da [Política de Privacidade](/pt/privacy-policy/); o princípio da partilha é o mínimo necessário: não se vendem dados pessoais, não se partilha para fins publicitários e não se ultrapassa o necessário às funções do serviço.
 

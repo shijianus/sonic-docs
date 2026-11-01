@@ -3,7 +3,7 @@ title: Política de uso aceptable
 description: "Política de uso aceptable de Sonic: ámbito de aplicación, catálogo de conductas prohibidas, límites de uso de recursos, escala de aplicación, canal de tolerancia cero y procedimiento de reclamación."
 ---
 
-**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.3**
+**Fecha de entrada en vigor: 1 de noviembre de 2026｜Versión: 1.4**
 
 Esta política fija los límites de conducta para el uso del servicio Sonic (en lo sucesivo, «el servicio») y describe las conductas prohibidas y las medidas que puede adoptar el operador. Esta política es la norma de conducta a la que remite la sección 7 de los [Términos del servicio](/es/terms-of-service/) y debe observarse al utilizar el servicio; si no está de acuerdo con ella, deje de utilizar el servicio.
 

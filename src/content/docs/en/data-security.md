@@ -3,7 +3,7 @@ title: Data Processing & Security
 description: Sonic data processing and security — data lifecycle, processing matrix, layered security measures, known limitations, breach response, and self-hosting duties.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This page sets out the data lifecycle of the Sonic service (hereinafter "the service"), the nature of each processing activity, the security measures, known limitations and the breach response procedures. It expands section 10 of the [Privacy Policy](/en/privacy-policy/); technical statements follow the actual implementation of the open-source code and can be verified by source audit.
 

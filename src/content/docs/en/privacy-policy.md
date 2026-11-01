@@ -3,7 +3,7 @@ title: Privacy Policy
 description: The Sonic Privacy Policy — notice of collection, legal bases, retention periods, your rights and international transfers, with the GDPR as the minimum standard for every user.
 ---
 
-**Effective date: 1 November 2026｜Version: 1.3**
+**Effective date: 1 November 2026｜Version: 1.4**
 
 This policy explains how the Sonic service (hereinafter "the service") collects, processes and transfers your personal data, and the standards and commitments the operator observes to protect it. Read this policy before signing in to or using the service; if you do not agree with any part of it, do not use the service.
 

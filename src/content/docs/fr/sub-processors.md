@@ -3,7 +3,7 @@ title: Liste des partages avec des tiers et des transferts
 description: "Liste des partages avec des tiers et des transferts de Sonic : sous-traitants, fournisseur d'identité, sources de contenu amont, chaînes optionnelles, exigences légales et garanties des transferts internationaux."
 ---
 
-**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.3**
+**Date d'entrée en vigueur : 1er novembre 2026｜Version : 1.4**
 
 La présente page énumère intégralement les cas de partage de données à caractère personnel entre le service Sonic (ci-après « le service ») et des tiers, avec les destinataires, les données concernées et les garanties. Elle développe la section 7 de la [Politique de confidentialité](/fr/privacy-policy/) ; le principe de partage est la minimisation nécessaire : aucune vente de données à caractère personnel, aucun partage publicitaire, aucun dépassement de ce que les fonctions du service exigent.
 
