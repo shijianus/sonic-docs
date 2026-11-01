@@ -202,6 +202,8 @@ export default defineConfig({
 			logo: { src: './public/favicon.svg' },
 			favicon: '/favicon.svg',
 			social: { github: 'https://github.com/shijianus/sonic' },
+			// 覆写 SkipLink：移除「跳转到内容」快捷跳转
+			components: { SkipLink: './src/components/starlight/SkipLink.astro' },
 			// 页面「最后更新于」时间戳取自构建时的 Git 提交历史
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],
