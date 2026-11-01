@@ -3,7 +3,7 @@ title: Project Overview
 description: The epocanvas sonic project — product identity, core capabilities, architecture, recommendation engine, security and privacy design, fit, deployment, and reading guide.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.1**
+**Effective date: 1 November 2026｜Version: 1.3**
 
 This page introduces the epocanvas sonic project (hereinafter "Sonic" or "the project"): its product identity, core capabilities, system architecture, security and privacy design, fit and deployment, together with a reading guide for this site. Whether you intend to use a hosted instance, deploy your own, or review our privacy and terms commitments, start here. The legal commitments are set out in the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
 
@@ -133,7 +133,45 @@ When using the service you must observe the [Acceptable Use Policy](/en/acceptab
 
 The two forms together make the complete service; an edge gateway without a data plane automatically runs in degraded mode. The full environment-variable list is in the upstream repository's `.env.example` and `docs/OPERATIONS.md`.
 
-## 11. Reading guide
+## 11. Quality assurance
+
+The project grounds its quality in auditability and automated verification:
+
+1. **Security audit and remediation**: the upstream repository carries security audit reports (`SECURITY_AUDIT_REPORT.md`, `SECURITY_FIX_SUMMARY.md`) and an item-by-item remediation record (`docs/AUDIT_REMEDIATION.md`), covering API signing, the OAuth flow, SSRF defences and front-end XSS among other areas;
+2. **Automated test gates**: the test suite covers gateway behavior, authentication compatibility, SSRF cases, the local engine and degradation, recommendations and search, front-end XSS, configuration parity (config parity) and the release P0/P1 gate, executed with each release;
+3. **Documentation consistency checks**: this site uses automated scripts to verify three things — zero broken in-page anchors and image references, 1:1 structural symmetry across language versions, and GDPR article citations consistent with the verified whitelist;
+4. **Fact-verification process**: every data-processing fact on this site is re-checked against the source code at each release (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts` and others); where the code and the documents disagree, the code prevails and the documents are corrected immediately.
+
+## 12. FAQ
+
+**Is the service paid? Are there ads?**
+Free, with no advertising and no in-app purchases; the hosting costs of the hosted instances are borne by the operations team. The service collects no data for advertising purposes.
+
+**Can I use it without signing in?**
+Yes. Search, playback, lyrics, charts and other core functions are available anonymously (with stricter rate limits); signing in unlocks favorites sync, personalised recommendations and Auto DJ.
+
+**Where does my data live?**
+In three places: favorites, playlists and player preferences live in your browser's local storage; downloads and local music live in your browser's IndexedDB; the server holds only pseudonymised behavioral events (auto-destroyed after 90 days). E-mail addresses are never persisted. See the [Privacy Policy](/en/privacy-policy/), section 4.
+
+**How do I erase my behavioral profile?**
+Settings → Privacy & local data → "reset recommendation profile and dislikes", or call `DELETE /api/sonic/events` directly — effective immediately; "clear all local data" clears the browser and the server-side data together. The interface location is in the [Interface & Features Guide](/en/interface/), section 9.
+
+**Do recommendations track me?**
+Recommendations serve the playback ordering only — no cross-site tracking, no advertising profiles; personalisation can be switched off at any time, and when off the service runs in pure public mode and records no events.
+
+**Why are some tracks only 30 seconds?**
+That is the official platform's trial truncation, labelled transparently as a trial and never presented as a full track; with cross-source completion enabled, the player automatically attempts to match a free full track and labels the source.
+
+**Is the quality badge trustworthy?**
+Yes. The badge reflects the actual tier of the current audio stream; when upstream tiers change it follows in real time, without overstatement (see the [Terms of Service](/en/terms-of-service/), section 4, item 3).
+
+**What are the responsibilities of self-hosting?**
+From the moment of deployment you are the data controller of that instance: you must notify your users, keep processing records, carry out an impact assessment where necessary and implement security measures. The starting point is [Data Processing & Security](/en/data-security/), section 6.
+
+**What languages does the service support?**
+The player ships with Simplified Chinese, English and Japanese; this documentation site is available in 10 languages.
+
+## 13. Reading guide
 
 | Document | Content |
 | --- | --- |

@@ -3,7 +3,7 @@ title: Key Terms
 description: Definitions of the legal terms (GDPR vocabulary) and technical terms used across the Sonic legal documents, applied consistently site-wide.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.1**
+**Effective date: 1 November 2026｜Version: 1.3**
 
 This page defines the legal and technical terms used in the legal documents of this site. Every term carries the same meaning across all documents; defined terms are construed by their definitions, undefined ones by their ordinary meaning. Legal terms are based on the definitions of the EU General Data Protection Regulation (GDPR).
 

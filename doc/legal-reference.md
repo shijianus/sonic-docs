@@ -22,8 +22,15 @@
 | 语言 | 格式 | 示例 |
 | --- | --- | --- |
 | 简体中文（正式版本） | GDPR 第 X 条第 Y 项第 Z 款 | GDPR 第 6 条第 1 项第 a 款 |
+| 繁體中文 | GDPR 第 X 條第 Y 項第 Z 款 | GDPR 第 6 條第 1 項第 a 款 |
 | English | Article X, Paragraph Y, point (Z)（全拼，不得缩写为 Art. 6(1)(a)） | Article 6, Paragraph 1, point (a) |
+| Français | l'article X, paragraphe Y, point Z) du RGPD（全拼） | l'article 6, paragraphe 1, point a) du RGPD |
+| Español | el artículo X, apartado Y, letra Z) del RGPD | el artículo 6, apartado 1, letra a) del RGPD |
+| Deutsch | Artikel X Absatz Y Buchstabe Z der DSGVO（全拼） | Artikel 6 Absatz 1 Buchstabe a der DSGVO |
 | 日本語 | GDPR 第X条第Y項第Z号 | GDPR 第6条第1項第a号 |
+| 한국어 | GDPR 제X조 제Y항 Z호 | GDPR 제6조 제1항 a호 |
+| Português | o artigo X.º, n.º Y, alínea Z) do RGPD | o artigo 6.º, n.º 1, alínea a) do RGPD |
+| Русский | статья X, пункт Y, подпункт «Z» GDPR | статья 6, пункт 1, подпункт «a» GDPR |
 
 - 不使用「条号＋括号缩写」混排；同一份文档内格式全文统一。
 - GDPR 之「point」在中文称「款」、日文称「号」；「paragraph」中文称「项」、日文称「項」。

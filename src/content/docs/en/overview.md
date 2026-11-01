@@ -3,7 +3,7 @@ title: Privacy & Terms Overview
 description: The Sonic legal documents overview — platform identity, data processing roles, the GDPR-level baseline, document map, order of precedence, and contact points.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.1**
+**Effective date: 1 November 2026｜Version: 1.3**
 
 This page is the guide to all legal documents of the Sonic service (hereinafter "the service"). It explains the roles of the parties, the document architecture and the order of precedence. Before signing in to or using the service, you should read this page together with the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
 

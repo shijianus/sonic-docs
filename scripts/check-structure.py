@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent / "src" / "content" / "docs"
 # base locale (Simplified Chinese, authoritative) sits at the collection root;
 # reference translations live under en/ and ja/
-SYMMETRIC_LANGS = [".", "en", "ja"]
+SYMMETRIC_LANGS = [".", "zh-tw", "en", "fr", "es", "de", "ja", "ko", "pt", "ru"]
 DOCS = ["project", "interface", "overview", "privacy-policy", "terms-of-service",
         "acceptable-use", "data-security", "sub-processors", "key-terms"]
 

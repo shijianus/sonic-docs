@@ -3,7 +3,7 @@ title: Interface & Features Guide
 description: A guided tour of the Sonic web player — home and recommendations, search, playback controls, the player drawer, my music, settings and privacy controls, and the mobile layout.
 ---
 
-**Effective date: 30 October 2026｜Version: 1.2**
+**Effective date: 1 November 2026｜Version: 1.3**
 
 This page is a guided tour of the Sonic web player's interface and the location of every function. The screenshots were taken from the hosted instance running live (the interface language shown is Simplified Chinese; the product supports switching the interface language). The interface may evolve with releases, and the functions actually available depend on what the instance enables; the legal commitments are in the [Terms of Service](/en/terms-of-service/) and the [Privacy Policy](/en/privacy-policy/).
 
@@ -29,7 +29,23 @@ Recommendation ordering only affects the playback sequence you see; you can swit
 
 Search lives at the top of the left sidebar and on the search page, covering tracks, artists, albums and playlists. Multi-source results are merged with normalized deduplication and ordered by relevance; tracks whose source is a trial clip are labelled under the [quality and trial transparency](/en/project/#4-sources-and-lyrics-chain) rules — a trial is never presented as a full track.
 
-## 3. Playback controls (bottom player bar)
+## 3. Charts and official rankings
+
+![The Sonic charts page: "New releases" and "Official charts" tabs, five category lists (all, Mandarin, Western, Japanese, Korean), and a ranked table with position, cover, track, artist, album and duration](/images/sonic/ui/ui-charts.png)
+
+*Figure: the charts page. A chart selector on the left (new releases／official charts, with all／Mandarin／Western／Japanese／Korean categories) and the ranked list with "play all" on the right. Chart data comes from upstream official charts and real listening trends across the instance.*
+
+The "Trending" view on the home page and the charts page share the same trending model: five weighted factors — valid plays, distinct listeners, completion, favorite conversion and growth slope — with exponential time decay and Bayesian smoothing (the model is described in the [Project Overview](/en/project/), section 5).
+
+## 4. Artists and albums
+
+![The Sonic artist library page: two-dimensional filters by type (all, male, female, bands) and region (Mandarin, Western, Japanese, Korean, others), initials A–Z and hot search, with artist cards showing album counts](/images/sonic/ui/ui-artists.png)
+
+*Figure: the artist library page. Artists are filtered by type, region and initial; cards show the artist's picture, name and album count. An artist page lists their hot tracks and albums, and an album page lists its tracks.*
+
+The artist, album and track-detail pages share the same cover proxy and palette analysis (the page gradient follows the cover's dominant colour); all list data comes from upstream official open interfaces, cached and deduplicated before display.
+
+## 5. Playback controls (bottom player bar)
 
 ![The Sonic bottom player bar: playing "晴天" (Qing Tian) with a lyric preview line, previous, play, next, play-mode, quality menu (SQ lossless), download and volume controls](/images/sonic/ui/ui-player.png)
 
@@ -42,7 +58,7 @@ The bottom player bar is present on every page and provides:
 3. **Play modes**: list loop, single-track loop, shuffle and other modes;
 4. **Download**: saving the current track into the browser (IndexedDB), described in section 5.
 
-## 4. The player drawer and word-level lyrics
+## 6. The player drawer and word-level lyrics
 
 ![The Sonic full-screen player drawer: a vinyl-record cover animation and track information on the left, a scrolling lyrics panel on the right, a background gradient following the cover palette, and background／visualizer mode switches at the top right](/images/sonic/ui/ui-player-drawer.png)
 
@@ -55,7 +71,7 @@ The player drawer provides:
 3. **Audio visualizer**: bars, wave and circular spectrum modes, applied to the drawer background or the bottom bar (configured in settings);
 4. **Drag to seek**: the progress bar supports dragging, with lyrics scrolling in sync.
 
-## 5. My Music
+## 7. My Music
 
 The "My Music" section contains four pages:
 
@@ -68,7 +84,7 @@ The "My Music" section contains four pages:
 
 All of the above stays in your browser and is never uploaded to the server; clearing browser data or using "clear all local data" deletes it. Downloaded and imported files are for your personal listening only and must not be redistributed (see the [Acceptable Use Policy](/en/acceptable-use/)).
 
-## 6. Settings
+## 8. Settings
 
 ![The Sonic settings page: configuration cards for theme mode (follow system), interface language (Chinese), background type, quality, bottom-bar lyrics and audio visualization](/images/sonic/ui/ui-settings.png)
 
@@ -76,7 +92,7 @@ All of the above stays in your browser and is never uploaded to the server; clea
 
 Settings take effect immediately and are saved in the browser's local storage (the `settings` and `global` keys); they are not bound to the account and are never uploaded.
 
-## 7. Privacy and data controls
+## 9. Privacy and data controls
 
 ![The "Privacy & local data" section of the Sonic settings page: browser local storage and IndexedDB explanations, the smart search and personalised recommendation toggle, the Auto DJ toggle, and the reset-profile-and-dislikes button](/images/sonic/ui/ui-privacy.png)
 
@@ -89,7 +105,7 @@ This section is the in-interface implementation of the self-service rights descr
 3. **Reset recommendation profile and dislikes**: immediately destroys all behavioral events server-side linked to you (`DELETE /api/sonic/events`);
 4. **Clear all local data**: after a confirmation dialog, clears all browser local storage and IndexedDB content and resets the server-side profile as well.
 
-## 8. Mobile layout
+## 10. Mobile layout
 
 ![The Sonic mobile home page: banner carousel, smart recommendation and music radar, preference-signal tags (Jay Chou, mandopop, r&b), personalised recommendation cards with their reasons, and the bottom mini player with tab navigation (Home, Search, Recent, Settings)](/images/sonic/ui/ui-mobile-home.png)
 
@@ -97,7 +113,7 @@ This section is the in-interface implementation of the self-service rights descr
 
 Mobile and desktop share the same account system and data-storage rules; recommendation reasons are displayed under the same transparency principles as on desktop.
 
-## 9. Related documents
+## 11. Related documents
 
 | Document | Content |
 | --- | --- |

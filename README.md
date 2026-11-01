@@ -4,13 +4,14 @@
 
 - 产品定位：多源音乐串流平台与聚合闸道，Cloudflare 边缘控制面 + Linux 本地协议引擎数据面，开源（仓库根目录 `LICENSE`，MIT）可自托管
 - 托管实例：[sonic.epocanvas.tech](https://sonic.epocanvas.tech)（主站）· [sonic.epocanvas.com](https://sonic.epocanvas.com)（备用镜像）
-- 视觉：Dignified Minimal 主题（靛蓝 `#2563eb` 主色 + Slate 中性色，与 EpoCanvasDocs / EpomailDocs 家族一致），8 张主题自适应 SVG 原理图（浅色底 + `prefers-color-scheme` 暗色适配，图内微标签英文复用、语义由各语言图注承载），每篇文档开头一张
+- 视觉：Dignified Minimal 主题（靛蓝 `#2563eb` 主色 + Slate 中性色，与 EpoCanvasDocs / EpomailDocs 家族一致），8 张主题自适应 SVG 原理图（浅色底 + `prefers-color-scheme` 暗色适配，图内微标签英文复用、语义由各语言图注承载）+ 9 张托管实例真实运行截图（`public/images/sonic/ui/`，本地实际运行前端截取）
 
 ## 文档架构（专案介绍 1 篇 + 法律 7 篇）
 
 | 文档 | slug | 内容 |
 | --- | --- | --- |
-| 专案介绍 | `project` | 产品定位、双层架构、核心能力、内容与版权边界、隐私立场、文档导读 |
+| 专案介绍 | `project` | 产品定位、双层架构、核心能力、音源与歌词链路、推荐引擎、安全与隐私设计、适用边界、部署形态、质量保障、常见疑问、文档导读 |
+| 界面与功能导览 | `interface` | 首页与推荐、搜索、排行榜与官方榜单、歌手与专辑库、播放控制、播放器抽屉与逐字歌词、我的音乐、设置、隐私与数据控制、移动端（9 张真实运行截图） |
 | 总览 | `overview` | 平台身份、数据控制者/受托处理者角色界定、GDPR 级保护基线、文档地图、效力顺序 |
 | 隐私政策 | `privacy-policy` | 告知事项六款、收集之资料（帐户识别／行为事件／聚合统计／本地存储／技术资料）、法律依据（GDPR 第 6 条）、保存期限、当事人权利（第 15–22、77、79 条）、儿童保护（第 8 条） |
 | 用户条款 | `terms-of-service` | 电子同意、帐号（Epomail OAuth）、服务说明与降级机制、行为数据授权、责任限制、准据法与管辖、修订 |
@@ -19,17 +20,24 @@
 | 第三方共享与传输清单 | `sub-processors` | Cloudflare（受托）、Epomail（身份）、上游内容来源（不含身份）、默认关闭链路、法律要求、国际传输（第 44–46 条） |
 | 用语定义 | `key-terms` | 法律名词（GDPR 第 4 条词汇）与技术名词（HMAC、PKCE、SSRF、WAL、熔断器等） |
 
-**法律要点**：以 GDPR 作为全体用户之最低资料保护标准——欧盟与欧洲经济区用户 GDPR 直接适用；其他地区用户以 GDPR 标准为自助承诺、按契约义务履行；所在地法律更强保障就其范围优先。托管实例于台湾营运，用户条款准据法为运营者所在地法律（消费者强制管辖除外），资料保护事项不因准据法而降低。简体中文版为正式版本，英文与日文版为对照译本。当前文档版本 **1.2**（生效日期 2026-10-30，全站统一；1.2 新增界面与功能导览并扩充用户条款）。
+**法律要点**：以 GDPR 作为全体用户之最低资料保护标准——欧盟与欧洲经济区用户 GDPR 直接适用；其他地区用户以 GDPR 标准为自助承诺、按契约义务履行；所在地法律更强保障就其范围优先。托管实例于台湾营运，用户条款准据法为运营者所在地法律（消费者强制管辖除外），资料保护事项不因准据法而降低。简体中文版为正式版本，英文与日文版为对照译本。当前文档版本 **1.3**（生效日期 2026-11-01，全站统一；1.3 新增质量保障与常见疑问、界面导览扩充排行榜与歌手库、语言矩阵扩至 10 语言）。
 
-## 语言矩阵（3 语言 × 8 文档，与产品内建 i18n 一一对应）
+## 语言矩阵（10 语言 × 9 文档 = 90 内容页，对齐 EpoCanvasDocs 语言集合）
 
 | 语言 | 目录 | 说明 |
 | --- | --- | --- |
-| 简体中文（正式版本） | `src/content/docs/sonic/` | Starlight `root` 约定占用根路径（URL 如 `/sonic/privacy-policy/`） |
-| English | `src/content/docs/en/sonic/` | 对照译本 |
-| 日本語 | `src/content/docs/ja/sonic/` | 对照译本 |
+| 简体中文（正式版本） | `src/content/docs/` | Starlight `root` 约定占用根路径（URL 如 `/sonic/privacy-policy/`） |
+| 繁體中文 | `src/content/docs/zh-tw/` | 对照译本（台湾用语） |
+| English | `src/content/docs/en/` | 对照译本 |
+| Français | `src/content/docs/fr/` | 对照译本 |
+| Español | `src/content/docs/es/` | 对照译本 |
+| Deutsch | `src/content/docs/de/` | 对照译本 |
+| 日本語 | `src/content/docs/ja/` | 对照译本 |
+| 한국어 | `src/content/docs/ko/` | 对照译本 |
+| Português | `src/content/docs/pt/` | 对照译本 |
+| Русский | `src/content/docs/ru/` | 对照译本 |
 
-语言集合与 Sonic 播放器内建 i18n（`player/src/languages/modules/` 之 `zh` / `en` / `ja`）一一对应；如产品新增语言，按同构流程补齐。
+十语言集合与 EpoCanvasDocs 一致；其中 `zh` / `en` / `ja` 与 Sonic 播放器内建 i18n 一一对应，其余七语为对照译本。每篇文档头部标注生效日期与版本号，全站统一（当前 1.3）。
 
 ## 本地构建与检视
 
@@ -49,7 +57,7 @@ node scripts/validate-anchors.cjs   # 校验 dist 全部页内锚点与图片引
 pnpm validate       # 构建 + 页内锚点断链检查 + 3 语言 × 8 篇结构对称
 ```
 
-三项核验之当前基线：27 内容页构建 0 报错；297 个页内锚点 0 断链；3 语言 × 9 篇标题／表格／图片／提示框结构 1:1。
+三项核验之当前基线：90 内容页构建 0 报错；页内锚点 0 断链；10 语言 × 9 篇标题／表格／图片／提示框结构 1:1（精确数字见最新一次 `pnpm validate` 输出）。
 
 ## 法条引用维护
 
@@ -70,7 +78,7 @@ pnpm validate       # 构建 + 页内锚点断链检查 + 3 语言 × 8 篇结�
 
 ## 一致性保障
 
-- 三语言版本结构 1:1（标题层级、表格行列、图片、提示框逐一对应），修改任一语言时同步其余两种；由 `scripts/check-structure.py` 校验
+- 十语言版本结构 1:1（标题层级、表格行列、图片、提示框逐一对应），修改任一语言时同步其余九种；由 `scripts/check-structure.py` 校验
 - 页内锚点与图片引用由 `scripts/validate-anchors.cjs` 全量复核
 - 法条引用一致性：`grep -ohP "第\s*\d+\s*条|Article \d+|第\d+条" src/content/docs -r` 抽取全部条号，与 `doc/legal-reference.md` 白名单比对，白名单外条号不得出现
 - 时效型事实（保留天数、限流值、开关默认值）随源码演进变化：每次提交前对照 sonic 仓库 `.env.example`、`server/recommend-sqlite.ts`、`functions/_lib/sonic/security.ts` 之当前值刷新对应文档
