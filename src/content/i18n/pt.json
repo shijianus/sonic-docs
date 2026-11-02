@@ -1,0 +1,12 @@
+{
+  "pagefind.clear_search": "Limpar",
+  "pagefind.load_more": "Carregar mais resultados",
+  "pagefind.search_label": "Pesquisar neste site",
+  "pagefind.filters_label": "Filtros",
+  "pagefind.zero_results": "Não há resultados para [SEARCH_TERM]",
+  "pagefind.many_results": "[COUNT] resultados para [SEARCH_TERM]",
+  "pagefind.one_result": "[COUNT] resultado para [SEARCH_TERM]",
+  "pagefind.alt_search": "Não há resultados para [SEARCH_TERM]. A mostrar resultados para [DIFFERENT_TERM] em alternativa",
+  "pagefind.search_suggestion": "Não há resultados para [SEARCH_TERM]. Experimente uma das seguintes pesquisas:",
+  "pagefind.searching": "A pesquisar [SEARCH_TERM]…"
+}

@@ -3,17 +3,61 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=/sonic/overview/" />
-    <link rel="canonical" href="/sonic/overview/" />
+    <meta name="description" content="Sonic 文档：使用指南、隐私与数据、条款、部署与开发。选择十种语言之一开始阅读。" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://docs.epocanvas.com/sonic/overview/" />
     <link rel="icon" href="/sonic/favicon.svg" type="image/svg+xml" />
-    <title>Sonic · 隐私与条款</title>
+    <title>Sonic · 文档 / Documentation</title>
+    <style>
+      :root { color-scheme: light dark; --bg: #fff; --ink: #0f172a; --muted: #475569; --panel: #f8fafc; --border: #dbe3ef; --accent: #2563eb; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+      main { max-width: 1040px; margin: auto; padding: 3.5rem 1.5rem; }
+      .brand { display: flex; align-items: center; gap: 0.75rem; font-size: 1.2rem; font-weight: 700; }
+      h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 2rem 0 1rem; }
+      .lead { max-width: 48rem; color: var(--muted); }
+      .reading-map { margin: 2.5rem 0; overflow-x: auto; border-radius: 1rem; }
+      .reading-map img { display: block; width: 100%; min-width: 720px; height: auto; }
+      .reading-map figcaption { padding: 0.65rem 0; color: var(--muted); font-size: 0.9rem; }
+      h2 { font-size: 1.15rem; margin-top: 2rem; }
+      ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 0.75rem; }
+      li a { display: flex; justify-content: space-between; align-items: center; min-height: 64px; padding: 1rem; border: 1px solid var(--border); border-radius: 0.8rem; background: var(--panel); color: var(--ink); text-decoration: none; font-weight: 600; }
+      li a::after { content: '→'; color: var(--accent); }
+      li a:hover { border-color: var(--accent); }
+      a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+      footer { border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem; color: var(--muted); font-size: 0.9rem; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #0b0f19; --ink: #f8fafc; --muted: #cbd5e1; --panel: #111827; --border: #334155; --accent: #93c5fd; } }
+      @media (max-width: 420px) { main { padding: 2rem 1rem; } ul { grid-template-columns: 1fr; } }
+      @media print { .reading-map { overflow: visible; } .reading-map img { min-width: 0; } }
+    </style>
   </head>
   <body>
-    <p>本站法律文档以简体中文版本为正式版本；正在前往默认语言文档……</p>
-    <p>如未自动跳转，请选择：
-      <a href="/sonic/overview/">简体中文</a> ·
-      <a href="/sonic/en/overview/">English</a> ·
-      <a href="/sonic/ja/overview/">日本語</a>
-    </p>
+    <main>
+      <header>
+        <div class="brand"><img src="/sonic/logo.svg" alt="" width="36" height="36" /> Sonic</div>
+        <h1>文档 <span lang="en">/ Documentation</span></h1>
+        <p class="lead">使用指南、隐私与数据、条款、部署与开发。<br /><span lang="en">Guides for the player, data and rights, deployment and development.</span></p>
+      </header>
+      <figure class="reading-map" tabindex="0" aria-label="阅读路径 / Reading paths">
+        <img src="/sonic/images/sonic/reading-paths.svg" alt="四条阅读路径：总览与入门、界面与使用、隐私与权利、部署与开发 / Four paths: start, explore, understand, build" width="960" height="224" decoding="async" loading="eager" />
+        <figcaption>从总览开始，再按主题阅读。小屏幕可横向滚动图示。<br /><span lang="en">Start with the overview, then follow a topic. Scroll the diagram on small screens.</span></figcaption>
+      </figure>
+      <nav aria-labelledby="language-heading">
+        <h2 id="language-heading">选择语言 <span lang="en">/ Choose your language</span></h2>
+        <ul>
+          <li><a href="/sonic/overview/" lang="zh-CN" hreflang="zh-CN">简体中文</a></li>
+          <li><a href="/sonic/zh-tw/overview/" lang="zh-TW" hreflang="zh-TW">繁體中文</a></li>
+          <li><a href="/sonic/en/overview/" lang="en" hreflang="en">English</a></li>
+          <li><a href="/sonic/fr/overview/" lang="fr" hreflang="fr">Français</a></li>
+          <li><a href="/sonic/es/overview/" lang="es" hreflang="es">Español</a></li>
+          <li><a href="/sonic/de/overview/" lang="de" hreflang="de">Deutsch</a></li>
+          <li><a href="/sonic/ja/overview/" lang="ja" hreflang="ja">日本語</a></li>
+          <li><a href="/sonic/ko/overview/" lang="ko" hreflang="ko">한국어</a></li>
+          <li><a href="/sonic/pt/overview/" lang="pt" hreflang="pt">Português</a></li>
+          <li><a href="/sonic/ru/overview/" lang="ru" hreflang="ru">Русский</a></li>
+        </ul>
+      </nav>
+      <footer>10 种语言 · 每种语言 22 篇文档 <span lang="en">/ 10 languages · 22 documents each</span></footer>
+    </main>
   </body>
 </html>

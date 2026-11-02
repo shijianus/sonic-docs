@@ -3,7 +3,9 @@ title: Open-Source & Self-Hosting Legal
 description: Sonic open-source and self-hosting legal matters — license status, trademark boundaries, third-party acknowledgements and dependencies, deployer obligations and compliance boundaries.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
+
+The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page describes the current status and boundaries of Sonic's open-source licensing, third-party acknowledgements, and the legal obligations of self-hosting. The relationship between the software license and the user terms is in the [Terms of Service](/en/terms-of-service/), sections 2 and 10.
 
@@ -11,15 +13,15 @@ This page describes the current status and boundaries of Sonic's open-source lic
 
 | Item | Status |
 | --- | --- |
-| The `LICENSE` file at the repository root | MIT License — **the authoritative license text**; that file governs |
-| Historical README statements | Stated a CC BY-NC-SA 4.0 intent (non-commercial, attribution, share-alike); not a basis for licensing pending the maintainer's decision, and an expression only of the project's non-commercial positioning |
+| Root and player `LICENSE` files | Both use MIT in RC `a75f5cb`, governing code use, modification, distribution and permitted commercial use; the older `main@ce443c8` has a verifiable player MIT licence but no root `LICENSE`, so the RC's licensing must not be inferred for all historical code |
+| Nonprofit project positioning | Describes the hosted learning and public-benefit test project; it is not an NC restriction on code and does not revoke rights already granted by MIT |
 | Trademarks and branding | The `epocanvas` and `Sonic` names and marks grant no trademark rights along with the source code |
 
-Whatever the final license decision, the following boundary applies in all cases: the rights in recordings, lyrics, covers and other content belong to their respective owners, and the project grants no sublicense to any music content.
+MIT does not grant rights in music, recordings, lyrics, covers or MVs, and its code disclaimer does not remove hosted operators' data protection or consumer obligations. Dependencies and media retain their separate licences and rights.
 
 ## 2. Project positioning
 
-The project is a non-commercial open-source project: a search, aggregation and playback tool that stores and hosts no music files and integrates no paywall-circumvention components. When you use the service or deploy it yourself, you are responsible for confirming compliance with local law, upstream terms of service and content licensing requirements (behavioral boundaries in the [Acceptable Use Policy](/en/acceptable-use/)).
+The hosted service is an individually maintained, free nonprofit learning and public-benefit test project. Music file contents imported or downloaded in the browser stay on the device, but metadata, feedback and context may be transmitted. Nonprofit, educational or test use is not automatically a copyright or data-protection exemption, and a technical interface is not proof of a content licence. Use and deployments must meet applicable law, upstream terms and content rights (see the [Acceptable Use Policy](/en/acceptable-use/)).
 
 ## 3. Third-party acknowledgements and dependencies
 
@@ -27,19 +29,19 @@ Development and the practice of multi-source aggregation draw on, and acknowledg
 
 ## 4. Legal obligations of self-hosting deployers
 
-From the moment of self-hosted deployment, the deployer is the data controller for that deployment's users (role definitions in the [Overview](/en/overview/), section 2) and must fulfil:
+Roles depend on who actually determines processing; deploying code or contributing it alone does not establish sole responsibility. Purely personal testing and public service must be assessed separately (see the [Overview](/en/overview/), section 2). Where you operate the service:
 
-1. **Notice duty**: inform users of data-processing matters; this site's [Privacy Policy](/en/privacy-policy/) can serve as the base text, edited to match your actual configuration (third-party chains you have not enabled must be removed from the notice);
-2. **Records and assessment**: maintain records of processing activities (Article 30 of the GDPR) and, where processing is high risk, carry out a data protection impact assessment (Article 35 of the GDPR);
-3. **Security maintenance**: implement the measures in [Data Processing & Security](/en/data-security/), section 3, and accept supervision by the competent authorities;
-4. **Configuration consistency**: the actual environment-variable values (retention days, third-party switches, rate limits) must match the commitments in your policy;
-5. **Jurisdictional supplements**: beyond the GDPR, supplement with the statutory requirements of your users' jurisdictions, such as the UK GDPR, LGPD and CCPA-CPRA.
+1. **Notice duty**: disclose your real legal identity, contact details, purposes, recipients, node countries and retention before collection; adapt the [Privacy Policy](/en/privacy-policy/) to verified facts rather than assuming the repository supplies them;
+2. **Records and assessment**: where the GDPR applies and its conditions are met, maintain processing records under Article 30 and assess high-risk processing under Article 35. Small scale does not make continuous profiling occasional;
+3. **Security maintenance**: implement appropriate measures, valid prior choices and verified deletion. Default-on profiling, public raw-query reuse, email avatar requests and incomplete reset remain blockers; disclosure alone does not resolve them;
+4. **Configuration consistency**: verify actual retention, cleanup, revocation, external-resource and backup behaviour, not merely environment values; suspend optional processing lacking a lawful basis or necessary safeguards;
+5. **Applicable law and transfers**: determine territorial scope and actual providers and countries. The GDPR is not a worldwide contractual guarantee, and certifications or public supplier policies do not establish contracts or international-transfer safeguards.
 
 ## 5. Adopting this site's documents
 
-This site follows a dual-track design of "common template + hosted-instance live text"; self-hosted operators may adopt the site's documents in full as the basis for their own site's notices and terms:
+These documents describe specified hosted test instances and the reviewed public RC, not a compliance certification or automatically applicable terms for every deployment. Any adoption requires:
 
-1. Replace the identity information (domain, contact e-mail, effective date and version number);
-2. Review the third-party list and the truthful disclosure of the configuration parameters;
-3. Keep "the Simplified Chinese version is the authoritative version" or change it to your authoritative language, consistently throughout;
-4. Consult a lawyer before formal operation; this site's documents do not constitute legal advice.
+1. Stating the actual operator's legal identity, contacts, domains, revision date and adoption date;
+2. Verifying actual data flows, third-party roles, contracts, transfer mechanisms, choices, retention and deletion before processing;
+3. Maintaining intelligible translations consistently: this site's Simplified Chinese maintenance baseline and nine translations do not override mandatory law or interpretation favourable to consumers;
+4. Obtaining appropriate legal advice and valid acceptance or separate consent where needed; copying text or continued use does not establish either.

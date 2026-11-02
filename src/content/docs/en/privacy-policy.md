@@ -1,203 +1,190 @@
 ---
 title: Privacy Policy
-description: The Sonic Privacy Policy — notice of collection, legal bases, retention periods, your rights and international transfers, with the GDPR as the minimum standard for every user.
+description: Data sources, processing bases, browser and remote storage, retention and deletion limits, recipients and individual rights for Sonic's nonprofit test service.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
 
-This policy explains how the Sonic service (hereinafter "the service") collects, processes and transfers your personal data, and the standards and commitments the operator observes to protect it. Read this policy before signing in to or using the service; if you do not agree with any part of it, do not use the service.
+This policy explains personal data processing by Sonic's hosted test instances and this project's documentation site. The project is individually maintained, free and nonprofit, for learning and public-benefit testing; these characteristics do not remove applicable data protection obligations. We value your privacy and use rigorous, verifiable data protection requirements to guide design and continuous improvement. Drawing on GDPR principles of data minimisation, purpose limitation, transparency and user control, we aim through reasonable efforts to provide a high level of protection proportionate to actual risks and reduce unnecessary collection, retention and transmission.
 
-The technical statements in this policy follow the actual implementation of the service's open-source code. The Simplified Chinese version of this site's legal documents is the authoritative version; the English and Japanese versions are reference translations, and in case of doubt the authoritative version prevails. The service applies the EU General Data Protection Regulation (GDPR) as the minimum data protection standard for every user (see section 2).
+This objective is not a claim of EU certification or full compliance with the GDPR and every Member State's laws, nor a guarantee of absolute security, freedom from data breaches or loss, or immediate and complete deletion. Actual protection depends on the deployed version, configuration and third-party processing; the policy distinguishes measures verified in the reviewed code from unverified deployment details, known risks and operational limits. Reasonable efforts do not reduce applicable legal duties, and risk disclosures do not require you to accept unlawful processing or waive rights. Reading this policy, signing in, accepting the Terms of Service or continuing to use the service is not consent to optional profiling.
 
-![The five pillars of the Sonic privacy policy: lawfulness, purpose limitation, minimisation and retention, security, and your rights, resting on the GDPR-level baseline](/images/sonic/privacy-pillars.svg)
+On 2026-11-02, the public `main@ce443c8` (2026-10-27 UTC) and the newer public release-candidate branch `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) of `shijianus/sonic` were reviewed. The technical descriptions below are based on the candidate branch, with differences from the older main branch expressly identified. There is no official GitHub Release, and the version running live has not been verified. Source-code capabilities, defaults and sample configurations do not establish the actual deployment. Simplified Chinese is this site's maintenance baseline; the other nine languages are translations for reference. Language priority does not exclude mandatory law or clear, intelligible notice.
 
-*Figure: the five axes of this policy. Lawfulness anchors on the legal bases of Article 6 of the GDPR; purpose limitation excludes advertising profiles; minimisation is implemented through pseudonymisation and one-click erasure; security measures are in section 10; rights are exercised under section 9; all five rest on the GDPR-level baseline.*
+:::caution[Current limitations on applicability]
+The controller's true identity, actual infrastructure nodes, recipient arrangements and complete retention periods still require confirmation by the operator. The candidate code still has issues involving default-on profiling, public reuse of search terms, avatar requests carrying email addresses and incomplete deletion. Protections in the candidate version must not be presumed to exist in the older main branch. The disclosures below do not make processing without a lawful basis lawful. Necessary notices and safeguards must be in place before lawful collection; optional processing that does not meet the requirements must be disabled rather than leaving users responsible for remediation. This page is not evidence that corrections have been deployed or a certification of live compliance.
+:::
+
+![Sonic privacy structure: legal bases, purposes, data minimisation, security and individual rights](/images/sonic/privacy-pillars.svg)
+
+*Figure: protection principles must be implemented in actual features and operational settings, not merely stated in a policy.*
 
 ## 1. Scope
 
-This policy applies to the personal data arising from your use of the service in any form, including:
+This policy is for the `sonic.epocanvas.tech` and `sonic.epocanvas.com` test instances and their APIs that are actually operated by this project and expressly adopt it. It also describes processing that can be verified on the documentation site at `docs.epocanvas.com/sonic/`; merely reading the documentation does not sign you into the player, import music or start player profiling. The documentation site's connections, preferences and search are described in section 4.6; its controller, infrastructure and retention periods still require confirmation against the actual deployment.
 
-1. Visiting the service's sites (`sonic.epocanvas.tech`, `sonic.epocanvas.com`, or the domain of a self-hosted instance);
-2. Using every function of the web player (search, playback, lyrics, recommendations, downloads, local music import);
-3. Third-party clients connecting through the open API.
+Self-hosted instances have independent operators, settings and notices. This policy does not automatically bind every deployer or mean that the author can see data from all instances. Third parties have their own policies for their independent processing; Sonic remains responsible for the collection, receipt, disclosure and integrations it determines itself.
 
-This policy does not apply to third-party websites and services linked or embedded in the service (such as the upstream music platforms' own sites); those third parties have their own privacy policies, for which they are responsible. An operator who self-hosts Sonic becomes the data controller of its users from the moment of deployment and must perform the notice duties required by the law applicable at its location; this policy may serve as the baseline text for its notice.
+## 2. Who is responsible and how the law applies
 
-## 2. Data controller and protection baseline
+The public maintainer account is [shijianus](https://github.com/shijianus), and the project name is Sonic / EpoCanvas. The controller is the operator who actually determines the purposes and means of processing for this instance; code authors, contributors and operators are not necessarily the same parties. A brand or account is not a full legal identity and does not establish where the entity is located.
 
-| Instance you use | Data controller | Notes |
+The available public information is insufficient to verify the controller's legal name, effective contact details, actual deployment countries and representative arrangements where applicable. Before collection, the operator must provide this information and any geographical address required by law. If an EU representative or data protection officer must legally be appointed, their contact details must also be published. The contact addresses proposed in the current documentation are `privacy@epocanvas.com` and `admin@epocanvas.com`; their announcement in the reviewed upstream source was not confirmed, and no email was sent to verify delivery. They do not establish the controller's identity. Before adopting this policy, the operator must confirm and publish usable contact channels. Unconfirmed facts do not postpone rights or obligations that have already arisen.
+
+The GDPR applies according to Article 3 and the actual circumstances, including activities of an establishment in the EU, and the offering of services to people in the EU or monitoring of their behaviour there by entities outside the EU. Nationality, being free or nonprofit, or website accessibility is not the sole test. Elsewhere, the applicable local law governs; the project does not additionally extend all EU regimes into a uniform worldwide contractual guarantee.
+
+Measures must be proportionate to scale, risks and implementation costs. An ordinary individual project does not automatically need a dedicated compliance team, commercial certification or a data protection officer. However, the legal thresholds for an EU representative, processing records, impact assessments and a data protection officer must each be assessed separately; ongoing processing cannot be called occasional merely because there are few users. If necessary safeguards cannot be sustained, the relevant processing must be reduced or suspended rather than dispensing with notices and responses to rights requests.
+
+## 3. Data overview and sources
+
+| Source or action | Data that may be processed | Purpose and destination |
 | --- | --- | --- |
-| Hosted instances (`sonic.epocanvas.tech`, `sonic.epocanvas.com`) | The operations team | The operations team is the controller for behavioral events, sign-in and security records |
-| Self-hosted instances | The deployer of that instance | The open-source code contains no telemetry; apart from external services configured by the operator, nothing is sent back to the upstream authors or any third party |
+| Visiting the website or API | IP address, time, request path, browser and connection metadata | Establishing connections, rate limiting and security; the instance and infrastructure may process it |
+| Reading documentation and page preferences | `Accept-Language` request header, theme, sidebar state and documentation search input | Language entry and local reading functions; search-index requests still create connection records, see section 4.6 |
+| Epomail sign-in | User identifier, email address and verification flag, nickname, avatar URL, role, session and token identifiers | Requested identity functions; supplied by Epomail, with some data stored in the browser |
+| Search and content requests | Raw search text, track / artist / album / MV identifiers, lyrics matching and resource requests | Returning the requested content; may be sent upstream |
+| Candidate-version personalisation and Auto DJ | Pseudonymous identifier, playback progress, skips, favorites, dislikes, searches and context | Optional profiling; defaults are not consent, see section 5 |
+| Local use and candidate-version radar | Favorites, playlists, settings, local audio and embedded cover artwork; radar albums and signals | No local audio file-content upload path was found; some metadata, cover data and context may be sent and may enter the shared-track catalogue |
+| Public content such as upstream comments | Other people's nicknames, avatars, identifiers, text, times and images | Displaying requested content and caching it; a public source does not make it anonymous |
+| Contact, reports and rights requests | Contact details, explanations, necessary evidence and handling records that you provide | Responding to requests, meeting statutory obligations and handling specific disputes |
 
-**Protection baseline**: the service applies the GDPR as the minimum data protection standard for every user, wherever you live. Your rights of notice, access, rectification, erasure, restriction, portability, objection and complaint regarding your personal data are never below the level set by the GDPR. For users in the European Union and the European Economic Area, the GDPR applies directly; for users elsewhere, the service carries the GDPR standard as a contractual obligation; where the law of your location grants stronger protection, that law prevails to its extent.
+Basic requests require the relevant connection information; without sign-in data, functions requiring identification are unavailable. Optional profiling is not necessary for basic search or playback. Do not submit passwords, complete tokens, identity documents, health information or other people's private data in queries, playlists, messages or public Issues. This reminder does not shift responsibility for preventing excessive collection to users. Music preferences and queries may indirectly reveal sensitive characteristics and cannot categorically be treated as non-personal data.
 
-## 3. Notice of collection
+Sign-in data comes from Epomail; comments and related data come from content providers and public sources. Where Article 14 of the GDPR applies to indirect collection, sources, categories and other necessary information must be provided within the statutory period, or applicable exceptions and safeguards must be documented. Public visibility or a user's playback request alone does not establish that third-party comment authors have consented to Sonic's reuse. See [Third Parties & Transfers](/en/sub-processors/) for specific sources.
 
-When the service collects personal data from you, it clearly informs you of the following:
+## 4. Processing in the code and version differences
 
-| Notice item | The service's disclosure |
-| --- | --- |
-| 1. Identity of the controller | The operator (section 2; for self-hosted instances, their deployer) |
-| 2. Purposes of collection | Account identification and sign-in sessions; provision of playback, search and recommendation functions; abuse and fraud prevention; rate limiting and service security (see the matrix in section 5) |
-| 3. Categories of personal data | Account identification (Epomail user identifier, e-mail address, nickname, avatar link, account role); behavioral and preference data (play, completion, skip, favorite, dislike, search terms and similar events, linked by a pseudonymous identifier); technical data (transient use of IP for rate limiting, session cookie, OAuth transactional cookies) — see section 4 |
-| 4. Period, region, recipients and manner of use | Period: behavioral events are destroyed automatically 90 days after recording (deployer-configurable, minimum 7 days); account identification data is never persisted and exists only within sessions; region: the control plane runs on the Cloudflare global edge network and the data plane on the operator's own Linux node (section 7); recipients: the operator and its processors, and competent authorities under legal requirement (section 7); manner: automated pseudonymised storage and statistical computation, never human content review |
-| 5. Your rights and how to exercise them | Access, rectification, erasure, restriction, portability, objection and complaint, as set out in section 9 |
-| 6. Consequences of not providing | The core functions (search, playback, lyrics) are usable without signing in and without reporting behavioral events; personalised recommendation and behavioral-event management require sign-in where applicable, while local favorites and playlists do not require sign-in and are not synchronized across devices |
+### 4.1 Sign-in and sessions
 
-## 4. Personal data collected
+Epomail OAuth in candidate version `a75f5cb` uses state validation and PKCE. `sonic_session` is an HttpOnly signed session cookie with a default lifetime of 30 days; the `sonic_oauth_state` and `sonic_oauth_verifier` transaction cookies last approximately 600 seconds, with Secure set in HTTPS environments. Signing protects integrity; it is not encryption. The credential payload may include an email address and user and role identifiers. These source-code defaults do not establish the actual lifetimes in a live deployment.
 
-### 4.1 Account identification data (via Epomail sign-in)
+The frontend's `auth` local storage retains some user data, including email and avatar information, and has compatibility paths that read legacy sign-in storage. Account data therefore cannot be described as being held only in memory. Signing out clears the current cookies, but immediate revocation of copied or exported credentials still depends on revocation storage, settings and request outcomes. Signing out must not be equated with immediate invalidation of every copy.
 
-When you sign in with an Epomail account over OAuth 2.0 (PKCE), the service obtains the following fields from Epomail's userinfo endpoint, and no other account data:
+The callback and compatibility frontend in the older `main@ce443c8` have paths that pass and store sign-in data and credentials through URLs and localStorage, without the full PKCE, signature-verification and revocation protections described above. Descriptions in the older README must not be treated as implemented features. Deployments whose necessary safeguards are not yet in place should not process real user credentials. If URLs, screenshots or logs contain credentials, do not forward them; contact the operator for handling.
+### 4.2 Behavioural events, profiling and search statistics
 
-| Field | Use | Persisted? |
+The following behavioural-event, SQLite-profile and search-statistics paths are verifiable in the candidate version. The same complete implementations were not found in the older `main`, so these features must not be presumed to exist there.
+
+The candidate version links events using email-derived identifiers or browser-generated `anon_` identifiers, processing playback, favorites, dislikes and other behaviour, as well as feedback on artists, albums, playlists and MVs. Recommendation requests may also carry local favorites, recent artists and search context. Being signed out does not mean being anonymous. Hashes and random identifiers can be used to link data and must be treated as pseudonymised personal data; supposed “irreversibility” is not a reason to exclude the GDPR.
+
+Smart search separately accumulates queries, and public search suggestions may display those terms. Turning personalisation off alone does not stop this path. Queries may contain names, contact details or sensitive information; aggregating counts does not itself make them anonymous. The path that generates public suggestions from user queries must be disabled until necessity, a lawful basis, filtering, display thresholds, retention and deletion controls have been addressed.
+
+### 4.3 Browser storage and local files
+
+| Storage | Main contents | Clearing and limits |
 | --- | --- | --- |
-| User identifier (`id`／`sub`) | In-session identification | No |
-| E-mail address (must be verified) | Deriving pseudonymous hashes; the `sub` claim of the API key issued to you personally | No |
-| Nickname or username (`name`／`username`／`nickname`) | Interface display | No |
-| Avatar link (`avatar`／`picture`) | Interface display | No |
-| Account role (`role`) | Permission decisions | No |
+| `audio`, `library`, `global` and `settings` in localStorage | Queue, favorites, playlists, playback / search history and settings | Until cleared by the user or browser; not a general cloud backup |
+| Candidate-version `recommend`, `auth`, radar and legacy sign-in compatibility storage | Toggles, identifiers, dislike records, user data, radar and legacy sign-in state | Some data is used in network requests; not every sign-out action necessarily clears legacy keys |
+| IndexedDB `SonicMusicPlayerDB` | Imported music files, metadata, covers and download cache | No local audio file-content upload path was found; embedded cover data URLs may be sent with favorite events; browser clearing may cause permanent loss |
+| Candidate-version session and OAuth cookies | Identity sessions and sign-in transactions | See section 4.1; device clearing is not remote deletion |
 
-The service maintains no separate registration system and collects no phone number, legal name, postal address or payment data. The e-mail address is used only within the sign-in session: to derive the pseudonymous identifier (a SHA-256 hash with the `usr_` prefix, truncated to 12 hexadecimal characters), the user-identifier hash and rate-limit bucket keys; the derived hashes cannot be reversed into the original e-mail address.
+No upload path was found for local audio file contents, but lyrics matching, favorite feedback and recommendation context may send titles, artists, albums or track identifiers. Embedded artwork extracted as a data URL may also be sent with favorite or unfavorite events and added to a remote shared-track catalogue that can appear in site-wide search or public suggestions. Profile reset does not guarantee removal of this catalogue or optional external search and recommendation indexes; whether the records remain personal data depends on their linkability. Comment / reply / like writes in the candidate version are local simulations; comments read from upstream may contain other people's data and be cached. Interface labels do not establish remote publication or anonymisation.
 
-### 4.2 Behavioral events
+Playback history in the candidate version automatically retains up to the most recent 100 tracks, and local search history retains up to 20 entries. No separate switch for disabling local playback history was found. Turning off remote personalisation does not turn off these local histories.
 
-To provide the recommendation and Auto DJ functions, the service records behavioral events related to track playback. There are 11 event types: search, search click, play start, play progress, play completion, skip, replay, favorite, unfavorite, dislike and undislike. Each event is linked to one of the following pseudonymous identifiers:
+Only terminal storage or access that is strictly necessary to carry out playback, sign-in or settings expressly requested by you may qualify for the necessity exemption under electronic-privacy rules. Optional profiling identifiers and nonessential storage or access require prior valid consent. Cookies, localStorage and IndexedDB are not automatically exempt merely because they are “first-party” or stored on the device. Specific requirements also depend on applicable Member State implementing laws.
 
-1. **Signed-in users**: a SHA-256 hash derived from the e-mail address (prefix `usr_`);
-2. **Anonymous participants**: a hash (prefix `anon_`) of a random identifier generated in your browser and re-hashed server-side;
-3. **Public mode**: with personalisation off, events are neither stored nor persisted — they are dropped server-side.
+### 4.4 Networks, logs and external resources
 
-Event reporting is batched (at most 50 events per batch, 64 KB per request body) and flushed when the page is hidden. Each stored event contains only: the event type, the canonical track identifier, artist key, genre and language tags, the search term (where applicable), the progress ratio and the signal weight — no IP addresses, no device fingerprints, no free-text content.
+The instance and infrastructure may process IP addresses, paths, times and connection information. Candidate-version rate limiting may use raw IP addresses or identity-derived keys, and the edge may also forward addresses, sessions and context to the configured data engine. Minimised application logs do not mean that hosts, proxies, error logs, Cloudflare or recipients record nothing. No verified end-to-end “zero logs” guarantee exists.
 
-Noise and false-signal purification: skips caused by network stalls (network_stall), decode failures (playback_error), trial truncation (trial_end), unavailable streams (stream_unavailable), buffer timeouts (buffer_timeout) or auto-switch failures (auto_switch_error) carry zero weight and are never stored; the client reports an active skip only when playback is healthy and between 0.5 and 25 seconds of listening.
+When an alert webhook is configured and an alert is triggered, the receiving service may receive system counts, the release version, timestamps and summaries with credentials redacted, and may also see the sending node's outbound IP address. Standard payloads do not automatically include end-user identifiers or queries, but administrator notes and error messages may still contain personal data; redaction is not full anonymisation. Before enabling the webhook, minimise the content and verify the recipient and the retention and transfer arrangements.
 
-In addition, recommendation requests carry a small amount of client-side context (a truncated set of favorites, recent artists and recent search terms), used in memory for that request's personal ranking only and never persisted or logged.
+An audio proxy can make upstream services see the proxy's outbound address, but some requests may still carry browser information. MVs, covers, avatars, fonts and direct content can expose IP addresses and other metadata to external services. The code loads Google Fonts and has a path that uses a plaintext email address as a DiceBear avatar seed. The operator should avoid automatic, nonessential external connections and replace that avatar path with local resources or a method containing no email address. Some upstream services use HTTP, so the entire connection chain cannot be described as end-to-end encrypted. See [Third Parties & Transfers](/en/sub-processors/) for actual recipients and optional controls.
 
-### 4.3 Global aggregate statistics
+### 4.5 Purposes for which data is not used
 
-The service also maintains global aggregate statistics unrelated to any user, for the trending lists and similar-track recommendations:
+The project does not pursue the sale of personal data, advertising, cross-site advertising profiling or training of general-purpose AI models. This code review also found no function for Sonic to obtain Epomail email message bodies. Identity sign-in does not grant access to mailbox contents. Recommendation algorithms do not imply that content is sent to general-purpose AI providers; new purposes require separate prior assessment and notice.
 
-| Statistic | Content | Link to individuals |
+The service does not aim to collect special-category data or infer sensitive characteristics. If such data is received unexpectedly, access must be restricted, necessity and applicable conditions assessed, and the data erased or otherwise handled lawfully. General consent or legitimate interests alone cannot satisfy Article 9 of the GDPR. The project cannot guarantee third parties' independent processing on their behalf.
+
+### 4.6 Documentation site reading, preferences and search
+
+The documentation site and player do not use the same storage. The current documentation source and its Starlight / Pagefind components support the following description:
+
+| Feature or storage | Contents and purpose | Retention and transmission limits |
 | --- | --- | --- |
-| Search-term aggregate counts | Global frequency counts of search terms | None |
-| Track co-occurrence relations | Global statistics of tracks listened together | None |
+| `starlight-theme` (`localStorage`) | Light, dark or system display preference; initialisation may also write an empty value | Until replaced, cleared by the user or evicted by the browser; this key was not found to be used for profiling |
+| `sl-sidebar-state` (`sessionStorage`) | Sidebar expansion state, structural identifier and scroll position | Stored within a browser-managed tab session; session restoration may extend it, so this is not a precise deletion time |
+| Pagefind documentation search | Input is matched in the browser; static index and result excerpts are requested from this site as needed | No submission of raw input to the player search API or an external search service was found; index paths, visited pages and connection information may still be recorded by hosting networks, so search behaviour cannot be guaranteed untraceable |
 
-These records contain no personal identifiers, are not linked to your identity, and are outside the scope of "one-click profile erasure" (since they belong to no user).
+The language entry point reads the `Accept-Language` request header and does not set a language cookie for that purpose. No advertising or separate analytics script was found in the current documentation configuration; this does not prove that the hosting network keeps no logs. These preferences serve the reading interface and are not automatically exempt from consent merely because they are first-party: the exemption applies only where the applicable terminal-access necessity test is met; otherwise, obtain consent or disable the access. Clearing documentation-site data does not automatically clear player data on other domains. The actual hosting recipients, controller, log periods and rights contact must still be confirmed before adopting this policy.
 
-### 4.4 Local storage in your browser
+## 5. Purposes, legal bases and choices
 
-The following data lives only in your browser; the operator's servers never receive a full copy. When storage is unavailable in the browser's private mode, it degrades automatically to in-memory storage:
-
-| Location | Key | Content |
+| Processing | Purpose | Basis and limits where the GDPR applies |
 | --- | --- | --- |
-| localStorage | `audio` | Playlists, current track, play mode, volume, mute state, play history |
-| localStorage | `library` | Liked songs, collected playlists, followed artists, liked MVs, collected albums, user playlists |
-| localStorage | `global` | Theme, language preference, search history (at most 10 entries) |
-| localStorage | `settings` | Interface preferences (background animation, quality preference and other settings) |
-| localStorage | `recommend` | Personalisation toggle, Auto DJ toggle, anonymous identifier, disliked-track list |
-| localStorage | `sonic-perf-mode` | Performance-mode toggle |
-| IndexedDB | `SonicMusicPlayerDB` | Locally imported music files (`local_music`) and downloaded tracks (`downloaded_music`) |
+| Requested search, playback, sign-in and sessions | Providing the requested functions | Article 6, Paragraph 1, point (b), only where objectively necessary within a valid contract or requested pre-contractual steps; a visit alone cannot justify relying on it without a contract |
+| Optional profiling, persistent identifiers and radar-preference sync | Personalised recommendations | Article 6, Paragraph 1, point (a), and Article 7; valid consent that is prior, separate, freely given and withdrawable |
+| Necessary connection security, rate limiting and abuse prevention | Protecting the service and users | Article 6, Paragraph 1, point (f); document necessity and the balancing of interests, respect the right to object, and do not extend this basis to additional profiling |
+| Documentation delivery, navigation and reading preferences | Providing requested documentation and its reading interface | Article 6, Paragraph 1, point (f), only where necessity and balancing of interests are established; any consent required for terminal access is assessed separately |
+| User search-term statistics and public suggestions | Improving retrieval and reusing queries | An immediate query does not authorise additional public reuse; the current path lacks fully verified conditions and should be suspended, not described as already having a lawful basis |
+| Third-party comments and public-content caching | Displaying requested content | Independently assess the basis, minimisation and indirect-collection notice; the viewer's contract does not automatically provide a contractual basis for processing comment authors' data |
+| Rights requests and legally necessary disclosures | Meeting specific applicable obligations | Article 6, Paragraph 1, point (c); an actual legal obligation is required, not a blanket reference to all foreign requests |
+| General support and specific dispute records | Responding to voluntary enquiries and establishing or defending claims | Proportionate legitimate interests under Article 6, Paragraph 1, point (f), or point (b) where contractual necessity genuinely exists; neither is a reason for indefinite retention |
 
-### 4.5 Technical data processed automatically
+The candidate version enables personalisation and Auto DJ by default. Defaults, signing in and ticking a Terms of Service checkbox do not establish valid consent. Deployments subject to EU rules must perform no nonessential storage, access or transmission before a choice is made, make acceptance and refusal equally easy, offer choices without tying them to the basic service, and allow withdrawal by means no harder than giving consent. Clearing settings must not turn an absence of choice back into consent. The current documentation does not establish that this mechanism has been implemented.
 
-- **Rate limiting**: anonymous requests are rate-limited per IP bucket (240 per minute by default); the IP is used only transiently as a rate-limit key — the native edge limiter retains no data, or a KV record auto-expires after 120 seconds, or a 60-second in-memory window (at most 4096 buckets) holds it; the IP is never written to the database and never to access logs. Authenticated requests are bucketed by e-mail hash (600 per minute by default), and authentication endpoints have a dedicated 30-per-minute-per-IP limit.
-- **Session and keys**: a signed-in session issues an `HttpOnly; Secure; SameSite=Lax` `sonic_session` cookie (valid at most 30 days) containing the signed API key; keys are never written to URLs, query parameters or localStorage. The OAuth handshake uses the `sonic_oauth_state` and `sonic_oauth_verifier` transactional cookies (valid 600 seconds, scoped to `/api/auth`). The API key payload carries `sub` (e-mail), `iat`, `exp`, `jti`, `kid`, `role` and `uid`; `jti` serves revocation lists and immediate invalidation on sign-out.
-- **Access logs**: data-plane access logs are line-delimited JSON containing only the request id, method, path, status code and duration; query strings, IP addresses, User-Agent, cookies, Authorization and request bodies are never logged. Error logs contain only the request id, error name and a truncated message.
-- **Audio proxy**: audio streams are proxied through the service's edge by default; upstream requests carry only a User-Agent, the CDN-specific official Referer and the Range header, with Set-Cookie and credential headers stripped; upstream CDNs see only the proxy's address. If you actively invoke the `?mode=redirect` direct mode, your browser connects straight to the official CDN and your IP becomes visible to that CDN (an inherent property of 302 redirects); the web player never uses this mode.
-- **Edge network**: Cloudflare processes network-layer request metadata under its own policies.
+Turning personalisation off does not delete existing data or stop necessary requests or separate search statistics. Auto DJ has its own switch and may still send seed and excluded-track data to fill the queue. Radar sync may still send a preference payload with personalisation off, even if the server rejects storage based on the off marker. Transmission, receipt and persistent storage are distinct operations; the switch is not a guarantee that all outbound data is blocked. The operator must stop future processing within the scope of withdrawal and lawfully handle data already collected. Collection that lacked a basis cannot retrospectively be made lawful by relabelling it. If there are insufficient resources to implement consent, retention and deletion for optional profiling, the feature can be disabled without building unnecessary enterprise-scale systems.
 
-### 4.6 What the service never collects
+Recommendations generally adjust ordering based on playback, favorites, dislikes, artist preferences and content relationships; they do not guarantee accuracy. This is profiling, but the reviewed purposes concern content recommendations only, and no solely automated decisions producing legal or similarly significant effects were found. A change of purpose requires reassessment under Article 22 of the GDPR and other applicable rules, with prior notice.
 
-The service has no advertising trackers, no cross-site cookies, no third-party analytics scripts, no device fingerprinting and no behavioral advertising profiles; it collects no contacts, photo library, location or any device data unrelated to music playback; it never sells personal data or uses it for advertising, and connects to no advertising network.
+## 6. Retention periods and deletion limits
 
-## 5. Legal bases and purposes
-
-The legal bases of each processing activity are as follows:
-
-| Processing activity | Purpose | Legal basis |
+| Data | Behaviour verifiable in the candidate code | Actual retention requirements and limits |
 | --- | --- | --- |
-| Epomail sign-in, session maintenance, API key issuance and revocation | Account identification and service access | Necessity for the contract (Article 6, Paragraph 1, point (b) of the GDPR) |
-| Behavioral events and recommendation profile (pseudonymised) | Recommendation and Auto DJ functions | Legitimate interests (Article 6, Paragraph 1, point (f)); you may switch off personalisation at any time (the objection right in section 9), which stops collection immediately |
-| Global aggregate statistics | Trending lists and similar recommendations | Legitimate interests (Article 6, Paragraph 1, point (f)); not linked to individuals |
-| Anonymous-identifier events (anonymous participants) | Recommendation functions | Your own choice; switching personalisation off terminates it |
-| IP rate limiting, session security, abuse prevention | Service security and stability | Legitimate interests (Article 6, Paragraph 1, point (f)); where applicable also a legal obligation (Article 6, Paragraph 1, point (c)) |
+| Behavioural events and entity feedback | SQLite defaults to 90 days, with a 7-day minimum; cleanup at startup and on some writes, plus a separate write path fixed at 90 days | Not destruction of each record at expiry; settings must be aligned and cleanup run regularly, without treating example values as live guarantees |
+| Radar profiles, query aggregates and co-occurrence data | Not fully covered by the cleanup above | Specific automatic periods have not been verified; necessary periods and deletion methods must be set before enabling processing, with no indefinite retention of identifiable data |
+| Shared-track catalogue and optional external indexes | Behavioural input may create track records, including cover fields; not fully cleared by the current profile reset | Do not treat the catalogue as anonymous; where it contains identifiable data or images, assess necessity, sharing scope, retention and deletion |
+| Browser data and music files | Until device clearing or browser eviction | Users can clear it; remote data is handled separately |
+| Sessions, OAuth, rate-limit and revocation records | Session default: 30 days; OAuth: 600 seconds; some rate-limit KV records: 120 seconds; in-memory counting windows: about 60 seconds | Session validity is not the retention period for all copies; actual settings and revocation-record periods require separate verification |
+| Request caches and upstream comments | Handled according to resource type, instance and upstream caching policies | Caches may contain queries or other people's data; cache expiry does not establish deletion of all copies, and actual periods must be published |
+| Logs, backups, support and dispute records | No uniform actual rotation or expiry-destruction cycle was found | Limited to the period necessary for security, request handling or specific statutory retention; publish specific periods or intelligible criteria and clear data on schedule |
 
-Your personal data is used only for the purposes above and the scope closely related to them. The service never uses your data for automated decision-making within the meaning of Article 22 of the GDPR (decisions producing legal effects or similarly significantly affecting you); the impact of recommendations is limited to the playback sequence and chart ordering you see, and you can turn it off at any time.
+The same event databases, retention tasks or remote-deletion paths have not been verified in the older `main`; the candidate-version figures in this table must not be applied to it. Every instance must explain actual periods before enabling processing. Unknown periods do not authorise indefinite retention, and “as needed” cannot replace intelligible criteria.
 
-## 6. Retention periods and erasure
+The candidate version's “reset recommendation profile” mainly deletes some events and feedback for the current identity. It may omit pre-sign-in identifiers, radar data, search aggregates, the shared-track catalogue and covers, external recommendation systems, caches, database logs and backups; some failures may also go unreported in the interface. A profile summary is not a complete personal data copy or portable export. For comprehensive handling, submit a request under section 9; an interface button cannot replace statutory obligations.
 
-| Data category | Retention policy |
-| --- | --- |
-| Behavioral events | Destroyed automatically 90 days after recording (deployer-configurable, minimum 7 days), pruned on write counts and at startup; "one-click profile erasure" destroys them immediately |
-| Account identification data (e-mail, nickname, avatar link, role) | Never persisted; exists only within sessions |
-| Session cookie | At most 30 days; invalidated immediately on sign-out |
-| OAuth transactional cookies | Auto-expire after 600 seconds |
-| Rate-limit counters | Not retained by the native edge limiter; KV records auto-expire after 120 seconds; in-memory window 60 seconds |
-| Key revocation lists | Deployer-configured static lists (environment variables) or instant KV revocation records |
-| Database backups | Consistent snapshots containing pseudonymised behavioral data; deserve the same protection as production data |
-| Global aggregate statistics | Contain no personal identifiers; handled under database maintenance policy |
-| Browser local storage | Remains on your device until you clear it or use "clear all local data" |
+Erasure must cover data that can actually be linked, within the scope required by applicable law and subject to statutory exceptions. Recipients must be notified where applicable. If backups cannot be erased item by item, they must be removed from routine use, isolated and cleared on a defined cycle. Deletions already carried out must be reapplied on restoration so that old data does not return to use. For portions that must legally be retained, the reason, scope and period must be explained and use restricted. This policy does not invent backup cycles or background jobs that are already live.
 
-## 7. Sharing with third parties and international transfers
+## 7. Recipients and international transfers
 
-The service shares personal data with third parties on a strict minimum-necessity principle; the complete list is in [Third Parties & Transfers](/en/sub-processors/), in summary:
+Cloudflare may provide hosting, edge services, tunnels and storage; Epomail provides identity services; music platforms, lyrics sources and content CDNs receive queries or connection information; Google Fonts, avatar services and configured recommendation, retrieval or alert providers may receive other data. Public query suggestions, the shared-track catalogue and upstream comment caches may also make content accessible to other users. Whether optional paths such as Gorse, Meilisearch and alert webhooks are enabled must be expressly disclosed for the particular instance, not inferred from sample configurations.
 
-1. **Processors**: Cloudflare (Pages hosting, Functions edge computing, Tunnel encrypted channel, KV storage, rate-limiting infrastructure);
-2. **Identity provider**: Epomail (identifier, e-mail address, nickname, avatar link and role obtained at sign-in);
-3. **Upstream content sources**: NetEase, QQ, Kugou, Kuwo, AMLL, LRCLIB and the official content CDNs — requests carry only song query parameters with a fixed User-Agent／Referer, never your identity or IP;
-4. **Legal requirement**: provided only upon a request from a competent authority following legal procedure, with notice to you to the extent the law allows.
+Not every recipient is a processor. Whether a party processes on instructions, independently determines uses or jointly determines purposes must be assessed against the actual arrangements. Where a processor relationship exists and the GDPR applies, Article 28 requirements must be implemented. A shared brand or the name of an open-source component does not establish that a processing contract has been signed.
 
-The control plane of the service runs on the Cloudflare global edge network, so your personal data may be processed at nodes outside the operator's country. The operator manages international transfers under the safeguards of Articles 44 to 46 of the GDPR (including the EU Standard Contractual Clauses) governing the hosting and processor relationships, and relies on Cloudflare's data protection certifications (SOC 2 Type II, ISO/IEC 27001). Self-hosted operators must assess and ensure that their international transfers meet the requirements of the law at their own location.
+Actual contracting parties, countries and safeguards remain unverified. Each transfer subject to Chapter V of the GDPR requires confirmation of an adequacy decision or another valid mechanism. Using Standard Contractual Clauses also requires the corresponding assessment and necessary supplementary safeguards. Vendor certifications, policy links, proxies or a user's acceptance of this page are not in themselves a transfer basis; derogations for specific situations must not become a general solution for routine, ongoing transfers. As provided by law, you may request an explanation or copy of safeguards from `privacy@epocanvas.com`. Necessary trade secrets may be appropriately redacted, but this must not remove transparency obligations. See [Third Parties & Transfers](/en/sub-processors/) for details.
 
-## 8. Protection of children
+## 8. Age and test data
 
-The service is not directed at children under 16 and does not knowingly collect children's personal data; where the law of your location sets a lower age of consent for information society services (no lower than 13, Article 8 of the GDPR), that age applies. A guardian who believes a child has provided personal data may contact the operator for deletion, which is processed immediately after verification. No one may use the service to distribute content harmful to minors; the relevant restrictions are in the [Acceptable Use Policy](/en/acceptable-use/).
+The project's minimum age is 16. Minors must also meet the legal-capacity and guardianship requirements where they are located. Article 8 of the GDPR concerns only the child-consent situations it specifies, not a uniform age rule for all contracts and processing. Current identity fields do not prove age, and the project does not claim to have verified it.
 
-## 9. Your rights and how to exercise them
+Guardians may report data that does not meet the age requirement through the privacy email address. Development, demonstrations and learning should prioritise clearly labelled synthetic data, your own test accounts and authorised content. Testing involving real users' data should not be opened up before identity-disclosure and safeguard requirements are met. A public service or processing of other people's data is not a purely personal or household activity merely because it is for “learning”.
 
-You have the following rights regarding your personal data:
+## 9. Your rights and available actions
 
-1. Access and obtain a copy (Article 15 of the GDPR);
-2. Rectification (Article 16);
-3. Erasure (Article 17);
-4. Restriction of processing (Article 18);
-5. Data portability (Article 20);
-6. Objection (Article 21), including switching personalisation off at any time;
-7. Not to be subject to decisions based solely on automated processing (Article 22) — the service makes no such decisions.
+To the extent provided by applicable law, you may request confirmation of processing, access and a copy, rectification, erasure, restriction of processing and data portability, object to processing based on legitimate interests, and withdraw consent. Portability covers data you provided that is processed automatically on the basis of consent or a contract, within the statutory scope; it does not necessarily cover every inference or internal record. Withdrawal does not affect earlier processing that already had a lawful basis. Erasure is also subject to statutory exceptions, which must be explained individually rather than used for a blanket refusal.
 
-How to exercise them:
+**Right to object:** You may object at any time, on grounds relating to your particular situation, to processing based on legitimate interests. The relevant processing must stop unless overriding compelling legitimate grounds can lawfully be demonstrated, or processing is necessary to establish, exercise or defend legal claims. Contact `privacy@epocanvas.com` to object; turning personalisation off is not the only means of doing so.
 
-![The "Privacy & local data" section of the Sonic settings page: the smart search and personalisation toggle, the Auto DJ toggle, the reset-profile-and-dislikes button, with the section stating "the following data lives only in your browser and is never uploaded to the server"](/images/sonic/ui/ui-privacy.png)
+When using available controls, sign-out and local-clearing tools, note the limits in section 6. Local clearing does not guarantee removal of HttpOnly cookies, credentials in legacy URLs or storage, or remote data, and is not account closure. Clearing settings may restore defaults; the operator must not treat this as renewed consent. Incognito mode itself does not stop requests or events from being sent.
 
-*Figure: the "Privacy & local data" section of the settings page — the live interface of the self-service functions below. The interface tour is in the [Interface & Features Guide](/en/interface/), section 7.*
+You may withdraw consent to optional processing without deleting your account, using an available withdrawal control that is no harder than giving consent or contacting `privacy@epocanvas.com`. For remote erasure, a data copy or checks linking multiple identities, state the instance and request type and provide only the clues needed to locate the data. Locating an older pseudonymous record is distinct from additional identity verification: only where there is reasonable doubt about the requester's identity may the operator request extra information necessary to verify it; identity documents must not be required by default. You may make a request without an account. Do not send passwords or complete tokens, or disclose private information publicly. If an old pseudonymous record cannot be identified, explain the limitation and allow appropriate clues rather than collecting unrelated information or issuing a blanket refusal. The operator must confirm that this email address works before adopting the policy; the current documentation proves neither receipt of a request nor its execution.
 
-1. **Self-service functions (immediate effect)**:
-   - "Clear recommendation profile": immediately destroys all behavioral events server-side linked to you (`DELETE /api/sonic/events`);
-   - "Clear all local data": immediately clears browser localStorage, sessionStorage and the entire IndexedDB database, and destroys the server-side profile as well;
-   - Recommendation profile summary: query the available summary of your current profile via `GET /api/sonic/events` (total events, favorite and dislike counts, most-played artists, genre affinities, recent search terms, storage kind). This is a summary, not a complete export; browser-local data remains on your device, and Sonic provides no general localStorage/IndexedDB export;
-   - Switch personalisation off: takes effect immediately in settings, with the pending queue flushed and no further events collected;
-   - Sign out: immediately revokes the current session and key identifier.
-2. **Manual requests**: requests not covered by the self-service summary or deletion controls go to `privacy@epocanvas.com`; the operator responds within one month of receipt (Article 12, Paragraph 3 of the GDPR); complex cases may extend by a further two months, with the reason communicated within the first month.
+Where the GDPR applies, action or a response is required without undue delay and, as a rule, within one month of receipt. An extension of up to two further months is permitted where genuinely necessary because of complexity or the number of requests, with reasons given within the first month. Requests are generally free. Charging, refusing or taking no action must meet specific statutory conditions, with reasons and information about complaints and judicial remedies provided. Individual maintenance or a lack of automated tools is not an automatic ground for an extension.
 
-If you believe the service's processing has infringed your rights, you may seek a remedy from the operator (Article 79) and lodge a complaint with a supervisory authority at the operator's location (Article 77); users in the European Union and the European Economic Area may lodge a complaint with the supervisory authority of their habitual residence, place of work or the place of the alleged infringement. Anyone who has suffered material or non-material damage from a GDPR infringement may seek compensation under Article 82.
+You may complain directly to a competent supervisory authority at your habitual residence, place of work or the place of the alleged infringement, without first exhausting internal channels. Compensation under Article 82 of the GDPR and other judicial remedies are not affected by the Terms of Service's liability limits.
 
-## 10. Security measures
+## 10. Security and incident handling
 
-Under Article 32 of the GDPR, the operator maintains and continually improves appropriate technical and organisational measures against theft, alteration, damage, loss or disclosure of personal data: HTTPS/TLS across the chain; HMAC-SHA256 versioned signed API keys with constant-time comparison; the PKCE OAuth flow with time-limited transactional cookies; HttpOnly／Secure／SameSite cookie attributes with immediate revocation; the data plane bound to loopback only and reachable through an encrypted tunnel; full-chain SSRF interception and a domain allowlist; pseudonymous identifiers and an IP-free database design; minimised logging; fail-closed key verification. The complete list, the processing matrix and known limitations are in [Data Processing & Security](/en/data-security/).
+The operator must take appropriate measures according to the nature and scale of the data, costs and risks, including least privilege, credential and transmission protection, updates, and deletion and restoration checks. An individual project makes no additional promise of absolute security, uninterrupted operation, a dedicated security team or certification, but must still implement necessary measures. Protections differ between the older and candidate versions; one branch's design alone cannot guarantee live security.
 
-## 11. Changes to this policy
+Personal data breaches subject to the GDPR must be documented. Unless a breach is unlikely to pose a risk to rights and freedoms, the competent authority must be notified without undue delay and, where feasible, within 72 hours of awareness, with reasons given for late notification. Individuals must also be notified without undue delay where the risk is high, subject to statutory exceptions. No particular country's authority should be presumed to replace the authority that actually has jurisdiction. See [Data Processing & Security](/en/data-security/) for details.
 
-This policy may be revised as the service or the law changes. Material changes (adding third-party recipients, changing retention policies or collection scopes, and the like) will be announced in advance on the site, and the effective date and version at the top of this page updated. Continuing to use the service after a change takes effect constitutes acceptance of the revised policy; if you do not agree, stop using the service and erase your data. Material revisions are archived with the version history of the open-source repository.
+## 11. Updates and effect
+
+The date on this page is the document's revision date. It does not retrospectively authorise earlier processing or establish that an instance has adopted this version. Before adopting a new policy or changing purposes, data categories, recipients or periods, the actual details must be accurately disclosed; fresh consent must be obtained separately where required. A policy cannot conceal undisclosed processing by saying that “the actual code governs”. Continued use is not privacy consent and does not waive requests or remedies that have already arisen.
 
 ## 12. Contact
 
-- **Privacy matters, rights and appeals**: `privacy@epocanvas.com`
-- **Service and account matters**: `admin@epocanvas.com`
-- **Open-source project**: GitHub repository Issues (`github.com/shijianus/sonic`)
-- **Self-hosted sites**: contact the operator published by that site
-
----
-
-*This document is a compliance document prepared by the Sonic operations team and is not legal advice; mandatory provisions of the law of your location prevail over any inconsistent part of this policy.*
+Privacy and data requests: `privacy@epocanvas.com`; service and account matters: `admin@epocanvas.com`. Technical issues may be reported on [GitHub](https://github.com/shijianus/sonic/issues), after removing personal data and credentials. Self-hosted instances must provide their own controller identity and effective contact channels.

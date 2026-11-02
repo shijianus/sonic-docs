@@ -3,9 +3,9 @@ title: Primeros pasos
 description: "Primeros pasos con Sonic: la ruta más corta desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página ofrece la ruta más corta para usar la instancia gestionada de Sonic (`sonic.epocanvas.tech`): desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil. Para la visita completa de la interfaz, véase la [Guía de la interfaz y funciones](/es/interface/); esta página no cubre el autoalojamiento (el despliegue consta en la [Guía de despliegue](/es/deployment/)).
+Esta página ofrece la ruta más corta para usar la instancia gestionada de Sonic (`sonic.epocanvas.tech`): desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil. Para la visita completa de la interfaz, véase la [Guía de la interfaz y funciones](/es/interface/); esta página no cubre el autoalojamiento (el despliegue consta en la [Guía de despliegue](/es/deployment/)). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
 ## 1. Abrir el sitio
 
@@ -24,16 +24,16 @@ Ante un fragmento de vista previa de 30 segundos, el reproductor lo etiqueta fie
 Inicie sesión con su cuenta de Epomail mediante OAuth 2.0 (PKCE); el servicio no dispone de sistema de registro independiente:
 
 1. Pulse la entrada de inicio de sesión de la parte inferior de la barra lateral; será remitido a la página de autorización de Epomail para confirmar;
-2. Las canciones favoritas, las listas guardadas, los artistas seguidos y las listas propias se almacenan únicamente en el navegador utilizado; no se sincronizan en la nube ni entre dispositivos;
-3. Iniciar sesión desbloquea asimismo la recomendación personalizada y la continuación automática de Auto DJ; ambas pueden desactivarse en «Ajustes → Privacidad y datos locales»; desactivadas, las recomendaciones pasan a modo puramente público y deja de registrar cualquier evento de comportamiento.
+2. Los favoritos y listas se guardan principalmente en el navegador; parte de las señales y del contexto pueden enviarse. No se ha verificado una sincronización general en la nube entre dispositivos y falta la ruta remota del radar en la versión comprobada;
+3. La personalización y Auto DJ están activados por defecto en el código, sin prueba de consentimiento afirmativo; iniciar sesión no equivale a consentir. Pueden desactivarse en «Ajustes → Privacidad y datos locales», pero esa elección no detiene por sí sola las estadísticas de búsqueda separadas.
 
-La sesión es válida como máximo 30 días y se revoca de inmediato al cerrar sesión. Las reglas de cuenta constan en la sección 3 de los [Términos del servicio](/es/terms-of-service/).
+La sesión dura 30 días por defecto; cerrar sesión borra la cookie actual, pero la revocación remota depende de la configuración y del éxito de la petición. El almacenamiento `auth` conserva parte de los datos de cuenta en localStorage. Las reglas figuran en la sección 3 de los [Términos del servicio](/es/terms-of-service/).
 
 ## 4. Descargas y música local
 
 1. Descarga: pulse descargar en la columna de acciones de la pista o en la barra de reproducción inferior; la canción se guarda, junto con sus metadatos de calidad, en el IndexedDB del navegador y se gestiona en la página «lista de descargas»; puede reproducirse sin conexión;
-2. Música local: la página «Música local» admite añadir con un clic o arrastrar y soltar archivos de audio hacia el navegador; los archivos importados se guardan asimismo en el IndexedDB y no se suben al servidor;
-3. Ambos son solo para su escucha personal y no pueden redistribuirse (véase la [Política de uso aceptable](/es/acceptable-use/)).
+2. Música local: importe archivos seleccionándolos o arrastrándolos; el cuerpo de audio se guarda en IndexedDB y no se ha encontrado una vía de subida del cuerpo, pero la búsqueda de letras, las señales de favoritos y las recomendaciones pueden enviar título, artista, álbum o identificador, y las portadas incrustadas pueden transmitirse con eventos;
+3. utilice solo contenidos y usos autorizados: importar, descargar o probar de forma personal no crea una licencia ni una excepción automática a los derechos de autor (véase la [Política de uso aceptable](/es/acceptable-use/)).
 
 ## 5. Uso en móvil
 
@@ -43,9 +43,9 @@ Al acceder desde el navegador del teléfono a la misma dirección se obtiene la 
 
 Al usar el servicio por primera vez conviene conocer tres controles (ubicados en «Ajustes → Privacidad y datos locales»):
 
-1. Búsqueda inteligente y recomendación personalizada: conmutador general; al desactivarlo, los eventos dejan de recogerse;
-2. Radio continua automática (Auto DJ): controla la continuación automática al terminar la reproducción;
-3. Restablecer el perfil de recomendación y el registro de no me gusta / Borrar todos los datos locales: dos botones de borrado de efecto inmediato.
+1. Búsqueda inteligente y recomendación personalizada: controla los eventos correspondientes, sin detener las búsquedas originales que pueden alimentar sugerencias públicas; no escriba información sensible. El modo de incógnito no bloquea los envíos;
+2. Radio continua automática (Auto DJ): controla la continuación al terminar la lista; su activación predeterminada no prueba consentimiento para los perfiles;
+3. Restablecer el perfil / Borrado local: la supresión remota es parcial, con posibles identificadores anónimos antiguos, radar, agregados, servicios externos y copias omitidos, y fallos ocultos. La limpieza local no elimina la cookie HttpOnly ni cierra sesión; al recargar compruebe que no se haya reactivado la personalización por defecto. Para una solicitud completa, contacte con `privacy@epocanvas.com`.
 
 La formulación completa de los compromisos de privacidad figura en la [Política de privacidad](/es/privacy-policy/).
 
@@ -53,10 +53,10 @@ La formulación completa de los compromisos de privacidad figura en la [Polític
 
 | Pregunta | Respuesta |
 | --- | --- |
-| ¿Hay que pagar? | Gratuito, sin publicidad ni compras integradas |
-| ¿Puede usarse sin iniciar sesión? | Las funciones principales pueden usarse de forma anónima (con limitación de peticiones más estricta) |
-| ¿Dónde se guardan los datos? | Almacenamiento local del navegador + eventos de comportamiento seudonimizados en el servidor (90 días) |
-| ¿Cómo se borra el perfil? | Ajustes → restablecer el perfil de recomendación, con efecto inmediato |
+| ¿Hay que pagar? | Proyecto personal gratuito, sin ánimo de lucro, publicidad, compras integradas ni SLA |
+| ¿Puede usarse sin iniciar sesión? | Funciones básicas sin iniciar sesión; eso no garantiza anonimato |
+| ¿Dónde se guardan los datos? | Navegador y tratamientos remotos; los 90 días de ciertos eventos no son un plazo general verificado  |
+| ¿Cómo se borra el perfil? | Ajustes → restablecer el perfil; cobertura parcial y posibles fallos, solicitudes completas por correo |
 | ¿Por qué 30 segundos? | Recorte oficial de vista previa; se etiqueta fielmente y se procura el completado entre fuentes |
 | ¿Se sobredeclara la calidad? | La insignia refleja fielmente el nivel del flujo actual |
 

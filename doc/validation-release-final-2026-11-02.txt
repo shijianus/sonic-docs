@@ -1,0 +1,365 @@
+
+> sonic-docs@1.0.0 validate D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> pnpm run test:content && pnpm run test:i18n && pnpm run build && node scripts/validate-anchors.cjs && pnpm run check:rendered && pnpm run test:language && pnpm run check:sidebar && pnpm run check:policies && pnpm run test:pages
+
+
+> sonic-docs@1.0.0 test:content D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> python scripts/check-structure.py --self-test
+
+OK: 10 locales x 22 slugs = 220 pages; UTF-8, metadata (2026-11-02, v1.8), Markdown, structure and reviewed concepts
+OK: 317 self-test checks (mutations and valid edge cases); repository content untouched
+
+> sonic-docs@1.0.0 test:i18n D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/check-search-translations.mjs
+
+Pagefind UI translations cover 10 locales and 10 labels.
+
+> sonic-docs@1.0.0 build D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> astro build && node scripts/finalize-pages.mjs
+
+[2m01:42:33[22m [34m[content][39m Syncing content
+[2m01:42:33[22m [34m[content][39m Synced content
+[2m01:42:33[22m [34m[types][39m Generated [2m1.97s[22m
+[2m01:42:33[22m [34m[build][39m output: [34m"static"[39m
+[2m01:42:33[22m [34m[build][39m mode: [34m"static"[39m
+[2m01:42:33[22m [34m[build][39m directory: [34mD:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs\dist\[39m
+[2m01:42:33[22m [34m[build][39m Collecting build info...
+[2m01:42:33[22m [34m[build][39m [32m✓ Completed in 2.64s.[39m
+[2m01:42:34[22m [34m[build][39m Building static entrypoints...
+[2m01:42:44[22m [34m[vite][39m [32m✓ built in 9.81s[39m
+[2m01:42:44[22m [34m[build][39m [32m✓ Completed in 9.88s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m01:42:44[22m [34m[vite][39m transforming...
+[2m01:42:44[22m [34m[vite][39m [32m✓[39m 19 modules transformed.
+[2m01:42:44[22m [34m[vite][39m rendering chunks...
+[2m01:42:45[22m [34m[vite][39m computing gzip size...
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[32m_astro/ec.8zarh.js                                                             [39m[1m[2m 2.42 kB[22m[1m[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[35m_astro/ec.tm3va.css                                                            [39m[1m[2m18.26 kB[22m[1m[22m[2m │ gzip:  3.88 kB[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[36m_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js  [39m[1m[2m 0.67 kB[22m[1m[22m[2m │ gzip:  0.40 kB[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[36m_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js        [39m[1m[2m 1.67 kB[22m[1m[22m[2m │ gzip:  0.86 kB[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[36m_astro/page.B1D-nYk3.js                                                        [39m[1m[2m 2.24 kB[22m[1m[22m[2m │ gzip:  1.01 kB[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[36m_astro/Search.astro_astro_type_script_index_0_lang.I4KIuVKd.js                 [39m[1m[2m 2.71 kB[22m[1m[22m[2m │ gzip:  1.39 kB[22m
+[2m01:42:45[22m [34m[vite][39m [2mdist/[22m[36m_astro/ui-core.rBH4chKZ.js                                                     [39m[1m[2m94.19 kB[22m[1m[22m[2m │ gzip: 27.34 kB[22m
+[2m01:42:45[22m [34m[vite][39m [32m✓ built in 430ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m01:42:45[22m [32m▶[39m @astrojs/starlight/routes/static/404.astro
+[2m01:42:45[22m   [34m└─[39m [2m/404.html[22mEntry docs → 404 was not found.
+ [2m(+40ms)[22m 
+[2m01:42:45[22m [32m▶[39m @astrojs/starlight/routes/static/index.astro
+[2m01:42:45[22m   [34m├─[39m [2m/account-security/index.html[22m [2m(+21ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/acceptable-use/index.html[22m [2m(+15ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/data-management/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/data-security/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/key-terms/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/features/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/interface/index.html[22m [2m(+15ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/api/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/development/index.html[22m [2m(+21ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/deployment/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/library/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/open-source/index.html[22m [2m(+14ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/mobile/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/overview/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/privacy-policy/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/project/index.html[22m [2m(+16ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/quickstart/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/recommendation/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/search-syntax/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/sub-processors/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/terms-of-service/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/acceptable-use/index.html[22m [2m(+14ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/troubleshooting/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/account-security/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/api/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/data-management/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/data-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/deployment/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/development/index.html[22m [2m(+23ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/features/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/interface/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/key-terms/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/library/index.html[22m [2m(+18ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/mobile/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/open-source/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/overview/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/privacy-policy/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/project/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/quickstart/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/search-syntax/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/recommendation/index.html[22m [2m(+9ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/sub-processors/index.html[22m [2m(+10ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/terms-of-service/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/de/troubleshooting/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/acceptable-use/index.html[22m [2m(+16ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/account-security/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/api/index.html[22m [2m(+11ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/data-management/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/data-security/index.html[22m [2m(+13ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/deployment/index.html[22m [2m(+12ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/development/index.html[22m [2m(+21ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/features/index.html[22m [2m(+8ms)[22m 
+[2m01:42:45[22m   [34m├─[39m [2m/en/interface/index.html[22m [2m(+20ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/key-terms/index.html[22m [2m(+22ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/library/index.html[22m [2m(+15ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/mobile/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/open-source/index.html[22m [2m(+18ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/overview/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/privacy-policy/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/project/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/quickstart/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/recommendation/index.html[22m [2m(+16ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/search-syntax/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/sub-processors/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/terms-of-service/index.html[22m [2m(+18ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/en/troubleshooting/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/acceptable-use/index.html[22m [2m(+15ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/account-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/api/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/data-management/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/data-security/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/deployment/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/development/index.html[22m [2m(+22ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/features/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/interface/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/key-terms/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/library/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/mobile/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/open-source/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/overview/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/privacy-policy/index.html[22m [2m(+19ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/project/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/recommendation/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/quickstart/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/search-syntax/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/sub-processors/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/terms-of-service/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/es/troubleshooting/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/acceptable-use/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/account-security/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/api/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/data-management/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/data-security/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/deployment/index.html[22m [2m(+15ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/development/index.html[22m [2m(+21ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/features/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/interface/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/key-terms/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/library/index.html[22m [2m(+16ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/mobile/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/overview/index.html[22m [2m(+13ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/open-source/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/privacy-policy/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/project/index.html[22m [2m(+15ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/quickstart/index.html[22m [2m(+18ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/recommendation/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/search-syntax/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/sub-processors/index.html[22m [2m(+12ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/terms-of-service/index.html[22m [2m(+11ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/fr/troubleshooting/index.html[22m [2m(+15ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/account-security/index.html[22m [2m(+16ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/acceptable-use/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/api/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/data-management/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/data-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/deployment/index.html[22m [2m(+7ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/development/index.html[22m [2m(+20ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/features/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/interface/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/library/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/key-terms/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/mobile/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/open-source/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/overview/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/privacy-policy/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/project/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/quickstart/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/recommendation/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/sub-processors/index.html[22m [2m(+14ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/search-syntax/index.html[22m [2m(+7ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/troubleshooting/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ja/terms-of-service/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/acceptable-use/index.html[22m [2m(+10ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/account-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/api/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/data-management/index.html[22m [2m(+8ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/data-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:46[22m   [34m├─[39m [2m/ru/deployment/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/development/index.html[22m [2m(+12ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/features/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/interface/index.html[22m [2m(+17ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/key-terms/index.html[22m [2m(+12ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/library/index.html[22m [2m(+13ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/mobile/index.html[22m [2m(+17ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/open-source/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/overview/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/privacy-policy/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/quickstart/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/project/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/recommendation/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/search-syntax/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/sub-processors/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/terms-of-service/index.html[22m [2m(+15ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ru/troubleshooting/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/acceptable-use/index.html[22m [2m(+12ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/account-security/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/api/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/data-management/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/data-security/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/deployment/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/development/index.html[22m [2m(+20ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/features/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/interface/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/key-terms/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/library/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/open-source/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/mobile/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/overview/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/privacy-policy/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/project/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/quickstart/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/recommendation/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/search-syntax/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/sub-processors/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/terms-of-service/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/ko/troubleshooting/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/acceptable-use/index.html[22m [2m(+16ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/account-security/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/api/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/data-management/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/data-security/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/deployment/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/development/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/features/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/library/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/key-terms/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/interface/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/mobile/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/open-source/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/overview/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/privacy-policy/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/project/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/quickstart/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/recommendation/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/search-syntax/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/sub-processors/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/terms-of-service/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/pt/troubleshooting/index.html[22m [2m(+7ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/acceptable-use/index.html[22m [2m(+13ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/account-security/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/api/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/data-management/index.html[22m [2m(+18ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/data-security/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/deployment/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/development/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/features/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/interface/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/key-terms/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/library/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/mobile/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/open-source/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/overview/index.html[22m [2m(+7ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/privacy-policy/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/project/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/quickstart/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/search-syntax/index.html[22m [2m(+9ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/recommendation/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/sub-processors/index.html[22m [2m(+8ms)[22m 
+[2m01:42:47[22m   [34m├─[39m [2m/zh-tw/terms-of-service/index.html[22m [2m(+10ms)[22m 
+[2m01:42:47[22m   [34m└─[39m [2m/zh-tw/troubleshooting/index.html[22m [2m(+11ms)[22m 
+[2m01:42:47[22m [32m✓ Completed in 2.72s.
+[39m
+(node:42680) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+[2m01:42:51[22m [34m[build][39m Waiting for integration [1m"@astrojs/starlight"[22m, hook [1m"astro:build:done"[22m...
+
+Running Pagefind v1.5.2 (Extended)
+Running from: "D:\\Users\\Smart Kevin\\OneDrive\\Desktop\\sonicdocs\\node_modules\\.pnpm\\@astrojs+starlight@0.32.6_a_031c7f7e427c3c5939044b80b0a0649c\\node_modules\\@astrojs\\starlight"
+Source:       "..\\..\\..\\..\\..\\..\\dist"
+Output:       "..\\..\\..\\..\\..\\..\\dist\\pagefind"
+
+[Walking source directory]
+Found 222 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+
+[Reading languages]
+Discovered 10 languages: fr, es, pt, ru, de, en, zh-tw, zh-cn, ko, ja
+
+[Building search indexes]
+Total: 
+  Indexed 10 languages
+  Indexed 220 pages
+  Indexed 33657 words
+  Indexed 0 filters
+  Indexed 0 sorts
+Note: Pagefind doesn't support stemming for the language zh-tw. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ko. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ja. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-tw. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ko. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ja. 
+Search will still work, but will not match across root words.
+
+Finished in 1.513 seconds
+[2m01:42:53[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist`
+[2m01:42:53[22m [34m[build][39m 221 page(s) built in [1m22.24s[22m
+[2m01:42:53[22m [34m[build][39m [1mComplete![22m
+Pages routing: 220 canonical redirects, 18 locale entry redirects, 3 base rules.
+pages=222, documents=220/220, ids=3505, duplicate-ids=0, hrefs-checked=14290, anchors-checked=4151, images-checked=413, srcset-checked=0, scripts-checked=912, link-resources-checked=915, external-skipped=501, broken=0
+
+> sonic-docs@1.0.0 check:rendered D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/check-rendered-site.mjs
+
+language=zh-cn, directory=(root), documents=22/22, pagefind-pages=22
+language=zh-tw, directory=zh-tw, documents=22/22, pagefind-pages=22
+language=en, directory=en, documents=22/22, pagefind-pages=22
+language=fr, directory=fr, documents=22/22, pagefind-pages=22
+language=es, directory=es, documents=22/22, pagefind-pages=22
+language=de, directory=de, documents=22/22, pagefind-pages=22
+language=ja, directory=ja, documents=22/22, pagefind-pages=22
+language=ko, directory=ko, documents=22/22, pagefind-pages=22
+language=pt, directory=pt, documents=22/22, pagefind-pages=22
+language=ru, directory=ru, documents=22/22, pagefind-pages=22
+pages=222/222, documents=220/220, utf8-checked=222, charsets-checked=222, content-images-checked=191, language-options-checked=4410, pagination-links-checked=420, sidebar-languages=10, sidebar-groups=60, sidebar-items=220, redirect-rules=223/223, html-lang-checked=222, canonicals-checked=222, hreflang-checked=2200, pagefind-languages=10/10, pagefind-pages=220, pagefind-files-checked=19, broken=0
+
+> sonic-docs@1.0.0 test:language D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/test-language-negotiation.mjs
+
+Language negotiation tests passed (61 negotiation cases, 12 path cases, 146 redirect/header cases).
+
+> sonic-docs@1.0.0 check:sidebar D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/check-sidebar-i18n.mjs
+
+Sidebar translations cover 22 items and 6 groups across 10 locales.
+
+> sonic-docs@1.0.0 check:policies D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> python scripts/check-policy-consistency.py --self-test && python scripts/check-policy-consistency.py
+
+......................................................................................................................................................
+----------------------------------------------------------------------
+Ran 150 tests in 0.013s
+
+OK
+self-test: 150/150 cases passed
+policies=20, locales=10, identified GDPR citation references=564, whitelist=36, errors=0
+
+> sonic-docs@1.0.0 test:pages D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/test-pages-runtime.mjs
+
+{"ok":true,"wrangler":"4.156.1","compatibilityDate":"2026-11-02","port":59454,"counts":{"languages":{"checked":10,"passed":10},"baseRedirect":{"checked":1,"passed":1},"entry":{"checked":1,"passed":1},"html":{"checked":220,"passed":220},"assets":{"checked":311,"passed":311},"noTrailingSlash":{"checked":220,"passed":220},"notFound":{"checked":1,"passed":1}},"requests":764,"failures":0,"failureKinds":{},"cleanup":true,"durationMs":12752}

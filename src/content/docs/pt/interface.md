@@ -3,9 +3,11 @@ title: Interface e funcionalidades
 description: "Guia da interface e das funcionalidades do leitor Sonic: página inicial e recomendações, pesquisa, controlos de reprodução, gaveta do leitor, A minha música, definições e controlos de privacidade, disposição móvel."
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
-Esta página orienta pela disposição da interface e pela localização das funcionalidades do leitor web do Sonic, indicando onde cada funcionalidade se encontra e como se comporta. As capturas de ecrã foram tiradas do funcionamento real da instância gerida (a língua da interface é o Chinês Simplificado; o produto permite trocar a língua da interface). A interface pode ser ajustada com a evolução das versões; o âmbito real de disponibilidade das funcionalidades depende do que a instância tenha ativado; os instrumentos legais constam dos [Termos de Utilização](/pt/terms-of-service/) e da [Política de Privacidade](/pt/privacy-policy/).
+Esta página orienta pela disposição da interface e pela localização das funcionalidades do leitor web do Sonic, indicando onde cada funcionalidade se encontra e como se comporta. As capturas de ecrã ilustram a interface em chinês simplificado, mas não comprovam a versão atualmente em produção; o produto permite trocar a língua da interface. A interface pode ser ajustada com a evolução das versões; o âmbito real de disponibilidade das funcionalidades depende do que a instância tenha ativado; os instrumentos legais constam dos [Termos de Utilização](/pt/terms-of-service/) e da [Política de Privacidade](/pt/privacy-policy/).
+
+As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
 
 ![Página inicial do leitor do Sonic: barra de navegação à esquerda (três zonas: Explorar, A minha música, Sistema), zona principal com carrossel de recomendações, recomendação inteligente e radar musical, playlists recomendadas, e barra de leitura mini no rodapé](/images/sonic/ui/ui-home.png)
 
@@ -23,7 +25,7 @@ A página inicial agrega três zonas de conteúdos:
 
 *Figura: radar musical e de estilos após uma pesquisa. Os resultados do radar seguem o estilo dos cartões de «êxitos», com o motivo da recomendação e as etiquetas dos sinais de preferência apresentados de forma transparente.*
 
-A ordenação das recomendações afeta apenas a sequência de reprodução que vê; pode desativar a personalização nas definições (ver a secção 9) e, desativada, as recomendações passam ao modo puramente público.
+As recomendações constituem definição de perfis e afetam sobretudo a ordenação dos conteúdos. Personalização e Auto DJ estão ativos por predefinição, o que não prova consentimento. Desativar a personalização não interrompe estatísticas de pesquisa independentes nem todos os caminhos do radar. O Auto DJ tem interruptor separado e ainda pode enviar sementes e exclusões para preencher a fila; o radar ainda pode enviar uma carga de preferências, embora o servidor recuse conservá-la devido à marca de desativação. Envio e conservação são tratamentos distintos.
 
 ### 1.1 Barra lateral: modo recolhido e entrada da conta
 
@@ -35,7 +37,7 @@ O logótipo da marca no topo da barra lateral funciona como interruptor de recol
 
 *Figura: página de resultados de pesquisa. No topo, os separadores de categorias (Faixas/Playlists/MV) e «Reproduzir tudo»; as colunas da lista apresentam capa, música, artista, álbum, duração e ações (reproduzir, MV, favorita, descarregar). A caixa de pesquisa suporta normalização simplificado/tradicional, pinyin e iniciais e tolerância ortográfica.*
 
-A pesquisa fica na parte superior da barra lateral esquerda e na página de pesquisa, cobrindo palavras-chave de músicas, artistas, álbuns e playlists. Os resultados multifuente ordenam-se por relevância após fusão com desduplicação por expressão regular; as faixas cuja fonte é uma amostra assinalam-se fielmente ao abrigo das regras de [fontes de áudio e cadeia de letras](/pt/project/#4-cadeia-de-fontes-de-áudio-e-letras), apresentando uma amostra nunca como faixa completa.
+A pesquisa fica na parte superior da barra lateral esquerda e na página de pesquisa, cobrindo palavras-chave de músicas, artistas, álbuns e playlists. Os resultados multifuente ordenam-se por relevância após fusão com desduplicação por expressão regular; as faixas cuja fonte é uma amostra assinalam-se fielmente ao abrigo das regras de [fontes de áudio e cadeia de letras](/pt/project/#4-cadeia-de-fontes-de-áudio-e-letras), sem apresentar deliberadamente uma amostra como faixa completa. Os termos podem entrar em sugestões públicas; não introduza informações privadas ou sensíveis.
 
 ## 3. Tabelas de classificação e listas oficiais
 
@@ -51,7 +53,7 @@ A «Tabela de tendências do site» da página inicial e a página de tabelas de
 
 *Figura: biblioteca de artistas. Filtram-se os artistas por tipo, região e inicial; os cartões mostram o avatar, o nome e o número de álbuns. Dentro da página de artista pode percorrer os seus êxitos e os seus álbuns, e a página de álbum enumera as faixas.*
 
-As páginas de detalhe de artistas, álbuns e músicas partilham um proxy de capas e uma análise de temperatura de cor uniformes (a cor principal da capa grada com a página); todos os dados das listas provêm das interfaces abertas oficiais a montante e apresentam-se após cache e desduplicação.
+As páginas usam proxy de capas e análise de cor nos caminhos previstos; imagens também podem ser pedidas diretamente, expondo IP e metadados de ligação. Os dados das listas provêm de interfaces a montante; a acessibilidade técnica não prova licença sobre os conteúdos.
 
 ## 5. Controlos de reprodução (barra de reprodução inferior)
 
@@ -64,7 +66,7 @@ A barra de reprodução inferior permanece em todas as páginas e oferece:
 1. Menu de qualidade: enumera os níveis realmente disponíveis na fonte de áudio atual (como SQ sem perdas, HQ alta qualidade, padrão); o selo reflete fielmente a qualidade da stream em curso, sem indicação falsa;
 2. Linha de pré-visualização da letra: mostra a frase em curso da letra palavra a palavra;
 3. Modos de reprodução: troca entre repetição da lista, repetição da faixa, aleatório e outros modos;
-4. Descarga: guarda a faixa atual no navegador (IndexedDB); ver a secção 5.
+4. Descarga: guarda a faixa atual no navegador (IndexedDB); ver a secção 3 da [Gestão da biblioteca musical](/pt/library/).
 
 ## 6. Gaveta do leitor e letras palavra a palavra
 
@@ -90,7 +92,7 @@ A zona «A minha música» inclui quatro itens:
 | Descargas | Faixas offline descarregadas (com metadados de qualidade) | IndexedDB do navegador (`downloaded_music`) |
 | Música local | Ficheiros de áudio locais importados manualmente (suporta arrastar e largar para o navegador) | IndexedDB do navegador (`local_music`) |
 
-Estes conteúdos guardam-se apenas no seu navegador, sem envio para o servidor; limpar os dados do navegador ou usar «Limpar todos os dados locais» elimina-os. Os ficheiros descarregados e importados localmente destinam-se apenas à sua audição pessoal e não podem ser redistribuídos (ver a [Política de Utilização Aceitável](/pt/acceptable-use/)).
+A tabela indica locais de armazenamento no dispositivo, sem garantir ausência de transmissão. Não foi encontrado um caminho de envio do corpo do áudio local, mas capas incorporadas, títulos, artistas, álbuns, identificadores de faixas, feedback de favoritos e contexto de recomendação podem ser enviados. A limpeza do navegador remove a cópia local, não todos os dados remotos; não se garante cópia de segurança geral na nuvem. Importar ou descarregar não concede direitos adicionais (ver a [Política de Utilização Aceitável](/pt/acceptable-use/)).
 
 ## 8. Definições
 
@@ -98,20 +100,20 @@ Estes conteúdos guardam-se apenas no seu navegador, sem envio para o servidor; 
 
 *Figura: a página de definições organiza todas as preferências em cartões. Cada cartão corresponde a um tipo de definição: modo de tema (claro/escuro/conforme o sistema), língua da interface (Chinês/English/日本語), tipo de fundo, preferência de qualidade de áudio, exibição da letra no leitor inferior, modo de visualização de áudio, entre outros.*
 
-As definições produzem efeito imediato e guardam-se no armazenamento local do navegador (chaves `settings`, `global`, entre outras), sem associação à conta e sem envio para o servidor.
+As definições de interface guardam-se no armazenamento local (como `settings` e `global`). Outros estados locais podem integrar pedidos de rede; «local» não significa ausência de envio. `auth` também guarda dados do utilizador no navegador.
 
 ## 9. Privacidade e controlo de dados
 
 ![Bloco «Privacidade e dados locais» da página de definições do Sonic: explicação do armazenamento local do navegador e do IndexedDB, interruptores da pesquisa inteligente e da recomendação personalizada, interruptor da rádio contínua automática (Auto DJ) e botão de reposição do perfil de recomendação e dos registos de desinteresse](/images/sonic/ui/ui-privacy.png)
 
-*Figura: bloco «Privacidade e dados locais» da página de definições. O bloco explica que «os dados seguintes guardam-se apenas no seu navegador e não são enviados para o servidor»; a descrição do interruptor «Pesquisa inteligente e recomendação personalizada» indica que, desativado, passa de imediato ao modo puramente público e deixa de registar quaisquer eventos comportamentais; o botão «Repor o perfil de recomendação e os registos de desinteresse» limpa de imediato os dados comportamentais do servidor.*
+*Figura: bloco «Privacidade e dados locais». Textos antigos da interface podem sugerir armazenamento exclusivamente local ou eliminação integral; na realidade, pode haver envio de contexto e a reposição é parcial. Uma mensagem de sucesso não prova eliminação remota completa.*
 
-Este bloco é a concretização, na interface, dos direitos de self-service descritos na secção 9 da [Política de Privacidade](/pt/privacy-policy/):
+Este bloco oferece funções limitadas de self-service, não a concretização integral dos direitos; ver as secções 6 e 9 da [Política de Privacidade](/pt/privacy-policy/):
 
-1. Interruptor «Pesquisa inteligente e recomendação personalizada»: desativado, os eventos deixam de se recolher e as recomendações passam ao modo puramente público;
+1. Interruptor «Pesquisa inteligente e recomendação personalizada»: controla o caminho previsto de personalização; nem toda a recolha nem a reutilização pública de pesquisas termina;
 2. Interruptor «Rádio contínua automática (Auto DJ)»: controla a continuação automática quando a lista de reprodução termina;
-3. «Repor o perfil de recomendação e os registos de desinteresse»: destrói de imediato todos os eventos comportamentais associados a si no servidor (`DELETE /api/sonic/events`);
-4. «Limpar todos os dados locais»: após caixa de diálogo de confirmação, limpa todo o conteúdo do armazenamento local e do IndexedDB do navegador e repõe em sincronia o perfil no servidor.
+3. «Repor o perfil de recomendação e os registos de desinteresse»: elimina parte dos eventos e feedback da identidade atual (`DELETE /api/sonic/events`), sem garantir cobertura de identificadores antigos, radar, agregados, serviços externos ou cópias de segurança;
+4. «Limpar todos os dados locais»: tenta, após confirmação, limpar armazenamento local e IndexedDB e repor parte do perfil remoto; podem subsistir falhas parciais apesar da indicação de sucesso. Não remove o cookie de sessão HttpOnly nem termina a sessão. Repor definições e recarregar pode reativar a personalização predefinida; verifique novamente a escolha. O sucesso local não prova eliminação remota integral; para pedidos mais completos, contacte `privacy@epocanvas.com`.
 
 ## 10. Dispositivos móveis
 

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Contract lifecycle of the Terms of Service: electronic acceptance, use of the service, amendments, termination, resting on governing law and dispute resolution">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Service terms: notice and valid acceptance, free test use, notified changes and exit. OAuth alone is not acceptance or profiling consent; profile reset is partial and revocation depends on setup and request success. Mandatory rights remain.">
   <style>
     .bg { fill: #f8fafc; }
     .stage { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
@@ -32,41 +32,41 @@
 
   <rect class="stage-one" x="40" y="110" width="212" height="150" rx="10"/>
   <text class="st" x="58" y="140">1. Acceptance</text>
-  <text class="sb" x="58" y="164">Sign in via Epomail</text>
-  <text class="sb" x="58" y="180">OAuth = consent;</text>
-  <text class="sb" x="58" y="196">terms published and</text>
-  <text class="sb" x="58" y="212">versioned before use</text>
-  <text class="law" x="58" y="244">Electronic consent</text>
+  <text class="sb" x="58" y="164">Terms need valid acceptance;</text>
+  <text class="sb" x="58" y="180">OAuth alone is not</text>
+  <text class="sb" x="58" y="196">acceptance or optional</text>
+  <text class="sb" x="58" y="212">profiling consent.</text>
+  <text class="law" x="58" y="244">Notice before acceptance</text>
 
   <rect class="stage" x="290" y="110" width="212" height="150" rx="10"/>
   <text class="st" x="308" y="140">2. Use</text>
-  <text class="sb" x="308" y="164">Streaming, search,</text>
-  <text class="sb" x="308" y="180">lyrics, Auto DJ;</text>
-  <text class="sb" x="308" y="196">your account and your</text>
-  <text class="sb" x="308" y="212">playlists stay yours</text>
-  <text class="law" x="308" y="244">Contract performed</text>
+  <text class="sb" x="308" y="164">Search, playback, lyrics;</text>
+  <text class="sb" x="308" y="180">free test service.</text>
+  <text class="sb" x="308" y="196">No extra uptime SLA;</text>
+  <text class="sb" x="308" y="212">MIT covers code, not music.</text>
+  <text class="law" x="308" y="244">Mandatory rights remain</text>
 
   <rect class="stage" x="540" y="110" width="212" height="150" rx="10"/>
   <text class="st" x="558" y="140">3. Amendments</text>
-  <text class="sb" x="558" y="164">Material changes</text>
-  <text class="sb" x="558" y="180">announced in advance;</text>
-  <text class="sb" x="558" y="196">version + effective</text>
-  <text class="sb" x="558" y="212">date on every page</text>
-  <text class="law" x="558" y="244">Notice before effect</text>
+  <text class="sb" x="558" y="164">Explain changes and</text>
+  <text class="sb" x="558" y="180">their effective date;</text>
+  <text class="sb" x="558" y="196">renew acceptance</text>
+  <text class="sb" x="558" y="212">where required.</text>
+  <text class="law" x="558" y="244">Prior notice required</text>
 
   <rect class="stage" x="790" y="110" width="170" height="150" rx="10"/>
   <text class="st" x="808" y="140">4. Termination</text>
   <text class="sb" x="808" y="164">Leave at any time;</text>
-  <text class="sb" x="808" y="180">erase profile with</text>
-  <text class="sb" x="808" y="196">one click; sessions</text>
-  <text class="sb" x="808" y="212">revoked on logout</text>
-  <text class="law" x="808" y="244">Exit and erasure</text>
+  <text class="sb" x="808" y="180">reset is partial.</text>
+  <text class="sb" x="808" y="196">Contact for full request;</text>
+  <text class="sb" x="808" y="212">revocation needs setup.</text>
+  <text class="law" x="808" y="244">Exit preserves rights</text>
 
   <line class="flow" x1="252" y1="185" x2="286" y2="185"/>
   <line class="flow" x1="502" y1="185" x2="536" y2="185"/>
   <line class="flow" x1="752" y1="185" x2="786" y2="185"/>
 
   <rect class="base" x="40" y="300" width="920" height="60" rx="12"/>
-  <text class="bt" x="64" y="326">Foundation: governing law and dispute resolution</text>
-  <text class="law" x="64" y="346">GDPR-level baseline for all users · hosted instance operated from Taiwan · EU users keep GDPR rights</text>
+  <text class="bt" x="64" y="326">Applicable law and competent courts</text>
+  <text class="law" x="64" y="346">Mandatory rights remain · governing law depends on the facts</text>
 </svg>

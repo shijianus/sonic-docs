@@ -1,69 +1,67 @@
 ---
 title: Überblick über Datenschutz und Nutzungsbedingungen
-description: Gesamtüberblick über die rechtlichen Dokumente von Sonic – Identität der Plattform, Abgrenzung der Rollen bei der Datenverarbeitung, DSGVO-Niveau als Schutzuntergrenze, Dokumentenaufbau, Rangfolge der Geltung und Kontaktstellen.
+description: Diensteanbieter, Geltungsbereich des Datenschutzes, Verhältnis der Dokumente und noch umzusetzende Voraussetzungen des individuellen, nicht gewinnorientierten Sonic-Testprojekts.
 ---
 
-**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
+**Überarbeitet am: 2. November 2026｜Version: 1.8**
 
-Diese Seite ist die Wegleitung zu allen rechtlichen Dokumenten des Sonic-Dienstes (nachfolgend „der Dienst“); sie erläutert die Rollen der Beteiligten, den Aufbau der Dokumente und ihre Geltungsreihenfolge. Vor der Anmeldung oder Nutzung des Dienstes sollten Sie diese Seite sowie die [Datenschutzerklärung](/de/privacy-policy/) und die [Nutzungsbedingungen](/de/terms-of-service/) lesen.
+Diese Seite erläutert das Verhältnis der Dokumente zum gehosteten Sonic-Testdienst. Das Projekt wird von einer Einzelperson kostenlos und ohne Gewinnerzielungsabsicht für Lernzwecke und gemeinwohlorientierte Tests gepflegt; es gibt keine kommerziellen Service-Level oder Zusage eines dauerhaften Betriebs. Lesen Sie zuerst die [Nutzungsbedingungen](/de/terms-of-service/) und die [Datenschutzerklärung](/de/privacy-policy/), um Dienstumfang und Datenverarbeitung zu verstehen. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 
-![Rechtsdokumenten-Architektur von Sonic: die Nutzungsbedingungen als Vertragsschicht, Datenschutzerklärung und Richtlinie zur akzeptablen Nutzung als Richtlinienschicht, Datenverarbeitung und Sicherheitsmaßnahmen, Verzeichnis der Weitergabe an Dritte und Begriffsdefinitionen als Stützdokumente, alles auf der DSGVO-Untergrenze des Datenschutzes ruhend](/images/sonic/legal-architecture.svg)
+:::caution[Dokumentüberarbeitung und tatsächliche Bereitstellung]
+Der öffentliche RC und der alte `main` sind unterschiedliche Codestände; ihre Fähigkeiten dürfen nicht gleichgesetzt werden. Produktivumgebung, Anbieterverträge und tatsächliche Löschresultate wurden nicht geprüft. Standardmäßig aktiviertes Profiling, öffentliche Suchbegriffvorschläge, Avatar-Anfragen mit E-Mail-Adressen, Löschabdeckung und tatsächliche Speicherfristen müssen weiterhin geklärt und korrigiert werden. Eine aktualisierte Erklärung belegt keine bereits erfolgte Behebung dieser Probleme. Verarbeitungen ohne rechtmäßige Grundlage und notwendige Garantien sind auszusetzen.
+:::
 
-*Abbildung: Der Aufbau der rechtlichen Dokumente dieser Website. Die Nutzungsbedingungen bestimmen die vertraglichen Bedingungen; die Datenschutzerklärung trägt die Information und die Verarbeitungsstandards für personenbezogene Daten; die Richtlinie zur akzeptablen Nutzung legt die Verhaltensgrenzen fest; die übrigen drei Dokumente sind Stützdokumente. Die Datenschutz-Untergrenze legt die DSGVO als Mindeststandard für alle Nutzer fest.*
+![Dokumentbeziehungen bei Sonic: Nutzungsbedingungen, Datenschutzinformationen, Nutzungsregeln und Datenbeschreibungen](/images/sonic/legal-architecture.svg)
 
-## 1. Identität der Plattform
+*Abbildung: Die Dokumente haben unterschiedliche Aufgaben; die Verarbeitung personenbezogener Daten benötigt eine eigenständig tragfähige Rechtsgrundlage.*
 
-Sonic ist eine Open-Source-Musikstreaming-Plattform, die mit der Architektur „Cloudflare-Edge-Kontrollebene + Linux-lokale Protokoll-Engine als Datenebene“ betrieben wird; der Quellcode wird gemäß der Datei `LICENSE` im Stammverzeichnis des Repositorys (MIT License) veröffentlicht. Der Dienst kann in zwei Formen bereitgestellt werden:
+## 1. Projekt und Betreiber
 
-1. Gehostete Instanz: öffentliche Website, betrieben vom Betreiberteam (`sonic.epocanvas.tech` als Hauptstandort und `sonic.epocanvas.com` als Ersatz-Spiegel);
-2. Selbst gehostete Instanz: private Website, die eine beliebige Person, ein Team oder eine Organisation nach dem Open-Source-Code auf eigenen Servern und eigenen Domains betreibt.
+Das öffentliche Code-Repository ist [shijianus/sonic](https://github.com/shijianus/sonic). Im RC `a75f5cb` stehen die `LICENSE`-Dateien im Stammverzeichnis und im Player unter MIT. Im alten `main@ce443c8` ist nur die MIT-Lizenz des Players verifizierbar; im Stammverzeichnis wurde keine `LICENSE` gefunden. Historische Versionen und Komponenten sind gesondert zu beurteilen. Die nicht gewinnorientierte Ausrichtung des Projekts widerruft die Codelizenz nicht und erteilt keine Nutzungsrechte an Musik, Lyrics, Covern oder MVs.
 
-Beide Formen teilen sich denselben Open-Source-Code; sie unterscheiden sich hinsichtlich Betreiber und Verantwortlichkeit: Bei der gehosteten Instanz trägt sie das Betreiberteam, bei der selbst gehosteten Instanz der Bereitsteller.
+Diese Dienstdokumente sind für gehostete Instanzen unter `sonic.epocanvas.tech` und `sonic.epocanvas.com` bestimmt, die sie tatsächlich übernehmen. Der tatsächliche Betreiber muss seine rechtliche Identität und erreichbare Kontaktdaten angeben. Das Wartungskonto `shijianus` oder die Marke EpoCanvas ersetzt keine vollständige Identitätsinformation. Der Quellcode belegt weder den rechtlichen Namen und Standort des Betreibers noch das Land der Server; hierzu werden keine Annahmen getroffen.
 
-## 2. Abgrenzung der Rollen bei der Datenverarbeitung
+Andere Bereitstellungen haben eigene Betreiber und Regeln. Die bloße Veröffentlichung von Code, Mitwirkung an Patches oder Bereitstellung eines Offline-Werkzeugs begründet nicht automatisch Dienst- und Datenverantwortung für sämtliche Instanzen. Wer zugleich tatsächlich betreibt oder an der Festlegung der Verarbeitung beteiligt ist, trägt Verantwortung entsprechend seiner tatsächlichen Rolle.
 
-Die rechtlichen Dokumente des Dienstes verwenden die Rollenunterscheidung „Verantwortlicher/Auftragsverarbeiter“, die der allgemeinen Systematik der EU-Datenschutz-Grundverordnung (DSGVO) entspricht.
+## 2. Rollen bei der Datenverarbeitung
 
-| Szenario | Verantwortlicher | Auftragsverarbeiter |
+| Beteiligte | Beurteilung der Rolle | Erläuterung für dieses Projekt |
 | --- | --- | --- |
-| Gehostete Instanz | Betreiberteam (hinsichtlich Verhaltensereignissen, Anmeldungen und Sicherheitsaufzeichnungen) | Cloudflare, Epomail (Identitätsprüfung) und weitere; die vollständige Liste steht im [Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen](/de/sub-processors/) |
-| Selbst gehostete Instanz | die Person oder Organisation, die die Instanz bereitstellt (einziger und ausschließlicher Verantwortlicher) | die vom Bereitsteller konfigurierten Infrastrukturdienste |
+| Betreiber einer gehosteten Instanz | Entscheidet tatsächlich über Zwecke und Mittel der Verarbeitung personenbezogener Daten | Verantwortet eigene Anmeldung, Anfragen, Empfehlungen und zugehörige Verarbeitungen |
+| Infrastrukturanbieter | Verarbeitung auf Weisung oder für eigene Zwecke | Rollen von Cloudflare und anderen hängen vom konkreten Dienst und Vertrag ab |
+| Epomail sowie Inhalts- und Ressourcenanbieter | Möglicherweise eigenständige Verantwortliche; einzelne Fälle gesondert beurteilen | Nicht alle Dritten werden pauschal als Auftragsverarbeiter bezeichnet |
+| Selbst betreibende Personen und Code-Mitwirkende | Entscheidend ist, ob sie tatsächlich Verarbeitung bestimmen oder daran beteiligt sind | Die Bezeichnungen Betreiber oder Mitwirkender legen nicht automatisch alleinige, ausschließliche Verantwortung fest |
 
-Der Open-Source-Code selbst erhebt keine Telemetrie, lädt nichts hoch und sendet nichts zurück; abgesehen von externen Diensten, die der Instanzbetreiber selbst konfiguriert, erhalten die Upstream-Autoren keinerlei Betriebsdaten einer Instanz. Ab dem Zeitpunkt der Bereitstellung wird der Bereitsteller zum Verantwortlichen für seine Nutzer und muss die Informationspflichten, Sicherheitsmaßnahmen und die Unterwerfung unter die Aufsicht nach dem an seinem Ort anwendbaren Recht erfüllen; die Dokumente dieser Website kann er als Grundvorlage für seine Informationen und Bedingungen verwenden.
+Die tatsächlichen Datenflüsse umfassen optionales Profiling, Anfragekontext, Browserdaten, direkte externe Ressourcen und Suchstatistiken. „Open Source“ oder „lokale Speicherung“ bedeutet nicht, dass keine Daten übermittelt werden; fehlende Anmeldung und Hashwerte sind ebenfalls keine Anonymität. Maßgeblich sind die präzisen Angaben der Datenschutzerklärung; technische Beschreibungen müssen damit übereinstimmen.
 
-## 3. Aufbau der Dokumente
+## 3. Zweck der Dokumente
 
-Die rechtlichen Dokumente dieser Website sind nach Themen gegliedert, verweisen aufeinander und bilden zusammen die vollständigen Vereinbarungen:
-
-| Dokument | Inhalt |
+| Dokument | Zweck |
 | --- | --- |
-| [Projektvorstellung](/de/project/) | Produktpositionierung, Kernfunktionen, technische Architektur, Sicherheits- und Datenschutzdesign, Deployment-Formen |
-| [Datenschutzerklärung](/de/privacy-policy/) | Erhebung und Nutzung personenbezogener Daten, Rechtsgrundlagen, Speicherdauer, Betroffenenrechte und internationale Übermittlungen |
-| [Nutzungsbedingungen](/de/terms-of-service/) | Vertragliche Nutzungsbedingungen, Kontoregeln, Haftungsbeschränkung, anwendbares Recht und Streitbeilegung |
-| [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/) | Grenzen des Nutzungsverhaltens, Verbotskatalog, Eskalationsstufen und Beschwerdeverfahren |
-| [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/) | Datenlebenszyklus, Verarbeitungsmatrix, Sicherheitsmaßnahmen, bekannte Grenzen, Vorfallreaktion |
-| [Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen](/de/sub-processors/) | Empfänger der Weitergabe, betroffene Daten, Übermittlungsgarantien |
-| [Begriffsdefinitionen](/de/key-terms/) | Definitionen der in den rechtlichen Dokumenten dieser Website verwendeten Rechtsbegriffe (DSGVO-Vokabular) und technischen Begriffe |
+| [Nutzungsbedingungen](/de/terms-of-service/) | Bedingungen des gehosteten Dienstes, Inhaltsrechte, Betriebsgrenzen und Haftung |
+| [Datenschutzerklärung](/de/privacy-policy/) | Verantwortlicher, Daten, Zwecke, Grundlagen, Empfänger, Speicherung und Rechte |
+| [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/) | Öffentliche Ressourcen, autorisierte Tests, verbotene Handlungen und Maßnahmen |
+| [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/) | Tatsächliches Sicherheitsdesign, Lücken, Vorfallbearbeitung und risikogerechte Maßnahmen |
+| [Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen](/de/sub-processors/) | Externe Ressourcen, eigenständige Rollen, Konfiguration und internationale Voraussetzungen |
+| [Begriffsdefinitionen](/de/key-terms/) | Personenbezogene Daten, Pseudonymisierung, Profiling und technische Begriffe |
+| [Datenverwaltung](/de/data-management/) | Nutzeraktionen und Grenzen ihrer Abdeckung |
 
-## 4. Datenschutz-Untergrenze
+## 4. Schutzziel, Risiken und rechtliche Anwendbarkeit
 
-Der Dienst legt die EU-Datenschutz-Grundverordnung (DSGVO) als Mindeststandard des Datenschutzes für **alle Nutzer** zugrunde: Wo auf der Welt Sie sich auch befinden, fallen Ihre Rechte in Bezug auf personenbezogene Daten (Information, Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch und Beschwerde) nie unter das von der DSGVO bestimmte Niveau.
+Die Anwendbarkeit der DSGVO ist anhand ihres Artikels 3 und der konkreten Tatsachen zu prüfen. Auch kostenlose Angebote an Personen in der EU oder die Beobachtung ihres dortigen Verhaltens können erfasst sein; bloße Zugriffe aus dem Ausland entscheiden allein ebenso wenig. Fehlende Gewinnorientierung, Open Source und Lernzwecke sind keine pauschale Ausnahme; ausschließlich persönliche oder familiäre Tätigkeiten sind nach ihrem tatsächlichen Umfang zu beurteilen.
 
-1. Für Nutzer in der Europäischen Union und im Europäischen Wirtschaftsraum gilt die DSGVO unmittelbar;
-2. Für Nutzer in anderen Regionen setzt der Dienst den DSGVO-Standard als Selbstverpflichtung ein und erfüllt ihn als Vertragspflicht;
-3. Stärkere Schutzvorschriften des Rechts an Ihrem Wohnort gehen im Umfang ihrer Geltung vor.
+Maßnahmen werden nach Verarbeitungsumfang, Risiken und Umsetzungskosten ausgewählt. Ein kleines Einzelprojekt muss nicht pauschal einen Datenschutzbeauftragten bestellen, Zertifizierungen erwerben, kommerzielle Audits bezahlen oder ein Team rund um die Uhr vorhalten. Die besonderen Voraussetzungen von Artikel 37, Artikel 35 und Artikel 27 der DSGVO müssen dennoch jeweils geprüft werden. Fortlaufendes Profiling wird nicht allein wegen geringer Nutzerzahlen zu einer „gelegentlichen“ Verarbeitung. Notwendige Identitätsinformation, wirksame Rechtsgrundlagen, Minimierung, Sicherheit und die Bearbeitung von Betroffenenrechten entfallen dadurch nicht.
 
-Diese Untergrenze bedeutet: Auch wenn die gehostete Instanz in Taiwan betrieben wird und das auf die Nutzungsbedingungen anwendbare Recht das Recht am Ort des Betreibers ist (siehe die [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 11), werden Datenschutzangelegenheiten mit dem DSGVO-Niveau als Untergrenze ausgeführt; die Ausübung der Betroffenenrechte, die Meldung von Datenschutzverletzungen und die Sicherheitspflichten richten sich sämtlich nach diesem Standard.
+Strenge Datenschutzgrundsätze leiten die Gestaltung und fortlaufende Verbesserung des Projekts. Ziel ist es, mit angemessenen Anstrengungen ein hohes, den tatsächlichen Risiken entsprechendes Schutzniveau zu erreichen; Orientierung bieten die DSGVO-Grundsätze Datenminimierung, Zweckbindung, Transparenz und Kontrolle durch die Nutzer. Diese Ziele belegen weder eine EU-Zertifizierung noch die vollständige Einhaltung der DSGVO und der Gesetze sämtlicher Mitgliedstaaten. Sie garantieren keine absolute Sicherheit, keinen Ausschluss von Datenlecks oder Datenverlusten und keine sofortige, vollständige Löschung. Der tatsächliche Schutz hängt von eingesetzter Version, Konfiguration und Verarbeitung durch Dritte ab; Ziele, im Code nachgewiesene Maßnahmen, nicht verifizierte Einsatzbedingungen und verbleibende Risiken sind zu unterscheiden. Angemessene Anstrengungen und Risikohinweise mindern keine gesetzlichen Pflichten und verlangen von Nutzern weder, eine rechtswidrige Verarbeitung zu akzeptieren, noch auf Rechte zu verzichten. Die rechtliche Geltung richtet sich nach den Tatsachen; sämtliche Regelungen der DSGVO werden nicht zu einer zusätzlichen weltweiten Vertragsgarantie. Unabhängig vom anwendbaren Recht sind Daten zutreffend zu beschreiben, Zusagen umzusetzen und unverzichtbare Nutzerrechte zu achten.
 
-## 5. Rangfolge der Geltung
+## 5. Auslegung und Versionen
 
-1. Für Datenschutzangelegenheiten ist die [Datenschutzerklärung](/de/privacy-policy/) die spezielle Regelung; für die Bedingungen der Dienstnutzung sind es die [Nutzungsbedingungen](/de/terms-of-service/); im Übrigen ist der auf dieser Seite dargestellte Aufbau maßgeblich.
-2. Bestehen zwischen den Dokumenten Widersprüche, geht das Dokument vor, das unmittelbar den betreffenden Gegenstand regelt.
-3. Die rechtsverbindliche Fassung der rechtlichen Dokumente dieser Website ist die vereinfacht chinesische Version; die englische, japanische und deutsche Fassung sind Referenzübersetzungen. Im Zweifel über die Auslegung gilt die rechtsverbindliche Fassung.
+Zwingendes Recht geht vor. Dienstbedingungen richten sich nach den Nutzungsbedingungen, Dateninformationen nach der Datenschutzerklärung. Technische Erläuterungen, Bilder oder ältere Funktionsbeschreibungen können keine Verarbeitungserlaubnis erweitern; auch der Hinweis „maßgeblich ist der Quellcode“ befreit nicht von Verantwortung für unzutreffende Informationen. Erkannte Widersprüche sind zu korrigieren und betroffene Nutzer zu informieren.
 
-## 6. Kontaktstellen
+Vereinfachtes Chinesisch ist die Pflegegrundlage, die übrigen neun Sprachfassungen sind Übersetzungen. Ein Vorrang des Chinesischen darf weder verbraucherfreundliche Auslegung noch verständliche Information ausschließen. Das angegebene Datum ist das Überarbeitungsdatum des Dokuments. Vor seiner Übernahme in eine Bereitstellung oder einer tatsächlichen Verarbeitungsänderung sind weiterhin wirksame Information und nötigenfalls eine gesonderte Einwilligung erforderlich.
 
-- Datenschutzangelegenheiten und Anliegen zum Datenschutz: `privacy@epocanvas.com`
-- Dienst- und Kontoangelegenheiten: `admin@epocanvas.com`
-- Open-Source-Projekt: Issues im GitHub-Repository (`github.com/shijianus/sonic`)
-- Selbst gehostete Websites: wenden Sie sich an die vom jeweiligen Standort veröffentlichten Betreiberkontakte
+## 6. Kontakt
+
+Dienst und Konto: `admin@epocanvas.com`; Datenschutz und Betroffenenanfragen: `privacy@epocanvas.com`. Diese in der aktuellen Dokumentation vorgeschlagenen Adressen wurden im geprüften Upstream nicht als veröffentlicht bestätigt und nicht durch Test-E-Mails auf Zustellbarkeit geprüft. Ihre Angabe ist keine Erklärung, dass ein EU-Vertreter oder Datenschutzbeauftragter bestellt wurde. Instanzbetreiber müssen sicherstellen, dass ihre veröffentlichten Kontaktwege funktionieren.
+
+Technische Probleme können über [GitHub Issues](https://github.com/shijianus/sonic/issues) gemeldet werden; übermitteln Sie keine personenbezogenen Daten, Passwörter oder Sitzungsnachweise. Bei Instanzen Dritter wenden Sie sich an deren eigene Betreiber.

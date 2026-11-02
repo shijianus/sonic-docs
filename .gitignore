@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# local Cloudflare runtime state
+.wrangler/
 
 # dependencies
 node_modules/
@@ -23,3 +25,8 @@ tmp_laws/
 # jetbrains / vscode local
 .idea/
 .vscode/
+
+# local working artifacts (session tooling, GUI test evidence, review snapshots)
+.zcode/
+gui-test-screenshots/
+doc/*.zip

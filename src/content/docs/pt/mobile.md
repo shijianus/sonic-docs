@@ -3,9 +3,11 @@ title: Guia para dispositivos móveis
 description: "Guia para dispositivos móveis do Sonic: disposição no telemóvel, navegação por separadores, gaveta do leitor móvel e comportamentos específicos do uso móvel."
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
 Esta página explica a disposição e os pontos essenciais de utilização do Sonic no navegador do telemóvel. A versão móvel e a versão de secretária utilizam a mesma instância e o mesmo sistema de conta, com funções equivalentes; a disposição muda automaticamente com a largura do ecrã e não é necessário instalar uma aplicação.
+
+As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
 
 ## 1. Disposição e navegação
 
@@ -21,11 +23,11 @@ A página inicial móvel corresponde à de secretária: carrossel de recomendaç
 
 ## 4. Limites de armazenamento e sincronização
 
-O armazenamento local do navegador móvel é independente do navegador de secretária: favoritos, descargas e música local ficam separados em cada dispositivo e não são sincronizados entre dispositivos. O estado de início de sessão mantém-se de forma independente com a sessão de cada navegador. Se precisar de migrar dados, reconstrua os favoritos em cada um dos lados ou utilize a capacidade de sincronização de dados do próprio navegador.
+Os armazenamentos do navegador móvel e do navegador de secretária são independentes; não se garante sincronização geral na nuvem, cópia de segurança ou exportação de localStorage/IndexedDB. Não foi encontrado um caminho de envio do corpo do áudio local, mas capas incorporadas, metadados, feedback e contexto de recomendação podem ser enviados; o radar também tem um caminho de sincronização remota com disponibilidade limitada. O estado da conta depende de cada navegador; a migração de dispositivo não garante recuperar todos os dados do Sonic. Consulte a [Política de Privacidade](/pt/privacy-policy/).
 
 ## 5. Sugestões de utilização
 
 1. Adicionar o site ao ecrã inicial proporciona uma experiência de arranque próxima da de uma aplicação;
 2. A reprodução em segundo plano depende das políticas de multimédia do navegador móvel: ao mudar de aplicação, o sistema pode interromper a reprodução; volte à página para continuar;
 3. O modo de poupança de bateria e o economizador de dados podem limitar o áudio em segundo plano; trata-se de um comportamento do navegador, não de uma limitação do serviço;
-4. No modo privado (anónimo), o armazenamento local não se mantém de forma persistente e os favoritos e as descargas perdem-se ao fechar a página; se precisar de persistência, utilize o modo normal.
+4. No modo privado, favoritos e descargas podem perder-se ao terminar a sessão privada, conforme o navegador. O modo privado não impede pedidos ou eventos. Personalização e Auto DJ estão ativos por predefinição, sem que isso prove consentimento; desativá-los não termina todos os caminhos de dados.

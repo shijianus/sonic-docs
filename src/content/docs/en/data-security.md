@@ -1,107 +1,101 @@
 ---
 title: Data Processing & Security
-description: Sonic data processing and security — data lifecycle, processing matrix, layered security measures, known limitations, breach response, and self-hosting duties.
+description: Data lifecycle, processing limits, security measures, known limitations, breach response and self-hosting guidance for Sonic's hosted service.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
 
-This page sets out the data lifecycle of the Sonic service (hereinafter "the service"), the nature of each processing activity, the security measures, known limitations and the breach response procedures. It expands section 10 of the [Privacy Policy](/en/privacy-policy/); technical statements follow the actual implementation of the open-source code and can be verified by source audit.
+This page expands section 10 of the [Privacy Policy](/en/privacy-policy/), explaining the data processing and security boundaries visible in Sonic hosted instances. The privacy objective is to use reasonable efforts to provide a high level of protection proportionate to actual risks, improving measures in light of verification findings and GDPR principles of data minimisation, purpose limitation, transparency and user control. That objective does not establish certification or full compliance with the GDPR and all Member State laws, or guarantee absolute security, freedom from data breaches or loss, or immediate and complete deletion. Measures found in the reviewed code, unverified deployment details and known gaps are identified separately: actual protection depends on the deployed version, configuration and third-party processing. Reasonable efforts and risk disclosures do not reduce statutory duties or require users to accept unlawful processing or waive rights. It records findings from source-code and audit-material checks, not certification of live configuration, operational status, supplier contracts or continued compliance. Simplified Chinese is the root maintenance baseline; the other nine languages are translations. Language priority does not diminish mandatory law or consumers' right to clear, intelligible terms.
 
-![The four security layers of Sonic: transport encryption, authentication and signing, edge SSRF defence, and isolated storage, alongside user-controlled erasure (one-click erase, incognito mode, immediate revocation on sign-out)](/images/sonic/security-shield.svg)
+The feature descriptions on this page are based on `shijianus/sonic` and its public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
-*Figure: the layered security measures of the service. The transport layer is TLS end to end; the authentication layer combines HMAC-SHA256 signed keys with the PKCE OAuth flow; the edge layer denies internal and metadata addresses; the storage layer is isolated through loopback binding and an encrypted tunnel. On the right are the controls you command.*
+![Sonic four-layer security structure: transmission and access, authentication, outbound requests, storage and logs, identifying controls requiring operator configuration](/images/sonic/security-shield.svg)
+
+*Figure: this diagram organises controls; it does not mean every deployment has enabled them or meets compliance requirements.*
 
 ## 1. Data lifecycle
 
-| Stage | Description |
+| Stage | Currently verifiable facts and limits |
 | --- | --- |
-| Collection | Account identification data from Epomail OAuth sign-in (never persisted); behavioral events reported by the player in batches (switchable off, at most 50 events／64 KB per batch); transient use of IP for anonymous rate limiting |
-| Transmission | HTTPS/TLS across the chain; the control plane and data plane communicate through a Cloudflare Tunnel encrypted channel with mandatory X-Sonic-Engine-Key verification; the client-address header forwarded from the edge is accepted only after the engine-side service key verifies |
-| Storage | SQLite (WAL mode) on the data plane, on the named volume `sonic-data` at `/app/data/sonic-recommend.sqlite`; production failures to open the database refuse service (fail-closed) rather than silently degrading |
-| Use | Statistical computation keyed by pseudonymous identifiers (recommendations, trending, similarity); no human content review, no automated decision-making |
-| Sharing | See [Third Parties & Transfers](/en/sub-processors/); never sold, never used for advertising |
-| Erasure | Behavioral events auto-destroyed after 90 days (pruned every 1,500 writes and at startup); one-click erasure deletes immediately; rate-limit records expire after 120 seconds |
+| Collection | Epomail OAuth provides sign-in; playback, search and recommendations may generate events. Personalisation defaults to on in the current release-candidate source; this default is not consent to optional profiling. |
+| Transmission | Paths between the browser, edge, data plane and upstream services vary by deployment. Internal and some upstream paths use plaintext HTTP, so TLS cannot be claimed across every connection; MVs, covers, fonts or avatars may be requested directly by the browser. |
+| Storage | The browser may retain account data, queues, history, preferences, local music and caches; actual locations and periods for behavioural data, logs, backups and provider records must be verified per deployment. |
+| Use and sharing | Search, playback and sign-in respond to requests; profiling, Auto DJ, search statistics and public suggestions may use behaviour or search context. See [Third Parties & Transfers](/en/sub-processors/) for recipients and switches. |
+| Deletion | Current profile reset mainly addresses some events or feedback for the current identity. It does not guarantee coverage of radar, search aggregates, backups, logs, external services or old anonymous identifiers; revocation also depends on revocation-store configuration and request success. |
 
 ## 2. Processing matrix
 
-| Processing activity | Data involved | Identity linkage | Legal basis | Retention |
-| --- | --- | --- | --- | --- |
-| Account identification and sign-in | Epomail identifier, e-mail address, nickname, avatar link, role | E-mail (within session) | Contract necessity | Never persisted; session lifetime |
-| Behavioral event recording | Event type, canonical track id, artist, genre, language, search term, progress ratio, signal weight | Pseudonymous hash (`usr_`／`anon_`) | Legitimate interests + objection right | 90 days (minimum 7) |
-| Recommendation profile computation | Aggregated features of behavioral events (long-term artists, genre affinity, session intent) | Pseudonymous hash | Legitimate interests + objection right | Destroyed with events |
-| Global aggregate statistics | Search-term counts, track co-occurrence | Not linked to individuals | Legitimate interests | Under database maintenance |
-| Rate limiting and abuse prevention | IP (anonymous bucket), e-mail hash (authenticated bucket), per-IP counts on auth endpoints | Transient use | Legitimate interests | 120 s／60 s windows |
-| Session and key security | Session cookie, API key payload (`sub`／`jti`／`kid` and others), revocation lists | E-mail hash | Contract necessity, security duty | At most 30 days |
-| Database backups | Consistent snapshots of pseudonymised behavioral data | Pseudonymous hash | Security duty | Per the deployer's backup policy |
+| Activity | Data potentially involved | Processing limits and periods |
+| --- | --- | --- |
+| Requested search, playback, lyrics and sign-in | Queries, content identifiers, sessions and account data returned by Epomail | Limited to responding to requests; sign-in data may exist in browser storage and sessions. |
+| Behavioural profiling, Auto DJ and recommendations | Playback, progress, skips, favorites, dislikes, searches, pseudonymous identifiers and local context | Profiling or processing that may support profiling; currently on by default. Stopping and deletion after refusal or withdrawal must not be assumed complete. |
+| Search statistics and public suggestions | Raw search terms, counts and related context | Existing paths may display users' search terms; without filtering, thresholds and periods implemented, they should not be described as anonymous aggregation or safe publication. |
+| Rate limiting and security | Raw IP addresses, cookies, authentication headers, User-Agent, context and account- or session-derived keys | May be forwarded with requests to the data-plane engine; claims that use is limited to abuse prevention, connections and security must be verified against actual routes. |
+| Local data and comments | localStorage, IndexedDB, imported music, download caches, local comments and upstream comment data | No upload path was found for local audio file contents; lyrics and recommendations may still send titles, artists, albums, duration or identifiers, and embedded artwork may enter the remote shared-track catalogue with favorite events. Upstream comments may contain others' names, avatars and text and enter public caches. |
+| Support, disputes and legal obligations | Voluntarily submitted email addresses, explanations, necessary evidence and handling records | Retained only as long as needed for requests, disputes or obligations; no uniform host-backup period has been verified. |
+
+Legal bases, retention periods and recipients must be assessed individually according to actual purposes, users and deployment configuration. Being free, individually maintained or open source does not automatically lower security or notice requirements.
 
 ## 3. Security measures
 
-### 3.1 Transport and access
+### 3.1 Transmission and access
 
-1. **End-to-end encryption**: TLS from browser to edge and from edge to data plane; the data plane is reachable only through a Cloudflare Tunnel encrypted channel, with no public port exposure and the host mapping only `127.0.0.1:8080`;
-2. **Service-to-service verification**: the data plane enforces the X-Sonic-Engine-Key on all `/api`, `/proxy` and `/palette` routes; the engine strips untrusted inbound headers and rebuilds the client-address header from the socket address, so forged values are ineffective;
-3. **Explicit degradation**: degraded responses carry `X-Sonic-Degraded: 1` and the interface shows a degradation notice — the switch is never silent.
+1. Public entry points can be configured with HTTPS, OAuth, signed sessions and service-to-service secrets. These code controls do not prove that actual entry points, proxies and upstream services all use TLS.
+2. Whether the control and data planes use an encrypted tunnel, and whether the data plane binds only to loopback, depends on hosting configuration. Internal plaintext HTTP paths alone invalidate a blanket “all connections encrypted” claim.
+3. Target validation and domain restrictions on proxy routes cover only requests actually passing through them. The audit found that raw IP addresses may be forwarded to the engine with cookies, authentication headers and context; the engine cannot be described as receiving only pseudonymous data.
+4. Audio-stream requests may use the browser's User-Agent rather than a fixed value. When browsers connect directly to MVs, covers, Google Fonts or avatar services, those services may see IP addresses and connection metadata.
 
 ### 3.2 Authentication and keys
 
-1. **OAuth flow**: the `state` parameter and PKCE (S256) guard against authorization-code interception and replay; transactional cookies are valid for 600 seconds and scoped to `/api/auth`; the callback verifies state, PKCE, the authorization code and replay, and rejects on any missing or anomalous element;
-2. **API keys**: the `sonic_live_v2` versioned format signed with HMAC-SHA256, verified server-side in constant time with Web Crypto `crypto.subtle.verify`; version, `kid`, `iat`／`exp` and `jti` are strictly checked; unsigned and legacy v1 keys are always rejected (fail-closed); 30-day issue validity and a 90-day validation cap; keys travel only in request headers and the `?api_key=` query channel has been removed entirely, preventing key leakage into access logs, browser history or Referer;
-3. **Revocation**: signing out immediately revokes the current session; the `jti` revocation list, subject revocation list and global minimum issuance time (`SONIC_REVOKED_JTIS`／`SONIC_REVOKED_SUBS`／`SONIC_TOKEN_MIN_IAT`) support bulk invalidation; with a KV binding and `SONIC_ENABLE_KEY_REVOCATION=1`, instant revocation is supported; without it, the relevant endpoints return 501 and point to the list-based method instead of pretending to revoke;
-4. **Session attributes**: `HttpOnly; Secure; SameSite=Lax`, valid at most 30 days; the sign-in callback redirect carries only `?auth=success` and never returns a key.
+1. The reviewed RC uses OAuth state and PKCE, with signed sessions lasting 30 days by default. Actual cookie attributes and periods still require deployment verification. Signing provides integrity, not encryption; credential payloads may include email addresses, user or role identifiers. URL credentials in the older `main@ce443c8` are a legacy-compatibility warning, not evidence of these RC protections.
+2. Requests should be rejected when API-key version, signature, time or `jti` checks fail. Names, environment variables and design comments must not be treated as proof of complete authentication controls.
+3. Immediate sign-out or bulk-revocation effects depend on revocation storage, switches and request success. Without enablement or verification, immediate invalidation of every copied credential cannot be guaranteed.
 
 ### 3.3 Outbound request defences
 
-1. **SSRF interception**: outbound requests to loopback addresses, RFC 1918 private ranges, Docker internal bridges and cloud metadata addresses (such as `169.254.169.254`) are always denied, with dual IPv4 and IPv6 checks, re-validating the target and its resolved addresses on every redirect;
-2. **Domain allowlist**: the audio, cover and forwarding proxies allow only HTTPS targets on the controlled music CDN domain list (`SONIC_ALLOWED_MUSIC_DOMAINS`) with standard ports;
-3. **Request sanitisation**: upstream requests shed `Set-Cookie` and credential headers, carrying only the fixed User-Agent, the corresponding official Referer and the necessary Range header; the egress IP is marked with the deployer-configured placeholder (an RFC 5737 documentation address by default), never the IP of any user.
+The code contains some SSRF, private-network and redirect checks and a music-domain allowlist. These do not mean every upstream or third-party browser request is proxied, sanitised or anonymised. DiceBear currently has an avatar URL path using a plaintext email address as its seed. Direct Google Fonts, MV and cover requests may expose IP addresses to those services. Some providers use HTTP, so TLS cannot be claimed across every connection.
 
 ### 3.4 Storage and logs
 
-1. **Pseudonymous storage**: behavioral events are keyed by one-way hash identifiers (truncated SHA-256 with `usr_`／`anon_` prefixes), with no plaintext e-mail column and no IP column; the store has 6 tables (canonical tracks, platform track links, full-text index, behavioral events, track co-occurrence, search-term aggregates), of which only the behavioral events table is linked to individuals;
-2. **Fail-closed storage**: a production failure to open the database refuses service instead of silently degrading; the in-memory fallback applies only to development and tests or an explicit `SONIC_RECOMMEND_ALLOW_MEMORY_FALLBACK=1`;
-3. **Minimised logging**: data-plane access logs are line-delimited JSON containing only the request id, method, path, status code and duration; query strings, IP addresses, User-Agent, cookies, Authorization and request bodies are never logged; unhandled errors log only the request id, error name and a truncated message; logs go to Docker's standard output with rotation per the host's Docker configuration; there is no custom global access log on the Cloudflare Pages side;
-4. **Backups**: database backups run as consistent snapshots (VACUUM INTO) with integrity checks; backup files contain pseudonymised behavioral data and deserve the same protection as production data;
-5. **Container isolation**: the data plane runs as a Docker container stack, with the ncm-api helper container reachable only inside the compose network (`ncm-api:3000`) and never exposed publicly; the `.env` configuration file requires permission 600.
+1. Browser `auth`, `audio`, `library`, `global`, `settings`, `recommend` and IndexedDB retain data by function. Signing out does not automatically clear all device data.
+2. Where server-side behavioural data uses pseudonymous identifiers, it may still be combined with other data to identify someone. Pseudonymisation is not anonymisation and does not cover search, radar or third-party data.
+3. Actual rotation, access permissions and expiry deletion for application, Cloudflare, host and upstream logs and backups were not uniformly confirmed by this review. Fictional backup periods or “zero logs” promises must not be supplied.
+4. Optional Meilisearch may process raw queries or catalogue data. Gorse may receive pseudonymous feedback and track-catalogue metadata; whether deletion is synchronised with local deletion is unverified. A successful local reset cannot stand in for deletion from the shared-track catalogue or external recommendation and search stores.
 
 ### 3.5 Known limitations
 
-As an open-source project, the operator publishes the following known limitations and keeps improving them:
-
-1. Deployments without the native Cloudflare rate limiter bound count in KV or process memory and are not strictly global;
-2. DNS rebinding protection is not fully eliminated; deployers should add network-layer measures;
-3. The `sonic_session` cookie contains the signed API key; a stolen cookie equals a stolen key — combine with device security and timely sign-out;
-4. SQLite is a single-writer architecture, unsuitable for high-concurrency write deployments;
-5. There is no built-in Prometheus metrics endpoint; monitoring relies on logs and external probes.
-
-The complete list is in the upstream repository's `docs/OPERATIONS.md`; self-hosted operators should assess their own deployment shape.
+1. Personalisation and Auto DJ default to on without a demonstrable prior, separate and withdrawable choice. This is not consent. Auto DJ has an independent switch and may still send seed and excluded-track data; turning personalisation off does not stop that request.
+2. Public search suggestions may reuse raw search terms, exposing personal or sensitive information.
+3. Deletion mainly covers some current-identity events; coverage of radar, search aggregates, the shared-track catalogue and embedded covers, backups, logs, external services, Meilisearch, Gorse and old anonymous identifiers is unverified. A durable radar engine route is unconfirmed, so no definite assertion is made about its storage state.
+4. Internal plaintext HTTP, Google Fonts, direct MV / cover requests, browser User-Agent and DiceBear plaintext-email URLs make claims of “TLS across every connection” or “email never transmitted externally” inaccurate.
+5. Rate limiting, revocation, logs and third-party switches depend on instance environment variables and provider configuration. GDStudio defaults to on in code when unset, but the environment or Compose may set it off; a list alone cannot support a default-off claim.
 
 ## 4. Breach response
 
-1. **Internal record**: every personal data breach is documented (Article 33, Paragraph 5 of the GDPR), regardless of a low-risk assessment;
-2. **Notification to the authority**: where the breach is likely to risk the rights of data subjects, it is notified to the supervisory authority at the operator's location within 72 hours of awareness, describing the nature of the breach, the categories and approximate numbers involved, the likely consequences and the measures taken (Article 33, Paragraphs 1 and 3);
-3. **Communication to data subjects**: where the breach is likely to result in a high risk, affected data subjects are informed without undue delay through on-site announcement or other effective means, describing the nature of the breach and recommended measures (Article 34); where the high risk is effectively remediated, communication may be waived with the decision documented;
-4. **Containment**: immediate isolation of affected systems, revocation of affected keys and sessions (via the `jti` list and global minimum issuance time), assessment and repair of the cause, and documentation of the handling.
+Where the GDPR applies, security measures must be proportionate to the nature of the data, processing scale, implementation costs and actual risks (Article 32 of the GDPR). Operators must record every personal data breach. Unless a breach is unlikely to pose a risk to individuals' rights and freedoms, the competent supervisory authority must be notified without undue delay and, where feasible, within 72 hours of awareness, with reasons for delayed notification (Article 33 of the GDPR). Where the risk is high, data subjects must also be notified without undue delay, unless a statutory exception applies (Article 34 of the GDPR). This is not a promise of automatic reporting to a particular country's authority, nor does it displace other applicable law.
+
+Actual handling should isolate affected systems, protect or revoke credentials, establish data categories, scope, recipients and the timeline, and record decisions and remedies. Report suspected incidents through `privacy@epocanvas.com`; do not send passwords, complete tokens, membership cookies or unnecessary personal data.
 
 ## 5. Data protection by design and by default
 
-The service implements the following at design time (Article 25 of the GDPR):
+Article 25 of the GDPR requires consideration of protection by design and by default when determining the means of processing. This project cannot currently claim full implementation:
 
-1. **Pseudonymisation by default**: behavioral events are keyed by hash identifiers from the moment of collection, e-mail addresses are never persisted and the database has no IP column;
-2. **Zero-collection mode**: with personalisation off, events are not stored; public mode drops them server-side with the ignored count reported honestly;
-3. **Minimal client data**: recommendation context carries only truncated favorites, recent artists and search terms, used in memory and never persisted; the player never reads or writes `document.cookie` and keys never enter localStorage;
-4. **High-risk chains off by default**: third-party aggregation upstreams (GDStudio, Lyriva) and circumvention chains are strictly disabled by default and require explicit deployer action (environment variables set to 1);
-5. **One-click erasure**: the erasure right is implemented directly as a self-service function, with no manual request needed; "clear all local data" clears the server-side profile, localStorage, sessionStorage and IndexedDB together.
+1. Optional profiling should be off by default, with equally easy acceptance, refusal and withdrawal and records of choices. The current source defaults to on; sign-in or continued use cannot replace consent.
+2. Public search suggestions should first be disabled or given minimal display, filtering, thresholds, periods and deletion controls.
+3. Avatar seeds should not use plaintext email addresses. Google Fonts, MVs, covers and other direct resources should be enabled only after assessing transmission of IP addresses, cookies and identifiers.
+4. Review linkable old pseudonymous identifiers, radar, search, shared tracks and covers, logs, Meilisearch, Gorse and backups; carry out erasure within the applicable statutory scope and notify recipients where required. Explain the reason, scope and period of any statutory retention exception. Partial cleanup for the current identity must not be presented as complete deletion.
 
-## 6. Duties of self-hosted operators
+## 6. Duties of self-hosting operators
 
-From the moment you deploy the service yourself, you are the data controller of your users and must:
+Self-hosted instances operate independently. This page's checks do not create contractual duties beyond applicable law and licences or constitute an operational commitment by the author. GDPR applicability must be assessed according to territorial connections and actual activities (Article 3 of the GDPR), not categorically excluded for free services or individual projects. The following requirements apply only where their respective statutory conditions are met:
 
-1. **Notify**: inform your users of the data processing (you may base the notice on this site's [Privacy Policy](/en/privacy-policy/));
-2. **Keep records**: maintain records of processing activities (Article 30 of the GDPR);
-3. **Assess**: carry out a data protection impact assessment where processing is likely to result in high risk (Article 35), covering at least anonymous device identifiers, behavioral events, transient use of rate-limiting IPs and the hash derivation of the OAuth e-mail;
-4. **Verify configuration**: confirm that the following match your policy commitments — behavioral retention days (`SONIC_RECOMMEND_RETENTION_DAYS`, default 90, minimum 7), persistence path (`SONIC_RECOMMEND_DB_PATH`; setting it to `memory` disables persistence), the memory-fallback switch (`SONIC_RECOMMEND_ALLOW_MEMORY_FALLBACK`), third-party switches (`SONIC_ENABLE_GDSTUDIO` and others), and rate-limit parameters (`SONIC_RATE_LIMIT_ANON_RPM`／`SONIC_RATE_LIMIT_AUTH_RPM`);
-5. **Secure and submit to supervision**: apply the measures in section 3 (service keys of at least 32 characters, `.env` permissions 600, no public exposure of the data plane) and submit to supervision by the authority of your location as its law requires.
+1. Take proportionate measures according to the nature and scale of data, implementation costs and actual risks (Article 32 of the GDPR), checking transmission, keys, logs, recovery and deletion rather than automatically requiring a small project to maintain dedicated teams or certification.
+2. Fewer than 250 people does not automatically exempt processing records. Processing that is not occasional, may endanger individuals' rights and freedoms, or involves special-category data or criminal-conviction and offence data may each disqualify the exception (Article 30 of the GDPR).
+3. Appoint a data protection officer when the triggering conditions apply, including public authorities, core activities involving large-scale regular and systematic monitoring, or large-scale processing of special-category data or criminal-conviction and offence data (Article 37 of the GDPR).
+4. A data protection impact assessment concerns activities likely to create high risk before processing begins; it is not automatically required for every hash, sign-in or free project (Article 35 of the GDPR).
+5. An overseas party subject to Article 3, Paragraph 2 of the GDPR generally must appoint an EU representative. Article 27's occasional-processing exception requires all conditions together: occasional processing, no large-scale processing of special-category or criminal-conviction and offence data, and processing unlikely to pose a risk considering its nature, context, scope and purposes. Being free or nonprofit is not itself an exception.
+6. Check `SONIC_RECOMMEND_RETENTION_DAYS`, database paths, memory fallback, third-party paths, rate-limit and revocation switches, and use actual values in your own notices, periods and deletion procedures.
 
 ## 7. Auditability
 
-Every security statement of this service can be verified against the source code: all processing logic, switch defaults, storage structures and log shapes are public in the open-source repository; the upstream repository also carries the security audit remediation record (`docs/AUDIT_REMEDIATION.md`) and the operations manual (`docs/OPERATIONS.md`). The technical facts of this site's documents are re-verified at each release; where they disagree with the code, the code prevails and the documents are corrected.
+This page is based on the 2026-11-02 source review of the public RC `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), a documentation check rather than an operational audit, certification or supplier due-diligence exercise; the older `main@ce443c8` is only a compatibility comparison. Source defaults, environment variables, Compose and actual services may differ. If documentation, code and deployment disagree, stop making the stronger claims and correct the documentation.

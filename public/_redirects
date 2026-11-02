@@ -1,0 +1,3 @@
+/sonic /sonic/ 308
+/sonic/ / 200
+/sonic/* /:splat 200

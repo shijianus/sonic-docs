@@ -1,82 +1,82 @@
 ---
 title: Lista de partilha com terceiros e transferências
-description: "Lista de partilha com terceiros e transferências do Sonic: subcontratantes, fornecedor de identidade, fontes de conteúdos a montante, cadeias opcionais, exigências legais e garantias das transferências internacionais."
+description: Infraestrutura, identidade, destinatários de conteúdos e recursos externos, diferenças de configuração e limites das transferências internacionais nas instâncias alojadas do Sonic.
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
-Esta página enumera na íntegra todas as situações de partilha de dados pessoais com terceiros pelo serviço Sonic (a seguir designado «o serviço»), incluindo os destinatários, os dados envolvidos e as garantias. Esta página desenvolve a secção 7 da [Política de Privacidade](/pt/privacy-policy/); o princípio da partilha é o mínimo necessário: não se vendem dados pessoais, não se partilha para fins publicitários e não se ultrapassa o necessário às funções do serviço.
+Esta página desenvolve a secção 7 da [Política de Privacidade](/pt/privacy-policy/) e explica os possíveis destinatários das instâncias de teste alojadas do Sonic, mantidas por uma pessoa, gratuitas e sem fins lucrativos. A existência de uma integração no código não prova que esteja ativa nem que a partilha seja lícita. Instâncias próprias devem informar separadamente segundo o seu tratamento real.
 
-![Mapa de partilha com terceiros do Sonic: seis canais (subcontratantes, fornecedor de identidade, fontes de conteúdos a montante, prestadores opcionais, exigências legais e transferências internacionais), todos centrados no operador e com os valores predefinidos dos interruptores assinalados](/images/sonic/sharing-map.svg)
+As descrições funcionais desta página baseiam-se no repositório `shijianus/sonic`, no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta; as comparações históricas estão assinaladas. O RC não é uma GitHub Release oficial; a versão em produção e os contratos continuam por verificar. O chinês simplificado é a base de manutenção e as restantes nove versões são traduções; a prioridade linguística não reduz a lei imperativa nem o direito dos consumidores a cláusulas claras e compreensíveis.
 
-*Figura: seis tipos de canais de partilha. O tipo A é o tratamento por subcontratante em uso contínuo; o tipo B é a autenticação necessária ao início de sessão; o tipo C é a obtenção de conteúdos acionada por consulta, sem identidade do utilizador; o tipo D divide-se entre o complemento entre fontes ativo por predefinição e os restantes serviços opcionais desativados por predefinição; o tipo E é a exceção legal; o tipo F são as garantias das transferências transfronteiriças.*
+![Mapa de partilha do Sonic: infraestrutura, identidade, fontes de conteúdos, caminhos opcionais, exigências legais e transferências internacionais](/images/sonic/sharing-map.svg)
 
-## 1. Subcontratantes (em uso contínuo)
+*Figura: destinatários classificados por função; os indicadores de configuração ou de garantias não provam ativação real, contratos ou fundamento da transferência.*
 
-| Destinatário | Conteúdo do serviço | Dados envolvidos | Garantias |
-| --- | --- | --- | --- |
-| Cloudflare Pages e Functions | Alojamento do frontend, gateway de API de edge, execução da limitação de taxa | Metadados de pedidos, registos temporários de limitação de taxa | Cláusulas de tratamento por subcontratante do artigo 28.º do RGPD |
-| Cloudflare Tunnel | Túnel encriptado entre o plano de controlo e o plano de dados | Metadados de tráfego encriptado | Idem |
-| Cloudflare KV e limitador | Contagens de limitação de taxa (expiração de 120 segundos), registos de revogação imediata de chaves (quando ativado) | Chaves de limitação por IP, registos de revogação de `jti` | Idem |
+## 1. Infraestrutura e relações de subcontratação
 
-A Cloudflare, no conjunto, detém as certificações SOC 2 Type II e ISO/IEC 27001 e cobre as transferências transfronteiriças com as cláusulas contratuais-tipo da União Europeia. Quanto aos metadados dos pedidos ao nível da rede tratados pela Cloudflare segundo a sua própria política, veja-se a explicação na sua política de privacidade.
+| Entidade | Função | Dados possíveis e limites de configuração |
+| --- | --- | --- |
+| Cloudflare Pages e Functions | Alojamento, API de edge, cache e limitação de taxa | IP, caminho do pedido, cabeçalhos e metadados de ligação; registos concretos dependem da instância e do fornecedor |
+| Cloudflare Tunnel | Canal entre a edge e o plano de dados | Tráfego de pedidos e metadados de ligação; o túnel não cifra automaticamente todos os caminhos HTTP internos ou a montante |
+| Cloudflare KV e limitadores | Armazenamento configurável para limitação, revogação de credenciais e outras funções | Chaves de IP ou derivadas da identidade, identificadores de revogação; ativação e prazos a verificar |
+| Anfitrião ou fornecedor de alojamento do plano de dados | Ambiente do motor, base de dados e registos | O motor pode receber IP em bruto, cookies, cabeçalhos de autenticação e contexto enviados pela edge; entidade anfitriã e países dos nós não verificados |
+
+A existência de subcontratação depende de quem determina finalidades, de quem trata por instruções e dos acordos reais, não apenas do nome do produto. Quando o RGPD se aplique e exista subcontratação, devem concretizar-se as disposições exigidas pelo artigo 28.º; não se afirma aqui que algum contrato foi celebrado ou verificado. A identidade completa e os dados aptos a receber notificações do responsável continuam a ter de ser completados; ver a secção 2 da [Política de Privacidade](/pt/privacy-policy/).
 
 ## 2. Fornecedor de identidade (necessário ao início de sessão)
 
-| Destinatário | Conteúdo do serviço | Dados envolvidos | Descrição |
-| --- | --- | --- | --- |
-| Epomail (`mail.epocanvas.com`) | Início de sessão e autenticação via OAuth 2.0 (PKCE): autorização, troca de tokens, consulta userinfo (com token de acesso) | Devolvido no início de sessão: identificador de utilizador, endereço de correio eletrónico (sujeito a verificação), alcunha, link de avatar, papel da conta | O correio eletrónico não se escreve na base de dados do serviço, servindo apenas para derivar hashes dentro da sessão; o tratamento de dados entre si e a Epomail rege-se pela sua política de privacidade |
+A Epomail (`mail.epocanvas.com`) fornece início de sessão OAuth. O navegador interage com o serviço de identidade; o Sonic troca o código de autorização e consulta os dados do utilizador, podendo receber identificador, correio eletrónico e indicador de verificação, alcunha, URL do avatar e papel. Parte fica no armazenamento `auth` do navegador e na sessão assinada, não «apenas em memória».
 
-## 3. Fontes de conteúdos a montante (acionadas por consulta, sem identidade do utilizador)
+A integração do início de sessão ou a marca comum não torna automaticamente a Epomail subcontratante do Sonic. O tratamento independente do sistema de contas e o tratamento por instruções apreciam-se separadamente segundo as finalidades e os acordos reais; o Sonic continua responsável pela receção, conservação e divulgação subsequente que determina.
 
-Os pedidos recebidos pelos destinatários seguintes contêm apenas os parâmetros de consulta de músicas, um User-Agent fixo e o Referer do site oficial correspondente, **sem os dados da sua conta, cookies ou endereço IP**:
+## 3. Fontes de conteúdos a montante e ligações diretas do navegador
 
-| Destinatário | Conteúdo do serviço | Domínios representativos | Estado por predefinição |
-| --- | --- | --- | --- |
-| Música NetEase Cloud | Pesquisa, endereços de reprodução, letras palavra a palavra (YRC), capas | `music.163.com`, `interface3.music.163.com`; adicionalmente via contentor auxiliar ncm-api na rede interna do plano de dados | Ativa |
-| Música QQ | Pesquisa, endereços de reprodução, letras palavra a palavra (QRC), capas | `c.y.qq.com`, `u.y.qq.com`, `y.gtimg.cn`, `ws.stream.qqmusic.qq.com` | Ativa |
-| Música KuGou | Pesquisa, endereços de reprodução, letras palavra a palavra (KRC) | `m.kugou.com`, `mobilecdn.kugou.com`, `songsearch.kugou.com`, `lyrics.kugou.com` | Ativa |
-| Música KuWo | Pesquisa, endereços de reprodução, capas | `www.kuwo.cn`, `m.kuwo.cn`, `search.kuwo.cn` | Ativa |
-| AMLL | Complemento de letras palavra a palavra (TTML) | `api.amll.dev` | Ativa |
-| LRCLIB | Complemento de letras sincronizadas | `lrclib.net` | Ativa |
-| CDN oficiais de conteúdos | Streams de áudio e capas (por predefinição obtidas via proxy de edge do serviço) | `music.126.net`, `ws.stream.qqmusic.qq.com`, entre outros | Ativa |
+| Fonte | Utilização principal | Dados que podem ser transmitidos ou obtidos |
+| --- | --- | --- |
+| NetEase Cloud Music, QQ Music, KuGou, KuWo e CDN relacionados | Pesquisa, áudio, MV, capas e dados de conteúdos | Texto original de pesquisa, identificadores e metadados de conteúdos; informação de ligação da saída do proxy ou do navegador direto |
+| AMLL, LRCLIB | Consulta e complemento de letras | Identificadores de músicas ou dados de correspondência, como título e artista, e metadados de ligação |
+| Google Fonts | Carregamento de tipos de letra | IP do navegador, User-Agent e outras informações de ligação |
+| DiceBear | Avatares externos | O caminho atual pode incluir correio eletrónico em texto simples no seed do URL e expor informações de ligação do navegador |
 
-Notas:
+O proxy de áudio pode fazer o CDN ver a saída do proxy, mas isso não significa que todos os pedidos sejam isentos de dados pessoais. Pedidos de stream podem usar o User-Agent do navegador, não um valor fixo uniforme; MV, capas, tipos de letra e avatares podem ser pedidos diretamente pelo navegador. Alguns fornecedores usam HTTP, pelo que não se garante TLS em toda a cadeia. O seed com correio eletrónico da DiceBear deve ser substituído por avatar local ou identificador sem correio eletrónico.
 
-1. O IP de saída dos pedidos a montante indica-se como o endereço de reserva configurado por quem implanta (por predefinição, o endereço de documentação RFC 5737), e não o IP de qualquer utilizador;
-2. Por predefinição, as streams de áudio obtêm-se através do proxy de edge e o CDN a montante vê apenas o endereço do servidor proxy; invocando expressamente o modo de ligação direta `?mode=redirect`, o seu navegador estabelece a ligação diretamente a esse CDN e o seu IP fica visível para esse CDN (semântica inerente ao redirecionamento 302); o leitor web não utiliza este modo;
-3. Quem implanta pode montar o seu catálogo licenciado com as próprias credenciais de membro (`NETEASE_COOKIE`/`QQ_COOKIE`/`KUGOU_COOKIE`); essas credenciais são dados da conta de quem implanta, sem relação com os utilizadores finais, e o código não incorpora quaisquer cookies de contas reais.
+Comentários a montante contêm nomes ou alcunhas, avatares e textos de outras pessoas e podem entrar em cache pública; as finalidades incluem mostrar os comentários do MV solicitado. Os autores não são partes no contrato de início de sessão deste serviço, pelo que os seus dados não podem ser tratados apenas com base no artigo 6.º, n.º 1, alínea b), do RGPD. Quando o RGPD se aplica, a origem pública não dispensa automaticamente a informação sobre recolha indireta do artigo 14.º. O operador deve avaliar e registar fundamento autónomo, prazos de conservação e exceções à informação, prestando a informação aplicável nos prazos legais. Sem garantias necessárias, deve desativar recolha ou cache pública; não se promete contactar individualmente todos os autores. Comentários escritos localmente ficam atualmente apenas no localStorage; não foi encontrado caminho de publicação num servidor de comentários.
 
-## 4. Cadeias opcionais e estado predefinido
+Não foi encontrado um caminho de envio do corpo dos ficheiros de áudio locais, mas a correspondência de letras ou o contexto de recomendação pode enviar título, artista, álbum, duração ou identificadores. As capas incorporadas extraídas como data URL também podem ser enviadas com um evento de favorito e entrar no catálogo remoto partilhado de faixas, que pode devolvê-las na pesquisa de todo o site ou nas sugestões públicas. A reposição do perfil não garante a limpeza desse catálogo ou dos seus índices externos; o facto de o corpo do áudio não ser enviado não significa que as imagens e metadados associados permaneçam no dispositivo.
 
-**Complemento entre fontes ativo por predefinição**: correspondência entre plataformas da faixa completa para as faixas em amostra (faixas gratuitas da QQ, KuGou e KuWo), utilizando apenas metadados das faixas (duração, título e artista), sem dados de identidade. É uma cadeia acionada por consulta e não pertence aos serviços desativados por predefinição abaixo.
+## 4. Caminhos opcionais e diferenças de configuração
 
-**Serviços desativados por predefinição**: GDStudio, Lyriva, ListenBrainz/MusicBrainz e Gorse só ocorrem depois de ativação expressa de quem implanta. A tabela seguinte é a tabela autónoma dos respetivos interruptores; a primeira linha é uma indicação da tabela, não um serviço efetivo.
+| Caminho | Finalidade e dados possíveis | Limites da verificação |
+| --- | --- | --- |
+| GDStudio (`music-api.gdstudio.xyz`) | Pesquisa agregada e complemento entre fontes; consultas ou identificadores de conteúdos | Ativo por predefinição no código quando o interruptor não está definido, mas desligado no exemplo de ambiente e no Compose; verificar o estado real |
+| Lyriva (`api.lyriva.xyz`) | Fonte alternativa de letras; identificadores ou parâmetros de correspondência | Controlada por `SONIC_ENABLE_LYRIVA` e outras configurações |
+| Musixmatch (`apic-desktop.musixmatch.com`) | Complemento de letras | A implementação é mantida na RC, mas `isSourceEnabledByPolicy` não tem um ramo Musixmatch e a chamada efetiva é bloqueada pela condição false; o fallback de letras do `main` antigo pode ser chamável e deve ser confirmado na implementação; não se deve descrever a RC como ativa nem como disponível através de um interruptor comum |
+| Serviço de alertas configurado pelo operador | Apenas quando existe um `SONIC_ALERT_WEBHOOK_URL` válido e um alerta é acionado; envia contagens do sistema, versão da publicação, momento, resumo com credenciais ocultadas e IP de saída do nó emissor | Ativação, destinatário, papéis, transferência e conservação dependem da instância; notas do administrador e mensagens de erro podem conter dados pessoais, e a ocultação não é anonimização |
+| ListenBrainz / MusicBrainz | Reforço de artistas semelhantes; identificadores de artistas ou gravações | Controlado por `SONIC_ENABLE_LISTENBRAINZ` e outras configurações |
+| Gorse | Recomendação externa; identificadores pseudónimos, feedback comportamental, marcas temporais, identificadores de faixas, etiquetas, títulos e artistas do catálogo | Integração através de `SONIC_GORSE_URL` e outras configurações; a reposição atual não garante a eliminação do feedback externo nem dos registos das faixas |
+| Meilisearch | Serviço opcional de pesquisa; consultas originais e dados de catálogo | Integração e prazos de conservação a verificar por instância; não tratar como consultas anónimas |
+| Complemento entre fontes | Correspondência de conteúdos entre plataformas; metadados de músicas | Pedidos dependem do caminho de correspondência; disponibilidade não significa licença sobre conteúdos |
 
-| Destinatário | Conteúdo do serviço | Dados envolvidos | Interruptor e valor predefinido |
-| --- | --- | --- | --- |
-| **Tabela de serviços desativados e interruptores** | **Só os serviços seguintes exigem ativação expressa** | **Os dados envolvidos constam de cada linha** | **Todos desativados por predefinição** |
-| GDStudio (`music-api.gdstudio.xyz`) | Pesquisa agregada de terceiros e reserva para o complemento entre fontes | Apenas identificadores de faixas, tipo e parâmetros de origem | `SONIC_ENABLE_GDSTUDIO`, predefinição 0 |
-| Lyriva (`api.lyriva.xyz`) | Fonte alternativa de letras | Apenas parâmetros de identificadores de faixas | `SONIC_ENABLE_LYRIVA`, predefinição 0 |
-| ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org`, entre outros) | Reforço de artistas semelhantes | Apenas identificadores de artistas/gravações | `SONIC_ENABLE_LISTENBRAINZ`, predefinição 0 |
-| Gorse (motor de recomendação instalado por quem implanta) | Filtragem colaborativa externa | Identificadores hash pseudonimizados (`subject_key`) e feedback comportamental | `SONIC_GORSE_URL`, predefinição vazia |
+Configurar um interruptor não equivale a consentimento do utilizador. A lacuna de consentimento da personalização e do Auto DJ ativos por predefinição consta da secção 5 da [Política de Privacidade](/pt/privacy-policy/). Tratamentos opcionais sem fundamento e escolha necessários devem ser suspensos; mudar apenas o nome do terceiro não contorna os requisitos.
 
 ## 5. Partilha por exigência legal
 
-O operador fornece dados pessoais apenas quando o pedido tiver fundamento legal concreto: verifica a legalidade e o âmbito do pedido, não fornece voluntariamente conteúdo que exceda esse âmbito e notifica previamente os titulares afetados nos limites permitidos pela lei (salvo quando a lei proíba a notificação). O serviço não aceita levantamentos arbitrários sem fundamento legal. Todo o tratamento dos pedidos legais fica registado em dossier.
+Ao receber pedidos de acesso a dados, devem verificar-se a identidade de quem pede, a competência, o fundamento concreto e o âmbito, fornecendo apenas os dados legalmente necessários e registando os motivos. A notificação da pessoa depende da lei aplicável e de restrições válidas; uma denúncia, suspeita de infração ou cessação do serviço não determina automaticamente a entrega de todos os dados à polícia.
+
+A obrigação legal em que assente a divulgação também não substitui requisitos de transferência internacional. Antes de submeter problemas em Issues ou comunidades públicas, remova dados pessoais, credenciais e informações privadas dos comentários de outras pessoas.
 
 ## 6. Transferências internacionais
 
-O plano de controlo do serviço corre na rede global de edge da Cloudflare e os eventos comportamentais armazenam-se no nó do plano de dados do operador; os seus dados pessoais podem tratar-se em nós fora do país do operador. Garantias das transferências:
+O RGPD aplica-se segundo o artigo 3.º; gratuitidade, natureza não lucrativa ou mera acessibilidade a partir da União Europeia não excluem nem estabelecem automaticamente a aplicação. Só quando o capítulo V do RGPD se aplique à transferência concreta de dados pessoais se verificam, caso a caso e segundo destinatários, locais e papéis reais, os requisitos do artigo 44.º, a decisão de adequação aplicável do artigo 45.º ou outras garantias válidas do artigo 46.º. Nem todo o IP estrangeiro ou pedido de conteúdo pode ser designado indiscriminadamente transferência do capítulo V. O site não transforma todo o RGPD numa garantia contratual mundial e não verificou a localização do responsável, os países do plano de dados ou todos os destinos dos pedidos; não se pode presumir alojamento em Taiwan nem jurisdição fixa.
 
-1. Ao abrigo dos artigos 44.º a 46.º do RGPD: a decisão de adequação da Comissão Europeia (o artigo 45.º) ou as cláusulas contratuais-tipo aprovadas (o artigo 46.º, n.º 2, alínea c) do RGPD) constituem a base da relação de alojamento e de tratamento por subcontratante;
-2. Confiança nas certificações de proteção de dados da Cloudflare (SOC 2 Type II, ISO/IEC 27001) e no respetivo anexo de tratamento de dados;
-3. Os pedidos às fontes de conteúdos a montante não contêm dados pessoais e não constituem transferência internacional de dados pessoais (ver a secção 3).
-
-Quem opera implantação própria deve avaliar por si as transferências internacionais na sua forma de implantação e assegurar a conformidade com os requisitos legais do seu local (Capítulo V do RGPD ou o regime local correspondente).
+1. As transferências para países terceiros sujeitas ao RGPD devem cumprir individualmente o artigo 44.º, verificando a decisão de adequação aplicável do artigo 45.º ou outras garantias válidas do artigo 46.º.
+2. O uso de cláusulas contratuais-tipo continua a exigir confirmação das partes abrangidas, âmbito do tratamento, avaliação da transferência e medidas suplementares necessárias; a oferta pública de cláusulas pelo fornecedor não prova implementação na instância.
+3. Certificações ISO/SOC, políticas dos fornecedores ou aceitação desta página não constituem automaticamente fundamento lícito de transferência; textos de pesquisa, IP e identificadores pseudónimos não podem ser globalmente excluídos dos dados pessoais.
+4. Nos termos da lei, pode pedir explicações ou cópias das garantias por `privacy@epocanvas.com`; segredos comerciais necessários podem ser adequadamente ocultados, mas a confidencialidade não elimina deveres legais de transparência.
 
 ## 7. Manutenção da lista
 
-1. Antes de acrescentar um novo destinatário de partilha, o operador regista-o nesta página e atualiza a data de entrada em vigor e o número de versão, comunicando previamente as alterações substanciais por aviso no site;
-2. Havendo divergência entre esta lista e a configuração do código-fonte, prevalece o código-fonte e esta página corrige-se de imediato;
-3. Quem opera implantação própria deve manter a sua própria lista de terceiros conforme a sua configuração efetiva: as cadeias não ativadas devem eliminar-se da sua informação, evitando a divulgação excessiva ou a divulgação falsa.
+Antes de ativar novos tratamentos ou destinatários, o operador deve verificar finalidades, fundamentos, âmbito dos dados, prazos, nós e papéis reais, atualizando atempadamente a informação; novo consentimento necessário deve ser obtido separadamente. O documento não prova que isso foi feito nem autoriza ativação apenas por existir um caminho no código.
+
+Se a lista e o tratamento real divergirem, devem corrigir-se as informações e resolver-se transferências indevidas, não apenas declarar que «prevalece o código». As obrigações de operadores próprios decorrem da lei e das licenças efetivamente aplicáveis; copiar esta página não cria obrigações contratuais adicionais perante o autor do projeto. Contacto: `privacy@epocanvas.com`.

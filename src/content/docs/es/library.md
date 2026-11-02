@@ -3,9 +3,9 @@ title: Gestión de la biblioteca musical
 description: "Gestión de la biblioteca musical de Sonic: favoritos y colecciones, reproducciones recientes, lista de descargas y música local, con sus lugares de almacenamiento y gestión."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página explica cómo se gestionan las cuatro secciones de «Mi música» y dónde se almacenan. Estos datos permanecen únicamente en su navegador y nunca se suben al servidor; las operaciones de borrado y eliminación se describen en [Exportación y almacenamiento de datos](/es/data-management/).
+Esta página describe las cuatro secciones de «Mi música» y su almacenamiento principalmente local. No se ha encontrado una vía de subida del cuerpo de audio local, pero pueden transmitirse metadatos, portadas incrustadas, respuestas y contexto de recomendación; las portadas pueden entrar en el catálogo remoto compartido de pistas. El almacenamiento local no demuestra que no haya tratamientos remotos ni constituye una copia de seguridad general en la nube. Los límites de borrado figuran en [Exportación y almacenamiento de datos](/es/data-management/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
 ## 1. Favoritos y colecciones
 
@@ -13,7 +13,7 @@ Esta página explica cómo se gestionan las cuatro secciones de «Mi música» y
 
 ## 2. Reproducciones recientes
 
-El historial de reproducción se registra automáticamente en el localStorage del navegador (clave `audio`); la página «Reproducidos recientemente» lo muestra en orden cronológico inverso y al pulsar una entrada se vuelve a reproducir. El historial permanece solo en su dispositivo y nunca se sincroniza con el servidor.
+«Reproducciones recientes» lee de localStorage (`audio`) las últimas 100 canciones como máximo, guardadas automáticamente y ordenadas de la más reciente a la más antigua. No se ha encontrado un interruptor separado para desactivar este historial local. Los eventos de reproducción y el contexto de artistas recientes pueden enviarse por separado para recomendaciones; el historial local no significa que el servidor no conserve registros. La personalización activada por defecto no es consentimiento; el modo de incógnito no bloquea el envío de eventos.
 
 ## 3. Lista de descargas
 
@@ -21,7 +21,7 @@ Pulse descargar en una fila de canciones o en la barra de reproducción inferior
 
 ## 4. Música local
 
-La página «Música local» permite importar archivos de audio al navegador mediante el botón de añadir o arrastrándolos (`local_music`); los archivos importados se muestran y reproducen junto con el catálogo en línea. La importación se realiza por completo dentro del navegador y los archivos nunca se suben. Los formatos compatibles dependen de la capacidad de decodificación del navegador; eliminar una pista solo borra la copia del navegador y no afecta a los archivos originales.
+La página «Música local» permite importar archivos de audio al navegador mediante el botón de añadir o arrastrándolos (`local_music`); los archivos importados se muestran y reproducen junto con el catálogo en línea. No se ha encontrado una vía de subida del cuerpo de audio local, pero las letras, favoritos y recomendaciones pueden transmitir título, artista, álbum, duración o identificador, y la portada incrustada puede enviarse con un evento y entrar en el catálogo remoto compartido de pistas. Los formatos compatibles dependen de la capacidad de decodificación del navegador; eliminar una pista solo borra la copia del navegador, no afecta a los archivos originales ni garantiza el borrado remoto.
 
 ## 5. Lugares de almacenamiento en resumen
 

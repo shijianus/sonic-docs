@@ -2,19 +2,35 @@
   "name": "sonic-docs",
   "version": "1.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=10.34.5 <11"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "deploy": "pnpm run build && npx wrangler pages deploy dist --project-name sonic-docs --branch main",
+    "build": "astro build && node scripts/finalize-pages.mjs",
+    "deploy": "pnpm run validate && pnpm exec wrangler pages deploy dist --project-name sonic-docs --branch main",
     "preview": "node scripts/preview-server.mjs",
     "preview:astro": "astro preview",
+    "preview:pages": "wrangler pages dev dist --ip 127.0.0.1 --compatibility-date 2026-11-02",
     "astro": "astro",
     "check": "python scripts/check-structure.py",
-    "validate": "pnpm run build && node scripts/validate-anchors.cjs && python scripts/check-structure.py"
+    "test:content": "python scripts/check-structure.py --self-test",
+    "test:i18n": "node scripts/check-search-translations.mjs",
+    "test:language": "node scripts/test-language-negotiation.mjs",
+    "check:sidebar": "node scripts/check-sidebar-i18n.mjs",
+    "check:policies": "python scripts/check-policy-consistency.py --self-test && python scripts/check-policy-consistency.py",
+    "check:rendered": "node scripts/check-rendered-site.mjs",
+    "test:pages": "node scripts/test-pages-runtime.mjs",
+    "validate": "pnpm run test:content && pnpm run test:i18n && pnpm run build && node scripts/validate-anchors.cjs && pnpm run check:rendered && pnpm run test:language && pnpm run check:sidebar && pnpm run check:policies && pnpm run test:pages"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.32.0",
     "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.1"
   }
 }

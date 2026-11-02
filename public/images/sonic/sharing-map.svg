@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Map of third-party sharing: processors under contract, identity provider, user-triggered upstream services, optional providers, and lawful requests">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Third-party recipients include infrastructure, Epomail account data, content sources, direct external resources and configured providers. Roles depend on actual processing; disclosures need a valid basis and transfers need assessed valid mechanisms, not ISO or SOC certification alone.">
   <style>
     .bg { fill: #f8fafc; }
     .hub { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.8; }
@@ -33,46 +33,46 @@
   <rect class="bg" width="1000" height="400" rx="16"/>
 
   <rect class="hub" x="380" y="150" width="240" height="120" rx="14"/>
-  <text class="ht" x="404" y="186">Sonic operator</text>
-  <text class="hb" x="404" y="210">Controller for the hosted</text>
-  <text class="hb" x="404" y="226">instances; self-hosters are</text>
-  <text class="hb" x="404" y="242">their own controllers</text>
+  <text class="ht" x="404" y="186">Instance operator</text>
+  <text class="hb" x="404" y="210">Roles depend on who</text>
+  <text class="hb" x="404" y="226">decides the purposes</text>
+  <text class="hb" x="404" y="242">and means of processing.</text>
 
   <rect class="ch" x="40" y="40" width="270" height="86" rx="10"/>
-  <text class="ct" x="60" y="66">A · Processors under contract</text>
-  <text class="cb" x="60" y="88">Cloudflare — edge, hosting, tunnel,</text>
-  <text class="cb" x="60" y="104">rate limiting; Art. 28 processor terms</text>
-  <text class="law" x="60" y="120">Necessary · always on</text>
+  <text class="ct" x="60" y="66">A · Infrastructure</text>
+  <text class="cb" x="60" y="88">Cloudflare: edge, hosting, tunnel;</text>
+  <text class="cb" x="60" y="104">storage and controls vary by setup.</text>
+  <text class="law" x="60" y="120">Verify roles and contracts</text>
 
   <rect class="ch" x="40" y="152" width="270" height="86" rx="10"/>
   <text class="ct" x="60" y="178">B · Identity provider</text>
-  <text class="cb" x="60" y="200">Epomail (mail.epocanvas.com) —</text>
-  <text class="cb" x="60" y="216">OAuth 2.0 + PKCE, returns an ID only</text>
-  <text class="law" x="60" y="232">Necessary · your login choice</text>
+  <text class="cb" x="60" y="200">Epomail: ID, email, name, avatar,</text>
+  <text class="cb" x="60" y="216">roles and session data.</text>
+  <text class="law" x="60" y="232">Login is not profiling consent</text>
 
   <rect class="ch" x="40" y="264" width="270" height="86" rx="10"/>
   <text class="ct" x="60" y="290">C · Music and lyrics sources</text>
-  <text class="cb" x="60" y="312">Official music CDNs; NetEase, QQ,</text>
-  <text class="cb" x="60" y="328">Kugou, Kuwo APIs; AMLL / LRCLIB</text>
-  <text class="law" x="60" y="344">Query-driven · no account data sent</text>
+  <text class="cb" x="60" y="312">Queries and content IDs go upstream;</text>
+  <text class="cb" x="60" y="328">direct requests share IP metadata.</text>
+  <text class="law" x="60" y="344">Proxying does not cover every request</text>
 
   <rect class="ch" x="690" y="40" width="270" height="86" rx="10"/>
-  <text class="ct" x="710" y="66">D · Optional providers</text>
-  <text class="cb" x="710" y="88">GDStudio / Lyriva aggregation and</text>
-  <text class="cb" x="710" y="104">free-match fallback</text>
-  <text class="opt" x="710" y="120">Default OFF · env-gated</text>
+  <text class="ct" x="710" y="66">D · Resources and providers</text>
+  <text class="cb" x="710" y="88">Google Fonts, avatars, direct media;</text>
+  <text class="cb" x="710" y="104">configured recommendation providers.</text>
+  <text class="opt" x="710" y="120">Defaults vary; verify what is enabled</text>
 
   <rect class="ch" x="690" y="152" width="270" height="86" rx="10"/>
   <text class="ct" x="710" y="178">E · Lawful requests</text>
-  <text class="cb" x="710" y="200">Data released only upon concrete</text>
-  <text class="cb" x="710" y="216">legal basis; notice to you where allowed</text>
-  <text class="law" x="710" y="232">Exception · documented</text>
+  <text class="cb" x="710" y="200">Disclose on a valid legal basis;</text>
+  <text class="cb" x="710" y="216">limit scope and notify where lawful.</text>
+  <text class="law" x="710" y="232">Assess each request</text>
 
   <rect class="ch" x="690" y="264" width="270" height="86" rx="10"/>
   <text class="ct" x="710" y="290">F · International transfers</text>
-  <text class="cb" x="710" y="312">Cloudflare global network; SCCs,</text>
-  <text class="cb" x="710" y="328">SOC 2 Type II, ISO/IEC 27001</text>
-  <text class="law" x="710" y="344">Art. 44–46 safeguards</text>
+  <text class="cb" x="710" y="312">Transfers need a valid mechanism;</text>
+  <text class="cb" x="710" y="328">assess safeguards; ISO / SOC is not proof.</text>
+  <text class="law" x="710" y="344">GDPR safeguards where applicable</text>
 
   <line class="flow" x1="310" y1="83" x2="376" y2="160"/>
   <line class="flow" x1="310" y1="195" x2="376" y2="205"/>

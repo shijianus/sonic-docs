@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 224" width="960" height="224" role="img" aria-labelledby="title desc">
+  <title id="title">Four reading paths through Sonic documentation</title>
+  <desc id="desc">Start with the overview, explore the player, understand data and rights, or review deployment and development. Select a language below to read the corresponding documents.</desc>
+  <style>
+    .panel { fill: #f8fafc; stroke: #dbe3ef; }
+    .icon { fill: #e8f0fe; }
+    .line { fill: none; stroke: #2563eb; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .title { font: 600 22px system-ui, sans-serif; fill: #0f172a; }
+    .sub { font: 400 16px system-ui, sans-serif; fill: #475569; }
+    .number { font: 600 13px system-ui, sans-serif; fill: #2563eb; }
+    @media (prefers-color-scheme: dark) {
+      .panel { fill: #111827; stroke: #334155; }
+      .icon { fill: #172554; }
+      .line { stroke: #93c5fd; }
+      .title { fill: #f8fafc; }
+      .sub { fill: #cbd5e1; }
+      .number { fill: #93c5fd; }
+    }
+  </style>
+  <rect class="panel" x="8" y="8" width="224" height="208" rx="18"/>
+  <rect class="panel" x="248" y="8" width="224" height="208" rx="18"/>
+  <rect class="panel" x="488" y="8" width="224" height="208" rx="18"/>
+  <rect class="panel" x="728" y="8" width="224" height="208" rx="18"/>
+  <circle class="icon" cx="58" cy="59" r="27"/>
+  <path class="line" d="M46 48h24v24H46z M52 55h12 M52 62h8"/>
+  <text class="number" x="188" y="45">01</text>
+  <text class="title" x="30" y="127">Start</text>
+  <text class="sub" x="30" y="160">Overview</text>
+  <text class="sub" x="30" y="185">Quick start</text>
+  <circle class="icon" cx="298" cy="59" r="27"/>
+  <path class="line" d="M292 47l17 12-17 12z"/>
+  <text class="number" x="428" y="45">02</text>
+  <text class="title" x="270" y="127">Explore</text>
+  <text class="sub" x="270" y="160">Interface &amp; features</text>
+  <text class="sub" x="270" y="185">Search &amp; library</text>
+  <circle class="icon" cx="538" cy="59" r="27"/>
+  <path class="line" d="M538 44l12 6v10c0 8-12 15-12 15s-12-7-12-15V50z M532 58l5 5 8-10"/>
+  <text class="number" x="668" y="45">03</text>
+  <text class="title" x="510" y="127">Understand</text>
+  <text class="sub" x="510" y="160">Privacy &amp; data</text>
+  <text class="sub" x="510" y="185">Terms &amp; rights</text>
+  <circle class="icon" cx="778" cy="59" r="27"/>
+  <path class="line" d="M769 50l-9 9 9 9 M787 50l9 9-9 9 M781 47l-6 24"/>
+  <text class="number" x="908" y="45">04</text>
+  <text class="title" x="750" y="127">Build</text>
+  <text class="sub" x="750" y="160">Deployment</text>
+  <text class="sub" x="750" y="185">Development &amp; API</text>
+</svg>

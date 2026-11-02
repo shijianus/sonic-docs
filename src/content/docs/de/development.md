@@ -3,9 +3,9 @@ title: Entwicklungsleitfaden
 description: Sonic-Entwicklungsleitfaden – Repository-Struktur, Build-Befehle, Testsuite, Verifikation der Dokumentenkonsistenz und Beteiligung am Projekt.
 ---
 
-**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
+**Überarbeitet am: 2. November 2026｜Version: 1.8**
 
-Diese Seite richtet sich an Leser, die an der Entwicklung oder Weiterentwicklung mitwirken möchten, und beschreibt Repository-Struktur, Build-Befehle, Testsuite und die Verifikation der Dokumentenkonsistenz. Lizenz und rechtliche Grenzen sind unter [Open-Source- und Selbst-Hosting-Recht](/de/open-source/) dargestellt.
+Diese Seite richtet sich an Leser, die an der Entwicklung oder Weiterentwicklung mitwirken möchten, und beschreibt Repository-Struktur, Build-Befehle, Testsuite und die Verifikation der Dokumentenkonsistenz. Lizenz und rechtliche Grenzen sind unter [Open-Source- und Selbst-Hosting-Recht](/de/open-source/) dargestellt. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 
 ## 1. Repository-Struktur
 
@@ -22,11 +22,11 @@ Diese Seite richtet sich an Leser, die an der Entwicklung oder Weiterentwicklung
 ## 2. Build und lokaler Betrieb
 
 ```bash
-npm ci                              # 根依赖
+npm ci                              # Root-Abhängigkeiten
 pnpm --dir player install --frozen-lockfile
-npm run build                       # 播放器构建 + 复制至 dist
-npx wrangler pages dev dist         # 本地边缘闸道（无数据面时自动降级模式）
-npm run build:engine && npm run start:engine   # 本地数据面引擎
+npm run build                       # Player bauen und nach dist kopieren
+npx wrangler pages dev dist         # lokales Edge-Gateway (ohne Datenebene automatisch im Degradationsmodus)
+npm run build:engine && npm run start:engine   # lokale Datenebenen-Engine
 ```
 
 ## 3. Testsuite
@@ -46,13 +46,13 @@ Vor der Veröffentlichung durch `npm test` ausgeführt; abgedeckt werden:
 Diese Website (sonicdocs) wird mit jeder Version gegen den Quellcode abgeglichen; die Verifikations-Werkzeugkette:
 
 ```bash
-pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校验
+pnpm validate    # Build + Prüfung auf defekte In-Page-Anker + Prüfung der mehrsprachigen Struktursymmetrie
 ```
 
 1. `scripts/validate-anchors.cjs`: null defekte Links bei allen Seitenankern und Bildverweisen der Website;
 2. `scripts/check-structure.py`: Struktur der mehrsprachigen Versionen (Überschriften/Tabellen/Bilder/Hinweiskästen) 1:1;
 3. `doc/legal-reference.md`: Whitelist der DSGVO-Zitierweise (EUR-Lex-Verifizierungsunterlage); Zitierweisen außerhalb der Whitelist dürfen in den Dokumenten nicht auftreten;
-4. Technische Fakten werden bei jeder Version gegen den Quellcode (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`) abgeglichen; weichen sie ab, ist der Quellcode maßgeblich, und das Dokument ist zu korrigieren.
+4. Technische Fakten werden bei jeder Version gegen den Quellcode (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`) abgeglichen; Abweichungen sind zu prüfen und die Dokumente zu korrigieren. Quellcode legitimiert keine Verarbeitung und beseitigt keine Verantwortung für falsche Informationen. Der Abgleich am 2026-11-02 betrifft den öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), nicht die gleichen Fähigkeiten im alten `main@ce443c8` (2026-10-27 UTC); keiner der Codestände belegt die produktive Instanz.
 
 ## 5. Mitwirken
 
@@ -63,4 +63,4 @@ pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校�
 
 ## 6. Beiträge zur Dokumentübersetzung
 
-Diese Website hat eine mehrsprachige Gegenüberstruktur: Änderungen in einer Sprache sind in den übrigen Sprachen gleich mitzuführen (die 1:1-Struktur wird von Skripten geprüft). Bei einer neuen Sprache: locale registrieren, sämtliche Dokumente ergänzen, die Sprache in die Liste der Strukturskripte aufnehmen und die Gesetzeszitate nach dem Zitierformat der betreffenden Sprache in `doc/legal-reference.md` prüfen.
+Vereinfachtes Chinesisch ist die Pflegegrundlage, neun weitere Sprachfassungen sind Übersetzungen; zwingendes Recht, verbraucherfreundliche Auslegung und verständliche Information gehen einem Sprachvorrang vor. Diese Website hat eine mehrsprachige Gegenüberstruktur: Änderungen in einer Sprache sind in den übrigen Sprachen gleich mitzuführen (die 1:1-Struktur wird von Skripten geprüft). Bei einer neuen Sprache: locale registrieren, sämtliche Dokumente ergänzen, die Sprache in die Liste der Strukturskripte aufnehmen und die Gesetzeszitate nach dem Zitierformat der betreffenden Sprache in `doc/legal-reference.md` prüfen.

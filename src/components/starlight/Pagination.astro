@@ -1,0 +1,23 @@
+---
+import Pagination from '@astrojs/starlight/components/Pagination.astro';
+import { readingLabels } from '../../lib/reading-labels.mjs';
+
+const { pagination, lang } = Astro.locals.starlightRoute;
+const labels = readingLabels[lang] || readingLabels.en;
+---
+
+{(pagination.prev || pagination.next) && (
+  <nav class="reading-navigation print:hidden" aria-label={labels.next}>
+    <p class="reading-navigation-title">{labels.next}</p>
+    <Pagination />
+  </nav>
+)}
+
+<style>
+  .reading-navigation { border-top: 1px solid var(--sl-color-hairline); padding-top: 1.5rem; }
+  .reading-navigation-title { margin: 0 0 0.8rem; font-weight: 600; color: var(--sl-color-white); }
+  .reading-navigation :global(.pagination-links a) { box-shadow: none; background: var(--sl-color-gray-6); transition: border-color 150ms ease, background-color 150ms ease; }
+  .reading-navigation :global(.pagination-links a:hover) { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
+  .reading-navigation :global(.link-title) { font-size: 1.1rem; }
+  @media (prefers-reduced-motion: reduce) { .reading-navigation :global(.pagination-links a) { transition: none; } }
+</style>

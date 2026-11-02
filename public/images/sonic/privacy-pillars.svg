@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Five pillars of the privacy policy: lawfulness, purpose limitation, minimisation and retention, security, and your rights, resting on the GDPR-level baseline">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Privacy principles under applicable law: a valid basis for each purpose, separate prior consent for optional profiling, minimisation, configuration-dependent security and data rights. Profile reset is partial; defaults and erasure gaps require operator action.">
   <style>
     .bg { fill: #f8fafc; }
     .roof { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
@@ -23,39 +23,39 @@
   </style>
   <rect class="bg" width="1000" height="400" rx="16"/>
   <rect class="roof" x="60" y="40" width="880" height="64" rx="12"/>
-  <text class="roof-t" x="84" y="68">What we tell you: what is collected, why, how long it is kept, what you can do</text>
-  <text class="law" x="84" y="90">Applies to every processing activity described in this policy</text>
+  <text class="roof-t" x="84" y="68">Privacy notice: data, purposes, retention and rights</text>
+  <text class="law" x="84" y="90">Each purpose needs a valid legal basis</text>
   <rect class="pillar" x="60" y="140" width="160" height="140" rx="10"/>
   <text class="pt" x="78" y="168">Lawfulness</text>
-  <text class="pb" x="78" y="190">Contract for accounts;</text>
-  <text class="pb" x="78" y="206">security in our</text>
-  <text class="pb" x="78" y="222">legitimate interest</text>
-  <text class="law" x="78" y="262">Art. 6 legal bases</text>
+  <text class="pb" x="78" y="190">Valid legal basis</text>
+  <text class="pb" x="78" y="206">for each purpose;</text>
+  <text class="pb" x="78" y="222">login is not consent</text>
+  <text class="law" x="78" y="262">GDPR legal bases</text>
   <rect class="pillar" x="230" y="140" width="160" height="140" rx="10"/>
   <text class="pt" x="248" y="168">Purpose limit</text>
-  <text class="pb" x="248" y="190">Playback and</text>
-  <text class="pb" x="248" y="206">recommendations</text>
-  <text class="pb" x="248" y="222">only; no ad profiles</text>
-  <text class="law" x="248" y="262">Art. 5(1)(b)</text>
+  <text class="pb" x="248" y="190">Optional profiling</text>
+  <text class="pb" x="248" y="206">requires separate</text>
+  <text class="pb" x="248" y="222">prior consent</text>
+  <text class="law" x="248" y="262">GDPR purpose limits</text>
   <rect class="pillar" x="400" y="140" width="160" height="140" rx="10"/>
   <text class="pt" x="418" y="168">Minimisation</text>
-  <text class="pb" x="418" y="190">No e-mail, no phone,</text>
-  <text class="pb" x="418" y="206">no payment data;</text>
-  <text class="pb" x="418" y="222">one-click erasure</text>
-  <text class="law" x="418" y="262">Art. 5(1)(c)(e)</text>
+  <text class="pb" x="418" y="190">Collect only what</text>
+  <text class="pb" x="418" y="206">is needed; reset</text>
+  <text class="pb" x="418" y="222">is only partial</text>
+  <text class="law" x="418" y="262">GDPR minimisation</text>
   <rect class="pillar" x="570" y="140" width="160" height="140" rx="10"/>
   <text class="pt" x="588" y="168">Security</text>
-  <text class="pb" x="588" y="190">Signed API keys;</text>
-  <text class="pb" x="588" y="206">isolated engine;</text>
-  <text class="pb" x="588" y="222">SSRF defence</text>
-  <text class="law" x="588" y="262">Art. 32 measures</text>
+  <text class="pb" x="588" y="190">Security measures</text>
+  <text class="pb" x="588" y="206">depend on setup;</text>
+  <text class="pb" x="588" y="222">verify deployment</text>
+  <text class="law" x="588" y="262">GDPR security</text>
   <rect class="pillar" x="740" y="140" width="160" height="140" rx="10"/>
   <text class="pt" x="758" y="168">Your rights</text>
-  <text class="pb" x="758" y="190">Access, rectify,</text>
-  <text class="pb" x="758" y="206">erase, port, object;</text>
-  <text class="pb" x="758" y="222">self-service first</text>
-  <text class="law" x="758" y="262">Art. 15–22</text>
+  <text class="pb" x="758" y="190">Access, correct,</text>
+  <text class="pb" x="758" y="206">erase or object;</text>
+  <text class="pb" x="758" y="222">contact for full request</text>
+  <text class="law" x="758" y="262">Applicable rights</text>
   <rect class="base" x="60" y="312" width="880" height="56" rx="12"/>
-  <text class="bt" x="84" y="336" font-size="12">Baseline: GDPR-level protection for every user, regardless of where you live</text>
-  <text class="law" x="84" y="356">Voluntary commitment of the operator · stronger local law prevails where applicable</text>
+  <text class="bt" x="84" y="336" font-size="12">Applicable law · GDPR where applicable</text>
+  <text class="law" x="84" y="356">Defaults and erasure gaps need operator action</text>
 </svg>

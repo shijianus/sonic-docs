@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Key terms map: legal terms family and technical terms family, used consistently across all documents, interpreted under the formal Chinese version">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Legal and technical terms: roles follow actual processing, pseudonymisation is not anonymity, OAuth login is not profiling consent, and controls depend on configuration. Interpret terms in context; mandatory law prevails and Simplified Chinese is the maintenance baseline.">
   <style>
     .bg { fill: #f8fafc; }
     .fam { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
@@ -29,9 +29,9 @@
   <text class="fb" x="84" y="168">authority · international transfer</text>
   <text class="fb" x="84" y="194">profiling · pseudonymisation ·</text>
   <text class="fb" x="84" y="212">special categories of data</text>
-  <text class="law" x="84" y="244">Art. 4 definitions · Art. 5 principles</text>
-  <text class="law" x="84" y="262">Art. 6 legal bases · Art. 28 processors</text>
-  <text class="law" x="84" y="280">Chapter V transfers · Art. 77 remedies</text>
+  <text class="law" x="84" y="244">GDPR where applicable</text>
+  <text class="law" x="84" y="262">Roles follow actual processing</text>
+  <text class="law" x="84" y="280">Pseudonymisation is not anonymity</text>
 
   <rect class="fam" x="510" y="50" width="430" height="250" rx="12"/>
   <text class="ft" x="534" y="80">Technical terms</text>
@@ -41,11 +41,11 @@
   <text class="fb" x="534" y="168">OPEN / HALF_OPEN) · Range 206 ·</text>
   <text class="fb" x="534" y="194">YRC / QRC / KRC word-level lyrics ·</text>
   <text class="fb" x="534" y="212">TTML · trial detection · free-match</text>
-  <text class="law" x="534" y="244">Defined as used in the source code;</text>
-  <text class="law" x="534" y="262">figures checked against the repository</text>
-  <text class="law" x="534" y="280">on every release</text>
+  <text class="law" x="534" y="244">OAuth login is not profiling consent</text>
+  <text class="law" x="534" y="262">Controls depend on configuration</text>
+  <text class="law" x="534" y="280">Code review is not a deployment audit</text>
 
   <rect class="base" x="60" y="322" width="880" height="46" rx="12"/>
-  <text class="bt" x="84" y="344">Rule of interpretation: one term, one meaning, everywhere</text>
-  <text class="law" x="700" y="344">Formal version: Simplified Chinese</text>
+  <text class="bt" x="84" y="344">Read terms in context · mandatory law prevails</text>
+  <text class="law" x="700" y="344">Maintenance: Simplified Chinese</text>
 </svg>

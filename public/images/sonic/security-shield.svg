@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Four security layers: transport encryption, authentication and signing, SSRF defence at the edge, and isolated storage, plus user-controlled erasure">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Security controls for transport, authentication, outbound requests and storage depend on deployment. Not all links are encrypted; profile reset is partial, incognito can still send events, and revocation needs configuration and a successful request. Contact the operator for full data requests.">
   <style>
     .bg { fill: #f8fafc; }
     .layer { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
@@ -24,32 +24,32 @@
   <rect class="bg" width="1000" height="400" rx="16"/>
 
   <rect class="layer" x="60" y="46" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="72">L1 · Transport — TLS everywhere</text>
-  <text class="lb" x="84" y="92">HTTPS enforced end to end; cookies issued only as HttpOnly · Secure · SameSite=Lax</text>
+  <text class="lt" x="84" y="72">L1 · Transport — protection varies by path</text>
+  <text class="lb" x="84" y="92">HTTPS depends on deployment; not all upstream or internal links are encrypted.</text>
 
   <rect class="layer-accent" x="60" y="122" width="640" height="64" rx="10"/>
   <text class="lt" x="84" y="148">L2 · Authentication and signing</text>
-  <text class="lb" x="84" y="168">HMAC-SHA256 versioned API keys; PKCE + state OAuth flow; keys never placed in URLs or localStorage</text>
+  <text class="lb" x="84" y="168">OAuth + PKCE; signed sessions. Signing protects integrity, not confidentiality.</text>
 
   <rect class="layer" x="60" y="198" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="224">L3 · Edge defence — SSRF blocking</text>
-  <text class="lb" x="84" y="244">Loopback, RFC 1918, Docker bridges and cloud metadata addresses denied; re-validated on every redirect</text>
+  <text class="lt" x="84" y="224">L3 · Outbound request checks</text>
+  <text class="lb" x="84" y="244">Proxy target and redirect checks do not cover direct browser resources.</text>
 
   <rect class="layer" x="60" y="274" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="300">L4 · Storage isolation</text>
-  <text class="lb" x="84" y="320">SQLite (WAL) on the data plane only; engine reachable through an encrypted tunnel with a service key; secrets in env vars</text>
+  <text class="lt" x="84" y="300">L4 · Storage and logs</text>
+  <text class="lb" x="84" y="320">Isolation, access, retention and backups require operator setup and checks.</text>
 
   <rect class="side" x="730" y="46" width="240" height="292" rx="12"/>
-  <text class="st" x="752" y="76">You are in control</text>
-  <text class="sb" x="752" y="100">One-click profile erasure</text>
-  <text class="sb" x="752" y="118">(DELETE /api/sonic/events)</text>
-  <text class="sb" x="752" y="144">Local mode / incognito</text>
-  <text class="sb" x="752" y="162">playback without events</text>
-  <text class="sb" x="752" y="188">Logout revokes the session</text>
-  <text class="sb" x="752" y="206">and jti immediately</text>
-  <text class="law" x="752" y="240">Art. 25 — by design,</text>
-  <text class="law" x="752" y="256">by default</text>
-  <text class="law" x="752" y="280">Art. 32 — security</text>
-  <text class="law" x="752" y="296">of processing</text>
-  <text class="law" x="752" y="320">Art. 17 — erasure</text>
+  <text class="st" x="752" y="76">Control limits</text>
+  <text class="sb" x="752" y="100">Profile reset is partial;</text>
+  <text class="sb" x="752" y="118">contact for full data requests.</text>
+  <text class="sb" x="752" y="144">Incognito can still</text>
+  <text class="sb" x="752" y="162">send requests and events.</text>
+  <text class="sb" x="752" y="188">Revocation needs setup</text>
+  <text class="sb" x="752" y="206">and a successful request.</text>
+  <text class="law" x="752" y="240">GDPR where applicable</text>
+  <text class="law" x="752" y="256">Privacy by design</text>
+  <text class="law" x="752" y="280">Security depends on setup</text>
+  <text class="law" x="752" y="296">Defaults need operator action</text>
+  <text class="law" x="752" y="320">Erasure gaps need follow-up</text>
 </svg>

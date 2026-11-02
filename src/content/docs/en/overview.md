@@ -1,69 +1,69 @@
 ---
 title: Privacy & Terms Overview
-description: The Sonic legal documents overview — platform identity, data processing roles, the GDPR-level baseline, document map, order of precedence, and contact points.
+description: Service identity, data protection scope, document relationships and outstanding implementation requirements for Sonic's individual nonprofit test project.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
 
-This page is the guide to all legal documents of the Sonic service (hereinafter "the service"). It explains the roles of the parties, the document architecture and the order of precedence. Before signing in to or using the service, you should read this page together with the [Privacy Policy](/en/privacy-policy/) and the [Terms of Service](/en/terms-of-service/).
+This page explains the relationships between the documents for Sonic's hosted test service. The project is individually maintained, free and nonprofit, for learning and public-benefit testing. It offers no commercial service level or commitment to permanent operation. Read the [Terms of Service](/en/terms-of-service/) and [Privacy Policy](/en/privacy-policy/) first to understand the service scope and data processing.
 
-![Sonic legal document architecture: the Terms of Service as the contract layer, the Privacy Policy and Acceptable Use Policy as the policy layer, the Data Processing & Security, Third Parties & Transfers and Key Terms as supporting documents, all resting on the GDPR-level protection baseline](/images/sonic/legal-architecture.svg)
+The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
-*Figure: the architecture of this site's legal documents. The Terms of Service set the contractual conditions; the Privacy Policy states the notice and processing standards for personal data; the Acceptable Use Policy sets behavioral boundaries; the remaining three documents are supporting documents. The data protection baseline applies GDPR-level standards to every user.*
+:::caution[Document revision and actual deployment]
+Live environments, supplier contracts and actual deletion results were not examined. Default-on profiling, public search-term suggestions, email-based avatar requests, deletion coverage and actual retention periods still require implementation work. A policy update does not prove that these issues have been fixed. Processing without a lawful basis and necessary safeguards should be suspended.
+:::
 
-## 1. Platform identity
+![Sonic document relationships: service terms, privacy notice, usage rules and data explanations](/images/sonic/legal-architecture.svg)
 
-Sonic is an open-source music streaming platform built on a two-plane architecture of a Cloudflare edge control plane and a Linux local protocol engine data plane, with its source code published under the `LICENSE` file at the repository root (MIT License). The service may be provided in two forms:
+*Figure: the documents serve different purposes; personal data processing requires a separately established lawful basis.*
 
-1. **Hosted instances**: public sites operated by the operations team (`sonic.epocanvas.tech` primary and `sonic.epocanvas.com` backup mirror);
-2. **Self-hosted instances**: private sites deployed by any individual, team or organization on their own servers and domains from the open-source code.
+## 1. Project and operator
 
-Both forms run the same open-source code; they differ in the operator and the responsible party: the operations team bears responsibility for hosted instances, and the deployer for self-hosted ones.
+The public code repository is [shijianus/sonic](https://github.com/shijianus/sonic). The root and player `LICENSE` files in RC `a75f5cb` use MIT; the older `main@ce443c8` has a verifiable player MIT licence but no root `LICENSE`. The RC's licensing must not be inferred for all historical code. The project's nonprofit purpose does not revoke the code licence or grant rights to use music, lyrics, covers or MVs.
 
-## 2. Data processing roles
+This set of service documents is for hosted instances at `sonic.epocanvas.tech` and `sonic.epocanvas.com` that actually adopt it. The actual operator must state its legal identity and contact details. The maintainer account `shijianus` or the EpoCanvas brand alone cannot replace full identity disclosure. The source code does not establish the operator's legal name, location or the countries where servers are located; this review makes no assumptions about them.
 
-The legal documents of the service follow the "data controller／processor" division of roles, equivalent to the general classification of the EU General Data Protection Regulation (GDPR).
+Other deployments have their own operators and rules. Merely publishing code, contributing patches or providing offline tools does not automatically confer responsibility for every instance's services and data. Anyone also operating an instance or participating in decisions about processing must be responsible according to their actual role.
 
-| Scenario | Data controller | Processor |
+## 2. Data roles
+
+| Participant | How the role is determined | Explanation for this project |
 | --- | --- | --- |
-| Hosted instances | The operations team (for behavioral events, sign-in and security records) | Cloudflare, Epomail (authentication) and others; see the full list in [Third Parties & Transfers](/en/sub-processors/) |
-| Self-hosted instances | The individual or organization deploying the instance (sole and exclusive data controller) | The infrastructure providers configured by that deployer |
+| Hosted-instance operator | The party actually determining the purposes and means of personal data processing | Responsible for its own sign-in, requests, recommendations and related processing |
+| Infrastructure provider | Processing on instructions or for its own independent purposes | The roles of Cloudflare and others depend on the particular service and contract |
+| Epomail and content and resource providers | May be independent controllers; some situations require separate assessment | Not every third party is categorised as a processor |
+| Self-hosting operators and code contributors | Whether they actually determine or participate in processing | A deployment or contribution label does not automatically establish sole, exclusive responsibility |
 
-The open-source code itself collects, uploads and sends back no telemetry; apart from external services configured by the instance operator, the upstream authors never touch any instance's operating data. From the moment of deployment, the deployer becomes the data controller of its users and must perform the notice, security and supervisory duties required by the law applicable at its location; this site's documents may serve as the baseline text for its notice and terms.
+Actual data flows include optional profiling, request context, browser data, direct external resources and search statistics. Open-source or local-storage labels do not mean that no data leaves the device; being signed out and using hashes do not mean anonymity. Details must follow accurate disclosure in the Privacy Policy, and technical documentation must be kept consistent with it.
 
-## 3. Document architecture
+## 3. Document purposes
 
-The legal documents on this site are organized by topic and refer to one another, together forming one complete set of commitments:
-
-| Document | Content |
+| Document | Purpose |
 | --- | --- |
-| [Project Overview](/en/project/) | Product identity, core capabilities, architecture, security and privacy design, deployment |
-| [Privacy Policy](/en/privacy-policy/) | Collection and use of personal data, legal bases, retention periods, your rights and international transfers |
-| [Terms of Service](/en/terms-of-service/) | Contractual conditions of use, account rules, limitation of liability, governing law and dispute resolution |
-| [Acceptable Use Policy](/en/acceptable-use/) | Behavioral boundaries, prohibited conduct, the enforcement ladder and appeals |
-| [Data Processing & Security](/en/data-security/) | Data lifecycle, processing matrix, security measures, known limitations, incident response |
-| [Third Parties & Transfers](/en/sub-processors/) | Recipients, data involved, transfer safeguard mechanisms |
-| [Key Terms](/en/key-terms/) | Definitions of the legal terms (GDPR vocabulary) and technical terms used on this site |
+| [Terms of Service](/en/terms-of-service/) | Hosted-service conditions, content rights, operational limits and liability |
+| [Privacy Policy](/en/privacy-policy/) | Controller, data, purposes, bases, recipients, retention and rights |
+| [Acceptable Use Policy](/en/acceptable-use/) | Public resources, authorised testing, prohibited conduct and enforcement |
+| [Data Processing & Security](/en/data-security/) | Actual security design, gaps, incident handling and risk-based measures |
+| [Third Parties & Transfers](/en/sub-processors/) | External resources, independent roles, configuration and international-transfer conditions |
+| [Key Terms](/en/key-terms/) | Personal data, pseudonymisation, profiling and technical terminology |
+| [Data Management](/en/data-management/) | User actions and their coverage limits |
 
-## 4. Data protection baseline
+## 4. Protection objective, risks and legal applicability
 
-The service applies the EU General Data Protection Regulation (GDPR) as the **minimum** data protection standard for **every user**: wherever in the world you are, your rights of notice, access, rectification, erasure, restriction, portability, objection and complaint in respect of your personal data are no lower than the level set by the GDPR.
+GDPR applicability must be assessed under Article 3 and the specific facts. Offering free services to people in the EU or monitoring their behaviour there may still fall within its scope; overseas access alone is not conclusive either. Nonprofit, open-source and learning purposes provide no blanket exemption. Purely personal or household activities must be assessed according to their actual scope.
 
-1. For users in the European Union and the European Economic Area, the GDPR applies directly;
-2. For users elsewhere, the service carries the GDPR standard as a self-imposed commitment and performs it as a contractual obligation;
-3. Where the law of your location grants stronger protection, that law prevails to its extent.
+Measures are selected according to the scale of processing, risks and implementation costs. Small individual projects do not universally have to appoint a data protection officer, obtain certification, purchase commercial audits or establish round-the-clock teams. The specific thresholds in Article 37, Article 35 and Article 27 of the GDPR must still be assessed separately. Continuous profiling cannot be described as “occasional” processing merely because few people are involved. Necessary identity disclosure, a valid basis, minimisation, security and rights handling are not removed by project size.
 
-This baseline means: although the hosted instance is operated from Taiwan and the governing law of the Terms of Service is that of the operator's location (see the [Terms of Service](/en/terms-of-service/), section 11), data protection matters are executed with the GDPR level as the floor; rights enforcement, breach notification and security duties all follow this standard.
+Rigorous privacy principles guide the project's design and continuous improvement. Our goal is to make reasonable efforts to provide a high level of protection proportionate to actual risks, drawing on the GDPR principles of data minimisation, purpose limitation, transparency and user control. These are goals, not evidence of EU certification or full compliance with the GDPR and all Member State laws, or guarantees of absolute security, freedom from data breaches or loss, or immediate and complete deletion. Actual protection depends on the deployed version, configuration and third-party processing; goals, measures verified in code, unverified deployment details and remaining risks must be distinguished. Neither reasonable efforts nor risk disclosure reduces legal duties or requires users to accept unlawful processing or waive rights. Legal applicability depends on the facts, without extending the entire GDPR regime into an additional worldwide contractual guarantee. Whatever law applies, data must be described accurately, commitments must be implemented, and non-waivable user rights must be respected.
 
-## 5. Order of precedence
+## 5. Interpretation and versions
 
-1. For privacy matters, the [Privacy Policy](/en/privacy-policy/) is the specific provision; for conditions of use, the [Terms of Service](/en/terms-of-service/) is the specific provision; all other matters are construed under the architecture listed on this page.
-2. Where the documents are inconsistent, the document directly concerned with the subject matter prevails.
-3. The Simplified Chinese version of this site's legal documents is the authoritative version; the English and Japanese versions are reference translations, and in case of doubt the authoritative version prevails.
+Mandatory law takes precedence. Service conditions are governed by the Terms of Service and data notices by the Privacy Policy. Technical descriptions, images or old feature introductions cannot expand authorisation for processing, and saying “the source code prevails” cannot excuse inaccurate notice. Contradictions must be corrected and affected users notified.
 
-## 6. Contact points
+Simplified Chinese is the maintenance baseline; the other nine languages are translations. Chinese-language priority cannot exclude interpretation favourable to consumers or intelligible notice. The date shown is the document's revision date. Before adopting it in a deployment or actually changing processing, effective notice must still be given and separate consent obtained where necessary.
 
-- **Privacy matters and data protection requests**: `privacy@epocanvas.com`
-- **Service and account matters**: `admin@epocanvas.com`
-- **Open-source project**: GitHub repository Issues (`github.com/shijianus/sonic`)
-- **Self-hosted sites**: contact the operator contact published by that site
+## 6. Contact
+
+Service and accounts: `admin@epocanvas.com`; privacy and rights requests: `privacy@epocanvas.com`. These addresses are proposed in the current documentation; their announcement in the reviewed upstream source was not confirmed, and delivery has not been verified by sending email. They do not constitute a statement that an EU representative or data protection officer has been appointed. Instance operators must ensure that their published contact channels work.
+
+Technical issues may be reported through [GitHub Issues](https://github.com/shijianus/sonic/issues). Do not submit personal data, passwords or session credentials. For third-party instances, contact their own operators.

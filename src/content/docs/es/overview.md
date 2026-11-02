@@ -1,69 +1,69 @@
 ---
-title: Descripción general
-description: "Descripción general de los documentos legales de Sonic: identidad de la plataforma, delimitación de los roles de tratamiento de datos, línea base de protección de nivel RGPD, arquitectura documental, orden de prevalencia y canales de contacto."
+title: Descripción general de privacidad y condiciones
+description: Prestador, ámbito de la protección de datos, relación entre documentos y condiciones actuales de aplicación del proyecto personal de pruebas sin ánimo de lucro Sonic.
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página es la guía de la totalidad de los documentos legales del servicio Sonic (en lo sucesivo, «el servicio»); explica los roles de las partes, la arquitectura documental y el orden de aplicación. Antes de iniciar sesión o utilizar el servicio, debe leer esta página, además de la [Política de privacidad](/es/privacy-policy/) y los [Términos del servicio](/es/terms-of-service/).
+Esta página explica la relación entre los documentos del servicio de pruebas alojado Sonic. Es un proyecto mantenido por una persona, gratuito y sin ánimo de lucro, destinado al aprendizaje y a pruebas de interés general; no promete niveles de servicio comerciales ni funcionamiento permanente. Lea primero los [Términos del servicio](/es/terms-of-service/) y la [Política de privacidad](/es/privacy-policy/) para conocer el alcance del servicio y el tratamiento de datos. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
-![Arquitectura de los documentos legales de Sonic: los Términos del servicio constituyen la capa contractual; la Política de privacidad y la Política de uso aceptable, la capa de políticas; Tratamiento de datos y seguridad, Terceros y transferencias y Glosario son los documentos de apoyo; todo se asienta sobre la línea base de protección de datos de nivel RGPD](/images/sonic/legal-architecture.svg)
+:::caution[Revisión documental y despliegue real]
+La RC pública y la antigua `main` son dos estados diferentes del código; sus capacidades no deben confundirse. No se han examinado el entorno en línea, los contratos de proveedores ni los resultados reales de supresión. Siguen pendientes cuestiones como los perfiles activados por defecto, las sugerencias públicas de términos buscados, las peticiones de avatar con correo electrónico, la cobertura de la supresión y los plazos reales de conservación. Actualizar las políticas no demuestra que esos problemas estén corregidos. Deben suspenderse los tratamientos sin base lícita y garantías necesarias.
+:::
 
-*Figura: arquitectura de los documentos legales de este sitio. Los Términos del servicio fijan las condiciones contractuales; la Política de privacidad recoge la información y las normas de tratamiento de los datos personales; la Política de uso aceptable fija los límites de conducta; los otros tres documentos son documentos de apoyo. La línea base de protección de datos adopta el RGPD como norma mínima para todos los usuarios.*
+![Relación entre los documentos de Sonic: condiciones del servicio, información de privacidad, reglas de uso y descripción de datos](/images/sonic/legal-architecture.svg)
 
-## 1. Identidad de la plataforma
+*Figura: cada documento tiene una finalidad distinta; el tratamiento de datos personales necesita una base lícita establecida de forma independiente.*
 
-Sonic es una plataforma de streaming musical de código abierto que funciona con la arquitectura «plano de control en el borde de Cloudflare + plano de datos con motor de protocolos local en Linux»; su código fuente se publica según el archivo `LICENSE` de la raíz del repositorio (MIT License). El servicio puede prestarse en las dos formas siguientes:
+## 1. Proyecto y operador
 
-1. Instancia gestionada: sitio público operado hacia el exterior por el equipo de operaciones (sitio principal `sonic.epocanvas.tech` y espejo de respaldo `sonic.epocanvas.com`);
-2. Instancia de autoalojamiento: sitio privado que cualquier persona, equipo u organización despliega por sí mismo a partir del código abierto en sus propios servidores y dominios.
+El repositorio público del código es [shijianus/sonic](https://github.com/shijianus/sonic); los archivos `LICENSE` de la raíz y del reproductor de la RC `a75f5cb` son MIT. En la antigua `main@ce443c8` solo es verificable la licencia MIT del reproductor y no se encontró `LICENSE` en la raíz; las versiones y los componentes históricos deben evaluarse por separado. La finalidad no lucrativa del proyecto no revoca la licencia del código ni concede derechos de uso sobre música, letras, portadas o MV.
 
-Ambas formas comparten el mismo código de fuente abierta; la diferencia está en el operador y en el sujeto responsable: en la instancia gestionada lo asume el equipo de operaciones y, en la de autoalojamiento, quien la despliega.
+Esta documentación del servicio está destinada a las instancias alojadas `sonic.epocanvas.tech` y `sonic.epocanvas.com` que la adopten efectivamente. El operador real debe precisar su identidad jurídica y datos de contacto; la cuenta de mantenimiento `shijianus` o la marca EpoCanvas no sustituyen una identificación completa. El código no acredita el nombre legal del operador, su ubicación ni los países donde están los servidores; no se hacen presunciones al respecto.
 
-## 2. Delimitación de los roles de tratamiento de datos
+Otros despliegues tienen sus propios operadores y reglas. Publicar código, aportar parches o facilitar herramientas sin conexión no implica automáticamente asumir la responsabilidad del servicio y los datos de todas las instancias; cuando también se opera una instancia o se participa en las decisiones sobre el tratamiento, se responde según el rol real.
 
-Los documentos legales del servicio adoptan la división de roles «responsable del tratamiento / encargado del tratamiento», equivalente a la clasificación general del Reglamento General de Protección de Datos (RGPD) de la Unión Europea.
+## 2. Roles en el tratamiento de datos
 
-| Escenario | Responsable del tratamiento | Encargado del tratamiento |
+| Participante | Criterio para determinar el rol | Aclaración del proyecto |
 | --- | --- | --- |
-| Instancia gestionada | El equipo de operaciones (respecto de los eventos de comportamiento, los inicios de sesión y los registros de seguridad) | Cloudflare, Epomail (verificación de identidad), entre otros; la lista completa figura en [Terceros y transferencias](/es/sub-processors/) |
-| Instancia de autoalojamiento | La persona u organización que despliega la instancia (responsable del tratamiento único y exclusivo) | Los proveedores de infraestructura que ese desplegador configure |
+| Operador de la instancia alojada | Quien determina efectivamente los fines y medios del tratamiento de datos personales | Responde de sus propios tratamientos de inicio de sesión, peticiones, recomendaciones y operaciones relacionadas |
+| Proveedor de infraestructura | Trata por instrucciones o para sus propios fines | El rol de Cloudflare y otros depende del servicio concreto y del contrato |
+| Epomail y proveedores de contenido y recursos | Pueden ser responsables independientes; algunas situaciones requieren una evaluación separada | No se califica a todos los terceros como encargados del tratamiento |
+| Desplegadores independientes y colaboradores del código | Según su decisión o participación efectiva en el tratamiento | La etiqueta de desplegador o colaborador no determina automáticamente una responsabilidad única y exclusiva |
 
-El código de fuente abierta por sí mismo no recopila, no sube ni devuelve ningún dato de telemetría; salvo los servicios externos que el operador de la instancia configure por sí mismo, los autores de origen no acceden a los datos de operación de ninguna instancia. Desde el momento del despliegue, quien despliega se convierte en responsable del tratamiento de sus usuarios y debe cumplir, conforme a la legislación aplicable de su lugar, los deberes de información, mantenimiento de la seguridad y sometimiento a supervisión, pudiendo tomar los documentos de este sitio como texto base de su información y sus condiciones.
+Los flujos reales incluyen perfiles opcionales, contexto de peticiones, datos del navegador, recursos externos directos y estadísticas de búsqueda. Las etiquetas «código abierto» o «almacenamiento local» no significan que no se envíen datos fuera; no iniciar sesión o utilizar hashes tampoco equivale a anonimato. Los detalles son los descritos con exactitud en la política de privacidad, con la que deben mantenerse coherentes las explicaciones técnicas.
 
-## 3. Arquitectura documental
+## 3. Finalidad de los documentos
 
-Los documentos legales de este sitio se organizan por materias; se citan entre sí y constituyen en conjunto el acuerdo completo:
-
-| Documento | Contenido |
+| Documento | Finalidad |
 | --- | --- |
-| [Presentación del proyecto](/es/project/) | Identidad del producto, funciones principales, arquitectura técnica, diseño de seguridad y privacidad, formas de despliegue |
-| [Política de privacidad](/es/privacy-policy/) | Recogida y utilización de los datos personales, bases jurídicas, plazos de conservación, derechos de la persona interesada y transferencias internacionales |
-| [Términos del servicio](/es/terms-of-service/) | Condiciones contractuales de uso, reglas de cuenta, limitación de responsabilidad, ley aplicable y resolución de controversias |
-| [Política de uso aceptable](/es/acceptable-use/) | Límites de conducta, catálogo de conductas prohibidas y escala de aplicación, procedimiento de reclamación |
-| [Tratamiento de datos y seguridad](/es/data-security/) | Ciclo de vida de los datos, matriz de tratamiento, medidas de seguridad, limitaciones conocidas y respuesta a incidentes |
-| [Terceros y transferencias](/es/sub-processors/) | Destinatarios de la compartición, datos afectados, garantías de las transferencias |
-| [Glosario](/es/key-terms/) | Definición de los términos jurídicos (vocabulario del RGPD) y de los términos técnicos usados en los documentos legales de este sitio |
+| [Términos del servicio](/es/terms-of-service/) | Condiciones del servicio alojado, derechos sobre contenidos, límites operativos y responsabilidad |
+| [Política de privacidad](/es/privacy-policy/) | Responsable, datos, finalidades, bases, destinatarios, conservación y derechos |
+| [Política de uso aceptable](/es/acceptable-use/) | Recursos públicos, pruebas autorizadas, conductas prohibidas y medidas |
+| [Tratamiento de datos y seguridad](/es/data-security/) | Diseño real de seguridad, carencias, gestión de incidentes y medidas según el riesgo |
+| [Terceros y transferencias](/es/sub-processors/) | Recursos externos, roles independientes, configuración y condiciones internacionales |
+| [Glosario](/es/key-terms/) | Datos personales, seudonimización, perfiles y términos técnicos |
+| [Gestión de datos](/es/data-management/) | Acciones del usuario y límites de su cobertura |
 
-## 4. Línea base de protección de datos
+## 4. Objetivo de protección, riesgos y legislación aplicable
 
-El servicio adopta el Reglamento General de Protección de Datos (RGPD) de la Unión Europea como norma mínima de protección de datos para **todos los usuarios**: esté donde esté en el mundo, sus derechos de información, acceso, rectificación, supresión, limitación, portabilidad, oposición y reclamación respecto de sus datos personales no quedan en ningún caso por debajo del nivel fijado por el RGPD.
+La aplicación del RGPD debe determinarse según el artículo 3 del RGPD y los hechos concretos. Ofrecer servicios gratuitos a personas que estén en la Unión Europea o supervisar su comportamiento dentro de ella puede quedar sujeto al reglamento; el mero acceso desde el extranjero tampoco decide por sí solo la conclusión. El carácter no lucrativo, el código abierto y el aprendizaje no crean una exención general; la actividad puramente personal o doméstica debe evaluarse según su alcance real.
 
-1. Para los usuarios situados en la Unión Europea y en el Espacio Económico Europeo, el RGPD se aplica directamente;
-2. Para los usuarios de las demás regiones, el servicio asume las normas del RGPD como compromiso de autoservicio y las honra a título de obligación contractual;
-3. Las protecciones más fuertes que confiera la ley de su lugar prevalecen en su ámbito.
+Las medidas se eligen según la escala del tratamiento, el riesgo y los costes de aplicación. Un pequeño proyecto personal no tiene que nombrar siempre un delegado de protección de datos, certificarse, contratar auditorías comerciales o disponer de un equipo permanente; aun así, deben evaluarse por separado los umbrales específicos del artículo 37, del artículo 35 y del artículo 27 del RGPD. La elaboración continua de perfiles no puede calificarse de «ocasional» solo por afectar a pocas personas. No desaparecen la identificación necesaria, la base válida, la minimización, la seguridad ni la gestión de derechos.
 
-Esta línea base significa: aunque la instancia gestionada opera en Taiwán y la ley aplicable de los Términos del servicio es la del lugar del operador (véase la sección 11 de los [Términos del servicio](/es/terms-of-service/)), las materias de protección de datos se aplican con el nivel del RGPD como suelo; el ejercicio de los derechos de las personas interesadas, la notificación de violaciones y los deberes de mantenimiento de la seguridad se ejecutan conforme a esta norma.
+El respeto a la privacidad orienta el diseño y la mejora del servicio. El objetivo es realizar esfuerzos razonables para ofrecer un nivel elevado de protección, con medidas rigurosas y proporcionadas a los riesgos, tomando como referencia los principios del RGPD de minimización de datos, limitación de la finalidad, transparencia y control de los usuarios. Este objetivo no es una certificación europea ni una declaración de cumplimiento íntegro del RGPD y de las leyes de todos los Estados miembros. No garantiza seguridad absoluta, ausencia total de filtraciones o pérdidas de datos ni su supresión inmediata y completa. La protección efectiva depende del despliegue, la configuración y los tratamientos de terceros; deben distinguirse las medidas constatadas en el código, los elementos no verificados y los riesgos conocidos.
 
-## 5. Orden de prevalencia
+La legislación aplicable depende de la situación real; tomar el RGPD como referencia no crea una garantía contractual mundial adicional de cumplimiento de todo su régimen. Los esfuerzos razonables no reducen las obligaciones legales aplicables, y comunicar los riesgos no le exige aceptar un tratamiento ilícito ni renunciar a sus derechos. Sea cual sea la ley aplicable, deben describirse los datos con exactitud, cumplirse los compromisos asumidos y respetarse los derechos irrenunciables de los usuarios.
 
-1. En materia de privacidad, la norma especial es la [Política de privacidad](/es/privacy-policy/); en las condiciones de uso del servicio, lo son los [Términos del servicio](/es/terms-of-service/); las demás materias se interpretan según la arquitectura enumerada en esta página.
-2. Si los documentos discrepan entre sí, prevalece el documento directamente vinculado a la materia de que se trate.
-3. Los documentos legales de este sitio tienen como versión oficial la versión en chino simplificado; las versiones en las demás lenguas, incluida la presente versión en español, son traducciones de referencia y, en caso de duda en la interpretación, prevalece la versión oficial.
+## 5. Interpretación y versiones
 
-## 6. Canales de contacto
+Prevalecen las normas imperativas. Las condiciones del servicio se rigen por los términos del servicio y la información de datos por la política de privacidad; las explicaciones técnicas, imágenes o descripciones antiguas de funciones no pueden ampliar la autorización de tratamiento, ni puede invocarse que «prevalece el código» para eludir responsabilidad por información errónea. Las contradicciones detectadas deben corregirse y comunicarse a los usuarios afectados.
 
-- Privacidad y solicitudes de protección de datos: `privacy@epocanvas.com`
-- Servicios y cuentas: `admin@epocanvas.com`
-- Proyecto de código abierto: Issues del repositorio de GitHub (`github.com/shijianus/sonic`)
-- Sitios de autoalojamiento: diríjase a los datos de contacto del operador publicados en ese sitio
+El chino simplificado es la referencia de mantenimiento; las otras nueve versiones lingüísticas son traducciones. La prioridad del chino no puede excluir una interpretación favorable al consumidor ni una información comprensible. La fecha indicada es la de revisión documental; antes de adoptar los documentos en un despliegue o cambiar realmente los tratamientos, sigue siendo necesario informar de forma válida y obtener por separado el consentimiento cuando corresponda.
+
+## 6. Contacto
+
+Servicio y cuentas: `admin@epocanvas.com`; privacidad y solicitudes de derechos: `privacy@epocanvas.com`. Estos correos se proponen en la documentación, pero no se ha confirmado su publicación en el código de origen examinado ni se ha probado su recepción enviando mensajes. No constituyen una declaración de nombramiento de representante en la Unión Europea ni de delegado de protección de datos. El operador de la instancia debe confirmar o corregir los canales que publique y garantizar que funcionen.
+
+Los problemas técnicos pueden comunicarse en [GitHub Issues](https://github.com/shijianus/sonic/issues); no envíe datos personales, contraseñas ni credenciales de sesión. Para instancias de terceros, contacte con su propio operador.

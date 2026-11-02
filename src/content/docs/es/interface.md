@@ -3,9 +3,9 @@ title: Guía de la interfaz y funciones
 description: "Guía de la interfaz y funciones del reproductor de Sonic: página de inicio y recomendaciones, búsqueda, controles de reproducción, panel del reproductor, mi música, ajustes y controles de privacidad, disposición en móvil."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página orienta por la disposición de la interfaz y la ubicación de las funciones del reproductor web de Sonic, y explica dónde está cada función y cómo se comporta. Las capturas proceden de la instancia gestionada en funcionamiento (con la interfaz en chino simplificado; el producto permite cambiar la lengua de la interfaz). La interfaz puede ajustarse con la evolución de las versiones; el alcance real de disponibilidad de cada función es el que tenga activado la instancia. Los compromisos legales figuran en los [Términos del servicio](/es/terms-of-service/) y en la [Política de privacidad](/es/privacy-policy/).
+Esta página orienta por la disposición de la interfaz y la ubicación de las funciones del reproductor web de Sonic, y explica dónde está cada función y cómo se comporta. Las capturas ilustran la interfaz en chino simplificado, cuya lengua puede cambiarse; no demuestran la versión actualmente desplegada. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. La interfaz puede ajustarse con la evolución de las versiones; el alcance real de disponibilidad de cada función es el que tenga activado la instancia. Los compromisos legales figuran en los [Términos del servicio](/es/terms-of-service/) y en la [Política de privacidad](/es/privacy-policy/).
 
 ![Página de inicio del reproductor de Sonic: barra de navegación izquierda con tres zonas (Explorar, Mi música, Sistema); la zona principal muestra el carrusel de recomendaciones, la recomendación inteligente y el radar musical, y las listas recomendadas; barra de reproducción mini en la parte inferior](/images/sonic/ui/ui-home.png)
 
@@ -23,7 +23,7 @@ La página de inicio agrega tres zonas de contenido:
 
 *Figura: radar musical y de estilos tras una búsqueda. Los resultados del radar se alinean con el estilo de las tarjetas de «sencillos populares»; el motivo de la recomendación y las etiquetas de señales de preferencia se presentan de forma transparente.*
 
-El orden de las recomendaciones solo afecta a la secuencia de reproducción que usted ve; puede desactivar la personalización en los ajustes (véase la sección 9); desactivada, las recomendaciones pasan a modo puramente público.
+Las recomendaciones constituyen elaboración de perfiles que afecta principalmente al orden del contenido. La personalización y Auto DJ están activados por defecto en el código candidato, sin prueba de consentimiento afirmativo; iniciar sesión no equivale a consentir. Desactivar la personalización no bloquea las estadísticas de búsqueda independientes ni todas las vías del radar. Auto DJ tiene un interruptor separado y aún puede enviar semillas y exclusiones para llenar la cola; el radar aún puede enviar una carga de preferencias aunque el servidor rechace conservarla debido a la marca de desactivación. El envío y la conservación son tratamientos distintos.
 
 ### 1.1 La barra lateral: modo plegado y acceso a la cuenta
 
@@ -51,7 +51,7 @@ La «lista de tendencias del sitio» de la página de inicio y la página de lis
 
 *Figura: biblioteca de artistas. Filtra los artistas por tres dimensiones: tipo, región e inicial; las tarjetas muestran el avatar, el nombre y el número de álbumes. Al entrar en la página del artista puede explorar sus canciones populares y su lista de álbumes; la página del álbum detalla además sus pistas.*
 
-Las páginas de detalle de artistas, álbumes y canciones comparten un proxy de portadas y un análisis de temperatura de color uniformes (el color dominante de la portada tiñe el degradado de la página); todos los datos de las listas se obtienen de las interfaces abiertas oficiales de origen y se presentan tras pasar por la caché y la desduplicación.
+Las páginas de detalle incluyen funciones de proxy y análisis de color de portadas; no significa que todas las imágenes pasen por el proxy. Imágenes, MV, avatares y Google Fonts pueden contactar directamente con terceros y transmitirles la IP; una vía de avatar DiceBear utiliza el correo en texto claro como `seed` y debe corregirse. Las interfaces de origen proporcionan los datos de las listas, sin que su accesibilidad pruebe autorización sobre los contenidos.
 
 ## 5. Controles de reproducción (barra inferior)
 
@@ -64,7 +64,7 @@ La barra de reproducción inferior está presente en todas las páginas y ofrece
 1. Menú de calidad: enumera los niveles realmente disponibles de la fuente actual (como SQ sin pérdida, HQ alta calidad y estándar); la insignia refleja fielmente la calidad del flujo actual, sin sobredeclaración;
 2. Línea de vista previa de la letra: muestra la frase en curso de la letra palabra por palabra;
 3. Modo de reproducción: conmutación entre lista en bucle, repetición de una sola pista, aleatorio y demás modos;
-4. Descarga: guarda la pista actual en el navegador (IndexedDB); véase la sección 5.
+4. Descarga: guarda la pista actual en el navegador (IndexedDB); véase la sección 3 de la [Gestión de la biblioteca musical](/es/library/).
 
 ## 6. Panel del reproductor y letras palabra por palabra
 
@@ -90,7 +90,7 @@ La zona «Mi música» contiene cuatro apartados:
 | Lista de descargas | Pistas descargadas para uso sin conexión (con metadatos de calidad) | IndexedDB del navegador (`downloaded_music`) |
 | Música local | Archivos de audio locales importados manualmente (admite arrastrar y soltar hacia el navegador) | IndexedDB del navegador (`local_music`) |
 
-Todo ello se guarda únicamente en su navegador y no se sube al servidor; se elimina al borrar los datos del navegador o al usar «Borrar todos los datos locales». Los archivos descargados o importados localmente son solo para su escucha personal y no pueden redistribuirse (véase la [Política de uso aceptable](/es/acceptable-use/)).
+La tabla indica ubicaciones locales, sin garantizar que no haya transmisión. No se ha encontrado una vía de subida del cuerpo del audio local, pero pueden transmitirse portadas incrustadas, títulos, artistas, álbumes, identificadores de pistas, señales de favoritos y contexto de recomendación. La limpieza del navegador elimina la copia local, no todos los datos remotos; no se garantiza una copia de seguridad general en la nube. Importar o descargar no concede derechos adicionales (véase la [Política de uso aceptable](/es/acceptable-use/)).
 
 ## 8. Ajustes
 
@@ -98,20 +98,20 @@ Todo ello se guarda únicamente en su navegador y no se sube al servidor; se eli
 
 *Figura: la página de ajustes organiza todas las preferencias en tarjetas. Cada tarjeta corresponde a un grupo de ajustes: modo de tema (claro, oscuro, según el sistema), lengua de la interfaz (chino, English, 日本語), tipo de fondo, preferencia de calidad de audio, visualización de la letra en el reproductor inferior, modos de visualización de audio, entre otros.*
 
-Los ajustes surten efecto de inmediato y se guardan en el almacenamiento local del navegador (claves `settings`, `global`, entre otras); no se vinculan a la cuenta ni se suben al servidor.
+Los ajustes de interfaz se guardan principalmente en el almacenamiento local (`settings`, `global`, entre otros). Esa ubicación no permite afirmar que no se transmita contexto; `auth` también conserva el correo y el avatar de la cuenta en localStorage.
 
 ## 9. Privacidad y control de datos
 
 ![Bloque de privacidad y datos locales de la página de ajustes de Sonic: explicación del almacenamiento local del navegador y de IndexedDB, conmutadores de búsqueda inteligente y recomendación personalizada, conmutador de radio continua automática (Auto DJ) y botón de restablecimiento del perfil de recomendación y del registro de no me gusta](/images/sonic/ui/ui-privacy.png)
 
-*Figura: bloque «Privacidad y datos locales» de la página de ajustes. El bloque explica que «los siguientes datos se guardan solo en tu navegador y no se suben al servidor»; el conmutador de «búsqueda inteligente y recomendación personalizada» indica que, al desactivarlo, se pasa de inmediato a modo puramente público y deja de registrar cualquier evento de comportamiento; el botón de «restablecer el perfil de recomendación y el registro de no me gusta» borra de inmediato los datos de comportamiento del servidor.*
+*Figura: bloque «Privacidad y datos locales». El texto de la captura que afirma almacenamiento exclusivamente local no describe todos los flujos: pueden salir metadatos y contexto del navegador. Los controles de restablecimiento no prueban una supresión remota completa, aunque aparezca un mensaje de éxito.*
 
-Este bloque materializa en la interfaz los derechos de autoservicio descritos en la sección 9 de la [Política de privacidad](/es/privacy-policy/):
+Este bloque ofrece controles parciales; no sustituye las solicitudes de derechos de la sección 9 de la [Política de privacidad](/es/privacy-policy/):
 
-1. Conmutador de búsqueda inteligente y recomendación personalizada: al desactivarlo, los eventos dejan de recogerse y las recomendaciones pasan a modo puramente público;
-2. Conmutador de radio continua automática (Auto DJ): controla la continuación automática al terminar la lista de reproducción;
-3. Restablecer el perfil de recomendación y el registro de no me gusta: destruye de inmediato en el servidor todos los eventos de comportamiento asociados a usted (`DELETE /api/sonic/events`);
-4. Borrar todos los datos locales: tras un cuadro de confirmación, borra todo el contenido del almacenamiento local del navegador y de IndexedDB, y restablece a la vez el perfil en el servidor.
+1. Conmutador de personalización: controla los eventos correspondientes; las búsquedas originales y su reutilización en sugerencias públicas siguen una vía distinta. El modo de incógnito no bloquea las peticiones;
+2. Conmutador Auto DJ: controla la continuación al terminar la lista; su activación predeterminada no constituye consentimiento para los perfiles;
+3. Restablecimiento del perfil (`DELETE /api/sonic/events`): elimina parte de los eventos y respuestas de la identidad actual; puede omitir identificadores anónimos antiguos, radar, agregados, servicios externos y copias de seguridad, con fallos no mostrados;
+4. Borrado de datos locales: intenta limpiar los almacenamientos y restablecer parcialmente el perfil remoto, sin eliminar la cookie HttpOnly ni cerrar sesión. Recargar tras borrar los ajustes puede reactivar la personalización por defecto: compruebe su elección. El resultado local no prueba el éxito remoto; para una supresión completa, contacte con `privacy@epocanvas.com`.
 
 ## 10. Móvil
 

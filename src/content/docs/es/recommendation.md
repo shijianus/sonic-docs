@@ -3,9 +3,9 @@ title: Descripción del algoritmo de recomendación
 description: "Algoritmo de recomendación de Sonic: señales y ponderaciones de comportamiento, modelo de popularidad, intención de sesión, reordenación MMR, Auto DJ y controles de privacidad asociados."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página describe en detalle el motor de recomendación de Sonic: qué señales se incorporan, cómo se ponderan, cómo se ordenan los resultados y qué controles tiene usted. Todas las reglas son públicas en el código fuente; las bases jurídicas y los límites de la recogida figuran en las secciones 4.2 y 5 de la [Política de privacidad](/es/privacy-policy/).
+Esta página describe señales, ponderaciones, ordenación y controles del motor de recomendación. La personalización y Auto DJ están activados por defecto en el código candidato, sin prueba de consentimiento afirmativo; ni iniciar sesión ni aceptar las condiciones equivale a consentir los perfiles opcionales. Los identificadores hash o `anon_` son seudónimos, no necesariamente anónimos. Las bases y los límites figuran en las secciones 4.2 y 5 de la [Política de privacidad](/es/privacy-policy/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
 ## 1. Señales y ponderaciones de comportamiento
 
@@ -16,7 +16,7 @@ Esta página describe en detalle el motor de recomendación de Sonic: qué seña
 | play_complete (finalización válida) | +2.5 | Positivo estándar |
 | play_progress (escucha por progreso) | +0.2 ～ +1.8 | Puntuación graduada según la proporción escuchada |
 | skip (salto rápido) | -0.8 | Saltar tras escuchar más de la mitad computa +0.25 |
-| dislike (rechazo explícito) | -5.0 | Filtrado estricto y lista de bloqueo |
+| dislike (rechazo explícito) | -5.0 | Filtra las recomendaciones coincidentes solo dentro del alcance de la identidad y las funciones disponibles; no promete un bloqueo permanente y universal |
 
 **Depuración de ruido**: los saltos causados por cortes de red (network_stall), fallos de decodificación (playback_error), recortes de vista previa (trial_end), flujos no disponibles (stream_unavailable), tiempos de espera de búfer agotados (buffer_timeout) o fallos de conmutación automática (auto_switch_error), seis clases de saltos no imputables al usuario, tienen ponderación cero y no se almacenan.
 
@@ -26,25 +26,25 @@ La lista de tendencias del sitio pondera cinco factores: reproducciones válidas
 
 ## 3. Intención de sesión y preferencias a largo plazo
 
-La intención de búsqueda de la sesión (palabras clave consecutivas, clics en artistas y géneros) participa en el orden inmediato con una ponderación alta a corto plazo y se mantiene separada por capas de las preferencias a largo plazo: solo los comportamientos de alto valor, como las finalizaciones y los favoritos, se depositan en el perfil a largo plazo; una búsqueda ocasional no modifica de inmediato su perfil a largo plazo.
+La intención de búsqueda de la sesión participa en el orden inmediato, pero eso no significa que las búsquedas nunca se conserven: las consultas se cuentan por separado y pueden aparecer en sugerencias públicas incluso después de desactivar la personalización. Las solicitudes de recomendación también pueden transmitir favoritos locales, artistas recientes y contexto de búsqueda; los identificadores seudónimos siguen siendo datos potencialmente vinculables.
 
 ## 4. Reordenación por diversidad y Auto DJ
 
 1. Similitud: combina el grafo de relaciones entre artistas, la similitud de conjuntos de etiquetas de género e idioma y el coseno de características de audio;
 2. Reordenación MMR: la correlación marginal equilibra la «precisión» y la «novedad» para evitar quedar atrapado en la burbuja informativa de un único artista o estilo;
-3. Auto DJ: cuando la lista de reproducción termina de forma natural, añade automáticamente pistas reproducibles que continúan según el estilo de la pista actual; puede desactivarlo en los ajustes.
+3. Auto DJ: cuando la lista de reproducción termina de forma natural, añade automáticamente pistas reproducibles que continúan según el estilo de la pista actual; puede desactivarlo en los ajustes. Su interruptor es independiente de la personalización: cuando esta se desactiva, todavía pueden enviarse semillas y pistas excluidas.
 
 ## 5. Radar musical y de estilos
 
-Después de completar una búsqueda, el radar de la página de inicio muestra de inmediato los resultados coincidentes según su intención de búsqueda y sus señales de preferencia, con un estilo alineado con el de los sencillos populares; el radar solo afecta a la secuencia de recomendaciones que usted ve y no modifica ningún dato almacenado.
+Después de una búsqueda, el radar muestra resultados según la intención de búsqueda y las preferencias. Incluye datos locales, perfiles, respuestas sobre entidades y lógica de sincronización; es inexacto afirmar que no modifica datos. Después de desactivar la personalización, todavía puede enviar una carga con pistas, portadas y señales; el servidor puede rechazar conservarla debido a la marca de desactivación. Las peticiones pueden incluir favoritos y contexto de búsqueda, incluidos metadatos de música local.
 
 ## 6. Sus controles
 
 | Control | Ubicación | Efecto |
 | --- | --- | --- |
-| Conmutador general de personalización | Ajustes → Privacidad y datos locales | Al desactivarlo dejan de recogerse eventos y las recomendaciones pasan a modo puramente público |
-| Conmutador de Auto DJ | Ajustes → Privacidad y datos locales | Controla la continuación automática al terminar una lista |
-| Restablecer el perfil de recomendación y el registro de no me gusta | Ajustes → Privacidad y datos locales | Destruye de inmediato en el servidor todos los eventos de comportamiento |
-| Rechazar una pista | Botón de rechazo (dislike) del reproductor | Filtrado estricto; la pista deja de aparecer en recomendaciones |
+| Conmutador general de personalización | Ajustes → Privacidad y datos locales | Controla los eventos correspondientes, no las búsquedas originales recogidas por separado que pueden aparecer en sugerencias públicas; el modo de incógnito no bloquea los envíos |
+| Conmutador de Auto DJ | Ajustes → Privacidad y datos locales | Controla la continuación; estar activado por defecto no prueba consentimiento para los perfiles |
+| Restablecer el perfil de recomendación y el registro de no me gusta | Ajustes → Privacidad y datos locales | Borrado parcial de la identidad actual; puede omitir identificadores anónimos antiguos, radar, agregados, servicios externos y copias de seguridad, y ocultar fallos |
+| Rechazar una pista | Botón de rechazo (dislike) del reproductor | Filtra las recomendaciones coincidentes solo dentro del alcance de la identidad y las funciones disponibles; no promete un bloqueo permanente y universal |
 
-Los hechos técnicos del algoritmo se actualizan con la evolución del código fuente; si este documento y el código fuente discrepan, prevalece el código y se corrige el documento (el procedimiento de verificación figura en la sección 4 de la [Guía de desarrollo](/es/development/)).
+Los comportamientos técnicos deben contrastarse con el código y el despliegue; una contradicción exige corregirse, sin que el código autorice tratamientos ilícitos o excluya derechos. Los 90 días predeterminados de ciertos eventos no cubren todo el perfil. Para una supresión completa, contacte con `privacy@epocanvas.com`; el método de comprobación figura en la [Guía de desarrollo](/es/development/).

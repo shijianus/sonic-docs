@@ -1,68 +1,62 @@
 ---
 title: Glosario
-description: "Definiciones de los términos de los documentos legales de Sonic: términos jurídicos (vocabulario del RGPD) y términos técnicos, usados de forma uniforme en todo el sitio."
+description: Términos de protección de datos, roles, consentimiento, tecnología y tratamiento de datos locales empleados en los documentos legales de Sonic.
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página define los términos jurídicos y los términos técnicos empleados en los documentos legales de este sitio. Cada término tiene el mismo significado en todos los documentos; los definidos se interpretan según su definición y los no definidos, según su acepción usual. Los términos jurídicos se basan en las definiciones del Reglamento General de Protección de Datos (RGPD) de la Unión Europea.
+Esta página explica los términos principales de la [Política de privacidad](/es/privacy-policy/), [Tratamiento de datos y seguridad](/es/data-security/), [Terceros y transferencias](/es/sub-processors/) y la [Política de uso aceptable](/es/acceptable-use/). Las definiciones jurídicas toman el RGPD como referencia. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. No es una certificación de cumplimiento operativo. El chino simplificado es la referencia de mantenimiento en la raíz; las otras nueve versiones lingüísticas son traducciones. La prioridad lingüística no reduce las normas imperativas ni el derecho de los consumidores a condiciones claras y comprensibles.
 
-![Mapa de términos de Sonic: dos familias de definiciones, la de los términos jurídicos (vocabulario del RGPD) y la de los términos técnicos, usadas de forma uniforme en todo el sitio, con la versión en chino simplificado como base interpretativa](/images/sonic/key-terms-map.svg)
+![Mapa de términos de Sonic: roles jurídicos, estados de los datos, operaciones de tratamiento y componentes técnicos](/images/sonic/key-terms-map.svg)
 
-*Figura: la estructura de las dos familias de términos del sitio. La familia jurídica se ancla en las definiciones del artículo 4 del RGPD; la familia técnica se rige por la implementación del código fuente y se contrasta con él en cada versión.*
+*Figura: los términos se agrupan por roles jurídicos, estados de los datos e implementación técnica; el esquema no amplía la condición jurídica de ninguna parte.*
 
 ## 1. Términos jurídicos
 
 | Término | Definición |
 | --- | --- |
-| Datos personales | Toda información sobre una persona física identificada o identificable (el artículo 4, apartado 1, del RGPD); en Sonic, por ejemplo, el identificador de inicio de sesión y los registros de eventos de comportamiento |
-| Tratamiento | Toda operación u operaciones realizadas sobre datos personales, incluidas la recogida, el registro, el almacenamiento, la utilización, la transmisión y la supresión (el artículo 4, apartado 2, del RGPD) |
-| Limitación del tratamiento | Situación en la que el tratamiento se suspende temporalmente en supuestos concretos, conservándose los datos (el artículo 4, apartado 3, y el artículo 18 del RGPD) |
-| Elaboración de perfiles | Toda forma de tratamiento automatizado que evalúa características personales y decide o analiza en consecuencia (el artículo 4, apartado 4, del RGPD); el servicio solo lo realiza en el alcance necesario para la función de recomendación, y usted puede borrarlo con un clic |
-| Seudonimización | Tratamiento de datos personales de modo que ya no puedan atribuirse a una persona interesada sin utilizar información adicional (el artículo 4, apartado 5, del RGPD); Sonic lo implementa con hashes SHA-256 truncados y salados |
-| Responsable del tratamiento | La persona física o jurídica que determina las finalidades y los medios del tratamiento (el artículo 4, apartado 7, del RGPD); en las instancias gestionadas, el equipo de operaciones; en las autoalojadas, quien las despliega |
-| Encargado del tratamiento | La persona física o jurídica que trata datos personales por cuenta del responsable (el artículo 4, apartado 8, del RGPD), por ejemplo Cloudflare |
-| Destinatario | La persona física o jurídica a la que se comunican datos personales (el artículo 4, apartado 9, del RGPD), sea o no tercero |
-| Tercero | Sujeto distinto de la persona interesada, del responsable, del encargado y de las personas autorizadas para tratar (el artículo 4, apartado 10, del RGPD) |
-| Consentimiento | Manifestación de voluntad libre, específica, informada e inequívoca de la persona interesada (el artículo 4, apartado 11, y el artículo 7 del RGPD); puede retirarse en cualquier momento con una facilidad no inferior a la con que se otorgó |
-| Violación de datos | Violación de la seguridad que provoque la destrucción, pérdida o alteración accidental o ilícita de datos personales, o la divulgación o el acceso no autorizados a ellos (el artículo 4, apartado 12, del RGPD) |
-| Autoridad de control | Autoridad pública que supervisa el cumplimiento de los deberes de protección de datos (el artículo 4, apartado 19, del RGPD); los usuarios de la Unión Europea pueden reclamar ante la autoridad de control de su lugar (el artículo 77 del RGPD) |
-| Transferencia internacional | Transmisión de datos personales a un tercer país o a una organización internacional fuera de la Unión Europea y el Espacio Económico Europeo (el Capítulo V del RGPD) |
-| Categorías especiales de datos | Datos personales que revelen el origen racial o étnico, las opiniones políticas, la salud, la vida sexual u otros atributos sensibles (el artículo 9 del RGPD); el servicio no los recoge |
-| Persona interesada | La persona física identificada o identificable por los datos personales (el artículo 4, apartado 25, del RGPD), es decir, usted |
+| Datos personales | Toda información sobre una persona física identificada o identificable, según el artículo 4, apartado 1, del RGPD. IP, cookies, búsquedas, URL de avatar, nombres o textos de comentarios e identificadores seudónimos vinculables pueden ser datos personales. |
+| Tratamiento | Cualquier operación sobre datos personales, incluida la recogida, registro, almacenamiento, consulta, uso, transmisión, publicación, limitación o supresión, según el artículo 4, apartado 2, del RGPD. |
+| Limitación del tratamiento | Suspensión del uso de los datos en determinadas circunstancias, manteniéndolos conservados, según el artículo 18 del RGPD. |
+| Elaboración de perfiles | Análisis o evaluación automatizada de características o conductas personales. Reproducciones, búsquedas, saltos, favoritos, rechazos y contexto pueden utilizarse para recomendar; los perfiles no equivalen necesariamente a decisiones con efectos jurídicos o de importancia similar. |
+| Seudonimización | Tratamiento que impide atribuir directamente los datos a una persona sin información adicional, según el artículo 4, apartado 5, del RGPD. Los datos seudonimizados aún pueden combinarse para identificar y no equivalen a datos anónimos. |
+| Responsable del tratamiento | Persona física o jurídica que determina sola o conjuntamente los fines y medios del tratamiento, según el artículo 4, apartado 7, del RGPD. En una instancia alojada se atiende a quien los determine realmente; autor del código, colaboradores y operador no tienen por qué ser el mismo sujeto. |
+| Encargado del tratamiento | Persona física o jurídica que trata datos personales por cuenta del responsable, según el artículo 4, apartado 8, del RGPD. El rol depende de los fines, instrucciones y disposiciones reales; Cloudflare, Epomail u otros proveedores no son automáticamente encargados por su nombre. |
+| Destinatario | Persona física o jurídica a la que se comunican datos personales, según el artículo 4, apartado 9, del RGPD. También puede ser destinatario un servicio que reciba la IP mediante conexión directa del navegador. |
+| Tercero | Sujeto distinto de la persona interesada, el responsable, el encargado o las personas autorizadas por el responsable para tratar datos, según el artículo 4, apartado 10, del RGPD. |
+| Consentimiento | Manifestación afirmativa libre, específica, informada e inequívoca, según el artículo 4, apartado 11, y el artículo 7 del RGPD, retirable en cualquier momento con una facilidad no inferior a la de otorgarlo. Iniciar sesión, seguir utilizando o tener activado por defecto no equivale a consentir perfiles opcionales; carecer de un registro de consentimiento no permite negarse a detener un tratamiento sin base. |
+| Violación de datos | Incidente de seguridad que ocasiona destrucción, pérdida, alteración, comunicación no autorizada o acceso no autorizado a datos personales, de forma accidental o ilícita, según el artículo 4, apartado 12, del RGPD. |
+| Autoridad de control competente | Autoridad pública que supervisa legalmente las obligaciones de protección de datos. Cuando se aplica el RGPD, la persona interesada puede reclamar ante la autoridad competente conforme al artículo 77 del RGPD. |
+| Transferencia internacional | Transmisión de datos personales a terceros países u organizaciones internacionales fuera de la Unión Europea o del Espacio Económico Europeo; debe evaluarse según los lugares, sujetos y garantías reales, no por el nombre del servidor. |
+| Categorías especiales de datos | Datos que revelan origen racial o étnico, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos, datos biométricos utilizados para identificar de forma unívoca a una persona, salud, vida sexual u orientación sexual, según el artículo 9 del RGPD. Las preferencias musicales y búsquedas también pueden revelar indirectamente características sensibles y no pueden tratarse globalmente como carentes de riesgo. |
+| Persona interesada | Persona física identificada o identificable cuyos datos se tratan; «usted» designa aquí a la persona física correspondiente que solicita algo o utiliza el servicio. |
 
-## 2. Términos técnicos
+## 2. Términos técnicos y del producto
 
 | Término | Definición |
 | --- | --- |
-| Plano de control | Pasarela en el borde que corre en Cloudflare Pages Functions; se encarga del enrutamiento, la limitación de peticiones, la caché y el disyuntor |
-| Plano de datos | Pila de Docker Compose en un nodo Linux propio del operador; se encarga del análisis de protocolos, el cálculo de recomendaciones y el almacenamiento |
-| sonic-engine | Contenedor principal del plano de datos (Node.js 22); exige la verificación de la clave entre servicios X-Sonic-Engine-Key y, en el host, solo se vincula a la dirección de loopback |
-| ncm-api sidecar | Contenedor auxiliar del protocolo de NetEase, cerrado en la red interna (`ncm-api:3000`), alcanzable únicamente por la red interna de compose |
-| OAuth 2.0 + PKCE | Flujo de inicio de sesión de modo de código de autorización con prueba de intercambio de clave (S256); el servicio usa Epomail como proveedor de identidad |
-| Clave de API | Clave firmada versionada de formato `sonic_live_v2.<header>.<payload>.<signature>` con HMAC-SHA256; la carga contiene `sub`, `iat`, `exp`, `jti`, `kid`, `role` y `uid`; viaja únicamente en cabeceras de petición |
-| jti | Identificador de clave contenido en la carga de la clave de API; se usa para la lista de revocación y la invalidación inmediata al cerrar sesión |
-| fail-closed | Política de seguridad que deniega el servicio cuando la validación falla; Sonic la aplica a las claves sin firma, a las de versiones anteriores y a los fallos de almacenamiento en producción |
-| Defensa SSRF | Intercepción de las peticiones salientes a direcciones de loopback, rangos privados RFC 1918, puentes de Docker y direcciones de metadatos en la nube, con verificación en pila dual IPv4/IPv6 y nueva verificación en cada redirección |
-| Lista blanca de dominios | Los proxies de audio, portadas y reenvío solo admiten los destinos HTTPS dentro de la lista controlada de dominios de CDN musicales (`SONIC_ALLOWED_MUSIC_DOMAINS`) |
-| SQLite WAL | Almacenamiento persistente de los eventos de comportamiento y las ponderaciones de entidades del plano de datos, en modo Write-Ahead Logging, en el volumen con nombre `sonic-data` |
-| Disyuntor | Máquina de estados de tres estados (CLOSED/OPEN/HALF_OPEN); entra en corte con 3 fallos consecutivos o al superar el presupuesto de 4,5 segundos, y tras 30 segundos de enfriamiento se recupera por sonda |
-| Modo degradado de borde | Estado de contingencia en el que, con el plano de datos fuera de línea, la capa de borde se conecta directamente a las interfaces públicas de letras y búsqueda; la cabecera de respuesta indica `X-Sonic-Degraded: 1` y la interfaz muestra el aviso de degradación |
-| Caché de borde | Caché de borde con clave `sonic:*`, frescura de 8 minutos y, tras su caducidad, paso a un estado de conservación prorrogada para contingencias |
-| Range 206 | Mecanismo HTTP de carga por segmentos; las transmisiones de audio responden por defecto con 206 Partial Content a través del proxy de borde |
-| Modo directo | Redirección 302 de `?mode=redirect`, por la que su navegador establece la conexión directamente con el CDN oficial; el reproductor web no lo usa |
-| YRC/QRC/KRC | Formatos de letras palabra por palabra de NetEase, QQ y Kugou; el servicio analiza de forma nativa su encapsulación cifrada y comprimida (XOR + Deflate) |
-| TTML | Formato de lenguaje de marcado de la línea de tiempo de las letras palabra por palabra de AMLL |
-| LRCLIB | Biblioteca global abierta de letras sincronizadas, usada como complemento cuando faltan las letras locales |
-| Detección de vistas previas | Sondeo de la duración y los metadatos de la entidad de audio para identificar el recorte oficial de vista previa de 30 segundos y señalarlo expresamente |
-| Completado entre fuentes | Mecanismo de emparejamiento entre plataformas de la pista completa desencadenado por las pistas en vista previa; activado por defecto, e indica la fuente sustituta cuando el emparejamiento tiene éxito |
-| Eventos de comportamiento | Registros de señales de recomendación como la reproducción, la finalización, el salto, el favorito y el rechazo; máximo 50 por lote y 64 KB; los eventos de ruido (cortes, saltos por recorte de vista previa) no se almacenan |
-| Borrado del perfil con un solo clic | `DELETE /api/sonic/events` destruye de inmediato todos los rasgos y registros de comportamiento de su perfil en el motor de recomendación |
-| Resumen del perfil de recomendación | Resumen del perfil devuelto por `GET /api/sonic/events`: número total de eventos, recuentos de favoritos y rechazos, artistas más escuchados, tendencias de género, términos de búsqueda recientes y forma de almacenamiento |
-| X-Sonic-Context | Contexto local del cliente que acompaña a la petición de recomendación (favoritos, artistas recientes y términos de búsqueda recientes, con límite de elementos); solo se usa en memoria, sin persistencia |
-| Filtrado de ruido | Mecanismo por el que el servidor anula la ponderación y no almacena los saltos de las 6 clases no imputables al usuario (network_stall/playback_error/trial_end/stream_unavailable/buffer_timeout/auto_switch_error) |
+| Instancia alojada | Despliegue de Sonic al que el operador del proyecto da acceso efectivamente; el ámbito, responsable, configuración y contactos figuran en la [Política de privacidad](/es/privacy-policy/). |
+| Despliegue independiente | Instancia separada operada por otras personas. El desplegador evalúa de forma independiente la identidad del responsable, leyes, configuración e información; proporcionar código MIT no convierte al proyecto en su operador. |
+| Plano de control | Componentes que gestionan páginas, rutas, cachés, límites de peticiones o API de borde; pueden acceder a IP, cookies, cabeceras de autenticación, User-Agent, rutas y contexto. |
+| Plano de datos | Componentes que ejecutan el motor, recomendaciones, base de datos y servicios relacionados. La auditoría encontró que la IP sin transformar puede remitirse al motor junto con cookies, cabeceras de autenticación o contexto; no puede describirse como receptor exclusivo de datos seudónimos. |
+| Epomail OAuth | Flujo de inicio de sesión OAuth 2.0 mediante Epomail, con PKCE; puede devolver identificador de usuario, correo y marca de verificación, apodo, URL de avatar y rol. |
+| API Key / `jti` | Credencial de API firmada y con plazo de validez, y su identificador único. Verificar la firma no cifra los datos; deben evaluarse por separado las cookies, las copias de credenciales y el almacenamiento de revocación. |
+| fail-closed | Rechazar una petición si falla la validación o un almacenamiento necesario, en lugar de degradar silenciosamente; debe comprobarse su aplicación en la configuración real. |
+| Defensa SSRF y lista de dominios permitidos | Comprobaciones de salida sobre determinadas direcciones internas, loopback, metadatos de nube, redirecciones o dominios autorizados; no cubren las conexiones directas del navegador ni todos los enlaces HTTP de origen. |
+| SQLite / WAL | Base SQLite que puede proporcionar persistencia al plano de datos y su modo de registro previo de escritura; no implica que perfiles, registros, copias de seguridad o radar estén todos en la misma base ni se borren en el mismo plazo. |
+| Disyuntor | Mecanismo que cambia temporalmente la ruta de peticiones después de fallos o tiempos de espera consecutivos; umbrales, degradación y activación dependen de la versión y configuración reales. |
+| Eventos de comportamiento | Señales que pueden servir para recomendar: reproducción, progreso, saltos, favoritos, rechazos, búsquedas o respuestas sobre entidades. Los límites por lote, filtrado de ruido y conservación dependen de la versión y configuración. |
+| Sugerencias públicas de búsqueda | Vía que presenta a otros visitantes términos de búsquedas históricas o estadísticas. La reutilización actual de términos originales plantea un riesgo y no puede calificarse simplemente de agregación anónima. |
+| Radar | Funciones y estados de exploración, recomendación o sincronización basados en datos o conductas del usuario. No se ha confirmado la ruta de persistencia del motor; existen intentos de sincronización o almacenamiento aislado, sin poder garantizar presencia o ausencia de registros duraderos en bases de datos. |
+| Música local | Archivos o Blobs en el dispositivo del usuario. No se ha encontrado una vía de subida del Blob de audio local al servidor; las consultas de letras y el contexto de recomendación aún pueden transmitir título, artista, álbum, duración o identificador. |
+| Comentarios locales | Borradores o contenidos escritos actualmente en localStorage; no equivale a publicarlos en un servidor de comentarios. Leer comentarios puede obtener nombres, avatares y textos de otras personas e incorporarlos a una caché pública. |
+| Conexión directa / proxy | El proxy hace la petición desde el servidor; la conexión directa la realiza el navegador hacia el CDN. El destino ve la IP y los datos de conexión del navegador, y las peticiones de flujo pueden usar su User-Agent, no necesariamente un valor fijo. |
+| Versión y configuración | Los valores predeterminados del código, `.env`, Compose y producción pueden diferir. GDStudio está activado por defecto en el código si falta el ajuste, pero el entorno o Compose pueden desactivarlo; debe verificarse la configuración realmente ejecutada. |
 
-## 3. Base interpretativa
+## 3. Base de interpretación
 
-1. La interpretación de los términos jurídicos toma como referencia el texto oficial del RGPD; la de los términos técnicos se rige por la implementación del código fuente; cuando el código y este documento discrepen, debe corregirse el documento y presentarse un Issue en el repositorio.
-2. Los documentos legales de este sitio tienen como versión oficial la versión en chino simplificado; en las versiones en las demás lenguas, incluida la presente versión en español, la correspondencia de los términos se rige por las equivalencias de esta página.
+1. Los términos jurídicos solo se utilizan si se cumplen sus requisitos reales; «proyecto personal», «gratuito» y «código abierto» no son sinónimos de responsable, encargado, consentimiento, anonimización o cumplimiento de seguridad.
+2. Los términos técnicos deben contrastarse conjuntamente con el código, el entorno real y las rutas de petición de los proveedores. Cuando los objetivos del README no coincidan con la documentación, no deben convertirse en garantías. Si código, configuración y páginas discrepan, deben cesar las afirmaciones excesivas y corregirse las páginas afectadas.
+3. El chino simplificado es la referencia de mantenimiento de los documentos legales; las otras nueve lenguas son traducciones de referencia. Si difieren de la versión raíz, deben sincronizarse cuanto antes, sin afectar a las normas imperativas ni al derecho del consumidor a claridad y comprensión.
+4. En la RC `a75f5cb`, los archivos `LICENSE` de la raíz y del reproductor utilizan MIT; en la antigua `main@ce443c8` solo es verificable la licencia MIT del reproductor y no se encontró `LICENSE` en la raíz. Estas definiciones no limitan la copia, modificación, distribución ni uso comercial efectivamente autorizados por la licencia aplicable a cada versión y componente. La [Política de uso aceptable](/es/acceptable-use/) de la instancia alojada solo regula sus recursos efectivamente alojados y las conductas relacionadas con el servicio.
+5. Comprobación de la fuente el 2026-11-02: RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), distinta de la antigua `main@ce443c8` (2026-10-27 UTC); ninguna demuestra la versión en línea.

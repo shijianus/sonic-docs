@@ -3,9 +3,9 @@ title: Guía de desarrollo
 description: "Guía de desarrollo de Sonic: estructura del repositorio, comandos de compilación, suite de pruebas, verificación de la coherencia documental y participación en las contribuciones."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página se dirige a quienes participen en el desarrollo y en el desarrollo derivado, y describe la estructura del repositorio, los comandos de compilación, la suite de pruebas y la verificación de la coherencia documental. La licencia y los límites jurídicos constan en [Código abierto y autoalojamiento](/es/open-source/).
+Esta página se dirige a quienes participen en el desarrollo y en el desarrollo derivado, y describe la estructura del repositorio, los comandos de compilación, la suite de pruebas y la verificación de la coherencia documental. La licencia y los límites jurídicos constan en [Código abierto y autoalojamiento](/es/open-source/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
 ## 1. Estructura del repositorio
 
@@ -22,11 +22,11 @@ Esta página se dirige a quienes participen en el desarrollo y en el desarrollo 
 ## 2. Compilación y ejecución local
 
 ```bash
-npm ci                              # 根依赖
+npm ci                              # dependencias raíz
 pnpm --dir player install --frozen-lockfile
-npm run build                       # 播放器构建 + 复制至 dist
-npx wrangler pages dev dist         # 本地边缘闸道（无数据面时自动降级模式）
-npm run build:engine && npm run start:engine   # 本地数据面引擎
+npm run build                       # compilación del reproductor + copia en dist
+npx wrangler pages dev dist         # pasarela de borde local (modo de degradación automático sin plano de datos)
+npm run build:engine && npm run start:engine   # motor local del plano de datos
 ```
 
 ## 3. Suite de pruebas
@@ -46,13 +46,13 @@ Ejecutada antes de cada publicación con `npm test`; cubre:
 Este sitio (sonicdocs) evoluciona con cada versión y se contrasta con el código fuente; la cadena de herramientas de verificación:
 
 ```bash
-pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校验
+pnpm validate    # compilación + comprobación de enlaces de ancla internos rotos + verificación de la simetría estructural multilingüe
 ```
 
 1. `scripts/validate-anchors.cjs`: cero enlaces rotos en las anclas internas y las referencias a imágenes de todo el sitio;
 2. `scripts/check-structure.py`: simetría estructural 1:1 de títulos, tablas, imágenes y cuadros de aviso entre las versiones lingüísticas;
 3. `doc/legal-reference.md`: lista blanca de las citas de artículos del RGPD (verificada contra EUR-Lex); los documentos no pueden citar artículos fuera de la lista blanca;
-4. Los hechos técnicos se actualizan con cada versión contrastándolos con el código fuente (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`); ante discrepancia, prevalece el código fuente y se corrige la documentación.
+4. Esta revisión comprueba el 2026-11-02 la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), distinta de la antigua `main@ce443c8` (2026-10-27 UTC), sin certificar la operación ni los contratos. Compare código, entorno, Compose y rutas reales; corrija discrepancias sin invocar «prevalece el código» para excluir derechos o responsabilidad por información errónea. Las carencias de consentimiento, borrado y privacidad siguen pendientes de corrección.
 
 ## 5. Participación en las contribuciones
 
@@ -63,4 +63,4 @@ pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校�
 
 ## 6. Contribución a la traducción de la documentación
 
-Este sitio tiene una estructura multilingüe espejo: toda modificación en una lengua debe sincronizarse con las demás (la simetría estructural 1:1 la verifican los scripts). Al añadir una lengua: registre el locale, complete toda la documentación, incorpore la lengua a la lista del script de estructura y coteje las citas de las normas legales según el formato de cita de esa lengua previsto en `doc/legal-reference.md`.
+El chino simplificado de la raíz es la referencia de mantenimiento, con nueve traducciones. Sincronice párrafos y estructura 1:1 sin reducir protecciones; las normas imperativas, la interpretación favorable al consumidor y la información comprensible prevalecen sobre la prioridad lingüística. Para una lengua nueva, registre el locale, traduzca los documentos, actualice el control estructural y respete las citas de `doc/legal-reference.md`.

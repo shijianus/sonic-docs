@@ -1,69 +1,71 @@
 ---
 title: Panorama de privacidade e termos
-description: "Panorama dos documentos legais do Sonic: identidade da plataforma, delimitação dos papéis no tratamento de dados, linha de base de proteção de nível RGPD, arquitetura documental, ordem de prevalência e pontos de contacto."
+description: Prestador, âmbito da proteção de dados, relação entre documentos e condições de implementação atuais do projeto individual de teste Sonic sem fins lucrativos.
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
-Esta página orienta por todos os documentos legais do serviço Sonic (a seguir designado «o serviço») e esclarece os papéis das partes, a arquitetura documental e a ordem de aplicação. Antes de iniciar sessão ou de utilizar o serviço, deve ler esta página, bem como a [Política de Privacidade](/pt/privacy-policy/) e os [Termos de Utilização](/pt/terms-of-service/).
+Esta página explica a relação entre os documentos do serviço de teste alojado do Sonic. O projeto é mantido por uma pessoa, é gratuito e sem fins lucrativos e destina-se à aprendizagem e a testes de interesse público; não há nível de serviço comercial nem compromisso de funcionamento perpétuo. Leia primeiro os [Termos de Utilização](/pt/terms-of-service/) e a [Política de Privacidade](/pt/privacy-policy/) para conhecer o âmbito do serviço e o tratamento dos dados.
 
-![Arquitetura dos documentos legais do Sonic: os Termos de Utilização na camada contratual, a Política de Privacidade e a Política de Utilização Aceitável na camada de políticas, e o Processamento de dados e segurança, a Lista de partilha com terceiros e transferências e as Definições de termos como documentos de suporte, tudo assente numa linha de base de proteção de dados de nível RGPD](/images/sonic/legal-architecture.svg)
+As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
 
-*Figura: arquitetura dos documentos legais deste site. Os Termos de Utilização fixam as condições contratuais; a Política de Privacidade contém a informação e os padrões de tratamento dos dados pessoais; a Política de Utilização Aceitável fixa os limites de conduta; os outros três documentos são de suporte. A linha de base de proteção de dados adota o RGPD como padrão mínimo para todos os utilizadores.*
+:::caution[Revisão documental e implantação efetiva]
+A revisão documental distingue o candidato público da versão antiga de `main`. Não foram examinados o ambiente em produção, os contratos com fornecedores nem os resultados reais da eliminação. Perfis ativos por predefinição, sugestões públicas de termos de pesquisa, pedidos de avatares com correio eletrónico, cobertura da eliminação e prazos reais de conservação continuam a exigir concretização; atualizar a política não prova que estes problemas foram corrigidos. Os tratamentos sem fundamento lícito e garantias necessárias devem ser suspensos.
+:::
 
-## 1. Identidade da plataforma
+![Relação entre os documentos do Sonic: termos de serviço, informação de privacidade, regras de utilização e informação sobre dados](/images/sonic/legal-architecture.svg)
 
-O Sonic é uma plataforma de streaming musical de código aberto que funciona com «plano de controlo na edge da Cloudflare + plano de dados com motor de protocolos local em Linux», publicando o código-fonte conforme o ficheiro `LICENSE` na raiz do repositório (MIT License). O serviço pode prestar-se nas duas formas seguintes:
+*Figura: os documentos têm finalidades diferentes; o tratamento de dados pessoais exige um fundamento de licitude que se sustente autonomamente.*
 
-1. Instância gerida: site público operado ao público pela equipa de operação (`sonic.epocanvas.tech`, site principal, e `sonic.epocanvas.com`, espelho de reserva);
-2. Instância de implantação própria: site privado que qualquer pessoa, equipa ou organização implanta por si, com base no código aberto, nos seus próprios servidores e domínios.
+## 1. Projeto e operador
 
-As duas formas partilham o mesmo código aberto; a diferença está no operador e no responsável: nas instâncias geridas, assume-a a equipa de operação; nas de implantação própria, quem as implantou.
+O repositório público de código é [shijianus/sonic](https://github.com/shijianus/sonic); no RC `a75f5cb`, a raiz e o leitor usam a licença MIT. Na versão antiga `main@ce443c8`, apenas a licença MIT do leitor foi verificada e não foi encontrado `LICENSE` na raiz; não se extrapola a licença do RC para todas as versões históricas. A finalidade não lucrativa do projeto não revoga a licença do código nem concede direitos de utilização sobre músicas, letras, capas ou MV.
 
-## 2. Delimitação dos papéis no tratamento de dados
+Estes documentos do serviço destinam-se às instâncias alojadas `sonic.epocanvas.tech` e `sonic.epocanvas.com` que efetivamente os adotem. O operador real deve indicar a sua identidade legal e contactos acessíveis; a conta de manutenção `shijianus` ou a marca EpoCanvas não substitui a informação completa sobre a identidade. O código-fonte não prova o nome legal, a localização do operador ou os países dos servidores, que aqui não se presumem.
 
-Os documentos legais do serviço adotam a divisão de papéis «responsável pelo tratamento / subcontratante», correspondente à classificação geral do Regulamento Geral sobre a Proteção de Dados (RGPD) da União Europeia.
+Outras implantações têm os seus próprios operadores e regras. Publicar código, contribuir com correções ou fornecer uma ferramenta offline não implica automaticamente responsabilidade pelos serviços e dados de todas as instâncias; quando exista também operação efetiva ou participação na decisão sobre o tratamento, a responsabilidade depende do papel real.
 
-| Cenário | Responsável pelo tratamento | Subcontratante |
+## 2. Papéis relativos aos dados
+
+| Participante | Como se aprecia o papel | Informação deste projeto |
 | --- | --- | --- |
-| Instância gerida | Equipa de operação (no que respeita a eventos comportamentais, inícios de sessão e registos de segurança) | Cloudflare, Epomail (autenticação), entre outros; lista completa na [Lista de partilha com terceiros e transferências](/pt/sub-processors/) |
-| Instância de implantação própria | Pessoa singular ou organização que implantou a instância (responsável pelo tratamento único e exclusivo) | Fornecedores de infraestrutura configurados por esse responsável pela implantação |
+| Operador da instância alojada | Quem determina efetivamente as finalidades e os meios dos dados pessoais | Responde pelo seu início de sessão, pedidos, recomendações e tratamentos relacionados |
+| Fornecedor de infraestrutura | Trata por instruções ou para finalidades próprias | O papel da Cloudflare e de outros depende do serviço e do contrato concretos |
+| Epomail e fornecedores de conteúdos e recursos | Podem ser responsáveis independentes; certos casos exigem avaliação específica | Nem todos os terceiros são designados indiscriminadamente subcontratantes |
+| Operadores de instâncias próprias e colaboradores do código | Depende de determinarem ou participarem efetivamente no tratamento | A designação de implantação ou colaboração não fixa automaticamente responsabilidade única e exclusiva |
 
-O código aberto em si não recolhe, não envia e não comunica de volta quaisquer dados de telemetria; salvo os serviços externos configurados pelo próprio operador da instância, os autores a montante não acedem aos dados de operação de qualquer instância. A partir do momento da implantação, quem implanta passa a ser o responsável pelo tratamento dos dados dos seus utilizadores, devendo cumprir, nos termos da lei aplicável do seu local, os deveres de informação, de manutenção da segurança e de sujeição a supervisão, podendo usar a documentação deste site como modelo base da sua informação e dos seus termos.
+Os fluxos reais incluem perfis opcionais, contexto de pedidos, dados do navegador, recursos externos diretos e estatísticas de pesquisa. As designações de código aberto ou armazenamento local não significam ausência de envio, e não iniciar sessão ou usar hashes não equivale a anonimato. Os detalhes devem seguir a informação rigorosa da política de privacidade, e as descrições técnicas devem manter-se alinhadas.
 
-## 3. Arquitetura documental
+## 3. Finalidade dos documentos
 
-Os documentos legais deste site organizam-se por temas, citam-se mutuamente e constituem em conjunto o quadro integral das disposições:
-
-| Documento | Conteúdo |
+| Documento | Finalidade |
 | --- | --- |
-| [Apresentação do projeto](/pt/project/) | Posicionamento do produto, funcionalidades principais, arquitetura técnica, desenho de segurança e privacidade e formas de implantação |
-| [Política de Privacidade](/pt/privacy-policy/) | Recolha e utilização de dados pessoais, fundamentos legais, prazos de conservação, direitos dos titulares e transferências internacionais |
-| [Termos de Utilização](/pt/terms-of-service/) | Condições contratuais de utilização do serviço, regras de conta, limitação de responsabilidade, lei aplicável e resolução de litígios |
-| [Política de Utilização Aceitável](/pt/acceptable-use/) | Limites de conduta, lista de condutas proibidas, escadaria de execução e procedimento de reclamação |
-| [Processamento de dados e segurança](/pt/data-security/) | Ciclo de vida dos dados, matriz de tratamento, medidas de segurança, limitações conhecidas e resposta a incidentes |
-| [Lista de partilha com terceiros e transferências](/pt/sub-processors/) | Destinatários da partilha, dados envolvidos e garantias das transferências |
-| [Definições de termos](/pt/key-terms/) | Definição da terminologia legal (vocabulário do RGPD) e da terminologia técnica usada nos documentos legais deste site |
+| [Termos de Utilização](/pt/terms-of-service/) | Condições do serviço alojado, direitos sobre conteúdos, limites de funcionamento e responsabilidade |
+| [Política de Privacidade](/pt/privacy-policy/) | Responsável, dados, finalidades, fundamentos, destinatários, conservação e direitos |
+| [Política de Utilização Aceitável](/pt/acceptable-use/) | Recursos públicos, testes autorizados, condutas proibidas e medidas |
+| [Processamento de dados e segurança](/pt/data-security/) | Desenho real de segurança, lacunas, gestão de incidentes e medidas segundo o risco |
+| [Lista de partilha com terceiros e transferências](/pt/sub-processors/) | Recursos externos, papéis independentes, configuração e condições internacionais |
+| [Definições de termos](/pt/key-terms/) | Dados pessoais, pseudonimização, definição de perfis e termos técnicos |
+| [Gestão de dados](/pt/data-management/) | Operações do utilizador e limites da sua cobertura |
 
-## 4. Linha de base de proteção de dados
+## 4. Objetivo de proteção, riscos e lei aplicável
 
-O serviço adota o Regulamento Geral sobre a Proteção de Dados (RGPD) da União Europeia como padrão mínimo de proteção de dados para **todos os utilizadores**: esteja onde estiver no mundo, os seus direitos de informação, acesso, retificação, eliminação, limitação, portabilidade, oposição e reclamação quanto aos dados pessoais não ficam abaixo do nível previsto no RGPD.
+A aplicação do RGPD depende do seu artigo 3.º e dos factos concretos; oferecer serviços gratuitos a pessoas na União Europeia ou controlar o seu comportamento na União pode estar abrangido, e o simples acesso a partir do estrangeiro também não determina, isoladamente, a conclusão. A natureza não lucrativa, o código aberto e a aprendizagem não constituem isenção global; a atividade exclusivamente pessoal ou doméstica aprecia-se pelo âmbito efetivo.
 
-1. Para os utilizadores situados na União Europeia e no Espaço Económico Europeu, o RGPD aplica-se diretamente;
-2. Para os utilizadores das restantes regiões, o serviço assume o padrão do RGPD como compromisso de self-service, cumprido a título de obrigação contratual;
-3. As proteções mais fortes conferidas pela lei do seu local prevalecem, no seu âmbito.
+As medidas escolhem-se conforme a escala do tratamento, o risco e o custo de implementação. Um pequeno projeto individual não tem de nomear indiscriminadamente um encarregado da proteção de dados, obter certificações, contratar auditorias comerciais ou criar uma equipa permanente; os limiares específicos do artigo 37.º, do artigo 35.º e do artigo 27.º do RGPD continuam a exigir avaliação separada. A definição contínua de perfis não pode ser chamada «ocasional» apenas pelo número reduzido de pessoas. Mantêm-se a identificação necessária, o fundamento válido, a minimização, a segurança e o tratamento dos direitos.
 
-Esta linha de base significa: embora a instância gerida opere em Taiwan e a lei aplicável aos Termos de Utilização seja a do local do operador (ver a secção 11 dos [Termos de Utilização](/pt/terms-of-service/)), as matérias de proteção de dados executam-se tendo o nível do RGPD como limite mínimo; o exercício dos direitos dos titulares, a notificação das violações e os deveres de segurança cumprem-se segundo este padrão.
+O respeito pela privacidade orienta a conceção e a melhoria do serviço. O objetivo é desenvolver esforços razoáveis para proporcionar um nível elevado de proteção, com medidas rigorosas e proporcionais aos riscos, tomando como referência os princípios do RGPD da minimização dos dados, da limitação das finalidades, da transparência e do controlo pelos utilizadores. Este objetivo não é uma certificação europeia nem uma declaração de conformidade integral com o RGPD e com as leis de todos os Estados-Membros. Não garante segurança absoluta, ausência de fugas ou perdas de dados nem a sua eliminação imediata e integral. A proteção efetiva depende da implantação, da configuração e dos tratamentos de terceiros; devem distinguir-se as medidas constatadas no código, os elementos não verificados e os riscos conhecidos.
 
-## 5. Ordem de prevalência
+A lei aplicável depende da situação real; tomar o RGPD como referência não cria uma garantia contratual mundial adicional de cumprimento de todo o seu regime. Os esforços razoáveis não reduzem as obrigações legais aplicáveis, e a divulgação dos riscos não lhe exige aceitar um tratamento ilícito nem renunciar aos seus direitos. Independentemente da lei aplicável, devem descrever-se os dados com exatidão, cumprir os compromissos assumidos e respeitar os direitos irrenunciáveis dos utilizadores.
 
-1. Em matéria de privacidade, a [Política de Privacidade](/pt/privacy-policy/) é a disposição especial; em matéria de condições de utilização do serviço, os [Termos de Utilização](/pt/terms-of-service/) são a disposição especial; as restantes matérias interpretam-se segundo a arquitetura enumerada nesta página.
-2. Havendo incongruência entre documentos, prevalece o documento diretamente relacionado com a matéria em causa.
-3. Os documentos legais deste site têm como versão oficial a versão em Chinês Simplificado; as versões nas restantes línguas, incluindo a presente versão em Português, são traduções de referência e, em caso de dúvida na interpretação, prevalece a versão oficial.
+## 5. Interpretação e versões
 
-## 6. Pontos de contacto
+A lei imperativa prevalece. As condições do serviço seguem os termos de utilização, e a informação dos dados segue a política de privacidade; explicações técnicas, imagens ou apresentações antigas de funções não ampliam autorizações de tratamento, nem a expressão «prevalece o código-fonte» dispensa responsabilidade por informação incorreta. As contradições identificadas devem ser corrigidas e comunicadas aos utilizadores afetados.
 
-- Privacidade e pedidos de proteção de dados: `privacy@epocanvas.com`
-- Serviço e conta: `admin@epocanvas.com`
-- Projeto de código aberto: Issues do repositório GitHub (`github.com/shijianus/sonic`)
-- Sites de implantação própria: contacte o operador indicado pelo próprio site
+O chinês simplificado é a base de manutenção e as restantes nove versões linguísticas são traduções; a prioridade do chinês não pode excluir interpretação favorável ao consumidor nem informação compreensível. A data indicada é a data de revisão documental; antes da adoção numa implantação ou de alterações reais do tratamento, continuam a ser necessárias informação eficaz e, quando aplicável, obtenção separada de consentimento.
+
+## 6. Contactos
+
+Serviço e conta: `admin@epocanvas.com`; privacidade e pedidos de direitos: `privacy@epocanvas.com`. Estes endereços são propostos na documentação, mas a sua publicação no código a montante examinado não foi confirmada nem foi testada a entrega através do envio de mensagens. Não constituem uma declaração de nomeação de representante na União Europeia ou de encarregado da proteção de dados. O operador de cada instância deve confirmar ou corrigir os canais que publica e assegurar que funcionam.
+
+Os problemas técnicos podem ser comunicados em [GitHub Issues](https://github.com/shijianus/sonic/issues); não submeta dados pessoais, palavras-passe ou credenciais de sessão. As instâncias de terceiros devem ser tratadas com o respetivo operador.

@@ -3,9 +3,9 @@ title: Présentation du projet
 description: "Présentation du projet epocanvas sonic : positionnement du produit, fonctions principales, architecture technique, moteur de recommandation, conception de la sécurité et de la confidentialité, périmètre d'application, formes de déploiement et guide de lecture de la documentation."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page présente epocanvas sonic (ci-après « Sonic » ou « le projet ») : son positionnement produit, ses fonctions principales, son architecture système, sa conception de la sécurité et de la confidentialité, son périmètre d'application et ses formes de déploiement, et propose un itinéraire de lecture de la documentation du site. Que vous envisagiez d'utiliser l'instance hébergée, de procéder à votre propre déploiement ou de vous informer des stipulations de confidentialité et des conditions, vous pouvez partir de cette page. Les stipulations juridiques de Sonic figurent dans la [Politique de confidentialité](/fr/privacy-policy/) et les [Conditions d'utilisation](/fr/terms-of-service/).
+La présente page présente epocanvas sonic (ci-après « Sonic » ou « le projet ») : son positionnement produit, ses fonctions principales, son architecture système, sa conception de la sécurité et de la confidentialité, son périmètre d'application et ses formes de déploiement, et propose un itinéraire de lecture de la documentation du site. Que vous envisagiez d'utiliser l'instance hébergée, de procéder à votre propre déploiement ou de vous informer des stipulations de confidentialité et des conditions, vous pouvez partir de cette page. Les stipulations juridiques de Sonic figurent dans la [Politique de confidentialité](/fr/privacy-policy/) et les [Conditions d'utilisation](/fr/terms-of-service/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
 ![Architecture à deux niveaux de Sonic : les utilisateurs accèdent au plan de contrôle edge de Cloudflare (routage, limitation de débit, cache, disjoncteur) ; le plan de données Linux exécute l'analyse des protocoles, le calcul des recommandations et le stockage SQLite ; les flux audio sont par défaut récupérés depuis le CDN officiel via le proxy edge](/images/sonic/project-architecture.svg)
 
@@ -13,14 +13,14 @@ La présente page présente epocanvas sonic (ci-après « Sonic » ou « le proj
 
 ## 1. Positionnement du projet
 
-Sonic est une plateforme de streaming musical multi-sources et une passerelle d'agrégation développée de manière indépendante, fonctionnant selon une architecture à deux niveaux « plan de contrôle edge Cloudflare + plan de données moteur de protocoles Linux local », conçue pour le streaming haute fidélité, les paroles mot à mot à la milliseconde et une expérience de recommandation autonome et maîtrisée. Le projet est un logiciel open source dont le code source est publié ; chacun peut le déployer lui-même.
+Sonic est un projet personnel mené à titre accessoire, gratuit et à but non lucratif, consacré à l'apprentissage et aux tests d'intérêt général, sans SLA ni garantie d'exploitation permanente. Il fournit une plateforme musicale multi-sources et une passerelle d'agrégation selon une architecture « plan de contrôle edge Cloudflare + plan de données moteur de protocoles Linux ». Le code est ouvert et peut être déployé indépendamment ; « local » pour le moteur désigne le serveur de l'opérateur, pas nécessairement l'appareil de l'utilisateur.
 
 | Élément | Description |
 | --- | --- |
-| Instance hébergée | `sonic.epocanvas.tech` (site principal) et `sonic.epocanvas.com` (miroir de secours), exploitées par l'équipe d'exploitation |
-| Instance auto-hébergée | instance privée que toute personne ou organisation déploie sur ses propres serveurs à partir du code open source ; le déployeur est l'opérateur de cette instance et son responsable du traitement |
-| Licence du code source | régie par le fichier `LICENSE` à la racine du dépôt (MIT License) ; le projet se positionne comme un projet open source non commercial ; le README historique a exprimé l'intention d'adopter CC BY-NC-SA 4.0, mais jusqu'à décision des mainteneurs, le fichier `LICENSE` prévaut ; les marques et identités de marque ne sont pas couvertes par la licence du code source |
-| Mode de connexion | Epomail OAuth 2.0 (PKCE) ; le projet ne dispose pas de système d'inscription autonome |
+| Instance hébergée | `sonic.epocanvas.tech` et `sonic.epocanvas.com`, pour les instances effectivement exploitées par le projet ; l'identité juridique de l'opérateur et les pays des nœuds ne sont pas vérifiés par le code |
+| Instance auto-hébergée | instance déployée indépendamment ; les rôles et obligations dépendent de l'exploitation et des décisions de traitement réelles |
+| Licence du code source | le `LICENSE` de la racine et `player/LICENSE` sont MIT dans la RC `a75f5cb` ; l'ancien `main@ce443c8` n'a pas de `LICENSE` racine vérifiée et seule la licence MIT du lecteur y est vérifiable. Le caractère non lucratif n'interdit pas l'usage commercial autorisé par MIT ; marques et médias relèvent de droits distincts |
+| Mode de connexion | La dernière RC publique utilise Epomail OAuth 2.0 (PKCE), sans système d'inscription autonome ; l'ancien `main@ce443c8` n'offre pas ces contrôles RC et la version en ligne reste inconnue |
 | Composition logicielle | frontend Cloudflare Pages et fonctions edge (plan de contrôle), moteur local Node.js 22 et conteneur auxiliaire ncm-api (plan de données), lecteur web Vue 3 |
 
 ## 2. Aperçu des fonctions principales
@@ -35,9 +35,9 @@ Sonic est une plateforme de streaming musical multi-sources et une passerelle d'
 | Paroles dynamiques mot à mot | analyse par rétro-ingénierie native des formats YRC de NetEase, QRC de QQ et KRC de Kugou (déchiffrement XOR + décompression Deflate), complétée par AMLL TTML et la bibliothèque mondiale de paroles LRCLIB ; paroles multilingues, romanisation et traductions synchronisées à la milliseconde |
 | Graduation de la qualité audio et transparence des extraits | vérification stricte des entités distinguant les morceaux complets des troncatures officielles en extrait de 30 secondes ; un extrait n'est jamais présenté comme un morceau complet ; les morceaux en extrait déclenchent automatiquement la complétion inter-sources du morceau complet (configurable), la source de complétion étant indiquée de manière transparente |
 | Recommandation intelligente et Auto DJ | moteur de recommandation léger local : modèle de popularité multi-facteurs, intention de recherche en session, quantification des retours comportementaux, similarité de contenu et reclassement de diversité MMR ; sans cluster de big data externe |
-| Gestion autonome des événements comportementaux | les signaux tels que lecture, lecture intégrale, saut, favori et refus peuvent être désactivés à tout moment ; l'« effacement du profil en un clic » détruit immédiatement l'ensemble des enregistrements comportementaux côté serveur |
-| Sécurité zéro confiance | clés d'API signées HMAC-SHA256 versionnées, OAuth PKCE, interception SSRF sur toute la chaîne, clés transmises uniquement par en-têtes de requête |
-| Résilience et dégradation | lorsque le plan de données est hors ligne, la couche edge bascule en 0 ms vers le mode dégradé ; l'interface affiche clairement l'avis « mode dégradé de l'edge » et la lecture stable des morceaux déjà chargés reste garantie |
+| Gestion autonome des événements comportementaux | commandes de personnalisation et de réinitialisation ; l'effacement actuel est partiel et certains échecs ne sont pas affichés, voir la politique de confidentialité |
+| Conception de sécurité | La RC comprend PKCE, sessions signées, clés d'API versionnées et certaines validations SSRF ; cookies, transmission des justificatifs et configuration doivent être vérifiés. L'ancien `main@ce443c8` ne prouve pas les fonctionnalités de la RC ni celles en ligne |
+| Résilience et dégradation | la couche edge dispose d'un mode dégradé et d'un avis dans l'interface ; cela ne garantit ni un délai nul de bascule ni la continuité de la lecture |
 
 ## 3. Aperçu de l'architecture technique
 
@@ -48,7 +48,7 @@ Le plan de contrôle s'exécute sur Cloudflare Pages et Pages Functions et assum
 1. Routage et authentification : point d'entrée unifié des requêtes API, contrôle d'authentification et vérification des clés signées ;
 2. Limitation de débit graduée : 240 requêtes par minute pour les requêtes anonymes et 600 par minute pour les requêtes authentifiées (valeurs par défaut, configurables) ; l'endpoint d'authentification fait en outre l'objet d'une limitation dédiée de 30 requêtes par minute et par IP ;
 3. Cache multiniveau : cache edge indexé par les clés `sonic:*`, période de fraîcheur de 8 minutes, passage à l'état de prolongation de continuité après expiration ;
-4. Disjoncteur à trois états : après 3 échecs consécutifs ou un appel dépassant le budget de 4,5 secondes, passage à l'état OPEN ; les requêtes suivantes basculent en 0 ms vers la connexion directe edge de secours (interfaces publiques de recherche de QQ/Kugou et AMLL/LRCLIB) ; après 30 secondes de refroidissement, passage en HALF_OPEN pour sonde, puis fermeture en cas de succès. Pendant la dégradation, l'en-tête de réponse `X-Sonic-Degraded: 1` est apposé et une pastille d'avis de dégradation s'allume en haut du lecteur.
+4. Disjoncteur à trois états : après 3 échecs consécutifs ou un appel dépassant le budget de 4,5 secondes, passage à l'état OPEN ; les requêtes suivantes n'attendent plus le plan de données défaillant et tentent le chemin de secours edge (interfaces publiques de recherche de QQ/Kugou et AMLL/LRCLIB), mais le réseau peut encore introduire un délai ; après 30 secondes de refroidissement, passage en HALF_OPEN pour sonde, puis fermeture en cas de succès. Pendant la dégradation, l'en-tête de réponse `X-Sonic-Degraded: 1` est apposé et une pastille d'avis de dégradation s'allume en haut du lecteur.
 
 ### 3.2 Plan de données (moteur de protocoles Linux)
 
@@ -65,7 +65,7 @@ Le plan de contrôle et le plan de données communiquent par le canal chiffré C
 
 ### 3.3 Chemin des flux audio
 
-Par défaut, les flux audio transitent par le proxy edge (proxy de plage d'octets de même origine) depuis les CDN officiels, avec prise en charge du chargement segmenté HTTP `Range` et `206 Partial Content` : le CDN amont ne voit que l'adresse du serveur proxy et ne touche pas l'IP du client. Le mode de connexion directe 302 `?mode=redirect` est réservé aux consommateurs de l'API qui l'invoquent expressément (le lecteur web ne l'utilise pas) ; en mode direct, votre navigateur établit la connexion directement avec le CDN officiel.
+Les flux audio passant par le proxy edge utilisent `Range` et `206 Partial Content` ; pour ces requêtes, l'amont peut voir l'adresse du proxy plutôt que celle du client. Ce n'est pas une protection générale de l'IP : les MV, images, avatars, Google Fonts et autres ressources directes peuvent être demandés par le navigateur. Un chemin DiceBear transmet même l'adresse électronique en clair comme `seed` et doit être corrigé. Le mode `?mode=redirect` établit aussi une connexion directe ; certains liens amont utilisent HTTP, sans garantie de chiffrement de bout en bout.
 
 ## 4. Sources audio et chaîne des paroles
 
@@ -73,14 +73,14 @@ Par défaut, les flux audio transitent par le proxy edge (proxy de plage d'octet
 | --- | --- | --- |
 | Analyse native locale (interfaces officielles NetEase/QQ/Kugou/Kuwo + ncm-api) | chaîne principale (plus de 90 %) | activée par défaut |
 | Paroles mot à mot AMLL TTML + bibliothèque de paroles synchronisées LRCLIB | complément de paroles (environ 10 %) | activé par défaut |
-| Agrégateurs tiers GDStudio/Lyriva | secours d'urgence | strictement désactivé par défaut |
+| Agrégateurs tiers GDStudio/Lyriva | chemins facultatifs | GDStudio est activé si le réglage manque dans le code, mais désactivé dans l'exemple d'environnement et Compose ; vérifier l'instance |
 | Renforcement par artistes similaires ListenBrainz/MusicBrainz | renforcement optionnel | désactivé par défaut |
 
 La détection des extraits sonde la durée des entités audio et leurs métadonnées pour identifier les troncatures officielles en extrait de 30 secondes ; le résultat est présenté de manière transparente dans le frontend au moyen de l'indicateur d'extrait et peut déclencher l'appariement inter-plateformes du morceau complet (parmi les morceaux complets gratuits de QQ/Kugou/Kuwo) ; en cas d'appariement réussi, la commutation est fluide et la source de substitution est indiquée. Le projet n'intègre aucun composant de contournement des mécanismes payants et de protection des droits d'auteur.
 
 ## 5. Moteur de recommandation intelligent
 
-Le moteur de recommandation s'exécute entièrement en local sur le plan de données ; les poids des signaux comportementaux sont publics dans le code source :
+Le moteur principal de recommandation s'exécute sur le plan de données de l'opérateur ; cela ne signifie pas un traitement limité au navigateur et des fournisseurs externes optionnels peuvent être configurés. La personnalisation et Auto DJ sont activés par défaut dans le code candidat, sans que ce défaut prouve un consentement valable ; les poids des signaux sont publics dans le code source :
 
 | Signal | Poids | Description |
 | --- | --- | --- |
@@ -93,22 +93,22 @@ Le moteur de recommandation s'exécute entièrement en local sur le plan de donn
 
 Filtrage du bruit et des faux signaux : les sauts dus à des blocages réseau (network_stall), à des échecs de décodage (playback_error), à des troncatures en extrait (trial_end), à des flux indisponibles (stream_unavailable), à des dépassements de délai de mise en mémoire tampon (buffer_timeout) ou à des échecs de commutation automatique (auto_switch_error) ont un poids constant de zéro et ne sont pas stockés.
 
-Le modèle de popularité combine la lecture effective (35 %), les auditeurs uniques (25 %), la performance de lecture intégrale (20 %), la conversion en favoris (15 %) et la pente de croissance (5 %), complété par une décroissance temporelle exponentielle (palmarès des 24 heures et palmarès cumulé sur 7 jours), un lissage bayésien et un score de Wilson ; le calcul de similarité fusionne le graphe de relations entre artistes et le cosinus des caractéristiques audio, et le reclassement par pertinence marginale MMR équilibre précision et diversité. L'intention de recherche au niveau de la session et les préférences de long terme sont découplées par niveaux : seuls les comportements à forte valeur tels que lecture intégrale et favoris alimentent le profil de long terme.
+Le modèle de popularité combine la lecture effective (35 %), les auditeurs uniques (25 %), la performance de lecture intégrale (20 %), la conversion en favoris (15 %) et la pente de croissance (5 %), complété par une décroissance temporelle exponentielle (palmarès des 24 heures et palmarès cumulé sur 7 jours), un lissage bayésien et un score de Wilson ; le calcul de similarité fusionne le graphe de relations entre artistes et le cosinus des caractéristiques audio, et le reclassement par pertinence marginale MMR équilibre précision et diversité. L'intention de recherche de session influe sur le classement immédiat, mais les requêtes sont aussi comptabilisées séparément et peuvent apparaître dans les suggestions publiques ; les demandes de recommandation peuvent transmettre favoris locaux, artistes récents et contexte de recherche. Les identifiants pseudonymes restent potentiellement associables.
 
 ## 6. Aperçu de la conception de la sécurité
 
 1. Authentification : mode code d'autorisation Epomail OAuth 2.0 ; le paramètre `state` et le PKCE (S256) préviennent l'interception et le rejeu du code d'autorisation ; les cookies de transaction OAuth ont une durée de validité de 600 secondes ;
-2. Clé d'API : format versionné `sonic_live_v2.<header>.<payload>.<signature>`, signature HMAC-SHA256, charge utile contenant `sub`, `iat`, `exp`, `jti`, `kid`, `role` et `uid` ; durée de validité d'émission de 30 jours et plafond de validation de 90 jours ; le serveur compare à temps constant via Web Crypto ; les clés sans signature et les clés de versions antérieures sont systématiquement rejetées (fail-closed) ; les clés ne transitent que par les en-têtes de requête `X-Sonic-Key` ou `Authorization`, le canal des paramètres de requête URL ayant été intégralement supprimé ;
-3. Révocation : la déconnexion révoque immédiatement la session courante et l'identifiant de clé (jti) ; liste de révocation de jti, liste de révocation des sujets et borne temporelle minimale globale d'émission sont prises en charge ; la révocation immédiate est disponible en cas de liaison à KV ;
-4. Session : cookie `sonic_session` avec attributs `HttpOnly; Secure; SameSite=Lax`, durée de validité de 30 jours au plus ; les clés ne sont jamais écrites dans l'URL, dans le localStorage ni à un emplacement accessible aux scripts de la page ;
-5. Défense SSRF : les requêtes sortantes vers les adresses de bouclage, les réseaux privés RFC 1918, les ponts internes Docker et les adresses de métadonnées du cloud (telles que `169.254.169.254`) sont systématiquement bloquées, avec vérification en pile double IPv4 et IPv6 et nouvelle vérification de la cible et du résultat de résolution DNS à chaque redirection.
+2. Clé d'API : justificatif signé `sonic_live_v2`, au format versionné `sonic_live_v2.<header>.<payload>.<signature>`, signature HMAC-SHA256, charge utile contenant `sub`, `iat`, `exp`, `jti`, `kid`, `role` et `uid` ; durée d'émission par défaut de 30 jours ; les 90 jours sont uniquement le plafond accepté par le validateur, non une durée de réémission ; le serveur compare à temps constant via Web Crypto ; les clés sans signature et les clés de versions antérieures sont systématiquement rejetées (fail-closed) ; les clés ne transitent que par les en-têtes de requête `X-Sonic-Key` ou `Authorization`, le canal des paramètres de requête URL ayant été intégralement supprimé ;
+3. Révocation : la déconnexion efface le cookie courant ; la révocation côté serveur des justificatifs copiés dépend du stockage configuré et du succès de la requête. Les listes de jti, de sujets et la borne temporelle minimale d'émission doivent être vérifiées sur l'instance ;
+4. Session : cookie `sonic_session` avec attributs `HttpOnly; Secure; SameSite=Lax`, durée par défaut de 30 jours ; la signature n'est pas un chiffrement. Le stockage local `auth` conserve notamment l'adresse électronique et l'avatar, même si le cookie HttpOnly n'est pas lisible par les scripts ;
+5. Défense SSRF : la RC contient des validations de cible propres à certaines routes pour les adresses de bouclage, réseaux privés, métadonnées cloud et redirections. Leur couverture doit être vérifiée par route ; elles ne couvrent pas toutes les requêtes ni les connexions directes du navigateur.
 
 ## 7. Aperçu de la conception de la confidentialité
 
-1. Pseudonymisation par défaut : les événements comportementaux sont associés, dès la collecte, à des identifiants à sens unique par hachage ; l'adresse électronique n'est jamais persistée ;
-2. Interrupteur autonome de personnalisation : la personnalisation peut être désactivée à tout moment dans les paramètres du lecteur ; une fois désactivée, les événements ne sont plus stockés et, en mode public, ils sont directement jetés ;
-3. Effacement en un clic : le bouton « Effacer le profil de recommandation » de la page des paramètres détruit immédiatement l'ensemble des événements comportementaux côté serveur ; « Effacer toutes les données locales » efface immédiatement le stockage local du navigateur et l'IndexedDB ;
-4. Minimisation des journaux : les journaux d'accès du plan de données ne contiennent que le chemin, la méthode, le code d'état et le temps de traitement.
+1. Pseudonymisation : les identifiants hachés ou `anon_` restent potentiellement associables à une personne ; l'adresse électronique et l'avatar sont notamment conservés dans `auth` localStorage ;
+2. Personnalisation : le commutateur commande les événements concernés, mais ne suffit pas à arrêter la collecte distincte de recherches brutes ou leur affichage dans les suggestions publiques. Les réglages par défaut et la connexion ne valent pas consentement au profilage facultatif ;
+3. Effacement : la réinitialisation ne couvre qu'une partie des événements et retours de l'identité courante ; anciens identifiants anonymes, radar, agrégats, services externes et sauvegardes peuvent être omis, et des échecs masqués. L'effacement local n'est pas une preuve de suppression distante ;
+4. Minimisation des journaux : elle ne constitue pas une garantie zéro journal pour l'hôte et les tiers ; la limitation utilise notamment l'IP brute ou des clés KV et l'edge transmet des informations de connexion au moteur.
 
 La formulation intégrale des engagements de confidentialité figure dans la [Politique de confidentialité](/fr/privacy-policy/) et les mesures techniques dans [Traitement des données et mesures de sécurité](/fr/data-security/).
 
@@ -116,11 +116,11 @@ La formulation intégrale des engagements de confidentialité figure dans la [Po
 
 Convient : aux auditeurs particuliers qui souhaitent se connecter avec leur propre compte Epomail et tiennent à la transparence et à l'effaçabilité du profil de recommandation ; aux mélomanes assidus ayant besoin d'une recherche agrégée multi-sources et de paroles mot à mot ; aux utilisateurs auto-hébergés disposant de bases en Linux et Docker et disposés à assumer la responsabilité d'opérateur.
 
-Ne convient pas : aux scénarios recherchant les garanties d'exploitation d'un service musical commercial, le projet ne stockant ni n'hébergeant de musique et n'accordant aucune sous-licence sur les contenus ; aux équipes attendant un accord de niveau de service (SLA) ou un support commercial ; aux utilisateurs ne pouvant accepter que « les extraits soient signalés de manière transparente et la complétion inter-sources fournie au mieux ».
+Ne convient pas : aux scénarios recherchant les garanties d'exploitation d'un service musical commercial ; le projet ne fournit aucune licence de catalogue, mais des chemins de proxy, de cache et de stockage local existent, et il ne faut pas en déduire une absence totale de stockage ou de transmission de musique ; aux équipes attendant un accord de niveau de service (SLA) ou un support commercial ; aux utilisateurs ne pouvant accepter que « les extraits soient signalés de manière transparente et la complétion inter-sources fournie au mieux ».
 
 ## 9. Périmètre des contenus et du droit d'auteur
 
-Sonic est un outil de recherche, d'agrégation et de lecture qui ne stocke ni n'héberge aucun fichier musical. Les droits sur les enregistrements, paroles, pochettes, images d'artistes et autres contenus appartiennent à leurs titulaires respectifs ; le projet n'accorde aucune sous-licence sur les contenus musicaux. Les morceaux des abonnements légaux sont montés par le déployeur à l'aide de ses propres identifiants autorisés (tels que `NETEASE_COOKIE`, qui correspond au compte du déployeur et non à celui de l'utilisateur final) ; les contenus publics suivent les protocoles ouverts officiels.
+Sonic est un outil de recherche, d'agrégation et de lecture ; les fichiers importés et téléchargés peuvent être stockés dans le navigateur. Les droits sur les enregistrements, paroles, pochettes et images appartiennent à leurs titulaires ; aucune licence musicale n'est accordée. Des identifiants tels que `NETEASE_COOKIE` peuvent donner accès à un abonnement du déployeur, sans autoriser pour autant sa mise à disposition publique. Ni l'accessibilité d'une interface ni un usage personnel, éducatif ou non lucratif ne prouvent une autorisation ou une exception au droit d'auteur.
 
 Lors de votre utilisation du service, vous devez respecter la [Politique d'utilisation acceptable](/fr/acceptable-use/) ; le déployeur doit vérifier lui-même que son scénario d'utilisation est conforme aux lois locales, aux conditions des services amont et aux exigences de licence des contenus.
 
@@ -140,24 +140,24 @@ Le projet garantit la qualité par l'auditabilité et la vérification automatis
 1. Audit de sécurité et remédiation : le dépôt amont comporte un rapport d'audit de sécurité (`SECURITY_AUDIT_REPORT.md`, `SECURITY_FIX_SUMMARY.md`) et un dossier de remédiation point par point (`docs/AUDIT_REMEDIATION.md`), couvrant la signature des API, le flux OAuth, la défense SSRF et le XSS frontend, entre autres ;
 2. Portes de tests automatisés : la suite de tests couvre le comportement de la passerelle, la compatibilité de l'authentification, les cas SSRF, le moteur local et la dégradation, les recommandations et la recherche, le XSS frontend, la cohérence de configuration (config parity) et les portes de publication P0/P1, et s'exécute à chaque publication ;
 3. Vérification de la cohérence documentaire : le site vérifie automatiquement trois points : absence de liens rompus dans les ancres internes et les références d'images, symétrie structurelle 1:1 des versions multilingues, et conformité des références aux articles du RGPD avec la liste blanche du dossier de vérification ;
-4. Processus de vérification factuelle : à chaque mise à jour de version, l'ensemble des faits de traitement des données du site est confronté au code source (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`, etc.) ; en cas de divergence avec le code source, celui-ci prévaut et la documentation est corrigée sans délai.
+4. Vérification factuelle : cette révision s'appuie sur la RC publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), vérifiée le 2026-11-02, distincte de l'ancien `main@ce443c8` (2026-10-27 UTC) ; aucun de ces états ne certifie l'environnement en ligne. Les écarts documentaires doivent être corrigés ; le code ne remplace ni une base licite ni les engagements et droits applicables.
 
 ## 12. Questions fréquentes
 
 **Le service est-il payant ? Y a-t-il des publicités ?**
-Le service est gratuit, sans publicité et sans achats intégrés ; les coûts d'exploitation de l'instance hébergée sont assumés par l'équipe d'exploitation. Le service ne collecte aucune donnée à des fins publicitaires.
+Ce projet personnel de test est gratuit, sans publicité ni achats intégrés, et à but non lucratif ; il ne propose pas de SLA. Le projet n'a pas de finalité publicitaire.
 
 **Peut-on l'utiliser sans se connecter ?**
-Oui. La recherche, la lecture, les paroles, les classements et les autres fonctions principales sont utilisables de manière anonyme (avec une limitation de débit plus stricte) ; la connexion débloque la synchronisation cloud des favoris, les recommandations personnalisées et Auto DJ.
+Les fonctions de base sont utilisables sans connexion, ce qui ne garantit pas l'anonymat. La personnalisation et Auto DJ sont activés par défaut dans le code, sans consentement affirmatif démontré ; la connexion ne crée pas de synchronisation cloud générale. Le radar comporte une logique de synchronisation, mais sa route distante manque dans la version vérifiée.
 
 **Où mes données sont-elles stockées ?**
-À trois endroits : les favoris, les playlists et les préférences du lecteur sont stockés dans le stockage local de votre navigateur ; les téléchargements et la musique locale dans l'IndexedDB de votre navigateur ; le serveur ne conserve que les événements comportementaux pseudonymisés (destruction automatique après 90 jours). L'adresse électronique n'est jamais persistée. Voir la section 4 de la [Politique de confidentialité](/fr/privacy-policy/).
+Favoris, playlists et préférences sont principalement dans le navigateur ; `auth` peut conserver l'adresse électronique et l'avatar. Les corps audio et les pochettes intégrées sont dans IndexedDB, mais les images de pochette peuvent aussi être envoyées avec les événements de favoris et entrer dans le catalogue distant de morceaux : elles ne sont pas garanties exclusivement locales. Métadonnées, retours et contexte de recommandation peuvent être transmis ; des traitements distants concernent aussi le radar et les statistiques de recherche. La RC prévoit 90 jours par défaut pour les événements, avec un minimum de 7 jours, mais le nettoyage et l'effacement sont incomplets. Voir les sections 4 et 6 de la [Politique de confidentialité](/fr/privacy-policy/).
 
 **Comment supprimer mon profil comportemental ?**
-Paramètres → Confidentialité et données locales → « Réinitialiser le profil de recommandation et l'historique de refus », ou appel direct de `DELETE /api/sonic/events`, avec effet immédiat ; « Effacer toutes les données locales » vide à la fois les données du navigateur et celles du serveur. Emplacement dans l'interface : section 9 du [Guide de l'interface et des fonctions](/fr/interface/).
+Utilisez Paramètres → Confidentialité et données locales → « Réinitialiser le profil de recommandation et l'historique de refus », ou `DELETE /api/sonic/events`, en sachant que l'effacement est partiel et peut échouer sans message. Les anciens identifiants anonymes, le radar, les agrégats, services externes et sauvegardes peuvent être omis. Pour une demande complète, contactez `privacy@epocanvas.com` ; voir le [Guide de l'interface et des fonctions](/fr/interface/).
 
 **La recommandation me suit-elle ?**
-La recommandation ne sert qu'à l'ordonnancement de la lecture : aucun suivi intersites, aucun profil publicitaire ; la personnalisation peut être désactivée à tout moment et, une fois désactivée, le service passe en mode purement public et ne enregistre plus aucun événement.
+Elle constitue un profilage de préférences, sans finalité publicitaire déclarée. La désactivation agit sur les événements concernés, pas sur tous les envois : les recherches brutes peuvent encore alimenter les suggestions publiques. La navigation privée ne bloque pas ces requêtes.
 
 **Pourquoi certains morceaux ne durent-ils que 30 secondes ?**
 Ce sont des troncatures en extrait officielles de la plateforme source ; le lecteur les signale fidèlement au moyen de l'indicateur d'extrait et ne les présente jamais comme des morceaux complets ; lorsque la complétion inter-sources est activée, l'appariement automatique d'un morceau complet gratuit est tenté et la source est indiquée.
@@ -166,7 +166,7 @@ Ce sont des troncatures en extrait officielles de la plateforme source ; le lect
 Oui. Le badge reflète le niveau réel du flux audio en cours ; il suit en temps réel les variations du niveau amont, sans fausse étiquette (voir la section 4, paragraphe 3, des [Conditions d'utilisation](/fr/terms-of-service/)).
 
 **Quelles sont mes responsabilités en cas d'auto-hébergement ?**
-Dès le moment du déploiement, vous êtes le responsable du traitement des données de votre instance : vous devez remplir votre obligation d'information envers vos utilisateurs, tenir le registre des activités de traitement, réaliser au besoin une analyse d'impact et mettre en œuvre les mesures de sécurité. Point de départ : section 6 de [Traitement des données et mesures de sécurité](/fr/data-security/).
+Vos rôles dépendent des finalités et moyens que vous décidez réellement. Pour un service public, vérifiez l'identité du responsable, la loi applicable, les choix préalables, la sécurité, la conservation et l'effacement ; les registres, analyses d'impact et garanties internationales dépendent des conditions légales applicables. Voir [Traitement des données et mesures de sécurité](/fr/data-security/).
 
 **Quelles langues le service prend-il en charge ?**
 Le lecteur intègre le chinois simplifié, l'anglais et le japonais ; la documentation du site est offerte en 10 langues.

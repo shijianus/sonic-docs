@@ -1,76 +1,72 @@
 ---
 title: Acceptable Use Policy
-description: The Sonic Acceptable Use Policy — scope, prohibited conduct, resource limits, the enforcement ladder, the zero-tolerance channel and appeals.
+description: Conduct boundaries, system-abuse limits, content and third-party rights, enforcement and appeal channels for Sonic hosted resources.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
 
-This policy sets the behavioral boundaries for using the Sonic service (hereinafter "the service") and describes prohibited conduct and the operator's enforcement measures. This policy is the standard of conduct referred to in section 7 of the [Terms of Service](/en/terms-of-service/) and binds you upon use of the service; if you do not agree, stop using the service.
+This policy applies to Sonic's actually operated hosted test instances and their public APIs, protecting shared resources, users and upstream services. It sets the conduct rules related to the [Terms of Service](/en/terms-of-service/); if you disagree, stop using the hosted instance. It does not turn a free, nonprofit or open-source project into an unconditional security guarantee, or replace the [Privacy Policy](/en/privacy-policy/) and [Data Processing & Security](/en/data-security/).
 
-![The Sonic enforcement ladder: notice, throttling, suspension and termination as four graduated actions, followed by evidence preservation and legal referral; the zero-tolerance channel for child protection and terrorist content applies immediately; an appeal loop lets the affected party seek review](/images/sonic/aup-ladder.svg)
+The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
-*Figure: the operator applies enforcement measures on a graduated ladder according to severity, recording the reason at each step; the zero-tolerance channel bypasses the ladder; any enforcement action may be appealed.*
+Simplified Chinese is the root maintenance baseline; the other nine languages are translations. Language priority does not diminish mandatory law or consumers' right to clear, intelligible terms.
+
+![Sonic use boundaries and enforcement path: normal use, resource protection, limits, suspension, termination and review](/images/sonic/aup-ladder.svg)
+
+*Figure: enforcement considers conduct, impact, repetition and risk; the diagram is not a fixed penalty schedule or handling-time commitment.*
 
 ## 1. Scope
 
-This policy applies to your use of the service in any form, including:
-
-1. Every function of the web player (search, playback, lyrics, recommendations, downloads, local music import);
-2. Connections through the open API, including your own third-party clients and scripts;
-3. Self-hosted instances (self-hosted operators may adapt this policy for their own use, but not below the requirements of the law at their location).
+1. This policy applies to your use of the hosted Sonic web player, public APIs, sign-in, search, playback, lyrics, recommendations and other public endpoints.
+2. A self-hosted deployment is an independent instance. Its deployer must determine its own policies, configuration, applicable law and user relationships; this page does not assume operational or contractual obligations on the deployer's behalf.
+3. MIT permits copying, modification, distribution and commercial use of code. This policy protects hosted instances and their resources; it is not a universal commercial-use prohibition on the code or all Sonic deployments.
+4. The current review found no path uploading local audio Blobs to the server through music import. Lyrics and recommendation features may still send titles, artists, albums, duration or identifiers; see the [Privacy Policy](/en/privacy-policy/).
 
 ## 2. Prohibited conduct
 
 ### 2.1 System and interface abuse
 
-1. Circumventing or breaking rate limiting, signature verification, the circuit breaker, SSRF defences, the domain allowlist or other technical protection measures;
-2. Forging API keys, replaying revoked key identifiers (jti), stealing another person's session or keys, or bypassing fail-closed verification in any way;
-3. Mass-harvesting the service's search results, lyrics or playback addresses with automated scripts for resale, redistribution or mirror datasets unrelated to the service's functions;
-4. Probing, scanning or otherwise obtaining the service's internal topology, service keys, key material or non-public endpoints;
-5. Using the service's proxy endpoints (`/api/music/stream`, `/api/sonic/forward` and others) as a general-purpose network proxy for targets unrelated to music playback.
+1. Obtaining, using or sharing others' accounts, sessions, cookies, API keys or service secrets without authorisation; forging credentials; or bypassing hosted-instance access controls such as authentication, rate limits, signatures or SSRF defences.
+2. Probing or exploiting hosted-instance non-public endpoints, internal addresses or credential material without authorisation, or obtaining or disclosing others' private data. Public search suggestions must not be used to collect, expose or verify other people's data.
+3. Consuming shared resources by mass-harvesting search results, lyrics, playback addresses or interface responses for unauthorised resale, mirrors or datasets. Normal personal playback, moderate API use and authorised integrations are not prohibited by this rule.
+4. Using the hosted proxy as a general-purpose network proxy, scanner or attack relay, or deliberately causing unnecessary concurrency, traffic, errors or cache pressure.
+
+This policy does not prohibit reading source code, testing with synthetic or authorised data on your own local instance, or responsibly reporting vulnerabilities. Active security testing of public instances requires appropriate prior authorisation and must avoid affecting others, obtaining their data or expanding exploitation. Send a minimal reproduction privately to `admin@epocanvas.com`; do not publish real credentials.
 
 ### 2.2 Content and rights
 
-1. Using the service's interfaces to crack, bypass or interfere with any music platform's payment and copyright protection mechanisms;
-2. Disseminating content that infringes copyright, trademark, portrait or personality rights;
-3. Uploading or spreading unlawful content, including child sexual exploitation material and terrorist propaganda;
-4. Impersonating any person or organization, or using the `epocanvas` and `Sonic` names and marks to suggest an endorsement the service has not given;
-5. Uploading unlawful files into the local music import or download functions for distribution through the service.
+1. Do not use the hosted service to commit or facilitate piracy, evade payment or copyright protections, or infringe copyright, trademark, image, personality, privacy or other rights.
+2. Do not use the service to disseminate unlawful content, malware, child sexual exploitation material or unlawful terrorist propaganda, or unlawfully or without authorisation disclose others' credentials or personal data. This does not prohibit normal sign-in or necessary private rights requests; importing local music is not uploading files to Sonic.
+3. Do not impersonate people or organisations, or use the `Sonic`, `Epomail` or `EpoCanvas` names and logos to imply unauthorised endorsement, cooperation or security certification.
+4. Do not submit search terms, comments or reports that you know contain others' private information. Public comments may include other people's names, avatars and text; writing a local comment to localStorage does not establish permission to publish it.
 
-### 2.3 Rights of others
+### 2.3 Others' rights and service stability
 
-1. Interfering with or disrupting the normal operation of the service or any related system, including deliberately tripping the circuit breaker and degradation mechanisms;
-2. Harassing, defaming or attacking the operator, upstream providers or other users;
-3. Using the service for any purpose that violates the law of your location or upstream terms of service;
-4. Selling, subletting or providing access to the service for commercial resale purposes.
+1. Do not harass, threaten, defame, stalk, discriminate against or attack operators, upstream providers, contributors or other users, or expose others' data through public caches or suggestion features.
+2. Do not interfere with the availability, integrity or security of hosted instances, upstream content services, identity services or networks, including deliberately triggering circuit breakers, degradation or resource exhaustion.
+3. Do not violate the law applicable where you are located or use content interfaces contrary to upstream service rules. Licensed code use does not automatically grant rights to third-party content, accounts or music.
 
-## 3. Resource usage limits
+## 3. Resource limits
 
-| Item | Limit | Handling when exceeded |
-| --- | --- | --- |
-| Anonymous requests | 240 per minute (default) | Rejected at the edge (429); not recorded as a violation |
-| Authenticated requests | 600 per minute (default) | Rejected at the edge (429); sustained excess enters the enforcement ladder |
-| Authentication endpoints (sign-in／key issuance) | 30 per minute per IP | Rejected at the edge (429) |
-| Behavioral event reporting | At most 50 events per batch, 64 KB per body | The oversized request is rejected as a whole |
-| Audio streams | Through the edge proxy, or direct mode at your explicit request | Abnormal concurrency enters the enforcement ladder |
+Hosted instances may set rate limits by signed-out or authenticated status, IP address, session, interface and event batch. Actual values depend on configuration; they are not a uniform contractual promise for every deployment. Exceeding a limit may result in `429`, delays, rejection or temporary restrictions, and does not necessarily indicate misconduct.
 
-Normal personal use never approaches these limits; rate limiting exists for abuse prevention and service stability, not as a penalty. Rate-limit parameters are deployer-configurable; the actual values of a self-hosted instance follow its configuration.
+Use reasonable personal request rates. Avoid concurrent scraping, repeated retries, prolonged occupation of audio streams and unnecessary behavioural-event reporting. Rate-limit parameters, credential revocation and data retention can differ because environment variables, Compose and source defaults differ; runtime state cannot be inferred from this page alone.
 
 ## 4. Enforcement ladder
 
-Upon discovering a violation, the operator applies the following measures according to severity, recording the reason for each step:
+The operator may take one or more measures according to the conduct's impact, intent, repetition, data involved and urgency, recording necessary reasons:
 
-1. **Notice**: a warning in the player stating the reason;
-2. **Throttling**: lowering the request quota of that account or key;
-3. **Suspension**: temporarily blocking that account's sessions and API keys (via the `jti` revocation list or instant revocation), with data retained for the time being;
-4. **Termination**: ending the right of use; behavioral data destroyed when its retention period (90 days, minimum 7) expires;
-5. **Evidence preservation and legal referral**: where the law requires, records are preserved to the necessary extent and provided to competent authorities through legal process.
+1. Remind you of the rules or require the conduct to stop;
+2. Limit interfaces, concurrency, caching, event reporting or other resource use;
+3. Suspend accounts, sessions, credentials or network sources; immediate revocation depends on the instance's revocation storage, switches and successful requests;
+4. Terminate access to the hosted instance or prevent further use of affected endpoints;
+5. Retain necessary records and provide them to authorised recipients to the extent required by applicable law, a valid request or protection of others and systems.
 
-The following situations bypass the graduated ladder; the operator may suspend immediately and refer or report: child sexual exploitation material, terrorist propaganda, and ongoing attacks on the system.
+For ongoing attacks, credential theft, serious security threats or clearly unlawful content, necessary temporary measures may be taken before explanation and review. Policy enforcement does not replace liability that the person responsible may bear under law. It also does not promise automatic police reporting, fixed retention periods, a staff response within 24 hours or permanent deletion of all related records.
 
 ## 5. Appeals and reports
 
-- **Appeals**: if you believe an enforcement action is mistaken, write to `admin@epocanvas.com` stating the account and the circumstances; the operator reviews and replies within a reasonable time. Appeals against urgent enforcement (the zero-tolerance cases in section 4) are likewise accepted, and review does not delay remedying a proven mistake against you.
-- **Reports**: anyone who discovers conduct violating this policy may report it to the mailbox above; the identity of a reporter is kept confidential until the report is verified. Reports involving child protection are not bound by that confidentiality promise and follow legal procedure.
+- **Appeals**: if you dispute a restriction, suspension or termination, write to `admin@epocanvas.com` with the account, time, relevant endpoints and reasons. The operator will review within a reasonable period as resources permit, without affecting applicable statutory periods, rights or remedies. No fixed deadline, dedicated team or assured restoration of access is promised. Do not send passwords, complete tokens or unrelated personal data.
+- **Reports**: use the same address to report suspected abuse, infringement, security issues or harm to others. Provide necessary facts without forwarding unlawful or sensitive material. The operator will decide whether to act or disclose to competent authorities based on risk, data minimisation and applicable law.
 
-Enforcement under this policy does not exempt the violating person from liability under the law.
+For privacy rights, deletion requests and data-breach notifications, use `privacy@epocanvas.com`. This policy governs only actual hosted resources; self-hosted instances must provide their own operator and appeal channels.

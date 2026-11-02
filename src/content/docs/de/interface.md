@@ -3,9 +3,9 @@ title: Oberflächen- und Funktionsübersicht
 description: Übersicht über die Oberfläche und Funktionen des Sonic-Players – Startseite und Empfehlungen, Suche, Wiedergabesteuerung, Player-Drawer, Meine Musik, Einstellungen und Datenschutzsteuerung, mobiles Layout.
 ---
 
-**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
+**Überarbeitet am: 2. November 2026｜Version: 1.8**
 
-Diese Seite führt durch das Layout der Oberfläche des Sonic-Webplayers und die Position der einzelnen Funktionen und erläutert, wo sich jede Funktion befindet und wie sie sich verhält. Die Screenshots stammen aus dem laufenden Betrieb der gehosteten Instanz (Oberflächensprache vereinfachtes Chinesisch; das Produkt unterstützt das Umschalten der Oberflächensprache). Die Oberfläche kann sich mit künftigen Versionen ändern; der tatsächlich verfügbare Funktionsumfang richtet sich nach dem, was die jeweilige Instanz aktiviert hat. Die rechtlichen Regelungen finden sich in den [Nutzungsbedingungen](/de/terms-of-service/) und in der [Datenschutzerklärung](/de/privacy-policy/).
+Diese Seite führt durch das Layout der Oberfläche des Sonic-Webplayers und die Position der einzelnen Funktionen und erläutert, wo sich jede Funktion befindet und wie sie sich verhält. Die Screenshots veranschaulichen die Oberfläche in vereinfachtem Chinesisch; die Oberflächensprache lässt sich wechseln. Sie belegen nicht die aktuell bereitgestellte Version. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version. Die Oberfläche kann sich mit künftigen Versionen ändern; der tatsächlich verfügbare Funktionsumfang richtet sich nach dem, was die jeweilige Instanz aktiviert hat. Die rechtlichen Regelungen finden sich in den [Nutzungsbedingungen](/de/terms-of-service/) und in der [Datenschutzerklärung](/de/privacy-policy/).
 
 ![Sonic-Player-Startseite: linke Navigationsleiste (drei Bereiche Entdecken, Meine Musik, System), im Hauptbereich Karussellempfehlungen, intelligente Empfehlungen und Musikradar sowie Empfehlungsplaylists, unten die Mini-Wiedergabeleiste](/images/sonic/ui/ui-home.png)
 
@@ -23,7 +23,7 @@ Die Startseite bündelt drei Inhaltsbereiche:
 
 *Abbildung: Das Musik- und Stilradar nach einer Suche. Die Radarergebnisse sind an den Karten „Beliebte Titel“ ausgerichtet; Empfehlungsgründe und Tags der Präferenzsignale werden transparent dargestellt.*
 
-Die Reihenfolge der Empfehlungen beeinflusst nur die Wiedergabefolge, die Sie sehen; in den Einstellungen können Sie die Personalisierung abschalten (siehe Abschnitt 9), danach wechseln die Empfehlungen in den rein öffentlichen Modus.
+Die Sortierung beeinflusst gewöhnlich die Reihenfolge der Inhalte; der aktuelle Code verarbeitet jedoch auch Entitätsfeedback und Radarprofile. Personalisierung und Auto DJ sind standardmäßig aktiv, was keine Einwilligung darstellt. Das Abschalten der Personalisierung in den Einstellungen (Abschnitt 9) beendet weder die getrennte Suchstatistik noch zwangsläufig jeden Radar-Anfragepfad. Optionale Verarbeitung ohne gültige Grundlage ist auszusetzen.
 
 ### 1.1 Seitenleiste: Einklappmodus und Kontoeingang
 
@@ -35,7 +35,7 @@ Das Marken-Logo am oberen Rand der Seitenleiste ist zugleich der Einklappschalte
 
 *Abbildung: Suchergebnisseite. Oben die Registerkarten (Titel/Playlists/MVs) und „Alle abspielen“; die Liste zeigt Cover, Titel, Künstler, Album, Dauer und Aktionen (Wiedergabe, MV, Favorit, Download). Das Suchfeld vereinheitlicht vereinfachte und traditionelle Schriftzeichen und unterstützt Pinyin-Abkürzungen sowie Rechtschreibtoleranz.*
 
-Der Sucheinstieg befindet sich oben in der linken Seitenleiste und auf der Suchseite; unterstützt werden Stichwörter zu Titeln, Künstlern, Alben und Playlists. Die Ergebnisse aus mehreren Quellen werden nach Regex-Deduplikation zusammengeführt und nach Relevanz sortiert; Titel, die eine Hörprobe treffen, werden gemäß den Regeln unter [Audioqualität und Hörproben-Kennzeichnung](/de/project/#4-audioquellen-und-lyrics-pipeline) wahrheitsgemäß gekennzeichnet; eine Hörprobe wird niemals als vollständiger Titel ausgegeben.
+Der Sucheinstieg befindet sich oben in der linken Seitenleiste und auf der Suchseite; unterstützt werden Stichwörter zu Titeln, Künstlern, Alben und Playlists. Die Ergebnisse aus mehreren Quellen werden nach Regex-Deduplikation zusammengeführt und nach Relevanz sortiert; Titel, die eine Hörprobe treffen, werden gemäß den Regeln unter [Audioqualität und Hörproben-Kennzeichnung](/de/project/#4-audioquellen-und-lyrics-pipeline) wahrheitsgemäß gekennzeichnet; eine Hörprobe soll nicht als vollständiger Titel ausgegeben werden. Suchtexte können in öffentliche Vorschläge gelangen; geben Sie keine privaten oder sensiblen Informationen ein.
 
 ## 3. Charts und offizielle Ranglisten
 
@@ -51,7 +51,7 @@ Das „Trend-Chart der Instanz“ auf der Startseite und die Chartseite nutzen d
 
 *Abbildung: Künstlerbibliothek. Künstler lassen sich nach Typ, Region und Anfangsbuchstabe filtern; die Karten zeigen Avatar, Name und Anzahl der Alben. Auf der Künstlerseite lassen sich deren beliebte Titel und Albenlisten durchsehen, die Albumseite führt die Titel im Einzelnen auf.*
 
-Die Detailseiten für Künstler, Alben und Titel nutzen gemeinsam einen einheitlichen Cover-Proxy und eine Farbtemperaturanalyse (die Hauptfarbe des Covers geht in den Seitenverlauf ein); sämtliche Listendaten stammen von den offiziellen offenen Schnittstellen der Upstream-Anbieter und werden nach Caching und Deduplikation dargestellt.
+Die Detailseiten verwenden Cover-Proxy und Farbanalyse, soweit der jeweilige Pfad sie nutzt; Bilder können auch direkt geladen werden und dann IP-Adresse und Verbindungsdaten offenlegen. Listendaten stammen aus vorgelagerten Schnittstellen; deren Erreichbarkeit belegt keine Inhaltslizenz.
 
 ## 5. Wiedergabesteuerung (untere Wiedergabeleiste)
 
@@ -64,7 +64,7 @@ Die untere Wiedergabeleiste ist auf allen Seiten dauerhaft vorhanden und bietet:
 1. Qualitätsmenü: listet die beim jeweiligen Quellwerk tatsächlich verfügbaren Stufen auf (z. B. SQ Lossless, HQ High Quality, Standard); das Abzeichen gibt die tatsächliche Qualität des aktuellen Streams wieder und weist nichts überhöht aus;
 2. Lyrics-Vorschauzeile: zeigt den aktuellen Satz der wortweisen Lyrics;
 3. Wiedergabemodi: Umschalten zwischen Listenwiederholung, Titelwiederholung, Zufall und anderen Modi;
-4. Download: speichert den aktuellen Titel im Browser (IndexedDB), beschrieben in Abschnitt 5.
+4. Download: speichert den aktuellen Titel im Browser (IndexedDB); siehe Abschnitt 3 von [Musikbibliothek verwalten](/de/library/).
 
 ## 6. Player-Drawer und wortweise Lyrics
 
@@ -90,7 +90,7 @@ Der Bereich „Meine Musik“ umfasst vier Einträge:
 | Downloadliste | heruntergeladene Offline-Titel (mit Qualitätsmetadaten) | Browser IndexedDB (`downloaded_music`) |
 | Lokale Musik | manuell importierte lokale Audiodateien (Hochladen per Drag-and-drop in den Browser möglich) | Browser IndexedDB (`local_music`) |
 
-Diese Inhalte werden ausschließlich in Ihrem Browser gespeichert und nicht auf einen Server hochgeladen; das Löschen der Browserdaten oder die Funktion „Alle lokalen Daten löschen“ entfernt sie. Heruntergeladene und lokal importierte Dateien dienen ausschließlich Ihrem persönlichen Hören und dürfen nicht weiterverbreitet werden (siehe die [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/)).
+Die Tabelle nennt lokale Speicherorte und garantiert keine vollständige Vermeidung von Übermittlungen. Für lokale Audioinhalte wurde kein Uploadpfad gefunden; eingebettete Coverbilder, Titel, Künstler, Alben, Titelkennungen, Favoritenfeedback und Empfehlungskontext können jedoch übermittelt werden. Browserbereinigung entfernt lokale Kopien, nicht sämtliche entfernten Aufzeichnungen; eine allgemeine Cloud-Sicherung wird nicht garantiert. Downloads und Importe erteilen keine zusätzlichen Inhaltsrechte (siehe [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/)).
 
 ## 8. Einstellungen
 
@@ -98,20 +98,20 @@ Diese Inhalte werden ausschließlich in Ihrem Browser gespeichert und nicht auf 
 
 *Abbildung: Die Einstellungsseite ordnet sämtliche Präferenzpunkte in Karten an. Jede Karte entspricht einer Kategorie: Themenmodus (hell/dunkel/System folgen), Oberflächensprache (中文/English/日本語), Hintergrundtyp, bevorzugte Audioqualität, Lyrics-Anzeige des unteren Players, Audio-Visualisierungsmodus und mehr.*
 
-Einstellungen wirken sofort und werden im lokalen Browserspeicher (Schlüssel wie `settings` und `global`) abgelegt; sie sind nicht an das Konto gebunden und werden nicht auf einen Server hochgeladen.
+Oberflächeneinstellungen werden im lokalen Browserspeicher (etwa `settings` und `global`) abgelegt. Andere lokale Zustände können in Netzwerkanfragen enthalten sein; „lokal“ bedeutet nicht generell „ohne Übermittlung“. Auch `auth` speichert Nutzerdaten im Browser.
 
 ## 9. Datenschutz und Datenkontrolle
 
 ![Datenschutz- und lokale-Daten-Bereich der Sonic-Einstellungsseite: Erläuterung von Browser-Speicher und IndexedDB, Schalter für intelligente Suche und personalisierte Empfehlungen, Schalter für Auto DJ, Schaltfläche zum Zurücksetzen des Empfehlungsprofils und der Nicht-interessant-Vermerke](/images/sonic/ui/ui-privacy.png)
 
-*Abbildung: Der Bereich „Datenschutz und lokale Daten“ der Einstellungsseite. Der Bereich weist darauf hin, dass „die folgenden Daten nur in deinem Browser gespeichert und nicht auf einen Server hochgeladen werden“; der Schalter „Intelligente Suche und personalisierte Empfehlungen“ beschreibt, dass sich nach dem Abschalten sofort der rein öffentliche Modus einstellt und keine Verhaltensereignisse mehr aufgezeichnet werden; die Schaltfläche „Empfehlungsprofil und Nicht-interessant-Vermerke zurücksetzen“ entfernt die serverseitigen Verhaltensdaten sofort.*
+*Abbildung: Der Bereich „Datenschutz und lokale Daten“. Ältere Oberflächentexte können vollständige Lokalität oder Löschung suggerieren; tatsächlich können Kontextdaten übermittelt werden, und das Zurücksetzen ist nur teilweise wirksam. Eine Erfolgsmeldung beweist keine vollständige entfernte Löschung.*
 
-Dieser Bereich setzt die in der [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 9, beschriebenen Selbstbedienungsrechte in der Oberfläche um:
+Dieser Bereich bietet begrenzte Selbstbedienungsfunktionen, keine vollständige Umsetzung aller Betroffenenrechte; siehe [Datenschutzerklärung](/de/privacy-policy/), Abschnitte 6 und 9:
 
-1. Schalter „Intelligente Suche und personalisierte Empfehlungen“: nach dem Abschalten werden keine Ereignisse mehr erhoben; die Empfehlungen wechseln in den rein öffentlichen Modus;
+1. Schalter „Intelligente Suche und personalisierte Empfehlungen“: steuert den vorgesehenen Personalisierungspfad; nicht jede Datenerhebung oder öffentliche Suchwortverwendung endet damit;
 2. Schalter „Auto DJ“: steuert das automatische Fortsetzen nach dem Ende der Wiedergabeliste;
-3. „Empfehlungsprofil und Nicht-interessant-Vermerke zurücksetzen“: vernichtet sofort sämtliche serverseitig mit Ihnen verknüpften Verhaltensereignisse (`DELETE /api/sonic/events`);
-4. „Alle lokalen Daten löschen“: entfernt nach einem Bestätigungsdialog sämtliche Inhalte von Browser-Speicher und IndexedDB und setzt zugleich das serverseitige Profil zurück.
+3. „Empfehlungsprofil und Nicht-interessant-Vermerke zurücksetzen“: löscht Teile der Ereignisse und Rückmeldungen der aktuellen Identität (`DELETE /api/sonic/events`), nicht garantiert alte anonyme Kennungen, Radar, Aggregate, externe Dienste oder Backups;
+4. „Alle lokalen Daten löschen“: versucht nach Bestätigung Browser-Speicher und IndexedDB zu bereinigen sowie Teile des entfernten Profils zurückzusetzen; Teilfehler können trotz Erfolgsmeldung bestehen. Das HttpOnly-Sitzungs-Cookie wird dadurch nicht entfernt, und dies ist keine Abmeldung. Nach Einstellungsreset und Neuladen kann Personalisierung wieder standardmäßig aktiv sein; prüfen Sie Ihre Auswahl erneut. Lokaler Erfolg belegt keine vollständige entfernte Löschung. Umfassendere Anfragen richten Sie an `privacy@epocanvas.com`.
 
 ## 10. Mobilgeräte
 

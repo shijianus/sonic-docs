@@ -1,0 +1,335 @@
+Command: pnpm validate
+Exit code: 0
+Scope: current v1.7 workspace, not the historical v1.6 snapshot
+
+
+> sonic-docs@1.0.0 validate D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> pnpm run build && node scripts/validate-anchors.cjs && python scripts/check-structure.py && pnpm run test:language && pnpm run check:sidebar && pnpm run check:policies
+
+
+> sonic-docs@1.0.0 build D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> astro build
+
+06:34:26 [content] Syncing content
+06:34:32 [content] Synced content
+06:34:32 [types] Generated 8.39s
+06:34:32 [build] output: "static"
+06:34:32 [build] mode: "static"
+06:34:32 [build] directory: D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs\dist\
+06:34:32 [build] Collecting build info...
+06:34:32 [build] ✓ Completed in 9.12s.
+06:34:33 [build] Building static entrypoints...
+06:34:45 [vite] ✓ built in 11.34s
+06:34:45 [build] ✓ Completed in 11.42s.
+
+ building client (vite) 
+06:34:45 [vite] transforming...
+06:34:45 [vite] ✓ 18 modules transformed.
+06:34:45 [vite] rendering chunks...
+06:34:45 [vite] computing gzip size...
+06:34:45 [vite] dist/_astro/ec.8zarh.js                                                              2.42 kB
+06:34:45 [vite] dist/_astro/ec.tm3va.css                                                            18.26 kB │ gzip:  3.88 kB
+06:34:45 [vite] dist/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js   0.67 kB │ gzip:  0.40 kB
+06:34:45 [vite] dist/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js         1.67 kB │ gzip:  0.86 kB
+06:34:45 [vite] dist/_astro/page.B1D-nYk3.js                                                         2.24 kB │ gzip:  1.01 kB
+06:34:45 [vite] dist/_astro/Search.astro_astro_type_script_index_0_lang.I4KIuVKd.js                  2.71 kB │ gzip:  1.39 kB
+06:34:45 [vite] dist/_astro/ui-core.rBH4chKZ.js                                                     94.19 kB │ gzip: 27.34 kB
+06:34:45 [vite] ✓ built in 628ms
+
+ generating static routes 
+06:34:46 ▶ @astrojs/starlight/routes/static/404.astro
+06:34:46   └─ /404.htmlEntry docs → 404 was not found.
+ (+42ms) 
+06:34:46 ▶ @astrojs/starlight/routes/static/index.astro
+06:34:46   ├─ /acceptable-use/index.html (+21ms) 
+06:34:46   ├─ /data-management/index.html (+19ms) 
+06:34:46   ├─ /account-security/index.html (+18ms) 
+06:34:46   ├─ /data-security/index.html (+12ms) 
+06:34:46   ├─ /features/index.html (+21ms) 
+06:34:46   ├─ /interface/index.html (+11ms) 
+06:34:46   ├─ /key-terms/index.html (+15ms) 
+06:34:46   ├─ /api/index.html (+12ms) 
+06:34:46   ├─ /development/index.html (+20ms) 
+06:34:46   ├─ /deployment/index.html (+12ms) 
+06:34:46   ├─ /library/index.html (+15ms) 
+06:34:46   ├─ /mobile/index.html (+13ms) 
+06:34:46   ├─ /open-source/index.html (+16ms) 
+06:34:46   ├─ /overview/index.html (+12ms) 
+06:34:46   ├─ /privacy-policy/index.html (+20ms) 
+06:34:46   ├─ /project/index.html (+22ms) 
+06:34:46   ├─ /recommendation/index.html (+12ms) 
+06:34:46   ├─ /quickstart/index.html (+11ms) 
+06:34:46   ├─ /search-syntax/index.html (+14ms) 
+06:34:46   ├─ /sub-processors/index.html (+11ms) 
+06:34:46   ├─ /terms-of-service/index.html (+12ms) 
+06:34:46   ├─ /troubleshooting/index.html (+12ms) 
+06:34:46   ├─ /de/acceptable-use/index.html (+14ms) 
+06:34:46   ├─ /de/account-security/index.html (+9ms) 
+06:34:46   ├─ /de/api/index.html (+9ms) 
+06:34:46   ├─ /de/data-management/index.html (+9ms) 
+06:34:46   ├─ /de/data-security/index.html (+8ms) 
+06:34:46   ├─ /de/deployment/index.html (+11ms) 
+06:34:46   ├─ /de/development/index.html (+11ms) 
+06:34:46   ├─ /de/features/index.html (+17ms) 
+06:34:46   ├─ /de/interface/index.html (+11ms) 
+06:34:46   ├─ /de/key-terms/index.html (+9ms) 
+06:34:46   ├─ /de/library/index.html (+9ms) 
+06:34:46   ├─ /de/mobile/index.html (+7ms) 
+06:34:46   ├─ /de/overview/index.html (+8ms) 
+06:34:46   ├─ /de/open-source/index.html (+8ms) 
+06:34:46   ├─ /de/privacy-policy/index.html (+9ms) 
+06:34:46   ├─ /de/project/index.html (+8ms) 
+06:34:46   ├─ /de/quickstart/index.html (+8ms) 
+06:34:46   ├─ /de/search-syntax/index.html (+8ms) 
+06:34:46   ├─ /de/recommendation/index.html (+9ms) 
+06:34:46   ├─ /de/sub-processors/index.html (+8ms) 
+06:34:46   ├─ /de/terms-of-service/index.html (+11ms) 
+06:34:46   ├─ /de/troubleshooting/index.html (+12ms) 
+06:34:46   ├─ /en/acceptable-use/index.html (+12ms) 
+06:34:46   ├─ /en/account-security/index.html (+8ms) 
+06:34:46   ├─ /en/api/index.html (+9ms) 
+06:34:46   ├─ /en/data-management/index.html (+8ms) 
+06:34:46   ├─ /en/deployment/index.html (+9ms) 
+06:34:46   ├─ /en/data-security/index.html (+8ms) 
+06:34:46   ├─ /en/development/index.html (+8ms) 
+06:34:46   ├─ /en/features/index.html (+8ms) 
+06:34:46   ├─ /en/key-terms/index.html (+7ms) 
+06:34:46   ├─ /en/interface/index.html (+9ms) 
+06:34:46   ├─ /en/library/index.html (+15ms) 
+06:34:46   ├─ /en/mobile/index.html (+10ms) 
+06:34:46   ├─ /en/open-source/index.html (+9ms) 
+06:34:46   ├─ /en/privacy-policy/index.html (+9ms) 
+06:34:46   ├─ /en/overview/index.html (+8ms) 
+06:34:46   ├─ /en/project/index.html (+9ms) 
+06:34:46   ├─ /en/quickstart/index.html (+8ms) 
+06:34:46   ├─ /en/recommendation/index.html (+8ms) 
+06:34:46   ├─ /en/search-syntax/index.html (+9ms) 
+06:34:46   ├─ /en/sub-processors/index.html (+11ms) 
+06:34:46   ├─ /en/terms-of-service/index.html (+9ms) 
+06:34:46   ├─ /en/troubleshooting/index.html (+10ms) 
+06:34:46   ├─ /es/acceptable-use/index.html (+13ms) 
+06:34:46   ├─ /es/account-security/index.html (+8ms) 
+06:34:46   ├─ /es/api/index.html (+8ms) 
+06:34:47   ├─ /es/data-management/index.html (+8ms) 
+06:34:47   ├─ /es/data-security/index.html (+8ms) 
+06:34:47   ├─ /es/deployment/index.html (+8ms) 
+06:34:47   ├─ /es/development/index.html (+8ms) 
+06:34:47   ├─ /es/features/index.html (+9ms) 
+06:34:47   ├─ /es/interface/index.html (+7ms) 
+06:34:47   ├─ /es/key-terms/index.html (+8ms) 
+06:34:47   ├─ /es/library/index.html (+7ms) 
+06:34:47   ├─ /es/mobile/index.html (+7ms) 
+06:34:47   ├─ /es/open-source/index.html (+9ms) 
+06:34:47   ├─ /es/overview/index.html (+14ms) 
+06:34:47   ├─ /es/privacy-policy/index.html (+8ms) 
+06:34:47   ├─ /es/project/index.html (+9ms) 
+06:34:47   ├─ /es/quickstart/index.html (+9ms) 
+06:34:47   ├─ /es/recommendation/index.html (+8ms) 
+06:34:47   ├─ /es/search-syntax/index.html (+7ms) 
+06:34:47   ├─ /es/sub-processors/index.html (+8ms) 
+06:34:47   ├─ /es/terms-of-service/index.html (+8ms) 
+06:34:47   ├─ /es/troubleshooting/index.html (+7ms) 
+06:34:47   ├─ /fr/acceptable-use/index.html (+9ms) 
+06:34:47   ├─ /fr/account-security/index.html (+8ms) 
+06:34:47   ├─ /fr/api/index.html (+7ms) 
+06:34:47   ├─ /fr/data-management/index.html (+8ms) 
+06:34:47   ├─ /fr/data-security/index.html (+8ms) 
+06:34:47   ├─ /fr/deployment/index.html (+8ms) 
+06:34:47   ├─ /fr/development/index.html (+8ms) 
+06:34:47   ├─ /fr/features/index.html (+9ms) 
+06:34:47   ├─ /fr/interface/index.html (+10ms) 
+06:34:47   ├─ /fr/key-terms/index.html (+8ms) 
+06:34:47   ├─ /fr/library/index.html (+9ms) 
+06:34:47   ├─ /fr/mobile/index.html (+9ms) 
+06:34:47   ├─ /fr/open-source/index.html (+17ms) 
+06:34:47   ├─ /fr/overview/index.html (+13ms) 
+06:34:47   ├─ /fr/privacy-policy/index.html (+13ms) 
+06:34:47   ├─ /fr/project/index.html (+11ms) 
+06:34:47   ├─ /fr/quickstart/index.html (+16ms) 
+06:34:47   ├─ /fr/search-syntax/index.html (+8ms) 
+06:34:47   ├─ /fr/recommendation/index.html (+11ms) 
+06:34:47   ├─ /fr/sub-processors/index.html (+9ms) 
+06:34:47   ├─ /fr/terms-of-service/index.html (+8ms) 
+06:34:47   ├─ /fr/troubleshooting/index.html (+7ms) 
+06:34:47   ├─ /ja/acceptable-use/index.html (+9ms) 
+06:34:47   ├─ /ja/account-security/index.html (+8ms) 
+06:34:47   ├─ /ja/api/index.html (+8ms) 
+06:34:47   ├─ /ja/data-management/index.html (+8ms) 
+06:34:47   ├─ /ja/data-security/index.html (+15ms) 
+06:34:47   ├─ /ja/deployment/index.html (+13ms) 
+06:34:47   ├─ /ja/development/index.html (+9ms) 
+06:34:47   ├─ /ja/features/index.html (+9ms) 
+06:34:47   ├─ /ja/interface/index.html (+8ms) 
+06:34:47   ├─ /ja/key-terms/index.html (+7ms) 
+06:34:47   ├─ /ja/library/index.html (+7ms) 
+06:34:47   ├─ /ja/open-source/index.html (+9ms) 
+06:34:47   ├─ /ja/mobile/index.html (+7ms) 
+06:34:47   ├─ /ja/overview/index.html (+9ms) 
+06:34:47   ├─ /ja/privacy-policy/index.html (+9ms) 
+06:34:47   ├─ /ja/quickstart/index.html (+9ms) 
+06:34:47   ├─ /ja/project/index.html (+9ms) 
+06:34:47   ├─ /ja/recommendation/index.html (+7ms) 
+06:34:47   ├─ /ja/search-syntax/index.html (+8ms) 
+06:34:47   ├─ /ja/terms-of-service/index.html (+17ms) 
+06:34:47   ├─ /ja/sub-processors/index.html (+10ms) 
+06:34:47   ├─ /ja/troubleshooting/index.html (+9ms) 
+06:34:47   ├─ /ko/acceptable-use/index.html (+14ms) 
+06:34:47   ├─ /ko/account-security/index.html (+9ms) 
+06:34:47   ├─ /ko/api/index.html (+13ms) 
+06:34:47   ├─ /ko/data-management/index.html (+9ms) 
+06:34:47   ├─ /ko/data-security/index.html (+9ms) 
+06:34:47   ├─ /ko/deployment/index.html (+8ms) 
+06:34:47   ├─ /ko/development/index.html (+9ms) 
+06:34:47   ├─ /ko/features/index.html (+7ms) 
+06:34:47   ├─ /ko/interface/index.html (+8ms) 
+06:34:47   ├─ /ko/key-terms/index.html (+8ms) 
+06:34:47   ├─ /ko/library/index.html (+7ms) 
+06:34:47   ├─ /ko/mobile/index.html (+8ms) 
+06:34:47   ├─ /ko/open-source/index.html (+9ms) 
+06:34:47   ├─ /ko/overview/index.html (+10ms) 
+06:34:47   ├─ /ko/privacy-policy/index.html (+9ms) 
+06:34:47   ├─ /ko/project/index.html (+7ms) 
+06:34:47   ├─ /ko/quickstart/index.html (+8ms) 
+06:34:47   ├─ /ko/recommendation/index.html (+7ms) 
+06:34:47   ├─ /ko/search-syntax/index.html (+9ms) 
+06:34:47   ├─ /ko/sub-processors/index.html (+9ms) 
+06:34:47   ├─ /ko/terms-of-service/index.html (+8ms) 
+06:34:47   ├─ /ko/troubleshooting/index.html (+7ms) 
+06:34:47   ├─ /ru/acceptable-use/index.html (+15ms) 
+06:34:47   ├─ /ru/account-security/index.html (+12ms) 
+06:34:47   ├─ /ru/api/index.html (+8ms) 
+06:34:47   ├─ /ru/data-management/index.html (+8ms) 
+06:34:47   ├─ /ru/data-security/index.html (+10ms) 
+06:34:47   ├─ /ru/deployment/index.html (+8ms) 
+06:34:47   ├─ /ru/development/index.html (+7ms) 
+06:34:47   ├─ /ru/features/index.html (+8ms) 
+06:34:47   ├─ /ru/interface/index.html (+8ms) 
+06:34:47   ├─ /ru/key-terms/index.html (+8ms) 
+06:34:47   ├─ /ru/library/index.html (+7ms) 
+06:34:47   ├─ /ru/mobile/index.html (+7ms) 
+06:34:47   ├─ /ru/open-source/index.html (+8ms) 
+06:34:47   ├─ /ru/overview/index.html (+9ms) 
+06:34:47   ├─ /ru/privacy-policy/index.html (+9ms) 
+06:34:47   ├─ /ru/project/index.html (+9ms) 
+06:34:47   ├─ /ru/quickstart/index.html (+8ms) 
+06:34:47   ├─ /ru/sub-processors/index.html (+7ms) 
+06:34:47   ├─ /ru/recommendation/index.html (+7ms) 
+06:34:47   ├─ /ru/search-syntax/index.html (+8ms) 
+06:34:47   ├─ /ru/terms-of-service/index.html (+9ms) 
+06:34:47   ├─ /ru/troubleshooting/index.html (+7ms) 
+06:34:47   ├─ /zh-tw/acceptable-use/index.html (+9ms) 
+06:34:47   ├─ /zh-tw/account-security/index.html (+7ms) 
+06:34:47   ├─ /zh-tw/api/index.html (+9ms) 
+06:34:47   ├─ /zh-tw/data-management/index.html (+7ms) 
+06:34:48   ├─ /zh-tw/data-security/index.html (+12ms) 
+06:34:48   ├─ /zh-tw/deployment/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/features/index.html (+9ms) 
+06:34:48   ├─ /zh-tw/development/index.html (+7ms) 
+06:34:48   ├─ /zh-tw/interface/index.html (+7ms) 
+06:34:48   ├─ /zh-tw/key-terms/index.html (+7ms) 
+06:34:48   ├─ /zh-tw/mobile/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/open-source/index.html (+10ms) 
+06:34:48   ├─ /zh-tw/library/index.html (+11ms) 
+06:34:48   ├─ /zh-tw/overview/index.html (+11ms) 
+06:34:48   ├─ /zh-tw/privacy-policy/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/project/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/quickstart/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/recommendation/index.html (+10ms) 
+06:34:48   ├─ /zh-tw/search-syntax/index.html (+9ms) 
+06:34:48   ├─ /zh-tw/sub-processors/index.html (+7ms) 
+06:34:48   ├─ /zh-tw/terms-of-service/index.html (+8ms) 
+06:34:48   ├─ /zh-tw/troubleshooting/index.html (+7ms) 
+06:34:48   ├─ /pt/acceptable-use/index.html (+10ms) 
+06:34:48   ├─ /pt/account-security/index.html (+8ms) 
+06:34:48   ├─ /pt/api/index.html (+8ms) 
+06:34:48   ├─ /pt/data-management/index.html (+8ms) 
+06:34:48   ├─ /pt/data-security/index.html (+9ms) 
+06:34:48   ├─ /pt/deployment/index.html (+8ms) 
+06:34:48   ├─ /pt/development/index.html (+9ms) 
+06:34:48   ├─ /pt/features/index.html (+8ms) 
+06:34:48   ├─ /pt/interface/index.html (+14ms) 
+06:34:48   ├─ /pt/key-terms/index.html (+9ms) 
+06:34:48   ├─ /pt/library/index.html (+8ms) 
+06:34:48   ├─ /pt/mobile/index.html (+9ms) 
+06:34:48   ├─ /pt/open-source/index.html (+14ms) 
+06:34:48   ├─ /pt/overview/index.html (+10ms) 
+06:34:48   ├─ /pt/privacy-policy/index.html (+10ms) 
+06:34:48   ├─ /pt/project/index.html (+8ms) 
+06:34:48   ├─ /pt/quickstart/index.html (+8ms) 
+06:34:48   ├─ /pt/recommendation/index.html (+10ms) 
+06:34:48   ├─ /pt/search-syntax/index.html (+8ms) 
+06:34:48   ├─ /pt/sub-processors/index.html (+10ms) 
+06:34:48   ├─ /pt/terms-of-service/index.html (+9ms) 
+06:34:48   └─ /pt/troubleshooting/index.html (+9ms) 
+06:34:48 ✓ Completed in 2.39s.
+
+(node:36788) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+06:34:52 [build] Waiting for integration "@astrojs/starlight", hook "astro:build:done"...
+
+Running Pagefind v1.5.2 (Extended)
+Running from: "D:\\Users\\Smart Kevin\\OneDrive\\Desktop\\sonicdocs\\node_modules\\.pnpm\\@astrojs+starlight@0.32.6_a_031c7f7e427c3c5939044b80b0a0649c\\node_modules\\@astrojs\\starlight"
+Source:       "..\\..\\..\\..\\..\\..\\dist"
+Output:       "..\\..\\..\\..\\..\\..\\dist\\pagefind"
+
+[Walking source directory]
+Found 222 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+
+[Reading languages]
+Discovered 10 languages: ja, fr, ko, pt, ru, en, zh-tw, zh-cn, es, de
+
+[Building search indexes]
+Total: 
+  Indexed 10 languages
+  Indexed 220 pages
+  Indexed 32795 words
+  Indexed 0 filters
+  Indexed 0 sorts
+Note: Pagefind doesn't support stemming for the language ja. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ko. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-tw. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ja. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language ko. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-tw. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+
+Finished in 1.517 seconds
+06:34:54 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+06:34:54 [build] 221 page(s) built in 30.74s
+06:34:54 [build] Complete!
+pages=222, links-checked=7726, anchors-checked=1960, images-checked=411, broken=0
+OK: 10 languages structurally checked vs zh formal base (22 docs)
+
+> sonic-docs@1.0.0 test:language D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/test-language-negotiation.mjs
+
+Language negotiation tests passed (19 negotiation cases, 6 path cases).
+
+> sonic-docs@1.0.0 check:sidebar D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> node scripts/check-sidebar-i18n.mjs
+
+Sidebar translations cover 22 items and 6 groups across 10 locales.
+
+> sonic-docs@1.0.0 check:policies D:\Users\Smart Kevin\OneDrive\Desktop\sonicdocs
+> python scripts/check-policy-consistency.py
+
+policies=20, locales=10, article-references=547, whitelist=36, errors=0
+
+Additional rendered checks: 220 content routes; 220 unique canonical URLs; 20 policy pages; no duplicate DOM IDs, missing routes or automatic policy footer dates.
+Inputs remained unchanged throughout the final build.

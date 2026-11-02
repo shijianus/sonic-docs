@@ -3,7 +3,9 @@ title: Development Guide
 description: The Sonic development guide — repository structure, build commands, the test suite, documentation consistency checks and contributing.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
+
+The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page is for readers joining development or building on the project, and covers the repository structure, build commands, the test suite and the documentation consistency checks. Licensing and legal boundaries are in [Open-Source & Self-Hosting Legal](/en/open-source/).
 
@@ -22,11 +24,11 @@ This page is for readers joining development or building on the project, and cov
 ## 2. Build and local run
 
 ```bash
-npm ci                              # 根依赖
+npm ci                              # root dependencies
 pnpm --dir player install --frozen-lockfile
-npm run build                       # 播放器构建 + 复制至 dist
-npx wrangler pages dev dist         # 本地边缘闸道（无数据面时自动降级模式）
-npm run build:engine && npm run start:engine   # 本地数据面引擎
+npm run build                       # build the player + copy to dist
+npx wrangler pages dev dist         # local edge gateway (automatic degradation mode without the data plane)
+npm run build:engine && npm run start:engine   # local data-plane engine
 ```
 
 ## 3. Test suite
@@ -46,13 +48,13 @@ Run before each release with `npm test`; coverage:
 This site (sonicdocs) evolves release by release and is checked against the source code; the verification toolchain:
 
 ```bash
-pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校验
+pnpm validate    # build + broken in-page anchor check + multilingual structural symmetry check
 ```
 
 1. `scripts/validate-anchors.cjs`: zero broken in-page anchors or image references site-wide;
 2. `scripts/check-structure.py`: 1:1 structural symmetry of headings／tables／images／callouts across language versions;
 3. `doc/legal-reference.md`: the GDPR article-citation whitelist (verified against EUR-Lex); articles outside the whitelist must not appear in the documents;
-4. Technical facts are refreshed against the source code (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`) with each release; where they disagree, the source code prevails and the documents are corrected.
+4. Check technical statements against the identified revision and actual deployment, including default-on profiling, public raw-query reuse, email avatar requests, HTTP upstream connections, partial deletion and hidden failures. Source-code review is not live compliance certification and cannot excuse inaccurate notice; correct contradictions and notify affected users.
 
 ## 5. Contributing
 
@@ -63,4 +65,4 @@ pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校�
 
 ## 6. Documentation translations
 
-This site is a multi-language mirrored structure: a change in any language must be propagated to the others (1:1 structure is verified by script). When adding a language: register the locale, complete the full document set, add the language to the structure scripts' language list, and check legal citations against that language's citation format in `doc/legal-reference.md`.
+Simplified Chinese is the maintenance baseline with nine translations; mandatory law, intelligible notice and interpretation favourable to consumers override language-priority rules. Translate full paragraphs, including blockers and mandatory clauses, and preserve H2/H3 counts, table dimensions, image URLs and callout counts while localising internal links. Revised documents use their own revision date and version, not retroactive consent or an assumed deployment date. New locales need registration, complete files, structural checks and citation-format review against `doc/legal-reference.md`.

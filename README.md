@@ -1,97 +1,55 @@
-# SonicDocs · epocanvas sonic 官方法律文档站
+# SonicDocs · Sonic 服务与数据文档
 
-本目录是 **epocanvas sonic** 的官方法律文档站（独立 git 仓库，位于 sonic 仓库之外）：法律内容以**欧盟《通用数据保护条例》（GDPR）为全体用户之最低资料保护标准**（无论用户所在地），条号引用以 [`doc/legal-reference.md`](doc/legal-reference.md) 为唯一核验底稿（EUR-Lex 合并文本，2026-10-30 核验）；全部技术事实（行为事件采集范围、假名化标识符、90 日保留、日志最小化、第三方清单、默认关闭链路）均经 sonic 仓库源码逐项核实，与 `docs/OPERATIONS.md`、`docs/COMPLIANCE.md` 之表述一致。
+**文档版本：1.8｜修订日期：2026-11-02**
 
-- 产品定位：多源音乐串流平台与聚合闸道，Cloudflare 边缘控制面 + Linux 本地协议引擎数据面，开源（仓库根目录 `LICENSE`，MIT）可自托管
-- 托管实例：[sonic.epocanvas.tech](https://sonic.epocanvas.tech)（主站）· [sonic.epocanvas.com](https://sonic.epocanvas.com)（备用镜像）
-- 视觉：Dignified Minimal 主题（靛蓝 `#2563eb` 主色 + Slate 中性色，与 EpoCanvasDocs / EpomailDocs 家族一致），8 张主题自适应 SVG 原理图（浅色底 + `prefers-color-scheme` 暗色适配，图内微标签英文复用、语义由各语言图注承载）+ 11 张托管实例真实运行截图（`public/images/sonic/ui/`，本地实际运行前端截取）与莫比乌斯声波品牌徽标（`public/logo.svg`）
+本仓库维护 Sonic 个人、免费、非营利学习与公益测试项目的服务条款、隐私说明和使用指南。文档面向实际采用这些政策的托管实例；自部署者须按自己的行为、配置和适用法律另行告知。代码仓库为 [shijianus/sonic](https://github.com/shijianus/sonic)。
 
-## 文档架构（专案介绍 1 篇 + 法律 7 篇）
+托管服务定位为个人维护的实验／测试服务。我们重视用户隐私，以严格的数据保护原则作为设计与持续改进方向，参照 GDPR 的数据最小化、目的限制、透明告知和用户控制原则，尽合理努力提供与实际风险相称的高水平保护。这是保护目标，不表示已经获得欧盟认证、全面符合欧盟及成员国全部法律，或能保证零风险；具体数据流、已知风险和未核实事项仍须如实披露。
 
-| 文档 | slug | 内容 |
-| --- | --- | --- |
-| 专案介绍 | `project` | 产品定位、双层架构、核心能力、音源与歌词链路、推荐引擎、安全与隐私设计、适用边界、部署形态、质量保障、常见疑问、文档导读 |
-| 界面与功能导览 | `interface` | 首页与推荐（含音乐与风格雷达）、侧栏折叠与帐号入口、搜索、排行榜与官方榜单、歌手与专辑库、播放控制、播放器抽屉与逐字歌词、我的音乐、设置、隐私与数据控制、移动端（11 张真实运行截图） |
-| 总览 | `overview` | 平台身份、数据控制者/受托处理者角色界定、GDPR 级保护基线、文档地图、效力顺序 |
-| 快速上手 | `quickstart` | 打开网站、搜索与播放、登录与收藏同步、下载与本地音乐、移动端、隐私设置第一步、常见问题速查 |
-| 功能指南 | `features` | 音质分级与试听透明、逐字歌词链路、推荐与 Auto DJ、下载与本地音乐、排行榜、MV、搜索容错、降级模式 |
-| 搜索与规则参考 | `search-syntax` | 检索范围、容错与匹配规则、多源并行与去重、结果操作、搜索与隐私 |
-| 音乐库管理 | `library` | 喜爱与收藏、最近播放、下载列表、本地音乐、存储位置一览 |
-| 移动端指南 | `mobile` | 布局与导航、移动播放器抽屉、首页与雷达、存储与同步边界、使用建议 |
-| 故障排查 | `troubleshooting` | 播放、降级模式、搜索、登录、存储、限流与错误码、提报指引 |
-| 开放平台与 API 接入 | `api` | 统一回传结构、端点导航、API Key 认证与传递规范、限流与撤销、接入者义务 |
-| 隐私政策 | `privacy-policy` | 告知事项六款、收集之资料（帐户识别／行为事件／聚合统计／本地存储／技术资料）、法律依据（GDPR 第 6 条）、保存期限、当事人权利（第 15–22、77、79 条）、儿童保护（第 8 条） |
-| 用户条款 | `terms-of-service` | 电子同意、帐号（Epomail OAuth）、服务范围明细、降级机制、行为数据授权、音质与试听标识、责任限制、准据法与管辖、修订 |
-| 可接受使用政策 | `acceptable-use` | 禁止行为清单（系统滥用／内容权利／他人权益）、资源上限（240/600 rpm）、执行阶梯与零容忍通道、申诉 |
-| 数据处理与安全维护 | `data-security` | 数据生命周期、处理矩阵、四层安全措施、已知局限、资料外泄应变（72 小时通报）、设计与默认、自部署义务 |
-| 第三方共享与传输清单 | `sub-processors` | Cloudflare（受托）、Epomail（身份）、上游内容来源（不含身份）、默认关闭链路、法律要求、国际传输（第 44–46 条） |
-| 推荐算法说明 | `recommendation` | 行为信号与权重、热度模型、会话意图与长期偏好、MMR 重排与 Auto DJ、音乐与风格雷达、控制权 |
-| 帐户与安全指南 | `account-security` | Epomail OAuth 登录、会话机制、API Key 保管、撤销与登出、安全使用建议、帐号管理入口 |
-| 数据导出与存储 | `data-management` | 数据位置总览、画像概览查询、导出与备份、清除操作、自部署实例 |
-| 开源与自行部署法律 | `open-source` | 许可证现状（MIT 权威/历史 CC 意图）、商标边界、第三方致谢、部署者法律义务、本站文档采用指南 |
-| 部署指南 | `deployment` | Pages 与 Docker 双方案、核心环境变量、备份恢复、健康检查与回滚、部署者核对清单 |
-| 开发指南 | `development` | 仓库结构、构建与本地运行、测试套件、文档一致性核验、参与贡献、翻译贡献 |
-| 用语定义 | `key-terms` | 法律名词（GDPR 第 4 条词汇）与技术名词（HMAC、PKCE、SSRF、WAL、熔断器等） |
+项目不额外提供商业服务等级、永久运营或生产环境合规认证承诺。非营利、免费、开源及学习目的均不免除适用法律义务；“尽合理努力”不能替代身份告知、合法依据、必要安全措施或权利处理，风险说明也不要求用户接受不合法的处理或放弃权利。
 
-**法律要点**：以 GDPR 作为全体用户之最低资料保护标准——欧盟与欧洲经济区用户 GDPR 直接适用；其他地区用户以 GDPR 标准为自助承诺、按契约义务履行；所在地法律更强保障就其范围优先。托管实例于台湾营运，用户条款准据法为运营者所在地法律（消费者强制管辖除外），资料保护事项不因准据法而降低。简体中文版为正式版本，英文与日文版为对照译本。当前文档版本 **1.5**（生效日期 2026-11-02，全站统一；1.5 新增搜索规则/音乐库/移动端/推荐算法/帐户安全/数据导出/故障排查七篇，侧栏扩至 6 组 22 条，界面导览同步 sonic 最新 UI——莫比乌斯声波新 Logo、折叠模式、Epomail 帐号入口、音乐与风格雷达）。
+2026-11-02 重新核对公开 `main` 的 [`ce443c801d2eafdbdc53e60b12b088ba3bac4d67`](https://github.com/shijianus/sonic/commit/ce443c801d2eafdbdc53e60b12b088ba3bac4d67)（2026-10-27 UTC），以及较新的公开候选分支 `rc/sonic-20261031` 的 [`a75f5cb54a2fe3593ba0da72b7ee9b1cc5c410a8`](https://github.com/shijianus/sonic/commit/a75f5cb54a2fe3593ba0da72b7ee9b1cc5c410a8)（2026-11-01 UTC）。本套功能说明以该候选提交为据，明确标明旧主线差异；GitHub 没有已发布 Release，候选分支不等于线上部署。静态检查不能证明实际版本、供应商合同、保存期限或删除结果。详细证据和仍须落实的条件见 [源码核对记录](doc/sonic-source-audit-2026-11-02.md)。
 
-## 语言矩阵（10 语言 × 22 文档 = 220 内容页，对齐 EpoCanvasDocs 语言集合）
+本仓库既有文档拟用 `admin@epocanvas.com`（服务与帐号）和 `privacy@epocanvas.com`（隐私与权利请求）。本轮未在受审 Sonic 上游源码确认这两个地址的公告，也未发信验证送达，不能把它们写成已核验的运营联系资料。运营者的法定姓名／实体、法律要求的地址和电话、节点国家及供应商关系仍待补齐；实例采用前须确认或更正联系方式并核实可用性。
 
-| 语言 | 目录 | 说明 |
-| --- | --- | --- |
-| 简体中文（正式版本） | `src/content/docs/` | Starlight `root` 约定占用根路径（URL 如 `/sonic/privacy-policy/`） |
-| 繁體中文 | `src/content/docs/zh-tw/` | 对照译本（台湾用语） |
-| English | `src/content/docs/en/` | 对照译本 |
-| Français | `src/content/docs/fr/` | 对照译本 |
-| Español | `src/content/docs/es/` | 对照译本 |
-| Deutsch | `src/content/docs/de/` | 对照译本 |
-| 日本語 | `src/content/docs/ja/` | 对照译本 |
-| 한국어 | `src/content/docs/ko/` | 对照译本 |
-| Português | `src/content/docs/pt/` | 对照译本 |
-| Русский | `src/content/docs/ru/` | 对照译本 |
+## 文档与语言
 
-十语言集合与 EpoCanvasDocs 一致；其中 `zh` / `en` / `ja` 与 Sonic 播放器内建 i18n 一一对应，其余七语为对照译本。每篇文档头部标注生效日期与版本号，全站统一（当前 1.3）。
+`src/content/docs/` 共 **10 种语言 × 22 篇 = 220 内容页**。简体中文位于根目录，其余目录为 `zh-tw`、`en`、`fr`、`es`、`de`、`ja`、`ko`、`pt`、`ru`。中文是维护基准；强制法律、易懂告知及消费者有利解释不因语言约定而减损。
 
-## 本地构建与检视
+| 文档组 | 内容 |
+| --- | --- |
+| 核心法律文档 | `overview`、`privacy-policy`、`terms-of-service`、`acceptable-use`、`data-security`、`sub-processors`、`key-terms` |
+| 项目与使用 | `project`、`interface`、`quickstart`、`features`、`search-syntax`、`library`、`mobile`、`troubleshooting` |
+| 帐户与数据 | `account-security`、`recommendation`、`data-management` |
+| 开源与开发 | `open-source`、`deployment`、`development`、`api` |
+
+本轮版本为 **1.8／2026-11-02**：纠正本地内嵌封面可能上传并进入共享曲目目录的披露，补充 Auto DJ／雷达关闭后的发送边界、文档站自身存储与搜索、撤回同意和消费者撤回操作，并澄清个人开发者责任限制。另将十语言四类核心法律页面的保护定位明确为“参照严格原则、尽合理努力持续改进”，区分保护目标与实际措施，不宣称已获认证、全面欧盟合规或零风险，保留具体数据风险和用户权利。全站十语言同步；各页面版本由检查脚本验证。既有 UI 截图仅示意界面，截图内“不会上传”或清除提示不是实际行为的证明。采用前应完成 [v1.8 实例采用核对表](doc/sonic-v1.8-adoption-checklist.md)。旧 v1.6／v1.7 交付包、清单及核验记录保留为历史材料，不是本轮结果；本轮验证见 [v1.8 核验报告](doc/verification-v1.8-2026-11-02.md)。
+
+## 本地构建与检查
+
+工具链要求 Node.js ≥ 22.12、pnpm 10.34.5 和 Python 3；Wrangler 4.156.1 已固定在开发依赖与锁文件。
 
 ```bash
-cd sonicdocs
-pnpm install        # astro ^5 / @astrojs/starlight ^0.32
-pnpm build          # 24 内容页 + 站点骨架，Pagefind 全文搜索索引
-pnpm preview        # http://localhost:4321/ —— 根路径按 Accept-Language 协商跳转（与生产 functions/ 一致）
-node scripts/validate-anchors.cjs   # 校验 dist 全部页内锚点与图片引用
+pnpm install --frozen-lockfile
+pnpm validate
+pnpm preview:pages
 ```
 
-构建时 Starlight 依 Git 提交历史生成「最后更新于」时间戳；`custom.css` 提供明暗双主题设计变量。发布地址暂定 `https://docs.epocanvas.com/sonic/`：部署前将 `astro.config.mjs` 顶部 `SITE_ORIGIN` / `SITE_BASE` 换成实际域名，并同步 `public/robots.txt` 之 `Sitemap:` 行。
+`pnpm validate` 依次检查内容矩阵与自测、构建、站内链接／图片／锚点、渲染 HTML、十语言入口与侧栏、政策引用及 Cloudflare Pages 本地 HTTP 行为。它会启动独立的临时 Pages 进程，验证后清理，不部署到远程。`scripts/check-structure.py` 检查 UTF-8、日期／版本、Markdown 结构与已审阅概念；`scripts/check-policy-consistency.py` 检查识别到的 GDPR 条号、列表／范围、引用格式、源码说明及技术字面值。自动检查不证明全部译文法义等价、实际运营身份、合法依据或删除已经落实。
 
-## 发布前核验
+`public/_redirects` 和构建末尾的 `scripts/finalize-pages.mjs` 将 `/sonic/` 请求映射到平铺的 `dist`，同时显式规范全部文档的尾斜杠，防止 Pages 跳转时丢失 `/sonic`。直接运行 `astro build` 会跳过该末尾步骤，正式产物必须由 `pnpm build`／`pnpm validate` 生成。根路径由 Pages Functions 按 `Accept-Language` 跳转；`/sonic/` 提供不强制跳转的十语言选择。语言切换清除旧章节锚点，正文图片支持原图对话框及无脚本链接兜底。
 
-```bash
-pnpm validate       # 构建 + 页内锚点断链检查 + 3 语言 × 8 篇结构对称
-```
+`pnpm preview:pages` 使用实际 Pages 本地运行时；`pnpm preview` 是便于阅读的轻量预览，不能替代 Pages 验收。默认发布地址是 `https://docs.epocanvas.com/sonic/`。`pnpm deploy` 必须先通过完整 `validate`，再用锁定的 Wrangler 上传同一份 `dist`；这是对外发布操作，本次未执行。冻结判定与截图证据见 [上线候选审计报告](doc/release-readiness-2026-11-02.md)。
 
-三项核验之当前基线：220 内容页构建 0 报错；页内锚点 0 断链；10 语言 × 22 篇标题／表格／图片／提示框结构 1:1（精确数字见最新一次 `pnpm validate` 输出）。
+## 维护依据
 
-## 法条引用维护
+- 新增编号法条前，先核对官方文本，再登记 [legal-reference.md](doc/legal-reference.md)；不要把旧模板的台湾法要求套到未核实的主体。
+- 技术事实记录分支、完整提交和文件行号，区分源码默认、示例配置与实际部署。查不到身份、国家、合同或期限时明确记录缺项，不能编造。
+- 修改法律文档须同步十种语言、相关指南、图内文字和站点摘要；`scripts/check-structure.py` 核对标题层级、完整表格尺寸、图片、提示框和版本，但不替代语义及日期审阅。
+- 音乐、歌词、封面与 MV 的权利须分别向相应权利人或许可文件核对；代码许可、第三方内容许可和文档使用权不能相互推定，非营利或学习用途也不自动授予内容使用权。
 
-- 条号引用以 [`doc/legal-reference.md`](doc/legal-reference.md) 为唯一白名单：**只允许引用清单已核验之条号**；清单未收录的法规一律不带条号引用
-- 引注格式：简中 `GDPR 第 6 条第 1 项第 b 款`；English `Article 6, Paragraph 1, point (b)`（全拼，不得缩写）；日本語 `GDPR 第6条第1項第b号`
-- 新增条号时：先于 EUR-Lex 合并文本核对现文，再登记入白名单（条号、主题、关键句、使用文档、核验日期）
-- GDPR 修订时：更新核验网址与日期，全语言同步修订受影响之义务表述
+## 自部署采用
 
-## 自托管运营者采用指南
+自部署者不能只替换域名就沿用全部披露。应确定自己的控制者身份、处理目的、法律依据、实际提供方、服务器地区、日志与备份期限、同意流程和删除能力。GDStudio 的代码缺省与示例环境配置不同；推荐开关、内存存储或无痕窗口都不能单独证明数据不外传或删除已经完成。
 
-本文档为「通用范本 + 托管实例实文」双轨设计。自托管运营者采用时：
-
-1. **替换身份信息**：实例域名（`sonic.epocanvas.tech` → 你的域名）、联络邮箱、生效日期与版本号；
-2. **复核第三方清单**：未开启 GDStudio / Lyriva / ListenBrainz / Gorse 等就保留其「默认关闭」表述；配置了额外外部服务则如实增列，避免过度披露或虚假披露；
-3. **核对处理参数**：行为事件保留天数（`SONIC_RECOMMEND_RETENTION_DAYS`，默认 90、下限 7）、落盘路径（`SONIC_RECOMMEND_DB_PATH=memory` 可关闭落盘）、第三方开关（`SONIC_ENABLE_GDSTUDIO` 等）与你的告知一致；
-4. **履行控制者义务**：依你所在地法律完成告知、处理活动记录（GDPR 第 30 条）、影响评估（第 35 条）与安全维护（第 32 条），并接受主管机关监督；
-5. **按辖区补足法定条款**（UK GDPR / LGPD / CCPA-CPRA 等）；本模板不构成法律意见。
-
-## 一致性保障
-
-- 十语言版本结构 1:1（标题层级、表格行列、图片、提示框逐一对应），修改任一语言时同步其余九种；由 `scripts/check-structure.py` 校验
-- 页内锚点与图片引用由 `scripts/validate-anchors.cjs` 全量复核
-- 法条引用一致性：`grep -ohP "第\s*\d+\s*条|Article \d+|第\d+条" src/content/docs -r` 抽取全部条号，与 `doc/legal-reference.md` 白名单比对，白名单外条号不得出现
-- 时效型事实（保留天数、限流值、开关默认值）随源码演进变化：每次提交前对照 sonic 仓库 `.env.example`、`server/recommend-sqlite.ts`、`functions/_lib/sonic/security.ts` 之当前值刷新对应文档
+适用 GDPR 时按风险和具体门槛判断处理记录、影响评估、代表及数据保护官等要求；人数少或免费不构成概括豁免，也不意味着每个学习者都须采购商业合规服务。仅供本人使用的隔离测试与向公众提供服务应分别判断。

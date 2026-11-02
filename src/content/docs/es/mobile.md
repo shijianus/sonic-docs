@@ -3,9 +3,9 @@ title: Guía móvil
 description: "Guía móvil de Sonic: diseño para teléfonos, navegación por pestañas, panel del reproductor móvil y comportamientos propios de los dispositivos móviles."
 ---
 
-**Fecha de entrada en vigor: 2 de noviembre de 2026｜Versión: 1.5**
+**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
 
-Esta página presenta el diseño y los principales aspectos de uso de Sonic en un navegador móvil. El móvil y el escritorio utilizan la misma instancia y el mismo sistema de cuenta, con las mismas funciones; el diseño cambia automáticamente según el ancho de la pantalla y no es necesario instalar ninguna aplicación.
+Esta página presenta el diseño y los principales aspectos de uso de Sonic en un navegador móvil. El móvil y el escritorio utilizan la misma instancia y el mismo sistema de cuenta, con las mismas funciones; el diseño cambia automáticamente según el ancho de la pantalla y no es necesario instalar ninguna aplicación. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
 ## 1. Diseño y navegación
 
@@ -21,11 +21,11 @@ La página de inicio móvil coincide con la de escritorio: carrusel de recomenda
 
 ## 4. Límites del almacenamiento y la sincronización
 
-El almacenamiento local del navegador móvil es independiente del almacenamiento del navegador de escritorio: los favoritos, las descargas y la música local permanecen en el navegador de cada dispositivo y no se sincronizan entre dispositivos. Sonic no ofrece sincronización en la nube de favoritos, listas ni preferencias. El estado de inicio de sesión también se mantiene por separado en cada sesión del navegador. Para migrar, reconstruya sus favoritos en ambos dispositivos o utilice, si existe, una función de sincronización propia del navegador o del dispositivo, fuera del servicio Sonic; Sonic no ofrece una exportación general del localStorage o IndexedDB.
+Los almacenamientos del navegador móvil y del escritorio son independientes; no se garantiza sincronización general en la nube, copia de seguridad ni exportación de localStorage/IndexedDB. No se ha encontrado una vía de subida del cuerpo de audio local, pero pueden transmitirse portadas incrustadas, metadatos, señales y contexto de recomendación; el radar también tiene una vía de sincronización remota cuya disponibilidad es limitada. El estado de la cuenta depende de cada navegador; migrar de dispositivo no garantiza recuperar todos los datos de Sonic. Véase la [Política de privacidad](/es/privacy-policy/).
 
 ## 5. Consejos de uso
 
 1. Añadir el sitio a la pantalla de inicio ofrece una experiencia de lanzamiento similar a la de una aplicación nativa;
 2. La reproducción en segundo plano depende de las políticas multimedia del navegador móvil: el sistema puede pausarla al cambiar de aplicación y reanudarla al volver a la página;
 3. El modo de ahorro de energía y el ahorro de datos pueden limitar el audio en segundo plano; es un comportamiento del navegador, no una limitación del servicio;
-4. En el modo privado o de incógnito, el almacenamiento local no es persistente: los favoritos y las descargas se pierden al cerrar la página; use el modo normal si necesita conservarlos.
+4. Incógnito puede eliminar datos locales al terminar la sesión, pero no bloquea peticiones ni eventos. La personalización y Auto DJ están activados por defecto en el código sin consentimiento demostrado; tras limpiar los ajustes, compruebe de nuevo su elección. La limpieza de la aplicación no elimina la cookie HttpOnly ni equivale a cerrar sesión.

@@ -5,15 +5,13 @@
 // 用法：node scripts/preview-server.mjs [port]（缺省 4321）
 import { createServer } from 'node:http';
 import { stat, readFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
-import { extname, join, normalize, resolve } from 'node:path';
+import { dirname, extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
+import { onRequest } from '../functions/index.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const dist = resolve(here, '..', 'dist');
 const port = Number(process.argv[2] || process.env.PORT || 4321);
-const require = createRequire(import.meta.url);
 
 const MIME = {
 	'.html': 'text/html; charset=utf-8',
@@ -37,11 +35,6 @@ const MIME = {
 	'.webmanifest': 'application/manifest+json',
 };
 
-// 复用 functions/_lib.js 的语言协商（纯 ESM，无 Cloudflare 专属 API）
-const { negotiate, overviewPathFor } = await import(
-	new URL('../functions/_lib.js', import.meta.url).href
-);
-
 async function serveFile(res, filePath, status = 200) {
 	const body = await readFile(filePath);
 	res.writeHead(status, {
@@ -55,18 +48,28 @@ const server = createServer(async (req, res) => {
 	try {
 		const url = new URL(req.url, `http://${req.headers.host}`);
 		const BASE = '/sonic'; // 与 astro.config.mjs 之 SITE_BASE 一致；dist 为扁平结构，base 由本服务器运行时映射
-		const pathname = decodeURIComponent(url.pathname);
+		let pathname;
+		try {
+			pathname = decodeURIComponent(url.pathname);
+		} catch {
+			res.writeHead(400).end('Bad Request');
+			return;
+		}
 
-		// 根路径：语言协商跳转（与生产 functions/index.js 一致）
-		if (pathname === '/' || pathname === '') {
-			const target = overviewPathFor(negotiate(req.headers['accept-language'] || ''));
-			res.writeHead(302, { location: target });
+		// 根路径直接执行生产入口；缺少 Accept-Language 时也走同一函数。
+		if (pathname === '/') {
+			const headers = new Headers();
+			for (const [name, value] of Object.entries(req.headers)) {
+				if (value !== undefined) headers.set(name, Array.isArray(value) ? value.join(', ') : value);
+			}
+			const response = await onRequest({ request: new Request(url, { headers }) });
+			res.writeHead(response.status, Object.fromEntries(response.headers));
 			res.end();
 			return;
 		}
 		// 无尾斜杠的 base 根：308 规范化
 		if (pathname === BASE) {
-			res.writeHead(308, { location: BASE + '/' });
+			res.writeHead(308, { location: BASE + '/' + url.search });
 			res.end();
 			return;
 		}
@@ -78,9 +81,13 @@ const server = createServer(async (req, res) => {
 
 		// 剥离 base 前缀后映射进 dist
 		const rest = pathname.slice(BASE.length + 1);
-		const safePath = normalize(rest).replace(/^([/\\])+/, '');
-		let filePath = safePath ? join(dist, safePath) : join(dist, 'index.html');
-		if (!filePath.startsWith(dist)) {
+		if (/[\\\x00-\x1f\x7f:]/.test(rest)) {
+			res.writeHead(403).end('Forbidden');
+			return;
+		}
+		let filePath = resolve(dist, rest);
+		const relativePath = relative(dist, filePath);
+		if (relativePath === '..' || relativePath.startsWith('..' + sep) || isAbsolute(relativePath)) {
 			res.writeHead(403).end('Forbidden');
 			return;
 		}
@@ -90,7 +97,11 @@ const server = createServer(async (req, res) => {
 			filePath = join(filePath, 'index.html');
 			st = await stat(filePath).catch(() => null);
 		}
-		if (!st) {
+		if (!st && !extname(filePath)) {
+			filePath += '.html';
+			st = await stat(filePath).catch(() => null);
+		}
+		if (!st?.isFile()) {
 			// 未命中：回退 404 页面（保持 Starlight 404 版式）
 			const notFound = join(dist, '404.html');
 			await serveFile(res, notFound, 404).catch(() => {
@@ -108,4 +119,3 @@ const server = createServer(async (req, res) => {
 server.listen(port, '127.0.0.1', () => {
 	console.log(`SonicDocs audit preview: http://127.0.0.1:${port}/  (dist: ${dist})`);
 });
-void require;

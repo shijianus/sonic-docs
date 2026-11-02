@@ -1,80 +1,82 @@
 ---
 title: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen
-description: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlungen von Sonic – Auftragsverarbeiter, Identitätsanbieter, Upstream-Inhaltsquellen, optionale Kanäle, gesetzliche Anforderungen und Garantien bei internationalen Übermittlungen.
+description: Infrastruktur, Identitätsdienste, Inhalts- und Ressourcenempfänger, unterschiedliche Schaltervorgaben und Grenzen internationaler Übermittlungen bei gehosteten Sonic-Instanzen.
 ---
 
-**Datum des Inkrafttretens: 2. November 2026｜Version: 1.5**
+**Überarbeitet am: 2. November 2026｜Version: 1.8**
 
-Diese Seite führt vollständig auf, in welchen Fällen der Sonic-Dienst (nachfolgend „der Dienst“) personenbezogene Daten an Dritte weitergibt, einschließlich der Empfänger, der betroffenen Daten und der Garantiemechanismen. Sie entfaltet Abschnitt 7 der [Datenschutzerklärung](/de/privacy-policy/); das Weitergabeprinzip lautet Mindestnotwendigkeit: kein Verkauf personenbezogener Daten, keine Weitergabe für Werbung, kein Umfang über den für die Dienstfunktionen Erforderlichen hinaus.
+Diese Seite ergänzt Abschnitt 7 der [Datenschutzerklärung](/de/privacy-policy/) und erläutert mögliche Empfänger des individuell gepflegten, kostenlosen und nicht gewinnorientierten gehosteten Sonic-Testdienstes. Eine im Quellcode vorhandene Anbindung belegt weder deren Aktivierung noch eine rechtmäßige Weitergabe. Selbst betriebene Instanzen müssen gesondert über ihre tatsächliche Verarbeitung informieren.
 
-![Karte der Drittanbieter-Weitergabe von Sonic: sechs Kanäle (Auftragsverarbeiter, Identitätsanbieter, Upstream-Inhaltsquellen, optionale Anbieter, gesetzliche Anforderungen, internationale Übermittlungen), jeweils um den Betreiber zentriert und mit den Standardwerten der Schalter gekennzeichnet](/images/sonic/sharing-map.svg)
+Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version. Anbieterverträge wurden nicht zertifiziert. Vereinfachtes Chinesisch ist die Pflegegrundlage dieser Website, die übrigen neun Sprachfassungen sind Übersetzungen. Zwingendes Recht und das Recht von Verbrauchern auf klare, verständliche Bedingungen werden durch einen vereinbarten Sprachvorrang nicht eingeschränkt.
 
-*Abbildung: Die sechs Weitergabe-Kanäle. Kategorie A ist die dauerhaft im Einsatz befindliche Auftragsverarbeitung; Kategorie B die für die Anmeldung erforderliche Identitätsprüfung; Kategorie C die abfragegesteuerte Inhaltsbeschaffung ohne Nutzeridentität; Kategorie D ist standardmäßig abgeschaltet; Kategorie E sind die gesetzlichen Ausnahmen; Kategorie F die Garantiemechanismen für grenzüberschreitende Übermittlungen.*
+![Karte der Weitergabe bei Sonic: Infrastruktur, Identitätsdienste, Inhaltsquellen, optionale Pfade, gesetzliche Anforderungen und internationale Übermittlungen](/images/sonic/sharing-map.svg)
 
-## 1. Auftragsverarbeiter (dauerhaft im Einsatz)
+*Abbildung: Empfänger sind nach Funktion gegliedert; Schalter- oder Schutzkennzeichnungen belegen weder tatsächliche Aktivierung noch Verträge oder Übermittlungsgrundlagen.*
 
-| Empfänger | Dienstleistung | Betroffene Daten | Garantiemechanismus |
-| --- | --- | --- | --- |
-| Cloudflare Pages und Functions | Frontend-Hosting, Edge-API-Gateway, Ausführung der Ratenbegrenzung | Anforderungsmetadaten, temporäre Ratenbegrenzungseinträge | Auftragsverarbeitungsklausel nach Artikel 28 der DSGVO |
-| Cloudflare Tunnel | verschlüsselter Kanal zwischen Kontrollebene und Datenebene | verschlüsselte Verkehrsmetadaten | wie oben |
-| Cloudflare KV und Ratenbegrenzer | Ratenbegrenzungszähler (Ablauf nach 120 Sekunden), Einträge zur sofortigen Schlüsselsperrung (falls aktiviert) | IP-Ratenbegrenzungsschlüssel, `jti`-Sperrungen | wie oben |
+## 1. Infrastruktur und Auftragsverarbeitung
 
-Cloudflare hält insgesamt die Zertifizierungen SOC 2 Type II und ISO/IEC 27001 und deckt grenzüberschreitende Übermittlungen mit den EU-Standardvertragsklauseln ab. Wie Cloudflare Metadaten der Netzwerkschicht nach seiner eigenen Richtlinie verarbeitet, ist in seiner Datenschutzerklärung beschrieben.
+| Beteiligte | Funktion | Mögliche Daten und Konfigurationsgrenzen |
+| --- | --- | --- |
+| Cloudflare Pages und Functions | Hosting, Edge-API, Cache und Ratenbegrenzung | IP-Adresse, Anfragepfad, Header und Verbindungsmetadaten; konkrete Aufzeichnungen hängen von Instanz- und Anbieterkonfiguration ab |
+| Cloudflare Tunnel | Verbindung zwischen Edge- und Datenebene | Anfrageverkehr und Verbindungsmetadaten; der Tunnel verschlüsselt nicht automatisch sämtliche internen oder vorgelagerten HTTP-Pfade |
+| Cloudflare KV und Ratenbegrenzer | Konfigurierbarer Speicher etwa für Ratenbegrenzung und Sperrung von Berechtigungsnachweisen | IP- oder identitätsabgeleitete Schlüssel und Sperrkennungen; Aktivierung und Fristen sind zu prüfen |
+| Host oder Hosting-Anbieter der Datenebene | Umgebung für Engine, Datenbank und Protokolle | Die Engine kann von der Edge-Schicht weitergeleitete rohe IP-Adressen, Cookies, Authentifizierungsheader und Kontext erhalten; Hostbetreiber und Knotenländer sind nicht verifiziert |
+
+Ob Auftragsverarbeitung vorliegt, hängt davon ab, wer Zwecke bestimmt, wer auf Weisung handelt und welche Vereinbarungen tatsächlich bestehen; Produktnamen allein entscheiden dies nicht. Bei anwendbarer DSGVO und bestehender Auftragsverarbeitung sind die Anforderungen aus Artikel 28 umzusetzen. Hier wird nicht behauptet, dass Verträge abgeschlossen oder geprüft wurden. Vollständige Identität und zustellfähige Angaben des Verantwortlichen sind weiterhin zu ergänzen; siehe [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 2.
 
 ## 2. Identitätsanbieter (für die Anmeldung erforderlich)
 
-| Empfänger | Dienstleistung | Betroffene Daten | Erläuterung |
-| --- | --- | --- | --- |
-| Epomail (`mail.epocanvas.com`) | Anmeldung und Identitätsprüfung über OAuth 2.0 (PKCE): Autorisierung, Tokenaustausch, userinfo-Abfrage (mit Zugriffstoken) | bei der Anmeldung zurückgegeben: Nutzerkennung, E-Mail-Adresse (verifiziert), Nickname, Avatar-Link, Kontorolle | die E-Mail wird nicht in die Datenbank des Dienstes geschrieben und nur zur Hash-Ableitung innerhalb der Sitzung verwendet; für die Datenverarbeitung zwischen Ihnen und Epomail gilt dessen Datenschutzerklärung |
+Epomail (`mail.epocanvas.com`) stellt die OAuth-Anmeldung bereit. Der Browser interagiert mit dem Identitätsdienst; Sonic tauscht den Autorisierungscode aus und fragt Nutzerdaten ab. Dabei können Nutzerkennung, E-Mail-Adresse und Verifizierungskennzeichen, Nickname, Avatar-URL und Rolle empfangen werden. Teile dieser Angaben liegen im Browserspeicher `auth` und in signierten Sitzungsnachweisen, nicht „nur im Arbeitsspeicher“.
 
-## 3. Upstream-Inhaltsquellen (abfragegesteuert, ohne Nutzeridentität)
+Die Anmeldeanbindung oder eine gemeinsame Marke macht Epomail nicht automatisch zum Auftragsverarbeiter von Sonic. Eigenständige Verarbeitung im Kontosystem und Verarbeitung auf Weisung sind anhand tatsächlicher Zwecke und Vereinbarungen getrennt zu beurteilen. Sonic bleibt für den selbst bestimmten Empfang, die Speicherung und die weitere Offenlegung verantwortlich.
 
-Die Anforderungen an die folgenden Empfänger enthalten ausschließlich Song-Abfrageparameter, einen festen User-Agent und den jeweiligen offiziellen Referer und enthalten **keine Kontodaten, Cookies oder IP-Adressen**:
+## 3. Vorgelagerte Inhaltsquellen und Browser-Direktzugriffe
 
-| Empfänger | Dienstleistung | Beispiel-Domains | Standardstatus |
-| --- | --- | --- | --- |
-| NetEase Cloud Music | Suche, Abspieladressen, wortweise Lyrics (YRC), Cover | `music.163.com`, `interface3.music.163.com`; zudem über den ncm-api-Hilfscontainer im Datenebenen-Intranet | aktiviert |
-| QQ Music | Suche, Abspieladressen, wortweise Lyrics (QRC), Cover | `c.y.qq.com`, `u.y.qq.com`, `y.gtimg.cn`, `ws.stream.qqmusic.qq.com` | aktiviert |
-| Kugou Music | Suche, Abspieladressen, wortweise Lyrics (KRC) | `m.kugou.com`, `mobilecdn.kugou.com`, `songsearch.kugou.com`, `lyrics.kugou.com` | aktiviert |
-| Kuwo Music | Suche, Abspieladressen, Cover | `www.kuwo.cn`, `m.kuwo.cn`, `search.kuwo.cn` | aktiviert |
-| AMLL | Ergänzung wortweiser Lyrics (TTML) | `api.amll.dev` | aktiviert |
-| LRCLIB | Ergänzung synchronisierter Lyrics | `lrclib.net` | aktiviert |
-| die offiziellen Inhalts-CDNs | Audiostreams und Cover (standardmäßig über den Edge-Proxy des Dienstes bezogen) | `music.126.net`, `ws.stream.qqmusic.qq.com` usw. | aktiviert |
+| Quelle | Hauptzweck | Möglicherweise übermittelte oder empfangene Daten |
+| --- | --- | --- |
+| NetEase Cloud Music, QQ Music, Kugou, Kuwo und zugehörige CDNs | Suche, Audio, MVs, Cover und Inhaltsdaten | Unveränderter Suchtext, Inhaltskennungen und Metadaten; Verbindungsinformationen des Proxy-Ausgangs oder des direkt zugreifenden Browsers |
+| AMLL, LRCLIB | Lyrics-Abfrage und Ergänzung | Titelkennungen oder Abgleichangaben wie Titel und Künstler sowie Verbindungsmetadaten |
+| Google Fonts | Laden von Schriftarten | Browser-IP, User-Agent und weitere Verbindungsinformationen |
+| DiceBear | Externe Avatare | Der aktuelle Pfad kann die E-Mail-Adresse im Klartext im URL-Seed enthalten und Verbindungsinformationen des Browsers offenlegen |
 
-Erläuterungen:
+Ein Audio-Proxy kann bewirken, dass das Inhalts-CDN den Proxy-Ausgang sieht; daraus folgt nicht, dass sämtliche Anfragen frei von personenbezogenen Daten sind. Stream-Anfragen können den User-Agent des Browsers statt eines einheitlichen festen Werts verwenden. MVs, Cover, Schriftarten und Avatare können direkt vom Browser angefordert werden. Manche Anbieter werden über HTTP angesprochen; TLS für die gesamte Verbindungskette ist nicht garantiert. Der E-Mail-Seed für DiceBear sollte durch lokale Avatare oder Kennungen ohne E-Mail-Adresse ersetzt werden.
 
-1. Die ausgehende IP der Upstream-Anforderungen ist die vom Bereitsteller konfigurierte Platzhalteradresse (Standard: RFC-5737-Dokumentationsadresse), nicht die IP eines Nutzers;
-2. Audiostreams werden standardmäßig über den Edge-Proxy bezogen; das vorgelagerte CDN sieht nur die Adresse des Proxyservers. Rufen Sie selbst den Direktverbindungsmodus `?mode=redirect` auf, baut Ihr Browser die Verbindung direkt zum CDN auf, und Ihre IP ist für dieses CDN sichtbar (inhärente Bedeutung der 302-Umleitung); der Webplayer verwendet diesen Modus nicht;
-3. Der Bereitsteller kann mit eigenen Mitgliedschaftsnachweisen (`NETEASE_COOKIE`/`QQ_COOKIE`/`KUGOU_COOKIE`) seinen lizenzierten Katalog einbinden; diese Nachweise sind Kontodaten des Bereitstellerkontos, haben mit Endnutzern nichts zu tun, und der Code enthält von Haus aus keinerlei echte Konto-Cookies.
+Vorgelagerte Kommentare enthalten Namen oder Nicknames, Avatare und Texte anderer Personen und können in öffentliche Caches gelangen; zu den Zwecken gehört die Anzeige von Kommentaren zu einem angeforderten MV. Die Verfasser sind keine Parteien des Anmeldevertrags dieses Dienstes; ihre Daten dürfen nicht allein auf Artikel 6 Absatz 1 Buchstabe b der DSGVO gestützt verarbeitet werden. Bei Geltung der DSGVO befreit eine öffentliche Quelle nicht automatisch von der Information bei indirekter Erhebung nach Artikel 14. Der Betreiber muss eine eigenständige Rechtsgrundlage, Speicherfristen und Informationsausnahmen prüfen und dokumentieren sowie die anwendbaren Informationen innerhalb der gesetzlichen Fristen bereitstellen. Fehlen notwendige Garantien, sind Abruf oder öffentliche Zwischenspeicherung zu deaktivieren; es wird nicht versprochen, jeden Verfasser stets einzeln erreichen zu können. Lokal verfasste Kommentare liegen derzeit nur im localStorage; ein Veröffentlichungspfad zu einem Kommentarserver wurde nicht gefunden.
 
-## 4. Optionale Kanäle und Standardstatus
+Für lokale Audioinhalte wurde kein Uploadpfad gefunden. Lyrics-Abgleich und Empfehlungskontext können jedoch Titel, Künstler, Album, Dauer oder Kennungen versenden. Eingebettete Cover, die als data URL extrahiert wurden, können mit Favoritenereignissen versandt und in den entfernten gemeinsamen Titelkatalog aufgenommen werden, wo sie in der Suche der gesamten Website oder in öffentlichen Vorschlägen erscheinen können. Ein Profilreset garantiert keine vollständige Löschung dieses Katalogs oder optionaler externer Indizes; ob die Daten personenbezogen bleiben, ist nach ihrer Verknüpfbarkeit zu beurteilen. Dass lokale Audioinhalte nicht hochgeladen werden, bedeutet daher nicht, dass eingebettete Cover oder zugehörige Informationen das Gerät nie verlassen.
 
-Die vier Dienste GDStudio, Lyriva, ListenBrainz/MusicBrainz und Gorse sind standardmäßig abgeschaltet und werden erst nach ausdrücklicher Aktivierung durch den Bereitsteller genutzt. Ihre Schalter stehen in der folgenden Tabelle. Die Ergänzung über Quellen hinweg ist davon getrennt: Sie ist standardmäßig aktiviert und hat keinen Deaktivierungsschalter.
+## 4. Optionale Pfade und unterschiedliche Schaltervorgaben
 
-| Empfänger | Dienstleistung | Betroffene Daten | Schalter und Standardwert |
-| --- | --- | --- | --- |
-| GDStudio (`music-api.gdstudio.xyz`) | aggregierte Suche von Drittanbietern und Ergänzungsquelle über Quellen hinweg | nur Titelkennung, Typ und Quellparameter | `SONIC_ENABLE_GDSTUDIO`, Standard 0 |
-| Lyriva (`api.lyriva.xyz`) | Ersatzquelle für Lyrics | nur Titelkennungsparameter | `SONIC_ENABLE_LYRIVA`, Standard 0 |
-| ListenBrainz / MusicBrainz (`labs.api.listenbrainz.org` usw.) | Erweiterung ähnlicher Künstler | nur Künstler-/Aufnahmenkennung | `SONIC_ENABLE_LISTENBRAINZ`, Standard 0 |
-| Ergänzung über Quellen hinweg (separater Kanal) | plattformübergreifende Volltitel-Zuordnung für Hörprobentitel (kostenlose Volltitel von QQ/Kugou/Kuwo) | nur Titelmetadaten (Dauer, Titel, Künstler) | standardmäßig aktiviert; kein Deaktivierungsschalter, ohne Identitätsdaten |
-| Gorse (vom Bereitsteller selbst betriebene Empfehlungsengine) | externes Collaborative Filtering | pseudonymisierte Hash-Bezeichner (`subject_key`) und Verhaltensfeedback | `SONIC_GORSE_URL`, Standard leer |
+| Pfad | Zweck und mögliche Daten | Grenzen des Abgleichs |
+| --- | --- | --- |
+| GDStudio (`music-api.gdstudio.xyz`) | Aggregierte Suche und quellenübergreifende Ergänzung; Suchanfragen oder Inhaltskennungen | Im Quellcode bei fehlendem Schalter standardmäßig aktiv, im Umgebungsbeispiel und in Compose deaktiviert; tatsächlichen Zustand prüfen |
+| Lyriva (`api.lyriva.xyz`) | Lyrics-Ersatzquelle; Inhaltskennungen oder Abgleichparameter | Gesteuert unter anderem durch `SONIC_ENABLE_LYRIVA` |
+| Musixmatch (`apic-desktop.musixmatch.com`) | Lyrics-Ergänzung | Die Implementierung bleibt in der RC erhalten, aber `isSourceEnabledByPolicy` hat keinen Musixmatch-Zweig und der tatsächliche Aufruf wird durch die false-Schranke blockiert; der Lyrics-Fallback des alten `main` kann aufrufbar sein und ist anhand der Bereitstellung zu prüfen; die RC darf weder als aktiviert noch als über einen gewöhnlichen Schalter verfügbar beschrieben werden |
+| Vom Betreiber konfigurierter Warn-Dienst | Nur bei gültigem `SONIC_ALERT_WEBHOOK_URL` und ausgelöster Warnung; übermittelt Systemzähler, Release-Version, Zeitpunkt, eine um Berechtigungsnachweise bereinigte Zusammenfassung und die ausgehende IP des sendenden Knotens | Aktivierung, Empfänger, Rollen, Übermittlung und Speicherfrist hängen von der Instanz ab; Administratornotizen und Fehlermeldungen können personenbezogene Daten enthalten, und Bereinigung ist keine Anonymisierung |
+| ListenBrainz / MusicBrainz | Ergänzung ähnlicher Künstler; Künstler- oder Aufnahme-IDs | Gesteuert unter anderem durch `SONIC_ENABLE_LISTENBRAINZ` |
+| Gorse | Externe Empfehlungen; pseudonyme Kennungen, Verhaltensfeedback, Zeitangaben, Titelkennungen, Tags, Titelnamen und weitere Katalogmetadaten | Anbindung abhängig unter anderem von `SONIC_GORSE_URL`; aktuelles Zurücksetzen garantiert keine gleichzeitige Löschung externer Rückmeldungen oder Titelaufzeichnungen |
+| Meilisearch | Optionaler Suchdienst; unveränderte Suchanfragen und Katalogdaten | Anbindung und Speicherfristen je Instanz prüfen; nicht als anonyme Anfragen behandeln |
+| Quellenübergreifende Ergänzung | Plattformübergreifender Inhaltsabgleich; Titelmetadaten | Tatsächliche Anfragen hängen vom Abgleichpfad ab; Verfügbarkeit ist keine Inhaltslizenz |
 
-## 5. Weitergabe auf gesetzliche Anforderung
+Eine Schalterkonfiguration ist keine Nutzereinwilligung. Zur Einwilligungslücke der aktuell standardmäßig aktivierten Personalisierung und von Auto DJ siehe [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 5. Optionale Verarbeitung ohne erforderliche Grundlage und Wahlmöglichkeit ist auszusetzen; Anforderungen dürfen nicht durch bloßen Wechsel des Drittanbieternamens umgangen werden.
 
-Der Betreiber gibt personenbezogene Daten nur heraus, wenn ein Verlangen eine konkrete Rechtsgrundlage hat: Er prüft die Rechtmäßigkeit und den Umfang des Verlangens, gibt von sich aus nichts über den Verlangensumfang hinaus heraus und benachrichtigt die betroffenen Personen vorab, soweit das Recht dies zulässt (ausgenommen, wenn eine Rechtsvorschrift die Benachrichtigung verbietet). Der Dienst akzeptiert keine beliebigen Abrufe ohne Rechtsgrundlage. Der Verfahrensgang sämtlicher gesetzlicher Verlangen wird aktenkundig erfasst.
+## 5. Weitergabe aufgrund gesetzlicher Anforderungen
+
+Bei Herausgabeverlangen sind Identität des Anfragenden, Zuständigkeit, konkrete Grundlage und Umfang zu prüfen. Nur gesetzlich notwendige Daten dürfen bereitgestellt werden; die Gründe sind zu dokumentieren. Ob Betroffene informiert werden, richtet sich nach anwendbarem Recht und wirksamen Beschränkungen. Meldungen, Verdacht auf Verstöße oder Dienstbeendigung führen nicht automatisch zur Weitergabe sämtlicher Daten an die Polizei.
+
+Auch eine gesetzliche Offenlegungspflicht ersetzt nicht die Anforderungen an internationale Übermittlungen. Entfernen Sie vor Meldungen in öffentlichen Issues oder Communitys personenbezogene Daten, Berechtigungsnachweise und private Informationen aus Kommentaren anderer Personen.
 
 ## 6. Internationale Übermittlungen
 
-Die Kontrollebene des Dienstes läuft auf dem globalen Edge-Netzwerk von Cloudflare; die Verhaltensereignisse liegen auf dem Datenebenenknoten des Betreibers. Ihre personenbezogenen Daten können an Knoten außerhalb des Landes des Betreibers verarbeitet werden. Garantiemechanismen der Übermittlung:
+Die DSGVO gilt nach Maßgabe ihres Artikels 3; Kostenfreiheit, fehlende Gewinnorientierung oder bloße Erreichbarkeit aus der EU schließen ihre Anwendung weder automatisch aus noch begründen sie diese. Nur wenn Kapitel V der DSGVO auf eine konkrete Übermittlung personenbezogener Daten anwendbar ist, sind anhand der tatsächlichen Empfänger, Orte und Verarbeitungsrollen die Anforderungen aus Artikel 44, anwendbare Angemessenheitsbeschlüsse nach Artikel 45 oder andere wirksame Garantien nach Artikel 46 einzeln zu prüfen. Nicht jede ausländische IP-Adresse oder Inhaltsanfrage ist pauschal eine Übermittlung nach Kapitel V. Diese Website gewährt nicht sämtliche DSGVO-Regelungen als einheitliche weltweite Vertragsgarantie. Der Standort des Verantwortlichen, das Land der Datenebene und die Ziele aller Anfragen sind nicht verifiziert; Hosting in Taiwan oder die Zuständigkeit einer bestimmten Rechtsordnung dürfen nicht vorausgesetzt werden.
 
-1. nach Artikel 44 bis 46 der DSGVO: Angemessenheitsbeschluss der Europäischen Kommission (Artikel 45) oder genehmigte Standardvertragsklauseln (Artikel 46 Absatz 2 Buchstabe c der DSGVO) als Grundlage der Hosting- und Auftragsverarbeitungsverhältnisse;
-2. Stützung auf die Datenschutz-Zertifizierungen von Cloudflare (SOC 2 Type II, ISO/IEC 27001) und deren Datenverarbeitungsanhang;
-3. die Anforderungen an die Upstream-Inhaltsquellen enthalten keine personenbezogenen Daten und stellen keine internationale Übermittlung personenbezogener Daten dar (siehe Abschnitt 3).
-
-Selbst gehostende Betreiber müssen die internationalen Übermittlungen ihrer Deployment-Form selbst bewerten und deren Vereinbarkeit mit den Rechtsanforderungen an ihrem Standort sicherstellen (Kapitel V der DSGVO oder die entsprechende Regelung vor Ort).
+1. Drittlandübermittlungen, auf die die DSGVO anwendbar ist, müssen jeweils Artikel 44 erfüllen; zu prüfen sind ein anwendbarer Angemessenheitsbeschluss nach Artikel 45 oder andere wirksame Garantien nach Artikel 46.
+2. Bei Standardvertragsklauseln sind weiterhin die erfassten Parteien, der Verarbeitungsumfang, die Übermittlungsbewertung und erforderliche ergänzende Maßnahmen zu bestätigen. Öffentlich angebotene Anbieterklauseln belegen keine Umsetzung durch diese Instanz.
+3. ISO-/SOC-Zertifizierungen, Anbieterdatenschutzerklärungen oder die Zustimmung zu dieser Seite allein sind keine automatische rechtmäßige Übermittlungsgrundlage. Suchtexte, IP-Adressen und pseudonyme Kennungen dürfen nicht pauschal aus dem Begriff personenbezogener Daten ausgeschlossen werden.
+4. Soweit gesetzlich vorgesehen, können über `privacy@epocanvas.com` Erläuterungen oder Kopien der Garantien angefordert werden. Notwendige Geschäftsgeheimnisse dürfen angemessen geschwärzt werden; Vertraulichkeit beseitigt keine gesetzlichen Transparenzpflichten.
 
 ## 7. Pflege des Verzeichnisses
 
-1. Vor der Aufnahme eines neuen Weitergabeempfängers trägt der Betreiber ihn auf dieser Seite ein und aktualisiert das Inkrafttretensdatum und die Versionsnummer; wesentliche Änderungen werden vorab durch eine Ankündigung auf der Website mitgeteilt;
-2. Weicht dieses Verzeichnis von der Quellcodekonfiguration ab, ist der Quellcode maßgeblich, und diese Seite wird unverzüglich korrigiert;
-3. Selbst gehostende Betreiber müssen nach ihrer tatsächlichen Konfiguration ihr eigenes Verzeichnis Dritter pflegen: Nicht aktivierte Kanäle sind aus ihren Informationen zu streichen, um Überoffenlegung oder falsche Offenlegung zu vermeiden.
+Vor Aktivierung neuer Verarbeitungen oder Empfänger muss der Betreiber Zwecke, Grundlagen, Datenumfang, Fristen, Knoten und tatsächliche Rollen prüfen und die Informationen rechtzeitig aktualisieren. Erforderliche neue Einwilligungen sind gesondert einzuholen. Dieses Dokument belegt nicht, dass dies bereits geschehen ist, und erlaubt keine Aktivierung allein deshalb, weil ein Pfad im Quellcode vorhanden ist.
+
+Weichen Verzeichnis und tatsächliche Verarbeitung voneinander ab, sind die Informationen zu korrigieren und unzulässige Übermittlungen zu behandeln, statt lediglich „maßgeblich ist der Code“ zu erklären. Pflichten selbst betreibender Personen ergeben sich aus dem tatsächlich anwendbaren Recht und den Lizenzen; das Kopieren dieser Seite begründet keine zusätzlichen vertraglichen Pflichten gegenüber dem Projektautor. Rückmeldungen: `privacy@epocanvas.com`.

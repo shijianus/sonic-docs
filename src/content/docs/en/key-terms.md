@@ -1,68 +1,64 @@
 ---
 title: Key Terms
-description: Definitions of the legal terms (GDPR vocabulary) and technical terms used across the Sonic legal documents, applied consistently site-wide.
+description: Data protection, roles, consent, technology and local-data processing terms used in Sonic's legal documents.
 ---
 
-**Effective date: 2 November 2026｜Version: 1.5**
+**Revision date: 2 November 2026｜Version: 1.8**
 
-This page defines the legal and technical terms used in the legal documents of this site. Every term carries the same meaning across all documents; defined terms are construed by their definitions, undefined ones by their ordinary meaning. Legal terms are based on the definitions of the EU General Data Protection Regulation (GDPR).
+This page explains the main terms in the [Privacy Policy](/en/privacy-policy/), [Data Processing & Security](/en/data-security/), [Third Parties & Transfers](/en/sub-processors/) and [Acceptable Use Policy](/en/acceptable-use/). Legal definitions use the GDPR as a reference; source-code review is not certification of operational compliance. Simplified Chinese is the root maintenance baseline; the other nine languages are translations. Language priority does not diminish mandatory law or consumers' right to clear, intelligible terms.
 
-![The Sonic key terms map: the legal terms family (GDPR vocabulary) and the technical terms family, used consistently across the site, interpreted under the authoritative Simplified Chinese version](/images/sonic/key-terms-map.svg)
+The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
-*Figure: the two families of terms on this site. The legal family anchors on Article 4 of the GDPR; the technical family follows the source code implementation and is re-verified against it at every release.*
+![Sonic terminology map: legal roles, data states, processing actions and technical components](/images/sonic/key-terms-map.svg)
+
+*Figure: terms are grouped by legal roles, data states and technical implementation; the diagram does not expand any party's legal identity.*
 
 ## 1. Legal terms
 
 | Term | Definition |
 | --- | --- |
-| Personal data | Any information relating to an identified or identifiable natural person (Article 4, Paragraph 1 of the GDPR); in Sonic, for example, the sign-in identifier and behavioral event records |
-| Processing | Any operation performed on personal data, including collection, recording, storage, use, transmission and erasure (Article 4, Paragraph 2) |
-| Restriction of processing | The temporary suspension of processing with the data retained, in the specific circumstances (Article 4, Paragraph 3; Article 18) |
-| Profiling | Automated processing to evaluate personal characteristics for decisions or analysis (Article 4, Paragraph 4); in this service, performed only to the extent necessary for recommendations, and erasable in one click |
-| Pseudonymisation | Processing such that data can no longer be attributed to a specific data subject without additional information (Article 4, Paragraph 5); implemented in Sonic with salted truncated SHA-256 hashes |
-| Controller | The natural or legal person that determines the purposes and means of processing (Article 4, Paragraph 7); the operations team for hosted instances, the deployer for self-hosted ones |
-| Processor | The natural or legal person that processes personal data on behalf of the controller (Article 4, Paragraph 8), for example Cloudflare |
-| Recipient | The natural or legal person to whom personal data is disclosed (Article 4, Paragraph 9), whether or not a third party |
-| Third party | Any body other than the data subject, controller, processor and persons authorised to process (Article 4, Paragraph 10) |
-| Consent | A freely given, specific, informed and unambiguous indication of the data subject's wishes (Article 4, Paragraph 11; Article 7); it may be withdrawn at any time by a means no less convenient than the one by which it was given |
-| Personal data breach | A breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data (Article 4, Paragraph 12) |
-| Supervisory authority | The public authority that supervises compliance with data protection duties (Article 4, Paragraph 19); users in the EU may lodge a complaint with the authority of their location (Article 77) |
-| International transfer | A transfer of personal data to a third country or international organisation outside the EU and the EEA (Chapter V of the GDPR) |
-| Special categories of data | Personal data revealing racial or ethnic origin, political opinions, health, sex life and the like (Article 9); this service collects none |
-| Data subject | The identified or identifiable natural person to whom personal data relates (Article 4, Paragraph 25); that is, you |
+| Personal data | Any information relating to an identified or identifiable natural person (Article 4, Paragraph 1 of the GDPR). IP addresses, cookies, search terms, avatar URLs, names or text in comments and linkable pseudonymous identifiers may all be personal data. |
+| Processing | Any operation performed on personal data, including collection, recording, storage, retrieval, use, transmission, publication, restriction or erasure (Article 4, Paragraph 2 of the GDPR). |
+| Restriction of processing | Suspending use of data while retaining it in specified circumstances (Article 18 of the GDPR). |
+| Profiling | Automated analysis or evaluation of personal characteristics or behaviour. Playback, searches, skips, favorites, dislikes and context may inform recommendations; profiling is not the same as a decision producing legal or similarly significant effects. |
+| Pseudonymisation | Processing in which data cannot be directly attributed to a person without additional information (Article 4, Paragraph 5 of the GDPR). Pseudonymised data may still be combined to identify someone and is not anonymised data. |
+| Controller | A natural or legal person that alone or jointly determines the purposes and means of processing (Article 4, Paragraph 7 of the GDPR). For hosted instances, the role depends on the person or organisation actually determining those purposes and means; code authors, contributors and operators need not be the same party. |
+| Processor | A natural or legal person processing personal data on behalf of the controller (Article 4, Paragraph 8 of the GDPR). The role depends on actual purposes, instructions and arrangements; Cloudflare, Epomail or another provider does not automatically become a processor by name. |
+| Recipient | A natural or legal person to whom personal data is disclosed (Article 4, Paragraph 9 of the GDPR). A service receiving an IP address through a direct browser connection may also be a recipient. |
+| Third party | A party other than the data subject, controller, processor or persons authorised by the controller to process data (Article 4, Paragraph 10 of the GDPR). |
+| Consent | A freely given, specific, informed and unambiguous affirmative indication (Article 4, Paragraph 11, and Article 7 of the GDPR), withdrawable at any time as easily as it was given. Sign-in, continued use and default-on settings are not consent to optional profiling; a missing consent record is no reason to refuse to stop processing that lacks a basis. |
+| Personal data breach | A security incident leading to accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data (Article 4, Paragraph 12 of the GDPR). |
+| Supervisory authority | A public authority legally supervising data protection obligations. Where the GDPR applies, data subjects may complain to a competent authority (Article 77 of the GDPR). |
+| International transfer | Transfer of personal data to a third country or international organisation outside the EU or European Economic Area; it must be assessed by actual locations, parties and safeguards, not inferred from server names. |
+| Special categories of data | Data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, trade-union membership, genetic data, biometric data used to uniquely identify a natural person, health, sex life or sexual orientation (Article 9 of the GDPR). Music preferences and search terms can indirectly reveal sensitive characteristics and cannot categorically be treated as risk-free. |
+| Data subject | The identified or identifiable natural person whose data is processed; “you” here refers to the relevant natural person making a request or using the service. |
 
-## 2. Technical terms
+## 2. Technical and product terms
 
 | Term | Definition |
 | --- | --- |
-| Control plane | The edge gateway running on Cloudflare Pages Functions, handling routing, rate limiting, caching and circuit breaking |
-| Data plane | The Docker Compose stack running on the operator's own Linux node, handling protocol parsing, recommendation computation and storage |
-| sonic-engine | The main container on the data plane (Node.js 22), enforcing the X-Sonic-Engine-Key service key and bound to loopback on the host |
-| ncm-api sidecar | The loopback-only NetEase protocol helper container (`ncm-api:3000`), reachable only inside the compose network |
-| OAuth 2.0 + PKCE | The authorization-code flow with Proof Key for Code Exchange (S256); Epomail is this service's identity provider |
-| API key | A key in the format `sonic_live_v2.<header>.<payload>.<signature>` signed with HMAC-SHA256; the payload carries `sub`／`iat`／`exp`／`jti`／`kid`／`role`／`uid`; passed only in request headers |
-| jti | The key identifier carried in the API key payload, used for revocation lists and immediate invalidation on sign-out |
-| fail-closed | The policy of refusing service when verification fails; Sonic applies it to unsigned keys, legacy keys and production storage failures |
-| SSRF defence | Outbound blocking of loopback addresses, RFC 1918 private ranges, Docker bridges and cloud metadata addresses, with dual IPv4／IPv6 checks and re-validation on every redirect |
-| Domain allowlist | The audio, cover and forwarding proxies allow only HTTPS targets on the controlled music CDN domain list (`SONIC_ALLOWED_MUSIC_DOMAINS`) |
-| SQLite WAL | The persistence store for behavioral events and entity weights on the data plane, in Write-Ahead Logging mode on the named volume `sonic-data` |
-| Circuit breaker | A three-state machine (CLOSED／OPEN／HALF_OPEN); 3 consecutive failures or a 4.5-second budget overrun trips it, with a 30-second cooldown before probing |
-| Degraded mode | The failover state in which the edge connects directly to public lyrics and search interfaces while the data plane is offline; responses carry `X-Sonic-Degraded: 1` and the interface shows a notice |
-| Edge cache | The edge cache keyed `sonic:*` with an 8-minute fresh window and a stale fallback state after expiry |
-| Range 206 | The HTTP partial-content mechanism; audio streams are served by the edge proxy with 206 Partial Content by default |
-| Direct mode | The `?mode=redirect` 302 redirect, in which your browser connects straight to the official CDN; the web player never uses it |
-| YRC／QRC／KRC | The word-level lyrics formats of NetEase, QQ and Kugou; parsed natively with their encryption and compression wrappers (XOR + Deflate) |
-| TTML | The timed-text markup format of AMLL word-level lyrics |
-| LRCLIB | The global open synced-lyrics library, used as the fallback when local lyrics are missing |
-| Trial detection | Probing the audio entity's length and metadata to identify official 30-second trial truncation, always labelled transparently |
-| Cross-source completion | The cross-platform full-track matching triggered for trial clips, on by default, with the substitute source labelled on success |
-| Behavioral events | Recommendation signals such as play, completion, skip, favorite and dislike; at most 50 events／64 KB per batch; noise events (stalls, trial-truncation skips) are never stored |
-| One-click profile erasure | `DELETE /api/sonic/events`, which immediately destroys all behavioral features and records about you in the recommendation engine |
-| Recommendation profile summary | The profile overview returned by `GET /api/sonic/events`: total events, favorite and dislike counts, most-played artists, genre affinities, recent search terms, storage kind |
-| X-Sonic-Context | The client-side context carried with recommendation requests (truncated favorites, recent artists, recent search terms), used in memory only and never persisted |
-| Noise filtering | The server-side mechanism that zeroes the weight of 6 non-user skip reasons (network_stall／playback_error／trial_end／stream_unavailable／buffer_timeout／auto_switch_error) and never stores them |
+| Hosted instance | A Sonic deployment to which the project operator actually provides access; see the [Privacy Policy](/en/privacy-policy/) for scope, controller, configuration and contacts. |
+| Self-hosting | An independent instance run by someone else. Its deployer separately assesses controller identity, law, configuration and notice; supplying MIT-licensed code does not make this project its operator. |
+| Control plane | Deployment components handling webpages, routing, caching, rate limiting or edge APIs; they may encounter IP addresses, cookies, authentication headers, User-Agent, paths and context. |
+| Data plane | Components running the engine, recommendation computation, databases and related services. The current audit found that raw IP addresses may be forwarded to the engine with cookies, authentication headers or context; it cannot be described as receiving only pseudonymous data. |
+| Epomail OAuth | The OAuth 2.0 sign-in flow through Epomail, using PKCE; it may return a user identifier, email and its verification flag, nickname, avatar URL and role. |
+| API Key / `jti` | A signed, time-limited API credential and its unique identifier. Signature verification is not encryption; cookies, credential copying and revocation storage must be assessed separately. |
+| fail-closed | Rejecting requests when validation or necessary storage fails rather than silently degrading; actual operation must be checked against configuration. |
+| SSRF defence and domain allowlist | Outbound checks for specified private networks, loopback and cloud-metadata addresses, redirects or permitted domains; they do not cover direct browser connections or every upstream HTTP path. |
+| SQLite / WAL | A SQLite database usable for data-plane persistence and its write-ahead logging mode; this does not mean profiles, logs, backups and radar data are all in one database or deleted on the same schedule. |
+| Circuit breaker | A mechanism temporarily changing request paths after repeated failures or timeouts; thresholds, degradation and enablement depend on the actual version and configuration. |
+| Behavioural events | Signals potentially used for recommendations, such as playback, progress, skips, favorites, dislikes, searches and entity feedback. Batch limits, noise filtering and retention depend on the version and configuration. |
+| Public search suggestions | A feature path providing historical or statistical search terms to other visitors. Current reuse of raw terms poses a disclosure risk and cannot simply be called anonymous aggregation. |
+| Radar | Exploration, recommendation or sync features and their state generated from user data or behaviour. A persistent engine path is not currently confirmed; sync or isolated-storage attempts exist, so neither the presence nor the absence of durable database records can be promised. |
+| Local music | Files or Blobs on the user's device. No path uploading local audio Blobs to the server was found; lyrics queries and recommendation context may still send titles, artists, albums, duration or identifiers. |
+| Local comments | Comment drafts or content currently written to localStorage; this does not mean publication to a comment server. Reading comments may retrieve other people's names, avatars and text and place them in public caches. |
+| Direct connection / proxy | A proxy makes requests on the server side; direct access sends requests from the browser to a content CDN. Direct access exposes browser IP and connection information to the target, and stream requests may use the browser's User-Agent rather than a fixed value. |
+| Version and configuration | Source defaults, `.env`, Compose and production environments can differ. GDStudio defaults to on in code when unset, but the environment or Compose may set it off; actual runtime configuration must be verified. |
 
-## 3. Rule of interpretation
+## 3. Interpretation baseline
 
-1. Legal terms are construed against the official GDPR text; technical terms against the source code implementation. Where the source code and this page disagree, the source code prevails and this page must be corrected and reported via the repository's Issues.
-2. The Simplified Chinese version of this site's legal documents is the authoritative version; the term correspondences on this page govern the translations used in the English and Japanese versions.
+1. Legal terms apply only where their actual conditions are met. “Individual project”, “free” and “open source” are not synonyms for controller, processor, consent, anonymisation or security compliance.
+2. Check technical terminology against source code, the actual environment and provider request paths together. Where README design goals and documentation differ, goals must not be treated as guarantees. If code, configuration and pages disagree, stop making the stronger claims and correct the relevant pages.
+3. Simplified Chinese is the maintenance baseline for this site's legal documents; the other nine languages are reference translations. Differences from the root version should be synchronised promptly, without affecting mandatory law or consumers' right to clarity and intelligibility.
+4. The root and player `LICENSE` files in the reviewed RC use MIT. The older `main@ce443c8` has a verifiable player MIT licence but no root `LICENSE`; the RC's licensing must not be inferred for all historical code. Definitions on this page do not restrict copying, modification, distribution or commercial use permitted by the applicable licence. The hosted instance's [Acceptable Use Policy](/en/acceptable-use/) governs only its actual hosted resources and service conduct.
+5. Source check: public RC `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02; this page's revision date is 2026-11-02.

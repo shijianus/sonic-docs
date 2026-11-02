@@ -3,19 +3,19 @@ title: Guide du compte et de la sécurité
 description: "Guide du compte et de la sécurité de Sonic : connexion Epomail OAuth, mécanisme de session, conservation des clés d'API, révocation et conseils d'utilisation sûre."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page décrit le fonctionnement du système de comptes de Sonic et les conseils d'utilisation sûre. La description technique complète figure à la section 3.2 de [Traitement des données et mesures de sécurité](/fr/data-security/) ; les stipulations contractuelles à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/).
+La présente page décrit le fonctionnement du système de comptes de Sonic et les conseils d'utilisation sûre. La description technique complète figure à la section 3.2 de [Traitement des données et mesures de sécurité](/fr/data-security/) ; les stipulations contractuelles à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
 ## 1. Mode de connexion
 
-Le service se connecte avec un compte Epomail selon OAuth 2.0 (PKCE), sans système d'inscription autonome. Déroulement de la connexion : clic sur l'entrée de compte de la barre latérale, confirmation sur la page d'autorisation d'Epomail, puis retour au service, qui achève la connexion. Le rappel d'autorisation fait l'objet d'une quadruple vérification : paramètre `state`, PKCE, code d'autorisation et protection contre le rejeu ; l'endpoint d'authentification est limité à 30 requêtes par minute et par IP.
+Le service utilise Epomail OAuth 2.0 avec PKCE, sans inscription Sonic distincte : ouvrez l'entrée de compte, confirmez sur Epomail puis revenez au service. Le flux vérifie notamment `state`, PKCE et le code d'autorisation, avec une limite par défaut de 30 requêtes par minute et par IP. Les données reçues comprennent l'adresse électronique et son indicateur de vérification ; l'absence de `email_verified` n'est pas systématiquement rejetée dans le code vérifié. Les champs ne prouvent pas l'âge : le minimum de 16 ans est une règle d'accès, pas une vérification effectuée. La connexion ne vaut pas consentement au profilage.
 
 ## 2. Mécanisme de session
 
-1. Cookie de session : après une connexion réussie, un cookie de session avec attributs `HttpOnly; Secure; SameSite=Lax` est émis, d'une durée de validité de 30 jours au plus ; il contient la clé d'API signée, inaccessible aux scripts ;
-2. Synchronisation entre onglets : l'état de connexion se synchronise automatiquement entre les onglets d'un même navigateur ; la déconnexion dans l'un des onglets est aussitôt perçue par les autres ;
-3. Périmètre des clés : les clés d'API ne sont jamais écrites dans l'URL, dans les paramètres de requête ni dans le localStorage ; les cookies de transaction OAuth ont une durée de validité de 600 secondes seulement.
+1. Cookie de session : `sonic_session`, avec attributs `HttpOnly; Secure; SameSite=Lax`, dure par défaut 30 jours et contient un justificatif signé ; HttpOnly en limite la lecture par script, mais la signature ne chiffre pas la charge utile, qui peut contenir l'adresse électronique et des identifiants ;
+2. Synchronisation entre onglets : l'état de connexion peut se synchroniser dans un même navigateur ; cela ne garantit ni synchronisation cloud de la bibliothèque ni révocation de toutes les copies d'un justificatif ;
+3. Stockage du compte : `auth` dans localStorage conserve notamment l'adresse électronique et l'avatar ; les données de compte ne sont donc pas uniquement en mémoire. Les cookies de transaction OAuth durent environ 600 secondes ; protégez aussi les données lisibles par les scripts.
 
 ## 3. Conservation des clés d'API
 
@@ -29,8 +29,8 @@ La clé d'API est votre identifiant d'accès personnel (format `sonic_live_v2.�
 
 | Opération | Emplacement | Effet |
 | --- | --- | --- |
-| Déconnexion | dans le lecteur | révocation immédiate de la session courante et de l'identifiant de clé (jti) |
-| Révocation de clé | `POST /api/auth/revoke` | révoque la clé d'API courante |
+| Déconnexion | dans le lecteur | efface le cookie courant ; l'invalidation distante des copies dépend de la configuration et de la requête |
+| Révocation de clé | `POST /api/auth/revoke` | exige un stockage de révocation fonctionnel et une requête réussie ; peut échouer ou être indisponible |
 | Invalidation en masse | configuration du déployeur | liste de jti, liste des sujets et borne temporelle minimale globale d'émission |
 
 ## 5. Conseils d'utilisation sûre

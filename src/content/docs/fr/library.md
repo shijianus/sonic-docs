@@ -3,9 +3,9 @@ title: Gestion de la bibliothèque musicale
 description: "Gestion de la bibliothèque musicale de Sonic : favoris et collections, lectures récentes, téléchargements et musique locale, leur emplacement de stockage et leurs opérations de gestion."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page décrit la gestion et l'emplacement de stockage des quatre contenus de la zone « Ma musique ». L'ensemble des données ne réside que dans votre navigateur, sans téléversement vers le serveur ; les opérations de vidage et de suppression figurent dans [Exportation et stockage des données](/fr/data-management/).
+Cette page décrit les quatre contenus de « Ma musique » et leur stockage principalement local. Aucun chemin de téléversement du corps audio local n'a été constaté, mais les métadonnées, pochettes intégrées, retours et contextes de recommandation peuvent être transmis ; les pochettes peuvent entrer dans le catalogue distant partagé de morceaux. Le stockage local ne prouve pas l'absence de traitement distant et ne constitue pas une sauvegarde cloud générale. Les limites d'effacement figurent dans [Exportation et stockage des données](/fr/data-management/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
 ## 1. Favoris et collections
 
@@ -13,7 +13,7 @@ La page « Titres favoris » agrège les contenus que vous avez marqués : titre
 
 ## 2. Lectures récentes
 
-L'historique de lecture s'enregistre automatiquement dans le localStorage du navigateur (clé `audio`) ; la page « Lectures récentes » le présente du plus récent au plus ancien, et un clic suffit à relire un morceau. L'historique ne réside que sur votre appareil et n'est pas synchronisé avec le serveur.
+« Lectures récentes » lit dans localStorage (`audio`) les 100 derniers morceaux au maximum, conservés automatiquement et présentés du plus récent au plus ancien. Aucun interrupteur distinct permettant de désactiver cet historique local n'a été trouvé. Des événements de lecture et le contexte des artistes récents peuvent être transmis séparément pour la recommandation ; l'historique local ne signifie pas que le serveur ne conserve rien. La personnalisation activée par défaut n'est pas un consentement ; la navigation privée ne bloque pas l'envoi d'événements.
 
 ## 3. Téléchargements
 
@@ -21,7 +21,7 @@ En cliquant sur télécharger dans la ligne d'un morceau ou dans la barre de lec
 
 ## 4. Musique locale
 
-La page « Musique locale » permet d'ajouter des fichiers audio par clic ou par glisser-déposer pour les importer dans le navigateur (`local_music`) ; les fichiers importés sont présentés et lus au même titre que le catalogue en ligne. L'importation s'accomplit entièrement dans le navigateur, sans téléversement des fichiers. Les formats pris en charge dépendent des capacités de décodage du navigateur ; la suppression d'un morceau ne retire que la copie présente dans le navigateur, sans toucher à vos fichiers d'origine.
+La page « Musique locale » permet d'ajouter des fichiers audio par clic ou par glisser-déposer pour les importer dans le navigateur (`local_music`) ; les fichiers importés sont présentés et lus au même titre que le catalogue en ligne. Aucun chemin de téléversement du corps audio local n'a été constaté, mais la recherche de paroles, les favoris et les recommandations peuvent transmettre titre, artiste, album, durée ou identifiant, et la pochette intégrée peut être envoyée avec un événement et entrer dans le catalogue distant partagé de morceaux. Les formats pris en charge dépendent des capacités de décodage du navigateur ; la suppression d'un morceau ne retire que la copie présente dans le navigateur, sans toucher à vos fichiers d'origine ni garantir l'effacement distant.
 
 ## 5. Aperçu des emplacements de stockage
 

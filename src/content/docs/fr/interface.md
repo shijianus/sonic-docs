@@ -3,9 +3,9 @@ title: Guide de l'interface et des fonctions
 description: "Guide de l'interface et des fonctions du lecteur Sonic : accueil et recommandations, recherche, commandes de lecture, tiroir du lecteur, ma musique, paramètres et contrôles de confidentialité, mise en page mobile."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page fait le tour de la disposition de l'interface du lecteur web Sonic et de l'emplacement de chaque fonction, en expliquant où se trouve chaque fonction et comment elle se comporte. Les captures d'écran proviennent de l'écran réel de l'instance hébergée (langue de l'interface en chinois simplifié ; le produit permet de changer la langue de l'interface). L'interface pouvant évoluer avec les versions, le périmètre réel de disponibilité des fonctions dépend de ce que l'instance a activé ; les stipulations juridiques figurent dans les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/).
+La présente page fait le tour de la disposition de l'interface du lecteur web Sonic et de l'emplacement de chaque fonction, en expliquant où se trouve chaque fonction et comment elle se comporte. Les captures d'écran illustrent l'interface en chinois simplifié, dont la langue peut être changée ; elles ne prouvent pas la version actuellement déployée. Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. L'interface pouvant évoluer avec les versions, le périmètre réel de disponibilité des fonctions dépend de ce que l'instance a activé ; les stipulations juridiques figurent dans les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/).
 
 ![Accueil du lecteur Sonic : barre de navigation à gauche (trois zones : Découvrir, Ma musique, Système), zone principale avec carrousel de recommandations, recommandation intelligente et radar musical, playlists recommandées, mini-barre de lecture en bas](/images/sonic/ui/ui-home.png)
 
@@ -23,7 +23,7 @@ L'accueil agrège trois zones de contenu :
 
 *Figure : le radar musical et de styles après une recherche. Les résultats du radar adoptent le style des cartes « Titres populaires » ; les motifs de recommandation et les étiquettes de signaux de préférence sont présentés de manière transparente.*
 
-L'ordonnancement des recommandations n'affecte que la séquence de lecture que vous voyez ; vous pouvez désactiver la personnalisation dans les paramètres (voir la section 9), et la recommandation passe alors en mode purement public.
+Les recommandations constituent un profilage qui influe principalement sur le classement du contenu. La personnalisation et Auto DJ sont activés par défaut dans le code candidat, sans preuve de consentement affirmatif ; la connexion ne vaut pas consentement. Désactiver la personnalisation ne bloque ni les statistiques de recherche distinctes ni tous les chemins du radar. Auto DJ possède un interrupteur indépendant et peut encore envoyer graines et exclusions pour remplir la file ; le radar peut encore envoyer une charge utile de préférences même si le serveur refuse de la conserver en raison du marqueur de désactivation. L'envoi et la conservation sont des traitements distincts.
 
 ### 1.1 Barre latérale : mode replié et entrée de compte
 
@@ -51,7 +51,7 @@ Le « Palmarès des tendances du site » de l'accueil et la page des classements
 
 *Figure : bibliothèque d'artistes. Filtrage des artistes selon trois dimensions : type, région et initiale ; les cartes affichent l'avatar, le nom de l'artiste et le nombre d'albums. La page d'un artiste permet de parcourir ses titres populaires et ses albums, et la page d'un album énumère ses pistes.*
 
-Les pages de détail des artistes, des albums et des titres partagent un proxy de pochettes unifié et une analyse de température de couleur (la couleur dominante de la pochette se fond dans le dégradé de la page) ; toutes les données de listes proviennent des interfaces ouvertes officielles amont, après mise en cache et déduplication.
+Les pages de détail disposent de fonctions de proxy et d'analyse des couleurs des pochettes ; cela ne signifie pas que toutes les images passent par le proxy. Images, MV, avatars et Google Fonts peuvent contacter directement des tiers et leur transmettre l'IP ; un chemin d'avatar DiceBear utilise l'adresse électronique en clair comme `seed` et doit être corrigé. Les interfaces amont fournissent les données des listes, sans que leur accessibilité prouve une autorisation de contenu.
 
 ## 5. Commandes de lecture (barre de lecture inférieure)
 
@@ -64,7 +64,7 @@ La barre de lecture inférieure est présente sur toutes les pages et offre :
 1. Menu de qualité audio : énumère les niveaux réellement disponibles de la source actuelle (SQ sans perte, HQ haute qualité, standard, par exemple) ; le badge reflète fidèlement la qualité du flux en cours, sans fausse étiquette ;
 2. Ligne d'aperçu des paroles : affiche la phrase en cours des paroles mot à mot ;
 3. Mode de lecture : commutation entre lecture de la liste en boucle, lecture du morceau unique en boucle, lecture aléatoire, etc. ;
-4. Téléchargement : enregistre le morceau en cours dans le navigateur (IndexedDB), voir la section 5.
+4. Téléchargement : enregistre le morceau en cours dans le navigateur (IndexedDB) ; voir la section 3 de la [Gestion de la bibliothèque musicale](/fr/library/).
 
 ## 6. Tiroir du lecteur et paroles mot à mot
 
@@ -90,7 +90,7 @@ La zone « Ma musique » comprend quatre entrées :
 | Téléchargements | morceaux hors ligne téléchargés (avec métadonnées de qualité audio) | IndexedDB du navigateur (`downloaded_music`) |
 | Musique locale | fichiers audio locaux importés manuellement (glisser-déposer vers le navigateur pris en charge) | IndexedDB du navigateur (`local_music`) |
 
-Ces contenus ne sont stockés que dans votre navigateur, sans téléversement vers le serveur ; l'effacement des données du navigateur ou l'usage d'« Effacer toutes les données locales » les supprime. Les fichiers téléchargés ou importés localement ne servent qu'à votre écoute personnelle et ne doivent pas être redistribués (voir la [Politique d'utilisation acceptable](/fr/acceptable-use/)).
+Le tableau indique des emplacements locaux, sans garantir l'absence de transmission. Aucun chemin de téléversement du corps audio local n'a été constaté, mais les pochettes intégrées, titres, artistes, albums, identifiants de morceaux, retours de favoris et contextes de recommandation peuvent être transmis. Le nettoyage du navigateur supprime la copie locale, pas toutes les données distantes ; aucune sauvegarde cloud générale n'est garantie. L'importation ou le téléchargement ne confère pas de droits supplémentaires (voir la [Politique d'utilisation acceptable](/fr/acceptable-use/)).
 
 ## 8. Paramètres
 
@@ -98,20 +98,20 @@ Ces contenus ne sont stockés que dans votre navigateur, sans téléversement ve
 
 *Figure : la page des paramètres organise toutes les préférences en cartes. Chaque carte correspond à une catégorie de réglages : mode de thème (clair/sombre/suivre le système), langue de l'interface (中文/English/日本語), type d'arrière-plan, préférence de qualité audio, affichage des paroles du lecteur inférieur, mode de visualisation audio, etc.*
 
-Les réglages prennent effet immédiatement et sont enregistrés dans le stockage local du navigateur (clés `settings`, `global`, etc.), sans liaison au compte ni téléversement vers le serveur.
+Les réglages d'interface sont principalement enregistrés dans le stockage local (`settings`, `global`, etc.). Cette localisation ne permet pas d'affirmer qu'aucun contexte n'est transmis ; `auth` conserve également l'adresse électronique et l'avatar du compte dans localStorage.
 
 ## 9. Confidentialité et contrôle des données
 
 ![Bloc « Confidentialité et données locales » de la page des paramètres Sonic : explication du stockage local du navigateur et de l'IndexedDB, interrupteur de recherche intelligente et recommandations personnalisées, interrupteur de radio en continu automatique (Auto DJ), bouton de réinitialisation du profil de recommandation et de l'historique de refus](/images/sonic/ui/ui-privacy.png)
 
-*Figure : bloc « Confidentialité et données locales » de la page des paramètres. Le bloc indique « Les données ci-dessous ne sont conservées que dans votre navigateur, sans téléversement vers le serveur » ; la description de l'interrupteur « Recherche intelligente et recommandations personnalisées » précise qu'une fois désactivé, le mode purement public s'installe immédiatement et plus aucun événement comportemental n'est enregistré ; le bouton « Réinitialiser le profil de recommandation et l'historique de refus » efface immédiatement les données comportementales du serveur.*
+*Figure : bloc « Confidentialité et données locales ». Le texte de la capture affirmant un stockage exclusivement local ne décrit pas tous les flux : métadonnées et contexte peuvent sortir du navigateur. Les commandes de réinitialisation n'apportent pas la preuve d'un effacement distant complet, même si un message de réussite apparaît.*
 
-Ce bloc est la mise en œuvre, dans l'interface, des droits d'initiative décrits à la section 9 de la [Politique de confidentialité](/fr/privacy-policy/) :
+Ce bloc propose des commandes partielles ; il ne remplace pas les demandes d'exercice des droits de la section 9 de la [Politique de confidentialité](/fr/privacy-policy/) :
 
-1. Interrupteur « Recherche intelligente et recommandations personnalisées » : une fois désactivé, les événements ne sont plus collectés et la recommandation passe en mode purement public ;
-2. Interrupteur « Radio en continu automatique (Auto DJ) » : commande l'enchaînement automatique une fois la liste de lecture terminée ;
-3. Réinitialisation du profil de recommandation et de l'historique de refus : détruit immédiatement tous les événements comportementaux du serveur liés à vous (`DELETE /api/sonic/events`) ;
-4. Effacement de toutes les données locales : après une boîte de dialogue de confirmation, efface l'intégralité du stockage local et de l'IndexedDB du navigateur, et réinitialise en même temps le profil côté serveur.
+1. Interrupteur de personnalisation : commande les événements concernés ; les recherches brutes et leur réutilisation dans les suggestions publiques suivent un chemin distinct. La navigation privée ne bloque pas les requêtes ;
+2. Interrupteur Auto DJ : commande l'enchaînement à la fin de la liste ; son activation par défaut ne constitue pas un consentement au profilage ;
+3. Réinitialisation du profil (`DELETE /api/sonic/events`) : supprime une partie des événements et retours de l'identité courante ; anciens identifiants anonymes, radar, agrégats, services externes et sauvegardes peuvent être omis, avec des échecs non affichés ;
+4. Effacement des données locales : tente de nettoyer les stockages et de réinitialiser partiellement le profil distant, sans supprimer le cookie HttpOnly ni déconnecter. Un rechargement après nettoyage des paramètres peut réactiver la personnalisation par défaut : vérifiez votre choix. Le résultat local ne prouve pas la réussite distante ; pour un effacement complet, contactez `privacy@epocanvas.com`.
 
 ## 10. Version mobile
 

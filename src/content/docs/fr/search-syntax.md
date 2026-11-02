@@ -3,38 +3,40 @@ title: Référence de la recherche et des règles
 description: "Référence de la recherche et des règles de Sonic : récupération multi-sources, tolérance aux erreurs, onglets de catégories et opérations sur les résultats, en une explication complète."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
+
+Les descriptions fonctionnelles reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. Le RC n'est pas une GitHub Release officielle.
 
 La présente page récapitule les capacités et les règles de la recherche Sonic : quoi saisir, comment les erreurs sont tolérées, comment les résultats sont organisés. L'emplacement dans l'interface figure à la section 2 du [Guide de l'interface et des fonctions](/fr/interface/).
 
 ## 1. Périmètre de recherche
 
-La recherche couvre quatre types d'objets : titres, artistes, albums et playlists. La page de résultats s'organise en trois onglets de catégories « Titres/Playlists/MV » ; l'entrée de recherche se trouve en haut de la barre latérale et sur la page de recherche, avec suggestions de mots-clés des recherches populaires du site.
+La recherche couvre quatre types d'objets : titres, artistes, albums et playlists. La page de résultats s'organise en trois onglets de catégories « Titres/Playlists/MV » ; l'entrée de recherche se trouve en haut de la barre latérale et sur la page de recherche, où l'interface peut afficher des suggestions de mots-clés populaires du site.
 
 ## 2. Règles de tolérance aux erreurs et de correspondance
 
 | Règle | Explication | Exemple |
 | --- | --- | --- |
-| Unification des formes de caractères simplifiées et traditionnelles | les saisies en caractères simplifiés et en caractères traditionnels correspondent de manière équivalente | la saisie de « 周杰伦 » et de « 周杰倫 » donne les mêmes résultats |
-| Recherche par pinyin et par abréviations | correspondance par pinyin complet ou par initiales | la saisie de « zyy » retrouve les morceaux de 周杰伦 (Jay Chou) |
-| Correspondance symétrique des alias | les alias d'artistes en chinois et en langue étrangère sont associés dans les deux sens | la recherche du nom en langue étrangère retrouve l'artiste sous son alias chinois |
-| Tolérance aux fautes de frappe par distance d'édition | les fautes de frappe sont corrigées selon la distance d'édition | une saisie approximative retrouve tout de même la cible |
-| Identification des versions | distinction des versions de studio, versions live, reprises, etc. | les résultats indiquent la version à laquelle ils appartiennent |
+| Unification des formes de caractères simplifiées et traditionnelles | il est possible d'essayer les deux graphies ; la correspondance réelle dépend de l'index et de la disponibilité des sources amont | comparer « 周杰伦 » et « 周傑倫 » |
+| Recherche par pinyin et par abréviations | essayer le pinyin complet ou les initiales ; aucun résultat n'est garanti pour toutes les sources | essayer « zjl » pour les morceaux de Jay Chou (周杰伦／周傑倫) |
+| Correspondance symétrique des alias | le site peut associer les alias chinois et étrangers d'un artiste ; le résultat réel dépend de l'index | une recherche du nom étranger peut retrouver l'artiste sous son alias chinois |
+| Tolérance aux fautes de frappe par distance d'édition | une saisie proche peut être proposée comme candidate ; toutes les fautes ne sont pas corrigées | saisir une chaîne proche et vérifier le résultat réel |
+| Identification des versions | les résultats peuvent distinguer les versions studio, live, reprises, etc. | se reporter à l'indication de version du résultat |
 
 ## 3. Récupération parallèle multi-sources et déduplication
 
-Les requêtes de recherche sont envoyées en parallèle aux sources amont activées et les résultats sont fusionnés avec déduplication par expression régulière : les enregistrements multi-sources d'un même morceau portant le même nom sont fusionnés en un résultat unique, et l'adresse de lecture est obtenue au moment de la lecture en retenant le flux disponible le meilleur. La liste des sources amont et leurs commutateurs par défaut figurent à la section 3 de la [Liste des partages avec des tiers et des transferts](/fr/sub-processors/).
+Les requêtes sont envoyées aux sources amont activées et disponibles au moment de la demande, puis les résultats sont fusionnés selon des règles de normalisation. Les enregistrements d'un même morceau portant le même nom peuvent être regroupés en un résultat unique ; l'adresse de lecture est obtenue au moment de la lecture selon la disponibilité. La liste des sources amont et leurs commutateurs par défaut figurent à la section 3 de la [Liste des partages avec des tiers et des transferts](/fr/sub-processors/).
 
 ## 4. Opérations sur les résultats
 
-Chaque ligne de la liste de titres offre : lecture, entrée MV (le cas échéant), favori, téléchargement et actions supplémentaires ; le bouton « Tout lire » en haut enchaîne la lecture dans l'ordre des résultats. Les résultats de playlists ouvrent la page de détail de la playlist, et les résultats de MV ouvrent la liste des MV.
+Chaque ligne de la liste de titres peut proposer la lecture, une entrée MV le cas échéant, le favori, le téléchargement et d'autres actions ; le bouton « Tout lire » en haut peut enchaîner les résultats. Les résultats de playlists ouvrent la page de détail de la playlist et les résultats de MV la liste des MV ; les actions réelles dépendent du résultat et de la configuration de l'instance.
 
 ## 5. Recherche et confidentialité
 
 Le traitement des termes de recherche :
 
-1. Local : les termes de recherche récents (10 entrées au plus) ne sont conservés que dans le localStorage du navigateur et peuvent être effacés avec « Effacer toutes les données locales » ;
-2. Agrégation côté serveur : les termes de recherche alimentent le comptage agrégé global (sans identifiant personnel, pour le palmarès des recherches populaires) ;
-3. Personnalisation : lorsque la personnalisation est activée, les clics issus de la recherche sont enregistrés comme signaux de recommandation (pseudonymisation, 90 jours) ; une fois désactivée, aucun événement n'est enregistré.
+1. **Local** : l'historique récent utilise localStorage, mais la requête est envoyée pour la recherche et certains éléments peuvent accompagner les demandes de recommandation ; l'effacement local ne supprime pas les copies distantes déjà créées ;
+2. **Agrégation côté serveur** : la recherche intelligente peut compter ou conserver séparément les termes bruts et les faire apparaître dans des suggestions publiques ; désactiver la personnalisation n'exclut pas à lui seul cette voie. Un texte peut identifier une personne sans identifiant de compte ; n'y saisissez pas de données personnelles ou sensibles. Les filtres, seuils d'affichage, contrôles de conservation et configuration de l'instance doivent être vérifiés séparément ;
+3. **Personnalisation** : les recherches et clics peuvent être associés par des identifiants pseudonymes. Le réglage de personnalisation ne contrôle pas toutes les voies de statistiques de recherche ; un réglage ou une réinitialisation à 90 jours ne signifie pas que chaque agrégat ou copie de recherche est supprimé selon le même calendrier.
 
 Les détails figurent à la section 4 de la [Politique de confidentialité](/fr/privacy-policy/) et dans la [Description de l'algorithme de recommandation](/fr/recommendation/).

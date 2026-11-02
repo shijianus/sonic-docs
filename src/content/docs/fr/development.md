@@ -3,9 +3,9 @@ title: Guide de développement
 description: "Guide de développement de Sonic : structure du dépôt, commandes de construction, suite de tests, vérification de la cohérence documentaire et contribution."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page s'adresse aux lecteurs participant au développement et aux développements dérivés ; elle expose la structure du dépôt, les commandes de construction, la suite de tests et la vérification de la cohérence documentaire. La licence et les limites juridiques figurent dans [Droit de l'open source et de l'auto-hébergement](/fr/open-source/).
+La présente page s'adresse aux lecteurs participant au développement et aux développements dérivés ; elle expose la structure du dépôt, les commandes de construction, la suite de tests et la vérification de la cohérence documentaire. La licence et les limites juridiques figurent dans [Droit de l'open source et de l'auto-hébergement](/fr/open-source/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
 ## 1. Structure du dépôt
 
@@ -52,7 +52,7 @@ pnpm validate    # construction + contrôle des ancres internes rompues + vérif
 1. `scripts/validate-anchors.cjs` : zéro lien rompu dans les ancres internes et les références d'images de tout le site ;
 2. `scripts/check-structure.py` : symétrie 1:1 des titres/tableaux/images/blocs de notes entre versions multilingues ;
 3. `doc/legal-reference.md` : liste blanche des références aux articles du RGPD (dossier de vérification EUR-Lex), aucun article hors liste ne devant apparaître dans les documents ;
-4. les faits techniques sont confrontés au code source à chaque version (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`) ; en cas de divergence, le code source prévaut et la documentation est corrigée.
+4. cette révision vérifie le 2026-11-02 la RC publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), distincte de l'ancien `main@ce443c8` (2026-10-27 UTC), sans certifier l'exploitation ni les contrats. Comparez code, environnement, Compose et routes réelles ; corrigez les écarts sans invoquer « le code fait foi » pour écarter les droits ou une information erronée. Les défauts de consentement, d'effacement et de confidentialité restent des défauts à corriger.
 
 ## 5. Contribution
 
@@ -63,4 +63,4 @@ pnpm validate    # construction + contrôle des ancres internes rompues + vérif
 
 ## 6. Contribution aux traductions
 
-Le site repose sur une structure multilingue en regard : toute modification d'une langue doit être répercutée sur les autres (la symétrie 1:1 est vérifiée par script). Pour ajouter une langue : enregistrez la locale, traduisez l'ensemble des documents, ajoutez la langue à la liste du script de structure, et vérifiez les références aux textes de loi selon le format de citation de cette langue défini dans `doc/legal-reference.md`.
+Le chinois simplifié à la racine est la référence de maintenance, avec neuf traductions. Synchronisez les paragraphes et la structure 1:1 sans réduire les protections ; le droit impératif, l'interprétation favorable aux consommateurs et l'information compréhensible priment sur la priorité linguistique. Pour une nouvelle langue, enregistrez la locale, traduisez les documents, mettez à jour le contrôle de structure et respectez les citations de `doc/legal-reference.md`.

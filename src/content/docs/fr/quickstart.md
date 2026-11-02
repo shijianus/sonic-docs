@@ -3,9 +3,9 @@ title: Démarrage rapide
 description: "Démarrage rapide de Sonic : le chemin le plus court, de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile."
 ---
 
-**Date d'entrée en vigueur : 2 novembre 2026｜Version : 1.5**
+**Date de révision : 2 novembre 2026｜Version : 1.8**
 
-La présente page indique le chemin le plus court pour utiliser l'instance hébergée de Sonic (`sonic.epocanvas.tech`) : de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile. Le tour d'horizon complet de l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la présente page ne traite pas de l'auto-hébergement (pour le déploiement, voir le [Guide de déploiement](/fr/deployment/)).
+La présente page indique le chemin le plus court pour utiliser l'instance hébergée de Sonic (`sonic.epocanvas.tech`) : de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile. Le tour d'horizon complet de l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la présente page ne traite pas de l'auto-hébergement (pour le déploiement, voir le [Guide de déploiement](/fr/deployment/)). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
 ## 1. Ouvrir le site
 
@@ -24,16 +24,16 @@ En présence d'un extrait officiel de 30 secondes, le lecteur l'indique fidèlem
 Connectez-vous avec un compte Epomail selon OAuth 2.0 (PKCE) ; le service ne dispose pas de système d'inscription autonome :
 
 1. cliquez sur l'entrée de connexion en bas de la barre latérale ; vous êtes dirigé vers la page d'autorisation d'Epomail, où vous confirmez ;
-2. les titres favoris, les playlists enregistrées, les artistes suivis et vos playlists personnelles sont stockés uniquement dans le navigateur utilisé ; ils ne sont pas synchronisés dans le cloud ni entre appareils ;
-3. la connexion débloque en outre les recommandations personnalisées et l'enchaînement Auto DJ ; tous deux peuvent être désactivés dans « Paramètres → Confidentialité et données locales » ; une fois désactivés, la recommandation passe en mode purement public et plus aucun événement comportemental n'est enregistré.
+2. les favoris et playlists sont principalement stockés dans le navigateur ; une partie des signaux et du contexte peut être envoyée. Aucune synchronisation cloud générale entre appareils n'est vérifiée, et la route distante du radar manque dans la version contrôlée ;
+3. la personnalisation et Auto DJ sont activés par défaut dans le code, y compris sans preuve de consentement affirmatif ; la connexion ne vaut pas consentement. Ils peuvent être désactivés dans « Paramètres → Confidentialité et données locales », mais ce choix n'arrête pas à lui seul les statistiques distinctes de recherche.
 
-La session est valable 30 jours au plus ; la déconnexion révoque immédiatement. Les règles de compte figurent à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/).
+La session dure par défaut 30 jours ; la déconnexion efface le cookie courant, mais la révocation distante dépend de la configuration et du succès de la requête. Le stockage `auth` conserve certaines données de compte dans localStorage. Les règles figurent à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/).
 
 ## 4. Téléchargement et musique locale
 
 1. Téléchargement : cliquez sur télécharger dans la colonne d'actions du titre ou dans la barre de lecture inférieure ; le morceau, avec ses métadonnées de qualité audio, est stocké dans l'IndexedDB du navigateur et géré depuis la page « Téléchargements » ; la lecture hors ligne reste disponible ;
-2. Musique locale : la page « Musique locale » permet d'ajouter des fichiers audio par clic ou par glisser-déposer dans le navigateur ; les fichiers importés sont également stockés dans l'IndexedDB, sans téléversement vers le serveur ;
-3. dans les deux cas, l'écoute est réservée à un usage personnel et la redistribution est interdite (voir la [Politique d'utilisation acceptable](/fr/acceptable-use/)).
+2. Musique locale : importez les fichiers par sélection ou glisser-déposer ; le corps audio est stocké dans IndexedDB et aucun chemin de téléversement du corps n'a été constaté, mais la recherche de paroles, les retours sur les favoris et les recommandations peuvent envoyer titre, artiste, album ou identifiant, et les pochettes intégrées peuvent être transmises avec des événements ;
+3. n'utilisez que des contenus et usages autorisés : l'importation, le téléchargement ou le but personnel de test ne crée pas de licence ni d'exception automatique au droit d'auteur (voir la [Politique d'utilisation acceptable](/fr/acceptable-use/)).
 
 ## 5. Usage mobile
 
@@ -43,9 +43,9 @@ L'accès à la même adresse depuis le navigateur d'un téléphone affiche la mi
 
 Dès la première utilisation, trois commandes méritent votre attention (dans « Paramètres → Confidentialité et données locales ») :
 
-1. Recherche intelligente et recommandations personnalisées : interrupteur général ; une fois désactivé, les événements ne sont plus collectés ;
-2. Radio en continu automatique (Auto DJ) : commande l'enchaînement automatique une fois la liste de lecture terminée ;
-3. Réinitialisation du profil de recommandation et de l'historique de refus / Effacement de toutes les données locales : deux boutons de suppression à effet immédiat.
+1. Recherche intelligente et recommandations personnalisées : contrôle les événements concernés, sans arrêter les recherches brutes susceptibles d'alimenter les suggestions publiques ; ne saisissez pas d'informations sensibles. La navigation privée ne bloque pas les envois ;
+2. Radio en continu automatique (Auto DJ) : commande l'enchaînement à la fin de la liste ; son activation par défaut ne prouve pas un consentement au profilage ;
+3. Réinitialisation du profil / Effacement local : la suppression distante est partielle, avec possibles anciens identifiants anonymes, radar, agrégats, services externes et sauvegardes omis, et échecs masqués. Le nettoyage local ne supprime pas le cookie HttpOnly et ne déconnecte pas ; après rechargement, vérifiez que la personnalisation n'est pas réactivée par défaut. Pour une demande complète, contactez `privacy@epocanvas.com`.
 
 La formulation intégrale des engagements de confidentialité figure dans la [Politique de confidentialité](/fr/privacy-policy/).
 
@@ -53,10 +53,10 @@ La formulation intégrale des engagements de confidentialité figure dans la [Po
 
 | Question | Réponse |
 | --- | --- |
-| Faut-il payer ? | gratuit, sans publicité, sans achats intégrés |
-| Peut-on l'utiliser sans se connecter ? | les fonctions principales sont utilisables de manière anonyme (limitation de débit plus stricte) |
-| Où sont stockées les données ? | stockage local du navigateur + événements comportementaux pseudonymisés côté serveur (90 jours) |
-| Comment supprimer le profil ? | Paramètres → Réinitialiser le profil de recommandation, effet immédiat |
+| Faut-il payer ? | projet personnel gratuit, non lucratif, sans publicité, achats intégrés ni SLA |
+| Peut-on l'utiliser sans se connecter ? | fonctions de base sans connexion ; cela ne garantit pas l'anonymat |
+| Où sont stockées les données ? | navigateur et traitements distants ; les 90 jours de certains événements ne sont pas une durée générale vérifiée  |
+| Comment supprimer le profil ? | Paramètres → Réinitialiser le profil ; couverture partielle et échecs possibles, demandes complètes par courriel |
 | Pourquoi 30 secondes ? | troncature officielle en extrait, signalée fidèlement, avec complétion inter-sources au mieux |
 | La qualité audio est-elle surestimée ? | le badge reflète fidèlement le niveau du flux en cours |
 

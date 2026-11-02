@@ -3,9 +3,11 @@ title: Guia de funcionalidades
 description: "Guia de funcionalidades do Sonic: explicação aprofundada dos níveis de qualidade e da transparência das amostras, letras palavra a palavra, recomendação e Auto DJ, descargas e música local, tabelas de classificação, MV e tolerância a falhas na pesquisa."
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
 Esta página explica em profundidade o comportamento de cada função do Sonic e as escolhas de desenho subjacentes. As localizações na interface constam da [Interface e funcionalidades](/pt/interface/); a explicação técnica dos sinais comportamentais e do modelo de recomendação consta da secção 5 da [Apresentação do projeto](/pt/project/); as condições contratuais de utilização das funções constam dos [Termos de Utilização](/pt/terms-of-service/).
+
+As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
 
 ## 1. Níveis de qualidade e transparência das amostras
 
@@ -14,7 +16,7 @@ O Sonic distingue rigorosamente as faixas completas dos fragmentos de amostra:
 1. Níveis de qualidade: os níveis disponíveis na fonte de áudio (SQ sem perdas, HQ alta qualidade, padrão, entre outros) dependem das ligações diretas realmente emitidas a montante; o menu de qualidade enumera apenas os itens realmente disponíveis e o selo assinala fielmente a stream em curso;
 2. Deteção de amostras: a sondagem da duração e dos metadados das entidades de áudio identifica os cortes oficiais de amostra de 30 segundos, apresentados com o selo de amostra, apresentando uma amostra nunca como faixa completa;
 3. Complemento entre fontes: ativado, corresponde automaticamente, para as faixas em amostra, às faixas gratuitas completas da QQ, KuGou e KuWo; havendo correspondência, a comutação é suave e a origem substituta é identificada; sem correspondência, mantém-se a amostra e passa-se naturalmente à faixa seguinte no seu final;
-4. Limites rigorosos: o serviço não integra qualquer componente de desbloqueio que contorne os mecanismos de copyright pago; o catálogo de membros legítimo monta-se com as credenciais próprias de quem implanta.
+4. Limites rigorosos: o acesso técnico ou credenciais próprias de subscrição não concedem licença adicional; não contorne medidas de pagamento, acesso ou proteção de direitos de autor.
 
 ## 2. Cadeia das letras palavra a palavra
 
@@ -35,13 +37,13 @@ O painel de letras dispõe de três interruptores independentes (original, tradu
 3. Radar de exploração de estilos: exploração por género, com parâmetro de temperatura para ajustar a amplitude da exploração;
 4. Auto DJ: terminada naturalmente a lista de reprodução, continua automaticamente com faixas reproduzíveis conforme o estilo da faixa em curso; pode desativar-se nas definições;
 5. Purificação dos sinais: 6 tipos de trocas de faixa não imputáveis ao utilizador, como paragens de rede, falhas de descodificação e cortes de amostra, não entram no conjunto de dados da recomendação;
-6. Controlo dos dados: todos os eventos comportamentais associam-se por identificadores pseudonimizados, destroem-se automaticamente aos 90 dias e podem limpar-se com um clique (ver a secção 9 da [Política de Privacidade](/pt/privacy-policy/)).
+6. Controlo dos dados: identificadores pseudónimos podem continuar a ser pessoais. Personalização e Auto DJ estão ativos por predefinição, sem que isso prove consentimento. Não há eliminação universal aos 90 dias; a reposição pode omitir radar, identidades antigas, agregados, serviços externos e cópias de segurança e ignorar falhas (ver as secções 5, 6 e 9 da [Política de Privacidade](/pt/privacy-policy/)).
 
 ## 4. Descargas e música local
 
 1. Descargas: as faixas guardam-se, com os metadados de qualidade, no IndexedDB do navegador (`downloaded_music`) e gere-se na página de descargas, com reprodução offline;
 2. Música local: ficheiros de áudio locais importados por arrastar e largar ou por seleção para o navegador (`local_music`), apresentados de forma unificada com a biblioteca online;
-3. Limites: ambos existem apenas no seu navegador, sem envio para o servidor, destinam-se apenas à sua audição pessoal e não podem ser redistribuídos.
+3. Limites: não foi encontrado um caminho de envio do corpo do áudio local. A procura de letras, o feedback de favoritos e o contexto de recomendação podem enviar título, artista, álbum ou identificadores; as capas incorporadas também podem ser enviadas com eventos e entrar no catálogo remoto partilhado de faixas. O armazenamento local não é uma cópia de segurança geral na nuvem; importar e descarregar não concede direitos adicionais sobre os conteúdos.
 
 ## 5. Tabelas de classificação e listas oficiais
 
@@ -49,12 +51,12 @@ A página de tabelas de classificação oferece novidades e listas oficiais, cad
 
 ## 6. Reprodução de MV
 
-Os resultados de pesquisa e a página da música levam diretamente ao leitor de MV; os MV provêm das interfaces oficiais a montante, a disponibilidade varia com estas e, estando indisponíveis, a interface informa-o fielmente.
+Os resultados e a página da música levam ao leitor de MV; a disponibilidade depende da origem. Pedidos diretos de MV e imagens podem expor o IP. A escrita de comentários, respostas e gostos é uma simulação local; comentários lidos a montante podem conter dados pessoais e são colocados em cache.
 
 ## 7. Tolerância a falhas na pesquisa
 
-A cadeia de pesquisa inclui tolerância multinível: normalização dos caracteres simplificado/tradicional, pesquisa por pinyin e iniciais, correspondência simétrica das alcunhas dos artistas em chinês e em inglês, tolerância ortográfica por distância de edição e reconhecimento de versões; após a recuperação paralela de múltiplas fontes, faz-se a fusão com desduplicação por expressão regular. Errando as palavras-chave, atinge-se normalmente o alvo na mesma.
+A cadeia de pesquisa inclui tolerância multinível: normalização dos caracteres simplificado/tradicional, pesquisa por pinyin e iniciais, correspondência simétrica das alcunhas dos artistas em chinês e em inglês, tolerância ortográfica por distância de edição e reconhecimento de versões; após a recuperação paralela de múltiplas fontes, faz-se a fusão com desduplicação por expressão regular. Mesmo palavras-chave incorretas podem encontrar resultados. Os textos podem entrar separadamente em sugestões públicas; desativar a personalização não termina esse caminho.
 
 ## 8. Modo degradado
 
-Quando o nó do plano de dados fica offline ou excede o tempo, a camada de edge comuta automaticamente para o modo degradado: a pesquisa e as letras ligam-se diretamente, na edge, às interfaces públicas; a interface exibe o aviso «modo degradado de edge»; as faixas já carregadas não são afetadas. Durante a degradação, a análise integral das fontes de áudio e a atualização das recomendações podem ficar indisponíveis, com fecho automático após a recuperação (explicação do mecanismo de contingência na secção 3.1 de [Processamento de dados e segurança](/pt/data-security/)).
+Quando o nó do plano de dados fica offline ou excede o tempo, a camada de edge comuta automaticamente para o modo degradado: a pesquisa e as letras ligam-se diretamente, na edge, às interfaces públicas; a interface exibe o aviso «modo degradado de edge»; conteúdos já carregados podem continuar, mas disponibilidade e tempo de recuperação não são garantidos. Durante a degradação, a análise integral das fontes de áudio e a atualização das recomendações podem ficar indisponíveis, com fecho automático após a recuperação (explicação do mecanismo de contingência na secção 3.1 da [Apresentação do projeto](/pt/project/)).

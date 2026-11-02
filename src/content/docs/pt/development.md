@@ -3,9 +3,11 @@ title: Guia de desenvolvimento
 description: "Guia de desenvolvimento do Sonic: estrutura do repositório, comandos de compilação, conjunto de testes, verificação da consistência da documentação e contribuição."
 ---
 
-**Data de entrada em vigor: 2 de novembro de 2026｜Versão: 1.5**
+**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
 
 Esta página destina-se a quem participa no desenvolvimento e no desenvolvimento derivado e explica a estrutura do repositório, os comandos de compilação, o conjunto de testes e a verificação da consistência da documentação. A licença e os limites legais constam do [Código aberto e enquadramento legal da implantação própria](/pt/open-source/).
+
+As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
 
 ## 1. Estrutura do repositório
 
@@ -22,11 +24,11 @@ Esta página destina-se a quem participa no desenvolvimento e no desenvolvimento
 ## 2. Compilação e execução local
 
 ```bash
-npm ci                              # 根依赖
+npm ci                              # dependências da raiz
 pnpm --dir player install --frozen-lockfile
-npm run build                       # 播放器构建 + 复制至 dist
-npx wrangler pages dev dist         # 本地边缘闸道（无数据面时自动降级模式）
-npm run build:engine && npm run start:engine   # 本地数据面引擎
+npm run build                       # compilar o leitor + copiar para dist
+npx wrangler pages dev dist         # gateway de edge local (modo de degradação automático sem plano de dados)
+npm run build:engine && npm run start:engine   # motor local do plano de dados
 ```
 
 ## 3. Conjunto de testes
@@ -46,13 +48,13 @@ Executado por `npm test` antes da publicação, cobre:
 Este site (sonicdocs) confere-se com o código-fonte a cada versão; a cadeia de ferramentas de verificação:
 
 ```bash
-pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校验
+pnpm validate    # compilação + verificação de ligações quebradas em âncoras internas + verificação da simetria estrutural multilingue
 ```
 
 1. `scripts/validate-anchors.cjs`: zero ligações quebradas nas âncoras internas e nas referências a imagens de todo o site;
 2. `scripts/check-structure.py`: estrutura de títulos/tabelas/imagens/avisos 1:1 entre as versões linguísticas;
 3. `doc/legal-reference.md`: lista branca das citações de artigos do RGPD (dossiê de verificação EUR-Lex); a documentação não pode conter artigos fora da lista branca;
-4. Os factos técnicos atualizam-se a cada versão por confronto com o código-fonte (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`); havendo divergência, prevalece o código-fonte e a documentação corrige-se.
+4. Os factos técnicos atualizam-se a cada versão por confronto com o código-fonte (`.env.example`, `server/recommend-sqlite.ts`, `functions/_lib/sonic/security.ts`); as divergências exigem avaliação e correção documental. O código não legitima tratamentos nem afasta responsabilidade por informação incorreta. A revisão de 2026-11-02 do candidato `rc/sonic-20261031@a75f5cb`, distinguindo a versão antiga `main@ce443c8`, não certifica a instância em produção.
 
 ## 5. Contribuir
 
@@ -63,4 +65,4 @@ pnpm validate    # 构建 + 页内锚点断链检查 + 多语言结构对称校�
 
 ## 6. Contribuir com traduções da documentação
 
-Este site tem uma estrutura multilingue em paralelo: qualquer alteração numa língua sincroniza-se com as restantes (a simetria estrutural 1:1 verifica-se por script). Ao acrescentar uma língua: registe o locale, complete toda a documentação, acrescente a língua à lista de línguas do script de estrutura e confira as citações legais conforme o formato de citação dessa língua fixado em `doc/legal-reference.md`.
+O chinês simplificado é a base de manutenção e as nove outras versões são traduções; lei imperativa, interpretação favorável ao consumidor e informação compreensível prevalecem sobre prioridade linguística. Este site tem uma estrutura multilingue em paralelo: qualquer alteração numa língua sincroniza-se com as restantes (a simetria estrutural 1:1 verifica-se por script). Ao acrescentar uma língua: registe o locale, complete toda a documentação, acrescente a língua à lista de línguas do script de estrutura e confira as citações legais conforme o formato de citação dessa língua fixado em `doc/legal-reference.md`.
