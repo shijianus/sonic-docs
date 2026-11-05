@@ -1,9 +1,9 @@
 ---
 title: Guía de despliegue
-description: "Guía de despliegue de Sonic: las dos opciones, pasarela de borde en Cloudflare Pages y motor local en Linux, variables de entorno, copias de seguridad y recuperación, comprobaciones de salud y retroceso."
+description: "Guía de despliegue de Sonic: Cloudflare Pages y motor Linux, variables de entorno, copias de seguridad, recuperación, comprobaciones y retroceso."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página presenta los componentes de despliegue, la configuración y la operación de Sonic. Los roles legales dependen de las decisiones reales de tratamiento; deben evaluarse por separado las pruebas personales y el servicio público. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. Antes de prestar un servicio público, verifique la identidad del responsable, países de los nodos, contratos y garantías aplicables, que el código solo no acredita. Véanse [Tratamiento de datos y seguridad](/es/data-security/), [Código abierto y autoalojamiento](/es/open-source/) y `docs/OPERATIONS.md`.
 
@@ -76,4 +76,4 @@ Confirme punto por punto antes de pasar a producción:
 3. Los días de retención de los eventos de comportamiento y la ruta de persistencia cumplen los compromisos de su política;
 4. El plano de datos solo es alcanzable por el túnel y los puertos del host no están abiertos a la Internet pública;
 5. Existe un plan de copias de seguridad y se ha ensayado la recuperación;
-6. Existen información exacta y elecciones previas válidas: deben corregirse los perfiles/Auto DJ activados por defecto, las sugerencias públicas de búsquedas, el avatar DiceBear con correo, el borrado parcial y los enlaces de origen HTTP, o suspenderse los tratamientos afectados. Verifique también la revocación y la ruta de radar ausente; publicar la [Política de privacidad](/es/privacy-policy/) no basta para hacerlos lícitos.
+6. Existen información exacta y elecciones previas válidas: deben corregirse los perfiles/Auto DJ activados por defecto, las sugerencias públicas de búsquedas, el avatar DiceBear con correo, el borrado parcial y los enlaces de origen HTTP, o suspenderse los tratamientos afectados. Verifique también la revocación y la ruta remota del radar; publicar la [Política de privacidad](/es/privacy-policy/) no basta para hacerlos lícitos.

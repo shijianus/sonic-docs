@@ -4,7 +4,7 @@ const config = fs.readFileSync(new URL('../astro.config.mjs', import.meta.url), 
 // Starlight resolves translations by the locale's lang tag, not its URL directory.
 const locales = ['zh-TW', 'en', 'fr', 'es', 'de', 'ja', 'ko', 'pt', 'ru'];
 const itemLabels = [
-	'专案介绍',
+	'项目介绍',
 	'界面与功能导览',
 	'总览',
 	'隐私政策',
@@ -22,12 +22,12 @@ const itemLabels = [
 	'音乐库管理',
 	'移动端指南',
 	'推荐算法说明',
-	'帐户与安全指南',
+	'账户与安全指南',
 	'数据导出与存储',
 	'故障排查',
 	'用语定义',
 ];
-const groupLabels = ['产品与总览', '使用指南', '帐户与个性化', '隐私与数据保护', '条款与合规', '自部署与开发'];
+const groupLabels = ['产品与总览', '使用指南', '账户与个性化', '隐私与数据保护', '条款与合规', '自部署与开发'];
 
 function section(name, nextName = '') {
 	const marker = `const ${name} = {`;

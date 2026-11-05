@@ -3,7 +3,7 @@ title: Nutzungsbedingungen
 description: Nutzungsbedingungen des kostenlosen, nicht gewinnorientierten Sonic-Testdienstes, Inhaltsrechte, Haftungsgrenzen des Einzelentwicklers und nicht ausschließbare Nutzerrechte.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Bedingungen gelten für gehostete Sonic-Testinstanzen, die tatsächlich von diesem Projekt betrieben werden und diese Bedingungen ausdrücklich übernehmen. Sonic ist ein von einer Einzelperson gepflegtes, kostenloses, nicht gewinnorientiertes Nebenprojekt für Lernzwecke und gemeinwohlorientierte Nutzung. Es bietet experimentelle Werkzeuge für Musiksuche und Wiedergabe, verkauft keine Abonnements und gibt keine zusätzlichen kommerziellen Service-Level-Zusagen oder Garantie eines dauerhaften Betriebs. Die Achtung der Privatsphäre und angemessene Anstrengungen für ein hohes, den tatsächlichen Risiken entsprechendes Schutzniveau sind Projektziele. Die DSGVO-Grundsätze Datenminimierung, Zweckbindung, Transparenz und Kontrolle durch die Nutzer leiten fortlaufende Verbesserungen; damit werden weder eine EU-Zertifizierung, die vollständige Einhaltung der DSGVO und der Gesetze sämtlicher Mitgliedstaaten noch absolute Sicherheit, der Ausschluss von Datenlecks oder Datenverlusten oder eine sofortige, vollständige Löschung zugesagt. Der Schutz hängt von Bereitstellung, Konfiguration und Verarbeitung durch Dritte ab; die Datenschutzerklärung unterscheidet im Code nachgewiesene Maßnahmen, nicht verifizierte Punkte und konkrete Risiken. Projektstatus, angemessene Anstrengungen und Risikohinweise mindern keine gesetzlichen Pflichten und verlangen von Ihnen weder, eine rechtswidrige Verarbeitung zu akzeptieren, noch auf Rechte zu verzichten.
 

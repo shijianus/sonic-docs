@@ -3,11 +3,15 @@ title: Music Library Management
 description: "Sonic music library management — favorites and collections, recent plays, the download list and local music: where they are stored and how to manage them."
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page explains the local storage of the four "My Music" sections. No upload path was found for local audio file contents, but embedded artwork may be sent with favorite events and added to the remote shared-track catalogue used by site-wide search or public suggestions. Metadata, feedback and recommendation context may also be sent; local storage is not proof of no remote processing or a general cloud backup. For clearing and deletion limits see [Data Export & Storage](/en/data-management/).
+
+![Sonic data locations: browser favourites and history, IndexedDB downloads and local music, and remote processing](/images/sonic/library-storage.svg)
+
+*Figure: three locations hold different data; clearing the browser is not a full deletion of remote records.*
 
 ## 1. Favorites and collections
 

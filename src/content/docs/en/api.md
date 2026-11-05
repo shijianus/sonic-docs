@@ -3,7 +3,7 @@ title: Open Platform & API Access
 description: The Sonic open API — the unified response structure, endpoint navigation, API key authentication and transmission rules, rate limits and revocation.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This page describes how to integrate with the Sonic open API: the unified response structure, the core endpoints, API key authentication and transmission rules, rate limits and revocation. Integration is governed by the [Terms of Service](/en/terms-of-service/) and the [Acceptable Use Policy](/en/acceptable-use/); the authoritative statement of the endpoint specifications is `API.md` in the upstream repository.
 

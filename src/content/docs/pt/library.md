@@ -3,11 +3,15 @@ title: Gestão da biblioteca musical
 description: "Gestão da biblioteca musical do Sonic: favoritos, guardados, reproduções recentes, lista de descargas e localização e gestão da música local."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica os quatro conteúdos de «A minha música» e o seu armazenamento principalmente local. Não foi encontrado um caminho de envio do corpo do áudio local, mas metadados, capas incorporadas, feedback e contexto de recomendação podem ser enviados; as capas podem entrar no catálogo remoto partilhado de faixas. O armazenamento local não prova ausência de tratamento remoto nem constitui cópia de segurança geral na nuvem. Os limites de limpeza e eliminação constam de [Gestão e armazenamento de dados](/pt/data-management/).
 
 As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
+
+![Localizações de dados do Sonic: favoritos e histórico do navegador, transferências e música local no IndexedDB, e tratamento remoto](/images/sonic/library-storage.svg)
+
+*Figura: três localizações guardam dados diferentes; limpar o navegador não elimina totalmente os registos remotos.*
 
 ## 1. Favoritos e guardados
 

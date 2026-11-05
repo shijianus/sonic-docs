@@ -3,7 +3,7 @@ title: Descripción general de privacidad y condiciones
 description: Prestador, ámbito de la protección de datos, relación entre documentos y condiciones actuales de aplicación del proyecto personal de pruebas sin ánimo de lucro Sonic.
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página explica la relación entre los documentos del servicio de pruebas alojado Sonic. Es un proyecto mantenido por una persona, gratuito y sin ánimo de lucro, destinado al aprendizaje y a pruebas de interés general; no promete niveles de servicio comerciales ni funcionamiento permanente. Lea primero los [Términos del servicio](/es/terms-of-service/) y la [Política de privacidad](/es/privacy-policy/) para conocer el alcance del servicio y el tratamiento de datos. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

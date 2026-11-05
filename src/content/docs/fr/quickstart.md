@@ -1,11 +1,15 @@
 ---
 title: Démarrage rapide
-description: "Démarrage rapide de Sonic : le chemin le plus court, de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile."
+description: "Prise en main de Sonic : ouvrir le site, rechercher et lire, se connecter, utiliser la bibliothèque locale, télécharger et écouter sur mobile."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page indique le chemin le plus court pour utiliser l'instance hébergée de Sonic (`sonic.epocanvas.tech`) : de l'ouverture du site à la recherche et à la lecture, à la connexion et à l'usage de la bibliothèque locale, au téléchargement et à la musique locale, et à l'usage mobile. Le tour d'horizon complet de l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la présente page ne traite pas de l'auto-hébergement (pour le déploiement, voir le [Guide de déploiement](/fr/deployment/)). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
+
+![Prise en main de Sonic en quatre étapes : ouvrir le site, rechercher, lire et ajuster les préférences](/images/sonic/quickstart-steps.svg)
+
+*Figure : quatre étapes, de l'ouverture aux réglages ; les fonctions réelles dépendent de ce que l'instance active.*
 
 ## 1. Ouvrir le site
 
@@ -24,7 +28,7 @@ En présence d'un extrait officiel de 30 secondes, le lecteur l'indique fidèlem
 Connectez-vous avec un compte Epomail selon OAuth 2.0 (PKCE) ; le service ne dispose pas de système d'inscription autonome :
 
 1. cliquez sur l'entrée de connexion en bas de la barre latérale ; vous êtes dirigé vers la page d'autorisation d'Epomail, où vous confirmez ;
-2. les favoris et playlists sont principalement stockés dans le navigateur ; une partie des signaux et du contexte peut être envoyée. Aucune synchronisation cloud générale entre appareils n'est vérifiée, et la route distante du radar manque dans la version contrôlée ;
+2. les favoris et playlists sont principalement stockés dans le navigateur ; une partie des signaux et du contexte peut être envoyée. Aucune synchronisation cloud générale entre appareils n'est vérifiée, et la route distante du radar doit être vérifiée selon le déploiement ;
 3. la personnalisation et Auto DJ sont activés par défaut dans le code, y compris sans preuve de consentement affirmatif ; la connexion ne vaut pas consentement. Ils peuvent être désactivés dans « Paramètres → Confidentialité et données locales », mais ce choix n'arrête pas à lui seul les statistiques distinctes de recherche.
 
 La session dure par défaut 30 jours ; la déconnexion efface le cookie courant, mais la révocation distante dépend de la configuration et du succès de la requête. Le stockage `auth` conserve certaines données de compte dans localStorage. Les règles figurent à la section 3 des [Conditions d'utilisation](/fr/terms-of-service/).

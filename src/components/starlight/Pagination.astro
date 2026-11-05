@@ -2,22 +2,207 @@
 import Pagination from '@astrojs/starlight/components/Pagination.astro';
 import { readingLabels } from '../../lib/reading-labels.mjs';
 
-const { pagination, lang } = Astro.locals.starlightRoute;
+const { pagination, lang, sidebar, entry } = Astro.locals.starlightRoute;
 const labels = readingLabels[lang] || readingLabels.en;
+
+// 当前语言侧栏的扁平顺序就是阅读顺序；用它计算“第 N / M 篇”和路径节点。
+const links = [];
+const groupStarts = [];
+function flatten(entries) {
+  for (const item of entries) {
+    if (item.type === 'group') {
+      if (links.length > 0) groupStarts.push(links.length);
+      flatten(item.entries);
+    } else {
+      links.push(item);
+    }
+  }
+}
+flatten(sidebar);
+const total = links.length;
+const index = links.findIndex((item) => item.isCurrent);
+const current = index >= 0 ? index + 1 : 1;
+const pagePosition = labels.pagePosition.replace('{current}', String(current)).replace('{total}', String(total));
+
+// 中文、日文、韩文按字符计速，其余文字按词计速；取整到分钟，最少 1 分钟。
+const body = String(entry.body || '').replace(/```[\s\S]*?```/g, ' ').replace(/`[^`]*`/g, ' ');
+const cjkCount = (body.match(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g) || []).length;
+const wordCount = (body.replace(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g, ' ').match(/[A-Za-zÀ-ÿА-я0-9]+/g) || []).length;
+const minutes = Math.max(1, Math.ceil(cjkCount / 400 + wordCount / 220));
+const readingTime = labels.readingTime.replace('{minutes}', String(minutes));
+
+// 阅读路径 SVG：总览节点、分组刻度、当前位置圆点。
+const width = 640;
+const pad = 12;
+const gap = total > 1 ? (width - pad * 2) / (total - 1) : 0;
+const xAt = (position) => pad + position * gap;
+const escapeXml = (value) => String(value).replace(/[&<>"']/g, (char) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
+})[char]);
+// 每个节点带原生 title 与更大的透明命中区：悬停可看篇名，小圆点也容易指到。
+const routeDots = links.map((item, position) => {
+  const current = position === index;
+  const title = escapeXml(item.label || '');
+  return `<g class="route-point${current ? ' is-current' : ''}" data-position="${position + 1}"><title>${title}</title><circle class="dot-hit" cx="${xAt(position).toFixed(1)}" cy="24" r="8"/><circle class="dot${current ? ' is-current' : ''}" cx="${xAt(position).toFixed(1)}" cy="24" r="${current ? 6 : 2.6}"/></g>`;
+}).join('');
+const routeTicks = groupStarts.map((position) =>
+  `<line class="tick" x1="${xAt(position).toFixed(1)}" y1="16" x2="${xAt(position).toFixed(1)}" y2="32" vector-effect="non-scaling-stroke"/>`
+).join('');
+const routeProgress = index > 0
+  ? `<line class="progress" x1="${xAt(0).toFixed(1)}" y1="24" x2="${xAt(index).toFixed(1)}" y2="24" vector-effect="non-scaling-stroke"/>`
+  : '';
+// 端点编号让读者一眼看出全站篇幅与当前位置，而不必只数圆点。
+const routeEndpoints = `<text class="endpoint" x="12" y="45" text-anchor="start" aria-hidden="true">01</text><text class="endpoint" x="628" y="45" text-anchor="end" aria-hidden="true">${String(total).padStart(2, '0')}</text>`;
+
+const pageUrl = Astro.url.href;
+const issueTitle = `[Docs] ${entry.data.title}`;
+const issueBody = `${pageUrl}\n\n${labels.feedbackFollowUp}`;
+const issueUrl = `https://github.com/shijianus/sonic/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
+const mailUrl = `mailto:admin@epocanvas.com?subject=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
 ---
 
 {(pagination.prev || pagination.next) && (
-  <nav class="reading-navigation print:hidden" aria-label={labels.next}>
+  <section class="reading-navigation print:hidden" aria-label={labels.next}>
+    <div class="reading-overview">
+      <p class="reading-overview-meta">
+        <span>{readingTime}</span>
+        <span>{pagePosition}</span>
+      </p>
+      <svg class="reading-route" viewBox="0 0 640 48" role="img" aria-label={`${labels.routeLabel}: ${pagePosition}`}>
+        <line class="track" x1="12" y1="24" x2="628" y2="24" vector-effect="non-scaling-stroke"/>
+        {routeProgress && <g set:html={routeProgress}/>}
+        {routeTicks && <g set:html={routeTicks}/>}
+        <g set:html={routeDots}/>
+        <g set:html={routeEndpoints}/>
+      </svg>
+    </div>
     <p class="reading-navigation-title">{labels.next}</p>
     <Pagination />
-  </nav>
+    <sonic-page-tools class="page-tools" data-copied={labels.copied} data-copy-failed={labels.copyFailed}>
+      <p class="page-tools-label">{labels.pageTools}</p>
+      <button type="button" class="tool-button" data-copy-link>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></svg>
+        <span>{labels.copyLink}</span>
+      </button>
+      <span class="copy-status" role="status" aria-live="polite"></span>
+      <div class="page-feedback">
+        <p class="feedback-question">{labels.feedbackQuestion}</p>
+        <button type="button" class="tool-button" data-feedback="yes" aria-pressed="false">{labels.feedbackYes}</button>
+        <button type="button" class="tool-button" data-feedback="no" aria-pressed="false">{labels.feedbackNo}</button>
+        <div class="feedback-result" hidden>
+          <p class="feedback-thanks" role="status" aria-live="polite">{labels.feedbackThanks}</p>
+          <div class="feedback-channels" hidden>
+            <p>{labels.feedbackFollowUp}</p>
+            <p class="feedback-links">
+              <a href={issueUrl} target="_blank" rel="noopener noreferrer">{labels.feedbackIssue}</a>
+              <a href={mailUrl}>{labels.feedbackMail}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </sonic-page-tools>
+  </section>
 )}
+
+<script>
+  class SonicPageTools extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const copyButton = this.querySelector<HTMLButtonElement>('[data-copy-link]');
+      const status = this.querySelector<HTMLElement>('.copy-status');
+      copyButton?.addEventListener('click', async () => {
+        if (!status) return;
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(window.location.href);
+          } else {
+            const field = document.createElement('textarea');
+            field.value = window.location.href;
+            field.setAttribute('readonly', '');
+            field.style.position = 'fixed';
+            field.style.opacity = '0';
+            document.body.append(field);
+            field.select();
+            const copied = document.execCommand('copy');
+            field.remove();
+            if (!copied) throw new Error('copy failed');
+          }
+          status.textContent = this.dataset.copied || 'Copied';
+        } catch {
+          status.textContent = this.dataset.copyFailed || 'Copy failed';
+        }
+      });
+
+      const buttons = [...this.querySelectorAll<HTMLButtonElement>('[data-feedback]')];
+      const result = this.querySelector<HTMLElement>('.feedback-result');
+      const channels = this.querySelector<HTMLElement>('.feedback-channels');
+      const key = `sonic-docs-feedback:${window.location.pathname}`;
+      const show = (value: string) => {
+        if (!result || !channels) return;
+        result.hidden = false;
+        channels.hidden = value !== 'no';
+        for (const button of buttons) {
+          button.setAttribute('aria-pressed', String(button.dataset.feedback === value));
+        }
+      };
+      let stored: string | null = null;
+      try { stored = window.localStorage.getItem(key); } catch { /* storage may be disabled */ }
+      if (stored === 'yes' || stored === 'no') show(stored);
+      for (const button of buttons) {
+        button.addEventListener('click', () => {
+          const value = button.dataset.feedback || '';
+          try { window.localStorage.setItem(key, value); } catch { /* storage may be disabled */ }
+          show(value);
+        });
+      }
+    }
+  }
+  if (!customElements.get('sonic-page-tools')) customElements.define('sonic-page-tools', SonicPageTools);
+</script>
 
 <style>
   .reading-navigation { border-top: 1px solid var(--sl-color-hairline); padding-top: 1.5rem; }
+  .reading-overview { margin-bottom: 1.4rem; }
+  .reading-overview-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; margin: 0 0 0.35rem; color: var(--sl-color-gray-3); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  .reading-route { display: block; width: 100%; height: auto; overflow: visible; }
+  .reading-route :global(.track) { stroke: var(--sl-color-gray-4); stroke-width: 2; }
+  .reading-route :global(.progress) { stroke: var(--sl-color-accent); stroke-width: 2.5; stroke-linecap: round; }
+  .reading-route :global(.tick) { stroke: var(--sl-color-gray-3); stroke-width: 1.5; }
+  .reading-route :global(.dot) { fill: var(--sl-color-gray-3); transform-box: fill-box; transform-origin: center; transition: transform 140ms ease, fill 140ms ease; }
+  .reading-route :global(.dot.is-current) { fill: var(--sl-color-accent); stroke: var(--sl-color-bg); stroke-width: 2; }
+  .reading-route :global(.dot-hit) { fill: transparent; }
+  .reading-route :global(.route-point) { cursor: help; }
+  .reading-route :global(.route-point:hover .dot) { fill: var(--sl-color-accent-high); transform: scale(1.65); }
+  .reading-route :global(.route-point.is-current:hover .dot) { transform: none; }
+  .reading-route :global(.endpoint) { fill: var(--sl-color-gray-3); font-size: 10px; font-weight: 600; font-variant-numeric: tabular-nums; }
   .reading-navigation-title { margin: 0 0 0.8rem; font-weight: 600; color: var(--sl-color-white); }
   .reading-navigation :global(.pagination-links a) { box-shadow: none; background: var(--sl-color-gray-6); transition: border-color 150ms ease, background-color 150ms ease; }
   .reading-navigation :global(.pagination-links a:hover) { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
   .reading-navigation :global(.link-title) { font-size: 1.1rem; }
-  @media (prefers-reduced-motion: reduce) { .reading-navigation :global(.pagination-links a) { transition: none; } }
+
+  .page-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.8rem; margin-top: 1.6rem; padding-top: 1.3rem; border-top: 1px dashed var(--sl-color-hairline); }
+  .page-tools-label { width: 100%; margin: 0; color: var(--sl-color-gray-3); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; }
+  .tool-button { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 44px; padding: 0.45rem 0.85rem; color: var(--sl-color-white); background: var(--sl-color-gray-6); border: 1px solid var(--sl-color-hairline); border-radius: 0.55rem; font: inherit; font-size: 0.9rem; cursor: pointer; transition: border-color 150ms ease, background-color 150ms ease; }
+  .tool-button:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
+  .tool-button[aria-pressed='true'] { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); font-weight: 600; }
+  .tool-button svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .copy-status { min-width: 0; color: var(--sl-color-gray-2); font-size: 0.85rem; }
+  .page-feedback { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.8rem; margin-inline-start: auto; }
+  .feedback-question { margin: 0; color: var(--sl-color-gray-2); font-size: 0.9rem; }
+  .feedback-result { flex-basis: 100%; }
+  .feedback-thanks { margin: 0; color: var(--sl-color-gray-2); font-size: 0.9rem; }
+  .feedback-channels { margin-top: 0.5rem; padding: 0.85rem 1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.6rem; background: var(--sl-color-gray-6); color: var(--sl-color-gray-2); font-size: 0.875rem; line-height: 1.6; }
+  .feedback-channels p { margin: 0 0 0.4rem; }
+  .feedback-channels p:last-child { margin-bottom: 0; }
+  .feedback-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; }
+  .feedback-links a { color: var(--sl-color-accent-high); font-weight: 600; text-underline-offset: 0.18em; }
+
+  @media (max-width: 40rem) {
+    .page-feedback { margin-inline-start: 0; width: 100%; }
+    .feedback-question { flex-basis: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reading-navigation :global(.pagination-links a), .tool-button, .reading-route :global(.dot) { transition: none; }
+  }
 </style>

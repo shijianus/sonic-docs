@@ -3,7 +3,7 @@ title: Acceptable Use Policy
 description: Conduct boundaries, system-abuse limits, content and third-party rights, enforcement and appeal channels for Sonic hosted resources.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This policy applies to Sonic's actually operated hosted test instances and their public APIs, protecting shared resources, users and upstream services. It sets the conduct rules related to the [Terms of Service](/en/terms-of-service/); if you disagree, stop using the hosted instance. It does not turn a free, nonprofit or open-source project into an unconditional security guarantee, or replace the [Privacy Policy](/en/privacy-policy/) and [Data Processing & Security](/en/data-security/).
 

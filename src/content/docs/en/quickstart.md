@@ -3,11 +3,15 @@ title: Quick Start
 description: The Sonic quick start — the shortest path from opening the site to search and playback, sign-in and local library use, downloads and local music, and mobile use.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page gives the shortest path to using the hosted Sonic instance (`sonic.epocanvas.tech`): from opening the site to search and playback, sign-in and local library use, downloads and local music, and mobile use. A full tour of the interface is in the [Interface & Features Guide](/en/interface/); this page does not cover self-hosting (see the [Deployment Guide](/en/deployment/)).
+
+![Sonic quick start in four steps: open the site, search, play and tune preferences](/images/sonic/quickstart-steps.svg)
+
+*Figure: four steps from opening to tuning; actual features depend on what the instance enables.*
 
 ## 1. Open the site
 

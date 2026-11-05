@@ -3,9 +3,13 @@ title: Gestion de la bibliothèque musicale
 description: "Gestion de la bibliothèque musicale de Sonic : favoris et collections, lectures récentes, téléchargements et musique locale, leur emplacement de stockage et leurs opérations de gestion."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page décrit les quatre contenus de « Ma musique » et leur stockage principalement local. Aucun chemin de téléversement du corps audio local n'a été constaté, mais les métadonnées, pochettes intégrées, retours et contextes de recommandation peuvent être transmis ; les pochettes peuvent entrer dans le catalogue distant partagé de morceaux. Le stockage local ne prouve pas l'absence de traitement distant et ne constitue pas une sauvegarde cloud générale. Les limites d'effacement figurent dans [Exportation et stockage des données](/fr/data-management/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
+
+![Emplacements des données Sonic : favoris et historique du navigateur, téléchargements et musique locale dans IndexedDB, traitement distant](/images/sonic/library-storage.svg)
+
+*Figure : trois emplacements conservent des données différentes ; effacer le navigateur ne supprime pas entièrement les enregistrements distants.*
 
 ## 1. Favoris et collections
 

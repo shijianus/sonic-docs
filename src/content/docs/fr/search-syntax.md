@@ -3,7 +3,7 @@ title: Référence de la recherche et des règles
 description: "Référence de la recherche et des règles de Sonic : récupération multi-sources, tolérance aux erreurs, onglets de catégories et opérations sur les résultats, en une explication complète."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Les descriptions fonctionnelles reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. Le RC n'est pas une GitHub Release officielle.
 

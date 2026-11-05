@@ -28,22 +28,34 @@ const labels = readingLabels[Astro.locals.starlightRoute.lang] || readingLabels.
       const image = dialog.querySelector<HTMLImageElement>('img')!;
       const caption = dialog.querySelector<HTMLElement>('.figure-dialog-caption')!;
       let opener: HTMLAnchorElement | undefined;
-      this.addEventListener('click', (event) => {
-        if (!(event.target instanceof Element) || !(event instanceof MouseEvent)) return;
-        const link = event.target.closest<HTMLAnchorElement>('a[data-doc-image]');
-        if (!link || !this.contains(link) || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        const source = link.querySelector('img');
-        if (!source || typeof dialog.showModal !== 'function') return;
-        event.preventDefault();
-        opener = link;
-        image.src = link.href;
+      const themeIsDark = () => document.documentElement.dataset.theme === 'dark';
+      const sourceFor = (link: HTMLAnchorElement) =>
+        link.querySelector<HTMLImageElement>(themeIsDark() ? '.doc-figure-img--dark' : '.doc-figure-img--light')
+        || link.querySelector<HTMLImageElement>('img');
+      const showFigure = (link: HTMLAnchorElement) => {
+        const source = sourceFor(link);
+        if (!source) return false;
+        image.src = source.src || link.href;
         image.alt = source.alt;
         image.width = Number(source.getAttribute('width'));
         image.height = Number(source.getAttribute('height'));
         caption.textContent = source.alt;
+        return true;
+      };
+      this.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element) || !(event instanceof MouseEvent)) return;
+        const link = event.target.closest<HTMLAnchorElement>('a[data-doc-image]');
+        if (!link || !this.contains(link) || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (typeof dialog.showModal !== 'function' || !showFigure(link)) return;
+        event.preventDefault();
+        opener = link;
         dialog.showModal();
         dialog.querySelector('.figure-dialog-scroll')?.scrollTo(0, 0);
       });
+      // 主题切换时同步对话框中的原图版本。
+      new MutationObserver(() => {
+        if (dialog.open && opener) showFigure(opener);
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
       dialog.addEventListener('click', (event) => {
         if (event.target === dialog) dialog.close();
       });

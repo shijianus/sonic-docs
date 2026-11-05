@@ -3,7 +3,7 @@ title: Guía de cuenta y seguridad
 description: "Guía de cuenta y seguridad de Sonic: inicio de sesión OAuth de Epomail, mecanismo de sesión, custodia de la clave de API, revocación y consejos de seguridad."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página explica cómo funciona el sistema de cuentas de Sonic y cómo utilizarlo de forma segura. La descripción técnica completa figura en la sección 3.2 de [Tratamiento de datos y seguridad](/es/data-security/); las condiciones contractuales, en la sección 3 de los [Términos del servicio](/es/terms-of-service/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

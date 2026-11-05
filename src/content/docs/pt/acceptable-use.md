@@ -3,7 +3,7 @@ title: Política de Utilização Aceitável
 description: Limites de conduta nos recursos alojados do Sonic, restrições ao abuso do sistema, regras de conteúdos e direitos alheios, medidas e reclamações.
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta política aplica-se às instâncias de teste alojadas efetivamente operadas pelo Sonic e às suas APIs públicas, protegendo recursos partilhados, utilizadores e serviços a montante. Constitui as regras de conduta relacionadas com os [Termos de Utilização](/pt/terms-of-service/); se não concordar, cesse a utilização da instância alojada. Não transforma um projeto gratuito, sem fins lucrativos e de código aberto numa garantia incondicional de segurança nem substitui a [Política de Privacidade](/pt/privacy-policy/) ou [Processamento de dados e segurança](/pt/data-security/).
 

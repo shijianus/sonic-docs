@@ -3,11 +3,15 @@ title: Fehlerbehebung
 description: Fehlerbehebung bei Sonic – häufige Probleme mit Wiedergabe, Quellen, Anmeldung, Degradierungsmodus, Speicherung und Ratenbegrenzung.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Die Funktionsbeschreibungen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version. Der RC ist kein offizielles GitHub Release.
 
 Diese Seite beschreibt die Erkennung und Behebung häufiger Probleme. Wenn die Hinweise nicht helfen, schreiben Sie an `admin@epocanvas.com` oder melden Sie ein Issue im GitHub-Repository; verwenden Sie für Meldungen nur nicht sensible Reproduktionsbegriffe. Öffentliche Suchtexte können personenbezogene oder sensible Informationen enthalten.
+
+![Fehlerbehebung bei Sonic in vier Schritten: Symptom erkennen, Status prüfen, Ausweichpfad versuchen und melden](/images/sonic/troubleshooting-flow.svg)
+
+*Abbildung: Symptom erkennen, Status prüfen, Ausweichpfad versuchen und melden; auch der Ausweichpfad kann ausfallen.*
 
 ## 1. Wiedergabeprobleme
 

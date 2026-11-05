@@ -3,7 +3,7 @@ title: Código abierto y autoalojamiento
 description: "Código abierto y autoalojamiento de Sonic: estado de la licencia, límites de marca, agradecimientos y dependencias de terceros, deberes del desplegador y límites de conformidad."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página describe el estado y los límites de la licencia de código abierto de Sonic, los agradecimientos a terceros y las obligaciones jurídicas del autoalojamiento. La relación entre la licencia del software y las condiciones de uso consta en las secciones 2 y 10 de los [Términos del servicio](/es/terms-of-service/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
@@ -27,19 +27,19 @@ El desarrollo y la práctica de la agregación multifuente se inspiran en los si
 
 ## 4. Obligaciones jurídicas de quien se autoaloja
 
-El rol depende de los fines y medios de tratamiento realmente decididos; publicar código no convierte automáticamente a alguien en responsable de todas las instancias. Distinga las pruebas puramente personales del servicio público. Según la ley realmente aplicable y su rol (véase la [Descripción general](/es/overview/)), las obligaciones incluyen:
+El papel depende de quién determina efectivamente el tratamiento; publicar el código o contribuir a él no establece por sí solo una responsabilidad exclusiva. Las pruebas puramente personales y el servicio público deben evaluarse por separado (véase la [Descripción general](/es/overview/), sección 2). Cuando opere el servicio:
 
-1. Deber de información: informar a los usuarios de las materias de tratamiento de datos; puede tomar como texto base la [Política de privacidad](/es/privacy-policy/) de este sitio, si bien debe adaptarla a su configuración real (los circuitos de terceros no activados deben eliminarse de la información);
-2. Registros y evaluación: cuando se aplique el RGPD y se cumplan los requisitos correspondientes, mantener el registro del artículo 30 del RGPD y realizar la evaluación de impacto exigida por el artículo 35 del RGPD; los perfiles continuos no son ocasionales por afectar a pocos usuarios;
-3. Mantenimiento de la seguridad: aplicar las medidas de la sección 3 de [Tratamiento de datos y seguridad](/es/data-security/) y someterse a la supervisión de las autoridades competentes;
-4. Coherencia de la configuración: los valores reales de las variables de entorno (días de retención, conmutadores de terceros, limitación de peticiones) deben concordar con los compromisos de su política;
-5. Determinar la jurisdicción: verificar la aplicación real del RGPD, UK GDPR, LGPD, CCPA-CPRA u otras leyes; el proyecto no convierte el RGPD en garantía contractual mundial. La identidad jurídica, países de los nodos, contratos y mecanismos de transferencia deben verificarse por separado del código.
+1. **Deber de información**: publicar antes de la recogida la identidad jurídica real, los datos de contacto, las finalidades, los destinatarios, los países de los nodos y los plazos de conservación; adaptar la [Política de privacidad](/es/privacy-policy/) a los hechos verificados, sin suponer que el repositorio facilita esa información;
+2. **Registros y evaluación**: cuando se aplique el RGPD y se cumplan sus condiciones, mantener el registro del artículo 30 y evaluar los tratamientos de alto riesgo conforme al artículo 35. La escala reducida no convierte en ocasional un perfilado continuo;
+3. **Mantenimiento de la seguridad**: aplicar medidas adecuadas, elecciones previas válidas y supresión verificada. El perfilado activado por defecto, la reutilización pública de consultas en bruto, las solicitudes de avatar por correo y el restablecimiento incompleto siguen siendo bloqueos; su divulgación no los resuelve;
+4. **Coherencia de la configuración**: verificar la conservación, limpieza, revocación, recursos externos y copias de seguridad reales, no solo las variables de entorno; suspender el tratamiento opcional que carezca de base jurídica o garantías necesarias;
+5. **Ley aplicable y transferencias**: determinar el ámbito territorial y los proveedores y países reales. El RGPD no es una garantía contractual mundial; las certificaciones o políticas públicas de proveedores no establecen contratos ni garantías de transferencia internacional.
 
-## 5. Adopción de la documentación de este sitio
+## 5. Adopción de los documentos de este sitio
 
-Este sitio adopta un diseño de doble vía, «plantilla general + texto vigente de la instancia gestionada»; los operadores de autoalojamiento pueden adoptar toda la documentación de este sitio como base de la información y las condiciones de su sitio:
+Estos documentos describen instancias de prueba alojadas determinadas y la versión candidata pública revisada; no son una certificación de cumplimiento ni condiciones automáticamente aplicables a todo despliegue. Toda adopción exige:
 
-1. Sustituya los datos de identidad (dominio, correo de contacto, fecha de entrada en vigor y número de versión);
-2. Revise la divulgación fiel de la lista de terceros y de los parámetros de configuración;
-3. El chino simplificado es la referencia de mantenimiento de este sitio, con nueve traducciones; cualquier regla lingüística elegida debe preservar las normas imperativas, la interpretación favorable al consumidor y la información comprensible;
-4. Consulte a un abogado antes de operar formalmente; la documentación de este sitio no constituye asesoramiento jurídico.
+1. indicar la identidad jurídica real del operador, sus contactos, dominios, fecha de revisión y fecha de adopción;
+2. verificar los flujos reales, los papeles de terceros, los contratos, los mecanismos de transferencia, las elecciones, la conservación y la supresión antes del tratamiento;
+3. mantener traducciones inteligibles de forma coherente: la referencia de mantenimiento en chino simplificado y las nueve traducciones no prevalecen sobre la ley imperativa ni la interpretación favorable al consumidor;
+4. obtener asesoramiento jurídico adecuado y, cuando sea necesario, una aceptación válida o un consentimiento separado; copiar el texto o seguir usándolo no establece ninguno de los dos.

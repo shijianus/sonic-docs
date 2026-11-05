@@ -3,7 +3,7 @@ title: Terms of Service
 description: Conditions of use, content rights, individual-developer liability limits and non-excludable user rights for Sonic's free nonprofit test service.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 These terms apply to Sonic hosted test instances actually operated by this project that expressly adopt them. Sonic is an individually maintained, free, nonprofit side project for learning and public benefit. It provides experimental music search and playback tools, does not sell subscriptions, and offers no additional commercial service level or guarantee of permanent operation. Respect for privacy and reasonable efforts towards a high level of protection proportionate to actual risks are project goals. GDPR principles of data minimisation, purpose limitation, transparency and user control guide continuing improvements, not a promise of EU certification, full compliance with the GDPR and all Member State laws, absolute security, freedom from data breaches or loss, or immediate and complete deletion. Protection depends on deployment, configuration and third-party processing; the Privacy Policy distinguishes verified code measures, unverified matters and concrete risks. The project's status, its reasonable-efforts goal and its risk disclosures do not reduce applicable legal obligations or require you to accept unlawful processing or waive rights.
 

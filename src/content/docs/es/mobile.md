@@ -3,7 +3,7 @@ title: Guía móvil
 description: "Guía móvil de Sonic: diseño para teléfonos, navegación por pestañas, panel del reproductor móvil y comportamientos propios de los dispositivos móviles."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página presenta el diseño y los principales aspectos de uso de Sonic en un navegador móvil. El móvil y el escritorio utilizan la misma instancia y el mismo sistema de cuenta, con las mismas funciones; el diseño cambia automáticamente según el ancho de la pantalla y no es necesario instalar ninguna aplicación. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

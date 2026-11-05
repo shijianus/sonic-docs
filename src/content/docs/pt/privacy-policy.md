@@ -1,9 +1,9 @@
 ---
 title: Política de Privacidade
-description: Fontes dos dados, fundamentos do tratamento, armazenamento no navegador e remoto, limites de conservação e eliminação, destinatários e direitos individuais no serviço de teste Sonic sem fins lucrativos.
+description: "Fontes dos dados, fundamentos do tratamento, armazenamento local e remoto, conservação e eliminação, destinatários e direitos no serviço de teste Sonic."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta política explica o tratamento de dados pessoais pelas instâncias de teste alojadas do Sonic e pelo site de documentação do projeto. O Sonic é um projeto gratuito e sem fins lucrativos, mantido por uma pessoa para aprendizagem e testes de interesse público. Valorizamos a sua privacidade e procuramos, mediante esforços razoáveis, proporcionar um nível elevado de proteção através de medidas rigorosas e proporcionais aos riscos. Os princípios do RGPD da minimização dos dados, da limitação das finalidades, da transparência e do controlo pelos utilizadores servem de referência para melhorar continuamente as práticas e reduzir a recolha, a conservação e as transmissões desnecessárias.
 

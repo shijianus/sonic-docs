@@ -3,7 +3,7 @@ title: Exportación y almacenamiento de datos
 description: "Exportación y almacenamiento de datos de Sonic: ubicación de los datos, consulta del resumen del perfil, exportación y copia de seguridad, operaciones de borrado e instancias de autoalojamiento."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página resume los datos presentes en Sonic, dónde se encuentran, qué resumen está disponible y qué opciones existen para copiarlos, borrarlos o presentar una solicitud manual. No constituye una herramienta de exportación completa. Las bases jurídicas y el marco de derechos figuran en las secciones 4, 6 y 9 de la [Política de privacidad](/es/privacy-policy/); las medidas técnicas, en [Tratamiento de datos y seguridad](/es/data-security/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

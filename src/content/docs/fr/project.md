@@ -1,9 +1,9 @@
 ---
 title: Présentation du projet
-description: "Présentation du projet epocanvas sonic : positionnement du produit, fonctions principales, architecture technique, moteur de recommandation, conception de la sécurité et de la confidentialité, périmètre d'application, formes de déploiement et guide de lecture de la documentation."
+description: "Présentation du projet epocanvas sonic : produit, fonctions, architecture, recommandation, sécurité et confidentialité, déploiement et guide de lecture."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page présente epocanvas sonic (ci-après « Sonic » ou « le projet ») : son positionnement produit, ses fonctions principales, son architecture système, sa conception de la sécurité et de la confidentialité, son périmètre d'application et ses formes de déploiement, et propose un itinéraire de lecture de la documentation du site. Que vous envisagiez d'utiliser l'instance hébergée, de procéder à votre propre déploiement ou de vous informer des stipulations de confidentialité et des conditions, vous pouvez partir de cette page. Les stipulations juridiques de Sonic figurent dans la [Politique de confidentialité](/fr/privacy-policy/) et les [Conditions d'utilisation](/fr/terms-of-service/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 
@@ -148,7 +148,7 @@ Le projet garantit la qualité par l'auditabilité et la vérification automatis
 Ce projet personnel de test est gratuit, sans publicité ni achats intégrés, et à but non lucratif ; il ne propose pas de SLA. Le projet n'a pas de finalité publicitaire.
 
 **Peut-on l'utiliser sans se connecter ?**
-Les fonctions de base sont utilisables sans connexion, ce qui ne garantit pas l'anonymat. La personnalisation et Auto DJ sont activés par défaut dans le code, sans consentement affirmatif démontré ; la connexion ne crée pas de synchronisation cloud générale. Le radar comporte une logique de synchronisation, mais sa route distante manque dans la version vérifiée.
+Les fonctions de base sont utilisables sans connexion, ce qui ne garantit pas l'anonymat. La personnalisation et Auto DJ sont activés par défaut dans le code, sans consentement affirmatif démontré ; la connexion ne crée pas de synchronisation cloud générale. Le radar comporte une logique de synchronisation, mais sa route distante doit être vérifiée selon le déploiement.
 
 **Où mes données sont-elles stockées ?**
 Favoris, playlists et préférences sont principalement dans le navigateur ; `auth` peut conserver l'adresse électronique et l'avatar. Les corps audio et les pochettes intégrées sont dans IndexedDB, mais les images de pochette peuvent aussi être envoyées avec les événements de favoris et entrer dans le catalogue distant de morceaux : elles ne sont pas garanties exclusivement locales. Métadonnées, retours et contexte de recommandation peuvent être transmis ; des traitements distants concernent aussi le radar et les statistiques de recherche. La RC prévoit 90 jours par défaut pour les événements, avec un minimum de 7 jours, mais le nettoyage et l'effacement sont incomplets. Voir les sections 4 et 6 de la [Politique de confidentialité](/fr/privacy-policy/).

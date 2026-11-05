@@ -1,11 +1,15 @@
 ---
 title: Guide des fonctions
-description: "Guide des fonctions de Sonic : graduation de la qualité audio et transparence des extraits, paroles mot à mot, recommandation et Auto DJ, téléchargement et musique locale, classements, MV et tolérance aux erreurs de recherche, en profondeur."
+description: "Guide des fonctions Sonic : qualité audio et extraits, paroles mot à mot, recommandation et Auto DJ, musique locale, classements, MV et recherche."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page explique en profondeur le comportement de chaque fonction de Sonic et les arbitrages de conception qui les sous-tendent. L'emplacement des fonctions dans l'interface figure dans le [Guide de l'interface et des fonctions](/fr/interface/) ; la description technique des signaux comportementaux et du modèle de recommandation se trouve à la section 5 de la [Présentation du projet](/fr/project/) ; les conditions contractuelles d'utilisation des fonctions figurent dans les [Conditions d'utilisation](/fr/terms-of-service/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
+
+![Les six groupes de fonctions de Sonic : recherche, lecture, paroles, bibliothèque, recommandations et confidentialité](/images/sonic/features-map.svg)
+
+*Figure : six groupes de fonctions ; l'étendue réelle des recommandations et des contrôles de confidentialité dépend de la configuration de l'instance.*
 
 ## 1. Graduation de la qualité audio et transparence des extraits
 
@@ -35,7 +39,7 @@ Le panneau des paroles comporte trois commutateurs indépendants : texte origina
 3. Radar d'exploration de styles : exploration par genre, avec un paramètre de température permettant de régler l'amplitude de l'exploration ;
 4. Auto DJ : une fois la liste de lecture naturellement terminée, enchaînement automatique sur des morceaux jouables selon le style du morceau en cours ; désactivable dans les paramètres ;
 5. Assainissement des signaux : les 6 catégories de sauts sans cause utilisateur (blocage réseau, échec de décodage, troncature en extrait, etc.) n'entrent pas dans le bassin de données de recommandation ;
-6. Données : personnalisation et Auto DJ sont activés par défaut dans le code sans preuve de consentement affirmatif. Les identifiants sont pseudonymes ; les 90 jours de certains événements ne couvrent pas tout le radar, les recherches ou agrégats. La suppression peut omettre anciens identifiants anonymes, services externes et sauvegardes, avec des échecs masqués. La route distante du radar manque dans la version vérifiée ; aucune synchronisation générale n'est confirmée (voir la [Politique de confidentialité](/fr/privacy-policy/)).
+6. Données : personnalisation et Auto DJ sont activés par défaut dans le code sans preuve de consentement affirmatif. Les identifiants sont pseudonymes ; les 90 jours de certains événements ne couvrent pas tout le radar, les recherches ou agrégats. La suppression peut omettre anciens identifiants anonymes, services externes et sauvegardes, avec des échecs masqués. La route distante du radar doit être vérifiée selon le déploiement ; aucune synchronisation générale n'est confirmée (voir la [Politique de confidentialité](/fr/privacy-policy/)).
 
 ## 4. Téléchargement et musique locale
 

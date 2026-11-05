@@ -3,7 +3,7 @@ title: Datenverwaltung und Speicherung
 description: Datenverwaltung und Speicherung bei Sonic – Speicherorte, Profilübersicht, Löschvorgänge, verfügbare Anfragewege und Hinweise zur Sicherung.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite fasst zusammen, wo Sonic-Daten gespeichert sind, was Sie einsehen können und welche Lösch- und Anfragewege bestehen. Sie ist keine Zusage eines vollständigen Exports sämtlicher personenbezogener Daten. Rechtsgrundlagen und Rechte stehen in der [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 4, 6 und 9; technische Maßnahmen unter [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/). Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

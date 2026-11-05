@@ -1,9 +1,9 @@
 ---
 title: Política de privacidad
-description: Fuentes de datos, bases del tratamiento, almacenamiento en el navegador y remoto, límites de conservación y supresión, destinatarios y derechos personales en el servicio de pruebas sin ánimo de lucro Sonic.
+description: "Fuentes de datos, bases del tratamiento, almacenamiento local y remoto, conservación y supresión, destinatarios y derechos en el servicio de prueba Sonic."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta política explica cómo tratan los datos personales las instancias de pruebas alojadas de Sonic y el sitio de documentación del proyecto. Sonic es un proyecto gratuito y sin ánimo de lucro, mantenido por una persona para el aprendizaje y las pruebas de interés general. Valoramos su privacidad y aspiramos, mediante esfuerzos razonables, a ofrecer un nivel elevado de protección con medidas rigurosas y proporcionadas a los riesgos. Los principios del RGPD de minimización de datos, limitación de la finalidad, transparencia y control de los usuarios sirven de referencia para mejorar continuamente las prácticas y reducir la recogida, la conservación y las transmisiones innecesarias.
 
@@ -127,7 +127,7 @@ La rama candidata activa por defecto la personalización y Auto DJ; ese valor, e
 
 Desactivar la personalización no elimina los datos ya recogidos ni detiene las peticiones necesarias o una estadística de búsquedas separada. Auto DJ tiene un interruptor independiente y todavía puede enviar semillas y pistas excluidas para llenar la cola; después de desactivar la personalización, la sincronización del radar aún puede enviar una carga de preferencias, aunque el servidor rechace conservarla debido a la marca de desactivación. El envío, la recepción y la conservación persistente son tratamientos distintos; un interruptor no garantiza bloquear toda salida. El operador debe detener los tratamientos futuros comprendidos en la retirada y tratar conforme a la ley los datos ya recogidos; otra etiqueta no puede hacer lícita retroactivamente una recogida que carecía de base. Si no hay recursos suficientes para garantizar el consentimiento, conservación y supresión del perfil opcional, esa función puede desactivarse sin construir un sistema empresarial innecesario.
 
-Las recomendaciones constituyen elaboración de perfiles, pero la revisión realizada solo abarca la clasificación del contenido y no encontró decisiones exclusivamente automatizadas con efectos jurídicos o de importancia similar; si cambia la finalidad, deben reevaluarse y comunicarse previamente el artículo 22 del RGPD y las demás normas aplicables.
+Las recomendaciones ajustan generalmente el orden según la reproducción, los favoritos, los rechazos, las preferencias de artista y las relaciones entre contenidos; no garantizan exactitud. Las recomendaciones constituyen elaboración de perfiles, pero la revisión realizada solo abarca la clasificación del contenido y no encontró decisiones exclusivamente automatizadas con efectos jurídicos o de importancia similar; si cambia la finalidad, deben reevaluarse y comunicarse previamente el artículo 22 del RGPD y las demás normas aplicables.
 
 ## 6. Plazos de conservación y límites de la supresión
 

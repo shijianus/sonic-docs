@@ -3,7 +3,7 @@ title: Referencia de búsqueda y reglas
 description: "Referencia de Sonic sobre búsqueda y reglas: consultas multifuente, tolerancia a errores, pestañas de categorías y acciones sobre los resultados."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Las descripciones funcionales se basan en la rama candidata pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. La RC no es una versión oficial de GitHub Release.
 

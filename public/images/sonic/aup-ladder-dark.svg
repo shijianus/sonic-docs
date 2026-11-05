@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="100%" role="img" aria-label="Proportionate enforcement from notice to termination">
+<style>
+    .bg{fill:#0b0f19} .card{fill:#111827;stroke:#1e293b;stroke-width:1.5}
+    .soft{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+    .accent{fill:rgba(59,130,246,0.12);stroke:#1d4ed8;stroke-width:1.6}
+    .warm{fill:rgba(245,158,11,0.12);stroke:#92400e;stroke-width:1.5}
+    .good{fill:rgba(34,197,94,0.12);stroke:#166534;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#60a5fa}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#60a5fa}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#94a3b8}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .stroke{stroke:#1e293b;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#60a5fa;stroke-width:1.8;fill:none}
+    .arrow{stroke:#94a3b8;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#94a3b8}
+    .icon{stroke:#cbd5e1;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#60a5fa;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#60a5fa}
+
+  </style>
+<rect class="bg" width="1000" height="470" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="286" width="200" height="84" rx="14"/><g class="icon" transform="translate(218 302) scale(1.000)"><path d="M6 17h12l-2-3V9a4 4 0 0 0-8 0v5z M10 20h4"/></g><circle class="dot" cx="90" cy="332" r="3"/><text class="num" x="100" y="337">01</text><text class="label-sm" x="122" y="337">Notice</text><text class="meta" x="122" y="358">reasons where feasible</text><rect class="card" x="286" y="226" width="200" height="84" rx="14"/><g class="icon" transform="translate(440 242) scale(1.000)"><path d="M4 7h10 M18 7h2 M4 17h4 M12 17h8 M14 4v6 M8 14v6"/></g><circle class="dot" cx="312" cy="272" r="3"/><text class="num" x="322" y="277">02</text><text class="label-sm" x="344" y="277">Throttle</text><text class="meta" x="344" y="298">limit access</text><rect class="card" x="508" y="166" width="200" height="84" rx="14"/><g class="icon" transform="translate(662 182) scale(1.000)"><path d="M8 5v14 M16 5v14"/></g><circle class="dot" cx="534" cy="212" r="3"/><text class="num" x="544" y="217">03</text><text class="label-sm" x="566" y="217">Suspend</text><text class="meta" x="566" y="238">temporary limits</text><rect class="card" x="730" y="106" width="206" height="84" rx="14"/><g class="icon" transform="translate(890 122) scale(1.000)"><path d="M6 6h12v12H6z"/></g><circle class="dot" cx="756" cy="152" r="3"/><text class="num" x="766" y="157">04</text><text class="label-sm" x="788" y="157">Terminate</text><text class="meta" x="788" y="178">separate review</text><path class="arrow" d="M268 320L278 292"/><path class="arrow-head" d="M272 288L278 292L271 295Z"/><path class="arrow" d="M490 260L500 232"/><path class="arrow-head" d="M494 228L500 232L493 235Z"/><path class="arrow" d="M712 200L722 172"/><path class="arrow-head" d="M716 168L722 172L715 175Z"/><rect class="soft" x="64" y="388" width="430" height="52" rx="14"/><g class="icon" transform="translate(448 404) scale(1.000)"><path d="M20 7a8 8 0 1 0 1 7 M20 3v4h-4"/></g><circle class="dot" cx="90" cy="414" r="3"/><text class="num" x="100" y="419">R</text><text class="label-sm" x="122" y="419">Review &amp; appeal</text><rect class="soft" x="506" y="388" width="430" height="52" rx="14"/><g class="icon" transform="translate(890 404) scale(1.000)"><path d="M4 20h16 M8 13l7-7 3 3-7 7z M6 15l3 3 M14 4l3 3"/></g><circle class="dot" cx="532" cy="414" r="3"/><text class="num" x="542" y="419">L</text><text class="label-sm" x="564" y="419">Lawful requests</text>
+</svg>

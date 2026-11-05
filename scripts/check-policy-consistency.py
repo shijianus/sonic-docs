@@ -317,7 +317,7 @@ def self_test():
 
     for name, text in [
         ("sections", "sections 6 and 99; § 99; 第 4、6、99 节; 第99節; 第99節; 제99절"),
-        ("versions", "版本 1.8; Version 1.8; Версия 1.8; v99.6"),
+        ("versions", "版本 1.9; Version 1.9; Версия 1.9; v99.6"),
         ("paragraphs", "Paragraphs 1, 6 and 99; 第99項、第99款、第99号; 제99항"),
         ("ordinary_words", "articles about music; Art supplies; parties 99; 99 条记录"),
         ("identifiers", "Article99; someArticle 99; my_article 99; ArtObject99"),
@@ -410,7 +410,7 @@ def main(argv=None):
                 continue
             text = path.read_text(encoding="utf-8")
             versions = VERSION.findall(text[:500])
-            if versions != ["1.8"]:
+            if versions != ["1.9"]:
                 errors.append(f"{label}: version {versions}")
             if not all(value in text for value in PROVENANCE):
                 errors.append(f"{label}: incomplete source-review provenance")

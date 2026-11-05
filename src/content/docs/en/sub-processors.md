@@ -3,7 +3,7 @@ title: Third Parties & Transfers
 description: Infrastructure, identity services, content and external-resource recipients, configuration differences and international-transfer limits for Sonic hosted instances.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This page expands section 7 of the [Privacy Policy](/en/privacy-policy/), explaining the recipients that may be involved in Sonic's individually maintained, free, nonprofit hosted test instances. Integration capability in source code is not proof that a service is enabled or data sharing is lawful. Self-hosted instances must provide separate notices reflecting their actual processing.
 

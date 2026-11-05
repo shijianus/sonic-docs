@@ -3,7 +3,7 @@ title: Richtlinie zur akzeptablen Nutzung
 description: Verhaltensgrenzen für gehostete Sonic-Ressourcen, Schutz vor Systemmissbrauch, Regeln zu Inhalten und fremden Rechten sowie Maßnahmen und Beschwerden.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Richtlinie gilt für die tatsächlich von Sonic betriebenen gehosteten Testinstanzen und ihre öffentlichen APIs. Sie schützt gemeinsam genutzte Ressourcen, Nutzer und vorgelagerte Dienste und enthält die Verhaltensregeln zu den [Nutzungsbedingungen](/de/terms-of-service/). Wenn Sie nicht zustimmen, stellen Sie die Nutzung der gehosteten Instanz ein. Sie macht aus einem kostenlosen, nicht gewinnorientierten Open-Source-Projekt keine unbedingte Sicherheitsgarantie und ersetzt weder die [Datenschutzerklärung](/de/privacy-policy/) noch die [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/).
 

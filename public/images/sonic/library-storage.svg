@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Three storage locations: local favourites, offline files and remote processing">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="accent" x="64" y="100" width="270" height="240" rx="14"/><g class="icon-accent" transform="translate(288 116) scale(1.000)"><path d="M4 6h16 M4 12h16 M4 18h10"/></g><circle class="dot" cx="90" cy="125" r="3"/><text class="num" x="100" y="130">01</text><text class="label" x="88" y="298">Favourites &amp; history</text><text class="meta" x="88" y="319">localStorage</text><rect class="card" x="365" y="100" width="270" height="240" rx="14"/><g class="icon" transform="translate(589 116) scale(1.000)"><path d="M12 4v11 M7 11l5 5 5-5 M5 20h14"/></g><circle class="dot" cx="391" cy="125" r="3"/><text class="num" x="401" y="130">02</text><text class="label" x="389" y="298">Downloads &amp; local files</text><text class="meta" x="389" y="319">IndexedDB</text><rect class="card" x="666" y="100" width="270" height="240" rx="14"/><g class="icon" transform="translate(890 116) scale(1.000)"><path d="M7 18h10a4 4 0 0 0 .6-7.9A6 6 0 0 0 6.2 9.5 4.2 4.2 0 0 0 7 18z"/></g><circle class="dot" cx="692" cy="125" r="3"/><text class="num" x="702" y="130">03</text><text class="label" x="690" y="298">Remote processing</text><text class="meta" x="690" y="319">profiles, search, backup</text><line x1="64" y1="366" x2="936" y2="366" class="stroke"/><text class="foot" x="64" y="390">Local data is not automatically a remote copy; clearing the browser is not a full erasure.</text>
+</svg>

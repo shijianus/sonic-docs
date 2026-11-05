@@ -1,9 +1,9 @@
 ---
 title: Interface e funcionalidades
-description: "Guia da interface e das funcionalidades do leitor Sonic: página inicial e recomendações, pesquisa, controlos de reprodução, gaveta do leitor, A minha música, definições e controlos de privacidade, disposição móvel."
+description: "Guia da interface do Sonic: página inicial e recomendações, pesquisa, reprodução, gaveta do leitor, A minha música, definições, privacidade e móvel."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página orienta pela disposição da interface e pela localização das funcionalidades do leitor web do Sonic, indicando onde cada funcionalidade se encontra e como se comporta. As capturas de ecrã ilustram a interface em chinês simplificado, mas não comprovam a versão atualmente em produção; o produto permite trocar a língua da interface. A interface pode ser ajustada com a evolução das versões; o âmbito real de disponibilidade das funcionalidades depende do que a instância tenha ativado; os instrumentos legais constam dos [Termos de Utilização](/pt/terms-of-service/) e da [Política de Privacidade](/pt/privacy-policy/).
 

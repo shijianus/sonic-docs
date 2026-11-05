@@ -3,11 +3,15 @@ title: Início rápido
 description: "Guia rápido do Sonic: o caminho mais curto desde a abertura do site até à pesquisa e reprodução, início de sessão e preferências locais, descargas e música local, e utilização móvel."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página indica o caminho mais curto para utilizar a instância gerida do Sonic (`sonic.epocanvas.tech`): da abertura do site à pesquisa e reprodução, início de sessão e preferências locais, descargas e música local, e utilização móvel. Favoritos, playlists e preferências são principalmente locais; não há sincronização geral nem cópia de segurança duradoura na nuvem. A visita completa à interface consta da [Interface e funcionalidades](/pt/interface/); esta página não abrange a implantação própria (para a implantação, ver o [Guia de implantação](/pt/deployment/)).
 
 As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
+
+![Início rápido do Sonic em quatro passos: abrir o site, pesquisar, reproduzir e ajustar preferências](/images/sonic/quickstart-steps.svg)
+
+*Figura: quatro passos desde a abertura até aos ajustes; as funcionalidades reais dependem do que a instância ativa.*
 
 ## 1. Abrir o site
 

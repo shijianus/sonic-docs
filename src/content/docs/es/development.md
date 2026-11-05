@@ -3,7 +3,7 @@ title: Guía de desarrollo
 description: "Guía de desarrollo de Sonic: estructura del repositorio, comandos de compilación, suite de pruebas, verificación de la coherencia documental y participación en las contribuciones."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página se dirige a quienes participen en el desarrollo y en el desarrollo derivado, y describe la estructura del repositorio, los comandos de compilación, la suite de pruebas y la verificación de la coherencia documental. La licencia y los límites jurídicos constan en [Código abierto y autoalojamiento](/es/open-source/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

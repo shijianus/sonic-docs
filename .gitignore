@@ -28,5 +28,9 @@ tmp_laws/
 
 # local working artifacts (session tooling, GUI test evidence, review snapshots)
 .zcode/
+gui-audit/*
+!gui-audit/v20/
+gui-audit/v20/*
+!gui-audit/v20/audit.json
 gui-test-screenshots/
 doc/*.zip

@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/finalize-pages.mjs",
+    "build": "node scripts/clean-build-cache.mjs && astro build && node scripts/finalize-pages.mjs",
     "deploy": "pnpm run validate && pnpm exec wrangler pages deploy dist --project-name sonic-docs --branch main",
     "preview": "node scripts/preview-server.mjs",
     "preview:astro": "astro preview",

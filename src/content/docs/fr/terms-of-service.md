@@ -3,7 +3,7 @@ title: Conditions d'utilisation
 description: Conditions d'utilisation, droits sur les contenus, limites de responsabilité du développeur individuel et droits non excluables des utilisateurs du service de test gratuit et à but non lucratif Sonic.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Les présentes conditions s'appliquent aux instances de test hébergées de Sonic effectivement exploitées par ce projet et qui les adoptent expressément. Sonic est un projet gratuit et à but non lucratif, maintenu par une personne pour l'apprentissage et les tests d'intérêt général. Il fournit des outils expérimentaux de recherche et de lecture musicales, sans abonnement à vendre, sans niveau de service commercial supplémentaire ni garantie de fonctionnement permanent. Le respect de la vie privée est un objectif du projet : des efforts raisonnables visent un niveau élevé de protection par des mesures rigoureuses et proportionnées aux risques. Les principes du RGPD de minimisation des données, de limitation des finalités, de transparence et de contrôle par les utilisateurs guident l'amélioration continue.
 
@@ -105,7 +105,7 @@ Dans la mesure permise par le droit applicable, la responsabilité pour les domm
 
 Aucune limitation ne s'applique aux actes intentionnels, à la fraude, à la faute lourde, aux décès ou dommages corporels dont la responsabilité est légalement due, aux garanties expresses légalement assumées, à la responsabilité au titre de l'article 82 du RGPD ou à toute autre responsabilité qui ne peut être valablement limitée. Il n'est pas prévu de plafond général de zéro indemnisation ou de montant forfaitaire arbitraire, et les pertes de données personnelles ou locales ne sont pas automatiquement exclues. Les présentes conditions ne créent pas pour l'auteur une personne morale à responsabilité limitée et ne séparent pas automatiquement son patrimoine personnel ; elles n'imposent ni garantie personnelle, ni assurance déterminée, ni responsabilité pour tous les déploiements indépendants. La responsabilité dépend du droit applicable, du rôle réel et des stipulations valables. Une responsabilité légalement due ne signifie pas que chaque panne ou acte d'un tiers engage une garantie sans faute ; le caractère gratuit ou non lucratif ne constitue pas un motif d'exonération.
 
-Les clauses défavorables aux consommateurs et juridiquement dépourvues d'effet ne s'appliquent pas ; le reste du contrat demeure en vigueur dans la mesure où il peut légalement subsister séparément, sans réintroduire la limitation invalide sous une autre langue ou formulation.
+Les clauses défavorables aux consommateurs et juridiquement dépourvues d'effet ne s'appliquent pas ; le reste du contrat demeure en vigueur dans la mesure où il peut légalement subsister séparément, sans réintroduire la limitation invalide sous une autre formulation.
 
 ## 11. Droits des consommateurs, droit applicable et compétence
 

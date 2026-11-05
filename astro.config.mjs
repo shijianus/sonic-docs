@@ -34,7 +34,7 @@ function rehypePrefixBase() {
 
 // 侧边栏条目的多语言文案：label 为正式语言（简体中文），其余 9 种语言从 translations 取（与 EpoCanvasDocs 十语言矩阵一致）。
 const SIDEBAR_I18N = {
-	'专案介绍': {
+	'项目介绍': {
 		'zh-TW': '專案介紹',
 		en: 'Project Overview',
 		ja: 'プロジェクト紹介',
@@ -153,7 +153,7 @@ const SIDEBAR_I18N = {
 	'推荐算法说明': {
 		'zh-TW': '推薦演算法說明', 'en': 'Recommendation Algorithm', 'fr': 'Algorithme de recommandation', 'es': 'Algoritmo de recomendación', 'de': 'Empfehlungsalgorithmus', 'ja': 'レコメンドアルゴリズム', 'ko': '추천 알고리즘 설명', 'pt': 'Algoritmo de recomendação', 'ru': 'Алгоритм рекомендаций',
 	},
-	'帐户与安全指南': {
+	'账户与安全指南': {
 		'zh-TW': '帳戶與安全指南', 'en': 'Account & Security Guide', 'fr': 'Compte et sécurité', 'es': 'Cuenta y seguridad', 'de': 'Konto & Sicherheit', 'ja': 'アカウントとセキュリティ', 'ko': '계정 및 보안 가이드', 'pt': 'Conta e segurança', 'ru': 'Аккаунт и безопасность',
 	},
 	'数据导出与存储': {
@@ -200,7 +200,7 @@ const SIDEBAR_GROUPS_I18N = {
 	'使用指南': {
 		'zh-TW': '使用指南', 'en': 'Usage Guide', 'fr': "Guide d'utilisation", 'es': 'Guía de uso', 'de': 'Anwendungsleitfaden', 'ja': '使用ガイド', 'ko': '사용 가이드', 'pt': 'Guia de utilização', 'ru': 'Руководство пользователя',
 	},
-	'帐户与个性化': {
+	'账户与个性化': {
 		'zh-TW': '帳戶與個人化', 'en': 'Accounts & Personalisation', 'fr': 'Comptes et personnalisation', 'es': 'Cuentas y personalización', 'de': 'Konten & Personalisierung', 'ja': 'アカウントとパーソナライズ', 'ko': '계정 및 개인화', 'pt': 'Contas e personalização', 'ru': 'Аккаунты и персонализация',
 	},
 	'自部署与开发': {
@@ -260,13 +260,14 @@ export default defineConfig({
 				LanguageSelect: './src/components/starlight/LanguageSelect.astro',
 				MarkdownContent: './src/components/starlight/MarkdownContent.astro',
 				Pagination: './src/components/starlight/Pagination.astro',
+				Footer: './src/components/starlight/Footer.astro',
 			},
 			// 政策日期由正文显式维护；Git 提交时间不代表修订或生效日期。
 			lastUpdated: false,
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				g('产品与总览', [
-					t('专案介绍', 'project'),
+					t('项目介绍', 'project'),
 					t('界面与功能导览', 'interface'),
 					t('总览', 'overview'),
 				]),
@@ -278,8 +279,8 @@ export default defineConfig({
 					t('移动端指南', 'mobile'),
 					t('故障排查', 'troubleshooting'),
 				]),
-				g('帐户与个性化', [
-					t('帐户与安全指南', 'account-security'),
+				g('账户与个性化', [
+					t('账户与安全指南', 'account-security'),
 					t('推荐算法说明', 'recommendation'),
 					t('数据导出与存储', 'data-management'),
 				]),

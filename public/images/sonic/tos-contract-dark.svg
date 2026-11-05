@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Service terms in five numbered steps">
+<style>
+    .bg{fill:#0b0f19} .card{fill:#111827;stroke:#1e293b;stroke-width:1.5}
+    .soft{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+    .accent{fill:rgba(59,130,246,0.12);stroke:#1d4ed8;stroke-width:1.6}
+    .warm{fill:rgba(245,158,11,0.12);stroke:#92400e;stroke-width:1.5}
+    .good{fill:rgba(34,197,94,0.12);stroke:#166534;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#60a5fa}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#60a5fa}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#94a3b8}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .stroke{stroke:#1e293b;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#60a5fa;stroke-width:1.8;fill:none}
+    .arrow{stroke:#94a3b8;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#94a3b8}
+    .icon{stroke:#cbd5e1;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#60a5fa;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#60a5fa}
+
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(171.6 144) scale(1.000)"><path d="M6 17h12l-2-3V9a4 4 0 0 0-8 0v5z M10 20h4"/></g><circle class="dot" cx="90" cy="153" r="3"/><text class="num" x="100" y="158">01</text><text class="label" x="88" y="244">Notice</text><text class="meta" x="88" y="265">before acceptance</text><rect class="card" x="243.6" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(351.2 144) scale(1.000)"><path d="M5 12l4 4 10-10"/></g><circle class="dot" cx="269.6" cy="153" r="3"/><text class="num" x="279.6" y="158">02</text><text class="label" x="267.6" y="244">Acceptance</text><text class="meta" x="267.6" y="265">valid act</text><rect class="card" x="423.2" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(530.8 144) scale(1.000)"><path d="M8 5l11 7-11 7z"/></g><circle class="dot" cx="449.2" cy="153" r="3"/><text class="num" x="459.2" y="158">03</text><text class="label" x="447.2" y="244">Use</text><text class="meta" x="447.2" y="265">free test</text><rect class="card" x="602.8" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(710.4 144) scale(1.000)"><path d="M20 7a8 8 0 1 0 1 7 M20 3v4h-4"/></g><circle class="dot" cx="628.8" cy="153" r="3"/><text class="num" x="638.8" y="158">04</text><text class="label" x="626.8" y="244">Changes</text><text class="meta" x="626.8" y="265">notify first</text><rect class="card" x="782.4" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(890 144) scale(1.000)"><path d="M7 3h7l4 4v14H7z M14 3v5h4 M10 12h7 M10 16h7"/></g><circle class="dot" cx="808.4" cy="153" r="3"/><text class="num" x="818.4" y="158">05</text><text class="label" x="806.4" y="244">Termination</text><text class="meta" x="806.4" y="265">exit keeps rights</text><path class="arrow" d="M221.6 207L237.6 207"/><path class="arrow-head" d="M231.6 203L237.6 207L230.6 210Z"/><path class="arrow" d="M401.2 207L417.2 207"/><path class="arrow-head" d="M411.2 203L417.2 207L410.2 210Z"/><path class="arrow" d="M580.8 207L596.8 207"/><path class="arrow-head" d="M590.8 203L596.8 207L589.8 210Z"/><path class="arrow" d="M760.4 207L776.4 207"/><path class="arrow-head" d="M770.4 203L776.4 207L769.4 210Z"/>
+</svg>

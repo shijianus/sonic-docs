@@ -3,7 +3,7 @@ title: Descripción del algoritmo de recomendación
 description: "Algoritmo de recomendación de Sonic: señales y ponderaciones de comportamiento, modelo de popularidad, intención de sesión, reordenación MMR, Auto DJ y controles de privacidad asociados."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página describe señales, ponderaciones, ordenación y controles del motor de recomendación. La personalización y Auto DJ están activados por defecto en el código candidato, sin prueba de consentimiento afirmativo; ni iniciar sesión ni aceptar las condiciones equivale a consentir los perfiles opcionales. Los identificadores hash o `anon_` son seudónimos, no necesariamente anónimos. Las bases y los límites figuran en las secciones 4.2 y 5 de la [Política de privacidad](/es/privacy-policy/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 

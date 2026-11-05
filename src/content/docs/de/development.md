@@ -3,7 +3,7 @@ title: Entwicklungsleitfaden
 description: Sonic-Entwicklungsleitfaden – Repository-Struktur, Build-Befehle, Testsuite, Verifikation der Dokumentenkonsistenz und Beteiligung am Projekt.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite richtet sich an Leser, die an der Entwicklung oder Weiterentwicklung mitwirken möchten, und beschreibt Repository-Struktur, Build-Befehle, Testsuite und die Verifikation der Dokumentenkonsistenz. Lizenz und rechtliche Grenzen sind unter [Open-Source- und Selbst-Hosting-Recht](/de/open-source/) dargestellt. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

@@ -3,7 +3,7 @@ title: Referência da pesquisa e das regras
 description: "Referência da pesquisa e das regras do Sonic: pesquisa em várias fontes, tolerância a erros, separadores de categorias e operações sobre os resultados."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão e a configuração em produção continuam por verificar.
 

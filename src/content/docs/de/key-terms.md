@@ -3,7 +3,7 @@ title: Begriffsdefinitionen
 description: Begriffe zu Datenschutz, Rollen, Einwilligung, Technik und lokaler Datenverarbeitung in den Rechtsdokumenten von Sonic.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite erläutert die wichtigsten Begriffe der [Datenschutzerklärung](/de/privacy-policy/), der [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/), des [Verzeichnisses der Weitergabe an Dritte und der internationalen Übermittlungen](/de/sub-processors/) und der [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/). Die Rechtsbegriffe orientieren sich an der DSGVO. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version. Dies ist keine Zertifizierung rechtskonformen Betriebs. Vereinfachtes Chinesisch im Stammverzeichnis ist die Pflegegrundlage, die übrigen neun Sprachfassungen sind Übersetzungen. Zwingendes Recht und das Recht von Verbrauchern auf klare, verständliche Bedingungen werden durch einen Sprachvorrang nicht eingeschränkt.
 

@@ -3,7 +3,7 @@ title: Deployment-Leitfaden
 description: Sonic-Deployment-Leitfaden – die beiden Wege Cloudflare-Pages-Edge-Gateway und lokale Linux-Engine, Umgebungsvariablen, Backup und Wiederherstellung, Gesundheitsprüfungen und Rollback.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite beschreibt die beiden Bereitstellungswege für Sonic, die Kernumgebungsvariablen, Backup und Wiederherstellung sowie die Betriebsgrundlagen. Wer die Zwecke und Mittel bestimmt, trägt die entsprechenden Datenschutzpflichten; rein persönliche Tests und öffentliche Dienste sind gesondert zu beurteilen; die einschlägigen Pflichten stehen in [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/), Abschnitt 6, und unter [Open-Source- und Selbst-Hosting-Recht](/de/open-source/); die maßgebliche Darstellung der betrieblichen Einzelheiten findet sich in `docs/OPERATIONS.md` im Upstream-Repository. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

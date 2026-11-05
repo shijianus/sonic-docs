@@ -3,9 +3,13 @@ title: Musikbibliothek verwalten
 description: Verwaltung der Sonic-Musikbibliothek – Speicherorte und Bedienung von Favoriten, Playlists, zuletzt wiedergegebenen Titeln, Downloads und lokaler Musik.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite beschreibt die Verwaltung und den Speicherort der vier Bereiche unter „Meine Musik“. Die Bibliothek liegt überwiegend im Browser; für lokale Audioinhalte wurde kein Uploadpfad gefunden, eingebettete Cover können jedoch mit Favoritenereignissen in den entfernten gemeinsamen Titelkatalog gelangen, der in websiteweiter Suche oder öffentlichen Vorschlägen erscheinen kann. Feedback und Empfehlungskontext können ebenfalls übermittelt werden; Radar versucht eine entfernte Synchronisierung, ohne bestätigte entfernte Engine-Route oder allgemeine Cloud-Sicherung. Das Leeren und Löschen ist unter [Datenverwaltung und Speicherung](/de/data-management/) beschrieben. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
+
+![Datenorte bei Sonic: Favoriten und Verlauf im Browser, Downloads und lokale Musik in IndexedDB sowie Remote-Verarbeitung](/images/sonic/library-storage.svg)
+
+*Abbildung: drei Orte speichern unterschiedliche Daten; das Löschen des Browsers entfernt entfernte Datensätze nicht vollständig.*
 
 ## 1. Favoriten und Sammlungen
 

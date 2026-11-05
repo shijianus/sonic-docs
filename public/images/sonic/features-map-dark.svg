@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Six feature groups">
+<style>
+    .bg{fill:#0b0f19} .card{fill:#111827;stroke:#1e293b;stroke-width:1.5}
+    .soft{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+    .accent{fill:rgba(59,130,246,0.12);stroke:#1d4ed8;stroke-width:1.6}
+    .warm{fill:rgba(245,158,11,0.12);stroke:#92400e;stroke-width:1.5}
+    .good{fill:rgba(34,197,94,0.12);stroke:#166534;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#60a5fa}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#60a5fa}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#94a3b8}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .stroke{stroke:#1e293b;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#60a5fa;stroke-width:1.8;fill:none}
+    .arrow{stroke:#94a3b8;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#94a3b8}
+    .icon{stroke:#cbd5e1;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#60a5fa;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#60a5fa}
+
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="92" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(295.3333333333333 108) scale(1.000)"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M16.5 16.5L21 21"/></g><circle class="dot" cx="90" cy="117" r="3"/><text class="num" x="100" y="122">01</text><text class="label" x="88" y="172">Search</text><text class="meta" x="88" y="193">fuzzy and pinyin</text><rect class="card" x="361.3333333333333" y="92" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(592.6666666666666 108) scale(1.000)"><path d="M4 14v-2a8 8 0 0 1 16 0v2 M4 14h3v6H5a1 1 0 0 1-1-1z M20 14h-3v6h2a1 1 0 0 0 1-1z"/></g><circle class="dot" cx="387.3333333333333" cy="117" r="3"/><text class="num" x="397.3333333333333" y="122">02</text><text class="label" x="385.3333333333333" y="172">Playback</text><text class="meta" x="385.3333333333333" y="193">quality and modes</text><rect class="card" x="658.6666666666666" y="92" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(890 108) scale(1.000)"><path d="M9 18V6l10-2v11 M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M19 15a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></g><circle class="dot" cx="684.6666666666666" cy="117" r="3"/><text class="num" x="694.6666666666666" y="122">03</text><text class="label" x="682.6666666666666" y="172">Lyrics</text><text class="meta" x="682.6666666666666" y="193">word-level timing</text><rect class="card" x="64" y="234" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(295.3333333333333 250) scale(1.000)"><path d="M12 4v11 M7 11l5 5 5-5 M5 20h14"/></g><circle class="dot" cx="90" cy="259" r="3"/><text class="num" x="100" y="264">04</text><text class="label" x="88" y="314">Library</text><text class="meta" x="88" y="335">favourites and offline</text><rect class="card" x="361.3333333333333" y="234" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(592.6666666666666 250) scale(1.000)"><path d="M4 20V4 M4 20h16 M8 16v-4 M12 16V8 M16 16v-6"/></g><circle class="dot" cx="387.3333333333333" cy="259" r="3"/><text class="num" x="397.3333333333333" y="264">05</text><text class="label" x="385.3333333333333" y="314">Recommend</text><text class="meta" x="385.3333333333333" y="335">profile and feedback</text><rect class="card" x="658.6666666666666" y="234" width="277.3333333333333" height="122" rx="14"/><g class="icon" transform="translate(890 250) scale(1.000)"><path d="M12 3l7 3v6c0 4.2-2.9 7.4-7 9-4.1-1.6-7-4.8-7-9V6z M9 12l2 2 4-4"/></g><circle class="dot" cx="684.6666666666666" cy="259" r="3"/><text class="num" x="694.6666666666666" y="264">06</text><text class="label" x="682.6666666666666" y="314">Privacy</text><text class="meta" x="682.6666666666666" y="335">controls and reset</text>
+</svg>

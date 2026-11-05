@@ -3,7 +3,7 @@ title: Leitfaden zu Konto und Sicherheit
 description: Leitfaden zu Sonic-Konten und Sicherheit – Epomail-OAuth-Anmeldung, Sitzungen, API-Schlüssel, Sperrung und sichere Nutzung.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite erklärt die Funktionsweise des Sonic-Kontosystems und gibt Hinweise zur sicheren Nutzung. Die vollständige technische Beschreibung steht unter [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/), Abschnitt 3.2; die vertraglichen Regeln stehen in den [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 3. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

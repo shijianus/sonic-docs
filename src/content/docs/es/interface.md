@@ -1,9 +1,9 @@
 ---
 title: Guía de la interfaz y funciones
-description: "Guía de la interfaz y funciones del reproductor de Sonic: página de inicio y recomendaciones, búsqueda, controles de reproducción, panel del reproductor, mi música, ajustes y controles de privacidad, disposición en móvil."
+description: "Guía de la interfaz de Sonic: inicio y recomendaciones, búsqueda, reproducción, panel del reproductor, mi música, ajustes, privacidad y móvil."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página orienta por la disposición de la interfaz y la ubicación de las funciones del reproductor web de Sonic, y explica dónde está cada función y cómo se comporta. Las capturas ilustran la interfaz en chino simplificado, cuya lengua puede cambiarse; no demuestran la versión actualmente desplegada. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. La interfaz puede ajustarse con la evolución de las versiones; el alcance real de disponibilidad de cada función es el que tenga activado la instancia. Los compromisos legales figuran en los [Términos del servicio](/es/terms-of-service/) y en la [Política de privacidad](/es/privacy-policy/).
 

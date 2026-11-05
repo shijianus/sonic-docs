@@ -3,7 +3,7 @@ title: Privacy & Terms Overview
 description: Service identity, data protection scope, document relationships and outstanding implementation requirements for Sonic's individual nonprofit test project.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This page explains the relationships between the documents for Sonic's hosted test service. The project is individually maintained, free and nonprofit, for learning and public-benefit testing. It offers no commercial service level or commitment to permanent operation. Read the [Terms of Service](/en/terms-of-service/) and [Privacy Policy](/en/privacy-policy/) first to understand the service scope and data processing.
 

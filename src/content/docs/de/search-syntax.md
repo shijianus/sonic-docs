@@ -3,7 +3,7 @@ title: Referenz zu Suche und Suchregeln
 description: Referenz zu Suche und Suchregeln von Sonic – Suchquellen, Toleranzregeln, Registerkarten und Aktionen auf der Ergebnisseite.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Die Funktionsbeschreibungen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version. Der RC ist kein offizielles GitHub Release.
 

@@ -3,11 +3,15 @@ title: Solución de problemas
 description: "Solución de problemas de Sonic: problemas habituales y medidas para la reproducción, las fuentes, el inicio de sesión, el modo degradado, el almacenamiento y la limitación de peticiones."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Las descripciones funcionales se basan en la rama candidata pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. La RC no es una versión oficial de GitHub Release.
 
 Esta página explica cómo reconocer y resolver los problemas habituales. Si nada de lo indicado resuelve el suyo, escriba a `admin@epocanvas.com` o abra una Issue en el repositorio de GitHub; al informar, use únicamente términos de reproducción no sensibles. El texto de búsqueda público puede contener información personal o sensible.
+
+![Solución de problemas de Sonic en cuatro pasos: identificar el síntoma, comprobar el estado, probar la vía alternativa e informar](/images/sonic/troubleshooting-flow.svg)
+
+*Figura: identifique el síntoma, compruebe el estado, pruebe la vía alternativa e informe; la vía alternativa también puede fallar.*
 
 ## 1. Problemas de reproducción
 

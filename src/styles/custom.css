@@ -3,6 +3,14 @@
   --sl-line-height: 1.68;
 }
 
+/* 桌面端给主题与语言下拉框留足宽度，避免德语 System、葡萄牙语 Português 被省略。 */
+@media screen and (min-width: 56rem) {
+  starlight-theme-select label,
+  starlight-lang-select label {
+    --sl-select-width: 8.5em !important;
+  }
+}
+
 :root[data-theme='light'] {
   --sl-color-accent-low: rgba(37, 99, 235, 0.08);
   --sl-color-accent: #2563eb;
@@ -72,6 +80,47 @@
   color: var(--sl-color-gray-2);
   margin-bottom: 1.15rem;
   overflow-wrap: anywhere;
+}
+
+/* 每页正文以“修订日期｜版本”开头；收成文档状态徽标，避免与正文混淆。 */
+.sl-markdown-content > p:has(> strong:only-child) {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.1rem 0 1.9rem;
+  padding: 0.38rem 0.8rem;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 999px;
+  background: var(--sl-color-gray-6);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.sl-markdown-content > p:has(> strong:only-child)::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--sl-color-accent);
+}
+
+.sl-markdown-content > p:has(> strong:only-child) strong {
+  font-weight: 600;
+  color: var(--sl-color-gray-2);
+  letter-spacing: 0.01em;
+}
+
+@media print {
+  .sl-markdown-content > p:has(> strong:only-child) {
+    border: 0;
+    padding: 0;
+    background: none;
+    font-size: 0.85rem;
+  }
+  .sl-markdown-content > p:has(> strong:only-child)::before { display: none; }
 }
 
 .sl-markdown-content h2 {
@@ -162,6 +211,9 @@
 }
 
 .sl-markdown-content .doc-figure-link img { margin: 0; border: 0; border-radius: 0; }
+.sl-markdown-content .doc-figure-img--dark { display: none; }
+[data-theme='dark'] .sl-markdown-content .doc-figure-img--light { display: none; }
+[data-theme='dark'] .sl-markdown-content .doc-figure-img--dark { display: block; }
 .sl-markdown-content .doc-figure-link:hover { border-color: var(--sl-color-accent); }
 .sl-markdown-content .doc-figure-action {
   display: block;
@@ -170,6 +222,36 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--sl-color-accent-high);
+}
+
+/* 图示编号在 SVG 内保持简短技术标签，此处按页面语言给出图例键。 */
+.sl-markdown-content .doc-figure-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+  margin: -0.35rem 0 0.9rem;
+  padding: 0.55rem 0.8rem;
+  border-inline-start: 3px solid var(--sl-color-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-2);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.sl-markdown-content .doc-figure-legend-label {
+  color: var(--sl-color-gray-3);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.sl-markdown-content .doc-figure-legend-item { white-space: nowrap; }
+
+@media (max-width: 30rem) {
+  .sl-markdown-content .doc-figure-legend { gap: 0.25rem 0.7rem; }
+  .sl-markdown-content .doc-figure-legend-item { white-space: normal; }
 }
 
 /* Keep the content column and its sticky outline independent at wide sizes. */
@@ -212,4 +294,5 @@
   .sl-markdown-content tr { break-inside: avoid; }
   .sl-markdown-content .doc-figure-action { display: none; }
   .sl-markdown-content .doc-figure-link { border: 0; }
+  .sl-markdown-content .doc-figure-img--dark { display: none !important; }
 }

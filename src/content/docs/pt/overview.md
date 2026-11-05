@@ -3,7 +3,7 @@ title: Panorama de privacidade e termos
 description: Prestador, âmbito da proteção de dados, relação entre documentos e condições de implementação atuais do projeto individual de teste Sonic sem fins lucrativos.
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica a relação entre os documentos do serviço de teste alojado do Sonic. O projeto é mantido por uma pessoa, é gratuito e sem fins lucrativos e destina-se à aprendizagem e a testes de interesse público; não há nível de serviço comercial nem compromisso de funcionamento perpétuo. Leia primeiro os [Termos de Utilização](/pt/terms-of-service/) e a [Política de Privacidade](/pt/privacy-policy/) para conhecer o âmbito do serviço e o tratamento dos dados.
 

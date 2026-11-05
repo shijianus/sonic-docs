@@ -17,6 +17,7 @@
       h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 2rem 0 1rem; }
       .lead { max-width: 48rem; color: var(--muted); }
       .reading-map { margin: 2.5rem 0; overflow-x: auto; border-radius: 1rem; }
+      .reading-map picture { display: block; }
       .reading-map img { display: block; width: 100%; min-width: 720px; height: auto; }
       .reading-map figcaption { padding: 0.65rem 0; color: var(--muted); font-size: 0.9rem; }
       h2 { font-size: 1.15rem; margin-top: 2rem; }
@@ -26,6 +27,9 @@
       li a:hover { border-color: var(--accent); }
       a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
       footer { border-top: 1px solid var(--border); margin-top: 2.5rem; padding-top: 1rem; color: var(--muted); font-size: 0.9rem; }
+      footer p { margin: 0 0 0.45rem; }
+      footer p:last-child { margin-bottom: 0; }
+      .language-policy { max-width: 62rem; font-size: 0.82rem; line-height: 1.6; }
       @media (prefers-color-scheme: dark) { :root { --bg: #0b0f19; --ink: #f8fafc; --muted: #cbd5e1; --panel: #111827; --border: #334155; --accent: #93c5fd; } }
       @media (max-width: 420px) { main { padding: 2rem 1rem; } ul { grid-template-columns: 1fr; } }
       @media print { .reading-map { overflow: visible; } .reading-map img { min-width: 0; } }
@@ -39,7 +43,10 @@
         <p class="lead">使用指南、隐私与数据、条款、部署与开发。<br /><span lang="en">Guides for the player, data and rights, deployment and development.</span></p>
       </header>
       <figure class="reading-map" tabindex="0" aria-label="阅读路径 / Reading paths">
-        <img src="/sonic/images/sonic/reading-paths.svg" alt="四条阅读路径：总览与入门、界面与使用、隐私与权利、部署与开发 / Four paths: start, explore, understand, build" width="960" height="224" decoding="async" loading="eager" />
+        <picture>
+          <source media="screen and (prefers-color-scheme: dark)" srcset="/sonic/images/sonic/reading-paths-dark.svg" />
+          <img src="/sonic/images/sonic/reading-paths.svg" alt="四条阅读路径：总览与入门、界面与使用、隐私与权利、部署与开发 / Four paths: start, explore, understand, build" width="960" height="240" decoding="async" loading="eager" />
+        </picture>
         <figcaption>从总览开始，再按主题阅读。小屏幕可横向滚动图示。<br /><span lang="en">Start with the overview, then follow a topic. Scroll the diagram on small screens.</span></figcaption>
       </figure>
       <nav aria-labelledby="language-heading">
@@ -57,7 +64,10 @@
           <li><a href="/sonic/ru/overview/" lang="ru" hreflang="ru">Русский</a></li>
         </ul>
       </nav>
-      <footer>10 种语言 · 每种语言 22 篇文档 <span lang="en">/ 10 languages · 22 documents each</span></footer>
+      <footer>
+        <p>10 种语言 · 每种语言 22 篇文档 <span lang="en">/ 10 languages · 22 documents each</span></p>
+        <p class="language-policy">简体中文为维护基准；其余九种语言为译本。强制法律与消费者有利解释优先。<br /><span lang="en">Simplified Chinese is the maintenance baseline; the other nine languages are translations. Mandatory law and interpretations favourable to consumers take precedence.</span></p>
+      </footer>
     </main>
   </body>
 </html>

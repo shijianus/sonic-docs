@@ -3,7 +3,7 @@ title: Guia para dispositivos móveis
 description: "Guia para dispositivos móveis do Sonic: disposição no telemóvel, navegação por separadores, gaveta do leitor móvel e comportamentos específicos do uso móvel."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica a disposição e os pontos essenciais de utilização do Sonic no navegador do telemóvel. A versão móvel e a versão de secretária utilizam a mesma instância e o mesmo sistema de conta, com funções equivalentes; a disposição muda automaticamente com a largura do ecrã e não é necessário instalar uma aplicação.
 

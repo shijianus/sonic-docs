@@ -1,9 +1,9 @@
 ---
 title: Projektvorstellung
-description: Vorstellung des epocanvas sonic Projekts – Produktpositionierung, Kernfunktionen, technische Architektur, Empfehlungsengine, Sicherheits- und Datenschutzdesign, Geltungsbereich, Deployment-Formen und Leseführung der Dokumentation.
+description: "Vorstellung des epocanvas sonic Projekts – Produkt, Kernfunktionen, Architektur, Empfehlungen, Sicherheit und Datenschutz, Deployment und Lesereise."
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite stellt das Projekt epocanvas sonic (nachfolgend „Sonic“ oder „das Projekt“) vor: seine Produktpositionierung, Kernfunktionen, Systemarchitektur, sein Sicherheits- und Datenschutzdesign, seinen Geltungsbereich und seine Deployment-Formen, und gibt eine Leseführung für die Dokumentation dieser Website. Ganz gleich, ob Sie eine gehostete Instanz nutzen, selbst eine bereitstellen möchten oder die Regelungen zu Datenschutz und Bedingungen kennenlernen wollen: Von dieser Seite aus gelangen Sie ans Ziel. Die rechtlichen Regelungen von Sonic finden sich in der [Datenschutzerklärung](/de/privacy-policy/) und in den [Nutzungsbedingungen](/de/terms-of-service/). Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

@@ -1,9 +1,9 @@
 ---
 title: Termos de Utilização
-description: Condições de utilização do serviço de teste Sonic gratuito e sem fins lucrativos, direitos sobre conteúdos, limites da responsabilidade do programador individual e direitos dos utilizadores que não podem ser excluídos.
+description: "Condições de utilização do serviço Sonic gratuito, direitos sobre conteúdos, limites de responsabilidade do programador individual e direitos dos utilizadores."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Estes termos aplicam-se às instâncias de teste alojadas do Sonic que sejam efetivamente operadas por este projeto e adotem expressamente estes termos. O Sonic é um projeto paralelo gratuito e sem fins lucrativos, mantido por uma pessoa para aprendizagem e atividades de interesse público. Fornece ferramentas experimentais de pesquisa e reprodução musical, não vende subscrições nem oferece níveis adicionais de serviço comercial ou uma garantia de funcionamento permanente. O projeto tem como objetivo respeitar a privacidade e desenvolver esforços razoáveis para proporcionar um nível elevado de proteção com medidas rigorosas e proporcionais aos riscos. Os princípios do RGPD da minimização dos dados, da limitação das finalidades, da transparência e do controlo pelos utilizadores orientam a melhoria contínua.
 

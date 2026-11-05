@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Quick start in four steps">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="128" width="198.5" height="158" rx="14"/><g class="icon" transform="translate(216.5 144) scale(1.000)"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M4 12h16 M12 4c2.5 2.3 4 5 4 8s-1.5 5.7-4 8c-2.5-2.3-4-5-4-8s1.5-5.7 4-8z"/></g><circle class="dot" cx="90" cy="153" r="3"/><text class="num" x="100" y="158">01</text><text class="label" x="88" y="244">Open</text><text class="meta" x="88" y="265">browser or mobile</text><rect class="card" x="288.5" y="128" width="198.5" height="158" rx="14"/><g class="icon" transform="translate(441 144) scale(1.000)"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M16.5 16.5L21 21"/></g><circle class="dot" cx="314.5" cy="153" r="3"/><text class="num" x="324.5" y="158">02</text><text class="label" x="312.5" y="244">Search</text><text class="meta" x="312.5" y="265">song, artist, album</text><rect class="card" x="513" y="128" width="198.5" height="158" rx="14"/><g class="icon" transform="translate(665.5 144) scale(1.000)"><path d="M8 5l11 7-11 7z"/></g><circle class="dot" cx="539" cy="153" r="3"/><text class="num" x="549" y="158">03</text><text class="label" x="537" y="244">Play</text><text class="meta" x="537" y="265">quality and lyrics</text><rect class="card" x="737.5" y="128" width="198.5" height="158" rx="14"/><g class="icon" transform="translate(890 144) scale(1.000)"><path d="M4 7h10 M18 7h2 M4 17h4 M12 17h8 M14 4v6 M8 14v6"/></g><circle class="dot" cx="763.5" cy="153" r="3"/><text class="num" x="773.5" y="158">04</text><text class="label" x="761.5" y="244">Tune</text><text class="meta" x="761.5" y="265">privacy and theme</text><path class="arrow" d="M266.5 207L282.5 207"/><path class="arrow-head" d="M276.5 203L282.5 207L275.5 210Z"/><path class="arrow" d="M491 207L507 207"/><path class="arrow-head" d="M501 203L507 207L500 210Z"/><path class="arrow" d="M715.5 207L731.5 207"/><path class="arrow-head" d="M725.5 203L731.5 207L724.5 210Z"/>
+</svg>

@@ -3,7 +3,7 @@ title: Plataforma abierta y acceso a la API
 description: "Acceso a la API abierta de Sonic: estructura uniforme de respuesta, navegación de los extremos, autenticación y transmisión de las claves de API, limitación de peticiones y revocación."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página explica cómo acceder a la API abierta de Sonic: la estructura uniforme de respuesta, los extremos principales, la autenticación y la transmisión de las claves de API, y la limitación de peticiones y la revocación. El comportamiento del acceso está sujeto a los [Términos del servicio](/es/terms-of-service/) y a la [Política de uso aceptable](/es/acceptable-use/); la especificación autoritativa de los extremos consta en el `API.md` del repositorio de origen.
 

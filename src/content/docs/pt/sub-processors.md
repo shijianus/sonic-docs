@@ -3,7 +3,7 @@ title: Lista de partilha com terceiros e transferências
 description: Infraestrutura, identidade, destinatários de conteúdos e recursos externos, diferenças de configuração e limites das transferências internacionais nas instâncias alojadas do Sonic.
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página desenvolve a secção 7 da [Política de Privacidade](/pt/privacy-policy/) e explica os possíveis destinatários das instâncias de teste alojadas do Sonic, mantidas por uma pessoa, gratuitas e sem fins lucrativos. A existência de uma integração no código não prova que esteja ativa nem que a partilha seja lícita. Instâncias próprias devem informar separadamente segundo o seu tratamento real.
 

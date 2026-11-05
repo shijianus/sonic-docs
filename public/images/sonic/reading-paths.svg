@@ -1,48 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 224" width="960" height="224" role="img" aria-labelledby="title desc">
-  <title id="title">Four reading paths through Sonic documentation</title>
-  <desc id="desc">Start with the overview, explore the player, understand data and rights, or review deployment and development. Select a language below to read the corresponding documents.</desc>
-  <style>
-    .panel { fill: #f8fafc; stroke: #dbe3ef; }
-    .icon { fill: #e8f0fe; }
-    .line { fill: none; stroke: #2563eb; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-    .title { font: 600 22px system-ui, sans-serif; fill: #0f172a; }
-    .sub { font: 400 16px system-ui, sans-serif; fill: #475569; }
-    .number { font: 600 13px system-ui, sans-serif; fill: #2563eb; }
-    @media (prefers-color-scheme: dark) {
-      .panel { fill: #111827; stroke: #334155; }
-      .icon { fill: #172554; }
-      .line { stroke: #93c5fd; }
-      .title { fill: #f8fafc; }
-      .sub { fill: #cbd5e1; }
-      .number { fill: #93c5fd; }
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" width="100%" role="img" aria-label="Four reading paths through the Sonic documentation">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
   </style>
-  <rect class="panel" x="8" y="8" width="224" height="208" rx="18"/>
-  <rect class="panel" x="248" y="8" width="224" height="208" rx="18"/>
-  <rect class="panel" x="488" y="8" width="224" height="208" rx="18"/>
-  <rect class="panel" x="728" y="8" width="224" height="208" rx="18"/>
-  <circle class="icon" cx="58" cy="59" r="27"/>
-  <path class="line" d="M46 48h24v24H46z M52 55h12 M52 62h8"/>
-  <text class="number" x="188" y="45">01</text>
-  <text class="title" x="30" y="127">Start</text>
-  <text class="sub" x="30" y="160">Overview</text>
-  <text class="sub" x="30" y="185">Quick start</text>
-  <circle class="icon" cx="298" cy="59" r="27"/>
-  <path class="line" d="M292 47l17 12-17 12z"/>
-  <text class="number" x="428" y="45">02</text>
-  <text class="title" x="270" y="127">Explore</text>
-  <text class="sub" x="270" y="160">Interface &amp; features</text>
-  <text class="sub" x="270" y="185">Search &amp; library</text>
-  <circle class="icon" cx="538" cy="59" r="27"/>
-  <path class="line" d="M538 44l12 6v10c0 8-12 15-12 15s-12-7-12-15V50z M532 58l5 5 8-10"/>
-  <text class="number" x="668" y="45">03</text>
-  <text class="title" x="510" y="127">Understand</text>
-  <text class="sub" x="510" y="160">Privacy &amp; data</text>
-  <text class="sub" x="510" y="185">Terms &amp; rights</text>
-  <circle class="icon" cx="778" cy="59" r="27"/>
-  <path class="line" d="M769 50l-9 9 9 9 M787 50l9 9-9 9 M781 47l-6 24"/>
-  <text class="number" x="908" y="45">04</text>
-  <text class="title" x="750" y="127">Build</text>
-  <text class="sub" x="750" y="160">Deployment</text>
-  <text class="sub" x="750" y="185">Development &amp; API</text>
+<rect class="bg" width="960" height="240" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="48" y="78" width="204" height="126" rx="14"/><g class="icon" transform="translate(206 94) scale(1.000)"><path d="M7 3h7l4 4v14H7z M14 3v5h4 M10 12h7 M10 16h7"/></g><circle class="dot" cx="74" cy="103" r="3"/><text class="num" x="84" y="108">01</text><text class="label" x="72" y="162">Start</text><text class="meta" x="72" y="183">Overview · Quick start</text><rect class="card" x="268" y="78" width="204" height="126" rx="14"/><g class="icon" transform="translate(426 94) scale(1.000)"><path d="M4 14v-2a8 8 0 0 1 16 0v2 M4 14h3v6H5a1 1 0 0 1-1-1z M20 14h-3v6h2a1 1 0 0 0 1-1z"/></g><circle class="dot" cx="294" cy="103" r="3"/><text class="num" x="304" y="108">02</text><text class="label" x="292" y="162">Explore</text><text class="meta" x="292" y="183">Interface · Search</text><rect class="card" x="488" y="78" width="204" height="126" rx="14"/><g class="icon" transform="translate(646 94) scale(1.000)"><path d="M12 3l7 3v6c0 4.2-2.9 7.4-7 9-4.1-1.6-7-4.8-7-9V6z M9 12l2 2 4-4"/></g><circle class="dot" cx="514" cy="103" r="3"/><text class="num" x="524" y="108">03</text><text class="label" x="512" y="162">Understand</text><text class="meta" x="512" y="183">Privacy · Terms</text><rect class="card" x="708" y="78" width="204" height="126" rx="14"/><g class="icon" transform="translate(866 94) scale(1.000)"><path d="M9 7l-5 5 5 5 M15 7l5 5-5 5"/></g><circle class="dot" cx="734" cy="103" r="3"/><text class="num" x="744" y="108">04</text><text class="label" x="732" y="162">Build</text><text class="meta" x="732" y="183">Deploy · Develop</text>
 </svg>

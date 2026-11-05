@@ -1,9 +1,9 @@
 ---
 title: Guide de l'interface et des fonctions
-description: "Guide de l'interface et des fonctions du lecteur Sonic : accueil et recommandations, recherche, commandes de lecture, tiroir du lecteur, ma musique, paramètres et contrôles de confidentialité, mise en page mobile."
+description: "Guide de l'interface Sonic : accueil et recommandations, recherche, lecture, tiroir du lecteur, ma musique, paramètres, confidentialité et mobile."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page fait le tour de la disposition de l'interface du lecteur web Sonic et de l'emplacement de chaque fonction, en expliquant où se trouve chaque fonction et comment elle se comporte. Les captures d'écran illustrent l'interface en chinois simplifié, dont la langue peut être changée ; elles ne prouvent pas la version actuellement déployée. Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. L'interface pouvant évoluer avec les versions, le périmètre réel de disponibilité des fonctions dépend de ce que l'instance a activé ; les stipulations juridiques figurent dans les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/).
 

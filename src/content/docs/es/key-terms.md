@@ -3,7 +3,7 @@ title: Glosario
 description: Términos de protección de datos, roles, consentimiento, tecnología y tratamiento de datos locales empleados en los documentos legales de Sonic.
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página explica los términos principales de la [Política de privacidad](/es/privacy-policy/), [Tratamiento de datos y seguridad](/es/data-security/), [Terceros y transferencias](/es/sub-processors/) y la [Política de uso aceptable](/es/acceptable-use/). Las definiciones jurídicas toman el RGPD como referencia. Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea. No es una certificación de cumplimiento operativo. El chino simplificado es la referencia de mantenimiento en la raíz; las otras nueve versiones lingüísticas son traducciones. La prioridad lingüística no reduce las normas imperativas ni el derecho de los consumidores a condiciones claras y comprensibles.
 

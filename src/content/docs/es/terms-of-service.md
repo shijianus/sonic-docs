@@ -1,9 +1,9 @@
 ---
 title: Términos del servicio
-description: Condiciones de uso, derechos sobre contenidos, límites de responsabilidad del desarrollador individual y derechos no excluibles de los usuarios del servicio de pruebas gratuito y sin ánimo de lucro Sonic.
+description: "Condiciones de uso, derechos sobre contenidos, límites de responsabilidad del desarrollador individual y derechos no excluibles del servicio Sonic."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Estas condiciones se aplican a las instancias de pruebas alojadas de Sonic que el proyecto opere efectivamente y que adopten expresamente estas condiciones. Sonic es un proyecto gratuito y sin ánimo de lucro, mantenido por una persona para el aprendizaje y las pruebas de interés general. Ofrece herramientas experimentales de búsqueda y reproducción musical, no vende suscripciones ni presta niveles adicionales de servicio comercial, y no garantiza un funcionamiento permanente. El proyecto tiene como objetivo respetar la privacidad y realizar esfuerzos razonables para ofrecer un nivel elevado de protección con medidas rigurosas y proporcionadas a los riesgos. Los principios del RGPD de minimización de datos, limitación de la finalidad, transparencia y control de los usuarios orientan la mejora continua.
 
@@ -105,7 +105,7 @@ En la medida permitida por la ley aplicable, la responsabilidad por los daños c
 
 Ninguna limitación se aplica al dolo, fraude, negligencia grave, muerte o lesiones por las que se deba responder legalmente, garantías expresas legalmente asumidas, responsabilidad del artículo 82 del RGPD ni otras responsabilidades que no puedan limitarse válidamente. No se establece una indemnización general de cero ni un límite monetario arbitrario, y no se excluye automáticamente la pérdida de datos personales o locales. Estas condiciones no crean una persona jurídica de responsabilidad limitada para el autor ni separan automáticamente su patrimonio personal; tampoco le exigen prestar una garantía personal, contratar un seguro determinado ni responder de todos los despliegues independientes. La responsabilidad depende de la ley aplicable, del rol real y de los acuerdos válidos. Que exista responsabilidad legal no significa que cada fallo o acto de un tercero genere una garantía objetiva; el carácter gratuito o sin ánimo de lucro no es fundamento de exoneración.
 
-Las cláusulas desfavorables al consumidor que carezcan de efecto jurídico no se aplican; el resto del contrato seguirá vigente en la medida en que pueda subsistir legalmente por separado, sin reintroducir la limitación inválida mediante otra lengua o redacción.
+Las cláusulas desfavorables al consumidor que carezcan de efecto jurídico no se aplican; el resto del contrato seguirá vigente en la medida en que pueda subsistir legalmente por separado, sin reintroducir la limitación inválida mediante otra redacción.
 
 ## 11. Derechos de los consumidores, ley aplicable y jurisdicción
 

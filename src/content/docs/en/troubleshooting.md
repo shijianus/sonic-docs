@@ -3,11 +3,15 @@ title: Troubleshooting
 description: Sonic troubleshooting — common problems and fixes for playback, sources, sign-in, degraded mode, storage and rate limiting.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page lists how to recognize and handle common problems. If nothing here resolves yours, write to `admin@epocanvas.com` or open an Issue on the GitHub repository; when reporting, provide only non-sensitive reproduction terms. Public search text may contain personal or sensitive information.
+
+![Sonic troubleshooting in four steps: identify the symptom, check the status, try the fallback and report](/images/sonic/troubleshooting-flow.svg)
+
+*Figure: identify the symptom, check the status, try the fallback and report; the fallback can also fail.*
 
 ## 1. Playback problems
 

@@ -3,7 +3,7 @@ title: Código aberto e enquadramento legal da implantação própria
 description: "Código aberto e enquadramento legal do Sonic: estado da licença, limites das marcas, agradecimentos e dependências de terceiros, deveres de quem implanta e limites de conformidade."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica o estado e os limites do licenciamento de código aberto do Sonic, os agradecimentos a terceiros e os deveres legais da implantação própria. A relação entre a licença do software e os termos de utilização consta das secções 2 e 10 dos [Termos de Utilização](/pt/terms-of-service/).
 
@@ -27,21 +27,21 @@ O projeto é mantido por uma pessoa, gratuito e sem fins lucrativos, para aprend
 
 O desenvolvimento e a prática de agregação multifuente recorrem e agradecem aos seguintes projetos das comunidades de código aberto: Meting, Meting-API-Serverless, ourcraft-music-api, music-lib, NeteaseCloudMusicApi, QQMusicApi, AMLL TTML API, LRCLIB, GDStudio Music API e a comunidade Linux.do. As dependências e declarações completas constam de `THIRD_PARTY_NOTICES.md` no repositório; os termos de cada serviço a montante regem-se pelos respetivos documentos.
 
-## 4. Deveres legais de quem implanta por si
+## 4. Deveres legais de quem aloja por si
 
-Quem determina efetivamente as finalidades e os meios é responsável nessa medida; testes puramente pessoais e serviços públicos exigem avaliações distintas (delimitação dos papéis na secção 2 do [Panorama](/pt/overview/)), devendo avaliar e cumprir, segundo a lei aplicável:
+O papel depende de quem determina efetivamente o tratamento; publicar ou contribuir com código não estabelece, por si só, responsabilidade exclusiva. Testes puramente pessoais e serviço público devem ser avaliados separadamente (ver o [Panorama](/pt/overview/), secção 2). Quando opera o serviço:
 
-1. Dever de informação: informar os utilizadores das matérias de tratamento de dados, podendo usar como texto base a [Política de Privacidade](/pt/privacy-policy/) deste site, mas alterando-a conforme a sua configuração efetiva (as cadeias de terceiros não ativadas eliminam-se da informação);
-2. Registos e avaliação: quando o RGPD se aplique, verificar os requisitos de registo do artigo 30.º e de avaliação de impacto do artigo 35.º; perfis contínuos não são ocasionais só pelo número reduzido de pessoas;
-3. Manutenção da segurança: aplicar as medidas da secção 3 de [Processamento de dados e segurança](/pt/data-security/) e sujeitar-se à supervisão da autoridade competente;
-4. Coerência da configuração: os valores reais das variáveis de ambiente (dias de retenção, interruptores de terceiros, limitação de taxa) devem coerir com os compromissos da sua política;
-5. Complementos por jurisdição: avaliar RGPD, UK GDPR, LGPD ou CCPA-CPRA segundo o âmbito real de cada regime; não há garantia contratual mundial adicional de todo o RGPD.
+1. **Dever de informação**: publicar antes da recolha a identidade legal real, contactos, finalidades, destinatários, países dos nós e prazos de conservação; adaptar a [Política de Privacidade](/pt/privacy-policy/) aos factos verificados, sem presumir que o repositório fornece essas informações;
+2. **Registos e avaliação**: quando o RGPD se aplique e as condições se verifiquem, manter o registo do artigo 30.º e avaliar os tratamentos de risco elevado nos termos do artigo 35.º. A reduzida escala não torna ocasional a definição contínua de perfis;
+3. **Manutenção da segurança**: aplicar medidas adequadas, escolhas prévias válidas e eliminação verificada. A definição de perfis ativada por omissão, a reutilização pública de pesquisas em bruto, os pedidos de avatar por correio eletrónico e a reposição incompleta continuam a ser bloqueios; a divulgação não os resolve;
+4. **Coerência da configuração**: verificar a conservação, limpeza, revogação, recursos externos e cópias de segurança reais, não apenas as variáveis de ambiente; suspender o tratamento opcional sem base legal ou garantias necessárias;
+5. **Lei aplicável e transferências**: determinar o âmbito territorial e os fornecedores e países reais. O RGPD não é uma garantia contratual mundial; certificações ou políticas públicas de fornecedores não estabelecem contratos nem garantias de transferência internacional.
 
-## 5. Adoção da documentação deste site
+## 5. Adoção dos documentos deste site
 
-Os documentos descrevem instâncias de teste alojadas e lacunas conhecidas. Outros operadores podem avaliá-los como ponto de partida, mas isso não celebra automaticamente um contrato nem comprova conformidade:
+Estes documentos descrevem instâncias de teste alojadas determinadas e a versão candidata pública revista; não são uma certificação de conformidade nem condições automaticamente aplicáveis a qualquer implantação. Qualquer adoção exige:
 
-1. Indicar a identidade legal real, contactos acessíveis, domínios, locais do tratamento e momentos de aplicação;
-2. Rever a divulgação fiel da lista de terceiros e dos parâmetros de configuração;
-3. Identificar a base de manutenção e as traduções; a prioridade linguística não afasta lei imperativa, interpretação favorável ao consumidor ou informação compreensível;
-4. Consultar um advogado antes de iniciar a operação formal; a documentação deste site não constitui parecer jurídico.
+1. indicar a identidade legal real do operador, contactos, domínios, data de revisão e data de adoção;
+2. verificar os fluxos reais, os papéis de terceiros, os contratos, os mecanismos de transferência, as escolhas, a conservação e a eliminação antes do tratamento;
+3. manter traduções inteligíveis de forma coerente: a referência de manutenção em chinês simplificado e as nove traduções não prevalecem sobre a lei imperativa nem sobre a interpretação favorável ao consumidor;
+4. obter aconselhamento jurídico adequado e, quando necessário, aceitação válida ou consentimento separado; copiar o texto ou continuar a utilizá-lo não estabelece nenhum dos dois.

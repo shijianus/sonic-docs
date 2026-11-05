@@ -31,32 +31,32 @@ DOCS = [
     "library", "mobile", "recommendation", "account-security", "data-management",
     "troubleshooting", "key-terms",
 ]
-REVISION = "2026-11-02"
-VERSION = "1.8"
+REVISION = "2026-11-03"
+VERSION = "1.9"
 # Label, controlled local date spelling, version label. ISO is also accepted,
 # but only in the first body block's revision declaration, never elsewhere.
 METADATA = {
-    ".": ("修订日期", r"2026\s*年\s*11\s*月\s*0?2\s*日", "版本"),
-    "zh-tw": ("修訂日期", r"2026\s*年\s*11\s*月\s*0?2\s*日", "版本"),
-    "en": ("Revision date", r"0?2 November 2026", "Version"),
-    "fr": ("Date de révision", r"0?2 novembre 2026", "Version"),
-    "es": ("Fecha de revisión", r"0?2 de noviembre de 2026", "Versión"),
-    "de": ("Überarbeitet am", r"0?2\. November 2026", "Version"),
-    "ja": ("改訂日", r"2026\s*年\s*11\s*月\s*0?2\s*日", "バージョン"),
-    "ko": ("개정일", r"2026\s*년\s*11\s*월\s*0?2\s*일", "버전"),
-    "pt": ("Data de revisão", r"0?2 de novembro de 2026", "Versão"),
-    "ru": ("Дата (?:пересмотра|редакции)", r"0?2 ноября 2026(?: г\.)?", "Версия"),
+    ".": ("修订日期", r"2026\s*年\s*11\s*月\s*0?3\s*日", "版本"),
+    "zh-tw": ("修訂日期", r"2026\s*年\s*11\s*月\s*0?3\s*日", "版本"),
+    "en": ("Revision date", r"0?3 November 2026", "Version"),
+    "fr": ("Date de révision", r"0?3 novembre 2026", "Version"),
+    "es": ("Fecha de revisión", r"0?3 de noviembre de 2026", "Versión"),
+    "de": ("Überarbeitet am", r"0?3\. November 2026", "Version"),
+    "ja": ("改訂日", r"2026\s*年\s*11\s*月\s*0?3\s*日", "バージョン"),
+    "ko": ("개정일", r"2026\s*년\s*11\s*월\s*0?3\s*일", "버전"),
+    "pt": ("Data de revisão", r"0?3 de novembro de 2026", "Versão"),
+    "ru": ("Дата (?:пересмотра|редакции)", r"0?3 ноября 2026(?: г\.)?", "Версия"),
 }
 # Each tuple must occur within ONE sentence (probe/fallback/scrub) or ONE
 # table effect cell (filter/block). Keep negations together with their claim.
 CONCEPTS = {
     ".": {
         "probe": ("30 秒只是再次探测", "不保证恢复"),
-        "fallback": ("备援路径也可能失败",),
+        "fallback": ("备用路径也可能失败",),
         "public": ("公开 Issue", "只提供不敏感的重现词"),
-        "scrub": ("发布前请移除或遮蔽", "电子邮件地址", "个人资料", "会话 Cookie", "API Key", "截图"),
+        "scrub": ("发布前请移除或遮蔽", "电子邮件地址", "个人数据", "会话 Cookie", "API Key", "截图"),
         "filter": ("仅在可用身份与功能范围内过滤相符推荐",),
-        "block": ("不承诺永久全面封锁",),
+        "block": ("不承诺永久全面封禁",),
     },
     "zh-tw": {
         "probe": ("30 秒只是再次探測", "不保證恢復"),
@@ -668,8 +668,8 @@ def self_test():
     test_page(overview.replace("---", "--", 1), "FRONTMATTER")
     test_page(edited(overview, title, 'title: "Overview: notes" # comment'))
     test_page(edited(overview, title, "title: >-\n  Overview\n  details"))
-    test_page(edited(overview, "Version: 1.8", "Version: 1.80"), "VERSION")
-    test_page(edited(overview, "Version: 1.8", "Version: 1.7"), "VERSION")
+    test_page(edited(overview, "Version: 1.9", "Version: 1.90"), "VERSION")
+    test_page(edited(overview, "Version: 1.9", "Version: 1.8"), "VERSION")
 
     # Localized and ISO date acceptance, and rejection despite later provenance.
     for locale in SYMMETRIC_LANGS:

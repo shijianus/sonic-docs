@@ -3,7 +3,7 @@ title: Erklärung zum Empfehlungsalgorithmus
 description: Erklärung des Sonic-Empfehlungsalgorithmus – Verhaltenssignale und Gewichte, Popularitätsmodell, Sitzungsabsicht, MMR-Neusortierung, Auto DJ und Datenschutzeinstellungen.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite beschreibt den Aufbau der Sonic-Empfehlungsengine: Welche Signale in das Modell eingehen, wie sie gewichtet und sortiert werden und welche Steuerungsmöglichkeiten Sie haben. Alle Regeln sind im Quellcode einsehbar. Rechtsgrundlagen und Grenzen der Datenerhebung stehen in der [Datenschutzerklärung](/de/privacy-policy/), Abschnitt 4.2 und 5. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

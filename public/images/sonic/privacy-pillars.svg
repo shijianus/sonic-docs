@@ -1,61 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Privacy principles under applicable law: a valid basis for each purpose, separate prior consent for optional profiling, minimisation, configuration-dependent security and data rights. Profile reset is partial; defaults and erasure gaps require operator action.">
-  <style>
-    .bg { fill: #f8fafc; }
-    .roof { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
-    .pillar { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-    .pt { font: 600 13.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .pb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
-    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
-    .base { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
-    .bt { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .roof-t { font: 600 14.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #0b0f19; }
-      .roof { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
-      .pillar { fill: #111827; stroke: #1e293b; }
-      .pt { fill: #f1f5f9; }
-      .pb { fill: #94a3b8; }
-      .law { fill: #60a5fa; }
-      .base { fill: #111827; stroke: #1e293b; }
-      .bt { fill: #f1f5f9; }
-      .roof-t { fill: #f1f5f9; }
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Five privacy principles">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
   </style>
-  <rect class="bg" width="1000" height="400" rx="16"/>
-  <rect class="roof" x="60" y="40" width="880" height="64" rx="12"/>
-  <text class="roof-t" x="84" y="68">Privacy notice: data, purposes, retention and rights</text>
-  <text class="law" x="84" y="90">Each purpose needs a valid legal basis</text>
-  <rect class="pillar" x="60" y="140" width="160" height="140" rx="10"/>
-  <text class="pt" x="78" y="168">Lawfulness</text>
-  <text class="pb" x="78" y="190">Valid legal basis</text>
-  <text class="pb" x="78" y="206">for each purpose;</text>
-  <text class="pb" x="78" y="222">login is not consent</text>
-  <text class="law" x="78" y="262">GDPR legal bases</text>
-  <rect class="pillar" x="230" y="140" width="160" height="140" rx="10"/>
-  <text class="pt" x="248" y="168">Purpose limit</text>
-  <text class="pb" x="248" y="190">Optional profiling</text>
-  <text class="pb" x="248" y="206">requires separate</text>
-  <text class="pb" x="248" y="222">prior consent</text>
-  <text class="law" x="248" y="262">GDPR purpose limits</text>
-  <rect class="pillar" x="400" y="140" width="160" height="140" rx="10"/>
-  <text class="pt" x="418" y="168">Minimisation</text>
-  <text class="pb" x="418" y="190">Collect only what</text>
-  <text class="pb" x="418" y="206">is needed; reset</text>
-  <text class="pb" x="418" y="222">is only partial</text>
-  <text class="law" x="418" y="262">GDPR minimisation</text>
-  <rect class="pillar" x="570" y="140" width="160" height="140" rx="10"/>
-  <text class="pt" x="588" y="168">Security</text>
-  <text class="pb" x="588" y="190">Security measures</text>
-  <text class="pb" x="588" y="206">depend on setup;</text>
-  <text class="pb" x="588" y="222">verify deployment</text>
-  <text class="law" x="588" y="262">GDPR security</text>
-  <rect class="pillar" x="740" y="140" width="160" height="140" rx="10"/>
-  <text class="pt" x="758" y="168">Your rights</text>
-  <text class="pb" x="758" y="190">Access, correct,</text>
-  <text class="pb" x="758" y="206">erase or object;</text>
-  <text class="pb" x="758" y="222">contact for full request</text>
-  <text class="law" x="758" y="262">Applicable rights</text>
-  <rect class="base" x="60" y="312" width="880" height="56" rx="12"/>
-  <text class="bt" x="84" y="336" font-size="12">Applicable law · GDPR where applicable</text>
-  <text class="law" x="84" y="356">Defaults and erasure gaps need operator action</text>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="100" width="158.4" height="256" rx="14"/><g class="icon" transform="translate(176.4 116) scale(1.000)"><path d="M12 4v16 M6 8h12 M6 8l-3 6h6z M18 8l-3 6h6z M8 20h8"/></g><circle class="dot" cx="90" cy="125" r="3"/><text class="num" x="100" y="130">01</text><text class="label" x="88" y="314">Lawful basis</text><text class="meta" x="88" y="335">each purpose</text><rect class="card" x="242.4" y="100" width="158.4" height="256" rx="14"/><g class="icon" transform="translate(354.8 116) scale(1.000)"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M12 12h.01"/></g><circle class="dot" cx="268.4" cy="125" r="3"/><text class="num" x="278.4" y="130">02</text><text class="label" x="266.4" y="314">Purpose limit</text><text class="meta" x="266.4" y="335">no scope creep</text><rect class="card" x="420.8" y="100" width="158.4" height="256" rx="14"/><g class="icon" transform="translate(533.2 116) scale(1.000)"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></g><circle class="dot" cx="446.8" cy="125" r="3"/><text class="num" x="456.8" y="130">03</text><text class="label" x="444.8" y="314">Minimisation</text><text class="meta" x="444.8" y="335">collect less</text><rect class="card" x="599.2" y="100" width="158.4" height="256" rx="14"/><g class="icon" transform="translate(711.6 116) scale(1.000)"><path d="M6 11h12v9H6z M9 11V8a3 3 0 0 1 6 0v3 M12 15v2"/></g><circle class="dot" cx="625.2" cy="125" r="3"/><text class="num" x="635.2" y="130">04</text><text class="label" x="623.2" y="314">Security</text><text class="meta" x="623.2" y="335">verify setup</text><rect class="card" x="777.6" y="100" width="158.4" height="256" rx="14"/><g class="icon" transform="translate(890 116) scale(1.000)"><path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M4 21a8 8 0 0 1 16 0"/></g><circle class="dot" cx="803.6" cy="125" r="3"/><text class="num" x="813.6" y="130">05</text><text class="label" x="801.6" y="314">Your rights</text><text class="meta" x="801.6" y="335">access, erase</text>
 </svg>

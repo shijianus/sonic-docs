@@ -3,7 +3,7 @@ title: Politique d'utilisation acceptable
 description: Règles de comportement sur les ressources hébergées Sonic, limites des abus du système, contenus et droits d'autrui, mesures et voies de réclamation.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette politique s'applique aux instances de test hébergées effectivement exploitées par Sonic et à leurs API publiques, afin de protéger les ressources partagées, les utilisateurs et les services amont. Elle précise les règles de comportement des [Conditions d'utilisation](/fr/terms-of-service/) ; si vous ne l'acceptez pas, cessez d'utiliser l'instance hébergée. Elle ne transforme pas la gratuité, le caractère non lucratif ou l'ouverture du code en garantie inconditionnelle de sécurité et ne remplace ni la [Politique de confidentialité](/fr/privacy-policy/) ni [Traitement des données et mesures de sécurité](/fr/data-security/).
 

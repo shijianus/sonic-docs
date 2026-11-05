@@ -3,7 +3,7 @@ title: Gestão e armazenamento de dados
 description: "Gestão e armazenamento de dados do Sonic: localização dos dados, consulta do resumo do perfil, operações de limpeza e recomendações de cópia de segurança."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página resume os locais dos dados e os meios de consulta, limpeza e pedido, sem prometer exportação integral. Os fundamentos e direitos constam da [Política de Privacidade](/pt/privacy-policy/), secções 4, 6 e 9; as medidas técnicas constam de [Processamento de dados e segurança](/pt/data-security/).
 

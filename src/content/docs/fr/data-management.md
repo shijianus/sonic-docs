@@ -3,7 +3,7 @@ title: Exportation et stockage des données
 description: "Exportation et stockage des données de Sonic : emplacements des données, consultation de l'aperçu du profil, opérations d'effacement et conseils de sauvegarde."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page récapitule les données présentes dans Sonic, leur emplacement, le résumé disponible et les possibilités de sauvegarde, d'effacement ou de demande manuelle. Elle ne constitue pas un outil d'exportation complète. La base juridique et le cadre des droits figurent aux sections 4, 6 et 9 de la [Politique de confidentialité](/fr/privacy-policy/) ; les mesures techniques dans [Traitement des données et mesures de sécurité](/fr/data-security/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 

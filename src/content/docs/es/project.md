@@ -1,9 +1,9 @@
 ---
 title: Presentación del proyecto
-description: "Presentación del proyecto epocanvas sonic: identidad del producto, funciones principales, arquitectura técnica, motor de recomendación, diseño de seguridad y privacidad, ámbito de aplicación, formas de despliegue y guía de lectura de la documentación."
+description: "Presentación del proyecto epocanvas sonic: producto, funciones, arquitectura, recomendación, seguridad y privacidad, despliegue y guía de lectura."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página presenta el proyecto epocanvas sonic (en lo sucesivo, «Sonic» o «el proyecto»): su identidad como producto, sus funciones principales, su arquitectura del sistema, su diseño de seguridad y privacidad, su ámbito de aplicación y sus formas de despliegue, y ofrece una ruta de lectura de la documentación de este sitio. Tanto si pretende utilizar una instancia gestionada, como desplegar la suya propia o conocer los compromisos de privacidad y condiciones, puede empezar por esta página. Los compromisos legales de Sonic figuran en la [Política de privacidad](/es/privacy-policy/) y en los [Términos del servicio](/es/terms-of-service/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
 
@@ -148,7 +148,7 @@ El proyecto fundamenta la calidad en la auditabilidad y la verificación automat
 Este proyecto personal de pruebas es gratuito, sin publicidad ni compras integradas y sin ánimo de lucro; no ofrece SLA. El proyecto no tiene finalidad publicitaria.
 
 **¿Puedo usarlo sin iniciar sesión?**
-Las funciones básicas pueden usarse sin iniciar sesión, lo que no garantiza anonimato. La personalización y Auto DJ están activados por defecto en el código, sin consentimiento afirmativo demostrado; iniciar sesión no crea una sincronización general en la nube. El radar incluye lógica de sincronización, pero falta su ruta remota en la versión comprobada.
+Las funciones básicas pueden usarse sin iniciar sesión, lo que no garantiza anonimato. La personalización y Auto DJ están activados por defecto en el código, sin consentimiento afirmativo demostrado; iniciar sesión no crea una sincronización general en la nube. El radar incluye lógica de sincronización, pero su ruta remota debe verificarse según el despliegue.
 
 **¿Dónde se guardan mis datos?**
 Los favoritos, listas y preferencias se guardan principalmente en el navegador; `auth` puede conservar el correo y el avatar. El cuerpo del audio y las portadas incrustadas están en IndexedDB, pero las imágenes de portada también pueden enviarse con eventos de favoritos y entrar en el catálogo remoto de pistas: no se garantiza que sean exclusivamente locales. Pueden transmitirse metadatos, señales y contexto de recomendación; también existen tratamientos remotos del radar y estadísticas de búsqueda. La RC prevé 90 días por defecto para los eventos, con un mínimo de 7 días, pero la limpieza y la supresión son incompletas. Véanse las secciones 4 y 6 de la [Política de privacidad](/es/privacy-policy/).

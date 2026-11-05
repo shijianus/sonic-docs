@@ -3,7 +3,7 @@ title: Traitement des données et mesures de sécurité
 description: Cycle de vie des données, limites du traitement, mesures de sécurité, limites connues, réponse aux violations et indications pour les déploiements indépendants du service hébergé Sonic.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page développe la section 10 de la [Politique de confidentialité](/fr/privacy-policy/) et décrit les limites observables du traitement des données et de la sécurité des instances hébergées Sonic. Ce projet gratuit et à but non lucratif est maintenu par une personne. Son objectif est de respecter la vie privée et, par des efforts raisonnables, d'offrir un niveau élevé de protection au moyen de mesures rigoureuses et proportionnées aux risques. Les principes du RGPD de minimisation des données, de limitation des finalités, de transparence et de contrôle par les utilisateurs guident l'amélioration continue.
 

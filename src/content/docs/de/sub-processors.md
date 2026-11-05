@@ -3,7 +3,7 @@ title: Verzeichnis der Weitergabe an Dritte und der internationalen Übermittlun
 description: Infrastruktur, Identitätsdienste, Inhalts- und Ressourcenempfänger, unterschiedliche Schaltervorgaben und Grenzen internationaler Übermittlungen bei gehosteten Sonic-Instanzen.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite ergänzt Abschnitt 7 der [Datenschutzerklärung](/de/privacy-policy/) und erläutert mögliche Empfänger des individuell gepflegten, kostenlosen und nicht gewinnorientierten gehosteten Sonic-Testdienstes. Eine im Quellcode vorhandene Anbindung belegt weder deren Aktivierung noch eine rechtmäßige Weitergabe. Selbst betriebene Instanzen müssen gesondert über ihre tatsächliche Verarbeitung informieren.
 

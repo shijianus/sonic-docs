@@ -1,9 +1,9 @@
 ---
 title: Description de l'algorithme de recommandation
-description: "Description de l'algorithme de recommandation de Sonic : signaux comportementaux et pondérations, modèle de popularité, intention de session, reclassement MMR, Auto DJ et contrôles de confidentialité correspondants."
+description: "Algorithme de recommandation de Sonic : signaux et pondérations, popularité, intention de session, reclassement MMR, Auto DJ et confidentialité."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page décrit les signaux, pondérations, classements et commandes du moteur de recommandation. La personnalisation et Auto DJ sont activés par défaut dans le code candidat, sans preuve de consentement affirmatif ; ni la connexion ni les conditions ne valent consentement au profilage facultatif. Les identifiants hachés ou `anon_` sont pseudonymes, non nécessairement anonymes. Les bases et limites figurent aux sections 4.2 et 5 de la [Politique de confidentialité](/fr/privacy-policy/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 

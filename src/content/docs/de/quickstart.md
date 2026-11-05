@@ -3,9 +3,13 @@ title: Schnellstart
 description: Sonic-Schnellstart – der kürzeste Weg vom Öffnen der Website über Suche und Wiedergabe, Anmeldung, lokale Favoriten, Downloads, lokale Musik und die Nutzung auf Mobilgeräten.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite zeigt den kürzesten Weg zur Nutzung der gehosteten Sonic-Instanz (`sonic.epocanvas.tech`): vom Öffnen der Website über Suche und Wiedergabe, Anmeldung, lokale Favoriten, Downloads, lokale Musik und die Nutzung auf Mobilgeräten. Eine vollständige Wegleitung durch die Oberfläche bietet die [Oberflächen- und Funktionsübersicht](/de/interface/); das Selbst-Hosting behandelt diese Seite nicht (zum Deployment siehe den [Deployment-Leitfaden](/de/deployment/)). Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
+
+![Sonic-Schnellstart in vier Schritten: Website öffnen, suchen, abspielen und Einstellungen anpassen](/images/sonic/quickstart-steps.svg)
+
+*Abbildung: vier Schritte vom Öffnen bis zum Anpassen; die tatsächlichen Funktionen hängen davon ab, was die Instanz aktiviert.*
 
 ## 1. Öffnen der Website
 

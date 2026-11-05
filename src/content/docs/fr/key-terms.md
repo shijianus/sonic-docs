@@ -3,7 +3,7 @@ title: Définitions des termes
 description: Termes de protection des données, de rôles, de consentement, de technique et de traitement local employés dans les documents juridiques de Sonic.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page explique les principaux termes de la [Politique de confidentialité](/fr/privacy-policy/), de [Traitement des données et mesures de sécurité](/fr/data-security/), de la [Liste des partages avec des tiers et des transferts](/fr/sub-processors/) et de la [Politique d'utilisation acceptable](/fr/acceptable-use/). Les définitions juridiques prennent le RGPD pour référence. Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. Il ne s'agit pas d'une certification de conformité en exploitation. Le chinois simplifié est la référence de maintenance à la racine ; les neuf autres versions linguistiques sont des traductions. La priorité linguistique ne réduit ni le droit impératif ni le droit des consommateurs à des conditions claires et compréhensibles.
 

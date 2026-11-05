@@ -3,7 +3,7 @@ title: Privacy Policy
 description: Data sources, processing bases, browser and remote storage, retention and deletion limits, recipients and individual rights for Sonic's nonprofit test service.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This policy explains personal data processing by Sonic's hosted test instances and this project's documentation site. The project is individually maintained, free and nonprofit, for learning and public-benefit testing; these characteristics do not remove applicable data protection obligations. We value your privacy and use rigorous, verifiable data protection requirements to guide design and continuous improvement. Drawing on GDPR principles of data minimisation, purpose limitation, transparency and user control, we aim through reasonable efforts to provide a high level of protection proportionate to actual risks and reduce unnecessary collection, retention and transmission.
 

@@ -1,9 +1,9 @@
 ---
 title: Terceros y transferencias
-description: Infraestructura, servicios de identidad, destinatarios de contenidos y recursos externos, diferencias de configuración y límites de las transferencias internacionales en las instancias alojadas de Sonic.
+description: "Infraestructura, identidad, contenidos y recursos externos, diferencias de configuración y transferencias internacionales en las instancias de Sonic."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página desarrolla la sección 7 de la [Política de privacidad](/es/privacy-policy/) y explica los destinatarios que pueden intervenir en las instancias de pruebas alojadas de Sonic, mantenidas por una persona, gratuitas y sin ánimo de lucro. La posibilidad de integración en el código no prueba que esté activada ni que la comunicación de datos sea lícita. Las instancias desplegadas por terceros deben informar por separado según sus tratamientos reales.
 

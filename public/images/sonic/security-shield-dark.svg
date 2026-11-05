@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Four security layers L1 to L4">
+<style>
+    .bg{fill:#0b0f19} .card{fill:#111827;stroke:#1e293b;stroke-width:1.5}
+    .soft{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+    .accent{fill:rgba(59,130,246,0.12);stroke:#1d4ed8;stroke-width:1.6}
+    .warm{fill:rgba(245,158,11,0.12);stroke:#92400e;stroke-width:1.5}
+    .good{fill:rgba(34,197,94,0.12);stroke:#166534;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#60a5fa}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#60a5fa}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#94a3b8}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .stroke{stroke:#1e293b;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#60a5fa;stroke-width:1.8;fill:none}
+    .arrow{stroke:#94a3b8;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#94a3b8}
+    .icon{stroke:#cbd5e1;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#60a5fa;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#60a5fa}
+
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="84" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 100) scale(1.000)"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M4 12h16 M12 4c2.5 2.3 4 5 4 8s-1.5 5.7-4 8c-2.5-2.3-4-5-4-8s1.5-5.7 4-8z"/></g><circle class="dot" cx="90" cy="112" r="3"/><text class="num" x="100" y="117">L1</text><text class="label-sm" x="122" y="117">Transport &amp; access</text><text class="meta" x="122" y="138">HTTPS depends on deployment; internal links may differ</text><rect class="card" x="64" y="162" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 178) scale(1.000)"><path d="M15 8a4 4 0 1 0-3.6 4L4 19v2h3v-2h2v-2h2l1.4-1.4A4 4 0 0 0 15 8z"/></g><circle class="dot" cx="90" cy="190" r="3"/><text class="num" x="100" y="195">L2</text><text class="label-sm" x="122" y="195">Authentication &amp; signing</text><text class="meta" x="122" y="216">OAuth + PKCE; signing protects integrity, not confidentiality</text><rect class="card" x="64" y="240" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 256) scale(1.000)"><path d="M5 5h6a4 4 0 0 1 0 8H7a4 4 0 0 0 0 8h12 M17 18l3 3-3 3"/></g><circle class="dot" cx="90" cy="268" r="3"/><text class="num" x="100" y="273">L3</text><text class="label-sm" x="122" y="273">Outbound request checks</text><text class="meta" x="122" y="294">proxy and redirect checks do not cover direct browser requests</text><rect class="card" x="64" y="318" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 334) scale(1.000)"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7 M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g><circle class="dot" cx="90" cy="346" r="3"/><text class="num" x="100" y="351">L4</text><text class="label-sm" x="122" y="351">Storage &amp; logs</text><text class="meta" x="122" y="372">isolation, access, retention and backups need operator setup</text>
+</svg>

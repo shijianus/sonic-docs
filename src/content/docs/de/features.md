@@ -3,9 +3,13 @@ title: Funktionsleitfaden
 description: Sonic-Funktionsleitfaden – vertiefte Erläuterungen zu Qualitätsstufen und Hörproben-Transparenz, wortweisen Lyrics, Empfehlungen und Auto DJ, Downloads und lokaler Musik, Charts, MVs und Suchtoleranz.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite erläutert vertieft, wie sich die einzelnen Funktionen von Sonic verhalten und welche Abwägungen ihrem Entwurf zugrunde liegen. Die Position in der Oberfläche zeigt die [Oberflächen- und Funktionsübersicht](/de/interface/); die technische Beschreibung der Verhaltenssignale und des Empfehlungsmodells steht in der [Projektvorstellung](/de/project/), Abschnitt 5; die vertraglichen Bedingungen der Funktionsnutzung regeln die [Nutzungsbedingungen](/de/terms-of-service/). Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
+
+![Sechs Funktionsgruppen von Sonic: Suche, Wiedergabe, Songtexte, Bibliothek, Empfehlungen und Privatsphäre](/images/sonic/features-map.svg)
+
+*Abbildung: sechs Funktionsgruppen; der tatsächliche Umfang von Empfehlungen und Privatsphäre-Einstellungen hängt von der Konfiguration der Instanz ab.*
 
 ## 1. Qualitätsstufen und Hörproben-Transparenz
 

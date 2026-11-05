@@ -3,7 +3,7 @@ title: Guide de déploiement
 description: "Guide de déploiement de Sonic : double option passerelle edge Cloudflare Pages et moteur local Linux, variables d'environnement, sauvegarde et restauration, contrôles de santé et retour arrière."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page présente les composants de déploiement, la configuration et l'exploitation de Sonic. Les rôles légaux dépendent des décisions de traitement réelles ; les essais personnels et le service public doivent être évalués séparément. Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. Avant un service public, vérifiez identité du responsable, pays des nœuds, contrats et garanties applicables, non établis par le seul code. Voir [Traitement des données et mesures de sécurité](/fr/data-security/), [Droit de l'open source et de l'auto-hébergement](/fr/open-source/) et `docs/OPERATIONS.md`.
 
@@ -76,4 +76,4 @@ La liste complète figure dans `.env.example` du dépôt amont ; l'exigence de c
 3. la durée de conservation des événements comportementaux et le chemin de persistance correspondent aux engagements de votre politique ;
 4. le plan de données n'est accessible que par le tunnel et le port de l'hôte n'est pas ouvert sur l'Internet public ;
 5. un plan de sauvegarde et un exercice de restauration sont en place ;
-6. une information exacte et des choix préalables valables sont en place : le profilage/Auto DJ activé par défaut, les suggestions publiques de recherches, l'avatar DiceBear avec courriel, l'effacement partiel et les liens amont HTTP doivent être corrigés ou les traitements concernés suspendus. Vérifiez aussi la révocation et la route radar absente ; publier la [Politique de confidentialité](/fr/privacy-policy/) ne suffit pas à rendre ces traitements licites.
+6. une information exacte et des choix préalables valables sont en place : le profilage/Auto DJ activé par défaut, les suggestions publiques de recherches, l'avatar DiceBear avec courriel, l'effacement partiel et les liens amont HTTP doivent être corrigés ou les traitements concernés suspendus. Vérifiez aussi la révocation et la route distante du radar ; publier la [Politique de confidentialité](/fr/privacy-policy/) ne suffit pas à rendre ces traitements licites.

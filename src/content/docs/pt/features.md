@@ -1,13 +1,17 @@
 ---
 title: Guia de funcionalidades
-description: "Guia de funcionalidades do Sonic: explicação aprofundada dos níveis de qualidade e da transparência das amostras, letras palavra a palavra, recomendação e Auto DJ, descargas e música local, tabelas de classificação, MV e tolerância a falhas na pesquisa."
+description: "Guia de funcionalidades do Sonic: qualidade e amostras, letras palavra a palavra, recomendação e Auto DJ, descargas, música local, tabelas, MV e pesquisa."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica em profundidade o comportamento de cada função do Sonic e as escolhas de desenho subjacentes. As localizações na interface constam da [Interface e funcionalidades](/pt/interface/); a explicação técnica dos sinais comportamentais e do modelo de recomendação consta da secção 5 da [Apresentação do projeto](/pt/project/); as condições contratuais de utilização das funções constam dos [Termos de Utilização](/pt/terms-of-service/).
 
 As descrições funcionais desta página baseiam-se no ramo candidato público `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), revisto em 2026-11-02. A versão antiga `main@ce443c8` (2026-10-27 UTC) é distinta e não se presumem nela as funções do candidato. O RC não é uma GitHub Release oficial; a versão em produção continua por verificar.
+
+![Os seis grupos de funcionalidades do Sonic: pesquisa, reprodução, letras, biblioteca, recomendações e privacidade](/images/sonic/features-map.svg)
+
+*Figura: seis grupos de funcionalidades; o âmbito real das recomendações e dos controlos de privacidade depende da configuração da instância.*
 
 ## 1. Níveis de qualidade e transparência das amostras
 

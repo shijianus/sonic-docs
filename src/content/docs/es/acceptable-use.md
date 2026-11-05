@@ -3,7 +3,7 @@ title: Política de uso aceptable
 description: Límites de conducta sobre recursos alojados de Sonic, restricciones al abuso del sistema, contenidos y derechos ajenos, medidas y canales de reclamación.
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta política se aplica a las instancias de pruebas alojadas que Sonic opere efectivamente y a sus API públicas, para proteger los recursos compartidos, los usuarios y los servicios de origen. Es la regla de conducta relacionada con los [Términos del servicio](/es/terms-of-service/); si no la acepta, deje de utilizar la instancia alojada. No convierte la gratuidad, el carácter no lucrativo o el código abierto en una garantía incondicional de seguridad ni sustituye a la [Política de privacidad](/es/privacy-policy/) o a [Tratamiento de datos y seguridad](/es/data-security/).
 

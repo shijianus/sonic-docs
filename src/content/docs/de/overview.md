@@ -3,7 +3,7 @@ title: Überblick über Datenschutz und Nutzungsbedingungen
 description: Diensteanbieter, Geltungsbereich des Datenschutzes, Verhältnis der Dokumente und noch umzusetzende Voraussetzungen des individuellen, nicht gewinnorientierten Sonic-Testprojekts.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite erläutert das Verhältnis der Dokumente zum gehosteten Sonic-Testdienst. Das Projekt wird von einer Einzelperson kostenlos und ohne Gewinnerzielungsabsicht für Lernzwecke und gemeinwohlorientierte Tests gepflegt; es gibt keine kommerziellen Service-Level oder Zusage eines dauerhaften Betriebs. Lesen Sie zuerst die [Nutzungsbedingungen](/de/terms-of-service/) und die [Datenschutzerklärung](/de/privacy-policy/), um Dienstumfang und Datenverarbeitung zu verstehen. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

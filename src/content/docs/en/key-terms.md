@@ -3,7 +3,7 @@ title: Key Terms
 description: Data protection, roles, consent, technology and local-data processing terms used in Sonic's legal documents.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This page explains the main terms in the [Privacy Policy](/en/privacy-policy/), [Data Processing & Security](/en/data-security/), [Third Parties & Transfers](/en/sub-processors/) and [Acceptable Use Policy](/en/acceptable-use/). Legal definitions use the GDPR as a reference; source-code review is not certification of operational compliance. Simplified Chinese is the root maintenance baseline; the other nine languages are translations. Language priority does not diminish mandatory law or consumers' right to clear, intelligible terms.
 

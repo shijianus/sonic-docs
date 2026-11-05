@@ -3,7 +3,7 @@ title: Datenschutzerklärung
 description: Datenquellen, Verarbeitungsgrundlagen, Browser- und entfernter Speicher, Aufbewahrungs- und Löschgrenzen, Empfänger und Betroffenenrechte beim nicht gewinnorientierten Sonic-Testdienst.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Erklärung beschreibt die Verarbeitung personenbezogener Daten durch die gehosteten Sonic-Testinstanzen und die Dokumentationswebsite dieses Projekts. Sonic ist ein von einer Einzelperson gepflegtes, kostenloses, nicht gewinnorientiertes Projekt für Lernzwecke und gemeinwohlorientierte Tests; diese Eigenschaften befreien nicht von gesetzlichen Datenschutzpflichten. Wir legen Wert auf Ihre Privatsphäre und richten die Gestaltung und fortlaufende Verbesserung an strengen, überprüfbaren Datenschutzanforderungen aus. Orientiert an den DSGVO-Grundsätzen Datenminimierung, Zweckbindung, Transparenz und Kontrolle durch die Nutzer wollen wir mit angemessenen Anstrengungen ein hohes, den tatsächlichen Risiken entsprechendes Schutzniveau erreichen und unnötige Erhebung, Speicherung und Übermittlung verringern.
 

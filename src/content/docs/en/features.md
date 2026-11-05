@@ -3,11 +3,15 @@ title: Features Guide
 description: The Sonic features guide — in-depth notes on quality tiers and trial transparency, word-level lyrics, recommendations and Auto DJ, downloads and local music, charts, MV and search fault tolerance.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 The feature descriptions on this page are based on the public release candidate (RC) `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), reviewed on 2026-11-02. The older public `main@ce443c8` (2026-10-27 UTC) is not evidence that it implements these RC features. The candidate is not an official GitHub Release; the live deployment version and configuration remain unverified.
 
 This page explains in depth how each Sonic function behaves and the design trade-offs behind it. Interface locations are in the [Interface & Features Guide](/en/interface/); the technical account of behavioral signals and the recommendation model is in the [Project Overview](/en/project/), section 5; the contractual conditions of use are in the [Terms of Service](/en/terms-of-service/).
+
+![Sonic's six feature groups: search, playback, lyrics, library, recommendations and privacy](/images/sonic/features-map.svg)
+
+*Figure: six feature groups; the actual scope of recommendations and privacy controls depends on the instance configuration.*
 
 ## 1. Quality tiers and trial transparency
 

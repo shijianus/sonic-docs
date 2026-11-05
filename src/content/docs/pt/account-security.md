@@ -3,7 +3,7 @@ title: Guia de conta e segurança
 description: "Guia de conta e segurança do Sonic: início de sessão OAuth da Epomail, mecanismo de sessão, proteção das chaves de API, revogação e recomendações de utilização segura."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica o funcionamento do sistema de conta do Sonic e recomendações para uma utilização segura. A implementação técnica completa consta de [Processamento de dados e segurança](/pt/data-security/), secção 3.2; as disposições contratuais constam dos [Termos de Utilização](/pt/terms-of-service/), secção 3.
 

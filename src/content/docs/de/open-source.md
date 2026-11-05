@@ -3,7 +3,7 @@ title: Open-Source- und Selbst-Hosting-Recht
 description: Open-Source und Selbst-Hosting bei Sonic – Lizenzlage, Markengrenzen, Danksagungen und Abhängigkeiten von Dritten, Pflichten der Bereitsteller und Compliance-Grenzen.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite beschreibt die Lage und die Grenzen der Open-Source-Lizenzierung von Sonic, die Danksagungen an Dritte sowie die rechtlichen Pflichten beim Selbst-Hosting. Das Verhältnis von Softwarelizenz und Nutzungsbedingungen ist in den [Nutzungsbedingungen](/de/terms-of-service/), Abschnitt 2 und Abschnitt 10, dargestellt. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 
@@ -25,21 +25,21 @@ Das Projekt ist ein individuell gepflegtes, kostenloses und nicht gewinnorientie
 
 Entwicklung und Multi-Source-Aggregationspraxis stützen sich auf folgende Open-Source-Community-Projekte und danken ihnen: Meting, Meting-API-Serverless, ourcraft-music-api, music-lib, NeteaseCloudMusicApi, QQMusicApi, AMLL TTML API, LRCLIB, GDStudio Music API und die Linux.do-Community. Die vollständigen Abhängigkeiten und Erklärungen finden sich in `THIRD_PARTY_NOTICES.md` im Repository; die Bedingungen der einzelnen vorgelagerten Dienste unterliegen jeweils deren eigener Hoheit.
 
-## 4. Rechtliche Pflichten selbst gehostender Bereitsteller
+## 4. Rechtliche Pflichten selbst hostender Betreiber
 
-Wer tatsächlich Zwecke und Mittel der Verarbeitung bestimmt, ist insoweit Verantwortlicher; rein persönliche Tests sind getrennt von öffentlichen Diensten zu beurteilen (zur Rollenabgrenzung siehe den [Überblick](/de/overview/), Abschnitt 2) und muss je nach anwendbarem Recht Folgendes prüfen und erfüllen:
+Die Rolle richtet sich danach, wer die Verarbeitung tatsächlich bestimmt; das Veröffentlichen oder Beitragen von Code begründet allein keine ausschließliche Verantwortung. Rein persönliche Tests und öffentliche Dienste sind getrennt zu beurteilen (siehe [Überblick](/de/overview/), Abschnitt 2). Wer den Dienst betreibt, muss:
 
-1. Informationspflicht: die Nutzer über die Datenverarbeitung informieren; die [Datenschutzerklärung](/de/privacy-policy/) dieser Website kann als Grundtext dienen, muss jedoch nach der tatsächlich eigenen Konfiguration angepasst werden (nicht aktivierte Drittanbieter-Kanäle sind aus der Information zu streichen);
-2. Aufzeichnung und Bewertung: bei anwendbarer DSGVO die Voraussetzungen für Aufzeichnungen nach Artikel 30 und eine Folgenabschätzung nach Artikel 35 prüfen; fortlaufendes Profiling ist nicht allein wegen geringer Nutzerzahlen gelegentlich;
-3. Sicherheitsmaßnahmen: die Maßnahmen aus [Datenverarbeitung und Sicherheitsmaßnahmen](/de/data-security/), Abschnitt 3, umsetzen und die Aufsicht durch die zuständigen Stellen hinnehmen;
-4. Konfigurationskonsistenz: die tatsächlichen Werte der Umgebungsvariablen (Aufbewahrungstage, Drittanbieter-Schalter, Ratenbegrenzung) müssen mit Ihren politischen Zusagen übereinstimmen;
-5. Ergänzung nach Rechtsordnung: DSGVO, UK GDPR, LGPD oder CCPA-CPRA sind nur nach ihrem jeweiligen tatsächlichen Anwendungsbereich zu beurteilen; es gibt keine zusätzliche weltweite DSGVO-Vertragsgarantie.
+1. **Informationspflicht**: vor der Erhebung die tatsächliche rechtliche Identität, Kontaktdaten, Zwecke, Empfänger, Länder der Knoten und Aufbewahrungsfristen veröffentlichen; die [Datenschutzerklärung](/de/privacy-policy/) an verifizierte Tatsachen anpassen und nicht annehmen, dass das Repository diese Informationen bereitstellt;
+2. **Aufzeichnungen und Bewertung**: bei anwendbarer DSGVO und erfüllten Voraussetzungen Aufzeichnungen nach Artikel 30 führen und Verarbeitungen mit hohem Risiko nach Artikel 35 bewerten. Geringe Größe macht fortlaufendes Profiling nicht gelegentlich;
+3. **Sicherheitserhaltung**: geeignete Maßnahmen, gültige vorherige Auswahl und verifizierte Löschung umsetzen. Standardmäßig aktives Profiling, öffentliche Wiederverwendung von Rohsuchen, E-Mail-Avatar-Anfragen und unvollständige Zurücksetzung bleiben Blockaden; ihre Offenlegung beseitigt sie nicht;
+4. **Konfigurationskonsistenz**: tatsächliche Aufbewahrung, Bereinigung, Widerruf, externe Ressourcen und Sicherungen prüfen, nicht nur Umgebungsvariablen; optionale Verarbeitung ohne Rechtsgrundlage oder notwendige Garantien aussetzen;
+5. **Anwendbares Recht und Übermittlungen**: territorialen Anwendungsbereich sowie tatsächliche Anbieter und Länder bestimmen. Die DSGVO ist keine weltweite Vertragsgarantie; Zertifizierungen oder öffentliche Anbieterrichtlinien begründen weder Verträge noch Garantien für internationale Übermittlungen.
 
 ## 5. Übernahme der Dokumente dieser Website
 
-Die Dokumente beschreiben gehostete Testinstanzen und bekannte Umsetzungslücken. Andere Betreiber können sie als Ausgangspunkt prüfen, übernehmen damit aber weder automatisch einen Vertrag noch einen Konformitätsnachweis:
+Diese Dokumente beschreiben bestimmte gehostete Testinstanzen und den geprüften öffentlichen RC; sie sind weder eine Konformitätszertifizierung noch automatisch für jede Bereitstellung geltende Bedingungen. Jede Übernahme erfordert:
 
-1. die tatsächliche rechtliche Identität, erreichbare Kontakte, Domains, Verarbeitungsorte und Anwendungszeitpunkte angeben;
-2. die wahrheitsgemäße Offenlegung der Drittanbieterliste und der Konfigurationsparameter nachprüfen;
-3. Pflegegrundlage und Übersetzungen klar angeben; Sprachvorrang darf zwingendes Recht, verbraucherfreundliche Auslegung und verständliche Information nicht ausschließen;
-4. vor dem regulären Betrieb anwaltlich beraten lassen; die Dokumente dieser Website stellen keine Rechtsberatung dar.
+1. die Angabe der tatsächlichen rechtlichen Identität des Betreibers, erreichbarer Kontakte, Domains, des Überarbeitungsdatums und des Übernahmedatums;
+2. die Prüfung tatsächlicher Datenflüsse, Rollen Dritter, Verträge, Übermittlungsmechanismen, Auswahlmöglichkeiten, Aufbewahrung und Löschung vor der Verarbeitung;
+3. die konsistente Pflege verständlicher Übersetzungen: Die chinesische Referenz und die neun Übersetzungen gehen zwingendem Recht und verbraucherfreundlicher Auslegung nicht vor;
+4. angemessene Rechtsberatung und, soweit erforderlich, gültige Annahme oder gesonderte Einwilligung; das Kopieren des Textes oder die weitere Nutzung begründet keines von beiden.

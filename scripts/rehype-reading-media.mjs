@@ -1,7 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readingLabels } from '../src/lib/reading-labels.mjs';
+import { diagramLegendItems } from '../src/lib/diagram-legends.mjs';
 
 const publicDir = fileURLToPath(new URL('../public/', import.meta.url));
 const sizes = new Map();
@@ -33,7 +34,7 @@ export default function rehypeReadingMedia({ base = '/sonic' } = {}) {
     const directory = segments.at(-2);
     const language = directory === 'zh-tw' ? 'zh-TW' : directory === 'docs' ? 'zh-CN' : directory;
     const labels = readingLabels[language] || readingLabels.en;
-    let images = 0;
+    let figures = 0;
     function visit(parent) {
       for (let index = 0; index < (parent.children || []).length; index++) {
         const node = parent.children[index];
@@ -46,13 +47,54 @@ export default function rehypeReadingMedia({ base = '/sonic' } = {}) {
           const [width, height] = imageSize(source);
           const alt = String(node.properties.alt || '').trim();
           if (!alt) throw new Error(`Missing localized image description: ${file.path} (${source})`);
-          Object.assign(node.properties, { width, height, decoding: 'async', loading: images++ === 0 ? 'eager' : 'lazy' });
+          const loading = figures++ === 0 ? 'eager' : 'lazy';
+          Object.assign(node.properties, { width, height, decoding: 'async', loading, className: ['doc-figure-img', 'doc-figure-img--light'] });
+          const children = [node];
+          // 图示另有深色版本时同时输出两幅，由站点主题 CSS 选择显示，避免只跟随操作系统主题。
+          const darkSource = source.replace(/\.svg$/, '-dark.svg');
+          const hasDark = darkSource !== source && existsSync(resolve(publicDir, '.' + darkSource));
+          if (hasDark) {
+            const [darkWidth, darkHeight] = imageSize(darkSource);
+            children.push({
+              type: 'element', tagName: 'img',
+              properties: {
+                src: base + darkSource, alt, width: darkWidth, height: darkHeight,
+                decoding: 'async', loading, className: ['doc-figure-img', 'doc-figure-img--dark'],
+              },
+              children: [],
+            });
+          }
           if (parent.tagName !== 'a') {
             parent.children[index] = {
               type: 'element', tagName: 'a',
-              properties: { href: url, className: ['doc-figure-link'], 'data-doc-image': '', ariaLabel: `${labels.view}: ${alt}` },
-              children: [node, { type: 'element', tagName: 'span', properties: { className: ['doc-figure-action'], ariaHidden: 'true' }, children: [{ type: 'text', value: labels.view }] }],
+              properties: {
+                href: url,
+                className: ['doc-figure-link'],
+                'data-doc-image': '',
+                'data-doc-dark-src': hasDark ? base + darkSource : '',
+                ariaLabel: `${labels.view}: ${alt}`,
+              },
+              children: [...children, { type: 'element', tagName: 'span', properties: { className: ['doc-figure-action'], ariaHidden: 'true' }, children: [{ type: 'text', value: labels.view }] }],
             };
+            // 图示编号在 SVG 内保持简短技术标签，页内图例按当前语言给出对应含义。
+            const diagram = source.match(/\/images\/sonic\/([^/]+)\.svg$/)?.[1];
+            const items = diagram ? diagramLegendItems(diagram, language) : [];
+            if (items.length) {
+              const legend = [
+                { type: 'element', tagName: 'span', properties: { className: ['doc-figure-legend-label'] }, children: [{ type: 'text', value: labels.legend }] },
+                ...items.map(item => ({
+                  type: 'element', tagName: 'span',
+                  properties: { className: ['doc-figure-legend-item'] },
+                  children: [{ type: 'text', value: item }],
+                })),
+              ];
+              parent.children.splice(index + 1, 0, {
+                type: 'element', tagName: 'span',
+                properties: { className: ['doc-figure-legend'] },
+                children: legend,
+              });
+              index += 1;
+            }
           }
         } else {
           visit(node);

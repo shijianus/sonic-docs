@@ -3,7 +3,7 @@ title: Guia de implantação
 description: "Guia de implantação do Sonic: duplo cenário de gateway de edge no Cloudflare Pages e motor local em Linux, variáveis de ambiente, cópias de segurança e restauro, verificações de saúde e reversão."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica os dois cenários de implantação própria do Sonic, as variáveis de ambiente principais, as cópias de segurança e o restauro e os pontos essenciais da operação. Quem determina as finalidades e os meios assume as obrigações correspondentes; testes puramente pessoais e serviços públicos exigem avaliações distintas; os deveres correspondentes constam da secção 6 de [Processamento de dados e segurança](/pt/data-security/) e do [Código aberto e enquadramento legal da implantação própria](/pt/open-source/); a formulação autoritativa dos detalhes operativos consta de `docs/OPERATIONS.md` no repositório a montante.
 

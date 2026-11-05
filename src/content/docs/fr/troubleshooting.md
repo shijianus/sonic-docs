@@ -3,11 +3,15 @@ title: Dépannage
 description: "Dépannage de Sonic : problèmes et solutions courants concernant la lecture, les sources audio, la connexion, le mode dégradé, le stockage et la limitation de débit."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Les descriptions fonctionnelles reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC), vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne. Le RC n'est pas une GitHub Release officielle.
 
 La présente page récapitule l'identification et le traitement des problèmes courants. Si le problème n'est pas résolu ici, écrivez à `admin@epocanvas.com` ou ouvrez une Issue sur le dépôt GitHub ; lors d'un signalement, n'utilisez que des termes de reproduction non sensibles. Un texte de recherche public peut contenir des informations personnelles ou sensibles.
+
+![Dépannage Sonic en quatre étapes : identifier le symptôme, vérifier l'état, essayer le chemin de secours et signaler](/images/sonic/troubleshooting-flow.svg)
+
+*Figure : identifiez le symptôme, vérifiez l'état, essayez le chemin de secours et signalez ; ce chemin peut aussi échouer.*
 
 ## 1. Problèmes de lecture
 

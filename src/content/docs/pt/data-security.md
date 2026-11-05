@@ -3,7 +3,7 @@ title: Processamento de dados e segurança
 description: Ciclo de vida dos dados, limites do tratamento, medidas de segurança, limitações conhecidas, resposta a violações e orientação para implantação própria do Sonic.
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página desenvolve a secção 10 da [Política de Privacidade](/pt/privacy-policy/) e explica os limites visíveis do tratamento e da segurança das instâncias alojadas do Sonic. Este projeto gratuito e sem fins lucrativos é mantido por uma pessoa. O seu objetivo é respeitar a privacidade e, mediante esforços razoáveis, proporcionar um nível elevado de proteção com medidas rigorosas e proporcionais aos riscos. Os princípios do RGPD da minimização dos dados, da limitação das finalidades, da transparência e do controlo pelos utilizadores orientam a melhoria contínua.
 

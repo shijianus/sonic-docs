@@ -3,7 +3,7 @@ title: Vue d'ensemble de la confidentialité et des conditions
 description: Prestataire, champ d'application de la protection des données, relations entre documents et conditions de mise en œuvre actuelles du projet personnel de test à but non lucratif Sonic.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page explique les relations entre les documents du service de test hébergé Sonic. Le projet est maintenu par une personne, gratuit et à but non lucratif, à des fins d'apprentissage et d'expérimentation d'intérêt général ; il ne promet ni niveau de service commercial ni exploitation permanente. Lisez d'abord les [Conditions d'utilisation](/fr/terms-of-service/) et la [Politique de confidentialité](/fr/privacy-policy/) pour connaître le périmètre du service et les traitements de données. Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 

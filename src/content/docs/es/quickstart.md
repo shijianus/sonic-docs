@@ -3,9 +3,13 @@ title: Primeros pasos
 description: "Primeros pasos con Sonic: la ruta más corta desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página ofrece la ruta más corta para usar la instancia gestionada de Sonic (`sonic.epocanvas.tech`): desde abrir el sitio hasta buscar y reproducir, iniciar sesión y usar la biblioteca local, descargar e importar música local y usar el móvil. Para la visita completa de la interfaz, véase la [Guía de la interfaz y funciones](/es/interface/); esta página no cubre el autoalojamiento (el despliegue consta en la [Guía de despliegue](/es/deployment/)). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
+
+![Inicio rápido de Sonic en cuatro pasos: abrir el sitio, buscar, reproducir y ajustar preferencias](/images/sonic/quickstart-steps.svg)
+
+*Figura: cuatro pasos desde la apertura hasta los ajustes; las funciones reales dependen de lo que habilite la instancia.*
 
 ## 1. Abrir el sitio
 
@@ -24,7 +28,7 @@ Ante un fragmento de vista previa de 30 segundos, el reproductor lo etiqueta fie
 Inicie sesión con su cuenta de Epomail mediante OAuth 2.0 (PKCE); el servicio no dispone de sistema de registro independiente:
 
 1. Pulse la entrada de inicio de sesión de la parte inferior de la barra lateral; será remitido a la página de autorización de Epomail para confirmar;
-2. Los favoritos y listas se guardan principalmente en el navegador; parte de las señales y del contexto pueden enviarse. No se ha verificado una sincronización general en la nube entre dispositivos y falta la ruta remota del radar en la versión comprobada;
+2. Los favoritos y listas se guardan principalmente en el navegador; parte de las señales y del contexto pueden enviarse. No se ha verificado una sincronización general en la nube entre dispositivos y la ruta remota del radar debe verificarse según el despliegue;
 3. La personalización y Auto DJ están activados por defecto en el código, sin prueba de consentimiento afirmativo; iniciar sesión no equivale a consentir. Pueden desactivarse en «Ajustes → Privacidad y datos locales», pero esa elección no detiene por sí sola las estadísticas de búsqueda separadas.
 
 La sesión dura 30 días por defecto; cerrar sesión borra la cookie actual, pero la revocación remota depende de la configuración y del éxito de la petición. El almacenamiento `auth` conserva parte de los datos de cuenta en localStorage. Las reglas figuran en la sección 3 de los [Términos del servicio](/es/terms-of-service/).

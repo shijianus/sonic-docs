@@ -3,7 +3,7 @@ title: Leitfaden für Mobilgeräte
 description: Leitfaden zur mobilen Nutzung von Sonic – Smartphone-Layout, Tabnavigation, Player-Drawer und mobile Besonderheiten.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite erklärt Layout und Nutzung von Sonic im mobilen Browser. Mobile und Desktop verwenden dieselbe Instanz und dasselbe Kontosystem und bieten denselben Funktionsumfang. Das Layout wechselt abhängig von der Bildschirmbreite automatisch; eine App muss nicht installiert werden. Die beschriebenen Funktionen beruhen auf dem öffentlichen RC-Zweig `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) von `shijianus/sonic`, geprüft am 2026-11-02. Der alte `main@ce443c8` (2026-10-27 UTC) unterscheidet sich davon; keiner der beiden Codestände belegt die tatsächlich produktiv eingesetzte Version.
 

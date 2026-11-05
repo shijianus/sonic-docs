@@ -3,7 +3,7 @@ title: Guia de desenvolvimento
 description: "Guia de desenvolvimento do Sonic: estrutura do repositório, comandos de compilação, conjunto de testes, verificação da consistência da documentação e contribuição."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página destina-se a quem participa no desenvolvimento e no desenvolvimento derivado e explica a estrutura do repositório, os comandos de compilação, o conjunto de testes e a verificação da consistência da documentação. A licença e os limites legais constam do [Código aberto e enquadramento legal da implantação própria](/pt/open-source/).
 

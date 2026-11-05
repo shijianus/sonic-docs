@@ -6,6 +6,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import checks from './validate-anchors.cjs';
+import { languageNotices } from '../src/lib/language-notice.mjs';
 
 const {
   SITE_ORIGIN, SITE_BASE, LANGUAGES, DOCUMENTS, EXPECTED_DOCUMENTS,
@@ -24,6 +25,12 @@ function checkInventory(site) {
     if (!expected.has(file)) site.fail('UNEXPECTED HTML PAGE', file, 'not in the required page matrix');
   }
   if (!site.pages.has('index.html')) site.fail('MISSING PAGE', 'index.html', 'required landing page');
+  else {
+    const landing = fs.readFileSync(path.join(site.dist, 'index.html'), 'utf8');
+    if (!landing.includes('class="language-policy"') || !landing.includes('简体中文为维护基准')) {
+      site.fail('LANDING LANGUAGE NOTICE', 'index.html', 'expected the bilingual language baseline notice');
+    }
+  }
 }
 
 function sidebarExpectations() {
@@ -140,10 +147,27 @@ function checkPagination(site, page, tree, document, groups, labels, counts) {
       }
     }
   }
+
+  // 阅读路径必须为每篇文档提供一个带篇名的节点，悬停 title 不能为空。
+  const points = elements(tree, node => hasClass(node, 'route-point'));
+  counts.routePoints += points.length;
+  if (points.length !== items.length) site.fail('ROUTE POINT COUNT', page.file, `expected ${items.length}, got ${points.length}`);
+  for (const [position, point] of points.entries()) {
+    const titles = elements(point, node => node.tagName === 'title');
+    if (titles.length !== 1 || !text(titles[0]).trim()) site.fail('ROUTE POINT TITLE', page.file, `point ${position + 1}: expected one non-empty title`);
+  }
+
+  // 全站语言声明：每一页（含 404）都使用当前语言的固定文案。
+  const notices = elements(tree, node => hasClass(node, 'language-notice'));
+  counts.notices++;
+  const expectedNotice = languageNotices[document.language.lang];
+  if (notices.length !== 1 || !expectedNotice || text(notices[0]) !== expectedNotice) {
+    site.fail('LANGUAGE NOTICE', page.file, `${document.language.lang}: expected one localized language notice`);
+  }
 }
 
 async function checkRenderedContent(site) {
-  const counts = { utf8: 0, charsets: 0, images: 0, options: 0, paginationLinks: 0, sidebarLanguages: 0, sidebarGroups: 0, sidebarItems: 0 };
+  const counts = { utf8: 0, charsets: 0, images: 0, options: 0, paginationLinks: 0, routePoints: 0, notices: 0, sidebarLanguages: 0, sidebarGroups: 0, sidebarItems: 0 };
   const fromAstro = createRequire(require.resolve('astro/package.json'));
   const { rehype } = await import(pathToFileURL(fromAstro.resolve('rehype')).href);
   const parser = rehype();
@@ -364,7 +388,7 @@ try {
   const redirects = checkRedirects(site);
   const metadata = checkMetadata(site);
   const search = checkPagefind(site);
-  console.log(`pages=${site.pages.size}/222, documents=${site.counts.documents}/${EXPECTED_DOCUMENTS.size}, utf8-checked=${rendered.utf8}, charsets-checked=${rendered.charsets}, content-images-checked=${rendered.images}, language-options-checked=${rendered.options}, pagination-links-checked=${rendered.paginationLinks}, sidebar-languages=${rendered.sidebarLanguages}, sidebar-groups=${rendered.sidebarGroups}, sidebar-items=${rendered.sidebarItems}, redirect-rules=${redirects}/223, html-lang-checked=${metadata.languages}, canonicals-checked=${metadata.canonicals}, hreflang-checked=${metadata.alternates}, pagefind-languages=${search.languages}/${LANGUAGES.length}, pagefind-pages=${search.pages}, pagefind-files-checked=${search.files}, broken=${site.errors}`);
+  console.log(`pages=${site.pages.size}/222, documents=${site.counts.documents}/${EXPECTED_DOCUMENTS.size}, utf8-checked=${rendered.utf8}, charsets-checked=${rendered.charsets}, content-images-checked=${rendered.images}, language-options-checked=${rendered.options}, pagination-links-checked=${rendered.paginationLinks}, route-points-checked=${rendered.routePoints}, language-notices-checked=${rendered.notices}, sidebar-languages=${rendered.sidebarLanguages}, sidebar-groups=${rendered.sidebarGroups}, sidebar-items=${rendered.sidebarItems}, redirect-rules=${redirects}/223, html-lang-checked=${metadata.languages}, canonicals-checked=${metadata.canonicals}, hreflang-checked=${metadata.alternates}, pagefind-languages=${search.languages}/${LANGUAGES.length}, pagefind-pages=${search.pages}, pagefind-files-checked=${search.files}, broken=${site.errors}`);
   process.exitCode = site.errors ? 1 : 0;
 } catch (error) {
   console.error(`check-rendered-site: ${error.message}`);

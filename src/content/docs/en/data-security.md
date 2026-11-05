@@ -3,7 +3,7 @@ title: Data Processing & Security
 description: Data lifecycle, processing limits, security measures, known limitations, breach response and self-hosting guidance for Sonic's hosted service.
 ---
 
-**Revision date: 2 November 2026｜Version: 1.8**
+**Revision date: 3 November 2026｜Version: 1.9**
 
 This page expands section 10 of the [Privacy Policy](/en/privacy-policy/), explaining the data processing and security boundaries visible in Sonic hosted instances. The privacy objective is to use reasonable efforts to provide a high level of protection proportionate to actual risks, improving measures in light of verification findings and GDPR principles of data minimisation, purpose limitation, transparency and user control. That objective does not establish certification or full compliance with the GDPR and all Member State laws, or guarantee absolute security, freedom from data breaches or loss, or immediate and complete deletion. Measures found in the reviewed code, unverified deployment details and known gaps are identified separately: actual protection depends on the deployed version, configuration and third-party processing. Reasonable efforts and risk disclosures do not reduce statutory duties or require users to accept unlawful processing or waive rights. It records findings from source-code and audit-material checks, not certification of live configuration, operational status, supplier contracts or continued compliance. Simplified Chinese is the root maintenance baseline; the other nine languages are translations. Language priority does not diminish mandatory law or consumers' right to clear, intelligible terms.
 

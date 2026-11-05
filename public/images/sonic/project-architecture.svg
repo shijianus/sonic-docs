@@ -1,76 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Sonic two-plane architecture: users connect to the Cloudflare edge control plane, the Linux data plane resolves sources and stores behavior events, audio streams are proxied from official CDNs">
-  <style>
-    .bg { fill: #f8fafc; }
-    .box { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-    .box-edge { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
-    .box-vps { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-    .box-cdn { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
-    .title { font: 600 13.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .item { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
-    .tag { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
-    .flow { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#ar); }
-    .arrowhead { fill: #94a3b8; }
-    .plane-label { font: 600 11px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #0b0f19; }
-      .box { fill: #111827; stroke: #1e293b; }
-      .box-edge { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
-      .box-vps { fill: #111827; stroke: #1e293b; }
-      .box-cdn { fill: #111827; stroke: #1e293b; }
-      .title { fill: #f1f5f9; }
-      .item { fill: #94a3b8; }
-      .tag { fill: #60a5fa; }
-      .flow { stroke: #475569; marker-end: url(#ar); }
-      .arrowhead { fill: #475569; }
-      .plane-label { fill: #f1f5f9; }
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="100%" role="img" aria-label="Sonic two-plane architecture: browser, Cloudflare edge control plane, Linux data plane and upstream CDNs">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
   </style>
-  <defs>
-    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" class="arrowhead"/>
-    </marker>
-  </defs>
-  <rect class="bg" width="1000" height="400" rx="16"/>
-
-  <rect class="box" x="30" y="150" width="150" height="96" rx="10"/>
-  <text class="title" x="48" y="180">Users</text>
-  <text class="item" x="48" y="202">Browser / player</text>
-  <text class="item" x="48" y="220">sonic.epocanvas.tech</text>
-
-  <rect class="box-edge" x="240" y="60" width="250" height="280" rx="12"/>
-  <text class="plane-label" x="260" y="88">Control Plane — Cloudflare Edge</text>
-  <rect class="box-vps" x="258" y="104" width="214" height="52" rx="8"/>
-  <text class="title" x="272" y="124">Pages Functions</text>
-  <text class="item" x="272" y="142">Routing · rate limit · cache</text>
-  <rect class="box-vps" x="258" y="166" width="214" height="52" rx="8"/>
-  <text class="title" x="272" y="186">Edge Cache (sonic:*)</text>
-  <text class="item" x="272" y="204">Fresh 8m · stale fallback</text>
-  <rect class="box-vps" x="258" y="228" width="214" height="52" rx="8"/>
-  <text class="title" x="272" y="248">Circuit Breaker</text>
-  <text class="item" x="272" y="266">CLOSED / OPEN / HALF_OPEN</text>
-  <text class="tag" x="260" y="322">Auth check · HMAC-signed API keys</text>
-
-  <rect class="box-vps" x="550" y="60" width="250" height="280" rx="12"/>
-  <text class="plane-label" x="570" y="88">Data Plane — Linux Engine</text>
-  <rect class="box" x="568" y="104" width="214" height="52" rx="8"/>
-  <text class="title" x="582" y="124">sonic-engine (Node.js)</text>
-  <text class="item" x="582" y="142">Native protocol parsing</text>
-  <rect class="box" x="568" y="166" width="214" height="52" rx="8"/>
-  <text class="title" x="582" y="186">Recommendation Core</text>
-  <text class="item" x="582" y="204">Behavior events · SQLite (WAL)</text>
-  <rect class="box" x="568" y="228" width="214" height="52" rx="8"/>
-  <text class="title" x="582" y="248">ncm-api Sidecar</text>
-  <text class="item" x="582" y="266">Loopback-only internal network</text>
-  <text class="tag" x="570" y="322">Encrypted tunnel · service key required</text>
-
-  <rect class="box-cdn" x="850" y="150" width="120" height="96" rx="10"/>
-  <text class="title" x="866" y="180">Official</text>
-  <text class="title" x="866" y="198">CDNs</text>
-  <text class="item" x="866" y="220">Audio · lyrics</text>
-
-  <line class="flow" x1="180" y1="198" x2="236" y2="198"/>
-  <line class="flow" x1="490" y1="198" x2="546" y2="198"/>
-  <line class="flow" x1="800" y1="198" x2="846" y2="198"/>
-  <path class="flow" d="M 365 60 C 365 30, 910 30, 910 146"/>
-  <text class="tag" x="520" y="24">Audio streams: Range 206 edge proxy (default) or 302 redirect (opt-in)</text>
+<rect class="bg" width="1000" height="460" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/>
+<rect class="card" x="64" y="90" width="220" height="300" rx="16"/>
+<text class="num" x="88" y="122">01 · CLIENT</text>
+<g class="icon-accent" transform="translate(88 140) scale(1.250)"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M4 12h16 M12 4c2.5 2.3 4 5 4 8s-1.5 5.7-4 8c-2.5-2.3-4-5-4-8s1.5-5.7 4-8z"/></g>
+<text class="label" x="88" y="210">Browser</text>
+<text class="meta" x="88" y="234">sonic.epocanvas.tech</text>
+<text class="meta" x="88" y="256">player and local storage</text>
+<text class="meta" x="88" y="278">OAuth session</text>
+<rect class="card" x="324" y="90" width="280" height="300" rx="16"/>
+<text class="num" x="348" y="122">02 · CONTROL PLANE</text>
+<g class="icon-accent" transform="translate(348 140) scale(1.250)"><path d="M7 18h10a4 4 0 0 0 .6-7.9A6 6 0 0 0 6.2 9.5 4.2 4.2 0 0 0 7 18z"/></g>
+<text class="label" x="348" y="210">Cloudflare Edge</text>
+<text class="meta" x="348" y="234">Pages Functions</text>
+<text class="meta" x="348" y="256">routing · rate limit · cache</text>
+<text class="meta" x="348" y="278">auth check · circuit breaker</text>
+<text class="meta" x="348" y="300">audio proxy (Range 206)</text>
+<rect class="card" x="644" y="90" width="292" height="300" rx="16"/>
+<text class="num" x="668" y="122">03 · DATA PLANE</text>
+<g class="icon-accent" transform="translate(668 140) scale(1.250)"><path d="M4 5h16v5H4z M4 14h16v5H4z M7 7.5h.01 M7 16.5h.01"/></g>
+<text class="label" x="668" y="210">Linux Engine</text>
+<text class="meta" x="668" y="234">Node.js · SQLite WAL</text>
+<text class="meta" x="668" y="256">protocol parsing</text>
+<text class="meta" x="668" y="278">recommendation core</text>
+<text class="meta" x="668" y="300">loopback-only sidecar</text>
+<path class="arrow" d="M284 220L316 220"/><path class="arrow-head" d="M310 216L316 220L309 223Z"/><path class="arrow" d="M604 220L636 220"/><path class="arrow-head" d="M630 216L636 220L629 223Z"/>
+<rect class="soft" x="324" y="404" width="612" height="42" rx="10"/>
+<text class="meta" x="348" y="430">encrypted tunnel · service key required</text>
+<g class="icon" transform="translate(790 410) scale(0.917)"><path d="M9 18V6l10-2v11 M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M19 15a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></g>
+<text class="meta" x="820" y="430">official CDNs</text>
 </svg>

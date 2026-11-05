@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Legal document map with seven numbered documents">
+<style>
+    .bg{fill:#0b0f19} .card{fill:#111827;stroke:#1e293b;stroke-width:1.5}
+    .soft{fill:#0f172a;stroke:#1e293b;stroke-width:1.5}
+    .accent{fill:rgba(59,130,246,0.12);stroke:#1d4ed8;stroke-width:1.6}
+    .warm{fill:rgba(245,158,11,0.12);stroke:#92400e;stroke-width:1.5}
+    .good{fill:rgba(34,197,94,0.12);stroke:#166534;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#60a5fa}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#60a5fa}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#f8fafc}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#94a3b8}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#94a3b8}
+    .stroke{stroke:#1e293b;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#60a5fa;stroke-width:1.8;fill:none}
+    .arrow{stroke:#94a3b8;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#94a3b8}
+    .icon{stroke:#cbd5e1;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#60a5fa;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#60a5fa}
+
+  </style>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="accent" x="64" y="88" width="203" height="124" rx="14"/><g class="icon-accent" transform="translate(221 104) scale(1.000)"><path d="M7 3h7l4 4v14H7z M14 3v5h4 M10 12h7 M10 16h7"/></g><circle class="dot" cx="90" cy="113" r="3"/><text class="num" x="100" y="118">01</text><text class="label" x="88" y="170">Terms of Service</text><text class="mono" x="88" y="191">/terms-of-service</text><rect class="card" x="287" y="88" width="203" height="124" rx="14"/><g class="icon" transform="translate(444 104) scale(1.000)"><path d="M12 3l7 3v6c0 4.2-2.9 7.4-7 9-4.1-1.6-7-4.8-7-9V6z M9 12l2 2 4-4"/></g><circle class="dot" cx="313" cy="113" r="3"/><text class="num" x="323" y="118">02</text><text class="label" x="311" y="170">Privacy Policy</text><text class="mono" x="311" y="191">/privacy-policy</text><rect class="card" x="510" y="88" width="203" height="124" rx="14"/><g class="icon" transform="translate(667 104) scale(1.000)"><path d="M4 12l4-4 4 4 4-4 4 4 M8 8v8 M16 8v8 M4 16h16"/></g><circle class="dot" cx="536" cy="113" r="3"/><text class="num" x="546" y="118">03</text><text class="label" x="534" y="170">Acceptable Use</text><text class="mono" x="534" y="191">/acceptable-use</text><rect class="card" x="733" y="88" width="203" height="124" rx="14"/><g class="icon" transform="translate(890 104) scale(1.000)"><path d="M6 11h12v9H6z M9 11V8a3 3 0 0 1 6 0v3 M12 15v2"/></g><circle class="dot" cx="759" cy="113" r="3"/><text class="num" x="769" y="118">04</text><text class="label" x="757" y="170">Data &amp; Security</text><text class="mono" x="757" y="191">/data-security</text><rect class="card" x="175.5" y="232" width="203" height="124" rx="14"/><g class="icon" transform="translate(332.5 248) scale(1.000)"><path d="M7 18h10a4 4 0 0 0 .6-7.9A6 6 0 0 0 6.2 9.5 4.2 4.2 0 0 0 7 18z"/></g><circle class="dot" cx="201.5" cy="257" r="3"/><text class="num" x="211.5" y="262">05</text><text class="label" x="199.5" y="314">Third Parties</text><text class="mono" x="199.5" y="335">/sub-processors</text><rect class="card" x="398.5" y="232" width="203" height="124" rx="14"/><g class="icon" transform="translate(555.5 248) scale(1.000)"><path d="M4 6h16 M4 12h16 M4 18h10"/></g><circle class="dot" cx="424.5" cy="257" r="3"/><text class="num" x="434.5" y="262">06</text><text class="label" x="422.5" y="314">Key Terms</text><text class="mono" x="422.5" y="335">/key-terms</text><rect class="card" x="621.5" y="232" width="203" height="124" rx="14"/><g class="icon" transform="translate(778.5 248) scale(1.000)"><path d="M5 5h6a4 4 0 0 1 0 8H7a4 4 0 0 0 0 8h12 M17 18l3 3-3 3"/></g><circle class="dot" cx="647.5" cy="257" r="3"/><text class="num" x="657.5" y="262">07</text><text class="label" x="645.5" y="314">Project Overview</text><text class="mono" x="645.5" y="335">/project</text>
+</svg>

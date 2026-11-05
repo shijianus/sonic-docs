@@ -3,7 +3,7 @@ title: Guide de développement
 description: "Guide de développement de Sonic : structure du dépôt, commandes de construction, suite de tests, vérification de la cohérence documentaire et contribution."
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 La présente page s'adresse aux lecteurs participant au développement et aux développements dérivés ; elle expose la structure du dépôt, les commandes de construction, la suite de tests et la vérification de la cohérence documentaire. La licence et les limites juridiques figurent dans [Droit de l'open source et de l'auto-hébergement](/fr/open-source/). Les fonctionnalités décrites reposent sur la branche candidate publique `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, vérifiée le 2026-11-02. L'ancien `main@ce443c8` (2026-10-27 UTC) diffère ; aucun de ces états du code ne prouve la version effectivement déployée en ligne.
 

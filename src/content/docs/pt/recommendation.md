@@ -3,7 +3,7 @@ title: Explicação do algoritmo de recomendação
 description: "Explicação do algoritmo de recomendação do Sonic: sinais comportamentais e pesos, modelo de popularidade, intenção da sessão, reordenação MMR, Auto DJ e respetivos controlos de privacidade."
 ---
 
-**Data de revisão: 2 de novembro de 2026｜Versão: 1.8**
+**Data de revisão: 3 de novembro de 2026｜Versão: 1.9**
 
 Esta página explica integralmente a composição do motor de recomendação do Sonic: que sinais entram no modelo, como são ponderados e ordenados e que controlos tem. Todas as regras estão expostas no código-fonte; os fundamentos legais e os limites da recolha de dados constam da [Política de Privacidade](/pt/privacy-policy/), secções 4.2 e 5.
 

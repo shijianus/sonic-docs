@@ -3,7 +3,7 @@ title: Offene Plattform und API-Anbindung
 description: Anbindung an die offene API von Sonic – einheitliche Antwortstruktur, Endpunkt-Navigation, API-Key-Authentifizierung und Übermittlungsregeln, Ratenbegrenzung und Sperrung.
 ---
 
-**Überarbeitet am: 2. November 2026｜Version: 1.8**
+**Überarbeitet am: 3. November 2026｜Version: 1.9**
 
 Diese Seite beschreibt die Anbindung an die offene API von Sonic: einheitliche Antwortstruktur, Kernendpunkte, API-Key-Authentifizierung und Übermittlungsregeln, Ratenbegrenzung und Sperrung. Das Integrationsverhalten unterliegt den [Nutzungsbedingungen](/de/terms-of-service/) und der [Richtlinie zur akzeptablen Nutzung](/de/acceptable-use/); die maßgebliche Darstellung der Endpunktspezifikationen findet sich in `API.md` im Upstream-Repository.
 

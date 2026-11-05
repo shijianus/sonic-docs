@@ -1,55 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Security controls for transport, authentication, outbound requests and storage depend on deployment. Not all links are encrypted; profile reset is partial, incognito can still send events, and revocation needs configuration and a successful request. Contact the operator for full data requests.">
-  <style>
-    .bg { fill: #f8fafc; }
-    .layer { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-    .layer-accent { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
-    .lt { font: 600 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .lb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
-    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
-    .side { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
-    .st { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .sb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #0b0f19; }
-      .layer { fill: #111827; stroke: #1e293b; }
-      .layer-accent { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
-      .lt { fill: #f1f5f9; }
-      .lb { fill: #94a3b8; }
-      .law { fill: #60a5fa; }
-      .side { fill: #111827; stroke: #1e293b; }
-      .st { fill: #f1f5f9; }
-      .sb { fill: #94a3b8; }
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Four security layers L1 to L4">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
   </style>
-  <rect class="bg" width="1000" height="400" rx="16"/>
-
-  <rect class="layer" x="60" y="46" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="72">L1 · Transport — protection varies by path</text>
-  <text class="lb" x="84" y="92">HTTPS depends on deployment; not all upstream or internal links are encrypted.</text>
-
-  <rect class="layer-accent" x="60" y="122" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="148">L2 · Authentication and signing</text>
-  <text class="lb" x="84" y="168">OAuth + PKCE; signed sessions. Signing protects integrity, not confidentiality.</text>
-
-  <rect class="layer" x="60" y="198" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="224">L3 · Outbound request checks</text>
-  <text class="lb" x="84" y="244">Proxy target and redirect checks do not cover direct browser resources.</text>
-
-  <rect class="layer" x="60" y="274" width="640" height="64" rx="10"/>
-  <text class="lt" x="84" y="300">L4 · Storage and logs</text>
-  <text class="lb" x="84" y="320">Isolation, access, retention and backups require operator setup and checks.</text>
-
-  <rect class="side" x="730" y="46" width="240" height="292" rx="12"/>
-  <text class="st" x="752" y="76">Control limits</text>
-  <text class="sb" x="752" y="100">Profile reset is partial;</text>
-  <text class="sb" x="752" y="118">contact for full data requests.</text>
-  <text class="sb" x="752" y="144">Incognito can still</text>
-  <text class="sb" x="752" y="162">send requests and events.</text>
-  <text class="sb" x="752" y="188">Revocation needs setup</text>
-  <text class="sb" x="752" y="206">and a successful request.</text>
-  <text class="law" x="752" y="240">GDPR where applicable</text>
-  <text class="law" x="752" y="256">Privacy by design</text>
-  <text class="law" x="752" y="280">Security depends on setup</text>
-  <text class="law" x="752" y="296">Defaults need operator action</text>
-  <text class="law" x="752" y="320">Erasure gaps need follow-up</text>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="84" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 100) scale(1.000)"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M4 12h16 M12 4c2.5 2.3 4 5 4 8s-1.5 5.7-4 8c-2.5-2.3-4-5-4-8s1.5-5.7 4-8z"/></g><circle class="dot" cx="90" cy="112" r="3"/><text class="num" x="100" y="117">L1</text><text class="label-sm" x="122" y="117">Transport &amp; access</text><text class="meta" x="122" y="138">HTTPS depends on deployment; internal links may differ</text><rect class="card" x="64" y="162" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 178) scale(1.000)"><path d="M15 8a4 4 0 1 0-3.6 4L4 19v2h3v-2h2v-2h2l1.4-1.4A4 4 0 0 0 15 8z"/></g><circle class="dot" cx="90" cy="190" r="3"/><text class="num" x="100" y="195">L2</text><text class="label-sm" x="122" y="195">Authentication &amp; signing</text><text class="meta" x="122" y="216">OAuth + PKCE; signing protects integrity, not confidentiality</text><rect class="card" x="64" y="240" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 256) scale(1.000)"><path d="M5 5h6a4 4 0 0 1 0 8H7a4 4 0 0 0 0 8h12 M17 18l3 3-3 3"/></g><circle class="dot" cx="90" cy="268" r="3"/><text class="num" x="100" y="273">L3</text><text class="label-sm" x="122" y="273">Outbound request checks</text><text class="meta" x="122" y="294">proxy and redirect checks do not cover direct browser requests</text><rect class="card" x="64" y="318" width="872" height="66" rx="14"/><g class="icon" transform="translate(890 334) scale(1.000)"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7 M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g><circle class="dot" cx="90" cy="346" r="3"/><text class="num" x="100" y="351">L4</text><text class="label-sm" x="122" y="351">Storage &amp; logs</text><text class="meta" x="122" y="372">isolation, access, retention and backups need operator setup</text>
 </svg>

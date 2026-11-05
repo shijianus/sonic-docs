@@ -1,11 +1,15 @@
 ---
 title: Guía de funciones
-description: "Guía de funciones de Sonic: niveles de calidad y transparencia de las vistas previas, letras palabra por palabra, recomendación y Auto DJ, descargas y música local, listas de éxitos, MV y tolerancia de la búsqueda."
+description: "Guía de funciones de Sonic: calidad y vistas previas, letras palabra por palabra, recomendación y Auto DJ, descargas, música local, listas, MV y búsqueda."
 ---
 
-**Fecha de revisión: 2 de noviembre de 2026｜Versión: 1.8**
+**Fecha de revisión: 3 de noviembre de 2026｜Versión: 1.9**
 
 Esta página explica en profundidad cómo se comportan las funciones de Sonic y las decisiones de diseño que conllevan. La ubicación en la interfaz consta en la [Guía de la interfaz y funciones](/es/interface/); la explicación técnica de las señales de comportamiento y del modelo de recomendación, en la sección 5 de la [Presentación del proyecto](/es/project/); las condiciones contractuales del uso de las funciones, en los [Términos del servicio](/es/terms-of-service/). Las funciones descritas se basan en la RC pública `rc/sonic-20261031@a75f5cb` (2026-11-01 UTC) de `shijianus/sonic`, comprobada el 2026-11-02. La antigua `main@ce443c8` (2026-10-27 UTC) es distinta; ninguna de las dos demuestra qué versión está desplegada en línea.
+
+![Los seis grupos de funciones de Sonic: búsqueda, reproducción, letras, biblioteca, recomendaciones y privacidad](/images/sonic/features-map.svg)
+
+*Figura: seis grupos de funciones; el alcance real de las recomendaciones y los controles de privacidad depende de la configuración de la instancia.*
 
 ## 1. Niveles de calidad y transparencia de las vistas previas
 
@@ -35,7 +39,7 @@ El panel de letras admite tres conmutadores independientes para el original, la 
 3. Radar de exploración de estilos: exploración por género, con un parámetro de temperatura para ajustar la amplitud de la exploración;
 4. Auto DJ: al terminar de forma natural la lista de reproducción, continúa automáticamente con pistas reproducibles según el estilo de la pista actual; puede desactivarse en los ajustes;
 5. Depuración de señales: los saltos de las 6 clases no imputables al usuario, como cortes, fallos de decodificación y recortes de vista previa, no entran en el conjunto de datos de la recomendación;
-6. Datos: la personalización y Auto DJ están activados por defecto en el código sin prueba de consentimiento afirmativo. Los identificadores son seudónimos; los 90 días de ciertos eventos no cubren todo el radar, búsquedas o agregados. El borrado puede omitir identificadores anónimos antiguos, servicios externos y copias de seguridad, con fallos ocultos. Falta la ruta remota del radar en la versión comprobada; no se confirma una sincronización general (véase la [Política de privacidad](/es/privacy-policy/)).
+6. Datos: la personalización y Auto DJ están activados por defecto en el código sin prueba de consentimiento afirmativo. Los identificadores son seudónimos; los 90 días de ciertos eventos no cubren todo el radar, búsquedas o agregados. El borrado puede omitir identificadores anónimos antiguos, servicios externos y copias de seguridad, con fallos ocultos. La ruta remota del radar debe verificarse según el despliegue; no se confirma una sincronización general (véase la [Política de privacidad](/es/privacy-policy/)).
 
 ## 4. Descargas y música local
 

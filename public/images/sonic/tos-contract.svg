@@ -1,72 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="100%" role="img" aria-label="Service terms: notice and valid acceptance, free test use, notified changes and exit. OAuth alone is not acceptance or profiling consent; profile reset is partial and revocation depends on setup and request success. Mandatory rights remain.">
-  <style>
-    .bg { fill: #f8fafc; }
-    .stage { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; }
-    .stage-one { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
-    .base { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1.5; }
-    .st { font: 600 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    .sb { font: 400 10.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #64748b; }
-    .law { font: 600 10px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #2563eb; }
-    .flow { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#ar); }
-    .arrowhead { fill: #94a3b8; }
-    .bt { font: 600 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; fill: #0f172a; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #0b0f19; }
-      .stage { fill: #111827; stroke: #1e293b; }
-      .stage-one { fill: rgba(59,130,246,0.12); stroke: #3b82f6; }
-      .base { fill: #111827; stroke: #1e293b; }
-      .st { fill: #f1f5f9; }
-      .sb { fill: #94a3b8; }
-      .law { fill: #60a5fa; }
-      .flow { stroke: #475569; }
-      .arrowhead { fill: #475569; }
-      .bt { fill: #f1f5f9; }
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Service terms in five numbered steps">
+<style>
+    .bg{fill:#f8fafc} .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1.5}
+    .soft{fill:#f1f5f9;stroke:#e2e8f0;stroke-width:1.5}
+    .accent{fill:#eff6ff;stroke:#bfdbfe;stroke-width:1.6}
+    .warm{fill:#fffbeb;stroke:#fcd34d;stroke-width:1.5}
+    .good{fill:#f0fdf4;stroke:#bbf7d0;stroke-width:1.5}
+    .kicker{font:700 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;letter-spacing:.18em;fill:#2563eb}
+    .num{font:700 13px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#2563eb}
+    .label{font:600 18px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .label-sm{font:600 15px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#0f172a}
+    .meta{font:400 12.5px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .mono{font:400 12px 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;fill:#64748b}
+    .foot{font:600 12px -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', sans-serif;fill:#64748b}
+    .stroke{stroke:#e2e8f0;stroke-width:1.5;fill:none}
+    .accent-stroke{stroke:#2563eb;stroke-width:1.8;fill:none}
+    .arrow{stroke:#64748b;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .arrow-head{fill:#64748b}
+    .icon{stroke:#475569;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .icon-accent{stroke:#2563eb;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .dot{fill:#2563eb}
+    @media print{ .bg{fill:#fff} }
   </style>
-  <defs>
-    <marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" class="arrowhead"/>
-    </marker>
-  </defs>
-  <rect class="bg" width="1000" height="400" rx="16"/>
-
-  <rect class="stage-one" x="40" y="110" width="212" height="150" rx="10"/>
-  <text class="st" x="58" y="140">1. Acceptance</text>
-  <text class="sb" x="58" y="164">Terms need valid acceptance;</text>
-  <text class="sb" x="58" y="180">OAuth alone is not</text>
-  <text class="sb" x="58" y="196">acceptance or optional</text>
-  <text class="sb" x="58" y="212">profiling consent.</text>
-  <text class="law" x="58" y="244">Notice before acceptance</text>
-
-  <rect class="stage" x="290" y="110" width="212" height="150" rx="10"/>
-  <text class="st" x="308" y="140">2. Use</text>
-  <text class="sb" x="308" y="164">Search, playback, lyrics;</text>
-  <text class="sb" x="308" y="180">free test service.</text>
-  <text class="sb" x="308" y="196">No extra uptime SLA;</text>
-  <text class="sb" x="308" y="212">MIT covers code, not music.</text>
-  <text class="law" x="308" y="244">Mandatory rights remain</text>
-
-  <rect class="stage" x="540" y="110" width="212" height="150" rx="10"/>
-  <text class="st" x="558" y="140">3. Amendments</text>
-  <text class="sb" x="558" y="164">Explain changes and</text>
-  <text class="sb" x="558" y="180">their effective date;</text>
-  <text class="sb" x="558" y="196">renew acceptance</text>
-  <text class="sb" x="558" y="212">where required.</text>
-  <text class="law" x="558" y="244">Prior notice required</text>
-
-  <rect class="stage" x="790" y="110" width="170" height="150" rx="10"/>
-  <text class="st" x="808" y="140">4. Termination</text>
-  <text class="sb" x="808" y="164">Leave at any time;</text>
-  <text class="sb" x="808" y="180">reset is partial.</text>
-  <text class="sb" x="808" y="196">Contact for full request;</text>
-  <text class="sb" x="808" y="212">revocation needs setup.</text>
-  <text class="law" x="808" y="244">Exit preserves rights</text>
-
-  <line class="flow" x1="252" y1="185" x2="286" y2="185"/>
-  <line class="flow" x1="502" y1="185" x2="536" y2="185"/>
-  <line class="flow" x1="752" y1="185" x2="786" y2="185"/>
-
-  <rect class="base" x="40" y="300" width="920" height="60" rx="12"/>
-  <text class="bt" x="64" y="326">Applicable law and competent courts</text>
-  <text class="law" x="64" y="346">Mandatory rights remain · governing law depends on the facts</text>
+<rect class="bg" width="1000" height="420" rx="18"/>
+<text class="kicker" x="64" y="46">SONIC</text><line x1="64" y1="60" x2="936" y2="60" class="stroke"/><rect class="card" x="64" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(171.6 144) scale(1.000)"><path d="M6 17h12l-2-3V9a4 4 0 0 0-8 0v5z M10 20h4"/></g><circle class="dot" cx="90" cy="153" r="3"/><text class="num" x="100" y="158">01</text><text class="label" x="88" y="244">Notice</text><text class="meta" x="88" y="265">before acceptance</text><rect class="card" x="243.6" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(351.2 144) scale(1.000)"><path d="M5 12l4 4 10-10"/></g><circle class="dot" cx="269.6" cy="153" r="3"/><text class="num" x="279.6" y="158">02</text><text class="label" x="267.6" y="244">Acceptance</text><text class="meta" x="267.6" y="265">valid act</text><rect class="card" x="423.2" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(530.8 144) scale(1.000)"><path d="M8 5l11 7-11 7z"/></g><circle class="dot" cx="449.2" cy="153" r="3"/><text class="num" x="459.2" y="158">03</text><text class="label" x="447.2" y="244">Use</text><text class="meta" x="447.2" y="265">free test</text><rect class="card" x="602.8" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(710.4 144) scale(1.000)"><path d="M20 7a8 8 0 1 0 1 7 M20 3v4h-4"/></g><circle class="dot" cx="628.8" cy="153" r="3"/><text class="num" x="638.8" y="158">04</text><text class="label" x="626.8" y="244">Changes</text><text class="meta" x="626.8" y="265">notify first</text><rect class="card" x="782.4" y="128" width="153.6" height="158" rx="14"/><g class="icon" transform="translate(890 144) scale(1.000)"><path d="M7 3h7l4 4v14H7z M14 3v5h4 M10 12h7 M10 16h7"/></g><circle class="dot" cx="808.4" cy="153" r="3"/><text class="num" x="818.4" y="158">05</text><text class="label" x="806.4" y="244">Termination</text><text class="meta" x="806.4" y="265">exit keeps rights</text><path class="arrow" d="M221.6 207L237.6 207"/><path class="arrow-head" d="M231.6 203L237.6 207L230.6 210Z"/><path class="arrow" d="M401.2 207L417.2 207"/><path class="arrow-head" d="M411.2 203L417.2 207L410.2 210Z"/><path class="arrow" d="M580.8 207L596.8 207"/><path class="arrow-head" d="M590.8 203L596.8 207L589.8 210Z"/><path class="arrow" d="M760.4 207L776.4 207"/><path class="arrow-head" d="M770.4 203L776.4 207L769.4 210Z"/>
 </svg>

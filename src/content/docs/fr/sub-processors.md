@@ -3,7 +3,7 @@ title: Liste des partages avec des tiers et des transferts
 description: Infrastructure, services d'identité, destinataires de contenus et ressources externes, différences de configuration et limites des transferts internationaux des instances hébergées Sonic.
 ---
 
-**Date de révision : 2 novembre 2026｜Version : 1.8**
+**Date de révision : 3 novembre 2026｜Version : 1.9**
 
 Cette page développe la section 7 de la [Politique de confidentialité](/fr/privacy-policy/) et décrit les destinataires pouvant intervenir dans les instances de test hébergées de Sonic, maintenues par une personne, gratuites et à but non lucratif. La présence d'une intégration dans le code ne prouve ni son activation ni la licéité d'un partage. Les instances déployées indépendamment doivent fournir une information distincte selon leurs traitements réels.
 
